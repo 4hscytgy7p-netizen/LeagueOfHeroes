@@ -1,0 +1,106 @@
+---
+import '../styles/theme.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+// Netlify exposes build variables through process.env. Keep the regular
+// Astro/Vite lookup and use process.env as a build-time fallback.
+const publicSupabaseUrl =
+  import.meta.env.PUBLIC_SUPABASE_URL ||
+  process.env.PUBLIC_SUPABASE_URL ||
+  '';
+const publicSupabaseAnonKey =
+  import.meta.env.PUBLIC_SUPABASE_ANON_KEY ||
+  process.env.PUBLIC_SUPABASE_ANON_KEY ||
+  '';
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <script
+      is:inline
+      define:vars={{ publicSupabaseUrl, publicSupabaseAnonKey }}
+    >
+      window.__LOH_TEST_ACCOUNT_CONFIG__ = {
+        supabaseUrl: publicSupabaseUrl,
+        supabaseAnonKey: publicSupabaseAnonKey
+      };
+    </script>
+    <script>
+      const theme = localStorage.getItem('theme') ?? 'dark';
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="test-account-body">
+    <header class="test-account-topbar">
+      <a class="test-account-brand" href="/">League of Heroes 5.5E</a>
+      <span>Тестовый контур</span>
+    </header>
+    <main class="test-account-main">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { min-height: 100%; background: #07101f; }
+  body.test-account-body {
+    min-height: 100vh;
+    margin: 0;
+    color: #edf1f8;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(111, 77, 255, .2), transparent 32rem),
+      radial-gradient(circle at 90% 85%, rgba(226, 180, 72, .12), transparent 34rem),
+      linear-gradient(145deg, #07101f, #101c32 55%, #091326);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .test-account-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 64px;
+    padding: .85rem clamp(1rem, 4vw, 3.5rem);
+    border-bottom: 1px solid rgba(163, 177, 204, .18);
+    background: rgba(7, 16, 31, .82);
+    backdrop-filter: blur(18px);
+  }
+  .test-account-topbar span {
+    color: #e2b448;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  .test-account-brand {
+    color: #b69aff;
+    font-family: Georgia, serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .test-account-main {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: clamp(1.5rem, 5vw, 4rem) 0 5rem;
+  }
+  button, select, input { font: inherit; }
+  @media (max-width: 640px) {
+    .test-account-topbar { align-items: flex-start; flex-direction: column; }
+  }
+</style>

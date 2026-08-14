@@ -1,0 +1,321 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { backgroundsData } from '../../data/backgrounds/index';
+
+export function getStaticPaths() {
+  return backgroundsData.map(bg => ({
+    params: { id: bg.id },
+    props: { background: bg }
+  }));
+}
+
+const { background } = Astro.props;
+---
+
+<Layout title={`${background.name}`}>
+  <div class="content">
+    <a href="/backgrounds" class="back-link">← Назад к предысториям</a>
+
+    <div class="background-header">
+      <h1>{background.name} <span class="name-en">[{background.nameEn}]</span></h1>
+      <div class="source">{background.sourceBook}</div>
+    </div>
+
+    <div class="background-content">
+      <section class="lore">
+        <p>{background.lore}</p>
+      </section>
+
+      <section class="proficiencies">
+        <h2>Владения и снаряжение</h2>
+        <dl>
+          <dt>Бонус характеристик</dt>
+          <dd>{background.proficiencies.abilityScores.description}</dd>
+
+          <dt>Черта</dt>
+          <dd>{background.proficiencies.feat}</dd>
+
+          <dt>Навыки</dt>
+          <dd>{background.proficiencies.skills.description}</dd>
+
+          <dt>Инструменты</dt>
+          <dd>{background.proficiencies.tools.description}</dd>
+
+          <dt>Снаряжение</dt>
+          <dd>{background.proficiencies.equipment}</dd>
+        </dl>
+      </section>
+
+      {background.spellTable && (
+        <section class="spell-table">
+          <h2>{background.spellTable.name}</h2>
+          {background.spellTable.prerequisite && (
+            <p class="prerequisite"><strong>Требование:</strong> {background.spellTable.prerequisite}</p>
+          )}
+          <p class="description">{background.spellTable.description}</p>
+          
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Уровень заклинаний</th>
+                  <th>Заклинания</th>
+                </tr>
+              </thead>
+              <tbody>
+                {background.spellTable.spells.map(level => (
+                  <tr>
+                    <td>{level.level}</td>
+                    <td>{level.spells.join(', ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          {background.spellTable.note && (
+            <p class="note">{background.spellTable.note}</p>
+          )}
+        </section>
+      )}
+
+      {background.variants && (
+        <section class="variants">
+          <h2>{background.variants.title}</h2>
+          <p>{background.variants.description}</p>
+          <table>
+            <thead>
+              <tr>
+                <th>к{background.variants.table.length}</th>
+                <th>Результат</th>
+              </tr>
+            </thead>
+            <tbody>
+              {background.variants.table.map(entry => (
+                <tr>
+                  <td>{entry.roll}</td>
+                  <td>{entry.result}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+
+      <section class="characteristics">
+        <h2>Предлагаемые черты личности</h2>
+
+        <div class="characteristic-tables">
+          <div class="table-container">
+            <h3>Черты характера</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>к{background.characteristics.personalityTraits.length}</th>
+                  <th>Черта</th>
+                </tr>
+              </thead>
+              <tbody>
+                {background.characteristics.personalityTraits.map(entry => (
+                  <tr>
+                    <td>{entry.roll}</td>
+                    <td>{entry.trait}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-container">
+            <h3>Идеалы</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>к{background.characteristics.ideals.length}</th>
+                  <th>Идеал</th>
+                </tr>
+              </thead>
+              <tbody>
+                {background.characteristics.ideals.map(entry => (
+                  <tr>
+                    <td>{entry.roll}</td>
+                    <td>{entry.ideal}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-container">
+            <h3>Привязанности</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>к{background.characteristics.bonds.length}</th>
+                  <th>Привязанность</th>
+                </tr>
+              </thead>
+              <tbody>
+                {background.characteristics.bonds.map(entry => (
+                  <tr>
+                    <td>{entry.roll}</td>
+                    <td>{entry.bond}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-container">
+            <h3>Слабости</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>к{background.characteristics.flaws.length}</th>
+                  <th>Слабость</th>
+                </tr>
+              </thead>
+              <tbody>
+                {background.characteristics.flaws.map(entry => (
+                  <tr>
+                    <td>{entry.roll}</td>
+                    <td>{entry.flaw}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .background-header {
+    margin-bottom: 2rem;
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+  }
+
+  .source {
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  .background-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  .lore {
+    line-height: 1.6;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  dt {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  .spell-table {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 2rem;
+  }
+
+  .prerequisite {
+    color: var(--primary);
+    margin: 1rem 0;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+  }
+
+  .table-container {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  .characteristic-tables {
+    display: grid;
+    gap: 2rem;
+  }
+
+  h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+interface Props {
+  levels: {
+    level: number;
+    profBonus: string;
+    features: string[];
+    bloodMaledict: string;
+    crimsonRites: string;
+  }[];
+}
+
+const { levels } = Astro.props;
+---
+
+<div class="table-container">
+  <table class="class-table">
+    <thead>
+      <tr>
+        <th>Уровень</th>
+        <th>Бонус мастерства</th>
+        <th>Умения</th>
+        <th>Кровавые проклятия</th>
+        <th>Багровые ритуалы</th>
+      </tr>
+    </thead>
+    <tbody>
+      {levels.map(level => (
+        <tr>
+          <td>{level.level}</td>
+          <td>{level.profBonus}</td>
+          <td>{level.features.join(', ')}</td>
+          <td>{level.bloodMaledict}</td>
+          <td>{level.crimsonRites}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-container {
+    overflow-x: auto;
+    margin: 2rem 0;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  .class-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .class-table th,
+  .class-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .class-table th {
+    background: var(--primary);
+    color: white;
+  }
+
+  .class-table th:first-child {
+    border-top-left-radius: 0.5rem;
+  }
+
+  .class-table th:last-child {
+    border-top-right-radius: 0.5rem;
+  }
+
+  .class-table tr:last-child td {
+    border-bottom: none;
+  }
+</style>

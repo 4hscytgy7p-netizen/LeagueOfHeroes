@@ -1,0 +1,92 @@
+---
+interface Props {}
+---
+
+<div class="rank-progression">
+  <h3>Прогрессия рангов</h3>
+  <p>Количество доступных бонусов зависит от вашего ранга:</p>
+
+  <div class="progression-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Уровень</th>
+          <th>ОП</th>
+          <th>Бонус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>0 ОП</td>
+          <td>Медный - 1 бонус</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>65 ОП</td>
+          <td>Серебряный - 2 бонуса</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>170 ОП</td>
+          <td>Платиновый - 3 бонуса</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>290 ОП</td>
+          <td>Адамантовый - 4 бонуса</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .rank-progression {
+    margin-bottom: 2rem;
+  }
+
+  .progression-table {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .rank-rules {
+    margin-top: 1.5rem;
+  }
+
+  h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

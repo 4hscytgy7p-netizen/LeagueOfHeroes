@@ -1,0 +1,64 @@
+---
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+function parseTable(text: string) {
+  const rows = text.split('\n').filter(row => row.trim());
+  return rows.map(row => {
+    const [level, spells] = row.split('\t').map(s => s.trim());
+    return { level, spells };
+  });
+}
+
+const tableData = parseTable(content);
+---
+
+<div class="spell-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Уровень заклинаний</th>
+        <th>Заклинания</th>
+      </tr>
+    </thead>
+    <tbody>
+      {tableData.map(row => (
+        <tr>
+          <td>{row.level}</td>
+          <td>{row.spells}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .spell-table-container {
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+</style>

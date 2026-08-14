@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { items } from '../../data/items';
+
+export function getStaticPaths() {
+  return items.map(item => ({
+    params: { id: item.id },
+    props: { item }
+  }));
+}
+
+const { item } = Astro.props;
+---
+
+<Layout title={`${item.name}`}>
+  <div class="content">
+    <a href="/items" class="back-link">← Назад к предметам</a>
+
+    <div class="item-details">
+      <div class="item-header">
+        <h1>{item.name} <span class="name-en">[{item.nameEn}]</span></h1>
+        <div class="source">{item.sourceBook}</div>
+      </div>
+
+      <div class="item-meta">
+        <p><strong>Тип:</strong> {item.type}</p>
+        <p><strong>Цена:</strong> {item.cost}</p>
+        <p><strong>Вес:</strong> {item.weight}</p>
+      </div>
+
+      <div class="item-description">
+        {item.description}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .item-details {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .item-header {
+    margin-bottom: 2rem;
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+  }
+
+  .source {
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  .item-meta {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .item-description {
+    line-height: 1.6;
+  }
+</style>

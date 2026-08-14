@@ -1,0 +1,41 @@
+---
+interface Props {}
+---
+
+<div class="errata-section">
+  <h2>Легендарные "статусные" предметы</h2>
+  <p>Существуют легендарные предметы, которые имеют особые статусы развития, напр: Дремлющий, Пробуждённый, Возвышенный.</p>
+
+  <div class="rules">
+    <p>При получении персонажем такового предмета:</p>
+    <ul>
+      <li>Статус всегда начинается с самого первого (напр. Дремлющий)</li>
+      <li>За каждые 20 ОП, полученные персонажем с использованием данного предмета, улучшают его статус на одну ступень, вплоть до максимальной</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .errata-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+  }
+
+  .rules {
+    margin-top: 1.5rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

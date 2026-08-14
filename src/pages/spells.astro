@@ -1,0 +1,1393 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpellCard from '../components/spells/SpellCard.astro';
+import SpellDetails from '../components/spells/SpellDetails.astro';
+import { spells } from '../data/spells';
+
+// Sort spells alphabetically by Russian name
+const sortedSpells = [...spells].sort((a, b) => 
+  a.name.localeCompare(b.name, 'ru')
+);
+
+export function getStaticPaths() {
+  return spells.map(spell => ({
+    params: { id: spell.id },
+    props: { spell }
+  }));
+}
+
+const spellLevels = ['cantrip', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const spellSchools = [
+  'ограждение',
+  'вызов',
+  'прорицание',
+  'очарование',
+  'воплощение',
+  'иллюзия',
+  'некромантия',
+  'преобразование'
+];
+---
+
+<Layout title="Заклинания">
+  <div class="content">
+    <h1>Заклинания</h1>
+    <div id="spells-data" data-spells={JSON.stringify(spells)} style="display: none;"></div>
+
+    <div class="spells-container">
+      <div class="spells-list">
+        <div class="search-controls">
+          <input 
+            type="text" 
+            id="spell-search" 
+            placeholder="Поиск заклинаний..."
+            class="search-input"
+          />
+          <button id="filter-button" class="filter-button">
+            <span class="filter-icon">⚙</span>
+            Фильтры
+          </button>
+              <div id="spell-count" class="filter-count" style="display:none">0</div>
+        </div>
+
+        <div id="filter-popup" class="filter-popup">
+          <div class="filter-content">
+            <div class="filter-header">
+              <h3>Фильтры</h3>
+              <button class="close-button">×</button>
+            </div>
+
+            <div class="filter-section">
+              <h4>Уровень</h4>
+              <div class="checkbox-group">
+                {spellLevels.map(level => (
+                  <label class="checkbox-label">
+                    <input 
+                      type="checkbox" 
+                      name="spell-level" 
+                      value={level}
+                    />
+                    {level === 'cantrip' ? 'Заговор' : `${level} уровень`}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h4>Школа магии</h4>
+              <div class="checkbox-group">
+                {spellSchools.map(school => (
+                  <label class="checkbox-label">
+                    <input 
+                      type="checkbox" 
+                      name="spell-school" 
+                      value={school}
+                    />
+                    {school}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h4>Класс</h4>
+              <div class="checkbox-group">
+                {Array.from(new Set(spells.flatMap(spell => (Array.isArray(spell.sources) ? spell.sources : []).filter(src => src && src.type === 'class').map(src => (src.name || '').replace(/<[^>]+>/g, ''))))).sort((a, b) => a.localeCompare(b, 'ru')).map(cls => (
+                  <label class="checkbox-label">
+                    <input 
+                      type="checkbox" 
+                      name="spell-class" 
+                      value={cls}
+                    />
+                    {cls}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h4>Подклассы</h4>
+              <div id="subclass-filters" class="checkbox-group">
+                <!-- populated client-side -->
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h4>Доп. фильтры</h4>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="spell-component" value="verbal"> Вербальный (В)</label>
+                <label class="checkbox-label"><input type="checkbox" name="spell-component" value="somatic"> Соматический (С)</label>
+                <label class="checkbox-label"><input type="checkbox" name="spell-component" value="material"> Материальный (М)</label>
+                <label class="checkbox-label"><input type="checkbox" name="spell-concentration" value="1"> Концентрация</label>
+                <label class="checkbox-label"><input type="checkbox" name="spell-has-table" value="1"> Имеет таблицы</label>
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h4>Время накладывания</h4>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="casting-type" value="action"> Действие</label>
+                <label class="checkbox-label"><input type="checkbox" name="casting-type" value="bonus"> Бонусное действие</label>
+                <label class="checkbox-label"><input type="checkbox" name="casting-type" value="reaction"> Реакция</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spells-grid">
+          <table class="spells-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="name">Название <span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="level">Ур.<span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="school">Школа <span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="castingTime">Время <span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="range">Дальн.<span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="concentration">Конц. <span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="source">Источник <span class="sort-icon">↕</span></th>
+              </tr>
+            </thead>
+            <tbody>
+                {sortedSpells.map(spell => {
+                const classes = (spell.sources || []).filter(s => s && s.type === 'class').map(s => (s.name || '').replace(/<[^>]+>/g, '')).join(', ');
+                const concentration = typeof spell.duration === 'string' && spell.duration.toLowerCase().includes('концентрация') ? 'X' : '';
+                const page = spell.source && spell.source.page ? String(spell.source.page) : '';
+                const schoolTitle = spell.school ? (spell.school.charAt(0).toUpperCase() + spell.school.slice(1)) : '';
+                const schoolClass = 'school-' + (spell.school || '').toLowerCase().replace(/[^a-z0-9а-яё]+/gi, '-');
+                const ct = String(spell.castingTime || '').toLowerCase();
+                let castingShort = '';
+                if (!ct) {
+                  castingShort = '';
+                } else if (ct.includes('реакц')) {
+                  castingShort = 'Реакция';
+                } else if (ct.includes('бонус')) {
+                  castingShort = 'Бонусное действие';
+                } else if (ct.includes('ритуал') || ct.includes('или')) {
+                  // preserve full text for cases like "1 действие или ритуал"
+                  castingShort = spell.castingTime || '';
+                } else if (ct.includes('действ')) {
+                  castingShort = 'Действие';
+                } else {
+                  castingShort = spell.castingTime || '';
+                }
+                return (
+                  <tr class="spell-row" data-spell-id={spell.id} data-level={spell.level} data-school={schoolTitle} data-casting-time={spell.castingTime} data-range={spell.range} data-classes={classes} data-concentration={concentration} data-source-book={spell.source?.book || ''} data-source-page={page}>
+                    <td class="col-name">{spell.name}<div class="name-en">[{spell.nameEn}]</div></td>
+                    <td class="col-level">{spell.level === 'cantrip' ? 'Заговор' : spell.level}</td>
+                    <td class="col-school"><span class={`school-label ${schoolClass}`}>{schoolTitle}</span></td>
+                    <td class="col-casting">{castingShort}</td>
+                    <td class="col-range">{spell.range}</td>
+                    <td class="col-conc">{concentration}</td>
+                    <td class="col-source">{spell.source?.book}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="spell-details" class="spell-details">
+        <div class="details-content">
+          <h2>Выберите заклинание для просмотра</h2>
+        </div>
+      </div>
+    
+    <!-- Scroll to top button for quick navigation -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Прокрутить наверх">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m18 15-6-6-6 6"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function initializeSpells() {
+    // filterButton уже объявлен выше
+    const filterCount = document.getElementById('filter-count');
+      const spellCountEl = document.getElementById('spell-count');
+    /** @type {HTMLInputElement|null} */
+    /** @type {HTMLInputElement|null} */
+    const searchInput = document.getElementById('spell-search');
+    const filterButton = document.getElementById('filter-button');
+    const filterPopup = document.getElementById('filter-popup');
+    const closeButton = document.querySelector('.close-button');
+    const spellRows = document.querySelectorAll('.spell-row');
+    /** @type {NodeListOf<HTMLInputElement>} */
+    const levelCheckboxes = document.querySelectorAll('input[name="spell-level"]');
+    /** @type {NodeListOf<HTMLInputElement>} */
+    const schoolCheckboxes = document.querySelectorAll('input[name="spell-school"]');
+    /** @type {NodeListOf<HTMLInputElement>} */
+    const classCheckboxes = document.querySelectorAll('input[name="spell-class"]');
+    /** @type {NodeListOf<HTMLInputElement>} */
+    const componentCheckboxes = document.querySelectorAll('input[name="spell-component"]');
+    const concentrationCheckbox = document.querySelector('input[name="spell-concentration"]');
+    /** @type {NodeListOf<HTMLInputElement>} */
+    const castingTypeCheckboxes = document.querySelectorAll('input[name="casting-type"]');
+    const hasTableCheckbox = document.querySelector('input[name="spell-has-table"]');
+    const spellDetails = document.getElementById('spell-details');
+    const spells = JSON.parse(document.getElementById('spells-data')?.getAttribute('data-spells') || '[]')
+      .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+
+    function togglePopup() {
+      if (filterPopup) {
+        filterPopup.classList.toggle('show');
+        filterButton.classList.toggle('active', filterPopup.classList.contains('show'));
+      }
+    }
+
+    // helper: parse anchor HTML like <a href="/classes/cleric?subclass=knowledge">Домен Знаний</a>
+    function parseAnchorLink(html) {
+      if (!html) return null;
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      const a = div.querySelector('a');
+      if (!a) return null;
+      try {
+        const url = new URL(a.getAttribute('href'), location.origin);
+        const parts = url.pathname.split('/').filter(Boolean);
+        const classId = parts.length >= 2 ? parts[1] : (parts[0] || '');
+        const subclassId = url.searchParams.get('subclass') || '';
+        return { classId, subclassId, name: a.textContent.trim() };
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // Build subclass map from spells.sources[type==='subclass']
+    const subclassMap = {};
+    spells.forEach(sp => {
+      (Array.isArray(sp.sources) ? sp.sources : []).forEach(src => {
+        if (!src || src.type !== 'subclass') return;
+        const parsed = parseAnchorLink(src.name);
+        if (!parsed || !parsed.classId || !parsed.subclassId) return;
+        if (!subclassMap[parsed.classId]) subclassMap[parsed.classId] = [];
+        if (!subclassMap[parsed.classId].some(x => x.subclassId === parsed.subclassId)) subclassMap[parsed.classId].push(parsed);
+      });
+    });
+
+    function renderSubclassFilters() {
+      const container = document.getElementById('subclass-filters');
+      if (!container) return;
+      container.innerHTML = '';
+      Object.keys(subclassMap).sort((a,b) => a.localeCompare(b,'ru')).forEach(classId => {
+        const list = subclassMap[classId];
+        const wrapper = document.createElement('div');
+        wrapper.className = 'subclass-class';
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'subclass-toggle';
+        toggle.textContent = classId;
+        toggle.dataset.class = classId;
+        const inner = document.createElement('div');
+        inner.className = 'subclass-list';
+        inner.style.display = 'none';
+        inner.innerHTML = list.map(it => `<label class="checkbox-label"><input type="checkbox" name="spell-subclass" value="${classId}|${it.subclassId}">${it.name}</label>`).join('');
+        wrapper.appendChild(toggle);
+        wrapper.appendChild(inner);
+        container.appendChild(wrapper);
+      });
+    }
+
+
+    function closePopup(e: MouseEvent) {
+      if (filterPopup && e.target === filterPopup) {
+        filterPopup.classList.remove('show');
+        filterButton.classList.remove('active');
+      }
+    }
+
+    function filterSpells() {
+      const searchTerm = searchInput instanceof HTMLInputElement ? searchInput.value.toLowerCase() : '';
+      const selectedLevels = Array.from(levelCheckboxes)
+        .filter(cb => cb instanceof HTMLInputElement && cb.checked)
+        .map(cb => cb instanceof HTMLInputElement ? cb.value : '');
+      const selectedSchools = Array.from(schoolCheckboxes)
+        .filter(cb => cb instanceof HTMLInputElement && cb.checked)
+        .map(cb => cb instanceof HTMLInputElement ? cb.value : '');
+      const selectedClasses = Array.from(classCheckboxes)
+        .filter(cb => cb instanceof HTMLInputElement && cb.checked)
+        .map(cb => cb instanceof HTMLInputElement ? cb.value : '');
+      const selectedSubclasses = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="spell-subclass"]')).filter(cb => cb.checked).map(cb => cb.value);
+      const selectedComponents = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="spell-component"]')).filter(cb => cb.checked).map(cb => cb.value);
+      const concentrationChecked = document.querySelector<HTMLInputElement>('input[name="spell-concentration"]')?.checked ?? false;
+      const selectedCastingTypes = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="casting-type"]')).filter(cb => cb.checked).map(cb => cb.value);
+      const hasTableChecked = document.querySelector<HTMLInputElement>('input[name="spell-has-table"]')?.checked ?? false;
+      // Count active filters
+      let activeFilters = 0;
+      if (selectedLevels.length > 0) activeFilters += selectedLevels.length;
+      if (selectedSchools.length > 0) activeFilters += selectedSchools.length;
+      if (selectedClasses.length > 0) activeFilters += selectedClasses.length;
+      if (selectedComponents.length > 0) activeFilters += selectedComponents.length;
+      if (concentrationChecked) activeFilters += 1;
+      if (selectedCastingTypes.length > 0) activeFilters += selectedCastingTypes.length;
+      if (hasTableChecked) activeFilters += 1;
+      if (filterCount) {
+        filterCount.textContent = String(activeFilters);
+        filterCount.style.display = activeFilters > 0 ? 'flex' : 'none';
+      }
+      if (filterButton) filterButton.classList.toggle('has-filters', activeFilters > 0);
+
+      let visibleCount = 0;
+      spellRows.forEach(card => {
+        const spellId = card instanceof HTMLElement ? card.dataset.spellId : undefined;
+        const spell = spellId ? spells.find(s => s.id === spellId) : undefined;
+        
+        if (!spell) return;
+
+        const matchesSearch = spell.name.toLowerCase().includes(searchTerm) || 
+                            spell.nameEn.toLowerCase().includes(searchTerm);
+        const matchesLevel = selectedLevels.length === 0 || selectedLevels.includes(spell.level);
+        const matchesSchool = selectedSchools.length === 0 || selectedSchools.includes(spell.school);
+        const matchesClass = selectedClasses.length === 0 || (Array.isArray(spell.sources) && spell.sources.some(src => src && src.type === 'class' && selectedClasses.includes((src.name || '').replace(/<[^>]+>/g, ''))));
+        const matchesSubclass = selectedSubclasses.length === 0 || (Array.isArray(spell.sources) && spell.sources.some(src => {
+          if (!src || src.type !== 'subclass') return false;
+          const parsed = parseAnchorLink(src.name);
+          if (!parsed) return false;
+          return selectedSubclasses.includes(parsed.classId + '|' + parsed.subclassId);
+        }));
+
+        // components filter: selectedComponents is ANDed (spell must have all selected component types)
+        let matchesComponents = true;
+        if (selectedComponents.length > 0) {
+          matchesComponents = selectedComponents.every(name => {
+            if (!spell.components) return false;
+            if (name === 'verbal') return !!spell.components.verbal;
+            if (name === 'somatic') return !!spell.components.somatic;
+            if (name === 'material') return !!spell.components.material;
+            return true;
+          });
+        }
+
+        // concentration filter
+        const matchesConcentration = !concentrationChecked || (typeof spell.duration === 'string' && spell.duration.toLowerCase().includes('концентрация'));
+
+        // casting type filter: any of selected casting types (OR)
+        let matchesCastingType = true;
+        if (selectedCastingTypes.length > 0) {
+          const ct = (String(spell.castingTime || '')).toLowerCase();
+          matchesCastingType = selectedCastingTypes.some(t => {
+            if (t === 'action') return ct.includes('действ');
+            if (t === 'bonus') return ct.includes('бонус');
+            if (t === 'reaction') return ct.includes('реакц') || ct.includes('реакция');
+            return false;
+          });
+        }
+
+        // has table filter
+        const matchesHasTable = !hasTableChecked || (typeof spell.description === 'string' && /<table/i.test(spell.description));
+
+        const isVisible = matchesSearch && matchesLevel && matchesSchool && matchesClass && matchesSubclass && matchesComponents && matchesConcentration && matchesCastingType && matchesHasTable;
+        if (card instanceof HTMLElement) card.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      if (spellCountEl) {
+        spellCountEl.textContent = String(visibleCount);
+        spellCountEl.style.display = visibleCount > 0 ? 'flex' : 'none';
+      }
+    }
+
+    function getIdFromUrl() {
+      // Try path /spells/:id or query ?id=...
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const qid = params.get('id');
+        if (qid) return qid;
+
+        const parts = location.pathname.split('/').filter(Boolean);
+        const idx = parts.indexOf('spells');
+        if (idx >= 0 && parts.length > idx + 1) {
+          return parts[idx + 1];
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    function clearDetails() {
+      if (!spellDetails) return;
+      spellDetails.innerHTML = `
+        <div class="details-content">
+          <h2>Выберите заклинание для просмотра</h2>
+        </div>
+      `;
+      spellRows.forEach(card => card.classList.remove('active'));
+    }
+
+    function showSpellDetails(spellId: string) {
+      if (!spellDetails) return;
+
+      const spell = spells.find(s => s.id === spellId);
+      if (!spell) return;
+
+      const formattedSources = formatSources(spell.sources);
+      const sourceBook = spell.source?.book || '';
+      const sourcePage = spell.source?.page || '';
+
+      // Create spell details HTML
+      spellDetails.innerHTML = `
+        <div class="spell-details">
+          <div class="spell-header">
+            <h2>${spell.name} <span class="name-en">[${spell.nameEn}]</span></h2>
+            <div class="source">${sourceBook}${sourcePage ? ', стр. ' + sourcePage : ''}</div>
+          </div>
+
+          <div class="spell-info">
+            <p class="level-school">
+              ${spell.level === 'cantrip' ? 'Заговор' : `${spell.level} уровень`}, ${spell.school}
+            </p>
+            
+            <div class="info-grid">
+              <div class="info-row">
+                <strong>Время накладывания:</strong>
+                <span>${spell.castingTime}</span>
+              </div>
+              <div class="info-row">
+                <strong>Дистанция:</strong>
+                <span>${spell.range}</span>
+              </div>
+              <div class="info-row">
+                <strong>Компоненты:</strong>
+                <span>${formatComponents(spell.components)}</span>
+              </div>
+              <div class="info-row">
+                <strong>Длительность:</strong>
+                <span>${spell.duration}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spell-description-container">
+            <div class="spell-description">${spell.description}</div>
+          </div>
+
+          <div class="spell-sources">
+            <h3>Источники</h3>
+            ${formattedSources}
+          </div>
+        </div>
+      `;
+
+      // Add active class to selected card
+      spellRows.forEach(card => card.classList.remove('active'));
+      document.querySelector(`[data-spell-id="${spellId}"]`)?.classList.add('active');
+    }
+
+    function formatComponents(components) {
+      const parts = [];
+      if (components.verbal) parts.push('В');
+      if (components.somatic) parts.push('С');
+      if (components.material) parts.push(`М (${components.material})`);
+      return parts.join(', ');
+    }
+
+    function formatSources(sources) {
+      sources = Array.isArray(sources) ? sources : [];
+      const grouped = sources.reduce((acc, source) => {
+        if (!source || !source.type) return acc;
+        if (!acc[source.type]) acc[source.type] = [];
+        acc[source.type].push(source.name || '');
+        return acc;
+      }, {});
+
+      const sections = [];
+      if (grouped.class) sections.push(`<p>Классы: ${grouped.class.join(', ')}</p>`);
+      if (grouped.subclass) sections.push(`<p>Подклассы: ${grouped.subclass.join(', ')}</p>`);
+      if (grouped.species) sections.push(`<p>Виды: ${grouped.species.join(', ')}</p>`);
+      if (grouped.background) sections.push(`<p>Предыстории: ${grouped.background.join(', ')}</p>`);
+      if (grouped.feat) sections.push(`<p>Черты: ${grouped.feat.join(', ')}</p>`);
+      if (grouped.other) sections.push(`<p>Другие источники: ${grouped.other.join(', ')}</p>`);
+
+      return sections.join('');
+    }
+
+    // Open/close filters, search and filter bindings
+    filterButton?.addEventListener('click', togglePopup);
+    closeButton?.addEventListener('click', togglePopup);
+    filterPopup?.addEventListener('click', closePopup);
+    searchInput?.addEventListener('input', filterSpells);
+    levelCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
+    schoolCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
+    classCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
+    componentCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
+    castingTypeCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
+    if (concentrationCheckbox instanceof HTMLInputElement) concentrationCheckbox.addEventListener('change', filterSpells);
+    if (hasTableCheckbox instanceof HTMLInputElement) hasTableCheckbox.addEventListener('change', filterSpells);
+    
+    // Ensure label fills when checkbox is checked (tile fill)
+    filterPopup?.addEventListener('change', (e) => {
+      const target = e.target;
+      if (target instanceof HTMLInputElement && target.type === 'checkbox') {
+        const lbl = target.closest('label');
+        if (lbl && lbl.classList) lbl.classList.toggle('checked', target.checked);
+        // also re-run filter
+        filterSpells();
+      }
+    });
+
+    // initialize label checked state
+    document.querySelectorAll('.checkbox-label input[type="checkbox"]').forEach(cb => {
+      if (cb instanceof HTMLInputElement) {
+        const lbl = cb.closest('label');
+        if (lbl && lbl.classList) lbl.classList.toggle('checked', cb.checked);
+      }
+    });
+
+    // render subclass filters and attach toggles
+    renderSubclassFilters();
+    document.getElementById('subclass-filters')?.addEventListener('click', (e) => {
+      const t = e.target;
+      if (t instanceof HTMLElement && t.classList.contains('subclass-toggle')) {
+        const parent = t.parentElement;
+        const list = parent?.querySelector<HTMLElement>('.subclass-list');
+        if (list) {
+          const open = list.style.display !== 'block';
+          list.style.display = open ? 'block' : 'none';
+          t.classList.toggle('open', open);
+        }
+      }
+    });
+
+    // Row click -> show details
+    spellRows.forEach(row => {
+      row.addEventListener('click', () => {
+        const spellId = row instanceof HTMLElement ? row.dataset.spellId : undefined;
+        if (!spellId) return;
+        const newUrl = `/spells/${encodeURIComponent(spellId)}`;
+        history.pushState({ spellId }, '', newUrl);
+        showSpellDetails(spellId);
+      });
+    });
+
+    // Random spell widget (append to body)
+    (function createRandomWidget(){
+      const widget = document.createElement('div');
+      widget.id = 'random-spell-widget';
+      widget.style.position = 'fixed';
+      widget.style.right = '1rem';
+      widget.style.bottom = '1rem';
+      widget.style.zIndex = '10010';
+
+      // Container with vertical flow: button on top, history list below
+      const container = document.createElement('div');
+      container.className = 'spell-history';
+
+      const btn = document.createElement('button');
+      btn.id = 'random-btn';
+      btn.type = 'button';
+      btn.className = 'filter-button';
+      btn.innerHTML = '<span class="filter-icon">🎲</span>Случайное заклинание';
+
+      const ul = document.createElement('ul');
+      ul.id = 'random-history';
+      ul.setAttribute('role', 'list');
+
+      container.appendChild(btn);
+      container.appendChild(ul);
+      widget.appendChild(container);
+      document.body.appendChild(widget);
+
+      const randomHistory = [];
+
+      function escapeHtml(str) {
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      function makeListItem(item) {
+        const li = document.createElement('li');
+        li.className = 'history-item enter';
+        const a = document.createElement('a');
+        a.href = `/spells/${item.id}`;
+        a.dataset.spellId = item.id;
+        a.textContent = item.name;
+        li.appendChild(a);
+
+        // click handler: navigate to spell details and scroll row into view
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = a.dataset.spellId;
+          if (!id) return;
+          const row = document.querySelector(`[data-spell-id="${id}"]`);
+          if (row instanceof HTMLElement) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          showSpellDetails(id);
+          history.pushState({ spellId: id }, '', `/spells/${encodeURIComponent(id)}`);
+        });
+
+        // remove temporary 'enter' class after animation
+        li.addEventListener('animationend', (ev) => {
+          if (li.classList.contains('enter')) li.classList.remove('enter');
+          if (li.classList.contains('exit')) li.remove();
+        });
+
+        return li;
+      }
+
+      function renderHistory() {
+        // keep DOM in sync with array (we only prepend/limit so a minimal approach)
+        ul.innerHTML = '';
+        randomHistory.forEach(item => {
+          const li = makeListItem(item);
+          ul.appendChild(li);
+        });
+      }
+
+      btn.addEventListener('click', ()=>{
+        const visible = Array.from(spellRows).filter(
+          (row): row is HTMLElement => row instanceof HTMLElement && row.style.display !== 'none'
+        );
+        if (!visible || visible.length === 0) return;
+        const pick = visible[Math.floor(Math.random()*visible.length)];
+        const id = pick.dataset.spellId;
+        let name = '';
+        const nameEl = pick.querySelector('.col-name');
+        if (nameEl) {
+          const raw = (nameEl.textContent || '').trim();
+          name = raw.replace(/\s*\[[^\]]+\]$/, '').trim();
+        }
+        if (!id) return;
+
+        // add to start of array
+        randomHistory.unshift({ id, name });
+        // limit to 5
+        if (randomHistory.length > 5) {
+          // trim array to 5
+          randomHistory.splice(5);
+        }
+
+        // render and animate
+        renderHistory();
+
+        // if more than 5 in DOM (shouldn't be), ensure trimming with exit class
+        const items = ul.querySelectorAll('li');
+        if (items.length > 5) {
+          const last = items[items.length - 1];
+          last.classList.add('exit');
+        }
+      });
+    })();
+
+    // Sorting for table headers
+    const table = document.querySelector('.spells-table');
+    const tbody = table ? table.querySelector('tbody') : null;
+    const headers = table ? table.querySelectorAll('th.sortable') : [];
+    let sortState = { key: null, dir: 1 };
+
+    function getCellValue(row, key) {
+      if (!(row instanceof HTMLElement)) return '';
+      switch (key) {
+        case 'name': return (row.querySelector('.col-name')?.textContent || '').trim();
+        case 'level': {
+          const lv = row.dataset.level;
+          return lv === 'cantrip' ? 0 : (parseInt(lv, 10) || 0);
+        }
+        case 'school': return (row.dataset.school || '').trim();
+        case 'castingTime': return (row.dataset.castingTime || '').trim();
+        case 'range': return (row.dataset.range || '').trim();
+        case 'concentration': return row.dataset.concentration ? 1 : 0;
+        case 'source': return (row.dataset.sourceBook || '').trim();
+        default: return '';
+      }
+    }
+
+    function compareRows(a, b, key) {
+      // Special handling for castingTime to avoid clustered groups
+      if (key === 'castingTime') {
+        const sa = (a instanceof HTMLElement ? (a.dataset.castingTime || '') : '').toLowerCase();
+        const sb = (b instanceof HTMLElement ? (b.dataset.castingTime || '') : '').toLowerCase();
+        const rank = (s) => {
+          if (!s) return 99;
+          if (s.includes('реакц')) return 0;
+          if (s.includes('бонус')) return 1;
+          if (s.includes('действ')) return 2;
+          return 3;
+        };
+        const ra = rank(sa), rb = rank(sb);
+        if (ra !== rb) return (ra - rb) * sortState.dir;
+        // tie-break: full casting text, then spell name
+        const cmp = String(sa).localeCompare(String(sb), 'ru');
+        if (cmp !== 0) return cmp * sortState.dir;
+        const na = (a instanceof HTMLElement ? (a.querySelector('.col-name')?.textContent || '') : '');
+        const nb = (b instanceof HTMLElement ? (b.querySelector('.col-name')?.textContent || '') : '');
+        return String(na).localeCompare(String(nb), 'ru') * sortState.dir;
+      }
+
+      const va = getCellValue(a, key);
+      const vb = getCellValue(b, key);
+      // numeric comparison when values represent numbers
+      const na = Number(va);
+      const nb = Number(vb);
+      if (!isNaN(na) && !isNaN(nb)) {
+        return (na - nb) * sortState.dir;
+      }
+      return String(va).localeCompare(String(vb), 'ru') * sortState.dir;
+    }
+
+    function sortBy(key) {
+      if (!tbody) return;
+      if (sortState.key === key) sortState.dir = -sortState.dir; else { sortState.key = key; sortState.dir = 1; }
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((a, b) => compareRows(a, b, key));
+      // update header classes
+      headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+      const activeHeader = Array.from(headers).find(h => h.dataset.sort === key);
+      if (activeHeader) activeHeader.classList.add(sortState.dir === 1 ? 'sort-asc' : 'sort-desc');
+      rows.forEach(r => tbody.appendChild(r));
+    }
+
+    headers.forEach(h => {
+      h.addEventListener('click', () => {
+        const key = h.dataset.sort;
+        if (!key) return;
+        sortBy(key);
+      });
+    });
+
+    // Click on card: show details + update URL
+    // handled by row click listeners bound later
+
+    // Handle back/forward navigation
+    window.addEventListener('popstate', () => {
+      const id = getIdFromUrl();
+      if (id) {
+        showSpellDetails(id);
+      } else {
+        clearDetails();
+      }
+    });
+
+    // On initial load: if URL contains id -> open it
+    // update filters/count on first load
+    filterSpells();
+
+    const initialId = getIdFromUrl();
+    if (initialId) {
+      showSpellDetails(initialId);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeSpells);
+
+  // Init item tooltip across spells page (load client module dynamically)
+  // Init item tooltip across spells page (load script and use window.ItemTooltip)
+  (function ensureItemTooltipAndInit() {
+    function ensureItemTooltip() {
+      return new Promise((resolve, reject) => {
+        if (window['ItemTooltip']) return resolve(window['ItemTooltip']);
+        if (document.querySelector('script[data-item-tooltip]')) {
+          const check = setInterval(() => {
+            if (window['ItemTooltip']) { clearInterval(check); resolve(window['ItemTooltip']); }
+          }, 50);
+          setTimeout(() => { clearInterval(check); reject(new Error('timeout loading itemTooltip')); }, 5000);
+          return;
+        }
+        const s = document.createElement('script');
+        s.src = '/js/itemTooltip.js';
+        s.async = true;
+        s.setAttribute('data-item-tooltip', '1');
+        s.onload = () => { resolve(window['ItemTooltip']); };
+        s.onerror = (e) => { reject(e); };
+        document.head.appendChild(s);
+      });
+    }
+
+    ensureItemTooltip().then(ItemTooltip => {
+      try {
+        const itemTooltipEl = document.createElement('div');
+        itemTooltipEl.id = 'item-tooltip';
+        itemTooltipEl.style.display = 'none';
+        itemTooltipEl.style.position = 'fixed';
+        itemTooltipEl.style.zIndex = '10000';
+        document.body.appendChild(itemTooltipEl);
+
+          const ItemCtorAny = /** @type {any} */ (ItemTooltip);
+          if (typeof ItemCtorAny === 'function') {
+            // @ts-ignore allow dynamic construction of client-side class
+            const itemTooltip = new ItemCtorAny();
+            if (itemTooltip && typeof itemTooltip.init === 'function') itemTooltip.init(itemTooltipEl);
+          }
+      } catch (e) {
+        console.error('item tooltip init failed on spells page', e);
+      }
+    }).catch(err => console.error('failed loading itemTooltip script', err));
+  })();
+
+  // Scroll-to-top button behavior
+  (function() {
+    const up = document.getElementById('scroll-to-top');
+    if (!up) return;
+    function onScroll() { up.classList.toggle('visible', window.scrollY > 300); }
+    window.addEventListener('scroll', onScroll);
+    up.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    // initial state
+    onScroll();
+  })();
+</script>
+
+<style>
+  .filter-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .checkbox-label.checked {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  /* Random spell widget */
+  #random-spell-widget {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 260px;
+    z-index: 10010;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  #random-spell-widget .spell-history {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    max-height: 260px;
+  }
+
+  /* Специфичный стиль для кнопки случайного заклинания */
+  #random-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
+  #random-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.16);
+    filter: brightness(1.1);
+  }
+
+  #random-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  }
+
+  #random-btn .filter-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 0.35rem;
+  }
+
+  #random-spell-widget #random-history {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    overflow-y: auto;
+    max-height: 220px;
+    width: 100%;
+  }
+
+  #random-spell-widget #random-history li {
+    width: 100%;
+  }
+
+  #random-spell-widget #random-history a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s ease;
+  }
+
+  #random-spell-widget #random-history a:hover {
+    background: var(--nav-hover-bg);
+    border-color: var(--primary);
+  }
+
+  /* history item animations */
+  .history-item {
+    opacity: 0;
+    transform: translateY(-8px);
+    will-change: transform, opacity;
+  }
+
+  .history-item.enter {
+    animation: fadeIn 0.28s ease-out forwards;
+  }
+
+  .history-item.exit {
+    animation: fadeOut 0.28s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-10px); }
+  }
+  .content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .spells-container {
+    display: grid;
+    grid-template-columns: 2.5fr 3fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: start;
+  }
+
+  .search-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+  }
+
+  .filter-button {
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-icon {
+    font-size: 1.2rem;
+  }
+
+  .filter-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .filter-popup.show {
+    display: block;
+  }
+
+  .filter-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    min-width: 520px;
+    max-width: 98%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Subclass specific styles */
+  .subclass-class {
+    display: block;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: var(--card-bg);
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .subclass-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .subclass-toggle::after {
+    content: '▾';
+    transition: transform .15s ease;
+    opacity: 0.8;
+    margin-left: 0.5rem;
+  }
+
+  .subclass-toggle.open::after {
+    transform: rotate(180deg);
+  }
+
+  .subclass-list {
+    display: none;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    box-shadow: none;
+  }
+
+  .subclass-list .checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    padding: 0.45rem 0.6rem;
+    border-radius: 0.35rem;
+    background: transparent;
+    border: 1px solid var(--card-border);
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    min-width: 120px;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+    accent-color: var(--primary);
+    margin-right: 0.5rem;
+    border-color: var(--primary);
+  }
+
+  .spells-grid {
+    display: block;
+    width: 100%;
+  }
+
+  .spells-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .spells-table thead {
+    background: var(--background);
+  }
+
+  .spells-table th,
+  .spells-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: middle;
+    font-size: 0.95rem;
+  }
+
+  .spells-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .spells-table tbody tr:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .spells-table .name-en {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 0.25rem;
+  }
+
+  /* School color badges */
+  .spells-table td.col-school {
+    white-space: nowrap;
+    background: transparent !important;
+    border-left: none !important;
+    padding-left: 0.5rem;
+  }
+
+  .school-label {
+    display: inline-block;
+    padding: 0.15rem 0.25rem;
+    font-weight: 600;
+    mix-blend-mode: normal !important;
+    -webkit-text-fill-color: currentColor !important;
+    color-adjust: exact !important;
+    forced-color-adjust: none !important;
+  }
+
+  .school-label.school-ограждение { color: #007c91 !important; }
+  .school-label.school-вызов { color: #c56a00 !important; }
+  .school-label.school-прорицание { color: #2e7d32 !important; }
+  .school-label.school-очарование { color: #b0124a !important; }
+  .school-label.school-воплощение { color: #6a1b9a !important; }
+  .school-label.school-иллюзия { color: #1565c0 !important; }
+  .school-label.school-некромантия { color: #4e342e !important; }
+  .school-label.school-преобразование { color: #f9a825 !important; }
+
+  /* Ensure inner text fill color remains readable when browser applies force-dark */
+  .school-label, .school-label * {
+    -webkit-text-fill-color: inherit !important;
+  }
+
+  .spells-table td.col-level,
+  .spells-table td.col-conc {
+    text-align: center;
+    width: 8%;
+    white-space: nowrap;
+  }
+
+  .spells-table td.col-source {
+    width: 14%;
+    white-space: nowrap;
+  }
+
+  .spell-details {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    z-index: 20;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .spell-description-container {
+    margin: 1.5rem 0;
+  }
+
+  .spell-description {
+    line-height: 1.6;
+  }
+
+  .spell-sources {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .spell-sources h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .spell-sources p {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--primary);
+  }
+
+  .spell-sources p:last-child {
+    margin-bottom: 0;
+  }
+
+  .spell-description :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .spell-description :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .spell-description :global(ul),
+  .spell-description :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .spell-description :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .spell-description :global(table) {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+  }
+
+  .spell-description :global(th),
+  .spell-description :global(td) {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  .spell-description :global(th) {
+    background: var(--card-bg);
+  }
+
+  /* Scroll-to-top button */
+  .scroll-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1.25rem;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .18s ease, transform .18s ease;
+    z-index: 10002;
+  }
+
+  .scroll-to-top.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Mobile / responsive tweaks */
+  @media (max-width: 1024px) {
+    .spells-container {
+      grid-template-columns: 1fr;
+    }
+    .spell-details {
+      position: static;
+      top: auto;
+      align-self: stretch;
+      max-height: none;
+      margin-top: 1rem;
+    }
+    .spells-container { gap: 1rem; }
+  }
+
+  @media (max-width: 768px) {
+    .search-controls { flex-direction: column; align-items: stretch; }
+    .filter-button { width: 100%; justify-content: center; }
+    .filter-content { min-width: 92%; max-width: 96%; padding: 1rem; }
+
+    .spells-table th,
+    .spells-table td { padding: 0.45rem 0.5rem; font-size: 0.92rem; }
+    .spells-table .name-en { display: none; }
+
+    /* Hide less-critical columns on small screens to reduce horizontal width */
+    .spells-table th[data-sort="source"], .spells-table td.col-source,
+    .spells-table th[data-sort="range"], .spells-table td.col-range {
+      display: none;
+    }
+
+    .spells-grid { overflow-x: auto; }
+
+    .checkbox-group { gap: 0.5rem; }
+    .checkbox-label { min-width: 0; padding: 0.4rem 0.6rem; font-size: 0.9rem; }
+  }
+
+  @media (max-width: 480px) {
+    .content { padding: 0 0.75rem; }
+    .spells-table th, .spells-table td { padding: 0.35rem 0.45rem; font-size: 0.88rem; }
+    .filter-content { padding: 0.75rem; }
+    .filter-header h3 { font-size: 1rem; }
+    .spell-details { padding: 1rem; }
+  }
+</style>

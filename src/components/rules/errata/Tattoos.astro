@@ -1,0 +1,67 @@
+---
+interface Props {}
+---
+
+<div class="errata-section">
+  <h2>Татуировки</h2>
+  <p>Магические татуировки заклинаний делятся на 4 уровня редкости: обычный, необычный, редкий и очень редкий.</p>
+
+  <div class="tattoo-limits">
+    <h3>Ограничения количества</h3>
+    <ul>
+      <li>Обычный - 16 татуировок</li>
+      <li>Необычный - 9 татуировок</li>
+      <li>Редкий - 4 татуировки</li>
+      <li>Очень редкий - 4 татуировки</li>
+    </ul>
+  </div>
+
+  <div class="tattoo-areas">
+    <h3>Занимаемая площадь</h3>
+    <ul>
+      <li><strong>Обычный:</strong> кисти, ступни (считаются как 1/4), 1/4 конечности</li>
+      <li><strong>Необычный:</strong> 1/2 конечности, голова</li>
+      <li><strong>Редкий:</strong> целая конечность</li>
+      <li><strong>Очень редкий:</strong> 2 конечности, грудь, спина</li>
+    </ul>
+  </div>
+
+  <div class="unique-spots">
+    <h3>Уникальные места</h3>
+    <p>Не влияют на общую вместимость:</p>
+    <ul>
+      <li>Необычный - 1 (голова)</li>
+      <li>Очень редкий - 2 (грудь, спина)</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .errata-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .tattoo-limits, .tattoo-areas, .unique-spots {
+    margin-top: 1.5rem;
+  }
+</style>

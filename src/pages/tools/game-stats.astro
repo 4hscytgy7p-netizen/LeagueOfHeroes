@@ -1,0 +1,526 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { analyzeGameStats } from '../../utils/gameStats';
+
+const data = analyzeGameStats();
+const { stats, parties } = data;
+---
+
+<Layout title="Статистика игр">
+  <div class="content">
+    <h1>Статистика игр</h1>
+
+    <section class="summary-panel">
+      <h2>Общая аналитика</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <span class="summary-value">{stats.totalParties}</span>
+          <span class="summary-label">Проведено партий</span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-value">{stats.uniqueGMs.length}</span>
+          <span class="summary-label">Мастеров</span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-value">{stats.uniquePlayers.length}</span>
+          <span class="summary-label">Игроков</span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-value">{stats.averagePlayersPerParty}</span>
+          <span class="summary-label">Среднее игроков за партию</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <div class="chart-controls">
+        <div class="control-block">
+          <label for="chart-type">Тип графика</label>
+          <select id="chart-type">
+            <option value="bar">Гистограмма / столбчатая диаграмма</option>
+            <option value="pie">Круговая диаграмма</option>
+          </select>
+        </div>
+
+        <div class="control-block">
+          <label for="chart-metric">Показать</label>
+          <select id="chart-metric"></select>
+        </div>
+
+        <div class="control-block">
+          <label for="filter-gm">Мастер</label>
+          <select id="filter-gm">
+            <option value="all">Все</option>
+            {stats.uniqueGMs.map((gm) => (
+              <option value={gm}>{gm}</option>
+            ))}
+          </select>
+        </div>
+
+        <div class="control-block">
+          <label for="filter-player">Игрок</label>
+          <select id="filter-player">
+            <option value="all">Все</option>
+            {stats.uniquePlayers.map((player) => (
+              <option value={player}>{player}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-title-row">
+          <h2 id="chart-title">График партий</h2>
+          <p id="chart-description">График рассчитывается на основе фильтра и выбранных параметров.</p>
+        </div>
+        <div id="chart-container" class="chart-container"></div>
+      </div>
+    </section>
+
+    <section class="top-section">
+      <div class="top-block">
+        <h2>Топ игроков по участию</h2>
+        <ol>
+          {stats.topPlayersByParticipation.map((entry) => (
+            <li>{entry.name}: {entry.games} партий</li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="top-block">
+        <h2>Топ игроков по суммарному ОП</h2>
+        <ol>
+          {stats.topPlayersByProgress.map((entry) => (
+            <li>{entry.name}: {entry.totalProgress} ОП</li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="top-section">
+      <div class="top-block">
+        <h2>Топ мастеров по количеству партий</h2>
+        <ol>
+          {stats.topGMsByGames.map((entry) => (
+            <li>{entry.name}: {entry.games} партий</li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="top-block">
+        <h2>Топ мастеров по суммарному ОП</h2>
+        <ol>
+          {stats.topGMsByProgress.map((entry) => (
+            <li>{entry.name}: {entry.totalProgress} ОП</li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="pairs-section">
+      <h2>Топ пар мастер / игрок</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Мастер</th>
+            <th>Игрок</th>
+            <th>Партий вместе</th>
+            <th>Суммарный ОП</th>
+          </tr>
+        </thead>
+        <tbody>
+          {stats.topPairs.map((pair) => (
+            <tr>
+              <td>{pair.gm}</td>
+              <td>{pair.player}</td>
+              <td>{pair.games}</td>
+              <td>{pair.totalProgress}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="table-section">
+      <h2>Партии</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Мастер</th>
+              <th>ОП мастера</th>
+              <th>Игроки</th>
+              <th>Их ОП</th>
+              <th>Всего игроков</th>
+              <th>Всего ОП</th>
+            </tr>
+          </thead>
+          <tbody>
+            {parties.map((party) => (
+              <tr>
+                <td>{party.id}</td>
+                <td>{party.gm}</td>
+                <td>{party.gmProgress}</td>
+                <td>{party.players.map((p) => p.name).join(', ')}</td>
+                <td>{party.players.map((p) => p.progress).join(', ')}</td>
+                <td>{party.playerCount}</td>
+                <td>{party.totalProgress}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<div id="game-stats-data" data-game-stats={JSON.stringify(data)} style="display:none;"></div>
+
+<script>
+  const rawGameStats = document.getElementById('game-stats-data')?.dataset.gameStats ?? '{}';
+  const gameStats = JSON.parse(rawGameStats);
+
+  const chartOptions = {
+    bar: [
+      { value: 'players_participation', label: 'Игроки по участию' },
+      { value: 'players_progress', label: 'Игроки по суммарному ОП' },
+      { value: 'gms_games', label: 'Мастера по количеству партий' },
+      { value: 'gms_progress', label: 'Мастера по суммарному ОП' }
+    ],
+    pie: [
+      { value: 'gm_party_share', label: 'Доля партий по мастерам' },
+      { value: 'player_participation_share', label: 'Доля участия игроков' },
+      { value: 'player_progress_share', label: 'Доля ОП игроков' }
+    ]
+  };
+
+  const chartTypeSelect = document.getElementById('chart-type') as HTMLSelectElement;
+  const chartMetricSelect = document.getElementById('chart-metric') as HTMLSelectElement;
+  const filterGmSelect = document.getElementById('filter-gm') as HTMLSelectElement;
+  const filterPlayerSelect = document.getElementById('filter-player') as HTMLSelectElement;
+  const chartContainer = document.getElementById('chart-container') as HTMLElement;
+  const chartTitle = document.getElementById('chart-title') as HTMLElement;
+  const chartDescription = document.getElementById('chart-description') as HTMLElement;
+  const partyTableBody = document.querySelector('.table-section tbody');
+
+  function getFilteredParties() {
+    const gmFilter = filterGmSelect.value;
+    const playerFilter = filterPlayerSelect.value;
+
+    return gameStats.parties.filter((party) => {
+      const gmMatches = gmFilter === 'all' || party.gm === gmFilter;
+      const playerMatches = playerFilter === 'all' || party.players.some((player) => player.name === playerFilter);
+      return gmMatches && playerMatches;
+    });
+  }
+
+  function buildAggregates(parties) {
+    const gmMap = new Map();
+    const playerMap = new Map();
+
+    parties.forEach((party) => {
+      const gmEntry = gmMap.get(party.gm) ?? { label: party.gm, value: 0 };
+      gmEntry.value += 1;
+      gmMap.set(party.gm, gmEntry);
+
+      party.players.forEach((player) => {
+        const entry = playerMap.get(player.name) ?? { label: player.name, games: 0, totalProgress: 0 };
+        entry.games += 1;
+        entry.totalProgress += player.progress;
+        playerMap.set(player.name, entry);
+      });
+    });
+
+    return {
+      gms: Array.from(gmMap.values()),
+      players: Array.from(playerMap.values())
+    };
+  }
+
+  function buildChartData(parties, metric) {
+    const aggregates = buildAggregates(parties);
+
+    if (metric === 'players_participation') {
+      return aggregates.players
+        .map((item) => ({ label: item.label, value: item.games }))
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 12);
+    }
+
+    if (metric === 'players_progress') {
+      return aggregates.players
+        .map((item) => ({ label: item.label, value: item.totalProgress }))
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 12);
+    }
+
+    if (metric === 'gms_games') {
+      return aggregates.gms
+        .map((item) => ({ label: item.label, value: item.value }))
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 12);
+    }
+
+    if (metric === 'gms_progress') {
+      const gmProgressMap = new Map();
+      parties.forEach((party) => {
+        const entry = gmProgressMap.get(party.gm) ?? { label: party.gm, value: 0 };
+        entry.value += party.gmProgress;
+        gmProgressMap.set(party.gm, entry);
+      });
+      return Array.from(gmProgressMap.values())
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 12);
+    }
+
+    if (metric === 'gm_party_share') {
+      return aggregates.gms
+        .map((item) => ({ label: item.label, value: item.value }))
+        .sort((a, b) => b.value - a.value);
+    }
+
+    if (metric === 'player_participation_share') {
+      return aggregates.players
+        .map((item) => ({ label: item.label, value: item.games }))
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 12);
+    }
+
+    if (metric === 'player_progress_share') {
+      return aggregates.players
+        .map((item) => ({ label: item.label, value: item.totalProgress }))
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 12);
+    }
+
+    return [];
+  }
+
+  function renderBars(data) {
+    if (data.length === 0) {
+      chartContainer.innerHTML = '<div class="chart-empty">Нет данных для текущего фильтра.</div>';
+      return;
+    }
+
+    const maxValue = Math.max(...data.map((item) => item.value), 1);
+    const rowsHtml = data.map((item) => {
+      const width = Math.round((item.value / maxValue) * 100);
+      return `<div class="chart-bar-row">
+        <span class="chart-bar-label">${item.label}</span>
+        <span class="chart-bar-value">${item.value}</span>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width:${width}%"></div></div>
+      </div>`;
+    }).join('');
+
+    chartContainer.innerHTML = `<div class="chart-bar-list">${rowsHtml}</div>`;
+  }
+
+  function describeArc(x, y, radius, startAngle, endAngle) {
+    const start = polarToCartesian(x, y, radius, endAngle);
+    const end = polarToCartesian(x, y, radius, startAngle);
+    const largeArcFlag = endAngle - startAngle <= Math.PI ? '0' : '1';
+
+    return [
+      'M', start.x, start.y,
+      'A', radius, radius, 0, largeArcFlag, 0, end.x, end.y,
+      'L', x, y,
+      'Z'
+    ].join(' ');
+  }
+
+  function polarToCartesian(centerX, centerY, radius, angleInRadians) {
+    return {
+      x: centerX + radius * Math.cos(angleInRadians),
+      y: centerY + radius * Math.sin(angleInRadians)
+    };
+  }
+
+  function renderPie(data) {
+    if (data.length === 0) {
+      chartContainer.innerHTML = '<div class="chart-empty">Нет данных для текущего фильтра.</div>';
+      return;
+    }
+
+    const total = data.reduce((sum, item) => sum + item.value, 0);
+    if (total === 0) {
+      chartContainer.innerHTML = '<div class="chart-empty">Нет числовых данных для текущего фильтра.</div>';
+      return;
+    }
+
+    const colors = ['#5E8BFF', '#FF8B5E', '#5EC1FF', '#FF5ED0', '#9D5EFF', '#5EFFA8', '#FFDE5E', '#5E55FF'];
+    let startAngle = -Math.PI / 2;
+    const radius = 120;
+    const center = 150;
+
+    const slices = data.map((item, index) => {
+      const sliceAngle = (item.value / total) * Math.PI * 2;
+      const pathData = describeArc(center, center, radius, startAngle, startAngle + sliceAngle);
+      const color = colors[index % colors.length];
+      const percentage = ((item.value / total) * 100).toFixed(1);
+      const slice = `<path d="${pathData}" fill="${color}" stroke="var(--card-bg)" stroke-width="1" />`;
+      const label = `<div class="pie-legend-item"><span class="pie-legend-color" style="background:${color}"></span><span>${item.label}: ${percentage}%</span></div>`;
+      startAngle += sliceAngle;
+      return { slice, label };
+    });
+
+    chartContainer.innerHTML = `
+      <div class="pie-chart-row">
+        <svg width="300" height="300" viewBox="0 0 300 300">${slices.map((item) => item.slice).join('')}</svg>
+        <div class="pie-legend">${slices.map((item) => item.label).join('')}</div>
+      </div>
+    `;
+  }
+
+  function updateChart() {
+    const filteredParties = getFilteredParties();
+    const metric = chartMetricSelect.value;
+    const chartType = chartTypeSelect.value;
+    const chartData = buildChartData(filteredParties, metric);
+
+    chartTitle.textContent = chartType === 'bar' ? 'Столбчатая диаграмма' : 'Круговая диаграмма';
+    chartDescription.textContent = `Отображено ${filteredParties.length} партий с текущими фильтрами.`;
+
+    if (chartType === 'bar') {
+      renderBars(chartData);
+    } else {
+      renderPie(chartData);
+    }
+
+    renderTable(filteredParties);
+  }
+
+  function renderMetricOptions() {
+    const type = chartTypeSelect.value;
+    const options = chartOptions[type];
+    chartMetricSelect.innerHTML = options.map((option) => `<option value="${option.value}">${option.label}</option>`).join('');
+  }
+
+  function renderTable(parties) {
+    if (!partyTableBody) return;
+    partyTableBody.innerHTML = parties.map((party) => `
+      <tr>
+        <td>${party.id}</td>
+        <td>${party.gm}</td>
+        <td>${party.gmProgress}</td>
+        <td>${party.players.map((p) => p.name).join(', ')}</td>
+        <td>${party.players.map((p) => p.progress).join(', ')}</td>
+        <td>${party.playerCount}</td>
+        <td>${party.totalProgress}</td>
+      </tr>
+    `).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMetricOptions();
+    updateChart();
+
+    chartTypeSelect.addEventListener('change', () => {
+      renderMetricOptions();
+      updateChart();
+    });
+
+    chartMetricSelect.addEventListener('change', updateChart);
+    filterGmSelect.addEventListener('change', updateChart);
+    filterPlayerSelect.addEventListener('change', updateChart);
+  });
+</script>
+
+<style>
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .summary-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+  }
+
+  .summary-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .top-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .top-block {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  .top-block ol {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .pairs-section,
+  .table-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+  }
+
+  .pairs-section table,
+  .table-section table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .pairs-section th,
+  .pairs-section td,
+  .table-section th,
+  .table-section td {
+    border: 1px solid var(--card-border);
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  .table-wrapper {
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+
+  .note-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  @media (max-width: 900px) {
+    .summary-grid,
+    .top-section {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

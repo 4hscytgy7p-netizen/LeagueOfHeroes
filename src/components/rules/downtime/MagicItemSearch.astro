@@ -1,0 +1,270 @@
+---
+interface Props {}
+---
+
+<div class="activity-card">
+  <div class="activity-header">
+    <h3>Поиск магических предметов</h3>
+    <p class="intro">Чтобы приобрести магический предмет, нужно найти людей, желающих его продать, и связаться с ними, а это в свою очередь требует времени и денег. И даже в этом случае нет гарантии, что у продавца есть нужный персонажу предмет.</p>
+    <div class="basic-info">
+      <div class="info-item">
+        <span class="label">Продолжительность:</span>
+        <span>5 дней простоя</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Базовая стоимость:</span>
+        <span>50 зм + проживание</span>
+      </div>
+    </div>
+  </div>
+
+  <details class="activity-details">
+    <summary>Подробная информация</summary>
+    <div class="details-content">
+      <section class="search-process">
+        <h4>Процесс поиска</h4>
+        <p>Персонаж тратит 5 дней простоя с учётом трат на проживание и 50 зм на расходы, после чего совершает проверку поиска торговца броском: Интеллект (Расследование) или Харизма (Убеждение).</p>
+        <div class="search-rules">
+          <h4>Правила поиска:</h4>
+          <ul>
+            <li>Расходниками считаются: свитки, зелья и прочие подобные предметы; они имеют половину стоимости от своей редкости</li>
+            <li>При покупке нескольких одинаковых расходных предметов достаточно одного поиска торговца. При такой закупке, от одного торговца возможно покупать только одинаковые свитки заклинаний</li>
+            <li>Для разных видов предметов требуются раздельные броски поиска</li>
+          </ul>
+        </div>
+        <section class="additional-rules">
+          <h4>Дополнительные правила:</h4>
+          <ul>
+            <li>Предметы с зарядами не считаются расходными</li>
+            <li>Стоимость свитков заклинаний равна двойной стоимости написания свитка с учётом материального компонента, если расходуется</li>
+          </ul>
+        </section>
+        <section class="additional-rules">
+        <h4>Обычные зелья лечения и свитки заклинаний</h4>
+        <p>При покупке этих магических предметов не требуется совершать активность <strong>Поиск магических предметов</strong>, они покупаются за фиксированную цену и не требуют трат ДП.</p>
+        <table>
+          <tbody>
+            <tr><td><a href="/magic-items/potions-of-healing">Зелье лечения</a><td>50 зм</td></tr>
+            <tr><td><a href="/magic-items/spell-scroll-cantrip">Свиток заклинания (заговор)</a><td>30 зм</td></tr>
+            <tr><td><a href="/magic-items/spell-scroll-1-level">Свиток заклинания (1 уровень)</a><td>50 зм</td></tr>
+          </tbody>
+        </table>
+      </section>
+        <div class="rules-section">
+          <h4>Сл поиска</h4>
+          <div class="activity-search">
+          <table>
+            <thead>
+              <tr>
+                <th>Редкость</th>
+                <th>Сл броска</th>
+                <th>Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Обычный</td><td>10</td><td>70 зм</td></tr>
+              <tr><td>Необычный</td><td>15</td><td>600 зм</td></tr>
+              <tr><td>Редкий</td><td>20</td><td>20000 зм</td></tr>
+              <tr><td>Очень редкий</td><td>25</td><td>50000 зм</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </section>
+
+      <p>После покупки есть 15% шанс на осложнение (бросок d100, 1-15)</p>
+
+      <details class="activity-details">
+        <summary class="dets">Осложнения (d12)</summary>
+        <section class="complications">
+        <div class="complications-table">
+          <table>
+            <tbody>
+            <tr><td>1</td><td>Предмет - подделка. Персонаж вместо искомого предмета получает немагический аналог, даже если он уже есть при поиске.</td></tr>
+            <tr><td>2</td><td>Предмет украден.</td></tr>
+            <tr><td>3</td><td>Предмет проклят. Вам требуется обратится к Энтро, для помощи с этим проклятием. *</td></tr>
+            <tr><td>4</td><td>Первоначальный владелец готов убить за возврат. Вам требуется затаится, из-за чего вы не можете использовать эту активность до начала следующего месяца Лиги Героев. Если у вас есть Бастион - активируется событие Атака.</td></tr>
+            <tr><td>5</td><td>Предмет связан с тёмным пророчеством. Существа определенного вида (люди, эльфы и т.д.) относятся к вам с подозрением думая, что вы тот самый избранный, из-за которого начнется апокалипсис. Взаимодействия с этим видом на следующем задании будут проблематичные: вы получаете штраф в размере вашему бонуса мастерства на все проверки Харизмы.</td></tr>
+            <tr><td>6</td><td>Продавец убит, сделка аннулирована. Возврат денежных средств за покупку.</td></tr>
+            <tr><td>7</td><td>Продавец — дьявол с особой сделкой *</td></tr>
+            <tr><td>8</td><td>Предмет — ключ к злой сущности, из-за чего этот предмет у вас конфискует Энтро, возвращая вам 75% от стоимости покупки предмета.</td></tr>
+            <tr><td>9</td><td>Перекупщик. Вы должны доплатить 50% стоимости от покупки предмета, иначе вы теряете потраченные деньги и не получаете искомый предмет.</td></tr>
+            <tr><td>10</td><td>Предмет — порабощённое существо. После того, как вы приобретаете искомый предмет, это существо высвобождается и нападает на вас. Следующую игру вы начинаете с 1 уровнем истощения и с половиной костей хитов, с округлением вниз.</td></tr>
+            <tr><td>11</td><td>Предмет связан с культом. Вы, узнав об этом, залегаете на дно. Вы тратите дополнительно 10 ДП и 25 зм.</td></tr>
+            <tr><td>12</td><td>Слухи о связи с злыми силами. Вся общественность, силы фракций и каждый неравнодушный выдаст вас при первой возможности. На следующие 30 ДП, которые вы проводите за активностями простоя, при активности Поиск магических предметов вы получаете Помеху ко всем проверкам, а также штраф в размере двойного бонуса мастерства.</td></tr>
+            </tbody>
+          </table>
+        <p class="note">* - во всех активностях простоя, где есть требуется или специальное задание, требуется содействие Мастера Лиги, на следующей игре которого играет персонаж.</p>
+        </details>
+        <details class="activity-details">
+          <summary class="dets">Влияние стилей проживания</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>Стиль</th>
+                <th>Стоимость/день</th>
+                <th>Эффект</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Никудышное</td>
+                <td>-</td>
+                <td>Вы совершаете бросок без бонуса мастерства. Шанс на осложнение увеличивается до 35%</td>
+            </tr>
+            <tr>
+                <td>Бедное</td>
+                <td>1 см</td>
+                <td>Шанс на осложнение увеличивается до 30%</td>
+            </tr>
+            <tr>
+                <td>Скромное</td>
+                <td>1 зм</td>
+                <td>Без эффектов</td>
+            </tr>
+            <tr>
+                <td>Богатое</td>
+                <td>5 зм</td>
+                <td>+ 1 к броску</td>
+            </tr>
+            <tr>
+                <td>Аристократическое</td>
+                <td>10+ зм</td>
+                <td>+ 3 к броску</td>
+            </tr>
+            </tbody>
+          </table>
+        </details>
+        </div>
+      </section>
+    </div>
+  </details>
+</div>
+
+<style>
+  .activity-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .activity-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .basic-info {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .activity-search {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .dets{
+    color: var(--primary)
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .activity-details {
+    border-top: 1px solid var(--card-border);
+  }
+
+  summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  summary:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .details-content {
+    padding: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  .complications-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .complications-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .complications-table td:first-child {
+    width: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

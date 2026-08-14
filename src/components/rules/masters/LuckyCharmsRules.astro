@@ -1,0 +1,172 @@
+---
+// Благословения от Счастливых билетов и Монет судьбы
+---
+
+<div class="rules-section">
+  <h3>Благословения от Счастливых билетов</h3>
+
+  <div class="rule-block">
+    <p><strong>Таблица содержит 55 вариантов чармов:</strong></p>
+    <ul>
+      <li>Charm of Agelessness</li>
+      <li>Charm of Air Bubbles</li>
+      <li>Charm of Heroism</li>
+      <li>Charm of the Fates</li>
+      <li>Charm of Vitality и др.</li>
+    </ul>
+  </div>
+
+  <h4>Особые случаи:</h4>
+  
+  <div class="special-cases">
+    <div class="case">
+      <strong>Charm of Many Things</strong> - бросок по полной колоде (1d22)
+    </div>
+    <div class="case">
+      <strong>Charm of the Slayer</strong> - 1d4:
+      <ul>
+        <li>1-2 = Dragon Slayer</li>
+        <li>3-4 = Giant Slayer</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Благословения от Монет судьбы</h3>
+
+  <h4>Для добрых и нейтральных</h4>
+
+  <p><strong>13 вариантов чармов гильдий Равники:</strong></p>
+
+  <div class="charms-list">
+    <div class="charm-item">Azorius Charm</div>
+    <div class="charm-item">Boros Charm</div>
+    <div class="charm-item">Dimir Charm</div>
+    <div class="charm-item">Golgari Charm</div>
+    <div class="charm-item">Gruul Charm</div>
+    <div class="charm-item">Izzet Charm</div>
+    <div class="charm-item">Joho's Charm</div>
+    <div class="charm-item">Orzhov Charm</div>
+    <div class="charm-item">Rakdos Charm</div>
+    <div class="charm-item">Selesnya Charm</div>
+    <div class="charm-item">Simic Charm</div>
+    <div class="charm-item">Strawbundle's Charm</div>
+    <div class="charm-item">Vlagomir's Spark</div>
+  </div>
+
+  <h4>Для злых и нейтральных</h4>
+
+  <p><strong>16 тёмных даров:</strong></p>
+
+  <div class="gifts-list">
+    <div class="gift-item">Dark Gift of Dahlver-Nar</div>
+    <div class="gift-item">Dark Gift of Delban</div>
+    <div class="gift-item">Dark Gift of Drizlash</div>
+    <div class="gift-item">Dark Gift of Fekre</div>
+    <div class="gift-item">Dark Gift of Great Taar Haak</div>
+    <div class="gift-item">Dark Gift of Khirad</div>
+    <div class="gift-item">Dark Gift of Norganas</div>
+    <div class="gift-item">Dark Gift of Savnok</div>
+    <div class="gift-item">Dark Gift of Seriach</div>
+    <div class="gift-item">Dark Gift of Shami-Amourae</div>
+    <div class="gift-item">Dark Gift of Sykane</div>
+    <div class="gift-item">Dark Gift of Tarakamedes</div>
+    <div class="gift-item">Dark Gift of Vaund</div>
+    <div class="gift-item">Dark Gift of Yog</div>
+    <div class="gift-item">Dark Gift of Yrrga</div>
+    <div class="gift-item">Dark Gift of Zrin-Hala</div>
+  </div>
+
+  <div class="rule-block">
+    <p><strong>Для нейтральных существ доступны все 29 вариантов.</strong></p>
+  </div>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .rule-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+
+  .special-cases {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+
+  .case {
+    margin-bottom: 1rem;
+  }
+
+  .case:last-child {
+    margin-bottom: 0;
+  }
+
+  .case ul {
+    margin-top: 0.5rem;
+  }
+
+  .charms-list,
+  .gifts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .charm-item,
+  .gift-item {
+    background: var(--bg-primary);
+    padding: 0.75rem;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .gift-item {
+    border-left-color: var(--warning-color);
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+interface Props {
+  level: number;
+  name: string;
+  description: string;
+}
+
+const { level, name, description } = Astro.props;
+---
+
+<div class="feature-card">
+  <div class="feature-header">
+    <span class="feature-level">{level}-й уровень</span>
+    <h3 class="feature-name">{name}</h3>
+  </div>
+  <p class="feature-description">{description}</p>
+</div>
+
+<style>
+  .feature-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1rem;
+  }
+
+  .feature-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-level {
+    font-size: 0.875rem;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  .feature-name {
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .feature-description {
+    line-height: 1.6;
+  }
+</style>

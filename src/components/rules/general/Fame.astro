@@ -1,0 +1,60 @@
+---
+import RankProgression from './fame/RankProgression.astro';
+import RankBonuses from './fame/RankBonuses.astro';
+import RankVisuals from './fame/RankVisuals.astro';
+
+interface Props {}
+---
+
+<section class="rules-section">
+  <h2>Слава и ранги</h2>
+  <div class="content">
+    <div class="intro">
+      <p>Слава отражает известность и репутацию вашего персонажа, приобретенные за время приключений. Ваш ранг определяет доступные бонусы и привилегии.</p>
+    
+
+  <div class="rank-rules">
+    <h3>Правила бонусов славы:</h3>
+    <ul>
+      <li>Нельзя брать больше одного предмета из каждой категории</li>
+      <li>Бонусы нельзя продавать</li>
+      <li>Бонусы невозможно применить никак иначе, кроме как их прямого потребления</li>
+      <li>Неиспользованные бонусы исчезают после приключения</li>
+      <li>Бонусы доступны, только если сессия начинается в таверне Лиги Героев</li>
+      <li>Необходимо заявить о взятии бонусов славы</li>
+    </ul>
+  </div></div>
+
+    <!--<RankProgression /> -->
+    <RankBonuses />
+    <RankVisuals />
+  </div>
+</section>
+
+<style>
+  .rules-section {
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .intro {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

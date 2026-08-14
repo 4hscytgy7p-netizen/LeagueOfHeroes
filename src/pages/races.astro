@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { speciesData } from '../data/species/index';
+import SpeciesCard from '../components/species/SpeciesCard.astro';
+
+const sourceBooks = [...new Set(speciesData.map(species => species.sourceBook))].sort();
+
+---
+
+<Layout title="Виды">
+  <div class="content">
+    <h1>Виды</h1>
+    <div class="search-container">
+      <div class="search-controls">
+        <input 
+          type="text" 
+          id="species-search" 
+          placeholder="Поиск видов..."
+          class="search-input"
+        />
+        <select id="source-filter" class="source-filter">
+          <option value="">Все источники</option>
+          {sourceBooks.map(book => (
+            <option value={book}>{book}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div class="species-grid">
+      {speciesData.map(species => (
+        <SpeciesCard 
+          name={species.name}
+          nameEn={species.nameEn}
+          portrait={species.portrait}
+          sourceBook={species.sourceBook}
+          id={species.id}
+        />
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<script>
+
+  function initSearch() {
+    /** @type {HTMLInputElement|null} */
+    const searchInput = document.getElementById('species-search') as HTMLInputElement | null;
+    /** @type {HTMLSelectElement|null} */
+    const sourceFilter = document.getElementById('source-filter') as HTMLSelectElement | null;
+    const cards = document.querySelectorAll('.species-card');
+    
+    function filterCards() {
+      const searchTerm = searchInput?.value.toLowerCase() || '';
+      const selectedSource = sourceFilter?.value || '';
+      
+      cards.forEach(card => {
+        const name = card.querySelector('h2')?.textContent?.toLowerCase() || '';
+        const source = card.querySelector('.source')?.textContent || '';
+        
+        const matchesSearch = name.includes(searchTerm);
+        const matchesSource = !selectedSource || source.includes(selectedSource);
+        
+        const isVisible = matchesSearch && matchesSource;
+        if (card instanceof HTMLElement) card.style.display = isVisible ? 'block' : 'none';
+      });
+    }
+
+    searchInput?.addEventListener('input', filterCards);
+    sourceFilter?.addEventListener('change', filterCards);
+  }
+
+  document.addEventListener('DOMContentLoaded', initSearch);
+
+  // Init item tooltip across races page
+  (function ensureItemTooltipAndInit() {
+    function ensureItemTooltip() {
+      return new Promise<NonNullable<Window['ItemTooltip']>>((resolve, reject) => {
+        if (window.ItemTooltip) return resolve(window.ItemTooltip);
+        if (document.querySelector('script[data-item-tooltip]')) {
+          const check = setInterval(() => {
+            if (window.ItemTooltip) { clearInterval(check); resolve(window.ItemTooltip); }
+          }, 50);
+          setTimeout(() => { clearInterval(check); reject(new Error('timeout loading itemTooltip')); }, 5000);
+          return;
+        }
+        const s = document.createElement('script');
+        s.src = '/js/itemTooltip.js';
+        s.async = true;
+        s.setAttribute('data-item-tooltip', '1');
+        s.onload = () => {
+          if (window.ItemTooltip) resolve(window.ItemTooltip);
+          else reject(new Error('ItemTooltip не зарегистрирован после загрузки скрипта'));
+        };
+        s.onerror = (e) => { reject(e); };
+        document.head.appendChild(s);
+      });
+    }
+
+    ensureItemTooltip().then(ItemTooltip => {
+      try {
+        const ItemCtor = ItemTooltip;
+        const itemTooltipEl = document.createElement('div');
+        itemTooltipEl.id = 'item-tooltip';
+        itemTooltipEl.style.display = 'none';
+        itemTooltipEl.style.position = 'fixed';
+        itemTooltipEl.style.zIndex = '10000';
+        document.body.appendChild(itemTooltipEl);
+
+        const itemTooltip = new ItemCtor();
+        itemTooltip.init(itemTooltipEl);
+      } catch (e) {
+        console.error('item tooltip init failed on races page', e);
+      }
+    }).catch(e => {
+      console.error('item tooltip init failed on races page', e);
+    });
+  })();
+</script>
+
+<style>
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .search-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .search-container {
+    margin: 2rem 0;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-dark);
+  }
+
+  .source-filter {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .source-filter:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+</style>

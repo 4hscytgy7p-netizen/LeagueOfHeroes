@@ -1,0 +1,244 @@
+---
+interface Props {}
+---
+
+<div class="activity-card">
+  <div class="activity-header">
+    <h3>Азартные игры</h3>
+    <p class="intro">Азартные игры — отличный способ заработать состояние, или же быстро его спустить.</p>
+    <div class="basic-info">
+      <div class="info-item">
+        <span class="label">Продолжительность:</span>
+        <span>5 дней простоя</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Базовая стоимость:</span>
+        <span>Проживание</span>
+      </div>
+    </div>
+  </div>
+
+  <details class="activity-details">
+    <summary>Подробная информация</summary>
+    <div class="details-content">
+      <section class="search-process">
+        <h4>Азартные игры</h4>
+        <p>Персонаж тратит 5 дней простоя с учётом трат на проживание, делая денежную ставку размере от 10 до 1000 зм.</p>
+        <p>Персонаж совершает три броска 5 + 2к10: это задаются сложности для последующих проверок. После этого персонаж делает последовательные броски, сложность которых определялась ранее: </p>
+        <ul>
+          <li>Мудрость (Проницательность)</li>
+          <li>Харизма (Обман)</li>
+          <li>Харизма (Запугивание)</li>
+        </ul> 
+        </p>
+        <p>При владении игровым набором персонаж может заменить одну из этих проверок, используя бросок этого набора.</p>
+        <div class="rules-section">
+          <h4>Результаты турнира</h4>
+          <div class="activity-search">
+          <table>
+            <thead>
+              <tr>
+                <th>Результаты игр</th>
+                <th>Исход</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>0</td><td>Потеря ставки и долг в размере ставки</td></tr>
+              <tr><td>1</td><td>Потеря 50% ставки</td></tr>
+              <tr><td>2</td><td>Возвращение ставки и ещё 50% от ставки сверху</td></tr>
+              <tr><td>3</td><td>Выигрыш в размере удвоенной ставки</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div>
+      <p>После азартных игр есть 15% шанс на осложнение (бросок d100, 1-15)</p>
+      </div>
+      <details class="activity-details">
+        <summary class="dets">Осложнения (d6)</summary>
+      <section class="complications">
+        <div class="complications-table">
+          <table>
+            <tbody>
+            <tr><td>1</td><td>Вас обвиняют в жульничестве. Заверяющий эту активность может решить, действительно ли вы жульничали, или обвинения ложные. Если да - проверки в следующей Азартной игре происходят с Помехой.</td></tr>
+            <tr><td>2</td><td>Городская стража устраивает облаву на игорный зал, а вас бросает в тюрьму. Персонаж теряет 10 ДП. Если у персонажа нет нужного количества - он ждёт, пока пассивно не накопит нужное количество дней простоя.</td></tr>
+            <tr><td>3</td><td>Местный аристократ проигрывает вам крупную сумму и громогласно обещает отомстить. *</td></tr>
+            <tr><td>4</td><td>Вы выиграли деньги у члена гильдии воров низкого ранга, и теперь гильдия хочет вернуть их назад. Вы теряете один случайный магический предмет. Если у вас есть Бастион - активируется событие Наёмник оказался преступником.</td></tr>
+            <tr><td>5</td><td>Местный криминальный авторитет настаивает на том, чтобы вы посещали только его игорный зал. Богатое расположение игорного дома требует вашего соответствия, поэтому до следующего месяца Лиги Героев, если занимаетесь активностью Азартные игры, вы обязаны его проводить в Аристократическом стиле, но не получаете никаких эффектов такого стиля проживания.</td></tr>
+            <tr><td>6</td><td>В город прибывает игрок, играющий с высокими ставками, и он настаивает на вашем участии в игре. Следующая ваша активность Азартные игры должны просходить со ставкой в 1000 зм, если нет возможности поставить 1000 зм - на все деньги, которые у вас есть.</td></tr>
+            </tbody>
+          </table>
+          <p class="note">* - во всех активностях простоя, где есть требуется или специальное задание, требуется содействие Мастера Лиги, на следующей игре которого играет персонаж.</p>
+        </div>
+      </section>
+      </details>
+      <details class="activity-details">
+        <summary class="dets">Влияние стилей проживания</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Стиль</th>
+              <th>Стоимость/день</th>
+              <th>Эффект</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Никудышное</td>
+              <td>-</td>
+              <td>-2 ко всем броскам. При прохождении только одной или провале всех проверок персонаж подвергается недугу. Заверяющий Мастер Лиги бросает д10, определяя характер недуга</td>
+          </tr>
+          <tr>
+              <td>Бедное</td>
+              <td>1 см</td>
+              <td>- 2 ко всем броскам</td>
+          </tr>
+          <tr>
+              <td>Скромное</td>
+              <td>1 зм</td>
+              <td>Без эффектов</td>
+          </tr>
+          <tr>
+              <td>Богатое</td>
+              <td>5 зм</td>
+              <td>+ 1 ко всем броскам</td>
+          </tr>
+          <tr>
+              <td>Аристократическое</td>
+              <td>10+ зм</td>
+              <td>+ 1 ко всем броскам. Вы можете совершить один бросок с Преимуществом</td>
+          </tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+  </details>
+</div>
+
+<style>
+  .activity-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  
+  .dets{
+    color: var(--primary)
+  }
+
+  .activity-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .basic-info {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .activity-search {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .activity-details {
+    border-top: 1px solid var(--card-border);
+  }
+
+  summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  summary:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .details-content {
+    padding: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  .complications-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .complications-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .complications-table td:first-child {
+    width: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

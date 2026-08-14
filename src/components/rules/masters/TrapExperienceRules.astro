@@ -1,0 +1,174 @@
+---
+// Выдача опыта за прохождение ловушек на партии
+---
+
+<div class="rules-section">
+  <h3>Опыт за ловушки</h3>
+
+  <h4>Опыт за обезвреживание</h4>
+
+  <table class="trap-table">
+    <thead>
+      <tr>
+        <th>Уровень</th>
+        <th>Неудобство</th>
+        <th>Опасно</th>
+        <th>Смертельно</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1-4</td>
+        <td>65</td>
+        <td>165</td>
+        <td>465</td>
+      </tr>
+      <tr>
+        <td>5-10</td>
+        <td>135</td>
+        <td>330</td>
+        <td>1155</td>
+      </tr>
+      <tr>
+        <td>11-16</td>
+        <td>265</td>
+        <td>825</td>
+        <td>2080</td>
+      </tr>
+      <tr>
+        <td>17-20</td>
+        <td>660</td>
+        <td>1485</td>
+        <td>2775</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Сложность спасбросков</h3>
+
+  <table class="difficulty-table">
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>СЛ</th>
+        <th>Бонус атаки</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Неудобство</td>
+        <td>10-11</td>
+        <td>+3...+5</td>
+      </tr>
+      <tr>
+        <td>Опасно</td>
+        <td>12-15</td>
+        <td>+6...+8</td>
+      </tr>
+      <tr>
+        <td>Смертельно</td>
+        <td>16-20</td>
+        <td>+9...+12</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Урон ловушек</h3>
+
+  <table class="damage-table">
+    <thead>
+      <tr>
+        <th>Уровень</th>
+        <th>Неудобство</th>
+        <th>Опасно</th>
+        <th>Смертельно</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1-4</td>
+        <td>1d10</td>
+        <td>2d10</td>
+        <td>4d10</td>
+      </tr>
+      <tr>
+        <td>5-10</td>
+        <td>2d10</td>
+        <td>4d10</td>
+        <td>10d10</td>
+      </tr>
+      <tr>
+        <td>11-16</td>
+        <td>4d10</td>
+        <td>10d10</td>
+        <td>18d10</td>
+      </tr>
+      <tr>
+        <td>17-20</td>
+        <td>10d10</td>
+        <td>18d10</td>
+        <td>24d10</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--card-border);
+  }
+
+  th {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  td:first-child {
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background: var(--bg-primary);
+  }
+
+  tr:hover {
+    background: var(--accent-color);
+    opacity: 0.7;
+  }
+</style>

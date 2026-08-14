@@ -1,0 +1,29 @@
+<section class="wizard-step" data-step="expertise">
+  <div class="expertise-heading">
+    <span class="wizard-kicker">Компетентность</span>
+    <h2>Навыки с компетентностью</h2>
+    <p>Здесь показана компетентность, полученная от особенностей персонажа. Если класс также позволяет выбирать навыки с компетентностью, сделайте этот выбор ниже.</p>
+  </div>
+  <div id="expertise-empty" class="expertise-empty" hidden>Выбранный класс не получает компетентность на 1 уровне. Этот этап можно продолжить без выбора.</div>
+  <div id="expertise-summary" class="expertise-summary" hidden></div>
+  <div id="expertise-options" class="expertise-options"></div>
+  <p id="expertise-warning" class="expertise-warning" hidden></p>
+</section>
+
+<style>
+  .expertise-heading { margin-bottom: 1.2rem; }
+  .expertise-heading h2 { margin: .35rem 0 .55rem; font-family: Georgia, serif; font-size: clamp(1.9rem, 3.5vw, 3rem); }
+  .expertise-heading p { max-width: 780px; margin: 0; opacity: .72; line-height: 1.6; }
+  .expertise-empty { padding: 1rem; border: 1px dashed var(--card-border); border-radius: .7rem; opacity: .7; }
+  .expertise-summary { display:flex; align-items:center; justify-content:space-between; margin-bottom:.8rem; padding:.8rem 1rem; border:1px solid var(--card-border); border-radius:.65rem; background:var(--background); }
+  .expertise-summary strong { color:var(--wizard-gold-light); font-family:Georgia,serif; font-size:1.2rem; }
+  .expertise-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+  :global(.expertise-option) { display:flex; align-items:flex-start; gap:.75rem; padding:.85rem; border:1px solid var(--card-border); border-radius:.65rem; background:color-mix(in srgb,var(--card-bg) 88%,var(--background)); cursor:pointer; }
+  :global(.expertise-option.is-selected), :global(.expertise-option:has(input:checked)) { border-color:var(--wizard-gold); background:color-mix(in srgb,var(--wizard-gold) 10%,var(--background)); }
+  :global(.expertise-option input) { margin-top:.2rem; accent-color:var(--wizard-gold); }
+  :global(.expertise-option span) { display:grid; gap:.2rem; }
+  :global(.expertise-option strong) { color:var(--wizard-gold-light); }
+  :global(.expertise-option small) { opacity:.6; }
+  .expertise-warning { color:#ef9b83; }
+  @media (max-width:700px){ .expertise-options{grid-template-columns:1fr;} }
+</style>

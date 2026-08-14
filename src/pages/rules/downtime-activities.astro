@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ActivityCategory from '../../components/rules/downtime/ActivityCategory.astro';
+import ActivityCard from '../../components/rules/downtime/ActivityCard.astro';
+import MagicItemSearch from '../../components/rules/downtime/MagicItemSearch.astro';
+import MagicItemSell from '../../components/rules/downtime/MagicItemSell.astro';
+import Gatehouse from '../../components/rules/downtime/Gatehouse.astro';
+import CraftingRules from '../../components/rules/downtime/CraftingRules.astro';
+import FightingPit from '../../components/rules/downtime/FightingPit.astro';
+import Gambling from '../../components/rules/downtime/Gambling.astro';
+import Training from '../../components/rules/downtime/Training.astro';
+import Resting from '../../components/rules/downtime/Resting.astro';
+import Thievery from '../../components/rules/downtime/Thievery.astro';
+import Research from '../../components/rules/downtime/Research.astro';
+import Labor from '../../components/rules/downtime/Labor.astro';
+import {craftingActivities} from '../../data/downtime/activities';
+---
+
+<Layout title="Активности простоя">
+  <div class="content">
+    <h1>Активности простоя</h1>
+    
+    <div class="intro">
+      <p>Во время простоя между приключениями персонажи могут заниматься различными делами, от создания предметов до обучения новым навыкам.</p>
+      <p>На какую-либо активность во время простоя могут уходить дни, а некоторые требуют целых недель и месяцев. Количество дел, которое может совершить персонаж, ограничено количеством доступных дней простоя, которые в свою очередь имеют несколько способов получения.</p>
+      <p>В каждой активности простоя имеется таблица, в которой показывается влияние стилей жизни, их стоимости и эффекты. Если в активности не указаны влияния стилей, то используется стандартное проживание в 1 зм.</p>
+      <p>Если в канале 📖книга-заметок персонажа не указано проживание за выполнение активности, то считается что эта активность выполнялась при <strong>Никудышном стиле проживания.</strong></p>
+      <p>Все активности простоя записываются игроками в свою ветку в канале "Книга заметок", пингуя Нотариусов для заверения (или Мастеров Лиги за надобностью) всех результатов, в которых участвуют какие-либо броски.</p>
+    </div>
+    
+    <div class="intro">
+      <p>Способы получения Дней простоя (<strong>ДП</strong>):</p>
+      <ul>
+        <li>За каждое полученное Очко Прогресса (<strong>ОП</strong>) после завершения партии.</li>
+        <li>За каждые 30 пройденных дней Лиги Героев всем заверенным (и живым в сам момент выдачи) персонажам выдаётся до 30 <strong>ДП</strong> в зависимости от дня заверения персонажа.</li>
+      </ul>
+    </div>
+
+    <div class="intro">
+      <p>Применение бонусов к проверкам на активностях простоя</p>
+      <ul>
+        <li>Классовые умения, влияющие на результат броска, невозможно применить при активностях простоя. Исключением являются клaссовые способности "Компетентность" и "Мастер на все руки".</li>
+        <li>Способности: видов (рас), предметов, благословений/даров/бунов, где при использовании тратятся использования/заряды, или же применения ограниченны определённым количеством раз в короткий/длительный отдых также невозможны к применению на активностях простоя.</li>
+      </ul>
+    </div>
+
+    <ActivityCategory
+      title="Ремесло и создание"
+      description="Деятельность, связанная с созданием предметов и поиском рецептов.">
+      <CraftingRules />
+      {craftingActivities.map(activity => (
+        <ActivityCard {...activity} />
+      ))}
+    </ActivityCategory>
+
+    <ActivityCategory
+      title="Торговля магическими предметами"
+      description="Поиск и продажа магических предметов.">
+      <MagicItemSearch />
+      <MagicItemSell />
+      <Gatehouse />
+    </ActivityCategory>
+
+    <ActivityCategory
+      title="Заработок"
+      description="Деятельность для заработка и, возможно, развлечения.">
+      <FightingPit />
+      <Gambling />
+      <Thievery />
+      <Labor />
+    </ActivityCategory>
+
+    <ActivityCategory
+      title="Обучение"
+      description="Изучение новых навыков и способностей.">
+      <Training />
+    </ActivityCategory>
+
+    <ActivityCategory
+      title="Прочее"
+      description="Активности не подпадающие под предыдущие категории.">
+      <Resting />
+      <Research />
+    </ActivityCategory>
+
+    <!--<ActivityCategory
+      title="Приключения"
+      description="Поиск возможностей для небольших приключений.">
+    </ActivityCategory>-->
+
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .intro {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 3rem;
+  }
+
+  ul, ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+</style>

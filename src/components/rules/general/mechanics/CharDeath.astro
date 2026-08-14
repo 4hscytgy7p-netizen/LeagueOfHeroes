@@ -1,0 +1,110 @@
+---
+interface Props {}
+---
+
+<div class="char-death">
+  <h2>Смерть персонажа</h2>
+  
+  <div class="rules-section">
+    <p>Если во время приключений персонаж погибает, то при соблюдении конкретных условий этого персонажа можно воскресить. Заклинания воскрешения разнятся по своей доступности и мощи, но с повышением ставок повышается и цена.</p>
+  </div>
+
+  <div class="rules-section">
+    <h3>Потеря ОП</h3>
+    <p>Если мёртвый персонаж воскрешается заклинаниями выше 3-го круга или спустя более одной минуты с момета смерти, воскресший персонаж теряет <strong>ОП</strong> (вместе с этим <strong>ОС</strong> и <strong>ДП</strong>) в зависимости от своего этапа.</p>
+    <p>Если после вычета потерянных <strong>ОП</strong> и прочего, у персонажа более не остаётся <strong>ОС</strong> и <strong>ДП</strong>, то их количество у персонажа принимают отрицательные значения, делая его "должником". Имея данный "долг", персонаж не может пользоваться <strong>ОС</strong> и <strong>ДП</strong>, пока их количество не станет больше 0.</p>
+    <p>Количество <strong>ОП</strong> персонажа после воскрешения не может опустится ниже 0.</p>
+    <p>Если после потери <strong>ОП</strong> персонаж утрачивает уровень - он утрачивается вместе со всеми классовыми особенностями потерянного уровня (кости хитов, БМ, классовые умения и ресурсы). Также потеря уровня от воскрешения может сменить этап персонажу.</p>
+  </div>
+
+  <div class="rules-section">
+    <h3>Потеря ОП от этапа</h3>
+    <div class="op-loss-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Этап</th>
+          <th>Теряемые ОП</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>25</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+<style>
+  .char-death {
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .op-loss-table {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .rules-section {
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    color: var(--primary);
+    margin: 1rem 0 0.5rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+interface Props {
+  name: string;
+  rarity: string;
+  type: string;
+  description: string;
+}
+
+const { name, rarity, type, description } = Astro.props;
+---
+
+<div class="magic-item-card">
+  <h3>{name}</h3>
+  <div class="item-meta">
+    <span class={`rarity ${rarity.toLowerCase()}`}>{rarity}</span>
+    <span class="type">{type}</span>
+  </div>
+  <p class="description">{description}</p>
+</div>
+
+<style>
+  .magic-item-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1rem;
+  }
+
+  .item-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .rarity {
+    font-weight: 600;
+  }
+
+  .rarity.common { color: #808080; }
+  .rarity.uncommon { color: #00ff00; }
+  .rarity.rare { color: #0070dd; }
+  .rarity.veryrare { color: #a335ee; }
+  .rarity.legendary { color: #ff8000; }
+
+  .type {
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .description {
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+</style>

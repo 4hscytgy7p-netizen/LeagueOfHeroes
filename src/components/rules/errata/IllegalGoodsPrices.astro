@@ -1,0 +1,79 @@
+---
+interface Props {}
+---
+
+<div class="errata-section">
+  <h2>Цены нелегальных товаров</h2>
+  
+  <div class="price-tables">
+    <h3>Наркотические вещества</h3>
+    <table class="price-table">
+      <tr><td>Бальзам мурусы</td><td>100 зм</td></tr>
+      <tr><td>Корень тэки</td><td>3 зм</td></tr>
+      <tr><td>Лист олисуба</td><td>50 зм</td></tr>
+      <tr><td>Масло тенистой ивы</td><td>30 зм</td></tr>
+      <tr><td>Соли прорицания</td><td>150 зм</td></tr>
+      <tr><td>Сонная лилия</td><td>10 зм</td></tr>
+      <tr><td>Трупный ихор</td><td>200 зм</td></tr>
+      <tr><td>Чёрный сок</td><td>300 зм</td></tr>
+    </table>
+
+    <h3>Инструменты</h3>
+    <table class="price-table">
+      <tr><td>Воровские инструменты</td><td>25 зм</td></tr>
+      <tr><td>Инструменты фальсификатора</td><td>15 зм</td></tr>
+      <tr><td>Инструменты отравителя</td><td>50 зм</td></tr>
+    </table>
+
+    <h3>Яды</h3>
+    <table class="price-table">
+      <tr><td>Кровь ассасина</td><td>150 зм</td></tr>
+      <tr><td>Дым жжёного отура</td><td>500 зм</td></tr>
+      <tr><td>Слизь ползающего падальщика</td><td>200 зм</td></tr>
+      <tr><td>Яд дроу</td><td>200 зм</td></tr>
+      <tr><td>Эссенция эфира</td><td>300 зм</td></tr>
+      <tr><td>Злоба</td><td>250 зм</td></tr>
+      <tr><td>Полуночные слёзы</td><td>1500 зм</td></tr>
+      <tr><td>Масло Таггита</td><td>400 зм</td></tr>
+      <tr><td>Бледная настойка</td><td>250 зм</td></tr>
+      <tr><td>Ступор</td><td>600 зм</td></tr>
+      <tr><td>Сыворотка правды</td><td>150 зм</td></tr>
+    </table>
+  </div>
+</div>
+
+<style>
+  .errata-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+  }
+
+  .price-tables {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  h3 {
+    margin: 1rem 0;
+    color: var(--primary);
+  }
+
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .price-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .price-table td:last-child {
+    text-align: right;
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,1901 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { magicItems } from '../data/magicItems';
+
+const sortedItems = [...magicItems].sort((a, b) => 
+  a.name.localeCompare(b.name, 'ru')
+);
+
+const rarities = ['Common', 'Uncommon', 'Rare', 'Very Rare', 'Legendary', 'Artifact'];
+const rarityLabels = {
+  'Common': 'Обычный',
+  'Uncommon': 'Необычный', 
+  'Rare': 'Редкий',
+  'Very Rare': 'Очень редкий',
+  'Legendary': 'Легендарный',
+  'Artifact': 'Артефакт'
+};
+---
+
+<Layout title="Магические предметы">
+  <div class="content">
+    <h1>Магические предметы</h1>
+    
+    <div class="magic-items-container">
+      <div id="items-data" data-items={JSON.stringify(magicItems)} style="display: none;"></div>
+      
+      <div class="items-list">
+        <div class="search-container">
+          <div class="search-input-container">
+            <input 
+              type="text" 
+              id="item-search" 
+              placeholder="Поиск магических предметов..."
+              class="search-input"
+            />
+            <div id="items-counter" class="items-counter">0/0</div>
+            <button id="clear-search" class="clear-search-button" style="display: none;">×</button>
+          </div>
+          <button id="filter-button" class="filter-button">
+            <span class="filter-icon">⚙</span>
+            Фильтры
+            <span id="filter-count" class="filter-count">0</span>
+          </button>
+        </div>
+
+        <div class="items-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="name">
+                  Название
+                  <span class="sort-icon">↕</span>
+                </th>
+                <th class="sortable" data-sort="type">
+                  Тип
+                  <span class="sort-icon">↕</span>
+                </th>
+                <th class="sortable" data-sort="weight">
+                  Вес
+                  <span class="sort-icon">↕</span>
+                </th>
+                <th class="sortable" data-sort="attunement">
+                  Настройка
+                  <span class="sort-icon">↕</span>
+                </th>
+                <th class="sortable" data-sort="rarity">
+                  Редкость
+                  <span class="sort-icon">↕</span>
+                </th>
+                <th class="sortable" data-sort="source">
+                  Источник
+                  <span class="sort-icon">↕</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedItems.map(item => (
+                <tr class="item-row" data-item-id={item.id}>
+                  <td>
+                    <div class="name-container">
+                      <div class="name-main">{item.name}</div>
+                      <div class="name-en">{item.nameEn}</div>
+                    </div>
+                  </td>
+                  <td>{item.type.split(',')[0]}</td>
+                  <td>{item.weight}</td>
+                  <td>{item.attunement ? 'Да' : 'Нет'}</td>
+                  <td>
+                    <span class={`rarity ${item.rarity.toLowerCase().replace(' ', '-')}`}>
+                      {rarityLabels[item.rarity]}
+                    </span>
+                  </td>
+                  <td>{item.source.book}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="filter-popup" class="filter-popup">
+        <div class="filter-content">
+          <div class="filter-header">
+            <h3>Фильтры</h3>
+            <button id="reset-filters" class="reset-button">Сбросить фильтры</button>
+            <button class="close-button">×</button>
+          </div>
+          
+          <div class="filter-section">
+            <h4>Редкость</h4>
+            <div class="checkbox-group">
+              {rarities.map(rarity => (
+                <label class="checkbox-label">
+                  <input 
+                    type="checkbox" 
+                    name="rarity" 
+                    value={rarity} 
+                  />
+                  {rarityLabels[rarity]}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Тип предмета</h4>
+            <div class="checkbox-group" id="type-filters">
+              <!-- Types will be populated by JavaScript -->
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Таблица</h4>
+            <div class="checkbox-group" id="table-filters">
+              <label class="checkbox-label"><input type="checkbox" name="table" value="A" /> Магия</label>
+              <label class="checkbox-label"><input type="checkbox" name="table" value="Ar" /> Вооружения</label>
+              <label class="checkbox-label"><input type="checkbox" name="table" value="I" /> Инструменты</label>
+              <label class="checkbox-label"><input type="checkbox" name="table" value="R" /> Реликвии</label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Источник</h4>
+            <div class="checkbox-group" id="source-filters">
+              <!-- Sources will be populated by JavaScript -->
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Настройка</h4>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input 
+                  type="checkbox" 
+                  name="attunement" 
+                  value="true" 
+                />
+                Требует настройки
+              </label>
+              <label class="checkbox-label">
+                <input 
+                  type="checkbox" 
+                  name="attunement" 
+                  value="false" 
+                />
+                Не требует настройки
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Инструменты для создания</h4>
+            <div class="checkbox-group" id="crafting-tools-filters">
+              <!-- Crafting tools will be populated by JavaScript -->
+            </div>
+          </div>
+          <div class="filter-actions">
+            <button id="reset-filters" class="reset-button">Сбросить фильтры</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="item-details" class="item-details">
+        <div class="details-content">
+          <h2>Выберите предмет для просмотра</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function initializeMagicItems() {
+    const searchInput = document.getElementById('item-search') as HTMLInputElement | null;
+    const filterButton = document.getElementById('filter-button');
+    const filterPopup = document.getElementById('filter-popup');
+    const closeButton = document.querySelector('.close-button');
+    const resetButton = document.getElementById('reset-filters');
+    const filterCount = document.getElementById('filter-count');
+    const clearSearchButton = document.getElementById('clear-search');
+    const itemsCounter = document.getElementById('items-counter');
+    const itemRows = document.querySelectorAll<HTMLElement>('.item-row');
+    const sortableHeaders = document.querySelectorAll<HTMLElement>('.sortable');
+    const itemDetails = document.getElementById('item-details') as HTMLElement | null;
+    const items: any[] = JSON.parse(document.getElementById('items-data')?.getAttribute('data-items') || '[]');
+    let currentSort = { column: 'name', direction: 'asc' };
+
+    // Crafting tools mapping
+    const craftingToolsMap: Record<number, string> = {
+      0: 'См. изготовляющие инструменты для немаг. аналога',
+      1: 'Инструменты алхимика',
+      2: 'Инструменты гончара',
+      3: 'Инструменты каллиграфа',
+      4: 'Инструменты каменщика',
+      5: 'Инструменты картографа',
+      6: 'Инструменты кожевника',
+      7: 'Инструменты кузнеца',
+      8: 'Инструменты пивовара',
+      9: 'Инструменты плотника',
+      10: 'Инструменты повара',
+      11: 'Инструменты резчика по дереву',
+      12: 'Инструменты ремонтника',
+      13: 'Инструменты сапожника',
+      14: 'Инструменты стеклодува',
+      15: 'Инструменты ткача',
+      16: 'Инструменты художника',
+      17: 'Инструменты ювелира',
+      18: 'Набор отравителя',
+      19: 'Набор травника',
+      20: 'Набор для маскировки',
+      98: 'Требуется доплата за немаг. аналог',
+      99: 'Невозможно создать',
+    };
+    // Initialize filter options
+    function initializeFilterOptions() {
+      // Get unique types
+      const types = [...new Set(items.map(item => item.type.split(',')[0].trim()))].sort();
+      const typeFilters = document.getElementById('type-filters');
+      if (typeFilters) {
+        typeFilters.innerHTML = types.map(type => `
+          <label class="checkbox-label">
+            <input type="checkbox" name="type" value="${type}" />
+            ${type}
+          </label>
+        `).join('');
+      }
+
+      // Get unique sources
+      const sources = [...new Set(items.map(item => item.source.book))].sort();
+      const sourceFilters = document.getElementById('source-filters');
+      if (sourceFilters) {
+        sourceFilters.innerHTML = sources.map(source => `
+          <label class="checkbox-label">
+            <input type="checkbox" name="source" value="${source}" />
+            ${source}
+          </label>
+        `).join('');
+      }
+
+      // Get unique crafting tools
+      const craftingToolsSet = new Set<number>();
+      items.forEach(item => {
+        if (item.craftingTools && Array.isArray(item.craftingTools)) {
+          item.craftingTools.forEach(toolIndex => {
+            if (craftingToolsMap[toolIndex]) {
+              craftingToolsSet.add(toolIndex);
+            }
+          });
+        }
+      });
+      
+      const craftingTools = Array.from(craftingToolsSet).sort((a, b) => a - b);
+      const craftingToolsFilters = document.getElementById('crafting-tools-filters');
+      if (craftingToolsFilters) {
+        craftingToolsFilters.innerHTML = craftingTools.map(toolIndex => `
+          <label class="checkbox-label">
+            <input type="checkbox" name="crafting-tools" value="${toolIndex}" />
+            ${craftingToolsMap[toolIndex]}
+          </label>
+        `).join('');
+      }
+    }
+
+    // Get filters from URL
+    function getFiltersFromURL(): Record<string, string[]> {
+      const params = new URLSearchParams(window.location.search);
+      const filters: Record<string, string[]> = {};
+
+      const rarity = params.get('rarity');
+      if (rarity) filters.rarity = rarity.split(',');
+
+      const type = params.get('type');
+      if (type) filters.type = type.split(',');
+
+      const source = params.get('source');
+      if (source) filters.source = source.split(',');
+
+      const attunement = params.get('attunement');
+      if (attunement) filters.attunement = attunement.split(',');
+
+      const table = params.get('table');
+      if (table) filters.table = table.split(',');
+
+      const craftingTools = params.get('craftingTools');
+      if (craftingTools) filters.craftingTools = craftingTools.split(',');
+
+      const search = params.get('search');
+      if (search && searchInput) {
+        searchInput.value = search;
+      }
+
+      return filters;
+    }
+
+    // Update URL with current filters
+    function updateURL() {
+      const params = new URLSearchParams();
+
+      const rarities = Array.from(document.querySelectorAll('input[name="rarity"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      if (rarities.length > 0) params.set('rarity', rarities.join(','));
+
+      const types = Array.from(document.querySelectorAll('input[name="type"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      if (types.length > 0) params.set('type', types.join(','));
+
+      const sources = Array.from(document.querySelectorAll('input[name="source"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      if (sources.length > 0) params.set('source', sources.join(','));
+
+      const attunement = Array.from(document.querySelectorAll('input[name="attunement"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      if (attunement.length > 0) params.set('attunement', attunement.join(','));
+
+      const craftingTools = Array.from(document.querySelectorAll('input[name="crafting-tools"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      if (craftingTools.length > 0) params.set('craftingTools', craftingTools.join(','));
+
+      const tables = Array.from(document.querySelectorAll('input[name="table"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      if (tables.length > 0) params.set('table', tables.join(','));
+
+      const searchTerm = searchInput?.value.trim();
+      if (searchTerm) params.set('search', searchTerm);
+
+      // Get current item ID from path
+      const pathParts = window.location.pathname.split('/');
+      const itemId = pathParts[1] === 'magic-items' && pathParts[2] ? pathParts[2] : null;
+
+      const queryString = params.toString();
+      const basePath = itemId ? `/magic-items/${itemId}` : '/magic-items';
+      const newUrl = queryString ? `${basePath}?${queryString}` : basePath;
+
+      window.history.replaceState({ itemId }, '', newUrl);
+    }
+
+    // Load filters from URL or localStorage
+    function loadFilters() {
+      const urlFilters = getFiltersFromURL();
+
+      // If URL has filters, use them and save to localStorage
+      if (Object.keys(urlFilters).length > 0) {
+        Object.entries(urlFilters).forEach(([filterType, values]) => {
+          if (Array.isArray(values)) {
+              values.forEach(value => {
+              const checkbox = document.querySelector(`input[name="${filterType}"][value="${value}"]`);
+              if (checkbox instanceof HTMLInputElement) checkbox.checked = true;
+            });
+          }
+        });
+        saveFilters();
+      } else {
+        // Otherwise, try to load from localStorage
+        const savedFilters = localStorage.getItem('magicItemFilters');
+        if (savedFilters) {
+          const filters = JSON.parse(savedFilters);
+
+          Object.entries(filters).forEach(([filterType, values]) => {
+            if (Array.isArray(values)) {
+              values.forEach(value => {
+                const checkbox = document.querySelector(`input[name="${filterType}"][value="${value}"]`);
+                if (checkbox instanceof HTMLInputElement) checkbox.checked = true;
+              });
+            }
+          });
+        }
+      }
+
+      updateFilterCount();
+      filterItems();
+    }
+
+    // Save filters to localStorage
+    function saveFilters() {
+      const filters = {
+        rarity: Array.from(document.querySelectorAll('input[name="rarity"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value),
+        type: Array.from(document.querySelectorAll('input[name="type"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value),
+        source: Array.from(document.querySelectorAll('input[name="source"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value),
+        attunement: Array.from(document.querySelectorAll('input[name="attunement"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value),
+        craftingTools: Array.from(document.querySelectorAll('input[name="crafting-tools"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value),
+        table: Array.from(document.querySelectorAll('input[name="table"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value)
+      };
+      
+      localStorage.setItem('magicItemFilters', JSON.stringify(filters));
+      updateURL();
+    }
+
+    // Update filter count display
+    function updateFilterCount() {
+      const activeFilters = 
+        document.querySelectorAll('input[name="rarity"]:checked').length +
+        document.querySelectorAll('input[name="type"]:checked').length +
+        document.querySelectorAll('input[name="source"]:checked').length +
+        document.querySelectorAll('input[name="attunement"]:checked').length +
+        document.querySelectorAll('input[name="crafting-tools"]:checked').length +
+        document.querySelectorAll('input[name="table"]:checked').length;
+      
+      if (filterCount) {
+        filterCount.textContent = activeFilters.toString();
+        filterCount.style.display = activeFilters > 0 ? 'flex' : 'none';
+      }
+      
+      if (filterButton) {
+        filterButton.classList.toggle('has-filters', activeFilters > 0);
+      }
+    }
+
+    // Filter items based on selected criteria
+    function filterItems() {
+      const searchTerm = searchInput?.value.toLowerCase() || '';
+      const selectedRarities = Array.from(document.querySelectorAll('input[name="rarity"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      const selectedSources = Array.from(document.querySelectorAll('input[name="source"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      const selectedAttunement = Array.from(document.querySelectorAll('input[name="attunement"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      const selectedCraftingTools = Array.from(document.querySelectorAll('input[name="crafting-tools"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => parseInt(cb.value));
+      const selectedTables = Array.from(document.querySelectorAll('input[name="table"]:checked')).filter(cb => cb instanceof HTMLInputElement).map(cb => cb.value);
+      
+      let visibleCount = 0;
+      let totalInSources = 0;
+      
+      // Calculate total items from selected sources (or all if no source filter)
+      items.forEach(item => {
+        const matchesSource = selectedSources.length === 0 || selectedSources.includes(item.source.book);
+        if (matchesSource) {
+          totalInSources++;
+        }
+      });
+      
+      itemRows.forEach(row => {
+        const itemId = row instanceof HTMLElement ? row.dataset.itemId : undefined;
+        const item = itemId ? items.find(i => i.id === itemId) : undefined;
+        if (!item) return;
+
+        const name = item.name.toLowerCase() + ' ' + item.nameEn.toLowerCase();
+        const type = item.type.split(',')[0].trim();
+        const source = item.source.book;
+        const attunement = item.attunement.toString();
+        const rarity = item.rarity;
+        const itemCraftingTools = item.craftingTools || [];
+        
+        const matchesSearch = name.includes(searchTerm);
+        const matchesRarity = selectedRarities.length === 0 || selectedRarities.includes(rarity);
+        const matchesType = selectedTypes.length === 0 || selectedTypes.includes(type);
+        const matchesSource = selectedSources.length === 0 || selectedSources.includes(source);
+        const matchesAttunement = selectedAttunement.length === 0 || selectedAttunement.includes(attunement);
+        const matchesCraftingTools = selectedCraftingTools.length === 0 || 
+          (itemCraftingTools.length > 0 && itemCraftingTools.some(tool => selectedCraftingTools.includes(tool)));
+        const itemTables = item.table ? (Array.isArray(item.table) ? item.table : [item.table]) : [];
+        const matchesTable = selectedTables.length === 0 || itemTables.some(t => selectedTables.includes(t));
+
+        const isVisible = matchesSearch && matchesRarity && matchesType && matchesSource && matchesAttunement && matchesCraftingTools && matchesTable;
+        if (row instanceof HTMLElement) row.style.display = isVisible ? '' : 'none';
+        
+        if (isVisible) {
+          visibleCount++;
+        }
+      });
+      
+      // Update counter
+      if (itemsCounter) {
+        itemsCounter.textContent = `${visibleCount}/${totalInSources}`;
+      }
+      
+      saveFilters();
+      updateFilterCount();
+    }
+
+    // Toggle filter popup
+    function togglePopup() {
+      if (filterPopup) {
+        filterPopup.classList.toggle('show');
+      }
+    }
+
+    // Close popup when clicking outside
+    function closePopup(e: MouseEvent) {
+      if (filterPopup && e.target === filterPopup) {
+        filterPopup.classList.remove('show');
+      }
+    }
+
+    // Reset all filters
+    function resetFilters() {
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        if (cb instanceof HTMLInputElement) cb.checked = false;
+      });
+      if (searchInput) searchInput.value = '';
+      localStorage.removeItem('magicItemFilters');
+      updateURL();
+      filterItems();
+    }
+
+
+    function sortItems(column: string) {
+      const tbody = document.querySelector('tbody');
+      const rows = Array.from(document.querySelectorAll<HTMLElement>('.item-row'));
+      
+      if (!tbody) return;
+      
+      // Update sort direction
+      if (currentSort.column === column) {
+        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort = { column, direction: 'asc' };
+      }
+      
+      // Update sort icons
+      sortableHeaders.forEach(header => {
+        const icon = header.querySelector('.sort-icon');
+        if (!icon) return;
+        
+        if (header.getAttribute('data-sort') === column) {
+          icon.textContent = currentSort.direction === 'asc' ? '↓' : '↑';
+        } else {
+          icon.textContent = '↕';
+        }
+      });
+      
+      // Sort rows
+      rows.sort((a, b) => {
+        let aValue = '';
+        let bValue = '';
+        
+        switch(column) {
+          case 'name':
+            aValue = a.querySelector('td')?.textContent?.toLowerCase() || '';
+            bValue = b.querySelector('td')?.textContent?.toLowerCase() || '';
+            break;
+          case 'type':
+            aValue = a.querySelectorAll('td')[1]?.textContent?.toLowerCase() || '';
+            bValue = b.querySelectorAll('td')[1]?.textContent?.toLowerCase() || '';
+            break;
+          case 'weight':
+            aValue = a.querySelectorAll('td')[2]?.textContent || '';
+            bValue = b.querySelectorAll('td')[2]?.textContent || '';
+            break;
+          case 'attunement':
+            aValue = a.querySelectorAll('td')[3]?.textContent || '';
+            bValue = b.querySelectorAll('td')[3]?.textContent || '';
+            break;
+          case 'rarity':
+            const rarityOrder = ['Обычный', 'Необычный', 'Редкий', 'Очень редкий', 'Легендарный', 'Артефакт'];
+            const aRarity = a.querySelectorAll('td')[4]?.textContent?.trim() || '';
+            const bRarity = b.querySelectorAll('td')[4]?.textContent?.trim() || '';
+            const aIndex = rarityOrder.indexOf(aRarity);
+            const bIndex = rarityOrder.indexOf(bRarity);
+            return currentSort.direction === 'asc' 
+              ? aIndex - bIndex
+              : bIndex - aIndex;
+            break;
+          case 'source':
+            aValue = a.querySelectorAll('td')[5]?.textContent || '';
+            bValue = b.querySelectorAll('td')[5]?.textContent || '';
+            break;
+        }
+        
+        return currentSort.direction === 'asc' 
+          ? aValue.localeCompare(bValue, 'ru')
+          : bValue.localeCompare(aValue, 'ru');
+      });
+      
+      // Reorder DOM
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    function getTableLabel(codeOrArray) {
+      if (!codeOrArray) return '';
+      const codes = Array.isArray(codeOrArray) ? codeOrArray : [codeOrArray];
+      const labels = codes.map(code => {
+        switch(code) {
+          case 'A': return 'Магия';
+          case 'Ar': return 'Вооружения';
+          case 'I': return 'Инструменты';
+          case 'R': return 'Реликвии';
+          default: return code;
+        }
+      });
+      return labels.join(', ');
+    }
+
+    function showItemDetails(itemId: string) {
+      if (!itemDetails) return;
+
+      const item = items.find(i => i.id === itemId);
+      if (!item) return;
+
+      const attunementText = item.attunement 
+        ? ` (требует настройки${item.attunementRequirement ? ` ${item.attunementRequirement}` : ''})`
+        : '';
+      const craftingToolsText = formatCraftingTools(item.craftingTools || []);
+      
+      itemDetails.innerHTML = `
+        <div class="details-content">
+          <div class="item-header">
+            <h2>${item.name}</h2>
+            <div class="source">${item.source.book}, ${item.source.page}</div>
+          </div>
+          
+          <div class="item-meta">
+            <p>${item.type}, ${rarityLabels[item.rarity]}${attunementText}</p>
+            ${item.table ? `<p><strong>Таблица:</strong> ${getTableLabel(item.table)}</p>` : ''}
+            <p><strong>Вес:</strong> ${item.weight}</p>
+            ${item.baseAnalog ? `
+              <p><strong>Базовый аналог:</strong> ${item.baseAnalog}</p>
+            ` : ''}
+            ${craftingToolsText ? `
+              <p><strong>Инструмент для изготовления:</strong><br>${craftingToolsText}</p>
+            ` : ''}
+          </div>
+          
+          <hr class="divider">
+          
+          <div class="item-description">
+            ${item.description}
+          </div>
+          ${item.developerComment ? `
+            <div class="developer-comment">
+              <h4>Комментарий разработчика</h4>
+             <div>${item.developerComment}</div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      // Add active class to selected row
+      itemRows.forEach(row => row.classList.remove('active'));
+      document.querySelector(`[data-item-id="${itemId}"]`)?.classList.add('active');
+      
+      // Update URL without page reload, preserving filters
+      const params = new URLSearchParams(window.location.search);
+      const queryString = params.toString();
+      const newUrl = queryString ? `/magic-items/${itemId}?${queryString}` : `/magic-items/${itemId}`;
+      window.history.pushState({ itemId }, '', newUrl);
+    }
+
+    function formatCraftingTools(toolIndices: number[]): string {
+      const specialMap = {
+        0: 'См. изготовляющие инструменты для немаг. аналога',
+        98: 'Требуется доплата за немаг. аналог',
+        99: 'Невозможно создать'
+      };
+
+      const toolNames = [
+        '', // placeholder for index 0 (handled via specialMap)
+        'Инструменты алхимика',
+        'Инструменты гончара', 
+        'Инструменты каллиграфа',
+        'Инструменты каменщика',
+        'Инструменты картографа',
+        'Инструменты кожевника',
+        'Инструменты кузнеца',
+        'Инструменты пивовара',
+        'Инструменты плотника',
+        'Инструменты повара',
+        'Инструменты резчика по дереву',
+        'Инструменты ремонтника',
+        'Инструменты сапожника',
+        'Инструменты стеклодува',
+        'Инструменты ткача',
+        'Инструменты художника',
+        'Инструменты ювелира',
+        'Набор отравителя',
+        'Набор травника',
+        'Набор для маскировки'
+      ];
+
+      if (!toolIndices || toolIndices.length === 0) return '';
+
+      const tools = [];
+      const kits = [];
+      const specials = [];
+
+      toolIndices.forEach(index => {
+        if (specialMap[index]) {
+          specials.push(specialMap[index]);
+          return;
+        }
+        if (index >= 1 && index <= toolNames.length - 1) {
+          const toolName = toolNames[index];
+          if (toolName.startsWith('Набор')) {
+            kits.push(toolName.replace('Набор ', ''));
+          } else {
+            tools.push(toolName.replace('Инструменты ', ''));
+          }
+        }
+      });
+
+      const result = [];
+
+      if (tools.length > 0) {
+        if (tools.length === 1) {
+          result.push(`Инструменты ${tools[0]}`);
+        } else {
+          result.push(`Инструменты: ${tools.join(', ')}`);
+        }
+      }
+
+      if (kits.length > 0) {
+        if (kits.length === 1) {
+          result.push(`Набор ${kits[0]}`);
+        } else {
+          result.push(`Наборы: ${kits.join(', ')}`);
+        }
+      }
+
+      // append special codes as standalone entries
+      specials.forEach(s => result.push(s));
+
+      return result.join(';<br>');
+    }
+
+    // Tooltip functionality for base analog links
+    function initTooltips() {
+      let tooltip: HTMLElement | null = null;
+      let regularItems: any[] | null = null;
+
+      // Load regular items data
+      async function loadRegularItems() {
+        if (!regularItems) {
+          try {
+            const response = await fetch('/api/items');
+            if (response.ok) {
+              regularItems = await response.json();
+            }
+          } catch (error) {
+            console.warn('Could not load regular items data');
+            regularItems = [];
+          }
+        }
+        return regularItems;
+      }
+
+      function createTooltip() {
+        const tooltipEl = document.createElement('div');
+        tooltipEl.className = 'item-tooltip';
+        tooltipEl.style.cssText = `
+          position: absolute;
+          background: var(--card-bg);
+          border: 1px solid var(--card-border);
+          border-radius: 0.5rem;
+          padding: 1rem;
+          box-shadow: var(--card-shadow);
+          z-index: 1000;
+          max-width: 300px;
+          max-height: 200px;
+          overflow-y: auto;
+          display: none;
+          pointer-events: none;
+          color: var(--text);
+        `;
+        document.body.appendChild(tooltipEl);
+        return tooltipEl;
+      }
+
+      async function showTooltip(e: MouseEvent, itemId: string) {
+        const items = await loadRegularItems();
+        const item = items.find(i => i.id === itemId);
+        if (!item) return;
+
+        if (!tooltip) {
+          tooltip = createTooltip();
+        }
+
+        tooltip.innerHTML = `
+          <div class="tooltip-header">
+            <h4>${item.name}</h4>
+            <div class="tooltip-source">${item.sourceBook}</div>
+          </div>
+          <div class="tooltip-meta">
+            <p><strong>Тип:</strong> ${item.type}</p>
+            <p><strong>Цена:</strong> ${item.cost}</p>
+            <p><strong>Вес:</strong> ${item.weight}</p>
+          </div>
+          <div class="tooltip-description">
+            ${item.description}
+          </div>
+        `;
+
+        if (!(e.target instanceof HTMLElement)) return;
+        const rect = e.target.getBoundingClientRect();
+        tooltip.style.left = `${rect.right + 10}px`;
+        tooltip.style.top = `${rect.top}px`;
+        tooltip.style.display = 'block';
+
+        // Adjust position if tooltip goes off screen
+        const tooltipRect = tooltip.getBoundingClientRect();
+        if (tooltipRect.right > window.innerWidth) {
+          tooltip.style.left = `${rect.left - tooltipRect.width - 10}px`;
+        }
+        if (tooltipRect.bottom > window.innerHeight) {
+          tooltip.style.top = `${rect.bottom - tooltipRect.height}px`;
+        }
+      }
+
+      function hideTooltip() {
+        if (tooltip) {
+          tooltip.style.display = 'none';
+        }
+      }
+
+      function handleScroll(e: WheelEvent) {
+        if (e.shiftKey && tooltip && tooltip.style.display === 'block') {
+          e.preventDefault();
+          tooltip.scrollTop += e.deltaY > 0 ? 20 : -20;
+        }
+      }
+
+      // Event delegation for dynamically created links
+      document.addEventListener('mouseover', (e) => {
+        const target = e.target;
+        if (!(target instanceof HTMLElement)) return;
+        if (target.matches('a[href^="/items/"]')) {
+          const itemId = target.getAttribute('href').split('/').pop();
+          if (itemId) {
+            showTooltip(e, itemId);
+          }
+        }
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        const target = e.target;
+        if (!(target instanceof HTMLElement)) return;
+        if (target.matches('a[href^="/items/"]')) {
+          hideTooltip();
+        }
+      });
+
+      document.addEventListener('wheel', handleScroll, { passive: false });
+    }
+
+    // Add sort event listeners
+    sortableHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const column = header.getAttribute('data-sort');
+        if (column) sortItems(column);
+      });
+    });
+
+    searchInput?.addEventListener('input', () => {
+      filterItems();
+    });
+    
+    itemRows.forEach(row => {
+      row.addEventListener('click', () => {
+        const itemId = row instanceof HTMLElement ? row.dataset.itemId : undefined;
+        if (itemId) showItemDetails(itemId);
+      });
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', (event) => {
+      // Reload filters from URL
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        if (cb instanceof HTMLInputElement) cb.checked = false;
+      });
+      if (searchInput) searchInput.value = '';
+
+      loadFilters();
+
+      if (event.state?.itemId) {
+        showItemDetails(event.state.itemId);
+      } else {
+        // Clear selection
+        itemRows.forEach(row => row.classList.remove('active'));
+        if (itemDetails) {
+          itemDetails.innerHTML = `
+            <div class="details-content">
+              <h2>Выберите предмет для просмотра</h2>
+            </div>
+          `;
+        }
+      }
+    });
+
+    // Check if URL contains item ID on page load
+    const pathParts = window.location.pathname.split('/');
+    if (pathParts[1] === 'magic-items' && pathParts[2]) {
+      showItemDetails(pathParts[2]);
+    }
+
+    // Initialize tooltips (use shared ItemTooltip util)
+    (function ensureItemTooltipAndInit(){
+      function ensureItemTooltip(){
+        return new Promise<NonNullable<Window['ItemTooltip']>>((resolve,reject)=>{
+          if (window.ItemTooltip) return resolve(window.ItemTooltip);
+          if (document.querySelector('script[data-item-tooltip]')){
+            const check = setInterval(()=>{ if (window.ItemTooltip){ clearInterval(check); resolve(window.ItemTooltip); } },50);
+            setTimeout(()=>{ clearInterval(check); reject(new Error('timeout loading itemTooltip')); },5000);
+            return;
+          }
+          const s = document.createElement('script');
+          s.src = '/js/itemTooltip.js';
+          s.async = true;
+          s.setAttribute('data-item-tooltip','1');
+          s.onload = () => {
+            if (window.ItemTooltip) resolve(window.ItemTooltip);
+            else reject(new Error('ItemTooltip не зарегистрирован после загрузки скрипта'));
+          };
+          s.onerror = (e) => reject(e);
+          document.head.appendChild(s);
+        });
+      }
+
+      ensureItemTooltip().then(ItemTooltip=>{
+        try{
+          const ItemCtor = ItemTooltip;
+          const itemTooltipEl = document.createElement('div');
+          itemTooltipEl.id = 'item-tooltip';
+          itemTooltipEl.style.display = 'none';
+          itemTooltipEl.style.position = 'fixed';
+          itemTooltipEl.style.zIndex = '10000';
+          document.body.appendChild(itemTooltipEl);
+
+          const itemTooltip = new ItemCtor();
+          itemTooltip.init(itemTooltipEl);
+        }catch(e){
+          try { initTooltips(); } catch (err) { console.warn('tooltips init failed', err); }
+        }
+      }).catch(err=>{ try { initTooltips(); } catch (err2) { console.warn('tooltips init failed', err2); } });
+    })();
+    
+    // Random item slider widget (append to body). Collapsed by default; handle sticks out from the right.
+    (function createRandomItemWidget(){
+      const slider = document.createElement('div');
+      slider.id = 'random-item-slider';
+      slider.className = 'random-slider';
+
+      // panel (hidden when collapsed)
+      const panel = document.createElement('div');
+      panel.className = 'random-panel';
+
+      const ul = document.createElement('ul');
+      ul.id = 'random-item-history';
+      ul.setAttribute('role', 'list');
+
+      const btn = document.createElement('button');
+      btn.id = 'random-item-btn';
+      btn.type = 'button';
+      btn.className = 'filter-button';
+      btn.innerHTML = '<span class="filter-icon">🎲</span>Случайный предмет';
+
+      // place list above the button so button stays fixed at bottom
+      panel.appendChild(ul);
+      panel.appendChild(btn);
+
+      // handle that sticks out when collapsed
+      const handle = document.createElement('button');
+      handle.id = 'random-item-toggle';
+      handle.className = 'random-toggle';
+      handle.type = 'button';
+      handle.setAttribute('aria-expanded', 'false');
+      handle.innerHTML = '<span class="toggle-arrow">◀</span>';
+
+      slider.appendChild(panel);
+      slider.appendChild(handle);
+      document.body.appendChild(slider);
+
+      // гарантируем фиксированное положение внизу справа и приоритет по z-index
+      slider.style.position = 'fixed';
+      slider.style.right = '2rem';
+      slider.style.bottom = '2rem';
+      slider.style.top = 'auto';
+      slider.style.zIndex = '2147483647';
+
+      const randomHistory: any[] = [];
+
+      function makeListItem(item: any) {
+        const li = document.createElement('li');
+        li.className = 'history-item enter';
+        const a = document.createElement('a');
+        a.href = `/magic-items/${item.id}`;
+        a.dataset.itemId = item.id;
+        a.textContent = item.name;
+        li.appendChild(a);
+
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = a.dataset.itemId;
+          if (!id) return;
+          history.pushState({ itemId: id }, '', `/magic-items/${encodeURIComponent(id)}`);
+          try { showItemDetails(id); } catch (err) { console.warn(err); }
+        });
+
+        li.addEventListener('animationend', () => {
+          li.classList.remove('enter');
+          if (li.classList.contains('exit')) li.remove();
+        });
+
+        return li;
+      }
+
+      function renderHistory() {
+        const list = document.getElementById('random-item-history');
+        if (!list) return;
+        list.innerHTML = '';
+        randomHistory.forEach(it => list.appendChild(makeListItem(it)));
+        // show newest items at top and ensure list scrolls to top to reveal the latest
+        list.scrollTop = 0;
+      }
+
+      function pickRandomVisible() {
+        const visibleRows = Array.from(document.querySelectorAll('.item-row')).filter(
+          (row): row is HTMLElement => row instanceof HTMLElement && row.style.display !== 'none'
+        );
+        if (visibleRows.length > 0) {
+          const pick = visibleRows[Math.floor(Math.random() * visibleRows.length)];
+          return pick.dataset.itemId;
+        }
+        return null;
+      }
+
+      btn.addEventListener('click', ()=>{
+        let choiceId = pickRandomVisible();
+        if (!choiceId) {
+          const all = Array.from(items || []);
+          if (all.length === 0) return;
+          const pick = all[Math.floor(Math.random() * all.length)];
+          choiceId = pick.id;
+        }
+        const item = items.find(i => i.id === choiceId);
+        if (!item) return;
+
+        // prepend to history
+        randomHistory.unshift(item);
+        // держим максимум 5 последних записей
+        if (randomHistory.length > 5) randomHistory.pop();
+        renderHistory();
+
+        history.pushState({ itemId: item.id }, '', `/magic-items/${encodeURIComponent(item.id)}`);
+        try { showItemDetails(item.id); } catch (err) { console.warn(err); }
+      });
+
+      // Toggle open/close
+      function setOpen(open) {
+        slider.classList.toggle('open', open);
+        handle.setAttribute('aria-expanded', String(!!open));
+        const arrow = handle.querySelector('.toggle-arrow');
+        if (arrow) arrow.textContent = open ? '▶' : '◀';
+        // accessibility: mark panel hidden when collapsed
+        panel.setAttribute('aria-hidden', String(!open));
+        if (open) {
+          // move keyboard focus into the panel's button for immediate action
+          btn.focus();
+        } else {
+          handle.focus();
+        }
+      }
+
+      handle.addEventListener('click', () => setOpen(!slider.classList.contains('open')));
+
+      // Start collapsed
+      setOpen(false);
+    })();
+    
+    // Initialize filter system
+    initializeFilterOptions();
+    loadFilters();
+    
+    // Initialize counter
+    filterItems();
+    
+    // Event listeners for filter system
+    filterButton?.addEventListener('click', togglePopup);
+    closeButton?.addEventListener('click', togglePopup);
+    filterPopup?.addEventListener('click', closePopup);
+    resetButton?.addEventListener('click', resetFilters);
+    
+    // Add event listeners for all filter checkboxes using event delegation
+    filterPopup?.addEventListener('change', (e) => {
+      const target = e.target;
+      if (target instanceof HTMLInputElement && target.type === 'checkbox') {
+        filterItems();
+      }
+    });
+  }
+
+  const rarityLabels = {
+    'Common': 'Обычный',
+    'Uncommon': 'Необычный', 
+    'Rare': 'Редкий',
+    'Very Rare': 'Очень редкий',
+    'Legendary': 'Легендарный',
+    'Artifact': 'Артефакт'
+  };
+
+  document.addEventListener('DOMContentLoaded', initializeMagicItems);
+</script>
+
+<style>
+  .content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .magic-items-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  /* Random item slider — модифицированный для закрепления внизу справа */
+  .random-slider {
+    position: fixed !important;
+    right: 2rem !important;
+    bottom: 2rem !important;
+    top: auto !important;
+    z-index: 2147483647 !important;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: auto;
+    user-select: none;
+    --handle-width: 44px;
+    gap: 0;
+    transform: none !important;
+  }
+
+  /* панель выезжает влево относительно ручки (скрыта по-умолчанию) */
+  .random-slider .random-panel {
+    position: absolute;
+    right: calc(var(--handle-width) + 0px);
+    bottom: 0;
+    width: 320px;
+    max-height: 420px;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--card-border, #e6e6e6);
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateX(calc(100% + var(--handle-width)));
+    transition: transform 220ms ease, opacity 180ms ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    pointer-events: auto;
+    overflow: hidden;
+  }
+
+  /* открытое состояние */
+  .random-slider.open .random-panel {
+    transform: translateX(0);
+  }
+
+  /* ручка (toggle) */
+  .random-toggle {
+    width: var(--handle-width);
+    height: 56px;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--card-border, #e6e6e6);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-left: 8px;
+    flex-shrink: 0;
+  }
+
+  /* состояние при ховере */
+  .random-toggle:hover { 
+    background: var(--nav-hover-bg, #f5f5f7); 
+  }
+
+  .random-toggle .toggle-arrow {
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+
+  .random-slider.open .random-toggle {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .random-slider.open .random-toggle .toggle-arrow {
+    color: white;
+  }
+
+  /* стиль списка и кнопки — явно привязаны к слайдеру (приоритет) */
+  #random-item-history { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0.6rem; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    overflow-y: auto; 
+    max-height: 340px;
+    flex: 1;
+    border-bottom: 1px solid var(--card-border, #e6e6e6);
+  }
+  #random-item-history li { 
+    width: 100%; 
+    list-style: none;
+  }
+  #random-item-history a { 
+    display: block; 
+    padding: 0.5rem 0.7rem; 
+    background: var(--background, #fafafa);
+    border: 1px solid var(--card-border, #e6e6e6); 
+    border-radius: 0.375rem; 
+    color: var(--text, #111); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    width: 100%; 
+    text-align: left; 
+    transition: all 0.15s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #random-item-history a:hover { 
+    background: var(--nav-hover-bg, #f3f4f6); 
+    border-color: var(--primary, #3b82f6);
+    color: var(--primary, #3b82f6);
+  }
+
+  /* кнопка — конкретный селектор, чтобы гарантировать применение */
+  #random-item-slider #random-item-btn,
+  #random-item-slider #random-item-btn.filter-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    background: var(--primary, #2563eb) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin: 0.6rem;
+    margin-top: auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  #random-item-slider #random-item-btn:hover {
+    filter: brightness(0.95);
+  }
+
+  /* анимации списка оставляем те же */
+  .history-item { 
+    opacity: 0; 
+    transform: translateY(-8px); 
+    will-change: transform, opacity;
+    list-style: none; 
+  }
+  .history-item.enter { animation: slideInUp 0.3s ease-out forwards; }
+  .history-item.exit { animation: slideOutUp 0.3s ease-out forwards; }
+  
+  @keyframes slideInUp { 
+    from { 
+      opacity: 0; 
+      transform: translateY(-12px); 
+    } 
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } 
+  }
+  
+  @keyframes slideOutUp { 
+    from { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } 
+    to { 
+      opacity: 0; 
+      transform: translateY(-12px); 
+    } 
+  }
+
+  .search-container {
+    margin-bottom: 1rem;
+  }
+
+  .search-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .search-input-container {
+    position: relative;
+    flex: 1;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem;
+    padding-right: 2.5rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+  }
+
+  .clear-search-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: all 0.2s;
+  }
+
+  .clear-search-button:hover {
+    background: var(--nav-hover-bg);
+    opacity: 1;
+  }
+
+  .items-counter {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text);
+    opacity: 0.6;
+    font-size: 0.9rem;
+    pointer-events: none;
+    background: var(--card-bg);
+    padding: 0 0.25rem;
+    z-index: 1;
+  }
+
+  .filter-button {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .filter-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-button.has-filters {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .filter-icon {
+    font-size: 1.2rem;
+  }
+
+  .filter-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .filter-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .filter-popup.show {
+    display: block;
+  }
+
+  .filter-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    min-width: 600px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .filter-header h3 {
+    margin: 0;
+    color: var(--primary);
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .close-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-section:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .filter-section h4 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: auto;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background: var(--background);
+    border-radius: 0.25rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  .checkbox-label:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .reset-button {
+    padding: 1rem;
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .reset-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .items-table {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    overflow-x: auto;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 34%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 20%;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 10%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 12%;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: 15%;
+  }
+
+  th:nth-child(6),
+  td:nth-child(6) {
+    width: 10%;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  .sortable {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .sortable:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .sort-icon {
+    margin-left: 0.25rem;
+    opacity: 0.5;
+    font-size: 0.8em;
+  }
+
+  .item-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .item-row:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .item-row.active {
+    background: var(--nav-hover-bg);
+    border-left: 3px solid var(--primary);
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    margin-left: 0.5rem;
+    font-size: 0.8em;
+    margin-top: 0.25rem;
+  }
+
+  .name-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name-main {
+    font-weight: 500;
+  }
+
+  .rarity {
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8em;
+  }
+
+  .rarity.common { 
+    background: #6b7280; 
+    color: white; 
+  }
+  .rarity.uncommon { 
+    background: #10b981; 
+    color: white; 
+  }
+  .rarity.rare { 
+    background: #3b82f6; 
+    color: white; 
+  }
+  .rarity.very-rare { 
+    background: #8b5cf6; 
+    color: white; 
+  }
+  .rarity.legendary { 
+    background: #f59e0b; 
+    color: white; 
+  }
+  .rarity.artifact { 
+    background: #ef4444; 
+    color: white; 
+  }
+
+  .item-details {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .item-header h2 {
+    margin: 0;
+    flex: 1;
+  }
+
+  .item-header .source {
+    color: var(--text);
+    opacity: 0.8;
+    font-size: 0.9em;
+    margin-left: 1rem;
+  }
+
+  .item-meta {
+    margin-bottom: 1rem;
+  }
+
+  .item-meta p {
+    margin-bottom: 0.5rem;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--card-border);
+    margin: 1.5rem 0;
+  }
+
+  .item-description {
+    line-height: 1.6;
+  }
+
+  /* Ensure dynamically inserted HTML inside item details inherits these global rules */
+  #item-details .item-description p {
+    margin-bottom: 1rem;
+  }
+
+  #item-details .item-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-description :global(table) {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .item-description :global(th),
+  .item-description :global(td) {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  .item-description :global(th) {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  .item-description :global(tr:nth-child(even)) {
+    background: var(--background);
+  }
+
+  .item-description :global(tr:first-child th:first-child) {
+    border-top-left-radius: 0.5rem;
+  }
+
+  .item-description :global(tr:first-child th:last-child) {
+    border-top-right-radius: 0.5rem;
+  }
+
+  .developer-comment {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary);
+  }
+
+  .developer-comment h4 {
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  /* Developer comment paragraphs inside dynamic content */
+  #item-details .developer-comment p {
+    margin: 0;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* Direct styles for dynamically generated tables */
+  #item-details table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  #item-details th,
+  #item-details td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  /* Центрирование текста внутри таблиц, вставляемых в поле description */
+  #item-details .item-description table th,
+  #item-details .item-description table td {
+    text-align: center;
+  }
+
+  #item-details th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  #item-details tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  #item-details tr:first-child th:first-child {
+    border-top-left-radius: 0.5rem;
+  }
+
+  #item-details tr:first-child th:last-child {
+    border-top-right-radius: 0.5rem;
+  }
+
+  .base-analog {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .base-analog p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  /* Tooltip styles */
+  :global(.item-tooltip) {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  :global(.item-tooltip .tooltip-header) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  :global(.item-tooltip .tooltip-header h4) {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1rem;
+    flex: 1;
+  }
+
+  :global(.item-tooltip .tooltip-source) {
+    font-size: 0.8rem;
+    color: var(--text);
+    opacity: 0.8;
+    margin-left: 0.5rem;
+  }
+
+  :global(.item-tooltip .tooltip-meta) {
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.item-tooltip .tooltip-meta p) {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+  }
+
+  :global(.item-tooltip .tooltip-description) {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  :global(.item-tooltip .tooltip-description p) {
+    margin-bottom: 0.5rem;
+  }
+
+  :global(.item-tooltip .tooltip-description p:last-child) {
+    margin-bottom: 0;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar) {
+    width: 6px;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar-track) {
+    background: var(--background);
+    border-radius: 3px;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar-thumb) {
+    background: var(--card-border);
+    border-radius: 3px;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar-thumb:hover) {
+    background: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .magic-items-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .item-details {
+      position: static;
+      max-height: none;
+    }
+  }
+</style>

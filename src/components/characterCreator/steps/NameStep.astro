@@ -1,0 +1,78 @@
+<section class="wizard-step" data-step="identity">
+  <div class="step-heading">
+    <span>Глава первая</span>
+    <h2>Назови своего героя</h2>
+    <p>
+      Имя можно изменить позднее. Черновик автоматически сохраняется в этом браузере.
+    </p>
+  </div>
+
+  <label class="name-field">
+    <span>Имя персонажа</span>
+    <input
+      id="character-name"
+      type="text"
+      maxlength="60"
+      placeholder="Например: Боб"
+      autocomplete="off"
+    />
+  </label>
+</section>
+
+<style>
+  .step-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .step-heading > span {
+    color: var(--wizard-gold);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .step-heading h2 {
+    margin: 0.35rem 0 0.6rem;
+    font-family: Georgia, serif;
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+  }
+
+  .step-heading p {
+    max-width: 720px;
+    margin: 0;
+    opacity: 0.68;
+  }
+
+  .name-field {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 620px;
+  }
+
+  .name-field > span {
+    color: var(--wizard-gold);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .name-field input {
+    width: 100%;
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.58rem;
+    background: var(--background);
+    color: var(--text);
+    font: inherit;
+    font-size: 1.05rem;
+    outline: none;
+  }
+
+  .name-field input:focus {
+    border-color: var(--wizard-gold);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--wizard-gold) 16%, transparent);
+  }
+</style>

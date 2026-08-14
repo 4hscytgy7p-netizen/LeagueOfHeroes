@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClassCard from '../components/classes/ClassCard.astro';
+import { classes, premiumClasses } from '../data/classes';
+import type { Class } from '../types/class';
+
+// Sort classes by Russian name
+const classList = Array.isArray(classes) ? (classes as Class[]) : [];
+const premiumList = Array.isArray(premiumClasses) ? (premiumClasses as Class[]) : [];
+
+const sortedClasses = [...classList].sort((a: Class, b: Class) => 
+  a.name.localeCompare(b.name, 'ru')
+);
+const sortedPremium = [...premiumList].sort((a: Class, b: Class) => 
+  a.name.localeCompare(b.name, 'ru'));
+
+---
+
+<Layout title="Классы">
+  <div class="content">
+    <div class="page-shell">
+      <div class="main-column">
+        <h1>Классы</h1>
+
+        <div class="classes-grid">
+          {sortedClasses.map(classData => (
+            <ClassCard
+              name={classData.name}
+              nameEn={classData.nameEn}
+              portrait={classData.portrait}
+              sourceBook={classData.sourceBook}
+              id={classData.id}
+            />
+          ))}
+        </div>
+
+        <!--
+          <div class="premium-separator">
+            <div class="rule"></div>
+            <div class="label">Эти классы доступны игрокам с ролью @Герой лиги или выше</div>
+            <div class="rule"></div>
+          </div>
+        -->
+
+        <div class="classes-grid premium-grid">
+          {sortedPremium && sortedPremium.map(classData => (
+            <ClassCard
+              name={classData.name}
+              nameEn={classData.nameEn}
+              portrait={classData.portrait}
+              sourceBook={classData.sourceBook}
+              id={classData.id}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .page-shell {
+    display: block;
+  }
+
+  .main-column {
+    min-width: 0;
+  }
+
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .premium-separator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .premium-separator .rule {
+    height: 1px;
+    background: var(--card-border);
+    flex: 1 1 auto;
+  }
+
+  .premium-separator .label {
+    white-space: nowrap;
+    font-weight: 700;
+    color: var(--text);
+    padding: 0 0.75rem;
+  }
+
+  .premium-grid { margin-top: 1rem; }
+
+  @media (max-width: 1024px) {
+    .classes-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .classes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

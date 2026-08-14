@@ -1,0 +1,363 @@
+---
+---
+<button id="dice-roller-toggle" aria-label="Toggle dice roller" class="theme-toggle dice-toggle" aria-expanded="false">
+  <span class="dice-icon">🎲</span>
+</button>
+<div id="dice-roller-panel" class="dice-roller-panel" aria-hidden="true">
+  <div class="dice-roller-inner">
+    <div class="dice-roller-row">
+      <input id="dice-roller-input" class="dice-roller-input" type="text" placeholder="1d20+3" aria-label="Dice expression" />
+      <button id="dice-roller-roll" class="dice-roller-roll" type="button" aria-label="Roll dice">▶</button>
+    </div>
+    <div id="dice-roller-log" class="dice-roller-log" role="log" aria-live="polite"></div>
+  </div>
+</div>
+
+<style>
+  .dice-toggle {
+    position: fixed;
+    bottom: 5.5rem;
+    left: 1rem;
+    z-index: 1100;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-toggle-bg);
+    border: 1px solid var(--theme-toggle-border);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    color: var(--theme-toggle-color);
+    transition: all 0.25s ease;
+  }
+
+  .dice-toggle:hover {
+    background: var(--theme-toggle-hover-bg);
+  }
+
+  .dice-roller-panel {
+    position: fixed;
+    left: 0;
+    bottom: 8rem;
+    width: 50px;
+    width: 20rem;
+    height: 12rem;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    z-index: 1090;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0 0.75rem 0.75rem 0;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .dice-roller-panel.open {
+    transform: translateX(0);
+  }
+
+  .dice-roller-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.18rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .dice-roller-row {
+    display: flex;
+    gap: 0.1rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .dice-roller-input {
+    flex: 1;
+    min-height: 1.1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.35rem;
+    background: var(--background);
+    color: var(--text);
+    font-size: 1rem;
+    padding: 0.1rem 0.18rem;
+    line-height: 1.1;
+  }
+
+  .dice-roller-roll {
+    width: 1.4rem;
+    min-height: 1.1rem;
+    border: none;
+    border-radius: 0.35rem;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 0.08rem;
+    line-height: 1;
+  }
+
+  .dice-roller-log {
+    width: 100%;
+    flex: 1;
+    min-height: 1.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 0.85rem;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  .dice-roller-log p {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 640px) {
+    .dice-toggle {
+      display: none;
+    }
+
+    .dice-roller-panel {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  const panel = document.getElementById('dice-roller-panel');
+  const toggle = document.getElementById('dice-roller-toggle');
+  const rollButton = document.getElementById('dice-roller-roll');
+  const input = document.getElementById('dice-roller-input');
+  const log = document.getElementById('dice-roller-log');
+
+  const createToken = (type, value) => ({ type, value });
+
+  const tokenize = (expression) => {
+    const tokens = [];
+    let i = 0;
+    while (i < expression.length) {
+      const ch = expression[i];
+      if (ch === ' ' || ch === '\t' || ch === '\n' || ch === '\r') {
+        i += 1;
+        continue;
+      }
+      if (/[0-9]/.test(ch)) {
+        let number = ch;
+        i += 1;
+        while (i < expression.length && /[0-9]/.test(expression[i])) {
+          number += expression[i];
+          i += 1;
+        }
+        tokens.push(createToken('number', parseInt(number, 10)));
+        continue;
+      }
+      if (ch === 'd' || ch === 'D') {
+        tokens.push(createToken('d', ch));
+        i += 1;
+        continue;
+      }
+      if ('+-*/()'.includes(ch)) {
+        tokens.push(createToken(ch, ch));
+        i += 1;
+        continue;
+      }
+      throw new Error('Недопустимый символ: ' + ch);
+    }
+    return tokens;
+  };
+
+  const parseExpression = (tokens) => {
+    let position = 0;
+
+    const peek = () => tokens[position];
+    const next = () => tokens[position++];
+
+    const parsePrimary = () => {
+      const token = peek();
+      if (!token) {
+        throw new Error('Ожидается выражение');
+      }
+
+      if (token.type === 'number') {
+        const value = token.value;
+        next();
+        if (peek() && peek().type === 'd') {
+          next();
+          const sidesToken = next();
+          if (!sidesToken || sidesToken.type !== 'number') {
+            throw new Error('Ожидаются стороны кости после d');
+          }
+          return { type: 'dice', count: value, sides: sidesToken.value };
+        }
+        return { type: 'number', value };
+      }
+
+      if (token.type === 'd') {
+        next();
+        const sidesToken = next();
+        if (!sidesToken || sidesToken.type !== 'number') {
+          throw new Error('Ожидаются стороны кости после d');
+        }
+        return { type: 'dice', count: 1, sides: sidesToken.value };
+      }
+
+      if (token.type === '(') {
+        next();
+        const expression = parseAddSub();
+        if (!peek() || peek().type !== ')') {
+          throw new Error('Ожидается закрывающая скобка )');
+        }
+        next();
+        return expression;
+      }
+
+      throw new Error('Ожидается число, кость или скобка');
+    };
+
+    const parseMulDiv = () => {
+      let left = parsePrimary();
+      while (peek() && (peek().type === '*' || peek().type === '/')) {
+        const operator = next().type;
+        const right = parsePrimary();
+        left = { type: 'binary', operator, left, right };
+      }
+      return left;
+    };
+
+    const parseAddSub = () => {
+      let left = parseMulDiv();
+      while (peek() && (peek().type === '+' || peek().type === '-')) {
+        const operator = next().type;
+        const right = parseMulDiv();
+        left = { type: 'binary', operator, left, right };
+      }
+      return left;
+    };
+
+    const ast = parseAddSub();
+    if (peek()) {
+      throw new Error('Неправильное выражение');
+    }
+    return ast;
+  };
+
+  const rollDiceNode = (node) => {
+    if (node.type === 'number') {
+      return { value: node.value, text: String(node.value) };
+    }
+
+    if (node.type === 'dice') {
+      if (!Number.isInteger(node.count) || node.count < 1) {
+        throw new Error('Количество костей должно быть положительным целым числом');
+      }
+      if (!Number.isInteger(node.sides) || node.sides < 1 || node.sides > 10000) {
+        throw new Error('Количество сторон должно быть целым от 1 до 10000');
+      }
+      const rolls = [];
+      for (let i = 0; i < node.count; i += 1) {
+        rolls.push(1 + Math.floor(Math.random() * node.sides));
+      }
+      const total = rolls.reduce((sum, r) => sum + r, 0);
+      return { value: total, text: `${node.count}d${node.sides}(${rolls.join(',')})` };
+    }
+
+    if (node.type === 'binary') {
+      const left = rollDiceNode(node.left);
+      const right = rollDiceNode(node.right);
+      let value;
+      switch (node.operator) {
+        case '+': value = left.value + right.value; break;
+        case '-': value = left.value - right.value; break;
+        case '*': value = left.value * right.value; break;
+        case '/':
+          if (right.value === 0) {
+            throw new Error('Деление на ноль');
+          }
+          value = Math.trunc(left.value / right.value);
+          break;
+        default:
+          throw new Error('Неподдерживаемый оператор ' + node.operator);
+      }
+      return { value, text: `(${left.text} ${node.operator} ${right.text})` };
+    }
+
+    throw new Error('Неправильный узел AST');
+  };
+
+  const rollExpression = (expression) => {
+    const normalized = expression.replace(/\s+/g, '');
+    if (!normalized) {
+      throw new Error('Введите выражение броска');
+    }
+    const ast = parseExpression(tokenize(normalized));
+    const result = rollDiceNode(ast);
+    return result;
+  };
+
+  const appendLog = (message) => {
+    if (!log) return;
+    const entry = document.createElement('p');
+    entry.textContent = message;
+    log.insertBefore(entry, log.firstChild);
+    if (log.childElementCount > 30) {
+      log.removeChild(log.lastChild);
+    }
+  };
+
+  const rollNow = () => {
+    if (!input) return;
+    const value = input.value.trim();
+    if (!value) {
+      return;
+    }
+    try {
+      const result = rollExpression(value);
+      appendLog(`${value} = ${result.value} ${result.text !== String(result.value) ? result.text : ''}`);
+    } catch (error) {
+      appendLog(error instanceof Error ? `Ошибка: ${error.message}` : 'Ошибка выражения');
+    }
+  };
+
+  const togglePanel = () => {
+    if (!panel || !toggle) return;
+    const open = panel.classList.toggle('open');
+    panel.setAttribute('aria-hidden', (!open).toString());
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      input?.focus();
+    }
+  };
+
+  toggle?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    togglePanel();
+  });
+
+  rollButton?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    rollNow();
+  });
+
+  input?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      rollNow();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!panel || !toggle) return;
+    const target = event.target;
+    if (panel.classList.contains('open') && target instanceof Node && !panel.contains(target) && !toggle.contains(target)) {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

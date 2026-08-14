@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { spells } from '../../data/spells';
+import SpellDetails from '../../components/spells/SpellDetails.astro';
+
+export function getStaticPaths() {
+  return spells.map(spell => ({
+    params: { id: spell.id },
+    props: { spell }
+  }));
+}
+
+const { spell } = Astro.props;
+---
+
+<Layout title={`${spell.name}`}>
+  <div class="content">
+    <a href="/spells" class="back-link">← Назад к заклинаниям</a>
+    <SpellDetails spell={spell} />
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+</style>

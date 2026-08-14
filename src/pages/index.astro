@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="League of Heroes">
+	<div class="content">
+		<h1>Добро пожаловать на сайт Лиги Героев</h1>
+		
+		<p class="intro">
+			Этот сайт содержит наши правила, уточнения и материал касательно D&D 2024 (5.5).
+		</p>
+
+		<div class="quick-links">
+			<h2>Быстрые ссылки</h2>
+			<div class="grid">
+				<a href="/character-guide" class="card">
+					<h3>Создание персонажа</h3>
+					<p>Руководство по созданию персонажа, которым можно играть на партиях Лиги Героев</p>
+				</a>
+				<a href="/general-rules" class="card">
+					<h3>Правила Лиги Героев</h3>
+					<p>Общий свод правил</p>
+				</a>
+				<a href="/rules/downtime-activities" class="card">
+					<h3>Деятельность простоя</h3>
+					<p>Активности, которые может совершать персонаж вне партий</p>
+				</a>
+				<a href="/sigil" class="card">
+					<h3>Сигил</h3>
+					<p>Информация, законы, взаимодействия Сигила, а также положение Лиги Героев в нём</p>
+				</a>
+				<a href="/tools/character-creator/" class="card">
+					<h3>Конструктор персонажа</h3>
+					<p>Быстро, наглядно, эффективно</p>
+				</a>
+				<a href="/bastions" class="card">
+					<h3>Бастионы</h3>
+					<p>Получение, применение и особенности бастионов</p>
+				</a>
+				<a href="/magic-items" class="card">
+					<h3>Магические предметы</h3>
+					<p>Вещи, меняющие ход историй</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.intro {
+		font-size: 1.2rem;
+		color: var(--text);
+		max-width: 800px;
+	}
+
+	.quick-links {
+		margin-top: 3rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1rem;
+	}
+
+	.card {
+		background: var(--card-bg);
+		padding: 1.5rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--card-shadow);
+		text-decoration: none;
+		color: inherit;
+		transition: transform 0.2s, box-shadow 0.2s;
+		border: 1px solid var(--card-border);
+	}
+
+	.card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	}
+
+	.card h3 {
+		color: var(--primary);
+		margin-bottom: 0.5rem;
+	}
+
+	.card p {
+		color: var(--text);
+		margin: 0;
+	}
+</style>

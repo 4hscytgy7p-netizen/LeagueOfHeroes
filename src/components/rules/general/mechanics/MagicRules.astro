@@ -1,0 +1,42 @@
+---
+interface Props {}
+---
+
+<div class="magic-rules">
+  <h2>Правила магических предметов и заклинаний</h2>
+  
+  <div class="rules-section">
+    <h3>Перезарядка предметов</h3>
+    <p>Магические предметы, требующие перезарядки 1 день и более, перезаряжаются при трате дней простоя. Из дней, требуемых на перезарядку, вычитаются дни, проведённые на партии.</p>
+  </div>
+
+  <div class="rules-section">
+    <h3>Расходные компоненты</h3>
+    <p>Расходные компоненты, имеющие стоимость, невозможно создать магическим образом, кроме заклинания Желание. Их можно только купить или получить как награду за сессию.</p>
+  </div>
+</div>
+
+<style>
+  .magic-rules {
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .rules-section {
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    color: var(--primary);
+    margin: 1rem 0 0.5rem;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+</style>

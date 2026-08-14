@@ -1,0 +1,195 @@
+---
+// Эпическая прогрессия персонажей
+---
+
+<div class="rules-section">
+  <h3>Эпическая прогрессия персонажа</h3>
+
+  <div class="rule-block">
+    <p>После достижения 20 уровня (228 ОП):</p>
+    <p><strong>За каждые следующие 20 ОП персонаж получает одно из:</strong></p>
+    <ul>
+      <li>Эпический дар</li>
+      <li>Черту</li>
+      <li>+2 к характеристике (максимум 30)</li>
+    </ul>
+    <p class="note"><strong>Примечание:</strong> Если характеристика достигла 30, её больше нельзя повышать.</p>
+  </div>
+
+  <h3>Таблица эпических даров (d26)</h3>
+
+  <table class="boons-table">
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Boon of Combat Prowess</td>
+        <td>13</td>
+        <td>Boon of Peerless Aim</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Boon of Dimensional Travel</td>
+        <td>14</td>
+        <td>Boon of Perfect Health</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Boon of Fate</td>
+        <td>15</td>
+        <td>Boon of Planar Travel</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Boon of the Fire Soul</td>
+        <td>16</td>
+        <td>Boon of Quick Casting</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Boon of Fortitude</td>
+        <td>17</td>
+        <td>Boon of Recovery</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Boon of High Magic</td>
+        <td>18</td>
+        <td>Boon of Resilience</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Boon of Immortality</td>
+        <td>19</td>
+        <td>Boon of Skill Proficiency</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Boon of Invincibility</td>
+        <td>20</td>
+        <td>Boon of Speed</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Boon of Irresistible Offense</td>
+        <td>21</td>
+        <td>Boon of Spell Mastery</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Boon of Luck</td>
+        <td>22</td>
+        <td>Boon of Spell Recall</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Boon of Magic Resistance</td>
+        <td>23</td>
+        <td>Boon of the Stormborn</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Boon of the Night Spirit</td>
+        <td>24</td>
+        <td>Boon of Truesight</td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td>25</td>
+        <td>Boon of Undetectability</td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td>26</td>
+        <td>Boon of the Unfettered</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  .rule-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .note {
+    background: var(--bg-primary);
+    padding: 0.75rem;
+    border-left: 3px solid var(--warning-color);
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+  }
+
+  tr:nth-child(even) {
+    background: var(--bg-primary);
+  }
+
+  tr:hover {
+    background: var(--accent-color);
+    opacity: 0.7;
+  }
+
+  td:first-child,
+  td:nth-child(3) {
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+    background: var(--accent-color);
+    color: white;
+  }
+
+  tr:nth-child(even) td:first-child,
+  tr:nth-child(even) td:nth-child(3) {
+    background: var(--accent-color);
+    color: white;
+  }
+</style>

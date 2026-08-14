@@ -1,0 +1,244 @@
+---
+interface ArmorCategory {
+  name: string;
+  armors: Armor[];
+}
+
+interface Armor {
+  name: string;
+  nameEn: string;
+  ac: string;
+  strength_req: string;
+  stealth: string;
+  weight: string;
+  price: string;
+}
+
+const armorCategories: ArmorCategory[] = [
+  {
+    name: "Лёгкий доспех (1 минута на надевание или снятие)",
+    armors: [
+      {
+        name: "Стёганый доспех",
+        nameEn: "Padded Armor",
+        ac: "11 + модификатор Лов",
+        strength_req: "—",
+        stealth: "Помеха",
+        weight: "8 фнт.",
+        price: "5 зм"
+      },
+      {
+        name: "Кожаный доспех",
+        nameEn: "Leather Armor",
+        ac: "11 + модификатор Лов",
+        strength_req: "—",
+        stealth: "—",
+        weight: "10 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Проклёпанная кожа",
+        nameEn: "Studded Leather Armor",
+        ac: "12 + модификатор Лов",
+        strength_req: "—",
+        stealth: "—",
+        weight: "13 фнт.",
+        price: "45 зм"
+      }
+    ]
+  },
+  {
+    name: "Средний доспех (5 минут на надевание и 1 минута на снятие)",
+    armors: [
+      {
+        name: "Шкурный доспех",
+        nameEn: "Hide Armor",
+        ac: "12 + модификатор Лов (макс. 2)",
+        strength_req: "—",
+        stealth: "—",
+        weight: "12 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Кольчужная рубаха",
+        nameEn: "Chain Shirt",
+        ac: "13 + модификатор Лов (макс. 2)",
+        strength_req: "—",
+        stealth: "—",
+        weight: "20 фнт.",
+        price: "50 зм"
+      },
+      {
+        name: "Чешуйчатый доспех",
+        nameEn: "Scale Mail",
+        ac: "14 + модификатор Лов (макс. 2)",
+        strength_req: "—",
+        stealth: "Помеха",
+        weight: "45 фнт.",
+        price: "50 зм"
+      },
+      {
+        name: "Кираса",
+        nameEn: "Breastplate",
+        ac: "14 + модификатор Лов (макс. 2)",
+        strength_req: "—",
+        stealth: "—",
+        weight: "20 фнт.",
+        price: "400 зм"
+      },
+      {
+        name: "Полулаты",
+        nameEn: "Half Plate Armor",
+        ac: "15 + модификатор Лов (макс. 2)",
+        strength_req: "—",
+        stealth: "Помеха",
+        weight: "40 фнт.",
+        price: "750 зм"
+      },
+      {
+        name: "Шипованный доспех",
+        nameEn: "Spiked Armor",
+        ac: "14 + модификатор Лов (макс. 2)",
+        strength_req: "—",
+        stealth: "Помеха",
+        weight: "45 фнт.",
+        price: "75 зм"
+      }
+    ]
+  },
+  {
+    name: "Тяжёлый доспех (10 минут на надевание и 5 минут на снятие)",
+    armors: [
+      {
+        name: "Кольчатый доспех",
+        nameEn: "Ring Mail",
+        ac: "14",
+        strength_req: "—",
+        stealth: "Помеха",
+        weight: "40 фнт.",
+        price: "30 зм"
+      },
+      {
+        name: "Кольчуга",
+        nameEn: "Chain Mail",
+        ac: "16",
+        strength_req: "Сила 13",
+        stealth: "Помеха",
+        weight: "55 фнт.",
+        price: "75 зм"
+      },
+      {
+        name: "Наборный доспех",
+        nameEn: "Splint Armor",
+        ac: "17",
+        strength_req: "Сила 15",
+        stealth: "Помеха",
+        weight: "60 фнт.",
+        price: "200 зм"
+      },
+      {
+        name: "Латы",
+        nameEn: "Plate Armor",
+        ac: "18",
+        strength_req: "Сила 15",
+        stealth: "Помеха",
+        weight: "65 фнт.",
+        price: "1500 зм"
+      }
+    ]
+  },
+  {
+    name: "Щит (1 действие на надевание и 1 действие на снятие)",
+    armors: [
+      {
+        name: "Щит",
+        nameEn: "Shield",
+        ac: "+2",
+        strength_req: "—",
+        stealth: "—",
+        weight: "6 фнт.",
+        price: "10 зм"
+      }
+    ]
+  }
+];
+---
+
+<div class="armors-table">
+  {armorCategories.map(category => (
+    <section class="armor-category">
+      <h3>{category.name}</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>КД</th>
+              <th>Требование силы</th>
+              <th>Скрытность</th>
+              <th>Вес</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            {category.armors.map(armor => (
+              <tr>
+                <td>
+                  {armor.name}
+                  <span class="name-en">[{armor.nameEn}]</span>
+                </td>
+                <td>{armor.ac}</td>
+                <td>{armor.strength_req}</td>
+                <td>{armor.stealth}</td>
+                <td>{armor.weight}</td>
+                <td>{armor.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+</div>
+
+<style>
+  .armors-table {
+    margin: 2rem 0;
+  }
+
+  .armor-category {
+    margin-bottom: 2rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--card-bg);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    margin-left: 0.5rem;
+    font-size: 0.9em;
+  }
+</style>

@@ -1,0 +1,58 @@
+---
+interface Props { featOptions: any[]; }
+const { featOptions } = Astro.props;
+---
+<section class="wizard-step" data-step="origin-feats">
+  <div class="origin-feats-step-heading">
+    <span class="wizard-kicker">Глава пятая</span>
+    <h2>Выбери черты происхождения</h2>
+    <p id="origin-feats-description">Каждая предыстория предоставляет одну на выбор из 12 стандартных черт происхождения.</p>
+  </div>
+  <div class="origin-feats-warning" id="origin-feats-warning" hidden></div>
+  <div class="origin-feats-table-wrap">
+    <div class="origin-feats-summary" id="origin-feats-summary"></div>
+    <table class="origin-feats-table">
+      <thead><tr><th>Черта происхождения</th><th id="origin-feats-background-header">От предыстории</th><th id="origin-feats-race-header">От вида</th></tr></thead>
+      <tbody id="origin-feats-table-body"></tbody>
+    </table>
+  </div>
+
+  <section class="custom-lineage-feats" id="custom-lineage-feats" hidden>
+    <div class="custom-lineage-feats-heading">
+      <div>
+        <span>СВОЁ ПРОИСХОЖДЕНИЕ</span>
+        <h3>Дополнительная черта</h3>
+        <p>Выберите черту происхождения или доступную общую черту.</p>
+      </div>
+      <strong id="custom-lineage-feat-counter">0/1</strong>
+    </div>
+    <label class="custom-lineage-feat-search">
+      <span>Поиск черты</span>
+      <input id="custom-lineage-feat-search" type="search" placeholder="Начните вводить название..." autocomplete="off" />
+    </label>
+    <div class="custom-lineage-feat-table-wrap">
+      <table class="origin-feats-table custom-lineage-feat-table">
+        <thead><tr><th>Доступная черта</th><th>Выбрать</th></tr></thead>
+        <tbody id="custom-lineage-feat-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+  <div id="origin-feats-extra-choices"></div>
+</section>
+<style>
+  .origin-feats-step-heading{margin-bottom:1.25rem}.origin-feats-step-heading h2{margin:.35rem 0 .6rem;font-family:Georgia,serif;font-size:clamp(1.9rem,3.5vw,3rem)}.origin-feats-step-heading p{max-width:780px;margin:0;opacity:.68}
+  .origin-feats-warning{margin-bottom:.85rem;padding:.75rem .9rem;border:1px solid color-mix(in srgb,#ef4444 55%,var(--card-border));border-radius:.55rem;background:color-mix(in srgb,#ef4444 10%,transparent)}
+  .origin-feats-table-wrap{overflow-x:auto;border:1px solid color-mix(in srgb,var(--wizard-gold) 35%,var(--card-border));border-radius:.8rem;background:color-mix(in srgb,var(--background) 92%,#000)}
+  .origin-feats-summary{display:flex;justify-content:flex-end;min-width:650px;border-bottom:1px solid var(--card-border)}
+  :global(.origin-feats-summary-card){min-width:170px;padding:.75rem;text-align:center;border-left:1px solid var(--card-border)}:global(.origin-feats-summary-card span){display:block;opacity:.7;font-size:.7rem;text-transform:uppercase}:global(.origin-feats-summary-card strong){display:block;margin-top:.25rem;color:var(--wizard-gold-light);font-family:Georgia,serif;font-size:1.15rem}
+  .origin-feats-table{width:100%;min-width:650px;border-collapse:collapse;table-layout:fixed}.origin-feats-table th,.origin-feats-table :global(td){padding:.7rem .85rem;border-bottom:1px solid var(--card-border);text-align:center}.origin-feats-table th:first-child,.origin-feats-table :global(td:first-child){width:52%;text-align:left}.origin-feats-table th{color:var(--wizard-gold-light);font-size:.76rem;text-transform:uppercase;background:color-mix(in srgb,var(--card-bg) 88%,#000)}
+  .origin-feats-table :global(.origin-feat-name a){display:block;color:var(--wizard-gold-light);font-weight:800;text-decoration:none}.origin-feats-table :global(.origin-feat-name a:hover){text-decoration:underline}.origin-feats-table :global(.origin-feat-name small){display:block;margin-top:.15rem;opacity:.55}.origin-feats-table :global(.origin-feat-check){width:1.25rem;height:1.25rem;accent-color:var(--wizard-gold);cursor:pointer}.origin-feats-table :global(.origin-feat-check:disabled){cursor:not-allowed;opacity:.25}
+</style>
+
+<style>
+  .custom-lineage-feats{margin-top:1.1rem;padding:1rem;border:1px solid color-mix(in srgb,#9b74ff 45%,var(--card-border));border-radius:.9rem;background:linear-gradient(145deg,color-mix(in srgb,#9b74ff 8%,var(--card-bg)),color-mix(in srgb,var(--background) 94%,#000))}
+  .custom-lineage-feats-heading{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;margin-bottom:1rem}.custom-lineage-feats-heading span{color:var(--wizard-gold);font-size:.72rem;font-weight:900;letter-spacing:.1em}.custom-lineage-feats-heading h3{margin:.2rem 0 .35rem;color:#b99cff;font-family:Georgia,serif;font-size:1.45rem}.custom-lineage-feats-heading p{max-width:720px;margin:0;opacity:.72}.custom-lineage-feats-heading>strong{min-width:58px;padding:.45rem .65rem;border:1px solid color-mix(in srgb,var(--wizard-gold) 55%,var(--card-border));border-radius:999px;color:var(--wizard-gold-light);text-align:center}
+  .custom-lineage-feat-search{display:grid;gap:.35rem;max-width:520px;margin-bottom:.9rem}.custom-lineage-feat-search span{color:var(--wizard-gold);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.custom-lineage-feat-search input{width:100%;padding:.8rem .95rem;border:1px solid var(--card-border);border-radius:.65rem;background:color-mix(in srgb,var(--background) 88%,#000);color:var(--text);font:inherit}.custom-lineage-feat-search input:focus{outline:2px solid color-mix(in srgb,var(--wizard-gold) 55%,transparent);outline-offset:1px}
+  .custom-lineage-feat-table-wrap{max-height:520px;overflow:auto;border:1px solid var(--card-border);border-radius:.7rem}.custom-lineage-feat-table{min-width:560px}.custom-lineage-feat-table th:first-child,.custom-lineage-feat-table :global(td:first-child){width:auto}.custom-lineage-feat-table th:last-child,.custom-lineage-feat-table :global(td:last-child){width:110px}
+  @media(max-width:760px){.custom-lineage-feats-heading{display:grid}.custom-lineage-feat-table-wrap{overflow-x:auto}.custom-lineage-feat-table{min-width:520px}}
+</style>

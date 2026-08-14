@@ -1,0 +1,273 @@
+---
+interface Props {}
+---
+
+<div class="activity-card">
+  <div class="activity-header">
+    <h3>Работа</h3>
+    <p class="intro">Когда ничего другого не остаётся, приключенец может заняться честным трудом, чтобы заработать на жизнь. Этот вид деятельности — попытка найти временную работу, характер и оплату которой трудно предсказать.</p>
+    <div class="basic-info">
+      <div class="info-item">
+        <span class="label">Продолжительность:</span>
+        <span>5 дней простоя</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Базовая стоимость:</span>
+        <span>Проживание</span>
+      </div>
+    </div>
+  </div>
+
+  <details class="activity-details">
+    <summary>Подробная информация</summary>
+    <div class="details-content">
+      <section class="search-process">
+        <h4>Работа</h4>
+        <p>Чтобы определить, сколько денег получит персонаж, он совершает одну из проверок.</p>
+        <ul>
+            <li>Сила (Атлетика)</li>
+            <li>Ловкость (Акробатика)</li>
+            <li>Базовая характеристика при использовании набора инструментов (указано в инструменте)</li>
+            <li>Харизма (Выступление)</li>
+            <li>Харизма при игре на музыкальном инструменте</li>
+        </ul>
+        <div class="rules-section">
+          <h4>Заработок</h4>
+          <div class="activity-search">
+          <table>
+            <thead>
+              <tr>
+                <th>Результат проверки</th>
+                <th>Заработок</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>9 или меньше</td>
+                <td>5 зм</td>
+            </tr>
+            <tr>
+                <td>10–14</td>
+                <td>20 зм</td>
+            </tr>
+            <tr>
+                <td>15–20</td>
+                <td>50 зм</td>
+            </tr>
+            <tr>
+                <td>21+</td>
+                <td>100 зм</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div>
+      <p>Обычная работа редко приводит к значительным осложнениям. Однако таблица «Осложнения при работе» может добавить трудностей в жизнь рабочего. После Работы есть 10% шанс на осложнение (бросок d100, 1-10).</p>
+      </div>
+      <details class="activity-details">
+        <summary class="dets">Осложнения (d6)</summary>
+      <section class="complications">
+        <div class="complications-table">
+          <table>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>У вашего нанимателя возникли финансовые трудности, поэтому он не может вам заплатить. Вы не получаете Заработок.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Из-за жалобы клиента или драки с коллегой ваш заработок уменьшился на одну категорию.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Сотрудник, знакомый с одной из влиятельных семей города, вас невзлюбил. На следующие 30 ДП, если вы занимаетесь этой активностью, вы делаете бросок со штрафом -2.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ваш наниматель оказался связан с тёмным культом или преступностью. *</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Банда преступников выбрала ваше дело как цель рэкета. Совершите проверку Харизма (Запугивание) или спасбросок Телосложения Сл 15. При провале вы не получаете Заработок.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Вы получили репутацию лентяя (заслуженно или нет — на ваш выбор), где в следующие 30 ДП, если вы занимаетесь этой активностью, проверки совершаются с Помехой.</td>
+            </tr>
+            </tbody>
+          </table>
+          <p class="note">* - во всех активностях простоя, где есть требуется или специальное задание, требуется содействие Мастера Лиги, на следующей игре которого играет персонаж.</p>
+        </div>
+      </section>
+      </details>
+      <details class="activity-details">
+        <summary class="dets">Влияние стилей проживания</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Стиль</th>
+              <th>Стоимость/день</th>
+              <th>Эффект</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Никудышное</td>
+              <td>-</td>
+              <td>-1 к броску. Персонаж получает одну степень истощения</td>
+          </tr>
+          <tr>
+              <td>Бедное</td>
+              <td>1 см</td>
+              <td>-1 к броску. При осложнении, персонаж начинает следующую игру с одной степенью истощения</td>
+          </tr>
+          <tr>
+              <td>Скромное</td>
+              <td>1 зм</td>
+              <td>Без эффектов</td>
+          </tr>
+          <tr>
+              <td>Богатое</td>
+              <td>5 зм</td>
+              <td>+ 3 к броску</td>
+          </tr>
+          <tr>
+              <td>Аристократическое</td>
+              <td>10+ зм</td>
+              <td>+ 5 к броску. Вы можете совершить бросок с Преимуществом</td>
+          </tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+  </details>
+</div>
+
+<style>
+  .activity-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .activity-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+  
+  .dets{
+    color: var(--primary)
+  }
+
+  .basic-info {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .activity-search {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .activity-details {
+    border-top: 1px solid var(--card-border);
+  }
+
+  summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  summary:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .details-content {
+    padding: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  .complications-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .complications-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .complications-table td:first-child {
+    width: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

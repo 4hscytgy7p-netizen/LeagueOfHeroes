@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Discord Server">
+  <div class="content">
+    <h1>Наш Discord</h1>
+    <div class="discord-section">
+      <p>Добро пожаловать в наше сообщество D&D 5E! Присоединяйтесь к нашему серверу Discord для:</p>
+      <ul>
+        <li>Общения с другими игроками</li>
+        <li>Поиска группы для игры</li>
+        <li>Обсуждения правил и механик</li>
+        <li>Получения помощи от опытных игроков</li>
+      </ul>
+      <a href="https://discord.gg/league-of-heroes-785632489938878485" class="discord-button">Присоединиться к Discord</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .discord-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .discord-button {
+    display: inline-block;
+    background: #5865F2;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .discord-button:hover {
+    background: #4752c4;
+  }
+</style>

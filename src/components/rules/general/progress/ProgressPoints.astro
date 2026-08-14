@@ -1,0 +1,73 @@
+---
+interface Props {}
+---
+
+<div class="progress-section">
+  <h3>Очки прогресса (ОП)</h3>
+  <p>Персонаж получает 1 очко прогресса за каждый сыгранный час с округлением вниз. К примеру, если партия продлилась 4 часа 35 минут, то игроки получают 4 ОП. Если игрок, например, опоздал на партию или отсутствовал на партии долгое время, то мастер при выдаче данному игроку ОП вычитает из наигранного времени время отсутствия игрока.</p>
+  <p>Итоговое значение ОП за партию указывает Мастер в итогах сессии. Количество получаемых ОП может уменьшаться (перерывы внутри игры, отсутствие игрока(-ов), отсутствие персонажа на игре), и об этом Мастер обязан указать в результатах.</p>
+  
+  <div class="progress-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Уровень</th>
+          <th>ОП</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>0</td></tr>
+        <tr><td>2</td><td>4</td></tr>
+        <tr><td>3</td><td>10</td></tr>
+        <tr><td>4</td><td>20</td></tr>
+        <tr><td>5</td><td>35</td></tr>
+        <tr><td>6</td><td>50</td></tr>
+        <tr><td>7</td><td>65</td></tr>
+        <tr><td>8</td><td>80</td></tr>
+        <tr><td>9</td><td>95</td></tr>
+        <tr><td>10</td><td>110</td></tr>
+        <tr><td>11</td><td>130</td></tr>
+        <tr><td>12</td><td>150</td></tr>
+        <tr><td>13</td><td>170</td></tr>
+        <tr><td>14</td><td>190</td></tr>
+        <tr><td>15</td><td>210</td></tr>
+        <tr><td>16</td><td>230</td></tr>
+        <tr><td>17</td><td>250</td></tr>
+        <tr><td>18</td><td>270</td></tr>
+        <tr><td>19</td><td>290</td></tr>
+        <tr><td>20</td><td>310</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .progress-section {
+    margin-bottom: 2rem;
+  }
+
+  .progress-table {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+</style>

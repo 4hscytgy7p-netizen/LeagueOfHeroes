@@ -1,0 +1,157 @@
+---
+// Правила продажи предметов во время игры
+---
+
+<div class="rules-section">
+  <h3>Продажа предметов во время партии</h3>
+
+  <div class="requirements-block">
+    <h4>Требования:</h4>
+    <ul>
+      <li>Подходящее место</li>
+      <li>Покупатель</li>
+      <li>Минимум 1 игровой час поиска</li>
+    </ul>
+  </div>
+
+  <h4>Проверка Расследования</h4>
+  
+  <table class="check-table">
+    <thead>
+      <tr>
+        <th>Результат</th>
+        <th>Эффект</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1-10</td>
+        <td>Торговец не найден</td>
+      </tr>
+      <tr>
+        <td>11-20</td>
+        <td>Торговец найден</td>
+      </tr>
+      <tr>
+        <td>21+</td>
+        <td>Торговец найден, следующая проверка Убеждения с преимуществом</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Проверка Убеждения</h4>
+  
+  <p class="note">Проводится для каждого типа товара.</p>
+
+  <table class="check-table">
+    <thead>
+      <tr>
+        <th>Результат</th>
+        <th>Цена продажи</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1-10</td>
+        <td>50% цены</td>
+      </tr>
+      <tr>
+        <td>11-20</td>
+        <td>100% цены</td>
+      </tr>
+      <tr>
+        <td>21+</td>
+        <td>150% цены</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="rule-block">
+    <p><strong>Важно!</strong> Золото, полученное сверх базовой стоимости, в пул наград не входит.</p>
+  </div>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+  }
+
+  .requirements-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--card-border);
+  }
+
+  th {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--bg-primary);
+  }
+
+  tr:hover {
+    background: var(--accent-color);
+    opacity: 0.7;
+  }
+
+  .note {
+    background: var(--bg-primary);
+    padding: 0.75rem;
+    border-left: 3px solid var(--warning-color);
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .rule-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--warning-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+</style>

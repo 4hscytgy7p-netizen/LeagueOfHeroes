@@ -1,0 +1,36 @@
+---
+interface Props {
+  name: string;
+  description: string;
+}
+
+const { name, description } = Astro.props;
+---
+
+<div class="variant">
+  <h4 class="variant-name">{name}</h4>
+  <p class="variant-description">{description}</p>
+</div>
+
+<style>
+  .variant {
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .variant:last-child {
+    margin-bottom: 0;
+  }
+
+  .variant-name {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .variant-description {
+    line-height: 1.6;
+  }
+</style>

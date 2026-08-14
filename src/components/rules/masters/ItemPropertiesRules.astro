@@ -1,0 +1,135 @@
+---
+// Получение положительных и отрицательных свойств для предметов
+---
+
+<div class="rules-section">
+  <h3>Получение свойств предметов</h3>
+
+  <div class="rule-block">
+    <h4>Требования для получения свойства:</h4>
+    <ul>
+      <li>Логическое обоснование</li>
+      <li>Ролевое обоснование</li>
+    </ul>
+  </div>
+
+  <h4>Для обычных предметов:</h4>
+  
+  <div class="rule-block">
+    <ul>
+      <li>Бросок d100</li>
+      <li>Результат 1-15 даёт особое свойство</li>
+    </ul>
+    <p><strong>Шанс получения свойства: 15%</strong></p>
+  </div>
+
+  <div class="rule-block warning">
+    <p><strong>Важно!</strong> Мастер обязан уведомить остальных мастеров о выдаче предмета со свойствами.</p>
+  </div>
+
+  <h3>Максимум свойств по редкости</h3>
+
+  <table class="properties-table">
+    <thead>
+      <tr>
+        <th>Редкость</th>
+        <th>Максимум свойств</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Обычный/Необычный</td>
+        <td>1 малое</td>
+      </tr>
+      <tr>
+        <td>Редкий</td>
+        <td>2 малых</td>
+      </tr>
+      <tr>
+        <td>Очень редкий</td>
+        <td>3 малых или 1 основное</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .rule-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+
+  .rule-block.warning {
+    border-left-color: var(--warning-color);
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--card-border);
+  }
+
+  th {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--bg-primary);
+  }
+
+  tr:hover {
+    background: var(--accent-color);
+    opacity: 0.7;
+  }
+</style>

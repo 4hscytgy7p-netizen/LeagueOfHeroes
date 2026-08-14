@@ -1,0 +1,318 @@
+/* Light theme variables */
+:root {
+  --primary: #7c3aed;
+  --primary-dark: #5b21b6;
+  --background: #f8fafc;
+  --text: #1e293b;
+  /* Accent for state tooltips */
+  --state-accent: #b58900;
+  /* Link colors (light theme defaults) */
+  --link: #6d28d9;
+  --link-visited: #7c3aed;
+  --link-hover: #4c1d95;
+  --link-focus-box: 0 0 0 3px rgba(124,58,237,0.12);
+  
+  /* Card and UI elements */
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Navigation specific */
+  --nav-hover-bg: #f1f5f9;
+  
+  /* Theme toggle specific */
+  --theme-toggle-bg: #ffffff;
+  --theme-toggle-border: #e2e8f0;
+  --theme-toggle-color: #1e293b;
+  --theme-toggle-hover-bg: #f8fafc;
+
+  /* Highlight colors */
+  --highlight-positive: #16a34a;
+  --highlight-negative: #dc2626;
+
+  /* Subclass feature colors */
+  --subclass-feature-bg: #f3e8ff;
+  --subclass-feature-border: #e2e8f0;
+  --subclass-feature-title: #6d28d9;
+}
+
+/* Dark theme variables */
+:root.dark {
+  --primary: #a78bfa;
+  --primary-dark: #8b5cf6;
+  --background: #0f172a;
+  --text: #e2e8f0;
+  /* Accent for state tooltips in dark mode */
+  --state-accent: #ffd86b;
+  /* Link colors for dark theme */
+  --link: #c7b6ff;
+  --link-visited: #a78bfa;
+  --link-hover: #ffffff;
+  --link-focus-box: 0 0 0 4px rgba(167,139,250,0.14);
+  
+  /* Card and UI elements */
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  
+  /* Navigation specific */
+  --nav-hover-bg: #334155;
+  
+  /* Theme toggle specific */
+  --theme-toggle-bg: #1e293b;
+  --theme-toggle-border: #334155;
+  --theme-toggle-color: #e2e8f0;
+  --theme-toggle-hover-bg: #334155;
+
+  /* Highlight colors */
+  --highlight-positive: #4ade80;
+  --highlight-negative: #f87171;
+
+  /* Subclass feature colors */
+  --subclass-feature-bg: #2e1065;
+  --subclass-feature-border: #4c1d95;
+  --subclass-feature-title: #a78bfa;
+}
+
+/* Spell tooltip global styles */
+#spell-tooltip {
+  position: fixed;
+  display: none;
+  z-index: 1500;
+  max-width: 520px;
+  width: auto;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  pointer-events: auto;
+}
+
+#spell-tooltip .tooltip-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+#spell-tooltip .tooltip-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+#spell-tooltip .tooltip-title .name-en {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+#spell-tooltip .tooltip-source {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+#spell-tooltip .tooltip-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+#spell-tooltip .tooltip-level,
+#spell-tooltip .tooltip-school {
+  padding: 0.15rem 0.4rem;
+  background: var(--background);
+  border-radius: 3px;
+  border: 1px solid var(--card-border);
+}
+
+#spell-tooltip .tooltip-attrs {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+#spell-tooltip .tooltip-attrs div {
+  margin-bottom: 0.25rem;
+}
+
+#spell-tooltip .tooltip-attrs strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+#spell-tooltip .tooltip-desc {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#spell-tooltip .tooltip-desc p {
+  margin-bottom: 0.5rem;
+}
+
+#spell-tooltip .tooltip-desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* State tooltip variant (use a yellow/golden accent instead of primary) */
+#spell-tooltip.state-tooltip .tooltip-title {
+  color: var(--state-accent);
+}
+#spell-tooltip.state-tooltip .tooltip-attrs strong {
+  color: var(--state-accent);
+}
+
+/* Spell link styling */
+.spell-link {
+  color: var(--link);
+  text-decoration: underline;
+  cursor: pointer;
+  /* spells use a dotted underline to visually distinguish them */
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+.spell-link:visited { color: var(--link-visited); }
+
+.spell-link:hover { color: var(--link-hover); text-decoration-style: solid; }
+.spell-link:focus { outline: none; box-shadow: var(--link-focus-box); border-radius: 4px; }
+
+/* Item links: standard link appearance (solid underline, regular color) */
+.item-link {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.item-link:visited { color: var(--link-visited); }
+.item-link:hover { color: var(--link-hover); }
+.item-link:focus { outline: none; box-shadow: var(--link-focus-box); border-radius: 4px; }
+
+/* State links: use state accent color for the link text itself */
+.state-link {
+  color: var(--state-accent);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.state-link:visited { color: var(--state-accent); opacity: 0.9; }
+.state-link:hover { filter: brightness(0.95); }
+
+/* Global link defaults (uses theme variables) */
+a, a:link { color: var(--link); }
+a:visited { color: var(--link-visited); }
+a:hover, a:active { color: var(--link-hover); text-decoration-style: solid; }
+a:focus { outline: none; box-shadow: var(--link-focus-box); border-radius: 4px; }
+
+.highlight-prefix-positive { color: var(--highlight-positive); font-weight: 600; }
+.highlight-prefix-negative { color: var(--highlight-negative); font-weight: 600; }
+
+/* Responsive tooltip */
+@media (max-width: 768px) {
+  #spell-tooltip {
+    max-width: calc(100vw - 32px);
+    left: 16px !important;
+    right: 16px !important;
+    top: auto !important;
+    bottom: 16px !important;
+  }
+}
+
+/* Item tooltip (matches spell tooltip styles) */
+#item-tooltip, .item-tooltip {
+  position: fixed;
+  display: none;
+  z-index: 1500;
+  max-width: 520px;
+  width: auto;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  pointer-events: auto;
+}
+
+#item-tooltip .tooltip-header,
+.item-tooltip .tooltip-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+#item-tooltip .tooltip-title,
+.item-tooltip .tooltip-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+#item-tooltip .tooltip-title .name-en,
+.item-tooltip .tooltip-title .name-en {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+#item-tooltip .tooltip-source,
+.item-tooltip .tooltip-source {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+#item-tooltip .tooltip-meta,
+.item-tooltip .tooltip-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+#item-tooltip .tooltip-desc,
+.item-tooltip .tooltip-desc {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  #item-tooltip, .item-tooltip {
+    max-width: calc(100vw - 32px);
+    left: 16px !important;
+    right: 16px !important;
+    top: auto !important;
+    bottom: 16px !important;
+  }
+}

@@ -1,0 +1,234 @@
+<section class="wizard-step" data-step="skills">
+  <div class="skills-step-heading">
+    <span class="wizard-kicker">Глава шестая</span>
+    <h2>Выбери навыки</h2>
+    <p>Каждый навык можно получить только из одного источника. Лимиты класса, предыстории, вида и черты учитываются отдельно. Все навыки от черт выбираются только на этом этапе.</p>
+  </div>
+
+  <div class="skills-warning" id="skills-warning" hidden></div>
+
+  <div class="skills-table-wrap">
+    <div class="skills-table-inner">
+      <div class="skills-summary-row">
+        <div class="skills-summary-spacer" aria-hidden="true"></div>
+        <div class="skills-summary" id="skills-summary"></div>
+      </div>
+      <table class="skills-table">
+      <thead>
+        <tr>
+          <th>Навык</th>
+          <th>От класса</th>
+          <th>От предыстории</th>
+          <th>От вида</th>
+          <th>От черты</th>
+        </tr>
+      </thead>
+      <tbody id="skills-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-step-heading { margin-bottom: 1.25rem; }
+  .skills-step-heading h2 { margin: .35rem 0 .6rem; font-family: Georgia, serif; font-size: clamp(1.9rem, 3.5vw, 3rem); }
+  .skills-step-heading p { max-width: 760px; margin: 0; opacity: .68; }
+
+  .skills-summary-row {
+    display: grid;
+    grid-template-columns: 26% 74%;
+    min-width: 720px;
+    border-bottom: 1px solid color-mix(in srgb, var(--wizard-gold) 30%, var(--card-border));
+    background: color-mix(in srgb, var(--card-bg) 88%, #000);
+  }
+
+  .skills-summary-spacer {
+    min-height: 78px;
+    border-right: 1px solid color-mix(in srgb, var(--card-border) 55%, transparent);
+  }
+
+  .skills-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  :global(.skills-summary-card) {
+    display: flex;
+    min-width: 0;
+    min-height: 78px;
+    padding: .72rem .55rem;
+    border-right: 1px solid color-mix(in srgb, var(--card-border) 55%, transparent);
+    background: color-mix(in srgb, var(--card-bg) 82%, #000);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  :global(.skills-summary-card:last-child) { border-right: 0; }
+  :global(.skills-summary-card span) {
+    display: block;
+    opacity: .72;
+    font-size: .68rem;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: .075em;
+  }
+  :global(.skills-summary-card strong) {
+    display: block;
+    margin-top: .3rem;
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+  :global(.skills-summary-card small) {
+    margin-top: .24rem;
+    font-size: .61rem;
+    line-height: 1.25;
+    opacity: .62;
+    text-align: center;
+  }
+
+  .skills-warning { margin-bottom: .85rem; padding: .75rem .9rem; border: 1px solid color-mix(in srgb, #ef4444 55%, var(--card-border)); border-radius: .55rem; background: color-mix(in srgb, #ef4444 10%, transparent); }
+  .skills-warning.is-info { border-color: color-mix(in srgb, var(--wizard-gold) 55%, var(--card-border)); background: color-mix(in srgb, var(--wizard-gold) 10%, transparent); }
+
+  .skills-table-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scrollbar-gutter: stable;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 35%, var(--card-border));
+    border-radius: .8rem;
+    background: color-mix(in srgb, var(--background) 92%, #000);
+    box-shadow: 0 12px 30px rgb(0 0 0 / .14);
+  }
+
+  .skills-table-inner { min-width: 720px; }
+  .skills-table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+  .skills-table th,
+  .skills-table :global(td) {
+    height: 42px;
+    padding: .48rem .45rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--card-border) 72%, transparent);
+    border-right: 1px solid color-mix(in srgb, var(--card-border) 55%, transparent);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .skills-table th:first-child,
+  .skills-table :global(td:first-child) {
+    width: 26%;
+    text-align: left;
+  }
+
+  .skills-table th:last-child,
+  .skills-table :global(td:last-child) { border-right: 0; }
+
+  .skills-table th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: color-mix(in srgb, var(--card-bg) 88%, #000);
+    color: var(--wizard-gold-light);
+    font-size: .7rem;
+    line-height: 1.15;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--wizard-gold) 30%, var(--card-border));
+  }
+
+  .skills-table :global(tbody tr:nth-child(odd)) {
+    background: color-mix(in srgb, var(--card-bg) 34%, transparent);
+  }
+
+  .skills-table :global(tbody tr:nth-child(even)) {
+    background: color-mix(in srgb, var(--card-bg) 14%, transparent);
+  }
+
+  .skills-table :global(tbody tr:hover) {
+    background: color-mix(in srgb, var(--wizard-gold) 13%, var(--card-bg));
+    box-shadow: inset 4px 0 0 var(--wizard-gold);
+  }
+
+  .skills-table :global(tbody tr:last-child td) { border-bottom: 0; }
+
+  .skills-table :global(.skill-name) {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    padding-left: .7rem;
+    background: inherit;
+    color: color-mix(in srgb, currentColor 95%, white);
+    font-weight: 800;
+    letter-spacing: .01em;
+    box-shadow: 1px 0 0 color-mix(in srgb, var(--wizard-gold) 18%, var(--card-border));
+  }
+
+  .skills-table :global(td:not(:first-child)) {
+    position: relative;
+  }
+
+  .skills-table :global(.skill-source-check) {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
+    accent-color: var(--wizard-gold);
+    cursor: pointer;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / .35));
+  }
+
+  .skills-table :global(.skill-source-check:hover) {
+    transform: scale(1.12);
+  }
+
+  .skills-table :global(.skill-source-check:focus-visible) {
+    outline: 2px solid var(--wizard-gold-light);
+    outline-offset: 3px;
+  }
+
+  .skills-table :global(.skill-source-check:disabled) { cursor: not-allowed; opacity: .34; }
+  .skills-table :global(.skill-source-check:checked:disabled:not(.is-selected-elsewhere)) { opacity: 1; }
+  .skills-table :global(.skill-selected-elsewhere) {
+    background: color-mix(in srgb, #050914 34%, transparent);
+  }
+  .skills-table :global(.skill-source-check.is-selected-elsewhere) {
+    opacity: .24;
+    filter: grayscale(1) brightness(.68);
+  }
+  .skills-table :global(.skill-source-check.is-selected-elsewhere:hover) { transform: none; }
+  .skills-table :global(.skill-unavailable) { opacity: .42; }
+  .skills-table :global(.skill-unavailable-mark) {
+    display: inline-block;
+    color: color-mix(in srgb, currentColor 32%, transparent);
+    font-size: 1rem;
+    user-select: none;
+  }
+
+  @media (max-width: 980px) {
+    .skills-table-wrap {
+      border-radius: .65rem;
+      box-shadow: inset -18px 0 18px -18px rgb(0 0 0 / .65);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .skills-table-inner,
+    .skills-summary-row {
+      min-width: 640px;
+    }
+
+    .skills-summary-row {
+      grid-template-columns: 34% 66%;
+    }
+
+    .skills-table th:first-child,
+    .skills-table :global(td:first-child) {
+      width: 34%;
+    }
+  }
+</style>

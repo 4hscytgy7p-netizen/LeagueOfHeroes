@@ -1,0 +1,213 @@
+---
+// Благословения, драконьи дары и чармы
+---
+
+<div class="rules-section">
+  <h3>Благословения</h3>
+
+  <div class="rule-block">
+    <p><strong>Благословения выдаются за взаимодействие с могущественными существами.</strong></p>
+    <h4>Особенности:</h4>
+    <ul>
+      <li>Игрок не должен знать, какое благословение получает</li>
+      <li>Благословение можно получить только один раз</li>
+      <li>В записи указывается эффект, но не название</li>
+      <li>Если благословение уже есть, выдаётся компенсация</li>
+    </ul>
+  </div>
+
+  <h4>Стоимость благословений</h4>
+
+  <table class="blessings-table">
+    <thead>
+      <tr>
+        <th>Благословение</th>
+        <th>Стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fortunes Grace</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of Wound Closure</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of Weapon Enhancement</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of Valhalla</td>
+        <td>10000 зм (этап 2+)</td>
+      </tr>
+      <tr>
+        <td>Blessing of Understanding</td>
+        <td>25000 зм (этап 3+)</td>
+      </tr>
+      <tr>
+        <td>Blessing of the Solipsistic Mind</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of the Morninglord</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of the Frostmaiden</td>
+        <td>150000 зм (этап 4+)</td>
+      </tr>
+      <tr>
+        <td>Blessing of Protection</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of Magic Resistance</td>
+        <td>10000 зм (этап 2+)</td>
+      </tr>
+      <tr>
+        <td>Blessing of Lonely Genius</td>
+        <td>25000 зм (этап 3+)</td>
+      </tr>
+      <tr>
+        <td>Blessing of Health</td>
+        <td>25000 зм (этап 3+)</td>
+      </tr>
+      <tr>
+        <td>Blessing of Dumathoin</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Blessing of Bloody Might</td>
+        <td>25000 зм (этап 3+)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Драконьи дары</h3>
+
+  <div class="rule-block">
+    <p><strong>Выдаются за взаимодействие минимум со Взрослым драконом (CR 11+).</strong></p>
+  </div>
+
+  <table class="gifts-table">
+    <thead>
+      <tr>
+        <th>Дар</th>
+        <th>Стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tongue of the Dragon</td>
+        <td>10000 зм</td>
+      </tr>
+      <tr>
+        <td>Scaled Toughness</td>
+        <td>150000 зм</td>
+      </tr>
+      <tr>
+        <td>Psionic Reach</td>
+        <td>25000 зм</td>
+      </tr>
+      <tr>
+        <td>Frightful Presence</td>
+        <td>25000 зм</td>
+      </tr>
+      <tr>
+        <td>Echo of Dragonsight</td>
+        <td>25000 зм</td>
+      </tr>
+      <tr>
+        <td>Draconic Senses</td>
+        <td>10000 зм</td>
+      </tr>
+      <tr>
+        <td>Draconic Rebirth</td>
+        <td>300 зм</td>
+      </tr>
+      <tr>
+        <td>Draconic Familiar</td>
+        <td>300 зм</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .rule-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--card-border);
+  }
+
+  th {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--bg-primary);
+  }
+
+  tr:hover {
+    background: var(--accent-color);
+    opacity: 0.7;
+  }
+</style>

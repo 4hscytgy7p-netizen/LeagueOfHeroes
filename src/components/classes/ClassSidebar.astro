@@ -1,0 +1,405 @@
+---
+import type { Class, ClassFeature, Subclass } from '../../types/class';
+
+interface Props {
+  classes: Class[];
+  activeClassId?: string;
+  currentSubclassId?: string;
+}
+
+const { classes: classList, activeClassId, currentSubclassId } = Astro.props;
+const sortedClasses = [...classList].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+
+function isClassFeature(feature: ClassFeature | unknown): feature is ClassFeature {
+  return typeof feature === 'object' && feature !== null && 'name' in feature;
+}
+
+function isSubclass(subclass: Subclass | unknown): subclass is Subclass {
+  return typeof subclass === 'object' && subclass !== null && 'id' in subclass && 'name' in subclass;
+}
+
+function slugify(value: string): string {
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/[\s/\\]+/g, '-')
+    .replace(/[^a-zа-я0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function buildFeatureAnchor(name: string, level: number, isSubclass = false): string {
+  const slug = slugify(name || `feature-${level}`);
+  return `feature-${slug}-${level}${isSubclass ? '-subclass' : ''}`;
+}
+---
+
+<button type="button" class="class-sidebar-fab" aria-label="Открыть меню классов" aria-expanded="false">
+  <span aria-hidden="true">☰</span>
+</button>
+
+<div class="class-sidebar-overlay" hidden></div>
+
+<nav class="class-sidebar is-collapsed" aria-label="Навигация по классам" data-sidebar-key={`class-${activeClassId || 'all'}-sidebar-collapsed`}>
+  <div class="sidebar-head">
+    <div class="sidebar-title">Классы</div>
+    <button type="button" class="class-sidebar-close" aria-label="Закрыть меню классов" aria-expanded="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="sidebar-content">
+    <ul class="class-list">
+      {sortedClasses.map((classData: Class) => {
+        const isActive = classData.id === activeClassId;
+        const showFeatures = isActive || !activeClassId;
+        const hasSubclasses = Array.isArray(classData.subclasses) && classData.subclasses.length > 0;
+        const hasFeatures = Array.isArray(classData.features) && classData.features.length > 0;
+
+        return (
+          <li class={`class-item ${isActive ? 'is-active' : ''}`}>
+            <a href={`/classes/${classData.id}`} class="class-link">
+              <span>{classData.name}</span>
+              <span class="class-name-en">{classData.nameEn}</span>
+            </a>
+
+            {showFeatures && (
+              <div class="class-accordion">
+                {hasFeatures && (
+                  <details class="sidebar-group" open={isActive}>
+                    <summary>Основные способности</summary>
+                    <ul class="feature-list">
+                      {classData.features.filter(isClassFeature).map((feature: ClassFeature) => {
+                        const anchor = buildFeatureAnchor(feature.name, feature.level);
+                        return (
+                          <li>
+                            <button type="button" class="sidebar-feature-link" data-feature-anchor={anchor} data-subclass-id="">
+                              <span>{feature.name}</span>
+                              <span class="sidebar-feature-level">Ур. {feature.level}</span>
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </details>
+                )}
+
+                {hasSubclasses && (
+                  <details class="sidebar-group" open={isActive}>
+                    <summary>Подклассы</summary>
+                    <ul class="subclass-list">
+                      {classData.subclasses.filter(isSubclass).map((subclass: Subclass) => {
+                        const isSelected = subclass.id === currentSubclassId;
+                        const hasSubclassFeatures = Array.isArray(subclass.features) && subclass.features.length > 0;
+
+                        return (
+                          <li class={`subclass-item ${isSelected ? 'is-selected' : ''}`} data-subclass-id={subclass.id}>
+                            <details class="subclass-group">
+                              <summary>{subclass.name}</summary>
+                              {hasSubclassFeatures && (
+                                <ul class="feature-list">
+                                  {subclass.features.filter(isClassFeature).map((feature: ClassFeature) => {
+                                    const anchor = buildFeatureAnchor(feature.name, feature.level, true);
+                                    return (
+                                      <li>
+                                        <button type="button" class="sidebar-feature-link" data-feature-anchor={anchor} data-subclass-id={subclass.id}>
+                                          <span>{feature.name}</span>
+                                          <span class="sidebar-feature-level">Ур. {feature.level}</span>
+                                        </button>
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              )}
+                            </details>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </details>
+                )}
+              </div>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</nav>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebar =
+      document.querySelector<HTMLElement>('.class-sidebar');
+
+    const openButton =
+      document.querySelector<HTMLButtonElement>('.class-sidebar-fab');
+
+    const closeButton =
+      document.querySelector<HTMLButtonElement>('.class-sidebar-close');
+
+    const overlay =
+      document.querySelector<HTMLElement>('.class-sidebar-overlay');
+
+    if (!sidebar || !openButton || !overlay) return;
+
+    const storageKey =
+      sidebar.getAttribute('data-sidebar-key') ||
+      'class-sidebar-collapsed';
+
+    function setSidebarOpen(isOpen: boolean) {
+      sidebar.classList.toggle('is-collapsed', !isOpen);
+
+      openButton.hidden = isOpen;
+      openButton.setAttribute('aria-expanded', String(isOpen));
+      closeButton?.setAttribute('aria-expanded', String(isOpen));
+
+      overlay.hidden = !isOpen;
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      localStorage.setItem(storageKey, isOpen ? '0' : '1');
+    }
+
+    const savedState = localStorage.getItem(storageKey);
+    setSidebarOpen(savedState === '0');
+
+    openButton.addEventListener('click', () => setSidebarOpen(true));
+    closeButton?.addEventListener('click', () => setSidebarOpen(false));
+    overlay.addEventListener('click', () => setSidebarOpen(false));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !sidebar.classList.contains('is-collapsed')) {
+        setSidebarOpen(false);
+      }
+    });
+  });
+</script>
+
+<style>
+  .class-sidebar-fab[hidden] {
+    display: none;
+  }
+
+  .class-sidebar-fab {
+    position: fixed;
+    top: 5.75rem;
+    left: 1rem;
+    z-index: 1001;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text);
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .class-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .class-sidebar-overlay[hidden] {
+    display: none;
+  }
+
+  .class-sidebar {
+    position: fixed;
+    top: 5.5rem;
+    left: 0;
+    z-index: 1000;
+    width: min(320px, calc(100vw - 1rem));
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-left: none;
+    border-radius: 0 0.75rem 0.75rem 0;
+    box-shadow: var(--card-shadow);
+    max-height: calc(100vh - 6.5rem);
+    overflow-y: auto;
+    transform: translateX(0);
+    transition: transform 220ms ease;
+  }
+
+  .class-sidebar.is-collapsed {
+    transform: translateX(-105%);
+  }
+
+  .sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .sidebar-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+  }
+
+  .class-sidebar-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: var(--background);
+    color: var(--text);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .class-sidebar.is-collapsed .sidebar-title,
+  .class-sidebar.is-collapsed .sidebar-content {
+    display: block;
+  }
+
+  .class-sidebar.is-collapsed ~ * {
+    pointer-events: auto;
+  }
+
+  .class-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .class-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background: color-mix(in srgb, var(--card-bg) 88%, var(--background) 12%);
+  }
+
+  .class-item.is-active {
+    border-color: color-mix(in srgb, var(--card-border) 80%, var(--primary) 20%);
+    background: color-mix(in srgb, var(--card-bg) 80%, var(--primary) 20%);
+  }
+
+  .class-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.7rem 0.8rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .class-link:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .class-name-en {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    font-weight: 500;
+  }
+
+  .class-accordion {
+    padding: 0 0.6rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .sidebar-group,
+  .subclass-group {
+    border-radius: 0.45rem;
+    background: var(--background);
+    border: 1px solid color-mix(in srgb, var(--card-border) 70%, transparent);
+  }
+
+  .sidebar-group > summary,
+  .subclass-group > summary {
+    cursor: pointer;
+    padding: 0.55rem 0.7rem;
+    font-weight: 600;
+    list-style: none;
+  }
+
+  .sidebar-group > summary::-webkit-details-marker,
+  .subclass-group > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .feature-list,
+  .subclass-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0 0.7rem 0.7rem;
+  }
+
+  .feature-list li,
+  .subclass-item {
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .sidebar-feature-link {
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--card-border) 70%, transparent);
+    border-radius: 0.55rem;
+    padding: 0.55rem 0.6rem;
+    background: var(--card-bg);
+    color: var(--text);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    cursor: pointer;
+    transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  }
+
+  .sidebar-feature-link:hover {
+    border-color: var(--primary);
+    background: color-mix(in srgb, var(--card-bg) 85%, var(--primary) 15%);
+    transform: translateX(2px);
+  }
+
+  .sidebar-feature-link.is-active {
+    border-color: var(--primary);
+    background: color-mix(in srgb, var(--card-bg) 80%, var(--primary) 20%);
+  }
+
+  .sidebar-feature-level {
+    font-size: 0.77rem;
+    opacity: 0.75;
+  }
+
+  .subclass-item.is-selected > .subclass-group > summary {
+    color: var(--primary);
+  }
+
+  @media (max-width: 1024px) {
+    .class-sidebar-fab {
+      top: 5.25rem;
+      left: 0.75rem;
+    }
+
+    .class-sidebar {
+      top: 5rem;
+      width: min(320px, calc(100vw - 1rem));
+      max-height: calc(100vh - 6rem);
+    }
+  }
+</style>

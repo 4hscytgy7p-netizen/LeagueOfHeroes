@@ -1,0 +1,196 @@
+---
+---
+
+<div id="palette-editor" class="palette-editor">
+    <button id="palette-open" class="theme-toggle palette-open" aria-label="Open palette editor">🎨</button>
+  
+    <div id="palette-modal" class="palette-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="palette-panel">
+        <header>
+          <h3>Настройка палитры</h3>
+          <button id="palette-close" class="close">✕</button>
+        </header>
+  
+        <div class="palette-body">
+          <label for="accent-color">Акцентный цвет</label>
+          <input id="accent-color" type="color" value="#7c3aed">
+          <div class="presets">
+            <button class="preset" data-color="#7c3aed" style="background:#7c3aed"></button>
+            <button class="preset" data-color="#ea580c" style="background:#ea580c"></button>
+            <button class="preset" data-color="#059669" style="background:#059669"></button>
+            <button class="preset" data-color="#0ea5e9" style="background:#0ea5e9"></button>
+          </div>
+  
+          <div class="actions">
+            <button id="apply-palette">Применить</button>
+            <button id="save-palette">Сохранить</button>
+            <button id="reset-palette">Сброс</button>
+          </div>
+  
+          <div id="palette-feedback" class="feedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .palette-open {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 4rem;
+    background: var(--theme-toggle-bg);
+    border: 1px solid var(--theme-toggle-border);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-toggle-color);
+    transition: all 0.3s ease;
+  }
+  
+    .palette-modal { display:none; position:fixed; inset:0; background: rgba(0,0,0,0.4); align-items:center; justify-content:center; z-index:1600; }
+    .palette-modal[aria-hidden="false"] { display:flex; }
+    .palette-panel { background: var(--card-bg); color: var(--text); padding: 1rem; width: 320px; border-radius:8px; box-shadow: var(--card-shadow); border:1px solid var(--card-border); }
+    .palette-panel header { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; }
+    .palette-panel .preset { width:28px; height:28px; border-radius:6px; border:1px solid rgba(0,0,0,0.08); margin-right:0.4rem; cursor:pointer; }
+    .palette-body label { display:block; margin-bottom:0.25rem; }
+    .palette-body input[type="color"] { width:56px; height:36px; border: none; padding:0; background:transparent; cursor:pointer; }
+    .actions { display:flex; gap:0.5rem; margin-top:0.6rem; }
+    .actions button { padding:0.45rem 0.6rem; border-radius:6px; border:1px solid var(--card-border); background:transparent; cursor:pointer; }
+    .feedback { margin-top:0.6rem; font-size:0.85rem; color:var(--text); opacity:0.8 }
+    @media(max-width:760px){.palette-open{display:none}.palette-panel{width:min(320px,calc(100vw - 1.5rem))}}
+  </style>
+  
+  <script type="module">
+    // Inline palette utilities to avoid runtime 404 for dynamic imports
+    const STORAGE_KEY = 'lh_user_palette_v1';
+  
+    function applyPalette(palette = {}) {
+      if (typeof document === 'undefined') return;
+      const root = document.documentElement;
+      Object.entries(palette).forEach(([key, value]) => {
+        try { root.style.setProperty(key, value); } catch (e) { }
+      });
+    }
+  
+    function savePalette(palette = {}) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(palette)); } catch (e) { console.error('Failed to save palette', e); }
+    }
+  
+    function loadPalette() {
+      try { const raw = localStorage.getItem(STORAGE_KEY); if (!raw) return null; return JSON.parse(raw); } catch (e) { console.error('Failed to load palette', e); return null; }
+    }
+  
+    function generateFromAccent(accentHex) {
+      const hsl = hexToHsl(accentHex);
+      if (!hsl) return null;
+      const { h, s, l } = hsl;
+      const primary = accentHex;
+      const primaryDark = hslToHex(h, Math.max(20, s - 6), Math.max(8, l - 18));
+      const link = accentHex;
+      const linkVisited = hslToHex(h, Math.max(10, s - 10), Math.max(18, l - 28));
+      const linkHover = hslToHex(h, Math.min(100, s + 6), Math.min(95, l + 18));
+  
+      return {
+        '--primary': primary,
+        '--primary-dark': primaryDark,
+        '--link': link,
+        '--link-visited': linkVisited,
+        '--link-hover': linkHover,
+      };
+    }
+  
+    function hexToHsl(hex) {
+      if (!hex) return null;
+      const cleaned = hex.replace('#', '');
+      const bigint = parseInt(cleaned, 16);
+      if (Number.isNaN(bigint)) return null;
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      const rP = r / 255; const gP = g / 255; const bP = b / 255;
+      const max = Math.max(rP, gP, bP); const min = Math.min(rP, gP, bP);
+      let h, s; let l = (max + min) / 2;
+      if (max === min) { h = s = 0; } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+          case rP: h = (gP - bP) / d + (gP < bP ? 6 : 0); break;
+          case gP: h = (bP - rP) / d + 2; break;
+          case bP: h = (rP - gP) / d + 4; break;
+        }
+        h *= 60;
+      }
+      return { h: Math.round(h), s: Math.round(s * 100), l: Math.round(l * 100) };
+    }
+  
+    function hslToHex(h, s, l) {
+      s = s / 100; l = l / 100;
+      const c = (1 - Math.abs(2 * l - 1)) * s;
+      const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+      const m = l - c / 2;
+      let r=0,g=0,b=0;
+      if (0 <= h && h < 60) { r = c; g = x; b = 0; }
+      else if (60 <= h && h < 120) { r = x; g = c; b = 0; }
+      else if (120 <= h && h < 180) { r = 0; g = c; b = x; }
+      else if (180 <= h && h < 240) { r = 0; g = x; b = c; }
+      else if (240 <= h && h < 300) { r = x; g = 0; b = c; }
+      else { r = c; g = 0; b = x; }
+      const R = Math.round((r + m) * 255);
+      const G = Math.round((g + m) * 255);
+      const B = Math.round((b + m) * 255);
+      return `#${toHex(R)}${toHex(G)}${toHex(B)}`;
+    }
+  
+    function toHex(v) { const s = v.toString(16); return s.length === 1 ? '0' + s : s; }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('palette-open');
+      const modal = document.getElementById('palette-modal');
+      const closeBtn = document.getElementById('palette-close');
+      const accentInput = document.getElementById('accent-color');
+      const presets = Array.from(document.querySelectorAll('.preset'));
+      const applyBtn = document.getElementById('apply-palette');
+      const saveBtn = document.getElementById('save-palette');
+      const resetBtn = document.getElementById('reset-palette');
+      const feedback = document.getElementById('palette-feedback');
+  
+      function open() { if (modal) modal.setAttribute('aria-hidden', 'false'); }
+      function close() { if (modal) modal.setAttribute('aria-hidden', 'true'); if (feedback) feedback.textContent = ''; }
+  
+      openBtn?.addEventListener('click', open);
+      closeBtn?.addEventListener('click', close);
+      modal?.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  
+      presets.forEach(p => p.addEventListener('click', () => { if (accentInput) { accentInput.value = p.dataset.color; applyAccent(); } }));
+  
+      function applyAccent() {
+        const accent = accentInput?.value || '#7c3aed';
+        const pal = generateFromAccent(accent) || { '--primary': accent, '--link': accent };
+        applyPalette(pal);
+        if (feedback) feedback.textContent = 'Применено временно. Нажмите Сохранить, чтобы сохранить.';
+        return pal;
+      }
+  
+      applyBtn?.addEventListener('click', () => { applyAccent(); });
+      saveBtn?.addEventListener('click', () => {
+        const pal = applyAccent();
+        savePalette(pal);
+        if (feedback) feedback.textContent = 'Палитра сохранена.';
+      });
+      resetBtn?.addEventListener('click', () => {
+        try { localStorage.removeItem('lh_user_palette_v1'); location.reload(); } catch (e) { console.error(e); }
+      });
+  
+      // Load saved palette into UI
+      const saved = loadPalette();
+      if (saved) {
+        if (saved['--primary'] && /^#([0-9a-fA-F]{6})$/.test(saved['--primary'])) {
+          if (accentInput) accentInput.value = saved['--primary'];
+        }
+      }
+    });
+  </script>
+  

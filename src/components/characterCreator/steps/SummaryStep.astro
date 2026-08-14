@@ -1,0 +1,117 @@
+<section class="wizard-step" data-step="summary">
+  <div class="step-heading">
+    <span>Последняя глава</span>
+    <h2>Персонаж готов</h2>
+    <p>Персонаж создан.</p>
+  </div>
+
+  <div class="character-next-steps">
+    <h3>Что делать дальше</h3>
+    <div class="next-steps-guide">
+      <h4>Последние штрихи</h4>
+
+      <ol>
+        <li>Найди или создай портрет персонажа.</li>
+
+        <li>
+          Сделай токен персонажа.<br />
+          Можно воспользоваться
+          <a href="/tools/tokenator/" target="_blank" rel="noopener noreferrer">
+            инструментом Tokenator
+          </a>
+          или сторонними инструментами.
+        </li>
+
+        <li>
+          Создай анкету персонажа в Discord в форуме <strong>«Персонажи Лиги»</strong>:<br />
+          <a
+            href="https://discord.com/channels/785632489938878485/1293489523694637076"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Перейти к форуму
+          </a>
+
+          <p>
+            Нажми <strong>«Новая публикация»</strong>.<br />
+            Скопируй описание анкеты кнопкой <strong>«Копировать описание»</strong> ниже.
+          </p>
+
+          <p>
+            Текущий день прибытия можно посмотреть здесь:<br />
+            <a
+              href="https://discord.com/channels/785632489938878485/1344611771700346933"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              День прибытия
+            </a>
+          </p>
+
+          <strong>Не забудь загрузить готовый токен в публикацию.</strong>
+        </li>
+
+        <li>
+          Скачай файл персонажа кнопкой <strong>«Скачать файл персонажа»</strong>.
+          <p>
+            В своей публикации упомяни <strong>@Ординатор</strong> и прикрепи файл персонажа.
+          </p>
+        </li>
+      </ol>
+
+      <p><strong>Ожидай ответа Ординатора.</strong></p>
+      <p><strong>Приятной игры!</strong> 🎲</p>
+    </div>
+  </div>
+
+  <div class="final-actions">
+    <button class="button button-primary" id="download-roll20" type="button">Скачать файл персонажа</button>
+    <button class="button button-secondary" id="copy-character-description" type="button">Копировать описание</button>
+    <button class="button button-secondary" id="edit-character" type="button">Вернуться к выбору</button>
+  </div>
+  <p class="roll20-export-note">Скачанный JSON-файл можно импортировать в Roll20.</p>
+</section>
+
+<style>
+  .character-next-steps {
+    padding: 1.25rem;
+    border: 1px solid var(--card-border);
+    border-radius: .7rem;
+    background: color-mix(in srgb, var(--wizard-gold) 6%, var(--card-bg));
+  }
+
+  .character-next-steps h3 {
+    margin: 0 0 .75rem;
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+  }
+
+  .character-next-steps h4 {
+    margin: 0 0 1rem;
+    color: var(--wizard-gold-light);
+  }
+
+  .character-next-steps ol {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+
+  .character-next-steps li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .character-next-steps a {
+    color: var(--wizard-gold-light);
+    text-decoration: underline;
+  }
+
+  .character-next-steps a:hover {
+    text-decoration: none;
+  }
+
+  .character-next-steps p {
+    margin: 1rem 0 0;
+    line-height: 1.6;
+  }
+</style>

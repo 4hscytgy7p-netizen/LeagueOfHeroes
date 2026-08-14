@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MastersRulesCategory from '../components/rules/masters/MastersRulesCategory.astro';
+import TreasureAwardsRules from '../components/rules/masters/TreasureAwardsRules.astro';
+import ItemSalesRules from '../components/rules/masters/ItemSalesRules.astro';
+import EpicProgressionRules from '../components/rules/masters/EpicProgressionRules.astro';
+import BlessingsAndGifts from '../components/rules/masters/BlessingsAndGifts.astro';
+import ItemPropertiesRules from '../components/rules/masters/ItemPropertiesRules.astro';
+import TrapExperienceRules from '../components/rules/masters/TrapExperienceRules.astro';
+import LuckyCharmsRules from '../components/rules/masters/LuckyCharmsRules.astro';
+---
+
+<Layout title="Мастерские правила">
+  <div class="content">
+    <h1>Мастерские правила</h1>
+    
+    <div class="intro">
+      <p><strong>Секретные правила для мастеров League of Heroes</strong></p>
+      <p>Эти правила описывают системы управления наградами, прогрессией персонажей и специальными эффектами для мастеров.</p>
+      <p>Все системы разработаны для сбалансированного распределения ресурсов и поддержания справедливости в игре.</p>
+    </div>
+
+    <MastersRulesCategory
+      title="Расчёт и выдача наград"
+      description="Правила расчёта денежных наград, товаров и определения пула сокровищ.">
+      <TreasureAwardsRules />
+    </MastersRulesCategory>
+
+    <MastersRulesCategory
+      title="Торговля магическими предметами"
+      description="Система продажи предметов игроками во время приключений.">
+      <ItemSalesRules />
+    </MastersRulesCategory>
+
+    <MastersRulesCategory
+      title="Эпическая прогрессия"
+      description="Развитие персонажей после 20 уровня с помощью эпических даров и улучшений характеристик.">
+      <EpicProgressionRules />
+    </MastersRulesCategory>
+
+    <MastersRulesCategory
+      title="Благословения и дары"
+      description="Выдача благословений, драконьих даров и других магических эффектов за значимые события.">
+      <BlessingsAndGifts />
+    </MastersRulesCategory>
+
+    <MastersRulesCategory
+      title="Свойства предметов"
+      description="Система получения и применения специальных свойств для найденных предметов.">
+      <ItemPropertiesRules />
+    </MastersRulesCategory>
+
+    <MastersRulesCategory
+      title="Ловушки и опыт"
+      description="Выдача опыта за обезвреживание ловушек, расчёт их сложности и урона.">
+      <TrapExperienceRules />
+    </MastersRulesCategory>
+
+    <MastersRulesCategory
+      title="Чармы и удача"
+      description="Система распределения магических чармов от счастливых билетов и монет судьбы.">
+      <LuckyCharmsRules />
+    </MastersRulesCategory>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .intro {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 3rem;
+  }
+
+  .intro p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .intro strong {
+    color: var(--accent-color);
+  }
+</style>

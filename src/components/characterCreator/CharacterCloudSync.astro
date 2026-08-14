@@ -1,0 +1,162 @@
+---
+import { CHARACTER_STORAGE_KEY } from './config/creatorState';
+---
+
+<div id="character-cloud-sync" class="cloud-sync" data-storage-key={CHARACTER_STORAGE_KEY} aria-live="polite">
+  <span class="cloud-sync-dot" aria-hidden="true"></span>
+  <span id="character-cloud-status">Подключаем облачное сохранение…</span>
+  <a href="/test/cabinet/player/">Мои герои</a>
+</div>
+
+<script>
+  import { isTestAccountConfigured, testAccountSupabase } from '../../utils/testAccount';
+
+  const panel = document.querySelector<HTMLElement>('#character-cloud-sync');
+  const status = document.querySelector<HTMLElement>('#character-cloud-status');
+  const characterStorageKey = panel?.getAttribute('data-storage-key') || 'loh-character-creator-state';
+  const characterId = new URLSearchParams(window.location.search).get('character');
+  let saveTimer;
+  let loadedCharacter = null;
+  let saveInProgress = false;
+  let queuedState = null;
+
+  function setStatus(text: string, kind = 'idle') {
+    if (status) status.textContent = text;
+    if (panel) panel.dataset.kind = kind;
+  }
+
+  async function persistState(state: Record<string, any> | null) {
+    if (!testAccountSupabase || !loadedCharacter || !state) return false;
+    if (saveInProgress) {
+      queuedState = state;
+      return true;
+    }
+    saveInProgress = true;
+    setStatus('Сохраняем в Лиге…', 'saving');
+    try {
+      const api = (window as any).LeagueCharacterCreator;
+      const draft = api?.createDraftPayload ? api.createDraftPayload() : state;
+      const roll20 = api?.buildRoll20Payload ? api.buildRoll20Payload() : loadedCharacter.roll20_data;
+      const name = String(state.name || 'Безымянный герой').trim() || 'Безымянный герой';
+      const summary = {
+        species: state.species || null,
+        class: state.class || null,
+        background: state.background || null,
+        step: Number(state.step || 0)
+      };
+      const { data, error } = await testAccountSupabase
+        .from('characters')
+        .update({
+          name,
+          draft_data: draft,
+          roll20_data: roll20,
+          summary,
+          revision: Number(loadedCharacter.revision || 1) + 1
+        })
+        .eq('id', loadedCharacter.id)
+        .eq('revision', Number(loadedCharacter.revision || 1))
+        .select('id,updated_at,revision')
+        .single();
+      if (error) throw error;
+      loadedCharacter = { ...loadedCharacter, ...data, draft_data: draft, roll20_data: roll20 };
+      setStatus('Сохранено в Лиге', 'saved');
+      return true;
+    } catch (error) {
+      console.error(error);
+      setStatus('Версия изменилась — обновите героя из Лиги', 'error');
+      return false;
+    } finally {
+      saveInProgress = false;
+      if (queuedState) {
+        const nextState = queuedState;
+        queuedState = null;
+        persistState(nextState);
+      }
+    }
+  }
+
+  async function initializeCloudCharacter() {
+    if (!isTestAccountConfigured || !testAccountSupabase) {
+      setStatus('Supabase не настроен', 'error');
+      return;
+    }
+    const { data: sessionData } = await testAccountSupabase.auth.getSession();
+    if (!sessionData.session) {
+      const next = encodeURIComponent(window.location.pathname + window.location.search);
+      window.location.replace(`/test/auth/?next=${next}`);
+      return;
+    }
+    if (!characterId) {
+      window.location.replace('/test/cabinet/player/');
+      return;
+    }
+    const { data, error } = await testAccountSupabase
+      .from('characters')
+      .select('id,name,draft_data,roll20_data,play_state,revision,updated_at')
+      .eq('id', characterId)
+      .single();
+    if (error || !data) {
+      setStatus('Персонаж не найден или у вас нет доступа', 'error');
+      return;
+    }
+    loadedCharacter = data;
+    const markerKey = `loh-cloud-character-loaded:${data.id}`;
+    const marker = `${data.id}:${data.updated_at}`;
+    const cloudState = data.draft_data?.state || data.draft_data;
+    if (sessionStorage.getItem(markerKey) !== marker) {
+      if (cloudState && Object.keys(cloudState).length) {
+        localStorage.setItem(characterStorageKey, JSON.stringify(cloudState));
+      } else {
+        // У конструктора один локальный ключ. Для нового облачного героя обязательно
+        // удаляем черновик ранее открытого персонажа до инициализации мастера.
+        localStorage.removeItem(characterStorageKey);
+      }
+      sessionStorage.setItem(markerKey, marker);
+      window.location.reload();
+      return;
+    }
+    setStatus('Сохранено в Лиге', 'saved');
+  }
+
+  window.addEventListener('loh:character-state-changed', (event) => {
+    const changeEvent = event as CustomEvent<{ state?: Record<string, any> }>;
+    window.clearTimeout(saveTimer);
+    saveTimer = window.setTimeout(() => persistState(changeEvent.detail?.state || null), 700);
+  });
+
+  document.querySelector<HTMLButtonElement>('#save-to-cabinet')?.addEventListener('click', async (event) => {
+    const button = event.currentTarget as HTMLButtonElement;
+    if (!loadedCharacter) {
+      setStatus('Герой ещё не подключён к личному кабинету', 'error');
+      return;
+    }
+    const api = (window as any).LeagueCharacterCreator;
+    const state = api?.getState?.();
+    if (!state) {
+      setStatus('Конструктор ещё не готов к сохранению', 'error');
+      return;
+    }
+    button.disabled = true;
+    const originalText = button.textContent || 'Сохранить в личный кабинет';
+    button.textContent = 'Сохраняем…';
+    const saved = await persistState(state);
+    button.textContent = saved ? 'Сохранено в личный кабинет ✓' : 'Повторить сохранение';
+    window.setTimeout(() => {
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 1800);
+  });
+
+  initializeCloudCharacter();
+</script>
+
+<style>
+  .cloud-sync { position: sticky; top: 72px; z-index: 30; display: flex; align-items: center; gap: .55rem; width: min(1480px, calc(100% - 2rem)); margin: .65rem auto; padding: .55rem .8rem; border: 1px solid #3b4963; border-radius: 10px; color: #b9c3d3; background: rgba(10,22,42,.94); backdrop-filter: blur(12px); font-size: .82rem; }
+  .cloud-sync-dot { width: .55rem; height: .55rem; border-radius: 50%; background: #8e9aae; }
+  .cloud-sync[data-kind="saving"] .cloud-sync-dot { background: #e2b448; animation: pulse 1s infinite; }
+  .cloud-sync[data-kind="saved"] .cloud-sync-dot { background: #65d49b; }
+  .cloud-sync[data-kind="error"] { border-color: #8a4050; color: #ffb1bc; }
+  .cloud-sync[data-kind="error"] .cloud-sync-dot { background: #ff6f7d; }
+  .cloud-sync a { margin-left: auto; color: #c4adff; font-weight: 800; text-decoration: none; }
+  @keyframes pulse { 50% { opacity: .35; } }
+</style>

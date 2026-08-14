@@ -1,0 +1,381 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { magicItems } from '../../data/magicItems';
+
+export function getStaticPaths() {
+  return magicItems.map(item => ({
+    params: { id: item.id },
+    props: { item }
+  }));
+}
+
+const { item } = Astro.props;
+
+const rarityLabels = {
+  'Common': 'Обычный',
+  'Uncommon': 'Необычный', 
+  'Rare': 'Редкий',
+  'Very Rare': 'Очень редкий',
+  'Legendary': 'Легендарный',
+  'Artifact': 'Артефакт'
+};
+
+function formatCraftingTools(toolIndices: number[]): string {
+  const specialMap = {
+    0: 'См. изготовляющие инструменты для немаг. аналога',
+    98: 'Требуется доплата за немаг. аналог',
+    99: 'Невозможно создать'
+  };
+
+  const toolNames = [
+    '', // placeholder for index 0 (handled via specialMap)
+    'Инструменты алхимика',
+    'Инструменты гончара', 
+    'Инструменты каллиграфа',
+    'Инструменты каменщика',
+    'Инструменты картографа',
+    'Инструменты кожевника',
+    'Инструменты кузнеца',
+    'Инструменты пивовара',
+    'Инструменты плотника',
+    'Инструменты повара',
+    'Инструменты резчика по дереву',
+    'Инструменты ремонтника',
+    'Инструменты сапожника',
+    'Инструменты стеклодува',
+    'Инструменты ткача',
+    'Инструменты художника',
+    'Инструменты ювелира',
+    'Набор отравителя',
+    'Набор травника',
+    'Набор для маскировки'
+  ];
+
+  if (!toolIndices || toolIndices.length === 0) return '';
+
+  const tools = [];
+  const kits = [];
+  const specials = [];
+
+  toolIndices.forEach(index => {
+    if (specialMap[index]) {
+      specials.push(specialMap[index]);
+      return;
+    }
+    if (index >= 1 && index <= toolNames.length - 1) {
+      const toolName = toolNames[index];
+      if (toolName.startsWith('Набор')) {
+        kits.push(toolName.replace('Набор ', ''));
+      } else {
+        tools.push(toolName.replace('Инструменты ', ''));
+      }
+    }
+  });
+
+  const result = [];
+
+  if (tools.length > 0) {
+    if (tools.length === 1) {
+      result.push(`Инструменты ${tools[0]}`);
+    } else {
+      result.push(`Инструменты: ${tools.join(', ')}`);
+    }
+  }
+
+  if (kits.length > 0) {
+    if (kits.length === 1) {
+      result.push(`Набор ${kits[0]}`);
+    } else {
+      result.push(`Наборы: ${kits.join(', ')}`);
+    }
+  }
+
+  specials.forEach(s => result.push(s));
+
+  return result.join(';<br>');
+}
+---
+
+<Layout title={`${item.name}`}>
+  <div class="content">
+    <a href="/magic-items" class="back-link">← Назад к магическим предметам</a>
+
+    <div class="item-details">
+      <div class="item-header">
+        <h1>{item.name}</h1>
+        <div class="source">{item.source.book}, {item.source.page}</div>
+      </div>
+      
+      <div class="item-meta">
+        <p>{item.type}, <span class={`rarity ${item.rarity.toLowerCase().replace(' ', '-')}`}>{rarityLabels[item.rarity]}</span>{item.attunement ? ` (требует настройки${item.attunementRequirement ? ` ${item.attunementRequirement}` : ''})` : ''}</p>
+        <p><strong>Вес:</strong> {item.weight}</p>
+        {item.baseAnalog && (
+          <p><strong>Базовый аналог:</strong> <Fragment set:html={item.baseAnalog} /></p>
+        )}
+        {item.craftingTools && item.craftingTools.length > 0 && (
+          <p><strong>Инструмент для изготовления:</strong><br><Fragment set:html={formatCraftingTools(item.craftingTools)} /></p>
+        )}
+      </div>
+      
+      <hr class="divider">
+      
+      <div class="item-description" set:html={item.description} />
+      
+      {item.developerComment && (
+        <div class="developer-comment">
+          <h4>Комментарий разработчика</h4>
+          <div set:html={item.developerComment} />
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .item-details {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .item-header h1 {
+    margin: 0;
+    flex: 1;
+  }
+
+  .item-header .source {
+    color: var(--text);
+    opacity: 0.8;
+    font-size: 0.9em;
+    margin-left: 1rem;
+  }
+
+  .item-meta {
+    margin-bottom: 1rem;
+  }
+
+  .item-meta p {
+    margin-bottom: 0.5rem;
+  }
+
+  .rarity {
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8em;
+  }
+
+  .rarity.common { 
+    background: #6b7280; 
+    color: white; 
+  }
+  .rarity.uncommon { 
+    background: #10b981; 
+    color: white; 
+  }
+  .rarity.rare { 
+    background: #3b82f6; 
+    color: white; 
+  }
+  .rarity.very-rare { 
+    background: #8b5cf6; 
+    color: white; 
+  }
+  .rarity.legendary { 
+    background: #f59e0b; 
+    color: white; 
+  }
+  .rarity.artifact { 
+    background: #ef4444; 
+    color: white; 
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--card-border);
+    margin: 1.5rem 0;
+  }
+
+  .item-description {
+    line-height: 1.6;
+  }
+
+  .item-description :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .item-description :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .item-description :global(table) {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .item-description :global(th),
+  .item-description :global(td) {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  .item-description :global(th) {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  .item-description :global(tr:nth-child(even)) {
+    background: var(--background);
+  }
+
+  .item-description :global(tr:first-child th:first-child) {
+    border-top-left-radius: 0.5rem;
+  }
+
+  .item-description :global(tr:first-child th:last-child) {
+    border-top-right-radius: 0.5rem;
+  }
+
+  .developer-comment {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary);
+  }
+
+  .developer-comment h4 {
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .developer-comment p {
+    margin: 0;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .base-analog {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .base-analog p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  /* Tooltip styles for individual item pages */
+  :global(.item-tooltip) {
+    position: absolute;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
+    z-index: 1000;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    pointer-events: none;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  :global(.item-tooltip .tooltip-header) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  :global(.item-tooltip .tooltip-header h4) {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1rem;
+    flex: 1;
+  }
+
+  :global(.item-tooltip .tooltip-source) {
+    font-size: 0.8rem;
+    color: var(--text);
+    opacity: 0.8;
+    margin-left: 0.5rem;
+  }
+
+  :global(.item-tooltip .tooltip-meta) {
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.item-tooltip .tooltip-meta p) {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+  }
+
+  :global(.item-tooltip .tooltip-description) {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  :global(.item-tooltip .tooltip-description p) {
+    margin-bottom: 0.5rem;
+  }
+
+  :global(.item-tooltip .tooltip-description p:last-child) {
+    margin-bottom: 0;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar) {
+    width: 6px;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar-track) {
+    background: var(--background);
+    border-radius: 3px;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar-thumb) {
+    background: var(--card-border);
+    border-radius: 3px;
+  }
+
+  :global(.item-tooltip::-webkit-scrollbar-thumb:hover) {
+    background: var(--primary);
+  }
+</style>

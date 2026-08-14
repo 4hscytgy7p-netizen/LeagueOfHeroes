@@ -1,0 +1,41 @@
+export const ROLL20_SKILLS: Record<string, string> = {
+  'Атлетика': 'athletics',
+  'Акробатика': 'acrobatics',
+  'Ловкость рук': 'sleight_of_hand',
+  'Скрытность': 'stealth',
+  'Магия': 'arcana',
+  'История': 'history',
+  'Расследование': 'investigation',
+  'Природа': 'nature',
+  'Религия': 'religion',
+  'Уход за животными': 'animal_handling',
+  'Проницательность': 'insight',
+  'Медицина': 'medicine',
+  'Восприятие': 'perception',
+  'Выживание': 'survival',
+  'Обман': 'deception',
+  'Запугивание': 'intimidation',
+  'Выступление': 'performance',
+  'Убеждение': 'persuasion'
+};
+
+export const ROLL20_SKILL_ABILITIES: Record<string, string> = {
+  athletics: 'strength',
+  acrobatics: 'dexterity',
+  sleight_of_hand: 'dexterity',
+  stealth: 'dexterity',
+  arcana: 'intelligence',
+  history: 'intelligence',
+  investigation: 'intelligence',
+  nature: 'intelligence',
+  religion: 'intelligence',
+  animal_handling: 'wisdom',
+  insight: 'wisdom',
+  medicine: 'wisdom',
+  perception: 'wisdom',
+  survival: 'wisdom',
+  deception: 'charisma',
+  intimidation: 'charisma',
+  performance: 'charisma',
+  persuasion: 'charisma'
+};

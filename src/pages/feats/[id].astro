@@ -1,0 +1,304 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { featsData } from '../../data/feats';
+
+export function getStaticPaths() {
+  return featsData.map(feat => ({
+    params: { id: feat.id },
+    props: { feat }
+  }));
+}
+
+const { feat } = Astro.props;
+
+function formatTableContent(text) {
+  // Support both tab-separated and pipe-separated tables. Detect delimiter per-line
+  const lines = text.split('\n').map(l => l.replace(/\r$/, ''));
+
+  // Decide delimiter for the block: prefer tab if present anywhere, otherwise pipe if present.
+  let delim = '\t';
+  if (!lines.some(l => l.includes('\t')) && lines.some(l => l.includes('|'))) delim = '|';
+
+  const splitLine = (line) => {
+    if (delim === '\t') return line.split('\t').map(c => c.trim());
+    // split on pipe with optional surrounding whitespace
+    return line.split(/\s*\|\s*/).map(c => c.trim());
+  };
+
+  const headers = splitLine(lines[0] || '');
+  const rows = lines.slice(1).filter(l => l.trim() !== '').map(l => splitLine(l));
+
+  const thead = headers.map(h => `<th>${h}</th>`).join('');
+  const tbody = rows.map(cells => `
+              <tr>
+                ${cells.map(cell => `<td>${cell}</td>`).join('')}
+              </tr>
+            `).join('');
+
+  return `
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            ${thead}
+          </tr>
+        </thead>
+        <tbody>
+          ${tbody}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function formatDescription(text) {
+  if (!text) return '';
+  // If the description already contains an HTML table, trust and return it as-is
+  // so authors can supply full <table> markup in `feat.description` or `feat.effects`.
+  if (/<table\b/i.test(text)) return text;
+  const lines = text.split('\n');
+  let out = '';
+  let tableLines = [];
+
+  function flushTable() {
+    if (tableLines.length) {
+      out += formatTableContent(tableLines.join('\n'));
+      tableLines = [];
+    }
+  }
+
+  for (const line of lines) {
+    // Treat a line as a table row if it contains a tab or a pipe with multiple columns
+    const isPipeRow = line.includes('|') && line.split('|').length > 1;
+    if (line.includes('\t') || isPipeRow) {
+      tableLines.push(line);
+    } else {
+      // if we were collecting a table, flush it before adding a paragraph
+      flushTable();
+      if (line.trim()) out += `<p>${line}</p>`;
+    }
+  }
+
+  // flush any trailing table
+  flushTable();
+  return out;
+}
+
+const featTypes = {
+  'origin': 'Черта происхождения',
+  'general': 'Общая черта',
+  'fighting-style': 'Черта боевого стиля',
+  'epic': 'Эпическая черта'
+};
+
+---
+
+<Layout title={`${feat.name}`}>
+  <div class="content">
+    <a href="/feats" class="back-link">← Назад к чертам</a>
+
+    <div class="feat-header">
+      <h1>{feat.name} <span class="name-en">[{feat.nameEn}]</span></h1>
+      <div class="feat-type">{featTypes[feat.type]}</div>
+    </div>
+
+    <div class="feat-content">
+      {feat.requirements && (
+        <div class="requirements">
+          <h2>Необходимые условия</h2>
+          <ul>
+            {feat.requirements.map(req => (
+              <li>{req}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {feat.description && (
+        <div class="description">
+          <Fragment set:html={formatDescription(feat.description)} />
+        </div>
+      )}
+
+      <div class="effects">
+        {feat.effects.map(effect => (
+          <Fragment set:html={formatDescription(effect)} />
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .feat-header {
+    margin-bottom: 2rem;
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+  }
+
+  .feat-type {
+    color: var(--text);
+    opacity: 0.8;
+    font-size: 1.1rem;
+  }
+
+  .feat-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .requirements {
+    margin-bottom: 2rem;
+  }
+
+  .requirements h2 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .requirements ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+  }
+
+  .requirements li {
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  /* Allow styling of raw <table> elements when feat descriptions include HTML tables */
+  .description table,
+  .effects table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+    min-width: 560px;
+    background: transparent;
+    border-radius: 0.375rem;
+    overflow: hidden;
+  }
+
+  .description th,
+  .description td,
+  .effects th,
+  .effects td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    text-align: left;
+    vertical-align: middle;
+    color: var(--text);
+    background: transparent;
+  }
+
+  .description thead th,
+  .effects thead th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .description tbody tr:nth-child(even),
+  .effects tbody tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  .effects p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .table-container {
+    margin: 1rem 0;
+    overflow: auto;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .table-container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 560px;
+    background: transparent;
+    border-radius: 0.375rem;
+    overflow: hidden;
+  }
+
+  .table-container thead th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .table-container tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    vertical-align: middle;
+    color: var(--text);
+    background: transparent;
+  }
+
+  .table-container tbody tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  .table-container tbody tr:hover {
+    background: rgba(0,0,0,0.04);
+  }
+
+  .table-container th:first-child { border-top-left-radius: 0.375rem; }
+  .table-container th:last-child { border-top-right-radius: 0.375rem; }
+
+  /* Small screens: allow horizontal scrolling but keep nicer spacing */
+  @media (max-width: 640px) {
+    .table-container {
+      padding: 0.5rem;
+    }
+    .table-container table { min-width: 480px; }
+    .table-container thead th,
+    .table-container tbody td { padding: 0.6rem 0.75rem; }
+  }
+</style>

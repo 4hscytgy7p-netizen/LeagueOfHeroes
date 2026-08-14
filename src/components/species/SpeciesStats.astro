@@ -1,0 +1,51 @@
+---
+interface Props {
+  type: string;
+  size: string;
+  speed: number;
+}
+
+const { type, size, speed } = Astro.props;
+---
+
+<div class="species-stats">
+  <div class="stat-block">
+    <div class="stat-label">Тип</div>
+    <div class="stat-value">{type}</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-label">Размер</div>
+    <div class="stat-value">{size}</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-label">Скорость</div>
+    <div class="stat-value">{speed} фт.</div>
+  </div>
+</div>
+
+<style>
+  .species-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+  }
+
+  .stat-block {
+    text-align: center;
+  }
+
+  .stat-label {
+    font-weight: bold;
+    color: var(--text);
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-value {
+    line-height: 1.4;
+  }
+</style>

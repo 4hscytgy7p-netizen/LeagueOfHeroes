@@ -1,0 +1,46 @@
+<aside class="creator-sidebar">
+  <nav aria-label="Этапы создания персонажа">
+    {[
+      { step:'identity', number:'01', title:'Имя героя', subtitle:'Кто вступает в легенду?' },
+      { step:'species', number:'02', title:'Вид', subtitle:'Наследие и природа' },
+      { step:'class', number:'03', title:'Класс', subtitle:'Путь приключенца' },
+      { step:'class-features', number:'03.1', title:'Умения класса и вида', subtitle:'Обязательные и временные выборы', substep:true, conditional:true },
+      { step:'alignment', number:'04', title:'Мировоззрение', subtitle:'Моральный компас' },
+      { step:'background', number:'05', title:'Предыстория', subtitle:'Жизнь до приключений' },
+      { step:'origin-feats', number:'06', title:'Черты происхождения', subtitle:'Дар предыстории и вида' },
+      { step:'skills', number:'07', title:'Навыки', subtitle:'Владения из разных источников' },
+      { step:'expertise', number:'07.1', title:'Компетентность', subtitle:'Удвоенный бонус мастерства', substep:true, conditional:true },
+      { step:'languages', number:'08', title:'Языки', subtitle:'Речь и письменность' },
+      { step:'tools', number:'09', title:'Инструменты', subtitle:'Профессиональные владения' },
+      { step:'equipment', number:'10', title:'Снаряжение', subtitle:'Набор и покупки' },
+      { step:'abilities', number:'11', title:'Характеристики', subtitle:'Сильные стороны героя' },
+      { step:'spells', number:'12', title:'Заклинания', subtitle:'Магия первого уровня' },
+      { step:'summary', number:'13', title:'Итог', subtitle:'Черновик персонажа' }
+    ].map((item,index)=>(
+      <button
+        class={`sidebar-step ${item.substep ? 'is-substep' : ''} ${index===0?'is-active':''}`}
+        type="button"
+        data-sidebar-step={item.step}
+        data-conditional-step={item.conditional ? 'true' : 'false'}
+        hidden={item.conditional}
+      >
+        <span>{item.number}</span><strong>{item.title}</strong><small>{item.subtitle}</small>
+      </button>
+    ))}
+  </nav>
+</aside>
+<style>
+.creator-sidebar{position:sticky;top:5.25rem;padding:.65rem}.creator-sidebar nav{display:grid;gap:.2rem}.sidebar-step{width:100%;display:grid;grid-template-columns:32px minmax(0,1fr);gap:.15rem .65rem;padding:.82rem;border:0;border-left:2px solid transparent;border-radius:.45rem;background:transparent;color:var(--text);text-align:left;cursor:pointer}.sidebar-step span{grid-row:1/3;color:var(--wizard-gold);font-family:Georgia,serif;font-size:1.12rem}.sidebar-step strong{font-size:.88rem}.sidebar-step small{opacity:.53;font-size:.7rem}.sidebar-step:hover:not(:disabled){background:var(--nav-hover-bg)}.sidebar-step.is-active{border-left-color:var(--wizard-gold);background:color-mix(in srgb,var(--wizard-gold) 10%,transparent)}.sidebar-step.is-complete strong::after{content:' ✓';color:var(--wizard-gold)}.sidebar-step.is-locked strong::after{content:' 🔒';font-size:.68rem;filter:grayscale(1)}.sidebar-step.is-substep{width:calc(100% - 1.15rem);margin-left:1.15rem;padding:.62rem .7rem;grid-template-columns:30px minmax(0,1fr);border-left-color:color-mix(in srgb,var(--wizard-gold) 30%,transparent);background:color-mix(in srgb,var(--card-bg) 42%,transparent)}.sidebar-step.is-substep span{font-size:.86rem;opacity:.82}.sidebar-step.is-substep strong{font-size:.8rem}.sidebar-step.is-substep small{font-size:.64rem}.sidebar-step[hidden]{display:none!important}.sidebar-step:disabled{cursor:not-allowed;opacity:.48}
+@media(max-width:760px){
+  .creator-sidebar{position:sticky;top:3.75rem;z-index:40;margin:0 0 .65rem;padding:.38rem;border-radius:.65rem;background:color-mix(in srgb,var(--card-bg) 96%,transparent);box-shadow:0 8px 22px rgba(0,0,0,.24)}
+  .creator-sidebar nav{display:flex;gap:.35rem;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity;overscroll-behavior-inline:contain}
+  .creator-sidebar nav::-webkit-scrollbar{display:none}
+  .sidebar-step{display:flex;align-items:center;gap:.42rem;flex:0 0 auto;width:auto;min-width:0;max-width:170px;padding:.55rem .68rem;border:1px solid transparent;border-radius:.5rem;scroll-snap-align:center;white-space:nowrap}
+  .sidebar-step span{grid-row:auto;font-size:.82rem}
+  .sidebar-step strong{overflow:hidden;max-width:125px;font-size:.78rem;text-overflow:ellipsis}
+  .sidebar-step small{display:none}
+  .sidebar-step.is-active{border-color:color-mix(in srgb,var(--wizard-gold) 55%,var(--card-border));background:color-mix(in srgb,var(--wizard-gold) 14%,var(--background));box-shadow:inset 0 -2px 0 var(--wizard-gold)}
+  .sidebar-step.is-substep{width:auto;min-width:0;max-width:180px;margin-left:0;padding:.55rem .68rem}
+  .sidebar-step.is-substep strong{font-size:.76rem}
+}
+</style>

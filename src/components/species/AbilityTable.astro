@@ -1,0 +1,74 @@
+---
+interface TableRow {
+  origin: string;
+  level1: string;
+  level3: string;
+  level5: string;
+}
+
+interface Props {
+  description: string;
+}
+
+const { description } = Astro.props;
+
+function parseTable(text: string): TableRow[] {
+  const rows = text.split('\n').filter(Boolean);
+  return rows.slice(1).map(row => {
+    const [origin, level1, level3, level5] = row.split(/\s{2,}/).map(s => s.trim());
+    return { origin, level1, level3, level5 };
+  });
+}
+
+const tableData = parseTable(description);
+---
+
+<div class="ability-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Происхождение</th>
+        <th>Уровень 1</th>
+        <th>Уровень 3</th>
+        <th>Уровень 5</th>
+      </tr>
+    </thead>
+    <tbody>
+      {tableData.map(row => (
+        <tr>
+          <td>{row.origin}</td>
+          <td>{row.level1}</td>
+          <td>{row.level3}</td>
+          <td>{row.level5}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .ability-table {
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+</style>

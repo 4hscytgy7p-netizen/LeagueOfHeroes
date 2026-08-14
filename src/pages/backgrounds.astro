@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { backgroundsData } from '../data/backgrounds';
+
+const backgrounds = backgroundsData;
+---
+
+<Layout title="Предыстории">
+  <div class="content">
+    <h1>Предыстории</h1>
+    
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="background-search" 
+        placeholder="Поиск предысторий..."
+        class="search-input"
+      />
+    </div>
+
+    <div class="backgrounds-grid">
+      {backgrounds.map(bg => (
+        <a href={`/backgrounds/${bg.id}`} class="background-card">
+          <div class="card-content">
+            <h2>{bg.name}</h2>
+            <span class="name-en">[{bg.nameEn}]</span>
+            <div class="source">{bg.sourceBook}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function initSearch() {
+    /** @type {HTMLInputElement|null} */
+    const searchInput = document.getElementById('background-search');
+    const cards = document.querySelectorAll('.background-card');
+    
+    function filterCards() {
+      const searchTerm = (searchInput instanceof HTMLInputElement) ? searchInput.value.toLowerCase() : '';
+      
+      cards.forEach(card => {
+        const name = card.querySelector('h2')?.textContent?.toLowerCase() || '';
+        const isVisible = name.includes(searchTerm);
+        if (card instanceof HTMLElement) card.style.display = isVisible ? 'block' : 'none';
+      });
+    }
+
+    if (searchInput instanceof HTMLInputElement) searchInput.addEventListener('input', filterCards);
+  }
+
+  document.addEventListener('DOMContentLoaded', initSearch);
+</script>
+
+<style>
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    margin: 2rem 0;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-dark);
+  }
+
+  .backgrounds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .background-card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .background-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .card-content h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+  }
+
+  .source {
+    color: var(--text);
+    opacity: 0.8;
+    font-size: 0.875rem;
+  }
+
+</style>

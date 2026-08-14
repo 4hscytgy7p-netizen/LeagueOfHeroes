@@ -1,0 +1,67 @@
+---
+interface Props {
+  classOptions: any[];
+}
+
+const { classOptions } = Astro.props;
+---
+
+<section class="wizard-step" data-step="class">
+  <div class="class-step-heading" id="class-picker">
+    <span class="wizard-kicker">Глава третья</span>
+    <h2>Выбери класс</h2>
+    <p>Класс определяет боевой стиль, кость хитов, владения и способности героя.</p>
+  </div>
+
+  <label class="class-search-field">
+    <span>Поиск класса</span>
+    <input
+      id="class-search"
+      type="search"
+      placeholder="Воин, волшебник, плут…"
+      autocomplete="off"
+    />
+  </label>
+
+  <div class="class-grid" id="class-grid">
+    {classOptions.map((item: any) => (
+      <button
+        class="class-card"
+        type="button"
+        data-class-id={item.id}
+        data-search-text={`${item.name} ${item.nameEn}`}
+        aria-pressed="false"
+      >
+        <div class="class-card-image">
+          <img
+            class="class-card-image-backdrop"
+            src={item.portrait}
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
+          <img
+            class="class-card-image-portrait"
+            src={item.portrait}
+            alt=""
+            loading="lazy"
+          />
+          <span class="class-card-image-shade"></span>
+          <span class="class-card-selected" aria-hidden="true">✓</span>
+        </div>
+        <div class="class-card-copy">
+          <span class="class-card-title">
+            <strong>{item.name}</strong>
+            {item.nameEn && <small>{item.nameEn}</small>}
+          </span>
+          <span class="class-card-meta">
+            <small class="class-card-die">к{item.hitDice}</small>
+            <small>{item.primaryAbility}</small>
+          </span>
+        </div>
+      </button>
+    ))}
+  </div>
+
+  <div id="class-details"></div>
+</section>

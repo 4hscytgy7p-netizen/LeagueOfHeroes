@@ -1,0 +1,40 @@
+<section class="wizard-step" data-step="languages">
+  <div class="choice-heading">
+    <span class="wizard-kicker">Глава седьмая</span>
+    <h2>Выбери языки</h2>
+    <p>Общий язык известен каждому персонажу и включён всегда. Обычно персонаж знает 3 языка всего. Особенность может открыть редкий язык для выбора, дать язык автоматически или увеличить количество известных языков. Простое упоминание языка в описании ничего не даёт.</p>
+  </div>
+  <div class="choice-warning" id="languages-warning" hidden></div>
+
+  <div class="language-summary" id="languages-summary"></div>
+
+  <div class="choice-wrap">
+    <table class="language-table">
+      <thead><tr><th>Язык</th><th>Выбор</th></tr></thead>
+      <tbody id="languages-table-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .choice-heading{margin-bottom:1rem}.choice-heading h2{margin:.35rem 0 .55rem;font-family:Georgia,serif;font-size:clamp(1.9rem,3.5vw,3rem)}.choice-heading p{margin:0;max-width:800px;opacity:.68}
+  .choice-warning{margin-bottom:.8rem;padding:.75rem .9rem;border:1px solid color-mix(in srgb,#ef4444 55%,var(--card-border));border-radius:.6rem;background:color-mix(in srgb,#ef4444 10%,transparent)}
+  .language-summary{display:flex;flex-wrap:wrap;gap:.65rem;margin:0 0 .85rem}
+  :global(.language-summary-card){display:flex;align-items:center;gap:.55rem;padding:.55rem .8rem;border:1px solid color-mix(in srgb,var(--wizard-gold) 28%,var(--card-border));border-radius:.65rem;background:color-mix(in srgb,var(--card-bg) 70%,transparent)}
+  :global(.language-summary-card span){font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;opacity:.7}:global(.language-summary-card strong){color:var(--wizard-gold-light);font-family:Georgia,serif;font-size:1.05rem}
+  :global(.language-summary-empty){padding:.65rem .8rem;opacity:.6}
+  .choice-wrap{overflow-x:auto;border:1px solid color-mix(in srgb,var(--wizard-gold) 35%,var(--card-border));border-radius:.8rem;background:color-mix(in srgb,var(--background) 92%,#000)}
+  .language-table{width:100%;min-width:650px;border-collapse:separate;border-spacing:0;table-layout:fixed}
+  .language-table th,.language-table :global(td){padding:.7rem .85rem;border-right:1px solid color-mix(in srgb,var(--card-border) 58%,transparent);border-bottom:1px solid color-mix(in srgb,var(--card-border) 75%,transparent);vertical-align:middle}
+  .language-table th:first-child,.language-table :global(td:first-child){width:42%;text-align:left}.language-table th:last-child,.language-table :global(td:last-child){border-right:0}
+  .language-table th{background:color-mix(in srgb,var(--card-bg) 88%,#000);color:var(--wizard-gold-light);font-size:.76rem;text-transform:uppercase;text-align:left}
+  .language-table :global(tbody tr:nth-child(odd)){background:color-mix(in srgb,var(--card-bg) 32%,transparent)}.language-table :global(tbody tr:nth-child(even)){background:color-mix(in srgb,var(--card-bg) 13%,transparent)}
+  .language-table :global(tbody tr:hover){background:color-mix(in srgb,var(--wizard-gold) 12%,var(--card-bg));box-shadow:inset 4px 0 0 var(--wizard-gold)}
+  .language-table :global(.choice-name){display:grid;gap:.2rem}.language-table :global(.choice-name strong){font-size:.98rem}
+  .language-table :global(.standard-language-note),.language-table :global(.rare-language-note){font-size:.7rem;opacity:.55}.language-table :global(.rare-language-note){color:var(--wizard-gold-light);opacity:.86}
+  .language-table :global(.rare-language-row){background:color-mix(in srgb,#7c3aed 9%,var(--card-bg))}
+  .language-table :global(.language-source-options){display:flex;flex-wrap:wrap;gap:.5rem}
+  .language-table :global(.language-source-choice){display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .55rem;border:1px solid color-mix(in srgb,var(--card-border) 85%,transparent);border-radius:.5rem;background:color-mix(in srgb,var(--card-bg) 70%,transparent);cursor:pointer}
+  .language-table :global(.language-source-choice:hover){border-color:var(--wizard-gold)}.language-table :global(.language-common-choice){border-color:color-mix(in srgb,var(--wizard-gold) 65%,var(--card-border));background:color-mix(in srgb,var(--wizard-gold) 12%,var(--card-bg));cursor:default}.language-table :global(.language-common-choice input){cursor:not-allowed;opacity:1}.language-table :global(input){width:1.15rem;height:1.15rem;accent-color:var(--wizard-gold);cursor:pointer}.language-table :global(.choice-unavailable){opacity:.35}
+  @media(max-width:760px){.language-table{min-width:560px}.language-table th:first-child,.language-table :global(td:first-child){width:36%}}
+</style>

@@ -1,0 +1,68 @@
+---
+interface Props {}
+---
+
+<div class="errata-section">
+  <h2>Расовые характеристики</h2>
+  <p>В случае, если у расы не указана максимальная продолжительность жизни, то она считается равной продолжительности жизни обычного человека.</p>
+  
+  <p>Если у расы нет заранее указанного диапазона допустимых значений роста (футы) и веса (фунты), то используются стандартные значения для:</p>
+
+  <table class="race-table">
+    <thead>
+      <tr>
+        <th>Размер</th>
+        <th>Рост</th>
+        <th>Вес</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Маленький (Гном)</td>
+        <td>2'11'' + 2d4</td>
+        <td>35 + (*1)</td>
+      </tr>
+      <tr>
+        <td>Средний (Человек)</td>
+        <td>4'8'' + 2d10</td>
+        <td>110 + (*2d4)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note">* - модификатор веса существа зависит от модификатора роста</p>
+</div>
+
+<style>
+  .errata-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+  }
+
+  .race-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+
+  .race-table th,
+  .race-table td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  .race-table th {
+    background: var(--card-bg);
+    font-weight: 600;
+  }
+
+  .note {
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+</style>

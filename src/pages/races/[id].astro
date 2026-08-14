@@ -1,0 +1,653 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { speciesData } from '../../data/species/index';
+import { spells as allSpells } from '../../data/spells';
+import { getRaceData, raceData } from '../../data/raceSizeData.js';
+import SpeciesHeader from '../../components/species/SpeciesHeader.astro';
+import SpeciesStats from '../../components/species/SpeciesStats.astro';
+import SpeciesAbility from '../../components/species/SpeciesAbility.astro';
+import VariantSelector from '../../components/species/VariantSelector.astro';
+
+export function getStaticPaths() {
+  return speciesData.map(species => ({
+    params: { id: species.id },
+    props: { species },
+  }));
+}
+
+const { species } = Astro.props;
+const raceSizeDataEntry = raceData[species.id] || null;
+const raceSizeEntry = getRaceData(species.id) || null;
+const showCalculator = !!raceSizeEntry;
+---
+
+<Layout title={`${species.name}`}>
+  <div class="species-page">
+    <a href="/races" class="back-link">← Назад к списку видов</a>
+    
+    <SpeciesHeader 
+      name={species.name}
+      nameEn={species.nameEn}
+      sourceBook={species.sourceBook}
+    />
+    
+    <div class="content">
+      {species.variants && species.variants.length > 0 && (
+        <VariantSelector variants={species.variants} />
+      )}
+
+      <div class="lore">
+        <div class="lore-content">
+          {species.lore.split('\n').map(line => {
+            if (line.startsWith('- ')) {
+              return <li>{line.substring(2)}</li>
+            } else if (line.trim()) {
+              return <p>{line}</p>
+            }
+            return null;
+          })}
+        </div>
+      </div>
+
+      <SpeciesStats
+        type={species.type}
+        size={species.size}
+        speed={species.speed}
+      />
+
+      { showCalculator && (
+        <div class="size-calculator" aria-label="Калькулятор роста и веса">
+        <h3>Калькулятор роста и веса</h3>
+        <div class="calculator-body">
+          {raceSizeDataEntry && raceSizeDataEntry.sizeOptions && (
+            <label class="calc-row">Размер: 
+              <select id="size-select">
+                {raceSizeDataEntry.sizeOptions.map(opt => (
+                  <option value={opt} selected={raceSizeEntry && raceSizeEntry.size === opt}>{opt}</option>
+                ))}
+              </select>
+            </label>
+          )}
+
+          <label class="calc-row">Рост: <span id="height-display"></span></label>
+          <input id="height-slider" type="range" />
+
+          <label class="calc-row">Множитель веса: <span id="weight-display"></span></label>
+          <input id="weight-slider" type="range" />
+
+          <div class="calculator-results">
+            <div>Итоговый рост: <strong id="final-height"></strong></div>
+            <div>Итоговый вес: <strong id="final-weight"></strong></div>
+          </div>
+
+          { (raceSizeEntry && (raceSizeEntry.heightDice || raceSizeEntry.weightDice)) && (
+            <div class="calc-dice">
+              Исходные броски: {raceSizeEntry.heightDice ? `Рост: ${raceSizeEntry.heightDice}` : ''} {raceSizeEntry.weightDice ? `Вес: ${raceSizeEntry.weightDice}` : ''}
+            </div>
+          ) }
+
+          <div class="calc-actions">
+            <button id="randomize-size" type="button">Случайные значения</button>
+          </div>
+        </div>
+        </div>
+      ) }
+
+      <div class="abilities">
+        {species.abilities.map(ability => (
+          <SpeciesAbility
+            title={ability.title}
+            description={ability.description}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <script type="module" define:vars={{ variants: species.variants, allSpells }}>
+    // Make variants data available to client-side JavaScript
+    window.speciesVariants = variants?.reduce((acc, variant) => {
+      acc[variant.name] = variant;
+      return acc;
+    }, {});
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const loreContainer = document.querySelector('.lore-content');
+      const abilitiesContainer = document.querySelector('.abilities');
+
+      // Create tooltip element
+      const tooltipEl = document.createElement('div');
+      tooltipEl.id = 'spell-tooltip';
+      tooltipEl.style.display = 'none';
+      tooltipEl.style.position = 'fixed';
+      tooltipEl.style.zIndex = '10000';
+      document.body.appendChild(tooltipEl);
+
+      const tooltipConfig = { offsetX: 12, offsetY: 12, fadeInDelay: 220, fadeOutDelay: 120 };
+      let tooltipShowTimeout = null;
+      let tooltipHideTimeout = null;
+      let currentSpellLink = null;
+      let isHoveringTooltip = false;
+
+      tooltipEl.addEventListener('mouseenter', () => {
+        isHoveringTooltip = true;
+        if (tooltipHideTimeout) {
+          clearTimeout(tooltipHideTimeout);
+          tooltipHideTimeout = null;
+        }
+      });
+
+      tooltipEl.addEventListener('mouseleave', () => {
+        isHoveringTooltip = false;
+        scheduleHide();
+      });
+
+      document.addEventListener('mouseover', (e) => {
+        const target = e.target;
+        const link = target.closest ? target.closest('.spell-link') : null;
+
+        if (link && link.dataset.spellId) {
+          if (tooltipHideTimeout) {
+            clearTimeout(tooltipHideTimeout);
+            tooltipHideTimeout = null;
+          }
+
+          currentSpellLink = link;
+          const spellId = link.dataset.spellId;
+
+          tooltipShowTimeout = setTimeout(() => {
+            const spell = allSpells.find(s => s.id === spellId);
+            if (spell) {
+              showTooltip(spell, e);
+            }
+          }, tooltipConfig.fadeInDelay);
+        }
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        const target = e.target;
+        const link = target.closest ? target.closest('.spell-link') : null;
+
+        if (link) {
+          if (tooltipShowTimeout) {
+            clearTimeout(tooltipShowTimeout);
+            tooltipShowTimeout = null;
+          }
+
+          const relatedTarget = e.relatedTarget;
+          if (relatedTarget && (relatedTarget === tooltipEl || tooltipEl.contains(relatedTarget))) {
+            return;
+          }
+
+          scheduleHide();
+        }
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!tooltipEl || tooltipEl.style.display === 'none') return;
+        const target = e.target;
+        const link = target.closest ? target.closest('.spell-link') : null;
+        if (link === currentSpellLink) {
+          positionTooltip(e);
+        }
+      });
+
+      function scheduleHide() {
+        tooltipHideTimeout = setTimeout(() => {
+          if (!isHoveringTooltip) hideTooltip();
+        }, tooltipConfig.fadeOutDelay);
+      }
+
+      function showTooltip(spell, event) {
+        tooltipEl.innerHTML = renderTooltipContent(spell);
+        tooltipEl.style.display = 'block';
+        tooltipEl.setAttribute('aria-hidden', 'false');
+        positionTooltip(event);
+      }
+
+      function hideTooltip() {
+        tooltipEl.style.display = 'none';
+        tooltipEl.setAttribute('aria-hidden', 'true');
+        tooltipEl.innerHTML = '';
+        currentSpellLink = null;
+      }
+
+      function positionTooltip(event) {
+        const rect = tooltipEl.getBoundingClientRect();
+        const vpW = window.innerWidth;
+        const vpH = window.innerHeight;
+
+        let left = event.clientX + tooltipConfig.offsetX;
+        let top = event.clientY + tooltipConfig.offsetY;
+
+        if (event.clientX > vpW * 0.66) {
+          left = event.clientX - rect.width - tooltipConfig.offsetX;
+        }
+
+        if (left + rect.width + 12 > vpW) {
+          left = vpW - rect.width - 12;
+        }
+
+        if (top + rect.height + 12 > vpH) {
+          top = Math.max(12, vpH - rect.height - 12);
+        }
+
+        left = Math.max(8, left);
+        top = Math.max(8, top);
+
+        try {
+          if (currentSpellLink && currentSpellLink.getBoundingClientRect) {
+            const linkRect = currentSpellLink.getBoundingClientRect();
+            const wouldOverlap = !(left + rect.width < linkRect.left || left > linkRect.right || top + rect.height < linkRect.top || top > linkRect.bottom);
+            if (wouldOverlap) {
+              const altLeft = linkRect.left - rect.width - 8;
+              if (altLeft > 8) left = altLeft;
+              else {
+                const altTop = linkRect.top - rect.height - 8;
+                if (altTop > 8) top = altTop;
+              }
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+
+        tooltipEl.style.left = `${left}px`;
+        tooltipEl.style.top = `${top}px`;
+      }
+
+      function renderTooltipContent(spell) {
+        const levelText = spell.level === 'cantrip' ? 'Заговор' : `${spell.level} уровень`;
+        const components = formatComponents(spell.components || {});
+
+        return `
+          <div class="tooltip-card">
+            <div class="tooltip-header">
+              <div class="tooltip-title">${spell.name} <span class="name-en">[${spell.nameEn}]</span></div>
+              <div class="tooltip-source">${(spell.source && spell.source.book) || ''}${spell.source && spell.source.page ? ', стр. ' + spell.source.page : ''}</div>
+            </div>
+            <div class="tooltip-meta">
+              <span class="tooltip-level">${levelText}</span>
+              <span class="tooltip-school">${spell.school || ''}</span>
+            </div>
+            <div class="tooltip-attrs">
+              <div><strong>Время:</strong> ${spell.castingTime || ''}</div>
+              <div><strong>Дистанция:</strong> ${spell.range || ''}</div>
+              <div><strong>Компоненты:</strong> ${components}</div>
+              <div><strong>Длительность:</strong> ${spell.duration || ''}</div>
+            </div>
+            <div class="tooltip-desc">${spell.description || ''}</div>
+          </div>
+        `;
+      }
+
+      function formatComponents(components) {
+        const parts = [];
+        if (components.verbal) parts.push('В');
+        if (components.somatic) parts.push('С');
+        if (components.material) parts.push(`М (${components.material})`);
+        return parts.join(', ');
+      }
+
+      // Linkify functions (same heuristics as classes)
+      function replaceTextNodeWithLink(textNode, name, id) {
+        const idx = textNode.nodeValue.indexOf(name);
+        if (idx === -1) return null;
+
+        const parent = textNode.parentNode;
+        if (!parent) return null;
+
+        const beforeText = textNode.nodeValue.slice(0, idx);
+        const afterText = textNode.nodeValue.slice(idx + name.length);
+
+        const before = document.createTextNode(beforeText);
+        const link = document.createElement('a');
+        link.href = `/spells/${encodeURIComponent(id)}`;
+        link.className = 'spell-link';
+        link.dataset.spellId = id;
+        link.textContent = name;
+        const after = document.createTextNode(afterText);
+
+        parent.insertBefore(before, textNode);
+        parent.insertBefore(link, textNode);
+        parent.insertBefore(after, textNode);
+        parent.removeChild(textNode);
+
+        return after;
+      }
+
+      function linkifySpellsInNode(container, spellsList) {
+        if (!container) return;
+
+        const anchors = container.querySelectorAll('a[href*="/spells/"]');
+        anchors.forEach(a => {
+          if (!a.classList.contains('spell-link')) {
+            const href = a.getAttribute('href') || '';
+            const m = href.match(/\/spells\/(.+?)(?:[\/\?#]|$)/);
+            if (m) {
+              a.classList.add('spell-link');
+              a.dataset.spellId = decodeURIComponent(m[1]);
+            }
+          }
+        });
+
+        const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+        const textNodes = [];
+        let node;
+        while (node = walker.nextNode()) { // eslint-disable-line no-cond-assign
+          textNodes.push(node);
+        }
+
+        const markerRe = /\[spell:([^\]|]+)(?:\|([^\]]+))?\]/;
+        for (const tNode of textNodes) {
+          if (!tNode.nodeValue || !tNode.nodeValue.trim()) continue;
+          if (tNode.parentElement && tNode.parentElement.closest('a')) continue;
+
+          const m = tNode.nodeValue.match(markerRe);
+          if (m) {
+            const id = m[1];
+            const label = m[2] || (spellsList.find(s => s.id === id)?.name || id);
+            const replacedNode = replaceTextNodeWithLink(tNode, m[0], id);
+            if (replacedNode) {
+              const anchors = container.querySelectorAll(`a.spell-link[data-spell-id="${id}"]`);
+              if (anchors.length) anchors[anchors.length - 1].textContent = label;
+              let cursor = replacedNode;
+              while (cursor && cursor.nodeValue && markerRe.test(cursor.nodeValue)) {
+                const mm = cursor.nodeValue.match(markerRe);
+                if (!mm) break;
+                const id2 = mm[1];
+                const label2 = mm[2] || (spellsList.find(s => s.id === id2)?.name || id2);
+                const nextAfter = replaceTextNodeWithLink(cursor, mm[0], id2);
+                if (nextAfter) {
+                  const a2 = container.querySelectorAll(`a.spell-link[data-spell-id="${id2}"]`);
+                  if (a2.length) a2[a2.length - 1].textContent = label2;
+                  cursor = nextAfter;
+                  continue;
+                }
+                break;
+              }
+              continue;
+            }
+          }
+
+          const nodeText = tNode.nodeValue;
+          const lowerText = nodeText.toLowerCase();
+          // Detect lists: comma-separated, recommendation phrases, or simple
+          // conjunction lists using 'и' (e.g. "A и B" or "A, B и C"). We look
+          // for capitalized words around 'и' to reduce false positives in prose.
+          const hasComma = nodeText.includes(',');
+          const hasRecommend = /рекоменду/i.test(lowerText);
+          const hasConjunctionList = /[A-ZА-ЯЁ][^\n]{0,40}\s+и\s+[A-ZА-ЯЁ]/.test(nodeText);
+          const hasKnowPhrase = /вы знаете/i.test(lowerText);
+          // If the text node is inside a table, treat it as list-like (tables often contain spell lists)
+          let isInTable = false;
+          let hasLevelHeader = false;
+          try {
+            const tbl = tNode.parentElement && tNode.parentElement.closest ? tNode.parentElement.closest('table') : null;
+            if (tbl) {
+              isInTable = true;
+              const ths = Array.from(tbl.querySelectorAll('th'));
+              hasLevelHeader = ths.some(th => /Уровень\s*\d+/i.test((th.textContent||'').trim()));
+            }
+          } catch (e) {
+            // ignore DOM errors
+          }
+
+          const looksLikeList = hasComma || hasRecommend || hasConjunctionList || hasKnowPhrase || isInTable || hasLevelHeader;
+          if (!looksLikeList) continue;
+
+          const candidates = spellsList.filter(s => nodeText.indexOf(s.name) !== -1);
+          if (candidates.length === 0) continue;
+
+          const matches = [];
+          for (const cand of candidates) {
+            let start = 0;
+            while (true) {
+              const idx = nodeText.indexOf(cand.name, start);
+              if (idx === -1) break;
+              const leftChar = idx > 0 ? nodeText[idx - 1] : '';
+              const rightChar = idx + cand.name.length < nodeText.length ? nodeText[idx + cand.name.length] : '';
+              const leftOk = leftChar === '' || /[\s\(\[\.,;:\-–—]/.test(leftChar);
+              const rightOk = rightChar === '' || /[\s\)\]\.,;:\-–—]/.test(rightChar);
+              if (leftOk && rightOk) {
+                matches.push({ index: idx, name: cand.name, id: cand.id, length: cand.name.length });
+              }
+              start = idx + cand.name.length;
+            }
+          }
+
+          if (matches.length === 0) continue;
+          // Prefer longer spell names when overlaps occur (e.g. "Дружба" vs "Дружба с животными").
+          // We'll select non-overlapping matches by greedy acceptance of longer matches first,
+          // then sort the chosen matches by index for assembly.
+          matches.sort((a, b) => {
+            if (b.length !== a.length) return b.length - a.length; // longer first
+            return a.index - b.index;
+          });
+          const occupied = new Array(nodeText.length).fill(false);
+          const chosen = [];
+          for (const m2 of matches) {
+            let conflict = false;
+            for (let p = m2.index; p < m2.index + m2.length; p++) {
+              if (occupied[p]) { conflict = true; break; }
+            }
+            if (!conflict) {
+              chosen.push(m2);
+              for (let p = m2.index; p < m2.index + m2.length; p++) occupied[p] = true;
+            }
+          }
+          // sort chosen by index ascending for correct reconstruction
+          chosen.sort((a, b) => a.index - b.index);
+
+          const parent = tNode.parentNode;
+          if (!parent) continue;
+          let pos = 0;
+          const frag = document.createDocumentFragment();
+          for (const m3 of chosen) {
+            if (m3.index > pos) {
+              frag.appendChild(document.createTextNode(nodeText.slice(pos, m3.index)));
+            }
+            const a = document.createElement('a');
+            a.href = `/spells/${encodeURIComponent(m3.id)}`;
+            a.className = 'spell-link';
+            a.dataset.spellId = m3.id;
+            a.textContent = m3.name;
+            frag.appendChild(a);
+            pos = m3.index + m3.length;
+          }
+          if (pos < nodeText.length) frag.appendChild(document.createTextNode(nodeText.slice(pos)));
+          parent.insertBefore(frag, tNode);
+          parent.removeChild(tNode);
+        }
+      }
+
+      // Apply linkify to abilities and table containers only (not main lore)
+      try {
+        if (abilitiesContainer) linkifySpellsInNode(abilitiesContainer, allSpells);
+        // also linkify any tables inside abilities
+        document.querySelectorAll('.table-container').forEach(tc => linkifySpellsInNode(tc, allSpells));
+      } catch (e) {
+        console.error('races linkify failed', e);
+      }
+
+      // Re-run linkify when variant selector updates abilities
+      document.addEventListener('abilities-updated', (ev) => {
+        try {
+          const container = ev?.detail?.container || document.querySelector('.abilities');
+          if (container) linkifySpellsInNode(container, allSpells);
+          document.querySelectorAll('.table-container').forEach(tc => linkifySpellsInNode(tc, allSpells));
+        } catch (err) {
+          console.error('races linkify failed on abilities-updated', err);
+        }
+      });
+    });
+    </script>
+
+    <script type="module" define:vars={{ raceSizeEntry, raceSizeDataEntry }}>
+      document.addEventListener('DOMContentLoaded', () => {
+        const calc = document.querySelector('.size-calculator');
+        if (!calc) return;
+        const baseEntry = raceSizeEntry || {};
+        const dataEntry = raceSizeDataEntry || {};
+
+        const bh = baseEntry.baseHeight || { 'футов': 4, 'дюймов': 8 };
+        const bw = baseEntry.baseWeight || 0;
+        const hr = baseEntry.heightRange || [0, 0];
+        const wr = baseEntry.weightRange || [0, 0];
+
+        const heightSlider = document.getElementById('height-slider');
+        const weightSlider = document.getElementById('weight-slider');
+        const heightDisplay = document.getElementById('height-display');
+        const weightDisplay = document.getElementById('weight-display');
+        const finalHeight = document.getElementById('final-height');
+        const finalWeight = document.getElementById('final-weight');
+        const sizeSelect = document.getElementById('size-select');
+
+        function toFeetInches(totalInches) {
+          const ft = Math.floor(totalInches / 12);
+          const inch = totalInches % 12;
+          return { ft, inch };
+        }
+
+        function updateBaseFromSelected(sizeKey) {
+          let entry = baseEntry;
+          if (dataEntry && dataEntry.sizeOptions && sizeKey && dataEntry[sizeKey]) entry = dataEntry[sizeKey];
+          return entry;
+        }
+
+        function render() {
+          const entry = updateBaseFromSelected(sizeSelect?.value);
+          const bh2 = entry.baseHeight || bh;
+          const bw2 = entry.baseWeight || bw;
+          const hr2 = entry.heightRange || hr;
+          const wr2 = entry.weightRange || wr;
+
+          heightSlider.min = hr2[0] || 0;
+          heightSlider.max = hr2[1] || 0;
+          if (Number(heightSlider.value) < heightSlider.min) heightSlider.value = heightSlider.min;
+          if (Number(heightSlider.value) > heightSlider.max) heightSlider.value = heightSlider.max;
+
+          weightSlider.min = wr2[0] || 0;
+          weightSlider.max = wr2[1] || 0;
+          if (Number(weightSlider.value) < weightSlider.min) weightSlider.value = weightSlider.min;
+          if (Number(weightSlider.value) > weightSlider.max) weightSlider.value = weightSlider.max;
+
+          const extraInches = Number(heightSlider.value) || 0; // height modifier in inches (from dice)
+          const weightMultiplier = Number(weightSlider.value) || 0; // multiplier (from dice)
+          heightDisplay.textContent = `+${extraInches} дюймов`;
+          weightDisplay.textContent = `×${weightMultiplier}`;
+
+          const baseTotalInches = (Number(bh2['футов'] || bh['футов']) * 12) + Number(bh2['дюймов'] || bh['дюймов']);
+          const totalInches = baseTotalInches + extraInches;
+          const hi = toFeetInches(totalInches);
+          finalHeight.textContent = `${hi.ft} \' ${hi.inch} \'' (${totalInches} дюймов)`;
+
+          // Final weight: baseWeight + (weightMultiplier * heightModifier)
+          const finalW = (Number(bw2) + (weightMultiplier * extraInches));
+          finalWeight.textContent = `${finalW} фун.`;
+        }
+
+        heightSlider.addEventListener('input', render);
+        weightSlider.addEventListener('input', render);
+        if (sizeSelect) sizeSelect.addEventListener('change', () => { render(); });
+
+        const rndBtn = document.getElementById('randomize-size');
+        if (rndBtn) rndBtn.addEventListener('click', () => {
+          const entry = updateBaseFromSelected(sizeSelect?.value);
+          const hr2 = entry.heightRange || hr;
+          const wr2 = entry.weightRange || wr;
+          const rH = Math.floor(Math.random() * ((hr2[1] || 0) - (hr2[0] || 0) + 1)) + (hr2[0] || 0);
+          const rW = Math.floor(Math.random() * ((wr2[1] || 0) - (wr2[0] || 0) + 1)) + (wr2[0] || 0);
+          heightSlider.value = rH;
+          weightSlider.value = rW;
+          render();
+        });
+
+        // initial render
+        if (!heightSlider.value) heightSlider.value = Math.round(((heightSlider.min || 0) + (heightSlider.max || 0)) / 2);
+        if (!weightSlider.value) weightSlider.value = Math.round(((weightSlider.min || 0) + (weightSlider.max || 0)) / 2);
+        render();
+      });
+    </script>
+
+</Layout>
+
+<style>
+  .species-page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  .back-link {
+    display: inline-block;
+    padding: 1rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .lore {
+    margin-bottom: 2rem;
+  }
+
+  .lore-content {
+    line-height: 1.6;
+  }
+
+  .lore-content p {
+    margin-bottom: 0.75rem;
+  }
+
+  .lore-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .lore-content li {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    list-style-type: disc;
+  }
+
+  .lore-content li:last-child {
+    margin-bottom: 0;
+  }
+
+  .abilities {
+    border-top: 1px solid var(--card-border);
+  }
+
+  /* Size calculator styles */
+  .size-calculator {
+    margin: 1rem 0 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  }
+
+  .size-calculator h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .calculator-body { display: grid; gap: 0.5rem; }
+  .calc-row { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; }
+  .calculator-body input[type="range"] { width: 100%; }
+  .calculator-results { display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem; }
+  .calculator-results div { background: var(--card-bg); padding:0.4rem 0.6rem; border-radius:6px; border:1px solid var(--card-border); }
+  .calc-actions { margin-top:0.5rem; }
+  #randomize-size { padding: 0.4rem 0.8rem; border-radius:6px; border:0; background:var(--primary); color:var(--on-primary); cursor:pointer; }
+  #randomize-size:hover { opacity:0.95; }
+  .calc-dice { margin-top:0.5rem; font-size:0.95rem; color:var(--muted); }
+</style>
+ 

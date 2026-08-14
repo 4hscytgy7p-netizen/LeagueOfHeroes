@@ -1,0 +1,272 @@
+---
+interface Props {}
+---
+
+<div class="activity-card">
+  <div class="activity-header">
+    <h3>Продажа магических предметов</h3>
+    <p class="intro">Продажа магического предмета — непростая задача. Искусные мошенники и воры всегда ищут лёгкий заработок, и нет никакой гарантии, что добросовестный покупатель, если он будет найден, сможет хорошо заплатить персонажу.</p>
+    <div class="basic-info">
+      <div class="info-item">
+        <span class="label">Продолжительность:</span>
+        <span>5 дней простоя</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Базовая стоимость:</span>
+        <span>50 зм + проживание</span>
+      </div>
+    </div>
+  </div>
+
+  <details class="activity-details">
+    <summary>Подробная информация</summary>
+    <div class="details-content">
+      <section class="search-process">
+        <h4>Процесс продажи</h4>
+        <p>Персонаж тратит 5 дней простоя с учётом трат на проживание и 50 зм на расходы, после чего совершает проверку поиска покупателя броском: Интеллект (Расследование) или Харизма (Убеждение).</p>
+        <div class="search-rules">
+        <h4>Правила продажи:</h4>
+        <ul>
+          <li>Расходники при продаже считаются в половину стоимости от своей редкости</li>
+          <li>Для разных типов предметов требуется отдельный бросок поиска</li>
+        </ul>
+        <section class="additional-rules">
+          <h4>Дополнительные правила</h4>
+          <p>При успехе броска Харизмы (Убеждение) для определения цены продажи, согласно таблице ниже, продажа зелий лечения и свитков заклинаний происходит по двойным ценам их создания. При провале этого броска продажа происходит по цене создания.</p>
+          <p>Стоимость свитков заклинаний равна двойной стоимости написания свитка с учётом материального компонента, если расходуется.</p>
+        </section>
+        </div>
+        <div class="rules-section">
+          <h4>Сл продажи</h4>
+          <div class="activity-search">
+          <table>
+            <thead>
+              <tr>
+                <th>Редкость</th>
+                <th>Сл броска</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Обычный</td><td>10</td></tr>
+              <tr><td>Необычный</td><td>15</td></tr>
+              <tr><td>Редкий</td><td>20</td></tr>
+              <tr><td>Очень редкий</td><td>25</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><p>После нахождения покупателя совершается проверка на определение цены продажи броском Харизма (Убеждение):</p></p>
+        <div class="rules-section">
+          <h4>Цена продажи</h4>
+          <div class="activity-search">
+            <table>
+              <thead>
+                <tr>
+                  <th>Редкость</th>
+                  <th>Значение броска</th>
+                  <th>Цена продажи</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td rowspan="2">Обычный</td><td>1-15</td><td>35 зм</td></tr>
+                <tr><td>16+</td><td>70 зм</td></tr>
+                <tr><td rowspan="2">Необычный</td><td>1-15</td><td>300 зм</td></tr>
+                <tr><td>16+</td><td>600 зм</td></tr>
+                <tr><td rowspan="2">Редкий</td><td>1-17</td><td>10000 зм</td></tr>
+                <tr><td>18+</td><td>20000 зм</td></tr>
+                <tr><td rowspan="2">Очень редкий</td><td>1-20</td><td>25000 зм</td></tr>
+                <tr><td>21+</td><td>50000 зм</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <p>После продажи есть 15% шанс на осложнение (бросок d100, 1-15)</p>
+      <details class="activity-details">
+        <summary class="dets">Осложнения (d6)</summary>
+        <section class="complications">
+          <div class="complications-table">
+            <table>
+              <tbody>
+              <tr><td>1</td><td>Во время продажи магического предмета вы были арестованы во время облавы одной из фракций Сигила. Вследствие чего вы обязаны выплатить штраф в размере 25% от стоимости предмета и потратить ДП в количестве, равном сложности поиска покупателя для вашего предмета, проводя время в темнице.</td></tr>
+              <tr><td>2</td><td>Гильдия воров, осведомлённая о вашей сделке, крадет ваш предмет.</td></tr>
+              <tr><td>3</td><td>Недоброжелатель распускает слухи о том, что ваш предмет — подделка. В следствие чего вы вынуждены сделать скидку покупателю в размере 25% от стоимости предмета.</td></tr>
+              <tr><td>4</td><td>Чародей заявляет, что предмет принадлежит ему по праву рождения, и требует его отдать. Персонаж может согласится и отдать предмет, или же отказаться. В случае отказа он всячески вам мешает на протяжении следующих 30 ДП. В течении этого времени, если вы выполняете активности, в которых вовлечены Тесты д20, вы имеете штраф ко всем таким броскам в размере вашего наибольшего модификатора характеристики.</td></tr>
+              <tr><td>5</td><td>Высокопоставленный аристократ готов купить у вас этот предмет по максимальной цене, но ему требуется еще 1 такой же предмет, за который он тоже заплатит, иначе сделка не состоится. У вас есть время до начала следующего месяца Лиги Героев. *</td></tr>
+              <tr><td>6</td><td>Перед сделкой покупатель был убит. Сделка расторгается.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">При участии двух и более персонажей во время одной и той же активности продажи требования на трату <strong>ДП</strong> и оплату проживания распространяется на всех.</p>
+          <p class="note">* - во всех активностях простоя, где есть требуется или специальное задание, требуется содействие Мастера Лиги, на следующей игре которого играет персонаж.</p>
+        </section>
+      </details>
+      <details class="activity-details">
+        <summary class="dets">Влияние стилей проживания</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Стиль</th>
+              <th>Стоимость/день</th>
+              <th>Эффект</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Никудышное</td>
+              <td>-</td>
+              <td>-3 ко всем броскам. Вы гарантированно получаете осложнение</td>
+          </tr>
+          <tr>
+              <td>Бедное</td>
+              <td>1 см</td>
+              <td>Шанс на осложнение увеличивается до 40%</td>
+          </tr>
+          <tr>
+              <td>Скромное</td>
+              <td>1 зм</td>
+              <td>Без эффектов</td>
+          </tr>
+          <tr>
+              <td>Богатое</td>
+              <td>5 зм</td>
+              <td>+ 1 ко всем броскам</td>
+          </tr>
+          <tr>
+              <td>Аристократическое</td>
+              <td>10+ зм</td>
+              <td>+ 2 ко всем броскам</td>
+          </tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+  </details>
+</div>
+
+<style>
+  .activity-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .activity-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .basic-info {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .activity-search {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .dets{
+    color: var(--primary)
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .activity-details {
+    border-top: 1px solid var(--card-border);
+  }
+
+  summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  summary:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .details-content {
+    padding: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  .complications-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .complications-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .complications-table td:first-child {
+    width: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

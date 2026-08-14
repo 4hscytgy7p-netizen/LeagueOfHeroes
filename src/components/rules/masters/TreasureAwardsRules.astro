@@ -1,0 +1,256 @@
+---
+// Правила расчёта наград
+---
+
+<div class="rules-section">
+  <h3>Правило выдачи наград из пула наград</h3>
+  
+  <div class="rule-block">
+    <h4>Пул наград формируется за:</h4>
+    <ul>
+      <li>убийство противников - 100% опыта</li>
+      <li>мирное решение ситуации - 50% опыта</li>
+      <li>обезвреживание ловушек</li>
+      <li>выполнение заданий</li>
+    </ul>
+  </div>
+
+  <div class="rule-block">
+    <h4>Важно!</h4>
+    <ul>
+      <li>Не весь пул должен выдаваться золотом</li>
+      <li>Допустимые виды монет: ПМ, ЗМ, СМ, БМ</li>
+      <li>Электрумовые монеты не используются</li>
+    </ul>
+  </div>
+
+  <h3>Денежная награда от поселения</h3>
+  
+  <div class="rule-block">
+    <p><strong>Доля денежной награды не должна превышать 20% итогового пула наград.</strong></p>
+  </div>
+
+  <table class="settlement-table">
+    <thead>
+      <tr>
+        <th>Поселение</th>
+        <th>Население</th>
+        <th>Денежный потенциал</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Деревушка</td>
+        <td>20-80</td>
+        <td>40 зм</td>
+      </tr>
+      <tr>
+        <td>Деревня</td>
+        <td>90-400</td>
+        <td>100 зм</td>
+      </tr>
+      <tr>
+        <td>Большая деревня</td>
+        <td>500-1000</td>
+        <td>200 зм</td>
+      </tr>
+      <tr>
+        <td>Малый город</td>
+        <td>1,5-2,5 тыс.</td>
+        <td>800 зм</td>
+      </tr>
+      <tr>
+        <td>Средний город</td>
+        <td>3-5 тыс.</td>
+        <td>3000 зм</td>
+      </tr>
+      <tr>
+        <td>Крупный город</td>
+        <td>6-12 тыс.</td>
+        <td>15000 зм</td>
+      </tr>
+      <tr>
+        <td>Баронство</td>
+        <td>15-30 тыс.</td>
+        <td>40000 зм</td>
+      </tr>
+      <tr>
+        <td>Княжество</td>
+        <td>35-100 тыс.</td>
+        <td>100000 зм</td>
+      </tr>
+      <tr>
+        <td>Герцогство</td>
+        <td>150-250 тыс.</td>
+        <td>250000 зм</td>
+      </tr>
+      <tr>
+        <td>Королевство</td>
+        <td>более 500 тыс.</td>
+        <td>500000 зм</td>
+      </tr>
+      <tr>
+        <td>Империя</td>
+        <td>более 3 млн</td>
+        <td>1500000 зм</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Рецепты</h3>
+  
+  <div class="rule-block">
+    <p><strong>Максимум 20% от итогового пула наград.</strong></p>
+  </div>
+
+  <table class="recipes-table">
+    <thead>
+      <tr>
+        <th>Редкость</th>
+        <th>Стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Обычный</td>
+        <td>100 зм</td>
+      </tr>
+      <tr>
+        <td>Необычный</td>
+        <td>200 зм</td>
+      </tr>
+      <tr>
+        <td>Редкий</td>
+        <td>1500 зм</td>
+      </tr>
+      <tr>
+        <td>Очень редкий</td>
+        <td>4500 зм</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>Примечание:</strong> Легендарные рецепты таким способом получать нельзя.</p>
+
+  <h3>Учёт материалов и предметов</h3>
+
+  <div class="rule-block">
+    <ul>
+      <li>Материалы для крафта и обычное снаряжение учитываются по половине стоимости</li>
+      <li>Магические предметы учитываются как 75% максимальной стоимости по Xanathar's Guide</li>
+      <li>Купленные игроками товары в пул наград не входят</li>
+    </ul>
+  </div>
+
+  <table class="magic-items-table">
+    <thead>
+      <tr>
+        <th>Редкость</th>
+        <th>Стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Обычный</td>
+        <td>50 зм</td>
+      </tr>
+      <tr>
+        <td>Необычный</td>
+        <td>450 зм</td>
+      </tr>
+      <tr>
+        <td>Редкий</td>
+        <td>15000 зм</td>
+      </tr>
+      <tr>
+        <td>Очень редкий</td>
+        <td>37500 зм</td>
+      </tr>
+      <tr>
+        <td>Легендарный</td>
+        <td>225000 зм</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .rules-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+
+  .rule-block {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--card-border);
+  }
+
+  th {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--bg-primary);
+  }
+
+  tr:hover {
+    background: var(--accent-color);
+    opacity: 0.7;
+  }
+
+  .note {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--warning-color);
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,206 @@
+---
+import type { Spell } from '../../types/spell';
+
+interface Props {
+  spell: Spell;
+}
+
+const { spell } = Astro.props;
+
+function formatComponents(components: Spell['components']): string {
+  const parts = [];
+  if (components.verbal) parts.push('V');
+  if (components.somatic) parts.push('S');
+  if (components.material) parts.push(`M (${components.material})`);
+  return parts.join(', ');
+}
+
+function formatSources(sources: Spell['sources']): string {
+  const grouped = sources.reduce((acc, source) => {
+    if (!acc[source.type]) acc[source.type] = [];
+    acc[source.type].push(source.name);
+    return acc;
+  }, {} as Record<string, string[]>);
+
+  const sections = [];
+  if (grouped.class) sections.push(`Классы: ${grouped.class.join(', ')}`);
+  if (grouped.subclass) sections.push(`Подклассы: ${grouped.subclass.join(', ')}`);
+  if (grouped.species) sections.push(`Виды: ${grouped.species.join(', ')}`);
+  if (grouped.background) sections.push(`Предыстории: ${grouped.background.join(', ')}`);
+  if (grouped.feat) sections.push(`Черты: ${grouped.feat.join(', ')}`);
+  if (grouped.other) sections.push(`Другие источники: ${grouped.other.join(', ')}`);
+
+  return sections.join('\n');
+}
+---
+
+<div class="spell-details">
+  <div class="spell-header">
+    <h2>{spell.name} <span class="name-en">[{spell.nameEn}]</span></h2>
+    <div class="source">{spell.source.book}, стр. {spell.source.page}</div>
+  </div>
+
+  <div class="spell-info">
+    <p class="level-school">
+      {spell.level === 'cantrip' ? 'Заговор' : `${spell.level} уровень`}, {spell.school}
+    </p>
+    
+    <div class="info-grid">
+      <div class="info-row">
+        <strong>Время накладывания:</strong>
+        <span>{spell.castingTime}</span>
+      </div>
+      <div class="info-row">
+        <strong>Дистанция:</strong>
+        <span>{spell.range}</span>
+      </div>
+      <div class="info-row">
+        <strong>Компоненты:</strong>
+        <span>{formatComponents(spell.components)}</span>
+      </div>
+      <div class="info-row">
+        <strong>Длительность:</strong>
+        <span>{spell.duration}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="spell-description" set:html={spell.description} />
+
+  <div class="spell-sources">
+    <h3>Источники</h3>
+    <div class="sources-content">
+      {formatSources(spell.sources).split('\n').map(section => (
+        <p set:html={section}></p>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .spell-details {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .spell-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--primary);
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+  }
+
+  .source {
+    margin-top: 0.5rem;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  .level-school {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .info-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .spell-description {
+    margin: 2.5rem 0;
+    line-height: 1.6;
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+  }
+
+  .spell-description :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .spell-description :global(ul),
+  .spell-description :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .spell-description :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .spell-description :global(table) {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+  }
+
+  .spell-description :global(th),
+  .spell-description :global(td) {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  .spell-description :global(th) {
+    background: var(--background);
+  }
+
+  .spell-sources {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .spell-sources h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .sources-content {
+    padding: 0.5rem;
+  }
+
+  .sources-content p {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--primary);
+  }
+
+  .sources-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul, ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

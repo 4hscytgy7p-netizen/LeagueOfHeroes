@@ -1,0 +1,75 @@
+<section class="wizard-step" data-step="spells">
+  <div class="step-heading">
+    <span>Глава шестая</span>
+    <h2>Выбери заклинания</h2>
+    <p id="spell-step-description">Заклинания разделены по источникам. Для каждого источника доступны отдельный поиск и две колонки выбора.</p>
+  </div>
+
+  <div id="spell-non-caster" class="empty-state" hidden>
+    <span>⚔</span>
+    <h3>Нет доступных заклинаний</h3>
+    <p>Выбранные класс, вид, предыстория и черты не дают заклинаний на 1 уровне.</p>
+  </div>
+
+  <div id="spell-picker" hidden>
+    <div id="spell-sources" class="spell-sources"></div>
+    <p class="spell-help">Квадрат слева выбирает заклинание. Название открывает его отдельную страницу в новой вкладке.</p>
+    <p class="ability-warning" id="spell-warning" hidden></p>
+  </div>
+</section>
+
+<style is:global>
+  .spell-sources { display:grid; gap:1.25rem; }
+  .spell-source { overflow:hidden; border:1px solid var(--card-border); border-radius:.82rem; background:color-mix(in srgb,var(--card-bg) 91%,var(--background)); }
+  .spell-source-title { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem 1rem .85rem; border-bottom:1px solid var(--card-border); background:color-mix(in srgb,var(--wizard-gold) 5%,transparent); }
+  .spell-source-title span { color:var(--wizard-gold); font-size:.66rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+  .spell-source-title h3 { margin:.15rem 0 .2rem; color:var(--wizard-gold-light); font-family:Georgia,serif; font-size:1.25rem; }
+  .spell-source-title p { margin:0; font-size:.78rem; line-height:1.45; opacity:.7; }
+
+  .spell-source-body { padding:1rem; }
+  .spell-toolbar { display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,360px); gap:1rem; align-items:end; margin-bottom:1rem; }
+  .spell-limit-summary { display:flex; flex-wrap:wrap; gap:.65rem; }
+  .spell-limit-summary strong { display:flex; align-items:center; gap:.35rem; min-height:46px; padding:.7rem .9rem; border:1px solid color-mix(in srgb,var(--wizard-gold) 28%,var(--card-border)); border-radius:.65rem; background:color-mix(in srgb,var(--wizard-gold) 6%,var(--background)); color:var(--wizard-gold-light); }
+  .spell-search-field { display:grid; gap:.4rem; }
+  .spell-search-field > span { color:var(--wizard-gold); font-size:.7rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+  .spell-search-field input { width:100%; padding:.82rem .95rem; border:1px solid var(--card-border); border-radius:.62rem; background:var(--background); color:var(--text); font:inherit; outline:none; }
+  .spell-search-field input:focus { border-color:var(--wizard-gold); box-shadow:0 0 0 3px color-mix(in srgb,var(--wizard-gold) 16%,transparent); }
+
+  .spell-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+  .spell-columns.is-single { grid-template-columns:minmax(0,1fr); }
+  .spell-section { min-width:0; overflow:hidden; border:1px solid var(--card-border); border-radius:.82rem; background:color-mix(in srgb,var(--card-bg) 91%,var(--background)); }
+  .spell-section-heading { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1rem .85rem; border-bottom:1px solid var(--card-border); background:color-mix(in srgb,var(--wizard-gold) 5%,transparent); }
+  .spell-section-heading span { color:var(--wizard-gold); font-size:.66rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+  .spell-section-heading h4 { margin:.15rem 0 0; color:var(--wizard-gold-light); font-family:Georgia,serif; font-size:1.18rem; }
+  .spell-section-heading > strong { display:grid; place-items:center; min-width:48px; min-height:34px; padding:0 .55rem; border:1px solid color-mix(in srgb,var(--wizard-gold) 35%,var(--card-border)); border-radius:999px; color:var(--wizard-gold-light); background:var(--background); }
+
+  .spell-grid { display:grid; gap:.4rem; max-height:480px; overflow-y:auto; padding:.65rem; scrollbar-gutter:stable; }
+  .spell-card { display:grid; grid-template-columns:24px minmax(0,1fr) 26px; align-items:center; gap:.55rem; min-height:48px; padding:.55rem .62rem; border:1px solid transparent; border-radius:.58rem; background:var(--background); cursor:pointer; transition:border-color .15s ease,background .15s ease,transform .15s ease; }
+  .spell-card:hover { transform:translateY(-1px); border-color:color-mix(in srgb,var(--wizard-gold) 58%,var(--card-border)); }
+  .spell-card.is-selected { border-color:var(--wizard-gold); background:color-mix(in srgb,var(--wizard-gold) 9%,var(--background)); }
+  .spell-card.is-unavailable { opacity:.38; filter:saturate(.25); background:color-mix(in srgb,var(--background) 88%,#000); border-color:transparent; transform:none; cursor:not-allowed; }
+  .spell-card:focus-visible { outline:2px solid var(--wizard-gold-light); outline-offset:2px; }
+  .spell-card.is-unavailable:hover { transform:none; border-color:transparent; }
+  .spell-card.is-unavailable .spell-name-link { color:var(--muted); text-decoration:none; pointer-events:none; }
+  .spell-card.is-unavailable .spell-open-icon { opacity:.25; }
+  .spell-card input { width:17px; height:17px; margin:0; accent-color:var(--wizard-gold); cursor:pointer; }
+  .spell-card input:disabled { cursor:not-allowed; }
+  .spell-name-copy { min-width:0; display:grid; gap:.12rem; }
+  .spell-choice-label { color:var(--wizard-gold); font-size:.68rem; font-weight:900; letter-spacing:.055em; text-transform:uppercase; }
+  .spell-choice-description { overflow:hidden; color:var(--muted); font-size:.72rem; line-height:1.3; text-overflow:ellipsis; white-space:nowrap; }
+  .spell-name-link { min-width:0; overflow:hidden; color:var(--wizard-gold-light); font-family:Georgia,serif; font-size:1rem; font-weight:700; text-decoration:none; text-overflow:ellipsis; white-space:nowrap; }
+  .spell-name-link:hover { color:var(--wizard-gold); text-decoration:underline; text-underline-offset:3px; }
+  .spell-open-icon { color:var(--wizard-gold); font-size:.95rem; text-align:center; opacity:.72; }
+  .spell-card:hover .spell-open-icon { opacity:1; }
+  .spell-fixed { margin:0 0 1rem; padding:.7rem .8rem; border:1px solid color-mix(in srgb,var(--wizard-gold) 28%,var(--card-border)); border-radius:.6rem; background:color-mix(in srgb,var(--wizard-gold) 6%,var(--background)); }
+  .spell-fixed p { margin:.25rem 0; }
+  .spell-help { margin:.8rem 0 0; font-size:.78rem; opacity:.6; }
+  .empty-copy { margin:.5rem; opacity:.65; }
+
+  @media(max-width:760px){
+    .spell-source-title { flex-direction:column; }
+    .spell-toolbar { grid-template-columns:1fr; }
+    .spell-columns { grid-template-columns:1fr; }
+    .spell-grid { max-height:340px; }
+  }
+</style>

@@ -1,0 +1,114 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CharacterWizard from '../../../components/characterCreator/CharacterWizard.astro';
+import CharacterCloudSync from '../../../components/characterCreator/CharacterCloudSync.astro';
+import { speciesData } from '../../../data/species/index';
+import { raceData, getRaceData } from '../../../data/raceSizeData.js';
+import { classes } from '../../../data/classes';
+
+const variantSizeCalculators: Record<string, Record<string, any>> = {
+  elf: {
+    drow: { base: getRaceData('elfDrow'), raw: raceData.elfDrow },
+    'high-elf': { base: getRaceData('elf'), raw: raceData.elf },
+    'wood-elf': { base: getRaceData('elfWood'), raw: raceData.elfWood },
+    'elf-astral': { base: getRaceData('elf'), raw: raceData.elf },
+    'elf-sea': { base: getRaceData('elfSea'), raw: raceData.elfSea },
+    'elf-shadar-kai': {
+      base: getRaceData('elfShadarKai'),
+      raw: raceData.elfShadarKai
+    },
+    'elf-pallid': { base: getRaceData('elf'), raw: raceData.elf },
+    'elf-eladrin': { base: getRaceData('eladrin'), raw: raceData.eladrin }
+  },
+  gith: {
+    'gith-githyanki': {
+      base: getRaceData('githGithyanki'),
+      raw: raceData.githGithyanki
+    },
+    'gith-githzerai': {
+      base: getRaceData('githGithzerai'),
+      raw: raceData.githGithzerai
+    }
+  }
+};
+
+const speciesOptions = speciesData.map((item: any) => ({
+  id: item.id,
+  name: item.name,
+  nameEn: item.nameEn,
+  sourceBook: item.sourceBook,
+  portrait: item.portrait,
+  lore: item.lore,
+  type: item.type,
+  size: item.size,
+  speed: item.speed,
+  variantMode: item.variantMode ?? 'optional',
+  abilities: Array.isArray(item.abilities)
+    ? item.abilities
+    : Array.isArray(item.traits?.abilities)
+      ? item.traits.abilities.map((description: string) => ({
+          title: 'Особенность',
+          description
+        }))
+      : [],
+  variants: Array.isArray(item.variants)
+    ? item.variants.map((variant: any) => ({
+        id: `${item.id}-${String(variant.nameEn || variant.name)
+          .toLowerCase()
+          .replace(/[^a-zа-я0-9]+/gi, '-')}`,
+        name: variant.name,
+        nameEn: variant.nameEn,
+        sourceBook: variant.sourceBook,
+        lore: variant.lore,
+        abilities: variant.abilities ?? [],
+        replacesAbilities: variant.replacesAbilities ?? [],
+        speed: variant.speed
+      }))
+    : [],
+  sizeCalculator: getRaceData(item.id)
+    ? {
+        base: getRaceData(item.id),
+        raw: raceData[item.id] ?? null,
+        variants: variantSizeCalculators[item.id] ?? {}
+      }
+    : null
+}));
+
+const classOptions = classes
+  .map((item: any) => ({
+    id: item.id,
+    name: item.name,
+    nameEn: item.nameEn,
+    sourceBook: item.sourceBook,
+    portrait: item.portrait,
+    description: item.description,
+    primaryAbility: item.primaryAbility,
+    hitDice: item.hitDice,
+    hitPoints: item.hitPoints,
+    proficiencies: item.proficiencies,
+    levels: item.levels ?? [],
+    features: item.features ?? [],
+    subclasses: Array.isArray(item.subclasses)
+      ? item.subclasses.map((subclass: any) => ({
+          id: subclass.id,
+          name: subclass.name,
+          nameEn: subclass.nameEn,
+          description: subclass.description,
+          sourceBook: subclass.sourceBook
+        }))
+      : [],
+    equipment: item.equipment ?? null,
+    level1Features: Array.isArray(item.features)
+      ? item.features.filter((feature: any) => Number(feature.level ?? 0) === 1)
+      : []
+  }))
+  .sort((left: any, right: any) =>
+    String(left.name).localeCompare(String(right.name), 'ru', { sensitivity: 'base' })
+  );
+
+---
+
+<Layout title="Создание персонажа — League of Heroes">
+  <CharacterCloudSync />
+  <CharacterWizard speciesOptions={speciesOptions} classOptions={classOptions} />
+</Layout>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  stat: string;
+  base: number;
+  racial: number;
+  cost: number;
+}
+
+const { stat, base, racial, cost } = Astro.props;
+const total = base + racial;
+---
+
+<tr>
+  <td>{stat}</td>
+  <td>
+    <button class="stat-btn" data-stat={stat} data-action="decrease-base">-</button>
+    <span>{base}</span>
+    <button class="stat-btn" data-stat={stat} data-action="increase-base">+</button>
+  </td>
+  <td>
+    <button class="stat-btn" data-stat={stat} data-action="decrease-racial">-</button>
+    <span>{racial}</span>
+    <button class="stat-btn" data-stat={stat} data-action="increase-racial">+</button>
+  </td>
+  <td>{total}</td>
+  <td>{cost}</td>
+</tr>
+
+<style>
+  .stat-btn {
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.25rem;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  .stat-btn:hover {
+    background: var(--nav-hover-bg);
+  }
+</style>

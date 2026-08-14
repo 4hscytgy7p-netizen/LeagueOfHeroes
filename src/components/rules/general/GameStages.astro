@@ -1,0 +1,74 @@
+---
+interface Props {}
+---
+
+<section class="rules-section">
+  <h2>Этапы игры</h2>
+  <div class="content">
+    <div class="stages">
+      <div class="stage">
+        <h3>Первый этап</h3>
+        <p>Уровни 1–4</p>
+      </div>
+      <div class="stage">
+        <h3>Второй этап</h3>
+        <p>Уровни 5–10</p>
+      </div>
+      <div class="stage">
+        <h3>Третий этап</h3>
+        <p>Уровни 11–16</p>
+      </div>
+      <div class="stage">
+        <h3>Четвертый этап</h3>
+        <p>Уровни 17-20</p>
+      </div>
+      <div class="stage">
+        <h3>?</h3>
+        <p>Уровни ?-?</p>
+      </div>
+    </div>
+
+    <div class="stage-rules">
+      <p>Каждое приключение допускает к игре персонажей определённого диапазона уровней. Отклонения возможны только в случае, если разница между всеми персонажами одного этапа и всеми персонажами другого этапа не превышает 1 уровень.</p>
+      <p>Например: при наборе на партию второго этапа, записалось 4 из 5 возможных персонажей 5-го уровня. В такую группу имеет возможность записаться персонаж 4-го уровня, т.к. разница между всеми персонажами второго этапа и одним персонажем первого этапа составляет 1 уровень.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rules-section {
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stage {
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .stage-rules {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+</style>

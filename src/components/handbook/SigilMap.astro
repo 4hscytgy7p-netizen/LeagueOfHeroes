@@ -1,0 +1,33 @@
+---
+interface Props {
+  imageUrl: string;
+  caption: string;
+}
+
+const { imageUrl, caption } = Astro.props;
+---
+
+<figure class="map-container">
+  <img src={imageUrl} alt="Map of Sigil" class="sigil-map" />
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .map-container {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .sigil-map {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    color: var(--text);
+    font-style: italic;
+  }
+</style>

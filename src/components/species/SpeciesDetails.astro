@@ -1,0 +1,151 @@
+---
+import type { Species } from '../../types/species';
+
+interface Props {
+  species: Species;
+}
+
+const { species } = Astro.props;
+---
+
+<div class="species-details">
+  <button class="back-button">← Back to Species</button>
+  
+  <div class="content">
+    <header>
+      <img src={species.portrait} alt={species.name} class="portrait" />
+      <div class="title">
+        <h2>{species.name} <span class="name-en">[{species.nameEn}]</span></h2>
+        <p class="source">{species.sourceBook}</p>
+      </div>
+    </header>
+
+    {species.variants?.length && (
+      <div class="subspecies-select">
+        <label for="subspecies">Subspecies:</label>
+        <select id="subspecies">
+          <option value="">Base Species</option>
+          {species.variants.map(sub => (
+            <option value={sub.name}>{sub.name} [{sub.nameEn}]</option>
+          ))}
+        </select>
+      </div>
+    )}
+
+    <div class="lore">
+      <h3>Lore</h3>
+      <p>{species.lore}</p>
+    </div>
+
+    <div class="traits">
+      <h3>Traits</h3>
+      <dl>
+        <dt>Creature Type</dt>
+        <dd>{species.type}</dd>
+
+        <dt>Size</dt>
+        <dd>
+          {species.size}
+        </dd>
+
+        <dt>Speed</dt>
+        <dd>{species.speed} feet</dd>
+      </dl>
+
+      <div class="abilities">
+        <h4>Abilities</h4>
+        <ul>
+          {(species.abilities || []).map(ability => (
+            <li><strong>{ability.title}.</strong> {ability.description}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .species-details {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+
+  header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.9em;
+  }
+
+  .subspecies-select {
+    margin-bottom: 2rem;
+  }
+
+  select {
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  h3 {
+    margin: 1.5rem 0 1rem;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  .abilities {
+    margin-top: 1.5rem;
+  }
+
+  .abilities ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .abilities li {
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<script>
+  // Handle subspecies selection
+  const subspeciesSelect = document.getElementById('subspecies');
+  if (subspeciesSelect) {
+    subspeciesSelect.addEventListener('change', (e) => {
+      const target = e.target as HTMLSelectElement;
+      // Update displayed information based on selected subspecies
+      // This would need to be implemented based on your data structure
+    });
+  }
+</script>

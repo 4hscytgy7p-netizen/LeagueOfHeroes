@@ -1,0 +1,700 @@
+<section class="wizard-step" data-step="class-features">
+  <div class="class-features-heading">
+    <span class="wizard-kicker">Глава четвёртая</span>
+    <h2>Выбери умения класса и вида</h2>
+    <p>Здесь собраны обязательные варианты класса и изменяемые владения вида. У каждого выбора указан источник и кратко объяснено, когда он действует.</p>
+  </div>
+
+  <div id="class-features-empty" class="class-features-empty" hidden>
+    На 1 уровне у выбранных класса и вида нет дополнительных выборов.
+  </div>
+
+  <div id="class-features-list" class="class-features-list"></div>
+  <p id="class-features-warning" class="choice-warning" hidden></p>
+</section>
+
+<style>
+  .class-features-heading {
+    margin-bottom: 1.25rem;
+  }
+
+  .class-features-heading h2 {
+    margin: .35rem 0 .55rem;
+    font-family: Georgia, serif;
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+  }
+
+  .class-features-heading p {
+    max-width: 780px;
+    margin: 0;
+    opacity: .68;
+  }
+
+  .class-features-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  :global(.class-feature-group) {
+    display: grid;
+    gap: 0;
+  }
+
+  :global(.class-feature-summary) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .85rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 35%, var(--card-border));
+    border-bottom: 0;
+    border-radius: .8rem .8rem 0 0;
+    background: color-mix(in srgb, var(--card-bg) 88%, #000);
+  }
+
+  :global(.class-feature-summary span) {
+    color: var(--wizard-gold);
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  :global(.class-feature-summary h3) {
+    margin: .2rem 0 0;
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+  }
+
+
+  :global(.class-feature-group-link) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :global(.class-feature-group-link:hover) {
+    color: var(--wizard-gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  :global(.class-feature-summary p) {
+    max-width: 720px;
+    margin: .35rem 0 0;
+    font-size: .78rem;
+    line-height: 1.4;
+    opacity: .62;
+  }
+
+  :global(.class-feature-summary strong) {
+    display: grid;
+    place-items: center;
+    min-width: 52px;
+    min-height: 36px;
+    padding: 0 .65rem;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 45%, var(--card-border));
+    border-radius: 999px;
+    background: var(--background);
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+  }
+
+  :global(.class-feature-table-wrap) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 35%, var(--card-border));
+    border-radius: 0 0 .8rem .8rem;
+    background: color-mix(in srgb, var(--background) 92%, #000);
+  }
+
+  :global(.adaptive-proficiency-table-wrap) {
+    max-height: min(31rem, 62vh);
+    overflow: auto;
+    border-top: 1px solid var(--card-border);
+  }
+
+  :global(.adaptive-proficiency-table) {
+    min-width: 0;
+  }
+
+  :global(.adaptive-proficiency-table thead) {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  :global(.adaptive-proficiency-table th:last-child),
+  :global(.adaptive-proficiency-table td:last-child) {
+    width: 112px;
+    text-align: center;
+  }
+
+  :global(.weapon-mastery-toolbar) {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(150px, .35fr) minmax(150px, .35fr);
+    gap: .7rem;
+    padding: .8rem;
+    border-bottom: 1px solid var(--card-border);
+    background: color-mix(in srgb, var(--card-bg) 68%, var(--background));
+  }
+
+  :global(.weapon-mastery-toolbar label) {
+    display: grid;
+    gap: .3rem;
+  }
+
+  :global(.weapon-mastery-toolbar span) {
+    color: var(--wizard-gold);
+    font-size: .68rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  :global(.weapon-mastery-toolbar input),
+  :global(.weapon-mastery-toolbar select) {
+    min-width: 0;
+    padding: .65rem .75rem;
+    border: 1px solid var(--card-border);
+    border-radius: .55rem;
+    background: var(--background);
+    color: var(--text);
+    font: inherit;
+  }
+
+  :global(.faith-toolbar) {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(125px, .65fr));
+    gap: .65rem;
+    padding: .75rem;
+    border-bottom: 1px solid var(--card-border);
+    background: color-mix(in srgb, var(--card-bg) 68%, var(--background));
+  }
+
+  :global(.faith-oath-recommendation) {
+    display: grid;
+    gap: .28rem;
+    padding: .72rem .8rem;
+    border-bottom: 1px solid var(--card-border);
+    border-left: 3px solid var(--wizard-gold);
+    background: color-mix(in srgb, var(--wizard-gold) 9%, var(--background));
+  }
+
+  :global(.faith-oath-recommendation strong) {
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+  }
+
+  :global(.faith-oath-recommendation span) {
+    color: var(--text);
+    font-size: .78rem;
+    font-weight: 750;
+    line-height: 1.45;
+  }
+
+  :global(.faith-oath-recommendation small) {
+    opacity: .62;
+    line-height: 1.4;
+  }
+
+  :global(.faith-oath-recommendation.is-pending) {
+    border-left-color: var(--card-border);
+    background: color-mix(in srgb, var(--card-bg) 58%, var(--background));
+  }
+
+  :global(.faith-toolbar label) {
+    display: grid;
+    gap: .3rem;
+    min-width: 0;
+  }
+
+  :global(.faith-toolbar span),
+  :global(.custom-deity-grid label > span),
+  :global(.custom-deity-heading > div > span) {
+    color: var(--wizard-gold);
+    font-size: .66rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  :global(.faith-toolbar input),
+  :global(.faith-toolbar select),
+  :global(.custom-deity-grid input),
+  :global(.custom-deity-grid select),
+  :global(.custom-deity-grid textarea) {
+    width: 100%;
+    min-width: 0;
+    padding: .62rem .7rem;
+    border: 1px solid var(--card-border);
+    border-radius: .5rem;
+    background: var(--background);
+    color: var(--text);
+    font: inherit;
+    outline: none;
+  }
+
+  :global(.faith-toolbar input:focus),
+  :global(.faith-toolbar select:focus),
+  :global(.custom-deity-grid input:focus),
+  :global(.custom-deity-grid select:focus),
+  :global(.custom-deity-grid textarea:focus) {
+    border-color: var(--wizard-gold);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--wizard-gold) 14%, transparent);
+  }
+
+  :global(.faith-table-scroll) {
+    max-height: 390px;
+    overflow: auto;
+    scrollbar-gutter: stable;
+  }
+
+  :global(.oath-table-scroll) {
+    max-height: 370px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  :global(.faith-table th),
+  :global(.oath-table th) {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  :global(.class-feature-table.faith-table),
+  :global(.class-feature-table.oath-table) {
+    min-width: 0;
+  }
+
+  :global(.faith-table th),
+  :global(.faith-table td) {
+    height: auto;
+    padding-top: .48rem;
+    padding-bottom: .48rem;
+  }
+
+  :global(.faith-disclosure summary) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .7rem;
+    min-height: 28px;
+    color: var(--wizard-gold-light);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  :global(.faith-disclosure summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  :global(.faith-disclosure summary::before) {
+    content: '▸';
+    flex: 0 0 auto;
+    color: var(--wizard-gold);
+    transition: transform .15s ease;
+  }
+
+  :global(.faith-disclosure[open] summary::before) {
+    transform: rotate(90deg);
+  }
+
+  :global(.faith-disclosure summary > span:first-of-type) {
+    margin-right: auto;
+    font-weight: 850;
+  }
+
+  :global(.faith-badges) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .25rem;
+  }
+
+  :global(.faith-badges em) {
+    padding: .15rem .38rem;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 28%, var(--card-border));
+    border-radius: 999px;
+    color: color-mix(in srgb, var(--text) 78%, var(--wizard-gold));
+    background: color-mix(in srgb, var(--wizard-gold) 6%, transparent);
+    font-size: .62rem;
+    font-style: normal;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  :global(.faith-badges .faith-recommended) {
+    border-color: color-mix(in srgb, #6ecf8d 58%, var(--card-border));
+    color: #a8edb9;
+    background: color-mix(in srgb, #2f9e58 14%, transparent);
+  }
+
+  :global(.faith-description) {
+    margin: .55rem 0 .15rem 1.05rem;
+    padding: .65rem .75rem;
+    border-left: 2px solid color-mix(in srgb, var(--wizard-gold) 60%, transparent);
+    border-radius: 0 .45rem .45rem 0;
+    background: color-mix(in srgb, var(--background) 68%, transparent);
+    font-weight: 400;
+  }
+
+  :global(.faith-description p) {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  :global(.faith-description dl) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem 1rem;
+    margin: .55rem 0 0;
+    font-size: .72rem;
+  }
+
+  :global(.faith-description dl > div) {
+    display: flex;
+    gap: .35rem;
+  }
+
+  :global(.faith-description dt) {
+    color: var(--wizard-gold);
+    font-weight: 800;
+  }
+
+  :global(.faith-description dd) {
+    margin: 0;
+    opacity: .75;
+  }
+
+  :global(.custom-deity-panel) {
+    padding: 1rem;
+    border-top: 1px solid color-mix(in srgb, var(--wizard-gold) 35%, var(--card-border));
+    background: radial-gradient(circle at top left, color-mix(in srgb, var(--wizard-gold) 9%, transparent), transparent 44%);
+  }
+
+  :global(.custom-deity-heading) {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .85rem;
+  }
+
+  :global(.custom-deity-heading h4) {
+    margin: .18rem 0 0;
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+  }
+
+  :global(.custom-deity-heading small) {
+    opacity: .58;
+  }
+
+  :global(.custom-deity-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+  }
+
+  :global(.custom-deity-grid label) {
+    display: grid;
+    align-content: start;
+    gap: .32rem;
+  }
+
+  :global(.custom-deity-grid textarea) {
+    resize: vertical;
+    line-height: 1.45;
+  }
+
+  :global(.custom-deity-wide) {
+    grid-column: 1 / -1;
+  }
+
+  :global(.oath-disclosure summary) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: .3rem .75rem;
+    color: var(--wizard-gold-light);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  :global(.oath-disclosure summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  :global(.oath-disclosure summary::before) {
+    content: '▸';
+    grid-column: 1;
+    grid-row: 1 / 3;
+    color: var(--wizard-gold);
+    transition: transform .15s ease;
+  }
+
+  :global(.oath-disclosure[open] summary::before) {
+    transform: rotate(90deg);
+  }
+
+  :global(.oath-disclosure summary span) {
+    grid-column: 2;
+    font-weight: 850;
+  }
+
+  :global(.oath-disclosure summary small) {
+    grid-column: 3;
+    max-width: 260px;
+    margin: 0;
+    opacity: .58;
+    text-align: right;
+  }
+
+  :global(.oath-disclosure > p) {
+    max-height: 220px;
+    margin: .65rem 0 .1rem 1rem;
+    padding: .7rem .8rem;
+    overflow-y: auto;
+    border-left: 2px solid color-mix(in srgb, var(--wizard-gold) 55%, transparent);
+    border-radius: 0 .45rem .45rem 0;
+    background: color-mix(in srgb, var(--background) 68%, transparent);
+    font-size: .78rem;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+
+  :global(.class-feature-empty-filter) {
+    padding: 1.2rem !important;
+    text-align: center !important;
+    opacity: .62;
+  }
+
+  :global(.class-feature-table) {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+  }
+
+  :global(.class-feature-table th),
+  :global(.class-feature-table td) {
+    height: 44px;
+    padding: .6rem .9rem;
+    border-right: 1px solid color-mix(in srgb, var(--card-border) 55%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--card-border) 72%, transparent);
+    vertical-align: middle;
+  }
+
+  :global(.class-feature-table th:first-child),
+  :global(.class-feature-table td:first-child) {
+    width: 78%;
+    text-align: left;
+  }
+
+  :global(.class-feature-table th:last-child),
+  :global(.class-feature-table td:last-child) {
+    width: 22%;
+    border-right: 0;
+    text-align: center;
+  }
+
+  :global(.class-feature-table th) {
+    background: color-mix(in srgb, var(--card-bg) 88%, #000);
+    color: var(--wizard-gold-light);
+    font-size: .76rem;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+  }
+
+  :global(.class-feature-table tbody tr:nth-child(odd)) {
+    background: color-mix(in srgb, var(--card-bg) 34%, transparent);
+  }
+
+  :global(.class-feature-table tbody tr:nth-child(even)) {
+    background: color-mix(in srgb, var(--card-bg) 14%, transparent);
+  }
+
+  :global(.class-feature-table tbody tr:hover) {
+    background: color-mix(in srgb, var(--wizard-gold) 13%, var(--card-bg));
+    box-shadow: inset 4px 0 0 var(--wizard-gold);
+  }
+
+  :global(.class-feature-choice-row) {
+    cursor: pointer;
+  }
+
+  :global(.class-feature-table tbody tr:last-child td) {
+    border-bottom: 0;
+  }
+
+  :global(.class-feature-name) {
+    padding-left: 1rem;
+    font-weight: 800;
+  }
+
+  :global(.class-feature-name > span),
+  :global(.class-feature-name > a) {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  :global(.class-feature-name small) {
+    display: block;
+    margin-top: .18rem;
+    font-size: .72rem;
+    font-weight: 500;
+    opacity: .58;
+  }
+
+  :global(.class-feature-name a) {
+    color: var(--wizard-gold-light);
+    text-decoration: none;
+  }
+
+  :global(.class-feature-name a:hover) {
+    color: var(--wizard-gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  :global(.class-feature-check) {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
+    border: 1px solid color-mix(in srgb, var(--text) 55%, var(--card-border));
+    border-radius: .18rem;
+    background-color: color-mix(in srgb, var(--background) 88%, white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: .9rem;
+    cursor: pointer;
+    transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+  }
+
+  :global(.class-feature-check:checked) {
+    border-color: var(--wizard-gold-light);
+    background-color: var(--wizard-gold);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23101827' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' d='m3 8 3 3 7-7'/%3E%3C/svg%3E");
+  }
+
+  :global(.class-feature-check:hover) {
+    transform: scale(1.1);
+    border-color: var(--wizard-gold);
+  }
+
+  :global(.class-feature-check:focus-visible) {
+    outline: 2px solid var(--wizard-gold-light);
+    outline-offset: 3px;
+  }
+
+  .class-features-empty {
+    padding: 1.1rem;
+    border: 1px dashed var(--card-border);
+    border-radius: .75rem;
+    opacity: .65;
+  }
+
+  .choice-warning {
+    margin-top: 1rem;
+    padding: .75rem .9rem;
+    border: 1px solid color-mix(in srgb, #ef4444 55%, var(--card-border));
+    border-radius: .6rem;
+    background: color-mix(in srgb, #ef4444 10%, transparent);
+  }
+
+  @media (max-width: 700px) {
+    :global(.weapon-mastery-toolbar) {
+      grid-template-columns: 1fr;
+    }
+
+    :global(.faith-toolbar),
+    :global(.custom-deity-grid) {
+      grid-template-columns: 1fr;
+    }
+
+    :global(.custom-deity-wide) {
+      grid-column: auto;
+    }
+
+    :global(.faith-table-scroll) {
+      max-height: 460px;
+    }
+
+    :global(.faith-disclosure summary) {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    :global(.oath-disclosure summary) {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    :global(.oath-disclosure summary::before) {
+      grid-row: auto;
+    }
+
+    :global(.oath-disclosure summary small) {
+      grid-column: 2;
+      max-width: none;
+      text-align: left;
+    }
+
+    :global(.faith-badges) {
+      flex-basis: 100%;
+      justify-content: flex-start;
+      margin-left: 1rem;
+    }
+
+    :global(.custom-deity-heading) {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: .35rem;
+    }
+
+    :global(.class-feature-table) {
+      min-width: 440px;
+    }
+
+    :global(.class-feature-table th:first-child),
+    :global(.class-feature-table td:first-child) {
+      width: 72%;
+    }
+
+    :global(.class-feature-table th:last-child),
+    :global(.class-feature-table td:last-child) {
+      width: 28%;
+    }
+  }
+
+  @media (min-width: 701px) and (max-width: 1340px) {
+    :global(.weapon-mastery-toolbar) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    :global(.faith-toolbar) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    :global(.weapon-mastery-toolbar label:first-child) {
+      grid-column: 1 / -1;
+    }
+
+    :global(.faith-toolbar label:first-child) {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

@@ -1,0 +1,268 @@
+---
+interface Props {}
+---
+
+<div class="activity-card">
+  <div class="activity-header">
+    <h3>Исследование</h3>
+    <p class="intro">Предупреждён — значит вооружён. Исследование во время простоя позволяет персонажу получить знания о чудовище, местности, волшебном предмете или по какому-либо другому конкретному вопросу.</p>
+    <div class="basic-info">
+      <div class="info-item">
+        <span class="label">Продолжительность:</span>
+        <span>5 дней простоя</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Базовая стоимость:</span>
+        <span>Не менее 50 зм + проживание</span>
+      </div>
+    </div>
+  </div>
+
+  <details class="activity-details">
+    <summary>Подробная информация</summary>
+    <div class="details-content">
+      <section class="search-process">
+        <h4>Исследование</h4>
+        <p>Персонаж определяет, что является предметом исследования — конкретная личность, место или предмет. После пяти дней исследований персонаж совершает проверку Интеллекта с бонусом +1 за каждые 50 зм, потраченные сверх изначальных 50 зм, до максимума в +6. Кроме того, персонаж, у которого есть доступ к книгам с достоверной информацией касательно предмета исследований или к хорошо осведомлённым мудрецам, совершает эту проверку с Преимуществом. Определите, на  сколько много сведений получил персонаж, используя таблицу «Результаты исследования».</p>
+        <div class="rules-section">
+          <h4>Результаты исследования</h4>
+          <div class="activity-search">
+          <table>
+            <thead>
+              <tr>
+                <th>Результат проверки</th>
+                <th>Итог</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1–5</td>
+                <td>Безрезультатно</td>
+            </tr>
+            <tr>
+                <td>6–10</td>
+                <td>Вы изучили один фрагмент сведений</td>
+            </tr>
+            <tr>
+                <td>11–20</td>
+                <td>Вы изучили два фрагмента сведений</td>
+            </tr>
+            <tr>
+                <td>21+</td>
+                <td>Вы изучили три фрагмента сведений</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div>
+      <p>Наибольший риск при исследовании — получение ложной информации. Не все знания точны или правдивы, а недоброжелатель с наклонностями учёного, особенно если предмет исследования ему известен, может попытаться ввести персонажа в заблуждение. Недоброжелатель может подсунуть ложную информацию, подкупить мудрецов, чтобы те дали плохие советы, или просто украсть ключевые книги, необходимые для поиска достоверной информации.</p>
+      <p>Кроме того, персонаж может столкнуться с другими осложнениями во время исследования. За каждую проведённую активность Исследование, существует 15% шанс осложнения, примеры которых приведены в таблице «Осложнения во время исследований».</p>
+      </div>
+      <details class="activity-details">
+        <summary class="dets">Осложнения (d6)</summary>
+      <section class="complications">
+        <div class="complications-table">
+          <table>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Вы случайно повредили редкую книгу. Одна случайная ваша достоверная книга уничтожается.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Вы оскорбили мудреца, который теперь требует необыкновенный дар. Вы отдаёте один свой необычный магический предмет. Если такого нет, то следующий полученный (покупка, ОС, награда, создание и т.п) необычный предмет изымается.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Если бы вы знали, что книга была проклята, вы бы ни за что её не открыли. *</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Мудрец стал одержим идеей убить вас ради правдивости нескольких странных теорий о реальности. *</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ваши действия привели к тому, что вам запретили доступ в библиотеку, пока не возместите ущерб. Вы должны выплатить штраф 300 зм и 30 ДП.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Вы получили полезную информацию, но пообещали выполнить опасное задание в качестве оплаты. *</td>
+            </tr>
+            </tbody>
+          </table>
+
+          <p class="note">* - во всех активностях простоя, где требуется услуга или специальное задание, требуется содействие Мастера Лиги, на следующей игре которого играет персонаж.</p>
+        </div>
+      </section>
+      </details>
+      <details class="activity-details">
+        <summary class="dets">Влияние стилей проживания</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Стиль</th>
+              <th>Стоимость/день</th>
+              <th>Эффект</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Никудышное</td>
+              <td>-</td>
+              <td>-1 к броску. Вы получаете на 1 фрагмент сведений меньше. При осложнении, персонаж на следующей игре во время боя находиться под заклинанием Смятение</td>
+          </tr>
+          <tr>
+              <td>Бедное</td>
+              <td>1 см</td>
+              <td>Вы получаете на 1 фрагмент сведений меньше</td>
+          </tr>
+          <tr>
+              <td>Скромное</td>
+              <td>1 зм</td>
+              <td>Без эффектов</td>
+          </tr>
+          <tr>
+              <td>Богатое</td>
+              <td>5 зм</td>
+              <td>+ 1 к броску</td>
+          </tr>
+          <tr>
+              <td>Аристократическое</td>
+              <td>10+ зм</td>
+              <td>+ 1 к броску. По окончанию исследования вы получаете один свиток заклинания заговора по вашему выбору</td>
+          </tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+  </details>
+</div>
+
+<style>
+  .activity-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .activity-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .basic-info {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .dets{
+    color: var(--primary)
+  }
+
+  .activity-search {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .info-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .activity-details {
+    border-top: 1px solid var(--card-border);
+  }
+
+  summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  summary:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .details-content {
+    padding: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  .complications-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .complications-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .complications-table td:first-child {
+    width: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

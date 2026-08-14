@@ -1,0 +1,645 @@
+---
+interface Props {
+  requestedMode?: 'auto' | 'admin' | 'master' | 'player';
+}
+
+const { requestedMode = 'auto' } = Astro.props;
+---
+
+<section id="test-cabinet" class="cabinet-shell" data-requested-mode={requestedMode}>
+  <div id="cabinet-loading" class="cabinet-loading">
+    <div class="loader" aria-hidden="true"></div>
+    <p>Загружаем личный кабинет…</p>
+  </div>
+
+  <div id="cabinet-error" class="cabinet-error" hidden>
+    <h1>Кабинет пока недоступен</h1>
+    <p id="cabinet-error-message"></p>
+    <a href="/test/auth/">Перейти ко входу</a>
+  </div>
+
+  <div id="cabinet-content" hidden>
+    <header class="profile-header">
+      <div class="profile-person">
+        <img id="profile-avatar" alt="" hidden />
+        <div>
+          <span id="profile-role" class="role-badge"></span>
+          <h1 id="profile-name">Герой</h1>
+          <p id="profile-email"></p>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <nav id="mode-switcher" class="mode-switcher" aria-label="Режим личного кабинета"></nav>
+        <button id="account-sign-out" class="ghost-button" type="button">Выйти</button>
+      </div>
+    </header>
+
+    <div id="mode-description" class="mode-description"></div>
+
+    <section id="player-dashboard" class="dashboard-grid" hidden>
+      <article class="dashboard-card dashboard-card-featured">
+        <span>Персонажи</span>
+        <h2>Мои герои</h2>
+        <p>Продолжите сохранённого персонажа или создайте нового героя в конструкторе.</p>
+        <strong id="character-slot-summary" class="slot-summary">Слоты персонажей: —</strong>
+        <div class="featured-actions">
+          <button id="create-character" class="primary-button" type="button">Создать персонажа</button>
+              <button id="open-extension-settings" class="ghost-button" type="button">Подключить расширение Roll20</button>
+        </div>
+      </article>
+      <article class="dashboard-card">
+        <span>Игры</span>
+        <h2>Мои кампании</h2>
+        <p>Здесь появятся приглашения от мастеров и расписание ближайших игр.</p>
+        <strong class="empty-value">Пока нет кампаний</strong>
+      </article>
+      <article class="dashboard-card">
+        <span>Профиль</span>
+        <h2>Discord подключён</h2>
+        <p>Имя и аватар синхронизируются при следующем входе через Discord.</p>
+        <strong class="success-value">Активен</strong>
+      </article>
+      <article class="dashboard-card character-library-card">
+        <div class="admin-heading">
+          <div>
+            <span>Облачное хранилище</span>
+            <h2>Персонажи Лиги</h2>
+          </div>
+          <button id="refresh-characters" class="ghost-button" type="button">Обновить</button>
+        </div>
+        <p>JSON конструктора и готовый экспорт Roll20 сохраняются в Supabase.</p>
+        <div id="character-list" class="character-list">
+          <div class="empty-value">Загрузка персонажей…</div>
+        </div>
+        <div id="character-status" class="inline-status" hidden></div>
+      </article>
+      <article id="roll20-extension-card" class="dashboard-card extension-card" tabindex="-1">
+        <span>Roll20</span>
+        <h2>Расширение Лиги и ключ доступа</h2>
+        <p>Установите расширение, затем подключите его одной кнопкой. Адрес Supabase, публичный ключ и личный ключ синхронизации будут переданы автоматически.</p>
+        <div class="extension-actions">
+          <button id="connect-extension" class="primary-button" type="button">Подключить расширение</button>
+        </div>
+        <a class="extension-download" href="/downloads/league-roll20-sync.zip" download>Скачать расширение для Chrome / Яндекс Браузера</a>
+        <div id="sync-token-list" class="sync-token-list"></div>
+        <div id="extension-status" class="inline-status" hidden></div>
+      </article>
+    </section>
+
+    <section id="master-dashboard" class="dashboard-grid" hidden>
+      <article class="dashboard-card dashboard-card-featured">
+        <span>Кампании</span>
+        <h2>Панель мастера</h2>
+        <p>Следующим этапом здесь появятся создание кампании, приглашения игроков и управление группой.</p>
+        <button class="disabled-action" type="button" disabled>Создать кампанию · скоро</button>
+      </article>
+      <article class="dashboard-card">
+        <span>Инструменты</span>
+        <h2>Подготовка игры</h2>
+        <div class="card-links">
+          <a href="/tools/encounter-builder/">Конструктор столкновений</a>
+          <a href="/tools/game-stats/">Статистика игр</a>
+          <a href="/bastions/">Бастионы</a>
+        </div>
+      </article>
+      <article class="dashboard-card">
+        <span>Режим игрока</span>
+        <h2>Мастер тоже играет</h2>
+        <p>Используйте переключатель сверху — Discord-сессия и роль при этом не меняются.</p>
+      </article>
+    </section>
+
+    <section id="admin-dashboard" class="admin-dashboard" hidden>
+      <div id="admin-stats" class="admin-stats"></div>
+      <article class="dashboard-card admin-users-card">
+        <div class="admin-heading">
+          <div>
+            <span>Администрирование</span>
+            <h2>Пользователи и роли</h2>
+          </div>
+          <button id="refresh-users" class="ghost-button" type="button">Обновить</button>
+        </div>
+        <p class="admin-help">Роль «Мастер» включает и кабинет игрока. Роль «Администратор» открывает все три режима.</p>
+        <div class="admin-table-wrap">
+          <table>
+            <thead><tr><th>Пользователь</th><th>Discord ID</th><th>Роль</th><th>Слоты героев</th><th>Создан</th></tr></thead>
+            <tbody id="admin-users-body"></tbody>
+          </table>
+        </div>
+        <div id="admin-status" class="inline-status" hidden></div>
+      </article>
+    </section>
+  </div>
+</section>
+
+<script>
+  import {
+    accountModePath,
+    availableAccountModes,
+    defaultAccountMode,
+    isTestAccountConfigured,
+    normalizeAccountRole,
+    testAccountSupabase,
+    type AccountMode,
+    type AccountRole
+  } from '../../utils/testAccount';
+
+  const root = document.querySelector<HTMLElement>('#test-cabinet');
+  const loading = document.querySelector<HTMLElement>('#cabinet-loading');
+  const content = document.querySelector<HTMLElement>('#cabinet-content');
+  const errorPanel = document.querySelector<HTMLElement>('#cabinet-error');
+  const errorMessage = document.querySelector<HTMLElement>('#cabinet-error-message');
+  const requestedMode = (root?.dataset.requestedMode || 'auto') as AccountMode | 'auto';
+  let currentRole: AccountRole = 'player';
+  let currentUserId = '';
+  let currentCharacterSlots = 1;
+
+  function showError(message: string) {
+    if (loading) loading.hidden = true;
+    if (content) content.hidden = true;
+    if (errorMessage) errorMessage.textContent = message;
+    if (errorPanel) errorPanel.hidden = false;
+  }
+
+  function roleLabel(role: AccountRole) {
+    return ({ player: 'Игрок', master: 'Мастер', admin: 'Администратор' })[role];
+  }
+
+  function modeDescription(mode: AccountMode) {
+    return ({
+      player: 'Личный режим игрока: персонажи, приглашения и участие в кампаниях.',
+      master: 'Режим мастера: подготовка игр, управление группами и мастерские инструменты.',
+      admin: 'Режим администратора: пользователи, роли и контроль тестового контура.'
+    })[mode];
+  }
+
+  function renderModeSwitcher(role: AccountRole, activeMode: AccountMode) {
+    const switcher = document.querySelector<HTMLElement>('#mode-switcher');
+    if (!switcher) return;
+    switcher.innerHTML = availableAccountModes(role).map((mode) => `
+      <a href="${accountModePath(mode)}" class="${mode === activeMode ? 'is-active' : ''}" data-account-mode="${mode}">
+        ${roleLabel(mode)}
+      </a>
+    `).join('');
+  }
+
+  function showMode(mode: AccountMode) {
+    for (const candidate of ['player', 'master', 'admin'] as AccountMode[]) {
+      const panel = document.querySelector<HTMLElement>(`#${candidate}-dashboard`);
+      if (panel) panel.hidden = candidate !== mode;
+    }
+    const description = document.querySelector<HTMLElement>('#mode-description');
+    if (description) description.textContent = modeDescription(mode);
+    window.localStorage.setItem('loh-test-account-mode', mode);
+  }
+
+  function formatDate(value: string | null) {
+    if (!value) return '—';
+    return new Intl.DateTimeFormat('ru-RU', { dateStyle: 'medium' }).format(new Date(value));
+  }
+
+  function escapeText(value: unknown) {
+    return String(value ?? '').replace(/[&<>"']/g, (character) => {
+      if (character === '&') return '&amp;';
+      if (character === '<') return '&lt;';
+      if (character === '>') return '&gt;';
+      if (character === '"') return '&quot;';
+      return '&#39;';
+    });
+  }
+
+  const creatorPath = '/internal/129321041204158/character-creator/';
+
+  function showInlineStatus(selector: string, message: string, kind: 'success' | 'error' = 'success') {
+    const element = document.querySelector<HTMLElement>(selector);
+    if (!element) return;
+    element.textContent = message;
+    element.dataset.kind = kind;
+    element.hidden = false;
+  }
+
+  async function createCharacter() {
+    if (!testAccountSupabase || !currentUserId) return;
+    const button = document.querySelector<HTMLButtonElement>('#create-character');
+    if (button) button.disabled = true;
+    const { data, error } = await testAccountSupabase
+      .rpc('create_character', { character_name: 'Безымянный герой' });
+    if (button) button.disabled = false;
+    if (error || !data) {
+      const message = error?.message?.includes('Character slot limit reached')
+        ? 'Свободных слотов нет. Администратор может увеличить лимит в своём кабинете.'
+        : error?.message || 'Не удалось создать персонажа.';
+      showInlineStatus('#character-status', message, 'error');
+      return;
+    }
+    window.location.assign(`${creatorPath}?character=${encodeURIComponent(String(data))}`);
+  }
+
+  async function deleteCharacter(characterId: string, characterName: string) {
+    if (!testAccountSupabase) return;
+    if (!window.confirm(`Удалить персонажа «${characterName}»? Это действие нельзя отменить.`)) return;
+    const { error } = await testAccountSupabase.from('characters').delete().eq('id', characterId);
+    if (error) {
+      showInlineStatus('#character-status', error.message, 'error');
+      return;
+    }
+    await loadCharacters();
+  }
+
+  async function loadCharacters() {
+    if (!testAccountSupabase || !currentUserId) return;
+    const list = document.querySelector<HTMLElement>('#character-list');
+    if (list) list.innerHTML = '<div class="empty-value">Загрузка персонажей…</div>';
+    const { data, error } = await testAccountSupabase
+      .from('characters')
+      .select('id,name,summary,revision,created_at,updated_at')
+      .order('updated_at', { ascending: false });
+    if (error) {
+      if (list) list.innerHTML = '<div class="empty-value">Не удалось загрузить персонажей.</div>';
+      showInlineStatus('#character-status', error.message, 'error');
+      return;
+    }
+    const characters = data || [];
+    const slotSummary = document.querySelector<HTMLElement>('#character-slot-summary');
+    const createButton = document.querySelector<HTMLButtonElement>('#create-character');
+    const hasFreeSlot = characters.length < currentCharacterSlots;
+    if (slotSummary) slotSummary.textContent = `Слоты персонажей: ${characters.length}/${currentCharacterSlots}`;
+    if (createButton) {
+      createButton.disabled = !hasFreeSlot;
+      createButton.textContent = hasFreeSlot ? 'Создать персонажа' : 'Все слоты заняты';
+      createButton.title = hasFreeSlot ? '' : 'Администратор может увеличить количество слотов.';
+    }
+    if (list) {
+      list.innerHTML = characters.length ? characters.map((character) => {
+        const summary = character.summary && typeof character.summary === 'object' ? character.summary : {};
+        const details = [summary.species, summary.class, summary.background].filter(Boolean).join(' · ') || 'Черновик персонажа';
+        return `<article class="character-row">
+          <div><strong>${escapeText(character.name || 'Безымянный герой')}</strong><small>${escapeText(details)} · версия ${escapeText(character.revision || 1)} · ${escapeText(formatDate(character.updated_at))}</small></div>
+          <div class="character-row-actions">
+            <a href="${creatorPath}?character=${encodeURIComponent(character.id)}">Открыть</a>
+            <button type="button" data-delete-character="${escapeText(character.id)}" data-character-name="${escapeText(character.name || 'Безымянный герой')}">Удалить</button>
+          </div>
+        </article>`;
+      }).join('') : '<div class="empty-value">Героев пока нет. Создайте первого персонажа.</div>';
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-delete-character]').forEach((button) => {
+      button.addEventListener('click', () => deleteCharacter(button.dataset.deleteCharacter || '', button.dataset.characterName || 'Безымянный герой'));
+    });
+  }
+
+  async function loadSyncTokens() {
+    if (!testAccountSupabase || !currentUserId) return;
+    const list = document.querySelector<HTMLElement>('#sync-token-list');
+    const { data, error } = await testAccountSupabase
+      .from('character_sync_tokens')
+      .select('id,label,created_at,last_used_at,revoked_at')
+      .order('created_at', { ascending: false });
+    if (!list) return;
+    if (error) {
+      list.innerHTML = `<div class="empty-value">${escapeText(error.message)}</div>`;
+      return;
+    }
+    const tokens = data || [];
+    list.innerHTML = tokens.length ? tokens.map((token) => `<div class="sync-token-row ${token.revoked_at ? 'is-revoked' : ''}">
+      <div><strong>${escapeText(token.label)}</strong><small>${token.revoked_at ? 'Отозван' : token.last_used_at ? `Использован ${formatDate(token.last_used_at)}` : `Создан ${formatDate(token.created_at)}`}</small></div>
+      ${token.revoked_at ? '' : `<button type="button" data-revoke-token="${escapeText(token.id)}">Отозвать</button>`}
+    </div>`).join('') : '<div class="empty-value">Активных ключей пока нет.</div>';
+    document.querySelectorAll<HTMLButtonElement>('[data-revoke-token]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        if (!testAccountSupabase || !button.dataset.revokeToken) return;
+        await testAccountSupabase.rpc('revoke_character_sync_token', { sync_token_id: button.dataset.revokeToken });
+        await loadSyncTokens();
+      });
+    });
+  }
+
+  async function connectExtension() {
+    if (!testAccountSupabase) return;
+    const button = document.querySelector<HTMLButtonElement>('#connect-extension');
+    const config = window.__LOH_TEST_ACCOUNT_CONFIG__;
+    if (!config?.supabaseUrl || !config.supabaseAnonKey) {
+      showInlineStatus('#extension-status', 'На сайте не настроены публичные параметры Supabase.', 'error');
+      return;
+    }
+    if (button) button.disabled = true;
+    showInlineStatus('#extension-status', 'Создаём защищённое подключение…');
+    const { data, error } = await testAccountSupabase.rpc('create_character_sync_token', { token_label: 'Браузерное расширение' });
+    const record = Array.isArray(data) ? data[0] : data;
+    if (error || !record?.token) {
+      if (button) button.disabled = false;
+      showInlineStatus('#extension-status', error?.message || 'Не удалось создать ключ.', 'error');
+      return;
+    }
+
+    const requestId = `loh-connect-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    try {
+      await new Promise<void>((resolve, reject) => {
+        const timer = window.setTimeout(() => {
+          window.removeEventListener('message', listener);
+          reject(new Error('Расширение не найдено. Установите или перезагрузите его и нажмите кнопку ещё раз.'));
+        }, 4000);
+        function listener(event: MessageEvent) {
+          if (event.source !== window || event.data?.source !== 'LOH_BROWSER_EXTENSION' || event.data?.requestId !== requestId) return;
+          window.clearTimeout(timer);
+          window.removeEventListener('message', listener);
+          event.data.ok ? resolve() : reject(new Error(event.data.error || 'Расширение не приняло подключение.'));
+        }
+        window.addEventListener('message', listener);
+        window.postMessage({
+          source: 'LOH_LEAGUE_SITE',
+          type: 'CONNECT_EXTENSION',
+          requestId,
+          config: {
+            supabaseUrl: config.supabaseUrl,
+            supabaseAnonKey: config.supabaseAnonKey,
+            syncToken: record.token
+          }
+        }, window.location.origin);
+      });
+      showInlineStatus('#extension-status', 'Расширение подключено. Обновите открытую страницу Roll20.', 'success');
+    } catch (connectionError) {
+      await testAccountSupabase.rpc('revoke_character_sync_token', { sync_token_id: record.id });
+      showInlineStatus('#extension-status', connectionError instanceof Error ? connectionError.message : String(connectionError), 'error');
+    } finally {
+      if (button) button.disabled = false;
+      await loadSyncTokens();
+    }
+  }
+
+  async function loadAdminUsers() {
+    if (!testAccountSupabase || currentRole !== 'admin') return;
+    const body = document.querySelector<HTMLElement>('#admin-users-body');
+    const status = document.querySelector<HTMLElement>('#admin-status');
+    if (status) status.hidden = true;
+    if (body) body.innerHTML = '<tr><td colspan="5">Загрузка пользователей…</td></tr>';
+
+    const { data, error } = await testAccountSupabase
+      .from('user_profiles')
+      .select('id,email,discord_id,display_name,avatar_url,role,character_slots,created_at')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      if (body) body.innerHTML = '<tr><td colspan="5">Не удалось загрузить пользователей.</td></tr>';
+      if (status) {
+        status.textContent = error.message;
+        status.hidden = false;
+      }
+      return;
+    }
+
+    const users = data || [];
+    if (body) {
+      body.innerHTML = users.map((profile) => `
+        <tr>
+          <td>
+            <span class="admin-user">
+              ${profile.avatar_url ? `<img src="${escapeText(profile.avatar_url)}" alt="">` : ''}
+              <span><strong>${escapeText(profile.display_name || profile.email || 'Без имени')}</strong><small>${escapeText(profile.email || 'Discord OAuth')}</small></span>
+            </span>
+          </td>
+          <td><code>${escapeText(profile.discord_id || '—')}</code></td>
+          <td>
+            <select data-admin-role="${escapeText(profile.id)}" ${profile.id === currentUserId ? 'disabled title="Собственную роль изменяет другой администратор"' : ''}>
+              ${(['player', 'master', 'admin'] as AccountRole[]).map((role) => `<option value="${role}" ${normalizeAccountRole(profile.role) === role ? 'selected' : ''}>${roleLabel(role)}</option>`).join('')}
+            </select>
+          </td>
+          <td><input class="slot-input" type="number" min="1" max="100" value="${escapeText(profile.character_slots || 1)}" data-character-slots="${escapeText(profile.id)}" aria-label="Количество слотов персонажей"></td>
+          <td>${formatDate(profile.created_at)}</td>
+        </tr>
+      `).join('');
+    }
+
+    const counts = users.reduce((result, profile) => {
+      result[normalizeAccountRole(profile.role)] += 1;
+      return result;
+    }, { player: 0, master: 0, admin: 0 } as Record<AccountRole, number>);
+    const stats = document.querySelector<HTMLElement>('#admin-stats');
+    if (stats) {
+      stats.innerHTML = `
+        <div><span>Всего</span><strong>${users.length}</strong></div>
+        <div><span>Игроки</span><strong>${counts.player}</strong></div>
+        <div><span>Мастера</span><strong>${counts.master}</strong></div>
+        <div><span>Администраторы</span><strong>${counts.admin}</strong></div>
+      `;
+    }
+
+    document.querySelectorAll<HTMLSelectElement>('[data-admin-role]').forEach((select) => {
+      select.addEventListener('change', async () => {
+        const profileId = select.dataset.adminRole;
+        if (!profileId || !testAccountSupabase) return;
+        select.disabled = true;
+        const { error: updateError } = await testAccountSupabase
+          .from('user_profiles')
+          .update({ role: select.value })
+          .eq('id', profileId);
+        select.disabled = false;
+        if (status) {
+          status.textContent = updateError ? updateError.message : 'Роль обновлена.';
+          status.dataset.kind = updateError ? 'error' : 'success';
+          status.hidden = false;
+        }
+        if (!updateError) await loadAdminUsers();
+      });
+    });
+
+    document.querySelectorAll<HTMLInputElement>('[data-character-slots]').forEach((input) => {
+      input.addEventListener('change', async () => {
+        const profileId = input.dataset.characterSlots;
+        if (!profileId || !testAccountSupabase) return;
+        const slots = Math.max(1, Math.min(100, Number.parseInt(input.value, 10) || 1));
+        input.value = String(slots);
+        input.disabled = true;
+        const { error: updateError } = await testAccountSupabase
+          .from('user_profiles')
+          .update({ character_slots: slots })
+          .eq('id', profileId);
+        input.disabled = false;
+        if (status) {
+          status.textContent = updateError ? updateError.message : `Лимит изменён: ${slots}.`;
+          status.dataset.kind = updateError ? 'error' : 'success';
+          status.hidden = false;
+        }
+        if (!updateError && profileId === currentUserId) currentCharacterSlots = slots;
+      });
+    });
+  }
+
+  async function initializeCabinet() {
+    if (!isTestAccountConfigured || !testAccountSupabase) {
+      showError('Supabase не настроен. Добавьте переменные PUBLIC_SUPABASE_URL и PUBLIC_SUPABASE_ANON_KEY.');
+      return;
+    }
+
+    const { data: sessionData } = await testAccountSupabase.auth.getSession();
+    if (!sessionData.session) {
+      const next = encodeURIComponent(window.location.pathname);
+      window.location.replace(`/test/auth/?next=${next}`);
+      return;
+    }
+
+    const user = sessionData.session.user;
+    currentUserId = user.id;
+    const { data: profile, error } = await testAccountSupabase
+      .from('user_profiles')
+      .select('id,email,discord_id,display_name,avatar_url,role,character_slots,created_at')
+      .eq('id', user.id)
+      .single();
+
+    if (error || !profile) {
+      showError('Профиль не найден. Примените обновлённый файл supabase/schema.sql и войдите через Discord ещё раз.');
+      return;
+    }
+
+    currentRole = normalizeAccountRole(profile.role);
+    currentCharacterSlots = Math.max(1, Number(profile.character_slots) || 1);
+    const allowedModes = availableAccountModes(currentRole);
+    const mode = requestedMode === 'auto' ? defaultAccountMode(currentRole) : requestedMode;
+    if (!allowedModes.includes(mode)) {
+      window.location.replace(accountModePath(defaultAccountMode(currentRole)));
+      return;
+    }
+    if (requestedMode === 'auto') {
+      window.location.replace(accountModePath(mode));
+      return;
+    }
+
+    const name = profile.display_name
+      || user.user_metadata?.full_name
+      || user.user_metadata?.name
+      || user.user_metadata?.user_name
+      || 'Герой';
+    const avatar = profile.avatar_url || user.user_metadata?.avatar_url || '';
+    const nameElement = document.querySelector<HTMLElement>('#profile-name');
+    const roleElement = document.querySelector<HTMLElement>('#profile-role');
+    const emailElement = document.querySelector<HTMLElement>('#profile-email');
+    const avatarElement = document.querySelector<HTMLImageElement>('#profile-avatar');
+    if (nameElement) nameElement.textContent = name;
+    if (roleElement) roleElement.textContent = `Роль: ${roleLabel(currentRole)}`;
+    if (emailElement) emailElement.textContent = profile.email || `Discord ID: ${profile.discord_id || 'не определён'}`;
+    if (avatarElement && avatar) {
+      avatarElement.src = avatar;
+      avatarElement.alt = `Аватар ${name}`;
+      avatarElement.hidden = false;
+    }
+
+    renderModeSwitcher(currentRole, mode);
+    showMode(mode);
+    if (loading) loading.hidden = true;
+    if (content) content.hidden = false;
+    if (mode === 'player') {
+      await Promise.all([loadCharacters(), loadSyncTokens()]);
+    }
+    if (mode === 'admin') await loadAdminUsers();
+  }
+
+  document.querySelector('#account-sign-out')?.addEventListener('click', async () => {
+    if (!testAccountSupabase) return;
+    await testAccountSupabase.auth.signOut();
+    window.localStorage.removeItem('loh-test-account-mode');
+    window.location.replace('/test/auth/');
+  });
+
+  document.querySelector('#refresh-users')?.addEventListener('click', loadAdminUsers);
+  document.querySelector('#create-character')?.addEventListener('click', createCharacter);
+  document.querySelector('#refresh-characters')?.addEventListener('click', loadCharacters);
+  document.querySelector('#connect-extension')?.addEventListener('click', connectExtension);
+  document.querySelector('#open-extension-settings')?.addEventListener('click', () => {
+    const card = document.querySelector<HTMLElement>('#roll20-extension-card');
+    card?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => document.querySelector<HTMLButtonElement>('#connect-extension')?.focus(), 450);
+  });
+  initializeCabinet();
+</script>
+
+<style>
+  .cabinet-loading, .cabinet-error { display: grid; justify-items: center; gap: 1rem; padding: 5rem 1rem; text-align: center; }
+  .loader { width: 48px; height: 48px; border: 4px solid rgba(182,154,255,.2); border-top-color: #b69aff; border-radius: 50%; animation: spin .8s linear infinite; }
+  .cabinet-error h1 { color: #b69aff; font: 800 clamp(2rem, 6vw, 3.5rem) Georgia, serif; }
+  .cabinet-error p { max-width: 650px; color: #bdc6d6; line-height: 1.6; }
+  .cabinet-error a { color: #efcb6e; font-weight: 900; }
+  .profile-header { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; padding: 1.2rem; border: 1px solid rgba(163,177,204,.2); border-radius: 20px; background: rgba(17,31,55,.84); }
+  .profile-person, .profile-actions { display: flex; align-items: center; gap: 1rem; }
+  .profile-person img { width: 70px; height: 70px; border: 2px solid rgba(226,180,72,.55); border-radius: 18px; object-fit: cover; }
+  .profile-person h1 { margin: .28rem 0 .1rem; color: #b69aff; font: 800 clamp(1.6rem, 4vw, 2.3rem) Georgia, serif; }
+  .profile-person p { color: #9facbf; font-size: .85rem; }
+  .role-badge { color: #e2b448; font-size: .68rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+  .profile-actions { align-items: stretch; }
+  .mode-switcher { display: flex; gap: .35rem; padding: .3rem; border: 1px solid #34425b; border-radius: 12px; background: #0b162a; }
+  .mode-switcher :global(a) { display: grid; place-items: center; min-height: 38px; padding: .5rem .8rem; border-radius: 8px; color: #aeb9cb; text-decoration: none; font-weight: 800; }
+  .mode-switcher :global(a:hover), .mode-switcher :global(a.is-active) { color: #10182a; background: #e2b448; }
+  .ghost-button { padding: .65rem .9rem; border: 1px solid #41506a; border-radius: 10px; color: #dce3ee; background: transparent; cursor: pointer; font-weight: 800; }
+  .ghost-button:hover { border-color: #b69aff; color: #cbbaff; }
+  .mode-description { margin-bottom: 1.25rem; padding: .8rem 1rem; border-left: 3px solid #9b74ff; color: #b8c2d2; background: rgba(155,116,255,.08); }
+  .dashboard-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .dashboard-card { min-width: 0; padding: 1.25rem; border: 1px solid rgba(163,177,204,.2); border-radius: 18px; background: linear-gradient(145deg, rgba(22,38,65,.94), rgba(10,22,42,.92)); }
+  .dashboard-card-featured { border-color: rgba(226,180,72,.38); background: linear-gradient(145deg, rgba(70,54,24,.35), rgba(14,27,50,.95)); }
+  .dashboard-card > span, .admin-heading span { color: #e2b448; font-size: .68rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+  .dashboard-card h2 { margin: .55rem 0 .65rem; color: #f3dfa1; font: 800 1.4rem Georgia, serif; }
+  .dashboard-card p { color: #aeb9cb; line-height: 1.55; }
+  .dashboard-card a { display: inline-block; margin-top: 1rem; color: #bfa9ff; font-weight: 900; text-decoration: none; }
+  .primary-button { margin-top: 1rem; padding: .75rem 1rem; border: 0; border-radius: 10px; color: #11192a; background: #e2b448; cursor: pointer; font-weight: 900; }
+  .primary-button:disabled { opacity: .55; cursor: wait; }
+  .slot-summary { display: block; margin-top: .8rem; color: #efcb6e; }
+  .featured-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; margin-top: 1rem; }
+  .featured-actions .primary-button { margin-top: 0; }
+  .character-library-card, .extension-card { grid-column: 1 / -1; }
+  .extension-card:focus { outline: 2px solid #b69aff; outline-offset: 4px; }
+  .character-list, .sync-token-list { display: grid; gap: .65rem; margin-top: 1rem; }
+  .character-row, .sync-token-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem; border: 1px solid #334159; border-radius: 12px; background: rgba(8,18,34,.58); }
+  .character-row > div:first-child, .sync-token-row > div:first-child { display: grid; gap: .22rem; min-width: 0; }
+  .character-row strong, .sync-token-row strong { color: #e7d9ff; }
+  .character-row small, .sync-token-row small { overflow: hidden; color: #8f9caf; text-overflow: ellipsis; white-space: nowrap; }
+  .character-row-actions { display: flex; align-items: center; gap: .45rem; flex: none; }
+  .character-row-actions :global(a), .character-row-actions button, .sync-token-row button { margin: 0; padding: .5rem .65rem; border: 1px solid #41506a; border-radius: 8px; color: #dce3ee; background: transparent; cursor: pointer; font: inherit; font-weight: 800; text-decoration: none; }
+  .character-row-actions button, .sync-token-row button { color: #ffabb7; }
+  .extension-actions, .token-result > div { display: flex; gap: .55rem; margin-top: .8rem; }
+  .extension-download { margin-top: .8rem; }
+  .extension-actions input, .token-result input { min-width: 0; flex: 1; padding: .7rem; border: 1px solid #41506a; border-radius: 9px; color: #e4e9f2; background: #0d182d; }
+  .token-result { margin-top: 1rem; padding: .85rem; border: 1px solid #725f2f; border-radius: 12px; background: rgba(226,180,72,.08); }
+  .token-result label { color: #efcc72; font-size: .82rem; font-weight: 800; }
+  .sync-token-row.is-revoked { opacity: .55; }
+  .inline-status { margin-top: .75rem; color: #7fd5a5; }
+  .inline-status[data-kind="error"] { color: #ff9cac; }
+  .empty-value, .success-value { display: block; margin-top: 1rem; color: #8f9caf; }
+  .success-value { color: #7fd5a5; }
+  .card-links { display: grid; gap: .2rem; }
+  .disabled-action { margin-top: 1rem; padding: .7rem; border: 1px solid #394760; border-radius: 9px; color: #7e899c; background: #101b30; }
+  .admin-dashboard { display: grid; gap: 1rem; }
+  .admin-stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .7rem; }
+  .admin-stats :global(div) { padding: 1rem; border: 1px solid rgba(163,177,204,.2); border-radius: 14px; background: rgba(17,31,55,.84); }
+  .admin-stats :global(span) { display: block; color: #9eabbf; font-size: .78rem; }
+  .admin-stats :global(strong) { display: block; margin-top: .25rem; color: #e7c66e; font: 800 1.8rem Georgia, serif; }
+  .admin-users-card { overflow: hidden; }
+  .admin-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .admin-help { margin-bottom: 1rem; }
+  .admin-table-wrap { overflow-x: auto; border: 1px solid #334159; border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; min-width: 720px; }
+  th, td { padding: .8rem; border-bottom: 1px solid #2d3a51; text-align: left; }
+  th { color: #efcc72; background: #101b30; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+  td { color: #c8d0dd; }
+  .admin-user { display: flex; align-items: center; gap: .65rem; }
+  .admin-user :global(img) { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; }
+  .admin-user :global(span) { display: grid; }
+  .admin-user :global(small) { color: #8996aa; }
+  td select { min-width: 150px; padding: .45rem; border: 1px solid #41506a; border-radius: 8px; color: #e4e9f2; background: #101b30; }
+  .slot-input { width: 86px; padding: .45rem; border: 1px solid #41506a; border-radius: 8px; color: #e4e9f2; background: #101b30; }
+  code { color: #a9b5c9; }
+  @media (max-width: 760px) {
+    .character-row, .sync-token-row, .extension-actions, .token-result > div { align-items: stretch; flex-direction: column; }
+    .character-row-actions { align-items: stretch; }
+    .character-row-actions :global(a), .character-row-actions button { flex: 1; text-align: center; }
+  }
+  .inline-status { margin-top: 1rem; color: #8ee0b3; }
+  .inline-status[data-kind="error"] { color: #ffabb4; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 900px) {
+    .profile-header, .profile-actions { align-items: stretch; flex-direction: column; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .admin-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 520px) {
+    .profile-person { align-items: flex-start; }
+    .mode-switcher { overflow-x: auto; }
+    .mode-switcher :global(a) { white-space: nowrap; }
+  }
+</style>

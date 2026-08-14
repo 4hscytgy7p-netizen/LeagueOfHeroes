@@ -1,0 +1,610 @@
+---
+interface Props {
+  speciesOptions: any[];
+}
+
+const { speciesOptions } = Astro.props;
+---
+
+<section class="wizard-step" data-step="species">
+  <div class="step-heading">
+    <span>Глава вторая</span>
+    <h2>Выбери вид</h2>
+    <p>
+      Сначала выбери карточку, затем настрой подвид, рост и врождённые особенности.
+    </p>
+  </div>
+
+  <div id="species-picker">
+    <label class="species-search">
+      <span>Поиск вида</span>
+      <input
+        id="species-search"
+        type="search"
+        placeholder="Начни вводить название…"
+      />
+    </label>
+
+    <div class="species-grid">
+      {speciesOptions.map((item) => (
+        <button
+          class="species-card"
+          type="button"
+          data-species-id={item.id}
+          data-search-text={item.name + ' ' + item.nameEn}
+        >
+          <img src={item.portrait} alt="" loading="lazy" />
+          <span class="species-card-shade"></span>
+          <span class="species-card-copy">
+            <strong>{item.name}</strong>
+          </span>
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <div id="species-details" class="species-details"></div>
+
+  <section class="profile-section" aria-labelledby="species-profile-title">
+    <div class="profile-section-heading">
+      <span>Облик героя</span>
+      <h3 id="species-profile-title">Основные сведения и внешность</h3>
+      <p>Необязательные сведения о возрасте и внешнем облике персонажа.</p>
+    </div>
+
+    <div class="profile-compact-grid">
+      <label>
+        <span>Возраст</span>
+        <input
+          id="character-age"
+          data-character-profile="age"
+          type="number"
+          inputmode="numeric"
+          step="1"
+          placeholder="Сначала выберите вид"
+          autocomplete="off"
+          aria-describedby="character-age-range"
+        />
+        <small id="character-age-range" class="profile-field-hint">Сначала выберите вид.</small>
+      </label>
+      <label>
+        <span>Цвет глаз</span>
+        <input id="character-eyes" data-character-profile="eyes" type="text" maxlength="120" placeholder="Например: янтарный" autocomplete="off" />
+      </label>
+      <label>
+        <span>Цвет кожи, перьев или чешуи</span>
+        <input id="character-skin" data-character-profile="skin" type="text" maxlength="120" placeholder="Например: медно-красный" autocomplete="off" />
+      </label>
+      <label>
+        <span>Цвет волос, перьев или чешуи</span>
+        <input id="character-hair" data-character-profile="hair" type="text" maxlength="120" placeholder="Например: чёрный" autocomplete="off" />
+      </label>
+    </div>
+
+    <label class="profile-appearance-field">
+      <span>Внешность персонажа</span>
+      <textarea data-character-profile="appearance" rows="6" maxlength="3000" placeholder="Как персонаж выглядит и какое первое впечатление производит?"></textarea>
+    </label>
+  </section>
+</section>
+
+<style>
+  .step-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .step-heading > span {
+    color: var(--wizard-gold);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .step-heading h2 {
+    margin: 0.35rem 0 0.6rem;
+    font-family: Georgia, serif;
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+  }
+
+  .step-heading p {
+    max-width: 720px;
+    margin: 0;
+    opacity: 0.68;
+  }
+
+  #species-picker {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .species-search {
+    display: grid;
+    gap: 0.45rem;
+    max-width: 600px;
+  }
+
+  .species-search > span {
+    color: var(--wizard-gold);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .species-search input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.58rem;
+    background: var(--background);
+    color: var(--text);
+    font: inherit;
+    outline: none;
+  }
+
+  .species-search input:focus {
+    border-color: var(--wizard-gold);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--wizard-gold) 16%, transparent);
+  }
+
+  .species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+    gap: 0.65rem;
+    max-height: min(66vh, 680px);
+    overflow-y: auto;
+    padding: 0.25rem 0.35rem 0.25rem 0.15rem;
+    scrollbar-gutter: stable;
+  }
+
+  @media (min-width: 1180px) {
+    .species-grid {
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+  }
+
+  .species-card {
+    /* Названия всех видов используют единое исходное золотое оформление. */
+    --choice-accent: #d2a754;
+    --choice-accent-light: #f1d38f;
+    position: relative;
+    display: grid;
+    grid-template-rows: 112px minmax(38px, auto);
+    min-width: 0;
+    min-height: 150px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    border-radius: 0.58rem;
+    background: color-mix(in srgb, var(--card-bg) 90%, var(--background));
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .species-card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(
+      in srgb,
+      var(--choice-accent) 68%,
+      var(--card-border)
+    );
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--choice-accent) 9%, transparent);
+  }
+
+  .species-card img {
+    grid-row: 1;
+    width: 100%;
+    height: 112px;
+    min-height: 0;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.2s ease;
+  }
+
+  .species-card:hover img {
+    transform: scale(1.035);
+  }
+
+  .species-card-shade {
+    position: absolute;
+    inset: 72px 0 38px;
+    pointer-events: none;
+    background: linear-gradient(
+      transparent,
+      color-mix(in srgb, var(--card-bg) 82%, transparent)
+    );
+  }
+
+  .species-card-copy {
+    position: static;
+    z-index: 1;
+    grid-row: 2;
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    padding: 0.48rem 0.4rem 0.52rem;
+    border-top: 1px solid
+      color-mix(in srgb, var(--choice-accent) 24%, var(--card-border));
+    background: color-mix(in srgb, var(--card-bg) 94%, var(--background));
+    text-align: center;
+  }
+
+  .species-card-copy strong {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    color: color-mix(in srgb, var(--choice-accent-light) 88%, #ffffff);
+    font-family: Georgia, serif;
+    font-size: 0.82rem;
+    line-height: 1.15;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .species-card.is-selected {
+    border-color: var(--choice-accent);
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--choice-accent) 40%, transparent),
+      0 7px 18px rgba(0, 0, 0, 0.18);
+  }
+
+  .species-card.is-selected .species-card-copy {
+    background: color-mix(
+      in srgb,
+      var(--choice-accent) 14%,
+      var(--card-bg)
+    );
+  }
+
+  .species-card:focus-visible {
+    outline: 2px solid var(--choice-accent-light);
+    outline-offset: 2px;
+  }
+
+  .species-details {
+    margin-top: 1.25rem;
+  }
+
+  .profile-section {
+    margin-top: 1.5rem;
+    padding: 1.15rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+  }
+
+  .profile-section-heading {
+    margin-bottom: 1rem;
+  }
+
+  .profile-section-heading > span,
+  .profile-compact-grid label > span,
+  .profile-appearance-field > span {
+    color: var(--wizard-gold);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .profile-section-heading h3 {
+    margin: 0.25rem 0;
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+  }
+
+  .profile-section-heading p {
+    margin: 0;
+    opacity: 0.66;
+  }
+
+  .profile-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .profile-compact-grid label,
+  .profile-appearance-field {
+    display: grid;
+    align-content: start;
+    gap: 0.45rem;
+  }
+
+  .profile-field-hint {
+    min-height: 1.2em;
+    color: color-mix(in srgb, var(--text) 68%, transparent);
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  #character-age:invalid {
+    border-color: #ef6464;
+    box-shadow: 0 0 0 1px color-mix(in srgb, #ef6464 42%, transparent);
+  }
+
+  .profile-appearance-field {
+    margin-top: 0.9rem;
+  }
+
+  .profile-section input,
+  .profile-section textarea {
+    width: 100%;
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.58rem;
+    background: var(--background);
+    color: var(--text);
+    font: inherit;
+    font-size: 1.05rem;
+    outline: none;
+  }
+
+  .profile-section textarea {
+    min-height: 9rem;
+    resize: vertical;
+    line-height: 1.45;
+  }
+
+  .profile-section input:focus,
+  .profile-section textarea:focus {
+    border-color: var(--wizard-gold);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--wizard-gold) 16%, transparent);
+  }
+
+  @media (max-width: 760px) {
+    .species-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+      max-height: min(62vh, 560px);
+    }
+
+    .species-card {
+      grid-template-rows: 96px minmax(36px, auto);
+      min-height: 132px;
+    }
+
+    .species-card img {
+      height: 96px;
+    }
+
+    .species-card-copy {
+      padding: 0.42rem 0.28rem;
+    }
+
+    .species-card-copy strong {
+      font-size: 0.75rem;
+    }
+
+    .profile-section {
+      padding: 0.9rem;
+    }
+
+    .profile-compact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .species-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+
+  /* Динамическая разметка создаётся в CharacterWizard, поэтому стили глобальные. */
+  :global(.custom-lineage-section) {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 34%, var(--card-border));
+    background:
+      radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--wizard-gold) 10%, transparent), transparent 34%),
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--card-bg) 94%, #26334b),
+        color-mix(in srgb, var(--background) 88%, #111a2b)
+      );
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+  }
+
+  :global(.custom-lineage-section)::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      var(--wizard-gold),
+      var(--wizard-gold-light),
+      transparent
+    );
+  }
+
+  :global(.custom-lineage-choices) {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  :global(.custom-lineage-choice-card) {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1rem;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 22%, var(--card-border));
+    border-radius: 0.85rem;
+    background: color-mix(in srgb, var(--background) 78%, var(--card-bg));
+  }
+
+  :global(.custom-lineage-card-heading) {
+    display: grid;
+    grid-template-columns: 2.35rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  :global(.custom-lineage-card-heading > span),
+  :global(.custom-lineage-feat-note > span) {
+    display: grid;
+    place-items: center;
+    width: 2.35rem;
+    height: 2.35rem;
+    border: 1px solid color-mix(in srgb, var(--wizard-gold) 52%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--wizard-gold) 9%, var(--card-bg));
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--wizard-gold) 8%, transparent);
+  }
+
+  :global(.custom-lineage-card-heading h4) {
+    margin: 0;
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+  }
+
+  :global(.custom-lineage-card-heading p) {
+    margin: 0.22rem 0 0;
+    color: color-mix(in srgb, var(--text) 68%, transparent);
+    font-size: 0.88rem;
+  }
+
+  :global(.custom-lineage-option-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  :global(.custom-lineage-option) {
+    position: relative;
+    display: block;
+    min-width: 0;
+    cursor: pointer;
+  }
+
+  :global(.custom-lineage-option input) {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  :global(.custom-lineage-option > span) {
+    position: relative;
+    display: grid;
+    align-content: start;
+    min-height: 106px;
+    padding: 0.95rem 1rem 0.95rem 2.9rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.72rem;
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--card-bg) 96%, #26324a),
+        color-mix(in srgb, var(--background) 90%, #10192a)
+      );
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  :global(.custom-lineage-option > span)::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 1.1rem;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid color-mix(in srgb, var(--text) 44%, transparent);
+    border-radius: 999px;
+    background: var(--background);
+    box-shadow: inset 0 0 0 3px var(--background);
+  }
+
+  :global(.custom-lineage-option:hover > span) {
+    border-color: color-mix(in srgb, var(--wizard-gold) 66%, var(--card-border));
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--wizard-gold) 7%, var(--card-bg)),
+        color-mix(in srgb, var(--background) 88%, #10192a)
+      );
+  }
+
+  :global(.custom-lineage-option input:checked + span) {
+    border-color: var(--wizard-gold);
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--wizard-gold) 14%, var(--card-bg)),
+        color-mix(in srgb, var(--wizard-gold) 5%, var(--background))
+      );
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--wizard-gold) 16%, transparent),
+      0 10px 22px rgba(0, 0, 0, 0.14);
+  }
+
+  :global(.custom-lineage-option input:checked + span)::before {
+    border-color: var(--wizard-gold-light);
+    background: var(--wizard-gold);
+    box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--background) 92%, #111827);
+  }
+
+  :global(.custom-lineage-option strong) {
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  :global(.custom-lineage-option small) {
+    display: block;
+    margin-top: 0.42rem;
+    color: color-mix(in srgb, var(--text) 70%, transparent);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  :global(.custom-lineage-feat-note) {
+    display: grid;
+    grid-template-columns: 2.35rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    padding: 1rem;
+    border: 1px dashed color-mix(in srgb, var(--wizard-gold) 46%, var(--card-border));
+    border-radius: 0.85rem;
+    background: color-mix(in srgb, var(--wizard-gold) 6%, var(--background));
+  }
+
+  :global(.custom-lineage-feat-note strong) {
+    color: var(--wizard-gold-light);
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+  }
+
+  :global(.custom-lineage-feat-note p) {
+    margin: 0.3rem 0 0;
+    color: color-mix(in srgb, var(--text) 72%, transparent);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 680px) {
+    :global(.custom-lineage-option-grid) {
+      grid-template-columns: 1fr;
+    }
+
+    :global(.custom-lineage-option > span) {
+      min-height: 92px;
+    }
+  }
+
+</style>

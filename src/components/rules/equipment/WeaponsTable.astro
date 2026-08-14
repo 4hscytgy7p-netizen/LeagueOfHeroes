@@ -1,0 +1,500 @@
+---
+interface WeaponCategory {
+  name: string;
+  weapons: Weapon[];
+}
+
+interface Weapon {
+  name: string;
+  nameEn: string;
+  damage: string;
+  properties: string[];
+  technique: string;
+  weight: string;
+  price: string;
+}
+
+const weaponCategories: WeaponCategory[] = [
+  {
+    name: "Простое рукопашное оружие",
+    weapons: [
+      {
+        name: "Дубинка",
+        nameEn: "Club",
+        damage: "1к4 дробящий",
+        properties: ["Лёгкое"],
+        technique: "Замедление",
+        weight: "2 фнт.",
+        price: "1 см"
+      },
+      {
+        name: "Кинжал",
+        nameEn: "Dagger",
+        damage: "1к4 колющий",
+        properties: ["Фехтовальное", "Лёгкое", "Метательное (дистанция 20/60)"],
+        technique: "Выпад",
+        weight: "1 фнт.",
+        price: "2 зм"
+      },
+      {
+        name: "Палица",
+        nameEn: "Greatclub",
+        damage: "1к8 дробящий",
+        properties: ["Двуручное"],
+        technique: "Толкание",
+        weight: "10 фнт.",
+        price: "2 см"
+      },
+      {
+        name: "Ручной топор",
+        nameEn: "Handaxe",
+        damage: "1к6 рубящий",
+        properties: ["Лёгкое", "Метательное (дистанция 20/60)"],
+        technique: "Подавление",
+        weight: "2 фнт.",
+        price: "5 зм"
+      },
+      {
+        name: "Метательное копьё",
+        nameEn: "Javelin",
+        damage: "1к6 колющий",
+        properties: ["Метательное (дистанция 30/120)"],
+        technique: "Замедление",
+        weight: "2 фнт.",
+        price: "5 см"
+      },
+      {
+        name: "Лёгкий молот",
+        nameEn: "Light Hammer",
+        damage: "1к4 дробящий",
+        properties: ["Лёгкое", "Метательное (дистанция 20/60)"],
+        technique: "Выпад",
+        weight: "2 фнт.",
+        price: "2 зм"
+      },
+      {
+        name: "Булава",
+        nameEn: "Mace",
+        damage: "1к6 дробящий",
+        properties: [],
+        technique: "Изнурение",
+        weight: "4 фнт.",
+        price: "5 зм"
+      },
+      {
+        name: "Боевой посох",
+        nameEn: "Quarterstaff",
+        damage: "1к6 дробящий",
+        properties: ["Универсальное (1к8)"],
+        technique: "Опрокидывание",
+        weight: "4 фнт.",
+        price: "2 см"
+      },
+      {
+        name: "Серп",
+        nameEn: "Sickle",
+        damage: "1к4 рубящий",
+        properties: ["Лёгкое"],
+        technique: "Выпад",
+        weight: "2 фнт.",
+        price: "1 зм"
+      },
+      {
+        name: "Копьё",
+        nameEn: "Spear",
+        damage: "1к6 колющий",
+        properties: ["Метательное (дистанция 20/60)", "Универсальное (1к8)"],
+        technique: "Изнурение",
+        weight: "3 фнт.",
+        price: "1 зм"
+      }
+      // Add other simple melee weapons...
+    ]
+  },
+  {
+    name: "Простое дальнобойное оружие",
+    weapons: [
+      {
+        name: "Дротик",
+        nameEn: "Dart",
+        damage: "1к4 колющий",
+        properties: ["Фехтовальное", "метательное (дальность 20/60)"],
+        technique: "Подавление",
+        weight: "1/4 фнт.",
+        price: "5 мм"
+      },
+      {
+        name: "Лёгкий арбалет",
+        nameEn: "Light Crossbow",
+        damage: "1к8 колющий",
+        properties: [
+          "Боеприпасы (дистанция 80/320, болт)",
+          "Перезарядка",
+          "Двуручное"
+        ],
+        technique: "Замедление",
+        weight: "5 фнт.",
+        price: "25 зм"
+      },
+      {
+        name: "Короткий лук",
+        nameEn: "Shortbow",
+        damage: "1к6 колющий",
+        properties: [
+          "Боеприпасы (дистанция 80/320, стрела)",
+          "Двуручное"
+        ],
+        technique: "Подавление",
+        weight: "2 фнт.",
+        price: "25 зм"
+      },
+      {
+        name: "Праща",
+        nameEn: "Sling",
+        damage: "1к4 дробящий",
+        properties: ["Боеприпасы (дистанция 30/120, снаряд)"],
+        technique: "Замедление",
+        weight: "—",
+        price: "1 см"
+      }
+    ]
+  },
+  {
+  name: "Воинское рукопашное оружие",
+    weapons: [
+      {
+        name: "Боевой топор",
+        nameEn: "Battleaxe",
+        damage: "1к8 рубящий",
+        properties: ["Универсальное (1к10)"],
+        technique: "Опрокидывание",
+        weight: "4 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Цеп",
+        nameEn: "Flail",
+        damage: "1к8 дробящий",
+        properties: [],
+        technique: "Изнурение",
+        weight: "2 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Глефа",
+        nameEn: "Glaive",
+        damage: "1к10 рубящий",
+        properties: ["Тяжёлое", "Досягаемость", "Двуручное"],
+        technique: "Задевание",
+        weight: "6 фнт.",
+        price: "20 зм"
+      },
+      {
+        name: "Секира",
+        nameEn: "Greataxe",
+        damage: "1к12 рубящий",
+        properties: ["Тяжёлое", "Двуручное"],
+        technique: "Прорубание",
+        weight: "7 фнт.",
+        price: "30 зм"
+      },
+      {
+        name: "Двуручный меч",
+        nameEn: "Greatsword",
+        damage: "2к6 рубящий",
+        properties: ["Тяжёлое", "Двуручное"],
+        technique: "Задевание",
+        weight: "6 фнт.",
+        price: "50 зм"
+      },
+      {
+        name: "Алебарда",
+        nameEn: "Halberd",
+        damage: "1к10 рубящий",
+        properties: ["Тяжёлое", "Досягаемость", "Двуручное"],
+        technique: "Прорубание",
+        weight: "6 фнт.",
+        price: "20 зм"
+      },
+      {
+        name: "Длинное копьё",
+        nameEn: "Lance",
+        damage: "1к10 колющий",
+        properties: ["Тяжёлое", "Досягаемость", "Двуручное (если не верхом)"],
+        technique: "Опрокидывание",
+        weight: "6 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Длинный меч",
+        nameEn: "Longsword",
+        damage: "1к8 рубящий",
+        properties: ["Универсальное (1к10)"],
+        technique: "Изнурение",
+        weight: "3 фнт.",
+        price: "15 зм"
+      },
+      {
+        name: "Молот",
+        nameEn: "Maul",
+        damage: "2к6 дробящий",
+        properties: ["Тяжёлое", "Двуручное"],
+        technique: "Опрокидывание",
+        weight: "10 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Моргенштерн",
+        nameEn: "Morningstar",
+        damage: "1к8 колющий",
+        properties: [],
+        technique: "Изнурение",
+        weight: "4 фнт.",
+        price: "15 зм"
+      },
+      {
+        name: "Пика",
+        nameEn: "Pike",
+        damage: "1к10 колющий",
+        properties: ["Тяжёлое", "Досягаемость", "Двуручное"],
+        technique: "Толкание",
+        weight: "18 фнт.",
+        price: "5 зм"
+      },
+      {
+        name: "Рапира",
+        nameEn: "Rapier",
+        damage: "1к8 колющий",
+        properties: ["Фехтовальное"],
+        technique: "Подавление",
+        weight: "2 фнт.",
+        price: "25 зм"
+      },
+      {
+        name: "Скимитар",
+        nameEn: "Scimitar",
+        damage: "1к6 рубящий",
+        properties: ["Фехтовальное", "Лёгкое"],
+        technique: "Выпад",
+        weight: "3 фнт.",
+        price: "25 зм"
+      },
+      {
+        name: "Короткий меч",
+        nameEn: "Shortsword",
+        damage: "1к6 колющий",
+        properties: ["Фехтовальное", "Лёгкое"],
+        technique: "Подавление",
+        weight: "2 фнт.",
+        price: "10 зм"
+      },
+      {
+        name: "Трезубец",
+        nameEn: "Trident",
+        damage: "1к8 колющий",
+        properties: ["Метательное (дистанция 20/60)", "Универсальное (1к10)"],
+        technique: "Опрокидывание",
+        weight: "4 фнт.",
+        price: "5 зм"
+      },
+      {
+        name: "Боевой молот",
+        nameEn: "Warhammer",
+        damage: "1к8 дробящий",
+        properties: ["Универсальное (1к10)"],
+        technique: "Толкание",
+        weight: "5 фнт.",
+        price: "15 зм"
+      },
+      {
+        name: "Боевая кирка",
+        nameEn: "War Pick",
+        damage: "1к8 колющий",
+        properties: ["Универсальное (1к10)"],
+        technique: "Изнурение",
+        weight: "2 фнт.",
+        price: "5 зм"
+      },
+      {
+        name: "Кнут",
+        nameEn: "Whip",
+        damage: "1к4 рубящий",
+        properties: ["Фехтовальное", "Досягаемость"],
+        technique: "Замедление",
+        weight: "3 фнт.",
+        price: "2 зм"
+      },
+      {
+        name: "Двуклинковый скимитар",
+        nameEn: "Double-Bladed Scimitar",
+        damage: "2к4 рубящий",
+        properties: ["Двуручное", "Особое"],
+        technique: "Изнурение",
+        weight: "6 фнт.",
+        price: "100 зм"
+      }
+    ]
+    },
+    {
+    name: "Воинское дальнобойное оружие",
+    weapons: [
+  {
+    name: "Духовая трубка",
+    nameEn: "Blowgun",
+    damage: "1 колющий",
+    properties: [
+      "Боеприпасы (дистанция 25/100, игла для трубки)",
+      "Перезарядка"
+    ],
+    technique: "Подавление",
+    weight: "1 фнт.",
+    price: "10 зм"
+  },
+  {
+    name: "Ручной арбалет",
+    nameEn: "Hand Crossbow",
+    damage: "1к6 колющий",
+    properties: [
+      "Боеприпасы (дистанция 30/120, болт)",
+      "Лёгкое",
+      "Перезарядка"
+    ],
+    technique: "Подавление",
+    weight: "3 фнт.",
+    price: "75 зм"
+  },
+  {
+    name: "Тяжёлый арбалет",
+    nameEn: "Heavy Crossbow",
+    damage: "1к10 колющий",
+    properties: [
+      "Боеприпасы (дистанция 100/400, болт)",
+      "Тяжёлое",
+      "Перезарядка",
+      "Двуручное"
+    ],
+    technique: "Толкание",
+    weight: "18 фнт.",
+    price: "50 зм"
+  },
+  {
+    name: "Длинный лук",
+    nameEn: "Longbow",
+    damage: "1к8 колющий",
+    properties: [
+      "Боеприпасы (дистанция 150/600, стрела)",
+      "Тяжёлое",
+      "Двуручное"
+    ],
+    technique: "Замедление",
+    weight: "2 фнт.",
+    price: "50 зм"
+  },
+  {
+    name: "Мушкет",
+    nameEn: "Musket",
+    damage: "1к12 колющий",
+    properties: [
+      "Боеприпасы (дистанция 40/120, пуля)",
+      "Перезарядка",
+      "Двуручное"
+    ],
+    technique: "Замедление",
+    weight: "10 фнт.",
+    price: "500 зм"
+  },
+  {
+    name: "Пистоль",
+    nameEn: "Pistol",
+    damage: "1к10 колющий",
+    properties: [
+      "Боеприпасы (дистанция 30/90, пуля)",
+      "Перезарядка"
+    ],
+    technique: "Подавление",
+    weight: "3 фнт.",
+    price: "250 зм"
+  }
+    ]
+  }
+];
+---
+
+<div class="weapons-table">
+  {weaponCategories.map(category => (
+    <section class="weapon-category">
+      <h3>{category.name}</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Урон</th>
+              <th>Свойства</th>
+              <th>Приём</th>
+              <th>Вес</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            {category.weapons.map(weapon => (
+              <tr>
+                <td>
+                  {weapon.name}
+                  <span class="name-en">[{weapon.nameEn}]</span>
+                </td>
+                <td>{weapon.damage}</td>
+                <td>{weapon.properties.join(', ')}</td>
+                <td>{weapon.technique}</td>
+                <td>{weapon.weight}</td>
+                <td>{weapon.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+</div>
+
+<style>
+  .weapons-table {
+    margin: 2rem 0;
+  }
+
+  .weapon-category {
+    margin-bottom: 2rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--card-bg);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    margin-left: 0.5rem;
+    font-size: 0.9em;
+  }
+</style>

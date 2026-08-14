@@ -1,0 +1,28 @@
+---
+import { glossary } from '../../data/glossary';
+
+export async function getStaticPaths() {
+  return glossary.map((item) => ({ params: { id: String(item.id) } }));
+}
+
+const { id } = Astro.params;
+const encodedId = encodeURIComponent(id);
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=/glossary#${encodedId}`} />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+    <script define:vars={{ encodedId }}>
+      // In case meta-refresh is blocked, use JS redirect
+      (function(){
+        try { window.location.replace('/glossary#' + encodedId); } catch(e){}
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Перенаправление… Если вас не перенаправило автоматически, <a href="/glossary">нажмите сюда</a>.</p>
+  </body>
+</html>

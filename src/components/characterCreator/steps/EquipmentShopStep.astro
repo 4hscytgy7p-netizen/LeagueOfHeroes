@@ -1,0 +1,130 @@
+<section class="wizard-step" data-step="equipment">
+  <div class="equipment-heading">
+    <span class="wizard-kicker">Глава девятая</span>
+    <h2>Закупи снаряжение</h2>
+    <p>Выберите готовый набор класса или получите стартовое золото и закупитесь самостоятельно.</p>
+  </div>
+
+  <div class="equipment-toolbar">
+    <div class="equipment-summary">
+      <article><span>Осталось денег</span><strong id="equipment-gold">0 зм</strong></article>
+      <article><span>Общий вес</span><strong id="equipment-weight">0 фнт.</strong></article>
+    </div>
+
+    <div id="equipment-actions" class="equipment-actions">
+      <button id="equipment-sell-all" class="equipment-action equipment-action-secondary" type="button">Продать всё</button>
+      <button id="equipment-confirm-purchase" class="equipment-action equipment-action-primary" type="button" hidden>Подтвердить закупку</button>
+      <button id="equipment-repurchase" class="equipment-action equipment-action-primary" type="button" hidden>Перезакупиться</button>
+    </div>
+  </div>
+
+  <p id="equipment-warning" class="equipment-warning" hidden></p>
+  <div id="equipment-mode-note" class="equipment-mode-note"></div>
+
+  <section id="equipment-variant-section" class="equipment-variant-section" hidden>
+    <div class="equipment-variant-heading">
+      <span>Стартовое снаряжение класса</span>
+      <h3>Выберите набор</h3>
+    </div>
+    <div id="equipment-variants" class="equipment-variants"></div>
+  </section>
+
+  <div id="equipment-layout" class="equipment-layout">
+    <section class="equipment-panel">
+      <div class="equipment-panel-head">
+        <div><span>Персонаж</span><h3>Инвентарь</h3></div>
+      </div>
+      <div id="equipment-inventory" class="equipment-inventory"></div>
+    </section>
+
+    <section id="equipment-shop-panel" class="equipment-panel">
+      <div class="equipment-panel-head equipment-shop-head">
+        <div><span>Торговец</span><h3>Магазин</h3></div>
+        <label><span>Поиск</span><input id="equipment-search" type="search" placeholder="Название предмета…" /></label>
+        <label><span>Категория</span><select id="equipment-category">
+          <option value="all">Все</option>
+          <option value="gear">Снаряжение приключенца</option>
+          <option value="ammo">Боеприпасы</option>
+          <option value="focus">Фокусировки</option>
+          <option value="weapon">Оружие</option>
+          <option value="armor">Доспехи и щиты</option>
+          <option value="tools">Инструменты</option>
+        </select></label>
+      </div>
+      <div class="equipment-shop-wrap">
+        <table class="equipment-shop-table"><thead><tr><th>Предмет</th><th>Цена</th><th>Вес</th><th></th></tr></thead><tbody id="equipment-shop"></tbody></table>
+      </div>
+    </section>
+  </div>
+</section>
+
+<style>
+  .equipment-heading{margin-bottom:1.15rem}.equipment-heading h2{margin:.35rem 0 .55rem;font-family:Georgia,serif;font-size:clamp(1.9rem,3.5vw,3rem)}.equipment-heading p{max-width:800px;margin:0;opacity:.68}
+  .equipment-toolbar{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+  .equipment-summary{display:flex;flex-wrap:wrap;gap:.7rem}.equipment-summary article{min-width:190px;padding:.75rem .9rem;border:1px solid color-mix(in srgb,var(--wizard-gold) 35%,var(--card-border));border-radius:.7rem;background:color-mix(in srgb,var(--card-bg) 80%,transparent)}.equipment-summary span{display:block;font-size:.68rem;text-transform:uppercase;opacity:.68}.equipment-summary strong{display:block;margin-top:.2rem;color:var(--wizard-gold-light);font-family:Georgia,serif;font-size:1.2rem}
+  .equipment-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:1rem;width:100%;min-width:0}.equipment-layout.is-inventory-only{grid-template-columns:minmax(0,1fr)}.equipment-layout.is-inventory-only>.equipment-panel{max-width:720px}
+  .equipment-panel{width:100%;min-width:0;overflow:hidden;border:1px solid var(--card-border);border-radius:.8rem;background:color-mix(in srgb,var(--card-bg) 90%,var(--background))}
+  .equipment-panel-head{padding:.9rem 1rem;border-bottom:1px solid var(--card-border)}.equipment-panel-head span{color:var(--wizard-gold);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.equipment-panel-head h3{margin:.15rem 0 0;font-family:Georgia,serif;color:var(--wizard-gold-light)}
+  .equipment-shop-head{display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1fr) minmax(120px,.7fr);gap:.65rem;align-items:end;min-width:0}.equipment-shop-head label{display:grid;gap:.3rem}.equipment-shop-head input,.equipment-shop-head select{width:100%;padding:.65rem .75rem;border:1px solid var(--card-border);border-radius:.55rem;background:var(--background);color:var(--text)}
+  .equipment-inventory{display:grid;max-height:560px;overflow:auto}.equipment-inventory :global(.equipment-inventory-row){display:flex;align-items:center;justify-content:space-between;gap:.7rem;padding:.7rem .85rem;border-bottom:1px solid var(--card-border)}.equipment-inventory :global(a){color:var(--wizard-gold-light);font-weight:800;text-decoration:none}.equipment-inventory :global(small){display:block;margin-top:.15rem;opacity:.55}.equipment-inventory :global(.equipment-quantity){display:flex;align-items:center;gap:.45rem}.equipment-inventory :global(button){width:30px;height:30px;border:1px solid var(--card-border);border-radius:.45rem;background:var(--background);color:var(--text);cursor:pointer}
+  .equipment-shop-wrap{max-width:100%;max-height:560px;overflow:auto}.equipment-shop-table{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse}.equipment-shop-table th,.equipment-shop-table :global(td){padding:.65rem .75rem;border-bottom:1px solid var(--card-border);text-align:left}.equipment-shop-table th:nth-child(1),.equipment-shop-table :global(td:nth-child(1)){width:42%}.equipment-shop-table th:nth-child(2),.equipment-shop-table :global(td:nth-child(2)){width:11%;text-align:center}.equipment-shop-table th:nth-child(3),.equipment-shop-table :global(td:nth-child(3)){width:16%}.equipment-shop-table th:nth-child(4),.equipment-shop-table :global(td:nth-child(4)){width:13%}.equipment-shop-table th:nth-child(5),.equipment-shop-table :global(td:nth-child(5)){width:18%;text-align:right}.equipment-shop-table :global(td){overflow-wrap:anywhere}.equipment-shop-table th{position:sticky;top:0;background:var(--card-bg);color:var(--wizard-gold-light);font-size:.72rem;text-transform:uppercase}.equipment-shop-table :global(td:first-child a){display:block;color:var(--wizard-gold-light);font-weight:800;text-decoration:none}.equipment-shop-table :global(td:first-child small){display:block;margin-top:.15rem;opacity:.5}.equipment-shop-table :global(.equipment-buy){max-width:100%;padding:.4rem .5rem;font-size:.78rem;border:1px solid var(--wizard-gold);border-radius:.5rem;background:color-mix(in srgb,var(--wizard-gold) 15%,var(--background));color:var(--text);cursor:pointer}.equipment-shop-table :global(.equipment-buy:disabled){opacity:.35;cursor:not-allowed}
+
+  .equipment-actions{display:flex;flex-wrap:wrap;gap:.65rem}
+  .equipment-action{min-height:42px;padding:.65rem .95rem;border-radius:.6rem;font-weight:900;cursor:pointer;transition:transform .15s ease,filter .15s ease,opacity .15s ease}
+  .equipment-action:hover{transform:translateY(-1px);filter:brightness(1.08)}
+  .equipment-action:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  .equipment-action-secondary{border:1px solid var(--card-border);background:var(--background);color:var(--text)}
+  .equipment-action-primary{border:1px solid color-mix(in srgb,var(--wizard-gold) 70%,var(--card-border));background:linear-gradient(180deg,color-mix(in srgb,var(--wizard-gold-light) 88%,white),var(--wizard-gold));color:#17120a}
+  .equipment-variant-section{margin-bottom:1rem;padding:.9rem;border:1px solid var(--card-border);border-radius:.8rem;background:color-mix(in srgb,var(--card-bg) 88%,var(--background))}
+  .equipment-variant-heading span{color:var(--wizard-gold);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+  .equipment-variant-heading h3{margin:.2rem 0 .7rem;font-family:Georgia,serif;color:var(--wizard-gold-light)}
+  .equipment-variants{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem}
+  .equipment-variant-card{display:flex;align-items:flex-start;gap:.7rem;min-width:0;padding:.85rem;border:1px solid var(--card-border);border-radius:.65rem;background:var(--background);cursor:pointer}
+  .equipment-variant-card>span{min-width:0}
+  .equipment-variant-card:has(input:checked){border-color:var(--wizard-gold);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--wizard-gold) 55%,transparent)}
+  .equipment-variant-card input{margin-top:.18rem;accent-color:var(--wizard-gold)}
+  .equipment-variant-card strong{display:block;color:var(--wizard-gold-light)}
+  .equipment-variant-card small{display:block;margin-top:.35rem;line-height:1.45;opacity:.72;overflow-wrap:anywhere}
+  .equipment-owned-count{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;margin-right:.35rem;padding:0 .4rem;border:1px solid var(--wizard-gold);border-radius:999px;color:var(--wizard-gold-light);font-weight:900}
+  .equipment-mode-note{margin:0 0 1rem;padding:.8rem .9rem;border:1px solid var(--card-border);border-radius:.65rem;background:color-mix(in srgb,var(--card-bg) 82%,var(--background));line-height:1.45}.equipment-mode-note strong{color:var(--wizard-gold-light)}
+  .equipment-warning{padding:.7rem .85rem;border:1px solid color-mix(in srgb,#ef4444 55%,var(--card-border));border-radius:.6rem;background:color-mix(in srgb,#ef4444 10%,transparent)}
+  .equipment-variant-section{padding:1.1rem;background:linear-gradient(145deg,color-mix(in srgb,var(--card-bg) 94%,var(--background)),color-mix(in srgb,var(--background) 88%,transparent))}
+  .equipment-variants{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:.9rem}
+  .equipment-variant-card{position:relative;padding:1rem 1.05rem;border-radius:.85rem;transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;background:color-mix(in srgb,var(--background) 88%,var(--card-bg))}
+  .equipment-variant-card:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--wizard-gold) 55%,var(--card-border))}
+  .equipment-variant-card:has(input:checked){border-color:var(--wizard-gold);background:linear-gradient(145deg,color-mix(in srgb,var(--wizard-gold) 10%,var(--background)),var(--background));box-shadow:0 0 0 1px color-mix(in srgb,var(--wizard-gold) 38%,transparent),0 10px 25px rgba(0,0,0,.14)}
+  .equipment-variant-card strong{font-family:Georgia,serif;font-size:1.08rem;line-height:1.25}
+  .equipment-variant-card small{font-size:.86rem;line-height:1.55}
+  .equipment-inventory{padding:.35rem}
+  .equipment-inventory :global(.equipment-inventory-row){margin:.35rem;padding:.85rem .9rem;border:1px solid color-mix(in srgb,var(--card-border) 80%,transparent);border-radius:.7rem;background:color-mix(in srgb,var(--background) 78%,var(--card-bg))}
+  .equipment-inventory :global(.equipment-inventory-row:last-child){border-bottom:1px solid color-mix(in srgb,var(--card-border) 80%,transparent)}
+  .equipment-inventory :global(a){font-family:Georgia,serif;font-size:1rem}
+  .equipment-inventory :global(.equipment-quantity strong){min-width:1.5rem;text-align:center;color:var(--wizard-gold-light);font-size:1.05rem}
+
+  .equipment-inventory :global(.equipment-inventory-main){min-width:0;flex:1}
+  .equipment-inventory :global(.equipment-pack-details){margin-top:.55rem;padding:.55rem .65rem;border:1px solid color-mix(in srgb,var(--wizard-gold) 24%,var(--card-border));border-radius:.55rem;background:color-mix(in srgb,var(--wizard-gold) 5%,var(--background))}
+  .equipment-inventory :global(.equipment-pack-details summary){display:flex;align-items:center;justify-content:space-between;gap:.6rem;color:var(--wizard-gold-light);font-size:.82rem;font-weight:900;cursor:pointer;list-style:none}
+  .equipment-inventory :global(.equipment-pack-details summary::-webkit-details-marker){display:none}
+  .equipment-inventory :global(.equipment-pack-details summary::before){content:'▸';transition:transform .15s ease}
+  .equipment-inventory :global(.equipment-pack-details[open] summary::before){transform:rotate(90deg)}
+  .equipment-inventory :global(.equipment-pack-details summary span){display:inline-flex;align-items:center;justify-content:center;min-width:1.55rem;height:1.55rem;padding:0 .35rem;border:1px solid color-mix(in srgb,var(--wizard-gold) 42%,var(--card-border));border-radius:999px;font-size:.72rem}
+  .equipment-inventory :global(.equipment-pack-details ul){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem .8rem;margin:.65rem 0 0;padding:.65rem 0 0 1.15rem;border-top:1px solid color-mix(in srgb,var(--card-border) 72%,transparent)}
+  .equipment-inventory :global(.equipment-pack-details li){font-size:.8rem;line-height:1.35;opacity:.82}
+  @media(max-width:1180px){.equipment-toolbar{align-items:stretch}.equipment-actions{width:100%}.equipment-action{flex:1 1 220px}.equipment-layout{grid-template-columns:1fr}.equipment-shop-head{grid-template-columns:1fr}.equipment-shop-wrap,.equipment-inventory{max-height:420px}}
+  @media(max-width:720px){
+    .equipment-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+    .equipment-summary article{min-width:0;padding:.65rem .7rem}
+    .equipment-actions{display:grid;grid-template-columns:1fr;width:100%}
+    .equipment-action{width:100%}
+    .equipment-variants{grid-template-columns:1fr}
+    .equipment-variant-section{padding:.75rem}
+    .equipment-inventory :global(.equipment-inventory-row){align-items:flex-start;flex-direction:column}
+    .equipment-inventory :global(.equipment-quantity){align-self:flex-end}
+    .equipment-inventory :global(.equipment-pack-details ul){grid-template-columns:1fr}
+    .equipment-shop-table th:nth-child(2),.equipment-shop-table :global(td:nth-child(2)),
+    .equipment-shop-table th:nth-child(4),.equipment-shop-table :global(td:nth-child(4)){display:none}
+    .equipment-shop-table th:nth-child(1),.equipment-shop-table :global(td:nth-child(1)){width:52%}
+    .equipment-shop-table th:nth-child(3),.equipment-shop-table :global(td:nth-child(3)){width:22%}
+    .equipment-shop-table th:nth-child(5),.equipment-shop-table :global(td:nth-child(5)){width:26%}
+  }
+</style>

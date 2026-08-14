@@ -1,0 +1,59 @@
+---
+interface Props {}
+---
+
+<div class="legacy-roles">
+  <h3>Роли "Наследия"</h3>
+  
+  <div class="roles-list">
+    <p>Роли присваиваются игрокам, достигшим последнего уровня соответствующего этапа:</p>
+    <ul>
+      <li><strong>@Legacy 2 Этап</strong> - 10 уровень на втором этапе</li>
+      <li><strong>@Legacy 3 Этап</strong> - 16 уровень на третьем этапе</li>
+      <li><strong>@Legacy 4 Этап</strong> - 20 уровень на четвертом этапе</li>
+    </ul>
+  </div>
+
+  <div class="legacy-features">
+    <h4>Особенности:</h4>
+    <ul>
+      <li>Отображает максимальный достигнутый этап в Лиге Героев</li>
+      <li>Сохраняет количество доступных слотов при смерти основного персонажа, как будто бы у игрока есть персонаж с этапом равным уровню Наследия</li>
+      <li>Необходимо запросить роль у модерации или ординаторов</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .legacy-roles {
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .roles-list, .legacy-features {
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    color: var(--primary);
+    margin: 1rem 0 0.5rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  strong {
+    color: var(--primary);
+  }
+</style>

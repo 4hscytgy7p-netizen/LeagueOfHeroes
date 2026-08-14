@@ -1,0 +1,291 @@
+---
+import type { ClassLevel } from '../../types/class';
+
+interface TableClassLevel extends ClassLevel {
+  rage?: number;
+  theories?: number;
+  rageDamage?: string;
+  secondWind?: string;
+  maneuvers?: string;
+  bardicInspiration?: string;
+  chanelDivinity?: number;
+  wildShape?: number;
+  sneakAttack?: string;
+  invocations?: number;
+  martialArts?: string;
+  spiritPoints?: string;
+  unarmedMovement?: string;
+  favoredEnemy?: number;
+  sorceryPoints?: number;
+  bloodMagicDie?: string;
+  knownMaledicts?: number;
+  amplifyBloodCurse?: number;
+  brandOfCastigation?: string;
+  numOfSpellSlots?: number;
+  plansKnown?: number;
+  magicItems?: number;
+  spellSlotsLvl?: number;
+  fisticuffs?: string;
+  moxiePoints?: string;
+  focusPoints?: string;
+  signs?: string;
+  alchemyFormulas?: string;
+}
+
+interface Props {
+  levels: TableClassLevel[];
+}
+
+const { levels } = Astro.props;
+const firstLevel = levels[0];
+
+const hasSpellcasting = firstLevel?.spellSlots !== undefined;
+const hasTheories = firstLevel?.theories !== undefined;
+const hasBardicInspiration = firstLevel?.bardicInspiration !== undefined;
+const hasPreparedSpells = firstLevel?.preparedSpells !== undefined;
+const hasCantrips = firstLevel?.cantrips !== undefined;
+const hasChanelDivinity = firstLevel?.chanelDivinity !== undefined;
+const hasWildShape = firstLevel?.wildShape !== undefined;
+const hasRage = firstLevel?.rage !== undefined;
+const hasRageDamage = firstLevel?.rageDamage !== undefined;
+const hasSecondWind = firstLevel?.secondWind !== undefined;
+const hasManeuvers = firstLevel?.maneuvers !== undefined;
+const hasSneakAttack = firstLevel?.sneakAttack !== undefined;
+const hasMartialArts = firstLevel?.martialArts !== undefined;
+const hasSpiritPoints = firstLevel?.spiritPoints !== undefined;
+const hasUnarmedMovement = firstLevel?.unarmedMovement !== undefined;
+const hasFavoredEnemy = firstLevel?.favoredEnemy !== undefined;
+const hasSorceryPoints = firstLevel?.sorceryPoints !== undefined;
+const hasInvocations = firstLevel?.invocations !== undefined;
+const hasBloodMagicDie = firstLevel?.bloodMagicDie !== undefined;
+const hasKnownMaledicts = firstLevel?.knownMaledicts !== undefined;
+const hasAmplifyBloodCurse = firstLevel?.amplifyBloodCurse !== undefined;
+const hasBrandOfCastigation = firstLevel?.brandOfCastigation !== undefined;
+const hasNumOfSpellSlots = firstLevel?.numOfSpellSlots !== undefined;
+const hasSpellSlotsLvl = firstLevel?.spellSlotsLvl !== undefined;
+const hasPlansKnown = firstLevel?.plansKnown !== undefined;
+const hasMagicItems = firstLevel?.magicItems !== undefined;
+const hasFisticuffs = firstLevel?.fisticuffs !== undefined;
+const hasMoxiePoints = firstLevel?.moxiePoints !== undefined;
+const hasFocusPoints = firstLevel?.focusPoints !== undefined;
+const hasSigns = firstLevel?.signs !== undefined;
+const hasAlchemyFormulas = firstLevel?.alchemyFormulas !== undefined;
+
+const maxSpellLevel = hasSpellcasting
+  ? Math.max(
+      ...levels.map(level =>
+        Object.keys(level.spellSlots || {}).reduce((max, slot) => {
+          const spellLevel = Number(slot) as keyof NonNullable<ClassLevel['spellSlots']>;
+          return level.spellSlots?.[spellLevel]
+            ? Math.max(max, Number(slot))
+            : max;
+        }, 0)
+      )
+    )
+  : 0;
+---
+<div class="table-container">
+  <table class="class-table">
+    <thead>
+      <tr>
+        <th class="level">Уровень</th>
+        <th class="prof">БМ</th>
+        <th class="features">Умения класса</th>
+        {hasBardicInspiration && <th class="bardic-inspiration">Бардовское вдохновение</th>}
+        {hasWildShape && <th class="wild-shape">Дикая форма</th>}
+        {hasTheories && <th class="theories">Известные теории</th>}
+        {hasChanelDivinity && <th class="chanel-divinity">Божественный канал</th>}
+        {hasCantrips && <th class="cantrips">Заговоры</th>}
+        {hasPreparedSpells && <th class="prepared">Подг. закл.</th>}
+        {hasRage && <th class="rage">Ярость</th>}
+        {hasRageDamage && <th class="rage-damage">Урон ярости</th>}
+        {hasSecondWind && <th class="second-wind">Второе дыхание</th>}
+        {hasManeuvers && <th class="maneuvers">Оружейные приёмы</th>}
+        {hasSneakAttack && <th class="sneak-attack">Скрытая атака</th>}
+        {hasMartialArts && <th class="martial-arts">Кость боевых искусств</th>}
+        {hasSpiritPoints && <th class="spirit-points">Очки духа</th>}
+        {hasUnarmedMovement && <th class="unarmed-movement">Движение без доспехов</th>}
+        {hasFavoredEnemy && <th class="favored-enemy">Избранный враг</th>}
+        {hasSorceryPoints && <th class="sorcery-points">Очки чародейства</th>}
+        {hasInvocations && <th class="invocations">Воззвания</th>}
+        {hasBloodMagicDie && <th class="blood-magic-die">Кость магии крови</th>}
+        {hasKnownMaledicts && <th class="known-maledicts">Известные проклятия крови</th>}
+        {hasAmplifyBloodCurse && <th class="amplify-blood-curse">Усиление проклятия крови</th>}
+        {hasBrandOfCastigation && <th class="brand-of-castigation">Клеймо наказания</th>}
+        {hasNumOfSpellSlots && <th class="num-of-spell-slots">Кол-во ячеек</th>}
+        {hasSpellSlotsLvl && <th class="spell-slots-lvl">Уровень ячеек</th>}
+        {hasPlansKnown && <th class="plans-known-lvl">Известные схемы</th>}
+        {hasMagicItems && <th class="magic-items-lvl">Магические предметы</th>}
+        {hasFisticuffs && <th class="fisticuffs">Кулачный бой</th>}
+        {hasMoxiePoints && <th class="moxie-points">Очки удали</th>}
+        {hasFocusPoints && <th class="focus-points">Очки фокуса</th>}
+        {hasSigns && <th class="signs">Знаки</th>}
+        {hasAlchemyFormulas && <th class="alchemy-formulas">Алхимические формулы</th>}
+        {hasSpellcasting && (
+          <>
+            <th colspan={maxSpellLevel}>Ячейки заклинаний</th>
+          </>
+        )}
+      </tr>
+      {hasSpellcasting && (
+        <tr>
+          <th colspan={
+            // Базовые колонки: Уровень, БМ, Умения класса
+            3 +
+            // Добавляем 1 для каждой дополнительной колонки в зависимости от класса
+            (hasBardicInspiration ? 1 : 0) +
+            (hasWildShape ? 1 : 0) +
+            (hasTheories ? 1 : 0) +
+            (hasChanelDivinity ? 1 : 0) +
+            (hasRage ? 1 : 0) +
+            (hasRageDamage ? 1 : 0) +
+            (hasSecondWind ? 1 : 0) +
+            (hasManeuvers ? 1 : 0) +
+            (hasSneakAttack ? 1 : 0) +
+            (hasMartialArts ? 1 : 0) +
+            (hasSpiritPoints ? 1 : 0) +
+            (hasUnarmedMovement ? 1 : 0) +
+            (hasFavoredEnemy ? 1 : 0) +
+            (hasSorceryPoints ? 1 : 0) +
+            (hasInvocations ? 1 : 0) +
+            (hasBloodMagicDie ? 1 : 0) +
+            (hasKnownMaledicts ? 1 : 0) +
+            (hasAmplifyBloodCurse ? 1 : 0) +
+            (hasBrandOfCastigation ? 1 : 0) +
+            (hasNumOfSpellSlots ? 1 : 0) +
+            (hasSpellSlotsLvl ? 1 : 0) +
+            (hasPlansKnown ? 1 : 0) +
+            (hasMagicItems ? 1 : 0) +
+            (hasFisticuffs ? 1 : 0) +
+            (hasMoxiePoints ? 1 : 0) +
+            (hasFocusPoints ? 1 : 0) +
+            (hasSigns ? 1 : 0) +
+            (hasAlchemyFormulas ? 1 : 0) +
+            // Колонки, специфичные для заклинаний
+            (hasCantrips ? 1 : 0) +
+            1 // Колонка "Подг. закл."
+          }></th>
+          {Array.from({length: maxSpellLevel}, (_, i) => (
+            <th>{i + 1}</th>
+          ))}
+        </tr>
+      )}
+    </thead>
+    <tbody>
+      {levels.map(level => (
+        <tr>
+          <td class="level">{level.level}</td>
+          <td class="prof">{level.profBonus}</td>
+          <td class="features">{level.features.join(', ')}</td>
+          {hasBardicInspiration && <td class="bardic-inspiration">{level.bardicInspiration}</td>}
+          {hasWildShape && <td class="wild-shape">{level.wildShape}</td>}
+          {hasTheories && <td class="theories">{level.theories}</td>}
+          {hasChanelDivinity && <td class="chanel-divinity">{level.chanelDivinity}</td>}
+          {hasCantrips && <td class="cantrips">{level.cantrips}</td>}
+          {hasPreparedSpells && <td class="prepared">{level.preparedSpells}</td>}
+          {hasRage && <td class="rage">{level.rage}</td>}
+          {hasRageDamage && <td class="rage-damage">{level.rageDamage}</td>}
+          {hasSecondWind && <td class="second-wind">{level.secondWind}</td>}
+          {hasManeuvers && <td class="maneuvers">{level.maneuvers}</td>}
+          {hasSneakAttack && <td class="sneak-attack">{level.sneakAttack}</td>}
+          {hasMartialArts && <td class="martial-arts">{level.martialArts}</td>}
+          {hasSpiritPoints && <td class="spirit-points">{level.spiritPoints}</td>}
+          {hasUnarmedMovement && <td class="unarmed-movement">{level.unarmedMovement}</td>}
+          {hasFavoredEnemy && <td class="favored-enemy">{level.favoredEnemy}</td>}
+          {hasSorceryPoints && <td class="sorcery-points">{level.sorceryPoints}</td>}
+          {hasInvocations && <td class="invocations">{level.invocations}</td>}
+          {hasBloodMagicDie && <td class="blood-magic-die">{level.bloodMagicDie}</td>}
+          {hasKnownMaledicts && <td class="known-maledicts">{level.knownMaledicts}</td>}
+          {hasAmplifyBloodCurse && <td class="amplify-blood-curse">{level.amplifyBloodCurse}</td>}
+          {hasBrandOfCastigation && <td class="brand-of-castigation">{level.brandOfCastigation}</td>}
+          {hasNumOfSpellSlots && <td class="num-of-spell-slots">{level.numOfSpellSlots}</td>}
+          {hasSpellSlotsLvl && <td class="spell-slots-lvl">{level.spellSlotsLvl}</td>}
+          {hasPlansKnown && <td class="plans-known-lvl">{level.plansKnown}</td>}
+          {hasMagicItems && <td class="magic-items-lvl">{level.magicItems}</td>}
+          {hasFisticuffs && <td class="fisticuffs">{level.fisticuffs}</td>}
+          {hasMoxiePoints && <td class="moxie-points">{level.moxiePoints}</td>}
+          {hasFocusPoints && <td class="focus-points">{level.focusPoints}</td>}
+          {hasSigns && <td class="signs">{level.signs}</td>}
+          {hasAlchemyFormulas && <td class="alchemy-formulas">{level.alchemyFormulas}</td>}
+          {hasSpellcasting && (
+            <>
+              {Array.from({length: maxSpellLevel}, (_, i) => (
+                <td>{level.spellSlots?.[i + 1] || '—'}</td>
+              ))}
+            </>
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-container {
+    overflow-x: auto;
+    margin: 2rem 0;
+    min-width: 1000px;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  .class-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .level, .prof {
+    width: 60px;
+    text-align: center;
+  }
+  
+  .theories, .brand-of-castigation, .amplify-blood-curse, .focus-points, .signs, .alchemy-formulas, .rage, .rage-damage, .second-wind, .maneuvers, .sneak-attack, .bardic-inspiration, .wild-shape, .chanel-divinity, .martial-arts, .spirit-points, .unarmed-movement, .favored-enemy, .sorcery-points, .invocations, .num-of-spell-slots, .spell-slots-lvl, .blood-magic-die, .known-maledicts, .magic-items-lvl, .plans-known-lvl, .fisticuffs, .moxie-points {
+    min-width: 30px;
+    text-align: center;
+  }
+
+  .features {
+    min-width: 250px;
+  }
+
+  .cantrips, .prepared {
+    width: 80px;
+    text-align: center;
+  }
+
+  td[colspan="9"] {
+    min-width: 360px;
+  }
+
+  .class-table th,
+  .class-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  .class-table td.features {
+    font-size: 0.9em;
+    text-align: left;
+    padding-right: 2rem;
+  }
+
+  .class-table th {
+    background: var(--primary);
+    color: white;
+  }
+
+  .class-table th:first-child {
+    border-top-left-radius: 0.5rem;
+  }
+
+  .class-table th:last-child {
+    border-top-right-radius: 0.5rem;
+  }
+
+  .class-table tr:last-child td {
+    border-bottom: none;
+  }
+</style>

@@ -1,0 +1,287 @@
+---
+interface Props {
+  events: {
+    title: string;
+    table: Array<{
+      roll: string;
+      event: string;
+    }>;
+  };
+  allgood: {
+    title: string;
+    table: Array<{ 
+      roll: string; 
+      event: string;
+   }>;
+  };
+  guest: {
+    title: string;
+    table: Array<{ 
+      roll: string; 
+      event: string;
+   }>;
+  };
+  treasure: {
+    title: string;
+    table: Array<{ 
+      roll: string; 
+      event: string;
+   }>;
+  };
+}
+
+const { events, allgood, guest, treasure } = Astro.props;
+
+const slug = (s) => {
+  if (!s) return '';
+  return String(s)
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\p{L}\p{N}\-]+/gu, '')
+    .replace(/\-+/g, '-');
+};
+---
+
+<section class="rules-section">
+  <h2>События</h2>
+  <div class="content">
+    <div class="events-intro">
+      <p>Периодически в бастионе происходят различные события, которые могут повлиять на его функционирование и принести как возможности, так и вызовы.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug(events.title)}>{events.title}</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>к100</th>
+              <th>Событие</th>
+            </tr>
+          </thead>
+          <tbody>
+            {events.table.map(entry => (
+              <tr>
+                <td class="roll-column">{entry.roll}</td>
+                <td><a class="event-link" href={'#' + slug(entry.event)}>{entry.event}</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="events-table-section">
+      <h3>{allgood.title}</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>к8</th>
+              <th>Детали</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allgood.table.map(entry => (
+              <tr>
+                <td class="roll-column">{entry.roll}</td>
+                <td>{entry.event}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Атака')}>Атака</h3>
+      <p>Враждебные силы атакуют ваш бастион, но терпят поражение.</p>
+      <p>Бросьте 6к6, за каждый выпавший кубик с результатом 1 умирает 1 защитник бастиона. Удалите этих защитников бастиона из листа вашего бастиона. Если в бастионе нет защитников, то одно из специализированных сооружений бастиона (определяется случайным образом) повреждается и не работает.</p>
+      <p>Специализированное сооружение, которое не работает, не может использоваться в следующий ход бастиона, после чего оно бесплатно ремонтируется и снова становится работоспособным.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Наёмник оказался преступником')}>Наёмник оказался преступником</h3>
+      <p>У одного из наёмников вашего бастиона есть криминальное прошлое, которое всплывает, когда чиновники или охотники за головами посещают ваш бастион с ордером на арест наёмника. Вы можете оставить наёмника за взятку в 1к6 × 100 зм. В противном случае наёмника арестуют и увезут. Если эта потеря оставляет одно из ваших сооружений без наёмников, то это сооружение не может быть использовано в ваш следующий ход бастиона. Затем наёмник бесплатно заменяется.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Удачный случай')}>Удачный случай</h3>
+      <p>Вашему бастиону предоставляется возможность провести важный фестиваль или праздник, профинансировать исследование могущественного заклинателя или умиротворить властного дворянина. Проработайте с Мастером детали.</p>
+      <p>Если вы воспользуетесь возможностью, то вы должны заплатить 500 зм, чтобы покрыть расходы. Взамен ваш бастион получает признание или внимание, побуждая Мастера снова совершить бросок по таблице "События бастиона" (перебросьте этот результат, если он снова выпадет).</p>
+      <p>Если вы отказываетесь от возможности, вы не платите деньги и больше ничего не происходит.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Дружелюбные посетители')}>Дружелюбные посетители</h3>
+      <p>Дружелюбные посетители приходят в ваш бастион, стремясь использовать одно из ваших специализированных сооружений. Они предлагают 1к6 × 100 зм за кратковременное использование этого сооружения. Например, рыцарь может пожелать, чтобы ваша кузница починила повреждённое оружие или доспехи, или мудрецам может понадобиться ваш кабинет заклинателя, чтобы помочь им уладить спор. Их использование сооружения не прерывает никаких приказов, которые вы отдали.</p>
+    </div>
+
+    <div class="events-table-section">
+      <a id={slug('Гость')}></a>
+      <h3 id={slug(guest.title)}>{guest.title}</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>к4</th>
+              <th>Гость</th>
+            </tr>
+          </thead>
+          <tbody>
+            {guest.table.map(entry => (
+              <tr>
+                <td class="roll-column">{entry.roll}</td>
+                <td>{entry.event}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Пропавшие наёмники')}>Пропавшие наёмники</h3>
+      <p>Одно из специализированных сооружений вашего бастиона (определяется случайным образом) теряет своих наёмников. Причина их ухода зависит от вас. Сооружение не может быть использовано в ваш следующий ход бастиона, но наёмники бесплатно заменяются в конце этого хода.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Волшебное открытие')}>Волшебное открытие</h3>
+      <p>Ваши наёмники бесплатно обнаруживают или случайно создают необычный магический предмет по вашему выбору. Магический предмет должен быть зельем или свитком.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3>Беженцы</h3>
+      <p>Группа из 2к4 беженцев, спасающихся от нападения монстров, стихийного бедствия или какой-либо другой катастрофы, ищет убежища в вашем бастионе. Если в вашем бастионе нет базового сооружения, достаточно большого, чтобы разместить их, то беженцы разбивают лагерь прямо за пределами бастиона. Беженцы предлагают вам 1к6 × 100 зм в качестве платы за ваше гостеприимство и защиту. Они остаются до тех пор, пока вы не найдёте им новый дом или пока враждебные силы не атакуют ваш бастион.</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug('Просьба о помощи')}>Просьба о помощи</h3>
+      <p>Ваш бастион призывают помочь местному лидеру. Возможно, идёт поиск пропавшего человека, или в районе орудуют разбойники. Если вы помогаете, то вы должны отправить одного или нескольких защитников бастиона. Бросьте 1к6 за каждого защитника бастиона, которого вы отправляете. Если общая сумма составляет 10 или больше, то проблема решена, и вы получаете награду 1к6 × 100 зм. Если общая сумма меньше 10, то проблема всё равно решена, но награда уменьшается вдвое, а один из ваших защитников бастиона погибает. Удалите этого защитника бастиона из листа вашего бастиона</p>
+    </div>
+
+    <div class="events-table-section">
+      <h3 id={slug(treasure.title)}>{treasure.title}</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>к100</th>
+              <th>Сокровище</th>
+            </tr>
+          </thead>
+          <tbody>
+            {treasure.table.map(entry => (
+              <tr>
+                <td class="roll-column">{entry.roll}</td>
+                <td>{entry.event}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rules-section {
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .events-intro {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .events-mechanics,
+  .events-table-section,
+  .events-handling {
+    margin-bottom: 1.5rem;
+  }
+
+  .events-table-section:last-child,
+  .events-handling:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .table-container {
+    margin-top: 1rem;
+    overflow-x: auto;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+  }
+
+  .roll-column {
+    width: 80px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  tbody tr:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  th:first-child {
+    border-top-left-radius: 0.5rem;
+  }
+
+  th:last-child {
+    border-top-right-radius: 0.5rem;
+  }
+
+  tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5rem;
+  }
+</style>

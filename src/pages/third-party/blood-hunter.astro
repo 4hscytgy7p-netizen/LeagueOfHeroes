@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BloodHunterFeature from '../../components/handbook/third-party/blood-hunter/BloodHunterFeature.astro';
+import BloodHunterOrder from '../../components/handbook/third-party/blood-hunter/BloodHunterOrder.astro';
+import BloodHunterTable from '../../components/handbook/third-party/blood-hunter/BloodHunterTable.astro';
+
+const classLevels = [
+  {
+    level: 1,
+    profBonus: "+2",
+    features: ["Охотничье проклятие", "Ритуал взывания"],
+    bloodMaledict: "1",
+    crimsonRites: "1"
+  },
+  {
+    level: 2,
+    profBonus: "+2",
+    features: ["Боевой стиль", "Кровавые проклятия"],
+    bloodMaledict: "2",
+    crimsonRites: "1"
+  }
+  // Add more levels as needed
+];
+
+const orders = [
+  {
+    name: "Орден Призрачного клинка",
+    description: "Мистические воины, связывающие свою жизненную силу с эфирным оружием.",
+    features: [
+      {
+        level: 3,
+        name: "Призрачное оружие",
+        description: "Вы учитесь создавать эфирное оружие из своей жизненной силы."
+      }
+    ]
+  }
+  // Add more orders as needed
+];
+---
+
+<Layout title="Кровавый охотник">
+  <div class="content">
+    <h1>Кровавый охотник</h1>
+    
+    <section class="class-intro">
+      <p>Кровавые охотники — это воины, которые используют тёмную магию крови и запретные ритуалы для борьбы со злом.</p>
+    </section>
+
+    <BloodHunterTable levels={classLevels} />
+
+    <section class="class-features">
+      <h2>Умения класса</h2>
+      <BloodHunterFeature
+        level={1}
+        name="Охотничье проклятие"
+        description="Вы можете проклясть существо, используя свою кровь, чтобы выследить его и нанести дополнительный урон."
+      />
+      <BloodHunterFeature
+        level={1}
+        name="Ритуал взывания"
+        description="Вы изучаете тайные ритуалы, позволяющие наполнить ваше оружие мистической энергией."
+      />
+    </section>
+
+    <section class="orders">
+      <h2>Ордены кровавых охотников</h2>
+      {orders.map(order => (
+        <BloodHunterOrder {...order} />
+      ))}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .class-intro {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin: 2rem 0 1rem;
+  }
+</style>

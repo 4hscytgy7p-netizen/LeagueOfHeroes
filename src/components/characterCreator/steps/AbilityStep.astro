@@ -1,0 +1,40 @@
+<section class="wizard-step" data-step="abilities">
+  <div class="step-heading">
+    <span>Глава пятая</span>
+    <h2>Распредели характеристики</h2>
+    <p>Распредели 27 очков покупки характеристик: каждое базовое значение должно быть от 8 до 15. Затем распредели 3 очка бонуса предыстории — как +2 и +1 либо как три бонуса по +1. На одну характеристику можно добавить не больше +2.</p>
+  </div>
+  <div class="points-summary">
+    <strong>Point Buy: <span id="point-buy-remaining">27</span>/27</strong>
+    <strong>Бонус предыстории: <span id="background-bonus-remaining">3</span>/3</strong>
+  </div>
+  <section class="class-ability-guide" id="class-ability-guide" hidden></section>
+  <div class="ability-grid">
+    {[['strength','Сила','СИЛ'],['dexterity','Ловкость','ЛОВ'],['constitution','Телосложение','ТЕЛ'],['intelligence','Интеллект','ИНТ'],['wisdom','Мудрость','МДР'],['charisma','Харизма','ХАР']].map(([id,name,short]) => (
+      <article class="ability-card" data-ability-card={id}>
+        <span>{short}</span><strong>{name}</strong>
+        <div class="ability-control"><button type="button" data-base-action="decrease" data-stat={id}>−</button><output data-base-value={id}>8</output><button type="button" data-base-action="increase" data-stat={id}>+</button></div>
+        <small>База Point Buy</small>
+        <div class="ability-control background-control"><button type="button" data-bonus-action="decrease" data-stat={id}>−</button><output data-bonus-value={id}>0</output><button type="button" data-bonus-action="increase" data-stat={id}>+</button></div>
+        <small>Бонус предыстории</small>
+        <div class="ability-total"><span>Итого</span><strong data-total-value={id}>8</strong><output data-modifier={id}>−1</output></div>
+      </article>
+    ))}
+  </div>
+  <p class="ability-warning" id="ability-warning" hidden></p>
+</section>
+
+<style>
+  .class-ability-guide { margin: 1rem 0; padding: 1rem 1.1rem; border: 1px solid color-mix(in srgb, var(--wizard-gold) 46%, var(--card-border)); border-radius: .75rem; background: linear-gradient(135deg, color-mix(in srgb, var(--wizard-gold) 10%, var(--card-bg)), color-mix(in srgb, var(--card-bg) 94%, var(--background))); }
+  .class-ability-guide :global(.class-ability-guide-heading) { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; }
+  .class-ability-guide :global(.class-ability-guide-heading span) { color: var(--wizard-gold); font-size: .68rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+  .class-ability-guide :global(.class-ability-guide-heading h3) { margin: .2rem 0 0; color: var(--wizard-gold-light); font-family: Georgia, serif; font-size: 1.28rem; }
+  .class-ability-guide :global(.class-ability-guide-heading p) { max-width: 430px; margin: 0; font-size: .78rem; line-height: 1.45; opacity: .68; }
+  .class-ability-guide :global(.class-ability-guide-grid) { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: .65rem; }
+  .class-ability-guide :global(.class-ability-guide-item) { display: grid; gap: .3rem; padding: .72rem .8rem; border: 1px solid var(--card-border); border-radius: .58rem; background: var(--background); }
+  .class-ability-guide :global(.class-ability-guide-item span) { color: var(--wizard-gold); font-size: .64rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+  .class-ability-guide :global(.class-ability-guide-item strong) { line-height: 1.35; }
+  .ability-grid :global(.ability-card.is-primary-ability) { border-color: var(--wizard-gold); box-shadow: inset 0 3px 0 var(--wizard-gold), 0 0 0 2px color-mix(in srgb, var(--wizard-gold) 15%, transparent); }
+  .ability-grid :global(.ability-card.is-primary-ability)::after { content: "Основная"; margin-top: .45rem; color: var(--wizard-gold); font-size: .62rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+  @media (max-width: 760px) { .class-ability-guide :global(.class-ability-guide-heading) { flex-direction: column; } }
+</style>

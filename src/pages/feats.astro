@@ -1,0 +1,796 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { featsData } from '../data/feats';
+
+const sortedFeats = [...featsData].sort((a, b) => 
+  a.name.localeCompare(b.name, 'ru')
+);
+
+const featTypes = {
+  'origin': 'Черта происхождения',
+  'general': 'Общая черта',
+  'fighting-style': 'Черта боевого стиля',
+  'epic': 'Эпическая черта'
+};
+
+const abilities = {
+  'STR': 'Сила',
+  'DEX': 'Ловкость',
+  'CON': 'Телосложение',
+  'INT': 'Интеллект',
+  'WIS': 'Мудрость',
+  'CHA': 'Харизма'
+};
+---
+
+<Layout title="Черты">
+  <div class="content">
+    <h1>Черты</h1>
+    
+    <div class="search-container">
+      <div class="search-controls">
+        <div class="search-input-container">
+          <input 
+            type="text" 
+            id="feat-search" 
+            placeholder="Поиск черт..."
+            class="search-input"
+          />
+          <div id="feats-counter" class="feats-counter">0/0</div>
+          <button id="clear-search" class="clear-search-button" style="display: none;">×</button>
+        </div>
+        <button id="filter-button" class="filter-button">
+          <span class="filter-icon">⚙</span>
+          Фильтры
+          <span id="filter-count" class="filter-count">0</span>
+        </button>
+      </div>
+
+      <div id="filter-popup" class="filter-popup">
+        <div class="filter-content">
+          <div class="filter-header">
+            <h3>Фильтры</h3>
+            <button id="reset-filters" class="reset-button" title="Сбросить фильтры">Сбросить</button>
+            <button class="close-button">×</button>
+          </div>
+          
+          <div class="filter-section">
+            <h4>Тип черты</h4>
+            <div class="checkbox-group">
+              {Object.entries(featTypes).map(([key, label]) => (
+                <button type="button" class="tri-filter" data-filter="feat-type" data-value={key} data-state="neutral">{label}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Повышение характеристик</h4>
+            <div class="checkbox-group">
+              {Object.entries(abilities).map(([key, label]) => (
+                <button type="button" class="tri-filter" data-filter="ability-score" data-value={key} data-state="neutral">{label}</button>
+              ))}
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h4>Доп. требования</h4>
+            <div class="checkbox-group">
+              <button type="button" class="tri-filter" data-filter="no-extra-req" data-value="no-extra-req" data-state="neutral">Только без дополнительных требований</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feats-grid">
+      {sortedFeats.map(feat => {
+        const reqs = feat.requirements || [];
+        const hasExtraReq = feat.type === 'general' && reqs.length > 0 && !reqs.every(r => /Уровень\s*4\+/i.test(String(r)) || /13\+/i.test(String(r)));
+        return (
+          <a href={`/feats/${feat.id}`} class="feat-card" data-feat-type={feat.type} data-abilities={feat.abilityScoreIncrease?.join(',')} data-has-extra-req={hasExtraReq ? 'true' : 'false'}>
+            <h3>{feat.name}</h3>
+            <span class="name-en">[{feat.nameEn}]</span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function initializeFilters() {
+    const filterButton = document.getElementById('filter-button');
+    const filterPopup = document.getElementById('filter-popup');
+    const closeButton = document.querySelector('.close-button');
+    /** @type {HTMLInputElement|null} */
+    const searchInput = document.getElementById('feat-search');
+    const clearSearchButton = document.getElementById('clear-search');
+    const featsCounter = document.getElementById('feats-counter');
+    const featCards = document.querySelectorAll('.feat-card');
+    const triButtons = document.querySelectorAll('.tri-filter');
+    const typeButtons = document.querySelectorAll('.tri-filter[data-filter="feat-type"]');
+    const abilityButtons = document.querySelectorAll('.tri-filter[data-filter="ability-score"]');
+    const extraReqButton = document.querySelector('.tri-filter[data-filter="no-extra-req"]');
+
+    // Read filters from URL (preferred) — supports tri-state via include/exclude params
+    function getFiltersFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const out: any = {};
+
+      const search = params.get('search');
+      if (search) out.search = search;
+
+      // feat-type: includes in `feat-type`, excludes in `feat-type-exclude`
+      const ftInc = params.get('feat-type');
+      const ftExc = params.get('feat-type-exclude');
+      if (ftInc || ftExc) {
+        const map: any = {};
+        if (ftInc) ftInc.split(',').forEach(v => { if (v) map[v] = 'include'; });
+        if (ftExc) ftExc.split(',').forEach(v => { if (v) map[v] = 'exclude'; });
+        out['feat-type'] = map;
+      }
+
+      // ability-score: includes in `ability-score`, excludes in `ability-score-exclude`
+      const abInc = params.get('ability-score');
+      const abExc = params.get('ability-score-exclude');
+      if (abInc || abExc) {
+        const map: any = {};
+        if (abInc) abInc.split(',').forEach(v => { if (v) map[v] = 'include'; });
+        if (abExc) abExc.split(',').forEach(v => { if (v) map[v] = 'exclude'; });
+        out['ability-score'] = map;
+      }
+
+      const extra = params.get('no-extra-req');
+      if (extra) out['no-extra-req'] = extra;
+
+      return out;
+    }
+
+    // Load filters: prefer URL params, fallback to localStorage
+    function loadFilters() {
+      const urlFilters = getFiltersFromURL();
+      if (Object.keys(urlFilters).length > 0) {
+        try {
+          if (urlFilters.search && searchInput instanceof HTMLInputElement) {
+            searchInput.value = urlFilters.search;
+          }
+
+          if (urlFilters['feat-type']) {
+            const mapping = urlFilters['feat-type'];
+            Object.entries(mapping).forEach(([v, s]) => {
+              const btn = document.querySelector(`.tri-filter[data-filter="feat-type"][data-value="${v}"]`);
+              if (btn instanceof HTMLElement && (s === 'include' || s === 'exclude')) btn.dataset.state = String(s);
+            });
+          }
+
+          if (urlFilters['ability-score']) {
+            const mapping = urlFilters['ability-score'];
+            Object.entries(mapping).forEach(([v, s]) => {
+              const btn = document.querySelector(`.tri-filter[data-filter="ability-score"][data-value="${v}"]`);
+              if (btn instanceof HTMLElement && (s === 'include' || s === 'exclude')) btn.dataset.state = String(s);
+            });
+          }
+
+          if (urlFilters['no-extra-req'] && extraReqButton instanceof HTMLElement) {
+            extraReqButton.dataset.state = urlFilters['no-extra-req'];
+          }
+
+          // Apply classes
+          triButtons.forEach(b => {
+            const el = b instanceof HTMLElement ? b : null;
+            const state = el?.dataset.state || 'neutral';
+            if (el) {
+              el.classList.remove('state-neutral', 'state-include', 'state-exclude');
+              el.classList.add(`state-${state}`);
+            }
+          });
+
+          // Persist URL-driven selection to localStorage
+          saveFilters();
+          updateFilterCount();
+          filterFeats();
+          return;
+        } catch (e) {
+          console.error('Failed to apply filters from URL', e);
+        }
+      }
+
+      // Fallback: load from localStorage (existing behavior)
+      const saved = localStorage.getItem('featFilters');
+      if (!saved) return;
+      try {
+        const filters = JSON.parse(saved);
+
+        // Backwards compatibility: previous format stored arrays under keys
+        // New format: object mapping for each filter type, plus single-state values
+
+        // Apply mapping-based filters (feat-type, ability-score)
+        Object.keys(filters).forEach(key => {
+          const val = filters[key];
+          if (key === 'no-extra-req' && extraReqButton instanceof HTMLElement) {
+            // If stored as boolean (old), convert: true -> include (only without extra req)
+            if (typeof val === 'boolean') {
+              extraReqButton.dataset.state = val ? 'include' : 'neutral';
+            } else if (typeof val === 'string') {
+              extraReqButton.dataset.state = val;
+            }
+          }
+
+          if (key === 'feat-type' || key === 'ability-score') {
+            const mapping = val; // expected object { value: state }
+            if (mapping && typeof mapping === 'object') {
+              Object.entries(mapping).forEach(([v, s]) => {
+                const btn = document.querySelector(`.tri-filter[data-filter="${key}"][data-value="${v}"]`);
+                if (btn instanceof HTMLElement && (s === 'include' || s === 'exclude')) btn.dataset.state = String(s);
+              });
+            } else if (Array.isArray(mapping)) {
+              // old format: array of checked values (assume include)
+              mapping.forEach((v: string) => {
+                const btn = document.querySelector(`.tri-filter[data-filter="${key}"][data-value="${v}"]`);
+                if (btn instanceof HTMLElement) btn.dataset.state = 'include';
+              });
+            }
+          }
+        });
+
+        // Update classes based on data-state
+        triButtons.forEach(b => {
+          const el = b instanceof HTMLElement ? b : null;
+          const state = el?.dataset.state || 'neutral';
+          if (el) {
+            el.classList.remove('state-neutral', 'state-include', 'state-exclude');
+            el.classList.add(`state-${state}`);
+          }
+        });
+
+        updateFilterCount();
+        filterFeats();
+      } catch (e) {
+        console.error('Failed to load featFilters', e);
+      }
+    }
+
+    // Save filters to localStorage
+    function saveFilters() {
+      const out: any = {};
+
+      // For each filter type, save mapping value->state if state != neutral
+      ['feat-type', 'ability-score'].forEach(ft => {
+        const map: any = {};
+        document.querySelectorAll(`.tri-filter[data-filter="${ft}"]`).forEach(b => {
+          if (b instanceof HTMLElement) {
+            const val = b.dataset.value;
+            const st = b.dataset.state || 'neutral';
+            if (st && st !== 'neutral') map[val] = st;
+          }
+        });
+        out[ft] = map;
+      });
+
+      // extra req can be stored as string state
+      if (extraReqButton instanceof HTMLElement) out['no-extra-req'] = extraReqButton.dataset.state || 'neutral';
+
+      localStorage.setItem('featFilters', JSON.stringify(out));
+      // Reflect filters in URL so they can be shared / preserved
+      updateURL();
+    }
+
+    // Update the current URL to reflect selected filters (no history entry)
+    function updateURL() {
+      const params = new URLSearchParams();
+
+      const featInc: string[] = [];
+      const featExc: string[] = [];
+      document.querySelectorAll('.tri-filter[data-filter="feat-type"]').forEach(b => {
+        if (!(b instanceof HTMLElement)) return;
+        const st = b.dataset.state || 'neutral';
+        const val = b.dataset.value;
+        if (st === 'include') featInc.push(val);
+        if (st === 'exclude') featExc.push(val);
+      });
+      if (featInc.length) params.set('feat-type', featInc.join(','));
+      if (featExc.length) params.set('feat-type-exclude', featExc.join(','));
+
+      const abInc: string[] = [];
+      const abExc: string[] = [];
+      document.querySelectorAll('.tri-filter[data-filter="ability-score"]').forEach(b => {
+        if (!(b instanceof HTMLElement)) return;
+        const st = b.dataset.state || 'neutral';
+        const val = b.dataset.value;
+        if (st === 'include') abInc.push(val);
+        if (st === 'exclude') abExc.push(val);
+      });
+      if (abInc.length) params.set('ability-score', abInc.join(','));
+      if (abExc.length) params.set('ability-score-exclude', abExc.join(','));
+
+      const extraState = extraReqButton instanceof HTMLElement ? extraReqButton.dataset.state || 'neutral' : 'neutral';
+      if (extraState && extraState !== 'neutral') params.set('no-extra-req', extraState);
+
+      const searchTerm = (searchInput instanceof HTMLInputElement) ? searchInput.value.trim() : '';
+      if (searchTerm) params.set('search', searchTerm);
+
+      const queryString = params.toString();
+      const newUrl = queryString ? `/feats?${queryString}` : '/feats';
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    // Update filter count display
+    function updateFilterCount() {
+      let cnt = 0;
+      triButtons.forEach(b => {
+        if (b instanceof HTMLElement) {
+          const st = b.dataset.state;
+          if (st && st !== 'neutral') cnt++;
+        }
+      });
+
+      const filterCount = document.getElementById('filter-count');
+      if (filterCount) {
+        filterCount.textContent = String(cnt);
+        filterCount.style.display = cnt > 0 ? 'flex' : 'none';
+      }
+
+      if (filterButton) {
+        filterButton.classList.toggle('has-filters', cnt > 0);
+      }
+    }
+
+    function togglePopup() {
+      if (filterPopup) {
+        filterPopup.classList.toggle('show');
+      }
+    }
+
+    function closePopup(e: MouseEvent) {
+      if (filterPopup && e.target === filterPopup) {
+        filterPopup.classList.remove('show');
+      }
+    }
+
+    function filterFeats() {
+      const searchTerm = (searchInput instanceof HTMLInputElement) ? searchInput.value.toLowerCase() : '';
+      // Build include/exclude lists from tri-state buttons
+      const typeIncludes: string[] = [];
+      const typeExcludes: string[] = [];
+      typeButtons.forEach(b => {
+        if (b instanceof HTMLElement) {
+          const st = b.dataset.state || 'neutral';
+          const val = b.dataset.value || '';
+          if (st === 'include') typeIncludes.push(val);
+          if (st === 'exclude') typeExcludes.push(val);
+        }
+      });
+
+      const abilityIncludes: string[] = [];
+      const abilityExcludes: string[] = [];
+      abilityButtons.forEach(b => {
+        if (b instanceof HTMLElement) {
+          const st = b.dataset.state || 'neutral';
+          const val = b.dataset.value || '';
+          if (st === 'include') abilityIncludes.push(val);
+          if (st === 'exclude') abilityExcludes.push(val);
+        }
+      });
+
+      const extraState = extraReqButton instanceof HTMLElement ? extraReqButton.dataset.state || 'neutral' : 'neutral';
+
+      let visibleCount = 0;
+      const totalCount = featCards.length;
+
+      featCards.forEach(card => {
+        const name = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+        const nameEn = card.querySelector('.name-en')?.textContent?.toLowerCase() || '';
+        const type = card instanceof HTMLElement ? card.dataset.featType || '' : '';
+        const abilities = card instanceof HTMLElement ? ((card.dataset.abilities || '').split(',')) : [];
+
+
+        const matchesSearch = name.includes(searchTerm) || nameEn.includes(searchTerm);
+
+        // Type matching: excludes have priority, then includes (if any includes specified)
+        let matchesType = true;
+        if (typeExcludes.length > 0 && typeExcludes.includes(type)) matchesType = false;
+        if (matchesType && typeIncludes.length > 0 && !typeIncludes.includes(type)) matchesType = false;
+
+        // Abilities matching: check includes/excludes logic
+        const cardAbilities = abilities.map(s => s.trim()).filter(Boolean);
+        let matchesAbilities = true;
+        if (abilityExcludes.length > 0 && cardAbilities.some(a => abilityExcludes.includes(a))) matchesAbilities = false;
+        if (matchesAbilities && abilityIncludes.length > 0) {
+          if (!cardAbilities.some(a => abilityIncludes.includes(a))) matchesAbilities = false;
+        }
+
+        let isVisible = matchesSearch && matchesType && matchesAbilities;
+
+        // Extra requirements tri-state:
+        // include -> show only feats WITHOUT extra requirements
+        // exclude -> show only feats WITH extra requirements
+        if (isVisible && extraState !== 'neutral') {
+          const hasExtra = card instanceof HTMLElement ? card.dataset.hasExtraReq === 'true' : false;
+          if (extraState === 'include' && hasExtra) isVisible = false; // want only without extra => hide those with extra
+          if (extraState === 'exclude' && !hasExtra) isVisible = false; // want only with extra => hide those without
+        }
+
+        if (card instanceof HTMLElement) card.style.display = isVisible ? 'block' : 'none';
+
+        if (isVisible) {
+          visibleCount++;
+        }
+      });
+      
+      // Update counter
+      if (featsCounter) {
+        featsCounter.textContent = `${visibleCount}/${totalCount}`;
+      }
+      
+      // Update clear button visibility
+      if (clearSearchButton) {
+        clearSearchButton.style.display = searchTerm ? 'flex' : 'none';
+      }
+      
+      saveFilters();
+      updateFilterCount();
+    }
+
+    // Reset all filters UI and saved settings
+    function resetFilters() {
+      triButtons.forEach(b => {
+        if (b instanceof HTMLElement) {
+          b.dataset.state = 'neutral';
+          b.classList.remove('state-include', 'state-exclude', 'state-neutral');
+          b.classList.add('state-neutral');
+        }
+      });
+      if (searchInput instanceof HTMLInputElement) searchInput.value = '';
+      localStorage.removeItem('featFilters');
+      updateFilterCount();
+      updateURL();
+      filterFeats();
+    }
+
+    filterButton?.addEventListener('click', togglePopup);
+    closeButton?.addEventListener('click', togglePopup);
+    filterPopup?.addEventListener('click', closePopup);
+    if (searchInput instanceof HTMLInputElement) searchInput.addEventListener('input', filterFeats);
+
+    // Clear search functionality
+    clearSearchButton?.addEventListener('click', () => {
+      if (searchInput instanceof HTMLInputElement) {
+        searchInput.value = '';
+        filterFeats();
+      }
+    });
+
+    // Add event listeners for filter checkboxes using event delegation
+    // tri-state buttons: handle clicks to cycle states and apply filters
+    triButtons.forEach(b => {
+      b.addEventListener('click', (e) => {
+        if (!(b instanceof HTMLElement)) return;
+        const next: Record<string, string> = { neutral: 'include', include: 'exclude', exclude: 'neutral' };
+        const cur = b.dataset.state || 'neutral';
+        const nv = next[cur] || 'neutral';
+        b.dataset.state = nv;
+        b.classList.remove('state-neutral', 'state-include', 'state-exclude');
+        b.classList.add(`state-${nv}`);
+        updateFilterCount();
+        saveFilters();
+        filterFeats();
+      });
+    });
+    
+    // Reset filters button
+    const resetButton = document.getElementById('reset-filters');
+    resetButton?.addEventListener('click', resetFilters);
+    
+    // Initialize
+    // Ensure triButtons have classes matching initial data-state
+    triButtons.forEach(b => {
+      if (b instanceof HTMLElement) {
+        const state = b.dataset.state || 'neutral';
+        b.classList.add(`state-${state}`);
+      }
+    });
+
+    loadFilters();
+    filterFeats(); // Initial count
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeFilters);
+</script>
+
+<style>
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .search-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .search-input-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 5rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  .feats-counter {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text);
+    opacity: 0.6;
+    font-size: 0.9rem;
+    pointer-events: none;
+    background: var(--card-bg);
+    padding: 0 0.25rem;
+    z-index: 1;
+  }
+
+  .clear-search-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: all 0.2s;
+  }
+
+  .clear-search-button:hover {
+    background: var(--nav-hover-bg);
+    opacity: 1;
+  }
+
+  .filter-button {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .filter-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-button.has-filters {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .filter-icon {
+    font-size: 1.2rem;
+  }
+
+  .filter-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .filter-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .filter-popup.show {
+    display: block;
+  }
+
+  .filter-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    min-width: 400px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .filter-header h3 {
+    margin: 0;
+    color: var(--primary);
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .close-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-section:last-child {
+    margin-bottom: 2rem;
+  }
+
+  .filter-section h4 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* tri-state filter buttons */
+  .tri-filter {
+    display: inline-block;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+
+  .tri-filter.state-neutral {
+    opacity: 0.8;
+  }
+
+  .tri-filter.state-include {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .tri-filter.state-exclude {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: auto;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background: var(--background);
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  .checkbox-label:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .reset-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .reset-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .feats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .feat-card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+  }
+
+  .feat-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .feat-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+  }
+</style>

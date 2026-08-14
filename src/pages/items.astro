@@ -1,0 +1,906 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { items } from '../data/items';
+
+const sortedItems = [...items].sort((a, b) => 
+  a.name.localeCompare(b.name, 'ru')
+);
+
+const sourceBooks = [...new Set(items.map(item => item.sourceBook))].sort();
+const itemTypes = [...new Set(items.map(item => item.type))].sort();
+---
+
+<Layout title="Предметы">
+  <div class="content">
+    <h1>Предметы</h1>
+    
+    <div class="items-container">
+      <div id="items-data" data-items={JSON.stringify(items)} style="display: none;"></div>
+      <div class="items-table">
+        <div class="search-container">
+          <div class="search-controls">
+            <div class="search-input-container">
+              <input 
+                type="text" 
+                id="item-search" 
+                placeholder="Поиск предметов..."
+                class="search-input"
+              />
+              <div id="items-counter" class="items-counter">0/0</div>
+              <button id="clear-search" class="clear-search-button" title="Очистить поиск">×</button>
+            </div>
+            <button id="filter-button" class="filter-button">
+              <span class="filter-icon">⚙</span>
+              Фильтры
+              <div id="filter-count" class="filter-count">0</div>
+            </button>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="name">
+                Название
+                <span class="sort-icon">↕</span>
+              </th>
+              <th class="sortable" data-sort="type">
+                Тип
+                <span class="sort-icon">↕</span>
+              </th>
+              <th class="sortable" data-sort="cost">
+                Цена
+                <span class="sort-icon">↕</span>
+              </th>
+              <th class="sortable" data-sort="weight">
+                Вес
+                <span class="sort-icon">↕</span>
+              </th>
+              <th class="sortable" data-sort="source">
+                Источник
+                <span class="sort-icon">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedItems.map(item => (
+              <tr class="item-row" data-item-id={item.id}>
+                <td>
+                  {item.name}
+                  <span class="name-en">[{item.nameEn}]</span>
+                </td>
+                <td>{item.type}</td>
+                <td>{item.cost}</td>
+                <td>{item.weight}</td>
+                <td>{item.sourceBook}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div id="filter-popup" class="filter-popup">
+        <div class="filter-content">
+          <div class="filter-header">
+            <h3>Фильтры</h3>
+            <button id="close-filter" class="close-button">×</button>
+          </div>
+          
+          <div class="filter-section">
+            <h4>Тип предмета</h4>
+            <div id="type-filters" class="checkbox-group">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h4>Источник</h4>
+            <div id="source-filters" class="checkbox-group">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="reset-filters" class="reset-button">Сбросить все фильтры</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="item-details" class="item-details">
+        <div class="details-content">
+          <h2>Выберите предмет для просмотра</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { parseCurrencyString, convertToGold } from '../utils/currency';
+
+  function initializeItems() {
+    const searchInput = document.getElementById('item-search') as HTMLInputElement | null;
+    const itemRows = document.querySelectorAll<HTMLElement>('.item-row');
+    const sortableHeaders = document.querySelectorAll<HTMLElement>('.sortable');
+    const itemDetails = document.getElementById('item-details') as HTMLElement | null;
+    const filterButton = document.getElementById('filter-button');
+    const filterPopup = document.getElementById('filter-popup');
+    const closeButton = document.getElementById('close-filter');
+    const resetButton = document.getElementById('reset-filters');
+    const clearSearchButton = document.getElementById('clear-search');
+    const itemsCounter = document.getElementById('items-counter');
+    const items = JSON.parse(document.getElementById('items-data')?.getAttribute('data-items') || '[]');
+    let currentSort = { column: 'name', direction: 'asc' };
+
+    function filterItems() {
+      const searchTerm = searchInput?.value.toLowerCase() || '';
+      const selectedTypes = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="type"]:checked')).map(cb => cb.value);
+      const selectedSources = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="source"]:checked')).map(cb => cb.value);
+      
+      let visibleCount = 0;
+      let totalInSources = 0;
+      
+      // Calculate total items from selected sources (or all if no source filter)
+      items.forEach(item => {
+        const matchesSource = selectedSources.length === 0 || selectedSources.includes(item.sourceBook);
+        if (matchesSource) {
+          totalInSources++;
+        }
+      });
+      
+      itemRows.forEach(row => {
+        const itemId = row instanceof HTMLElement ? row.dataset.itemId : undefined;
+        const item = itemId ? items.find(i => i.id === itemId) : undefined;
+        if (!item) return;
+
+        const name = item.name.toLowerCase() + ' ' + item.nameEn.toLowerCase();
+        const type = item.type;
+        const source = item.sourceBook;
+        
+        const matchesSearch = name.includes(searchTerm);
+        const matchesType = selectedTypes.length === 0 || selectedTypes.includes(type);
+        const matchesSource = selectedSources.length === 0 || selectedSources.includes(source);
+        
+        const isVisible = matchesSearch && matchesType && matchesSource;
+        if (row instanceof HTMLElement) row.style.display = isVisible ? '' : 'none';
+        
+        if (isVisible) {
+          visibleCount++;
+        }
+      });
+      
+      // Update counter
+      if (itemsCounter) {
+        itemsCounter.textContent = `${visibleCount}/${totalInSources}`;
+      }
+      
+      // Update clear button visibility
+      if (clearSearchButton) {
+        clearSearchButton.style.display = searchTerm ? 'flex' : 'none';
+      }
+      
+      saveFilters();
+      updateFilterCount();
+    }
+
+    function sortItems(column: string) {
+      const tbody = document.querySelector('tbody');
+      const rows = Array.from(document.querySelectorAll('.item-row'));
+      
+      if (!tbody) return;
+      
+      // Update sort direction
+      if (currentSort.column === column) {
+        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort = { column, direction: 'asc' };
+      }
+      
+      // Update sort icons
+      sortableHeaders.forEach(header => {
+        const icon = header.querySelector('.sort-icon');
+        if (!icon) return;
+        
+        if (header.getAttribute('data-sort') === column) {
+          icon.textContent = currentSort.direction === 'asc' ? '↓' : '↑';
+        } else {
+          icon.textContent = '↕';
+        }
+      });
+      
+      // Sort rows
+      rows.sort((a, b) => {
+        let aValue = '';
+        let bValue = '';
+        
+        switch(column) {
+          case 'name':
+            aValue = a.querySelector('td')?.textContent?.toLowerCase() || '';
+            bValue = b.querySelector('td')?.textContent?.toLowerCase() || '';
+            break;
+          case 'type':
+            aValue = a.querySelectorAll('td')[1]?.textContent?.toLowerCase() || '';
+            bValue = b.querySelectorAll('td')[1]?.textContent?.toLowerCase() || '';
+            break;
+          case 'cost':
+            const aCost = parseCurrencyString(a.querySelectorAll('td')[2]?.textContent || '');
+            const bCost = parseCurrencyString(b.querySelectorAll('td')[2]?.textContent || '');
+            return currentSort.direction === 'asc'
+              ? convertToGold(aCost) - convertToGold(bCost)
+              : convertToGold(bCost) - convertToGold(aCost);
+            break;
+          case 'weight':
+            aValue = a.querySelectorAll('td')[3]?.textContent || '';
+            bValue = b.querySelectorAll('td')[3]?.textContent || '';
+            break;
+          case 'source':
+            aValue = a.querySelectorAll('td')[4]?.textContent || '';
+            bValue = b.querySelectorAll('td')[4]?.textContent || '';
+            break;
+        }
+        
+        return currentSort.direction === 'asc' 
+          ? aValue.localeCompare(bValue, 'ru')
+          : bValue.localeCompare(aValue, 'ru');
+      });
+      
+      // Reorder DOM
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    function showItemDetails(itemId: string) {
+      if (!itemDetails) return;
+
+      const item = items.find(i => i.id === itemId);
+      if (!item) return;
+
+      itemDetails.innerHTML = `
+        <div class="details-content">
+          <h2>${item.name} <span class="name-en">[${item.nameEn}]</span></h2>
+          <div class="item-meta">
+            <p><strong>Тип:</strong> ${item.type}</p>
+            <p><strong>Цена:</strong> ${item.cost} 
+              ${(() => {
+                const cost = parseCurrencyString(item.cost);
+                const goldValue = convertToGold(cost);
+                return goldValue !== cost.amount || cost.unit !== 'зм' 
+                  ? `(${goldValue} зм)` 
+                  : '';
+              })()}
+            </p>
+            <p><strong>Вес:</strong> ${item.weight}</p>
+            <p><strong>Источник:</strong> ${item.sourceBook}</p>
+          </div>
+          <div class="item-description">
+            ${item.description}
+          </div>
+        </div>
+      `;
+
+      // Add active class to selected row
+      itemRows.forEach(row => row.classList.remove('active'));
+      document.querySelector(`[data-item-id="${itemId}"]`)?.classList.add('active');
+      
+      // Update URL without page reload
+      const newUrl = `/items/${itemId}`;
+      window.history.pushState({ itemId }, '', newUrl);
+    }
+
+    // Add sort event listeners
+    sortableHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const column = header.getAttribute('data-sort');
+        if (column) sortItems(column);
+      });
+    });
+
+    searchInput?.addEventListener('input', filterItems);
+    
+    // Clear search functionality
+    clearSearchButton?.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        filterItems();
+      }
+    });
+    
+    // Filter system event listeners
+    filterButton?.addEventListener('click', togglePopup);
+    closeButton?.addEventListener('click', togglePopup);
+    filterPopup?.addEventListener('click', closePopup);
+    resetButton?.addEventListener('click', resetFilters);
+    
+    // Add event listeners for filter checkboxes using event delegation
+    filterPopup?.addEventListener('change', (e) => {
+      const target = e.target;
+      if (target instanceof HTMLInputElement && target.type === 'checkbox') {
+        filterItems();
+      }
+    });
+    
+    itemRows.forEach(row => {
+      row.addEventListener('click', () => {
+        const itemId = row instanceof HTMLElement ? row.dataset.itemId : undefined;
+        if (itemId) showItemDetails(itemId);
+      });
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', (event) => {
+      if (event.state?.itemId) {
+        showItemDetails(event.state.itemId);
+      } else {
+        // Clear selection
+        itemRows.forEach(row => row.classList.remove('active'));
+        if (itemDetails) {
+          itemDetails.innerHTML = `
+            <div class="details-content">
+              <h2>Выберите предмет для просмотра</h2>
+            </div>
+          `;
+        }
+      }
+    });
+
+    // Check if URL contains item ID on page load
+    const pathParts = window.location.pathname.split('/');
+    if (pathParts[1] === 'items' && pathParts[2]) {
+      showItemDetails(pathParts[2]);
+    }
+    
+    // Initialize filter system
+    initializeFilterOptions();
+    loadFilters();
+    
+    // Initialize counter
+    filterItems();
+    
+    // Initialize filter system
+    loadFilters();
+    
+    // Initialize counter
+    filterItems();
+
+
+    
+    // Initialize filter system functions
+    function initializeFilterOptions() {
+      // Get unique types
+      const types = [...new Set(items.map(item => item.type))].sort();
+      const typeFilters = document.getElementById('type-filters');
+      if (typeFilters) {
+        typeFilters.innerHTML = types.map(type => `
+          <label class="checkbox-label">
+            <input type="checkbox" name="type" value="${type}" />
+            ${type}
+          </label>
+        `).join('');
+      }
+
+      // Get unique sources
+      const sources = [...new Set(items.map(item => item.sourceBook))].sort();
+      const sourceFilters = document.getElementById('source-filters');
+      if (sourceFilters) {
+        sourceFilters.innerHTML = sources.map(source => `
+          <label class="checkbox-label">
+            <input type="checkbox" name="source" value="${source}" />
+            ${source}
+          </label>
+        `).join('');
+      }
+    }
+
+    // Load filters from localStorage
+    function loadFilters() {
+      const savedFilters = localStorage.getItem('itemFilters');
+      if (savedFilters) {
+        const filters = JSON.parse(savedFilters);
+        
+        // Apply saved filters
+        Object.entries(filters).forEach(([filterType, values]) => {
+          if (Array.isArray(values)) {
+            values.forEach(value => {
+              const checkbox = document.querySelector<HTMLInputElement>(`input[name="${filterType}"][value="${value}"]`);
+              if (checkbox) checkbox.checked = true;
+            });
+          }
+        });
+        
+        updateFilterCount();
+        filterItems();
+      }
+    }
+
+    // Initialize item tooltip for item links (load script and use window.ItemTooltip)
+    (function ensureItemTooltipAndInit() {
+      function ensureItemTooltip() {
+        return new Promise<NonNullable<Window['ItemTooltip']>>((resolve, reject) => {
+              if (window.ItemTooltip) return resolve(window.ItemTooltip);
+              if (document.querySelector('script[data-item-tooltip]')) {
+                // wait for loader to set window.ItemTooltip
+                const check = setInterval(() => {
+                  if (window.ItemTooltip) { clearInterval(check); resolve(window.ItemTooltip); }
+                }, 50);
+                setTimeout(() => { clearInterval(check); reject(new Error('timeout loading itemTooltip')); }, 5000);
+                return;
+              }
+          const s = document.createElement('script');
+          s.src = '/js/itemTooltip.js';
+          s.async = true;
+          s.setAttribute('data-item-tooltip', '1');
+          s.onload = () => {
+            if (window.ItemTooltip) resolve(window.ItemTooltip);
+            else reject(new Error('ItemTooltip не зарегистрирован после загрузки скрипта'));
+          };
+          s.onerror = (e) => { reject(e); };
+          document.head.appendChild(s);
+        });
+      }
+
+      ensureItemTooltip().then(ItemTooltip => {
+        try {
+          const itemData = JSON.parse(document.getElementById('items-data')?.getAttribute('data-items') || '[]');
+          const itemTooltipEl = document.createElement('div');
+          itemTooltipEl.id = 'item-tooltip';
+          itemTooltipEl.style.display = 'none';
+          itemTooltipEl.style.position = 'fixed';
+          itemTooltipEl.style.zIndex = '10000';
+          document.body.appendChild(itemTooltipEl);
+
+          const ItemCtor = ItemTooltip;
+          const itemTooltip = new ItemCtor();
+          itemTooltip.init(itemTooltipEl, itemData);
+        } catch (e) {
+          console.error('item tooltip init failed', e);
+        }
+      }).catch(err => console.error('failed loading itemTooltip script', err));
+    })();
+
+    // Save filters to localStorage
+    function saveFilters() {
+      const filters = {
+        type: Array.from(document.querySelectorAll<HTMLInputElement>('input[name="type"]:checked')).map(cb => cb.value),
+        source: Array.from(document.querySelectorAll<HTMLInputElement>('input[name="source"]:checked')).map(cb => cb.value)
+      };
+      
+      localStorage.setItem('itemFilters', JSON.stringify(filters));
+    }
+      
+    // Update filter count display
+    function updateFilterCount() {
+      const activeFilters = 
+        document.querySelectorAll('input[name="type"]:checked').length +
+        document.querySelectorAll('input[name="source"]:checked').length;
+      
+      const filterCount = document.getElementById('filter-count');
+      if (filterCount) {
+        filterCount.textContent = activeFilters.toString();
+        filterCount.style.display = activeFilters > 0 ? 'flex' : 'none';
+      }
+      
+      const filterButton = document.getElementById('filter-button');
+      if (filterButton) {
+        filterButton.classList.toggle('has-filters', activeFilters > 0);
+      }
+    }
+
+
+    // Toggle filter popup
+    function togglePopup() {
+      const filterPopup = document.getElementById('filter-popup');
+      if (filterPopup) {
+        filterPopup.classList.toggle('show');
+      }
+    }
+
+    // Close popup when clicking outside
+    function closePopup(e: MouseEvent) {
+      const filterPopup = document.getElementById('filter-popup');
+      if (filterPopup && e.target === filterPopup) {
+        filterPopup.classList.remove('show');
+      }
+    }
+
+    // Reset all filters
+    function resetFilters() {
+      document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+      localStorage.removeItem('itemFilters');
+      filterItems();
+    }
+  }
+
+
+  document.addEventListener('DOMContentLoaded', initializeItems);
+</script>
+
+<style>
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .items-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .search-container {
+    margin-bottom: 1rem;
+  }
+
+  .search-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .search-input-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem;
+    padding-right: 5rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+  }
+
+  .items-counter {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text);
+    opacity: 0.6;
+    font-size: 0.9rem;
+    pointer-events: none;
+    background: var(--card-bg);
+    padding: 0 0.25rem;
+    z-index: 1;
+  }
+
+  .clear-search-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: all 0.2s;
+  }
+
+  .clear-search-button:hover {
+    background: var(--nav-hover-bg);
+    opacity: 1;
+  }
+
+  .filter-button {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .filter-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-button.has-filters {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .filter-icon {
+    font-size: 1.2rem;
+  }
+
+  .filter-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .filter-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .filter-popup.show {
+    display: block;
+  }
+
+  .filter-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    min-width: 400px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .filter-header h3 {
+    margin: 0;
+    color: var(--primary);
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .close-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-section:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .filter-section h4 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background: var(--background);
+    border-radius: 0.25rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  .checkbox-label:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .filter-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .reset-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .reset-button:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .items-table {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 40%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 23%;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 12%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 10%;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: 15%;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  .sortable {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .sortable:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .sort-icon {
+    margin-left: 0.5rem;
+    opacity: 0.5;
+  }
+
+  .item-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .item-row:hover {
+    background: var(--nav-hover-bg);
+  }
+
+  .item-row.active {
+    background: var(--nav-hover-bg);
+  }
+
+  .name-en {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.8em;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .item-details {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+
+  .details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .item-meta {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .item-description {
+    line-height: 1.6;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+  }
+</style>
+
+
+<style>
+  .currency-info {
+    margin-top: 2rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .currency-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+
+  .currency-table th,
+  .currency-table td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: left;
+  }
+
+  .currency-table th {
+    background: var(--background);
+    font-weight: 600;
+  }
+</style>

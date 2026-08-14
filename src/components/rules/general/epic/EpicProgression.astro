@@ -1,0 +1,49 @@
+---
+interface Props {}
+---
+
+<div class="epic-progression">
+  <h3>Эпическая прогрессия</h3>
+  
+  <div class="progression-rules">
+    <p>После того, как персонажи достигают 20-го уровня, они больше не могут повышать уровни, однако они все еще могут становиться сильнее за счет получения дополнительных черт. Каждый персонаж получает одну черту по своему выбору за каждые 30 ОП, которые он зарабатывает сверх 310 ОП. Эпические черты особенно подходят для этих бонусных черт, но игрок может выбрать любую черту, требованиям которой его персонаж 20 уровня соответствует.</p>
+  </div>
+
+  <div class="epic-notes">
+    <h4>Примечания:</h4>
+    <ul>
+      <li>При достижении максимума характеристики (30) дальнейшее улучшение невозможно</li>
+      <li>Каждую черту можно взять только 1 раз, если в её описании не указано иное в подразделе «Повторяемость».</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .epic-progression {
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+  }
+
+  .progression-rules, .epic-notes {
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    color: var(--primary);
+    margin: 1rem 0 0.5rem;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

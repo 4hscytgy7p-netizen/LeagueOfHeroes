@@ -1,0 +1,64 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  features: {
+    level: number;
+    name: string;
+    description: string;
+  }[];
+}
+
+const { name, description, features } = Astro.props;
+---
+
+<div class="order-section">
+  <h3 class="order-name">{name}</h3>
+  <p class="order-description">{description}</p>
+  
+  <div class="order-features">
+    {features.map(feature => (
+      <div class="order-feature">
+        <h4>{feature.level}-й уровень: {feature.name}</h4>
+        <p>{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .order-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 2rem;
+  }
+
+  .order-name {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .order-description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .order-features {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .order-feature {
+    padding: 1rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+  }
+
+  .order-feature h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+</style>

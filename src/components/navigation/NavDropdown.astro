@@ -1,0 +1,197 @@
+---
+interface Props {
+  label: string;
+  links: Array<{ href: string; label: string; featured?: boolean; }>;
+}
+
+const { label, links } = Astro.props;
+---
+
+<div class="dropdown">
+  <button class="dropdown-trigger">{label}</button>
+  <div class="dropdown-content">
+    {links.map(link => (
+      <a href={link.href} class:list={['dropdown-item', { 'dropdown-item-featured': link.featured }]}> 
+        <span>{link.label}</span>
+        {link.featured && <small>Конструктор</small>}
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-trigger {
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dropdown-trigger::after {
+    content: '▼';
+    font-size: 0.8em;
+    margin-left: 0.5rem;
+    transition: transform 0.2s;
+  }
+
+  .dropdown.active .dropdown-trigger::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-trigger:hover {
+    color: var(--primary);
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    min-width: 200px;
+    z-index: 1000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width: 1100px) {
+    .dropdown {
+      width: 100%;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .dropdown:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 1rem;
+    }
+
+    .dropdown-content {
+      position: static;
+      border: none;
+      box-shadow: none;
+      display: none;
+      width: 100%;
+      background: var(--background);
+      padding: 0.5rem 0;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      padding: 0.75rem 1.5rem;
+    }
+
+    .dropdown-item:first-child,
+    .dropdown-item:last-child {
+      border-radius: 0;
+    }
+  }
+
+  .dropdown-item {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+    transition: all 0.2s;
+  }
+
+  .dropdown-item:hover {
+    background: var(--nav-hover-bg);
+    color: var(--primary);
+  }
+
+  .dropdown-item-featured {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 0.45rem;
+    padding: 0.85rem 0.8rem;
+    border: 1px solid color-mix(in srgb, var(--primary) 72%, var(--card-border));
+    border-radius: 0.45rem;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--primary) 20%, var(--card-bg)),
+      color-mix(in srgb, var(--primary) 7%, var(--card-bg))
+    );
+    color: color-mix(in srgb, var(--primary) 88%, white);
+    font-weight: 800;
+    box-shadow: 0 5px 16px color-mix(in srgb, var(--primary) 12%, transparent);
+  }
+
+  .dropdown-item-featured::before {
+    content: '✦';
+    flex: 0 0 auto;
+    color: var(--primary);
+    font-size: 1rem;
+  }
+
+  .dropdown-item-featured > span {
+    flex: 1 1 auto;
+  }
+
+  .dropdown-item-featured small {
+    padding: 0.2rem 0.38rem;
+    border: 1px solid color-mix(in srgb, var(--primary) 48%, transparent);
+    border-radius: 999px;
+    color: var(--primary);
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .dropdown-item-featured:hover {
+    border-color: var(--primary);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--primary) 28%, var(--card-bg)),
+      color-mix(in srgb, var(--primary) 12%, var(--card-bg))
+    );
+    box-shadow: 0 7px 20px color-mix(in srgb, var(--primary) 20%, transparent);
+  }
+
+  .dropdown-item:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .dropdown-item:last-child {
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  .dropdown-item-featured:first-child,
+  .dropdown-item-featured:last-child {
+    border-radius: 0.45rem;
+  }
+
+  @media (max-width: 1100px) {
+    .dropdown-item-featured {
+      margin: 0.45rem 0.75rem;
+      border-radius: 0.45rem;
+    }
+  }
+</style>

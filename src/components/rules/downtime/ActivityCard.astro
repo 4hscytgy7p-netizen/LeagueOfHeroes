@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  requirements?: string[];
+  duration?: string;
+  cost?: string;
+}
+
+const { title, description, requirements, duration, cost } = Astro.props;
+---
+
+<div class="activity-card">
+  <h3>{title}</h3>
+  <p class="description">{description}</p>
+  
+  {duration && (
+    <div class="detail">
+      <strong>Продолжительность:</strong> {duration}
+    </div>
+  )}
+  
+  {cost && (
+    <div class="detail">
+      <strong>Стоимость:</strong> {cost}
+    </div>
+  )}
+  
+  {requirements && requirements.length > 0 && (
+    <div class="requirements">
+      <strong>Требования:</strong>
+      <ul>
+        {requirements.map(req => <li>{req}</li>)}
+      </ul>
+    </div>
+  )}
+</div>
+
+<style>
+  .activity-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .detail {
+    margin-bottom: 0.5rem;
+  }
+
+  .requirements {
+    margin-top: 1rem;
+  }
+
+  .requirements ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .requirements li {
+    margin-bottom: 0.5rem;
+  }
+</style>

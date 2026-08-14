@@ -1,0 +1,62 @@
+import { aasimar } from './aasimar';
+import { human } from './human';
+import { tortle } from './tortle';
+import { gnome } from './gnome';
+import { dwarf } from './dwarf';
+import { goliath } from './goliath';
+import { dragonborn } from './dragonborn';
+import { elf } from './elf';
+import { tiefling } from './tiefling';
+import { orc } from './orc';
+import { halfling } from './halfling';
+import { genasi } from './genasi';
+import { aarakocra } from './aarakocra';
+import { autognome } from './autognome';
+import { bugbear } from './bugbear';
+import { giff } from './giff';
+import { goblin } from './goblin';
+import { vedalken } from './vedalken';
+import { verdan } from './verdan';
+import { simichybrid } from './simichybrid';
+import { shifter } from './shifter';
+import { centaur } from './centaur';
+import { changeling } from './changeling';
+import { customlineage } from './customlineage';
+import { fairy } from './fairy';
+//import { eladrin } from './eladrin';
+import { firbolg } from './firbolg';
+import { harengon } from './harengon';
+import { gith } from './gith';
+import { hobgoblin } from './hobgoblin';
+import { kenku } from './kenku';
+import { kobold } from './kobold';
+import { lizardfolk } from './lizardfolk';
+import { minotaur } from './minotaur';
+import { triton } from './triton';
+import { tabaxi } from './tabaxi';
+import { satyr } from './satyr';
+import { yuanti } from './yuanti';
+import { halfelf } from './halfelf';
+import { grung } from './grung';
+import { dhampir } from './dhampir';
+import { hadozee } from './hadozee';
+import { halforc } from './halforc';
+import { hexblood } from './hexblood';
+import { kalashtar } from './kalashtar';
+import { kender } from './kender';
+import { leonin } from './leonin';
+import { locathah } from './locathah';
+import { loxodon } from './loxodon';
+import { owlin } from './owlin';
+import { plasmoid } from './plasmoid';
+import { reborn } from './reborn';
+import { thrikreen } from './thrikreen';
+import { warforged } from './warforged';
+import { lupin } from './lupin';
+
+
+const allSpecies = [lupin,aasimar,human,tortle,gnome,dwarf,goliath,dragonborn,elf,tiefling,orc,halfling,genasi,aarakocra,autognome,bugbear,giff,goblin,vedalken,verdan,simichybrid,shifter,centaur,changeling,customlineage,fairy,firbolg,harengon,gith,hobgoblin,kenku,kobold,lizardfolk,minotaur,triton,tabaxi,satyr,yuanti,halfelf,grung,dhampir,hadozee,halforc,hexblood,kalashtar,kender,leonin,locathah,loxodon,owlin,plasmoid,reborn,thrikreen,warforged];
+
+export const speciesData = allSpecies.sort((a, b) => 
+  a.name.localeCompare(b.name, 'ru')
+);

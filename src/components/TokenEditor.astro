@@ -1,0 +1,474 @@
+---
+---
+
+<div class="token-editor">
+    <div class="controls">
+      <div class="control-row">
+        <label>Окантовка:</label>
+        <select id="border-select">
+          <option value="none">Нет</option>
+          <option value="preset-1">Окантовка: круглая (preset)</option>
+          <option value="preset-2">Окантовка: двойное кольцо (preset)</option>
+          <option value="preset-3">Окантовка: декоративная (preset)</option>
+        </select>
+        <button id="upload-border">Загрузить свою</button>
+        <input id="border-file" type="file" accept="image/svg+xml,image/png" style="display:none">
+        <label id="border-color-label" style="display:none">Цвет окантовки: <input id="border-color" type="color" value="#ffffff"></label>
+      </div>
+  
+      <div class="control-row">
+        <label>Фон (при прозрачности): <input id="bg-color" type="color" value="#000000"></label>
+        <label>Масштаб: <input id="scale-range" type="range" min="0.2" max="3" step="0.01" value="1"></label>
+        <label>Поворот: <input id="rotate-range" type="range" min="-180" max="180" step="1" value="0"></label>
+      </div>
+  
+      <div class="control-row">
+        <input id="upload-image" type="file" accept="image/*">
+        <button id="center-btn">Центр</button>
+        <button id="clear-btn">Очистить</button>
+        
+        <select id="export-scale"><option value="1">Экспорт 512</option><option value="2">Экспорт 1024</option><option value="3">Экспорт 1536</option></select>
+        <button id="download-btn">Скачать PNG</button>
+      </div>
+    </div>
+  
+    <div class="preset-thumbs" id="preset-thumbs">
+      <label>Пресеты окантовки:</label>
+      <div id="border-thumbs" class="thumbs-row" aria-hidden="false"></div>
+    </div>
+  
+    <div class="canvas-wrap">
+      <div id="konva-container"></div>
+    </div>
+  </div>
+  
+  <style>
+    .token-editor { display:flex; flex-direction:column; gap:0.75rem; }
+    .controls { background:var(--card-bg); border:1px solid var(--card-border); padding:0.75rem; border-radius:8px; box-shadow:var(--card-shadow); }
+    .control-row { display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap; }
+    .canvas-wrap { display:flex; justify-content:center; align-items:center; }
+    #konva-container { width:520px; height:520px; background: transparent; border-radius:8px; }
+    /* keep editor responsive */
+    @media(max-width:800px){ #konva-container{width:320px;height:320px;} }
+    .preset-thumbs { display:block; max-height:520px; overflow:auto; padding:0.5rem; background:var(--card-bg); border:1px solid var(--card-border); border-radius:8px; }
+    .thumbs-grid { display:flex; flex-direction:column; gap:0.5rem; }
+    .thumbs-grid .thumb { width:96px; height:96px; display:flex; align-items:center; justify-content:center; background:var(--card-bg); border-radius:8px; cursor:pointer; border:2px solid transparent; padding:6px; }
+    .thumbs-grid .thumb img { max-width:84px; max-height:84px; object-fit:contain; }
+    .thumbs-grid .thumb.selected { outline:3px solid var(--accent); }
+  </style>
+  
+  <script type="module">
+    // Load Konva from CDN and then initialize editor
+    (function loadKonvaAndInit(){
+      const src = 'https://unpkg.com/konva@8/konva.min.js';
+      if (window.Konva) { initTokenEditor(); return; }
+      const s = document.createElement('script'); s.src = src; s.onload = () => initTokenEditor(); s.onerror = () => console.error('Failed to load Konva'); document.head.appendChild(s);
+    })();
+  
+    function initTokenEditor(){
+      const Konva = window.Konva;
+      const container = document.getElementById('konva-container');
+      const size = Math.max(320, 512);
+      const stageSize = container.clientWidth || 512;
+  
+      const stage = new Konva.Stage({ container: 'konva-container', width: stageSize, height: stageSize });
+      const layer = new Konva.Layer();
+      stage.add(layer);
+  
+      // clipping group to mask image to circular token area
+      const clipGroup = new Konva.Group();
+      layer.add(clipGroup);
+      const MASK_INNER_RADIUS = 200; // base radius in 512px art used by presets
+      function updateClip(){
+        const cx = stage.width()/2; const cy = stage.height()/2;
+        const scale = stage.width()/512;
+        const r = MASK_INNER_RADIUS * scale;
+        clipGroup.clipFunc(function(ctx){ ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.closePath(); });
+        layer.draw();
+      }
+      window.addEventListener('resize', updateClip);
+  
+      // background rect
+      const bg = new Konva.Rect({ x:0, y:0, width: stage.width(), height: stage.height(), fill: 'transparent' });
+      layer.add(bg);
+  
+      // image node
+      let imgNode = null;
+      let img = new Image();
+  
+      function resetImageTransform(){
+        if (!imgNode) return;
+        imgNode.position({ x: stage.width()/2, y: stage.height()/2 });
+        imgNode.offset({ x: imgNode.width()/2, y: imgNode.height()/2 });
+        imgNode.scale({ x: Math.min(stage.width()/imgNode.width(), stage.height()/imgNode.height()), y: Math.min(stage.width()/imgNode.width(), stage.height()/imgNode.height()) });
+        imgNode.rotation(0);
+        layer.draw();
+        updateControlsFromNode();
+      }
+  
+      // border image (SVG) as image on top
+      let borderImg = null;
+      let currentBorderSvg = null;
+  
+      // helper to load Art into imgNode
+      function loadArtAsKonva(imgSrc){
+        img = new window.Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+          if (imgNode) imgNode.destroy();
+          imgNode = new Konva.Image({ image: img, draggable: true });
+          // set initial size to natural size but we will scale via scale control
+          imgNode.width(img.width); imgNode.height(img.height);
+          // center & fit
+          imgNode.position({ x: stage.width()/2, y: stage.height()/2 });
+          imgNode.offset({ x: img.width/2, y: img.height/2 });
+          const s = Math.min(stage.width()/img.width, stage.height()/img.height);
+          imgNode.scale({ x: s, y: s });
+          // add to clipGroup so content is masked to circular token area
+          clipGroup.add(imgNode);
+          imgNode.moveToBottom(); // below border
+          layer.draw();
+          detectTransparency(img);
+          bindNodeEvents();
+          updateClip();
+        };
+        img.onerror = (e) => console.error('Image load error', e);
+        img.src = imgSrc;
+      }
+  
+      let transformer = null;
+      function bindNodeEvents(){
+        if (!imgNode) return;
+        imgNode.on('dragmove', () => updateControlsFromNode());
+        // attach Konva.Transformer for resize/rotate handles
+        if (transformer) transformer.destroy();
+        transformer = new Konva.Transformer({
+          nodes: [imgNode],
+          rotateEnabled: true,
+          enabledAnchors: ['top-left','top-right','bottom-left','bottom-right'],
+          anchorSize: 12,
+          anchorFill: '#ffffff',
+          anchorStroke: 'var(--accent)',
+          anchorStrokeWidth: 2,
+          borderStroke: 'rgba(255,255,255,0.6)',
+          borderDash: [6,4],
+          boundBoxFunc: function(oldBox, newBox){
+            // allow free transform
+            return newBox;
+          }
+        });
+        layer.add(transformer);
+        layer.draw();
+        transformer.on('transform', () => updateControlsFromNode());
+      }
+  
+      function updateControlsFromNode(){
+        const scaleRange = document.getElementById('scale-range');
+        const rotateRange = document.getElementById('rotate-range');
+        if (!imgNode) return;
+        scaleRange.value = imgNode.scaleX().toFixed(2);
+        rotateRange.value = imgNode.rotation().toFixed(0);
+      }
+  
+      // border preset SVGs
+      const presetSvg1 = `<?xml version="1.0" encoding="UTF-8"?>
+      <svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+        <defs>
+          <mask id='m1'><rect width='100%' height='100%' fill='white'/><circle cx='256' cy='256' r='200' fill='black'/></mask>
+        </defs>
+        <rect width='100%' height='100%' fill='none'/>
+        <g mask='url(#m1)'>
+          <rect width='100%' height='100%' fill='#ffffff' />
+        </g>
+        <circle cx='256' cy='256' r='208' fill='none' stroke='#ffffff' stroke-width='24' />
+      </svg>`;
+  
+      const presetSvg2 = `<?xml version="1.0" encoding="UTF-8"?>
+      <svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+        <circle cx='256' cy='256' r='250' fill='none' stroke='#ffffff' stroke-width='8' />
+        <circle cx='256' cy='256' r='200' fill='none' stroke='#ffffff' stroke-width='20' />
+      </svg>`;
+  
+      const presetSvg3 = `<?xml version="1.0" encoding="UTF-8"?>
+      <svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+        <rect width='100%' height='100%' fill='none'/>
+        <g fill='none' stroke='#ffffff' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'>
+          <path d='M256 40 C360 40 472 152 472 256 C472 360 360 472 256 472 C152 472 40 360 40 256 C40 152 152 40 256 40 Z' />
+        </g>
+        <circle cx='256' cy='256' r='180' fill='none' stroke='#ffffff' stroke-width='6' />
+      </svg>`;
+  
+      // function to set border image from SVG string (optional color replace)
+      // DOMParser-based SVG colorization: reliable replacement of fill/stroke/style where safe
+      function colorizeSvg(svgText, color){
+        if (!color) return svgText;
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(svgText, 'image/svg+xml');
+          // if parse error, fallback to string replace
+          if (doc.querySelector && doc.querySelector('parsererror')) throw new Error('parse error');
+  
+          // helper to normalize color value (ensure starts with #)
+          const c = color;
+  
+          // walk all elements and update fill/stroke attributes and inline styles where they contain literal colors
+          const all = doc.querySelectorAll('*');
+          all.forEach(el => {
+            // attributes
+            ['fill','stroke'].forEach(attr => {
+              if (el.hasAttribute(attr)){
+                const v = el.getAttribute(attr).trim().toLowerCase();
+                // only replace simple literal colors (hex or the word 'white'/'#fff') to avoid touching gradients/none/opacity values
+                if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v) || /^(white|#fff|#ffffff)$/i.test(v)){
+                  el.setAttribute(attr, c);
+                }
+              }
+            });
+            // inline style
+            if (el.hasAttribute('style')){
+              let s = el.getAttribute('style');
+              // replace fill:... and stroke:... occurrences if they are simple hex or white
+              s = s.replace(/(fill\s*:\s*)(#(?:[0-9a-f]{3,6})|white|#fff|#ffffff)/ig, `$1${c}`);
+              s = s.replace(/(stroke\s*:\s*)(#(?:[0-9a-f]{3,6})|white|#fff|#ffffff)/ig, `$1${c}`);
+              el.setAttribute('style', s);
+            }
+          });
+  
+          const serializer = new XMLSerializer();
+          return serializer.serializeToString(doc.documentElement);
+        } catch (e) {
+          // fallback to safe string replacements
+          try {
+            let s = svgText.replace(/#fff(?:fff)?/ig, color);
+            s = s.replace(/(fill|stroke)\s*=\s*"(#(?:[0-9a-fA-F]{3,6}|[a-fA-F0-9]{6}))"/ig, `$1="${color}"`);
+            s = s.replace(/style\s*=\s*"([^"]*)"/ig, function(_, st){
+              return 'style="' + st.replace(/(fill|stroke)\s*:\s*#(?:[0-9a-fA-F]{3,6})/ig, `$1:${color}`) + '"';
+            });
+            return s;
+          } catch (e2){
+            return svgText.replace(/#ffffff/ig, color);
+          }
+        }
+      }
+  
+      function setBorderFromSvg(svgText, color){
+        currentBorderSvg = svgText;
+        const finalSvg = colorizeSvg(svgText, color);
+        const blob = new Blob([finalSvg], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const bImg = new Image();
+        bImg.crossOrigin = 'anonymous';
+        bImg.onload = () => {
+          // always show border overlay now
+          if (borderImg) borderImg.destroy();
+          borderImg = new Konva.Image({ image: bImg, listening:false });
+          borderImg.width(stage.width()); borderImg.height(stage.height());
+          layer.add(borderImg);
+          borderImg.moveToTop();
+          layer.draw();
+          URL.revokeObjectURL(url);
+        };
+        bImg.onerror = (e) => console.error('Border load error', e);
+        bImg.src = url;
+      }
+  
+      // UI wiring
+      const uploadInput = document.getElementById('upload-image');
+      const clearBtn = document.getElementById('clear-btn');
+      const centerBtn = document.getElementById('center-btn');
+      const downloadBtn = document.getElementById('download-btn');
+      const scaleRange = document.getElementById('scale-range');
+      const rotateRange = document.getElementById('rotate-range');
+      const exportScale = document.getElementById('export-scale');
+      const borderSelect = document.getElementById('border-select');
+      const borderFile = document.getElementById('border-file');
+      const uploadBorder = document.getElementById('upload-border');
+      const borderColorInput = document.getElementById('border-color');
+      const borderColorLabel = document.getElementById('border-color-label');
+      const bgColorInput = document.getElementById('bg-color');
+  
+      uploadInput?.addEventListener('change', (e) => {
+        const f = e.target.files && e.target.files[0];
+        if (!f) return;
+        const url = URL.createObjectURL(f);
+        loadArtAsKonva(url);
+      });
+  
+      uploadBorder?.addEventListener('click', () => borderFile.click());
+      borderFile?.addEventListener('change', (e) => {
+        const f = e.target.files && e.target.files[0];
+        if (!f) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          currentBorderSvg = reader.result;
+          setBorderFromSvg(reader.result, borderColorInput.value);
+        };
+        reader.readAsText(f);
+      });
+  
+      borderSelect?.addEventListener('change', (e) => {
+        const val = e.target.value;
+        if (val === 'preset-1') { currentBorderSvg = presetSvg1; setBorderFromSvg(presetSvg1, borderColorInput.value); borderColorLabel.style.display = 'inline-block'; }
+        else if (val === 'preset-2') { currentBorderSvg = presetSvg2; setBorderFromSvg(presetSvg2, borderColorInput.value); borderColorLabel.style.display = 'inline-block'; }
+        else if (val === 'preset-3') { currentBorderSvg = presetSvg3; setBorderFromSvg(presetSvg3, borderColorInput.value); borderColorLabel.style.display = 'inline-block'; }
+        else { if (borderImg) { borderImg.destroy(); borderImg = null; layer.draw(); } borderColorLabel.style.display = 'none'; }
+      });
+  
+      borderColorInput?.addEventListener('input', () => {
+        const val = borderSelect.value;
+        if (val === 'preset-1') setBorderFromSvg(presetSvg1, borderColorInput.value);
+        else if (val === 'preset-2') setBorderFromSvg(presetSvg2, borderColorInput.value);
+        else if (val === 'preset-3') setBorderFromSvg(presetSvg3, borderColorInput.value);
+        else if (currentBorderSvg) setBorderFromSvg(currentBorderSvg, borderColorInput.value);
+      });
+  
+      // Build thumbnail buttons from public folder
+      (async function buildThumbs(){
+        const thumbContainer = document.getElementById('border-thumbs');
+        if (!thumbContainer) return;
+        // try to load thumbs manifest; fallback to embedded presets
+        let presetFiles = null;
+        try {
+          const res = await fetch('/images/borders/thumbs.json');
+          if (res.ok) presetFiles = await res.json();
+        } catch (e) { /* ignore */ }
+        if (!presetFiles) presetFiles = [
+          { id: 'preset-1', thumb: '/images/borders/preset1.svg', url: '/images/borders/preset1.svg' },
+          { id: 'preset-2', thumb: '/images/borders/preset2.svg', url: '/images/borders/preset2.svg' },
+          { id: 'preset-3', thumb: '/images/borders/preset3.svg', url: '/images/borders/preset3.svg' }
+        ];
+  
+        function clearThumbSelection(){ Array.from(thumbContainer.querySelectorAll('.thumb')).forEach(i=>i.classList.remove('selected')); }
+        // create a thumbs grid container
+        const grid = document.createElement('div'); grid.className = 'thumbs-grid';
+        thumbContainer.appendChild(grid);
+        for (const p of presetFiles){
+          const wrap = document.createElement('div'); wrap.className = 'thumb'; wrap.dataset.id = p.id;
+          const img = document.createElement('img'); img.src = p.thumb || p.url; img.alt = p.id;
+          wrap.appendChild(img);
+          wrap.addEventListener('click', async () => {
+            try {
+              const res = await fetch(p.url);
+              const txt = await res.text();
+              currentBorderSvg = txt;
+              borderSelect.value = p.id;
+              clearThumbSelection(); wrap.classList.add('selected'); borderColorLabel.style.display = 'inline-block';
+              setBorderFromSvg(txt, borderColorInput.value);
+            } catch (e) { console.error('Failed to load preset', e); }
+          });
+          grid.appendChild(wrap);
+        }
+        // remove toggle button code (presets visible by default)
+      })();
+  
+      // Photoshop-like panning: hold Space to pan (or click empty area)
+      let isSpace = false;
+      window.addEventListener('keydown', (ev) => { if (ev.code === 'Space') { isSpace = true; document.body.style.cursor = 'grab'; ev.preventDefault(); } });
+      window.addEventListener('keyup', (ev) => { if (ev.code === 'Space') { isSpace = false; document.body.style.cursor = ''; } });
+  
+      stage.on('mousedown touchstart', (e) => {
+        if (!imgNode) return;
+        // if space pressed or clicked on stage background (not a node), start dragging the image
+        const evt = e.evt || (e.e); // touch compatibility
+        const pos = stage.getPointerPosition();
+        const shape = stage.getIntersection(pos);
+        const isStageClick = !shape;
+        if (isSpace || isStageClick) {
+          try { imgNode.startDrag(); document.body.style.cursor = 'grabbing'; } catch (err) { }
+        }
+      });
+      stage.on('mouseup touchend', () => { if (imgNode) { try { imgNode.stopDrag(); } catch (e) {} document.body.style.cursor = ''; } });
+  
+      clearBtn?.addEventListener('click', () => {
+        if (imgNode) { imgNode.destroy(); imgNode = null; }
+        if (borderImg) { borderImg.destroy(); borderImg = null; }
+        if (transformer) { transformer.destroy(); transformer = null; }
+        layer.draw();
+      });
+  
+      centerBtn?.addEventListener('click', resetImageTransform);
+  
+      scaleRange?.addEventListener('input', (e) => {
+        if (!imgNode) return;
+        const v = parseFloat(e.target.value);
+        imgNode.scale({ x: v, y: v }); layer.draw();
+      });
+      rotateRange?.addEventListener('input', (e) => { if (!imgNode) return; imgNode.rotation(parseFloat(e.target.value)); layer.draw(); });
+  
+      bgColorInput?.addEventListener('input', () => { bg.fill(bgColorInput.value); layer.draw(); });
+  
+      function detectTransparency(image){
+        try {
+          const tcanvas = document.createElement('canvas');
+          const w = Math.min(128, image.width);
+          const h = Math.min(128, image.height);
+          tcanvas.width = w; tcanvas.height = h;
+          const ctx = tcanvas.getContext('2d');
+          ctx.drawImage(image, 0, 0, w, h);
+          const data = ctx.getImageData(0,0,w,h).data;
+          let hasTransparent = false;
+          for (let i=3;i<data.length;i+=4){ if (data[i] < 250) { hasTransparent = true; break; } }
+          if (hasTransparent) { bgColorInput.parentElement.style.display = 'inline-block'; }
+          else { bgColorInput.parentElement.style.display = 'none'; }
+        } catch (e) { console.error('alpha detect', e); }
+      }
+  
+      downloadBtn?.addEventListener('click', async () => {
+        const scale = parseInt(exportScale.value,10) || 1;
+        // compute pixelRatio so exported image is 512*scale px
+        const targetBase = 512; // base export size
+        const pixelRatio = (targetBase * scale) / stage.width();
+  
+        try {
+          // hide transformer controls for clean export
+          if (transformer) { transformer.hide(); layer.draw(); }
+          const dataURL = stage.toDataURL({ pixelRatio: pixelRatio, mimeType: 'image/png', quality: 1 });
+          if (transformer) { transformer.show(); layer.draw(); }
+          // convert dataURL to blob
+          const res = await fetch(dataURL);
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a'); a.href = url; a.download = 'token.png'; a.click();
+          URL.revokeObjectURL(url);
+        } catch (e) {
+          console.error('Export failed, falling back to manual canvas export', e);
+          // fallback: previous manual method
+          const exportSize = 512 * scale;
+          const exportCanvas = document.createElement('canvas');
+          exportCanvas.width = exportSize; exportCanvas.height = exportSize;
+          const exportCtx = exportCanvas.getContext('2d');
+          exportCtx.fillStyle = bg.fill(); exportCtx.fillRect(0,0,exportSize,exportSize);
+          if (imgNode) {
+            const imgScale = imgNode.scaleX();
+            const drawW = imgNode.width() * imgScale * (exportSize / stage.width());
+            const drawH = imgNode.height() * imgScale * (exportSize / stage.height());
+            const dx = (imgNode.x() - imgNode.offsetX()) * (exportSize / stage.width());
+            const dy = (imgNode.y() - imgNode.offsetY()) * (exportSize / stage.height());
+            // apply circular clip to mimic on-canvas mask
+            const maskR = MASK_INNER_RADIUS * (exportSize / 512);
+            exportCtx.save();
+            exportCtx.beginPath();
+            exportCtx.arc(exportSize/2, exportSize/2, maskR, 0, Math.PI*2);
+            exportCtx.closePath();
+            exportCtx.clip();
+            exportCtx.translate(dx + drawW/2, dy + drawH/2);
+            exportCtx.rotate(imgNode.rotation() * Math.PI / 180);
+            exportCtx.drawImage(img, -drawW/2, -drawH/2, drawW, drawH);
+            exportCtx.restore();
+          }
+          if (borderImg) {
+            const b = borderImg.image();
+            exportCtx.drawImage(b, 0, 0, exportSize, exportSize);
+          }
+          exportCanvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = 'token.png'; a.click(); URL.revokeObjectURL(url);
+          }, 'image/png');
+        }
+      });
+  
+      // initial draw
+      layer.draw();
+    }
+  </script>
+  

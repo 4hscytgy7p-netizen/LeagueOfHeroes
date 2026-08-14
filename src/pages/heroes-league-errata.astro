@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ErrataCategory from '../components/rules/errata/ErrataCategory.astro';
+import WeaponRestrictions from '../components/rules/errata/WeaponRestrictions.astro';
+import RaceAttributes from '../components/rules/errata/RaceAttributes.astro';
+import RaceLineages from '../components/rules/errata/RaceLineages.astro';
+import IllegalGoods from '../components/rules/errata/IllegalGoods.astro';
+import IllegalGoodsPrices from '../components/rules/errata/IllegalGoodsPrices.astro';
+import Tattoos from '../components/rules/errata/Tattoos.astro';
+import Containers from '../components/rules/errata/Containers.astro';
+import OversizedWeapons from '../components/rules/errata/OversizedWeapons.astro';
+import LegendaryItems from '../components/rules/errata/LegendaryItems.astro';
+import Injuries from '../components/rules/errata/Injuries.astro';
+import ConsumableComponent from '../components/rules/errata/ConsumableComponent.astro';
+---
+
+<Layout title="Эррата Лиги Героев">
+  <div class="content">
+    <h1>Эррата Лиги Героев</h1>
+    
+    <div class="errata-container">
+      <WeaponRestrictions />
+      <RaceAttributes />
+      <!--<RaceLineages />
+      <IllegalGoods />
+      <IllegalGoodsPrices />
+      <LegendaryItems />
+      <Tattoos />-->
+      <Containers />
+      <OversizedWeapons />
+      <Injuries />
+      <ConsumableComponent />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+
+</style>

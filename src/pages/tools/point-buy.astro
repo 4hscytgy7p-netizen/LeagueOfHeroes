@@ -1,0 +1,234 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StatRow from '../../components/tools/point-buy/StatRow.astro';
+import { STAT_NAMES } from '../../utils/pointBuy';
+---
+
+<Layout title="Point Buy калькулятор">
+  <div class="content">
+    <h1 class="text-center">Point Buy калькулятор</h1>
+    <p class="calculator-description">
+      Распределите 27 очков между шестью характеристиками. Базовые значения
+      можно повышать от 8 до 15. Затем распределите 3 очка бонуса
+      предыстории: +2 и +1 либо три раза по +1; итоговое значение
+      характеристики на этом этапе не может превышать 17.
+    </p>
+    
+    <div class="calculator">
+      <table>
+        <thead>
+          <tr>
+            <th>Характеристика</th>
+            <th>Значение</th>
+            <th>Бонус предыстории</th>
+            <th>Итого</th>
+            <th>Стоимость</th>
+          </tr>
+        </thead>
+        <tbody id="stats-table">
+          <!-- StatRows will be rendered here by JavaScript -->
+        </tbody>
+      </table>
+
+      <div class="controls">
+        <h3>Оставшиеся очки: <span id="points-remaining">27</span>/27</h3>
+        <h3>Оставшийся бонус предыстории: <span id="bonuses-remaining">3</span>/3</h3>
+        <button id="reset-btn" class="reset-btn">Сбросить</button>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { COST_TABLE, INITIAL_STATS, STAT_NAMES } from '../../utils/pointBuy';
+  import type { Stats } from '../../utils/pointBuy';
+
+  let stats: Stats = JSON.parse(JSON.stringify(INITIAL_STATS));
+  let points = 27;
+
+  function renderStats() {
+    const table = document.getElementById('stats-table');
+    const pointsDisplay = document.getElementById('points-remaining');
+    const bonusesDisplay = document.getElementById('bonuses-remaining');
+    
+    if (!table || !pointsDisplay || !bonusesDisplay) return;
+
+    table.innerHTML = '';
+    pointsDisplay.textContent = points.toString();
+    bonusesDisplay.textContent = String(
+      3 - Object.values(stats).reduce((sum, stat) => sum + stat.racial, 0)
+    );
+
+    Object.entries(stats).forEach(([stat, values]) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${STAT_NAMES[stat]}</td>
+        <td>
+          <button class="stat-btn" data-stat="${stat}" data-action="decrease-base">-</button>
+          ${values.base}
+          <button class="stat-btn" data-stat="${stat}" data-action="increase-base">+</button>
+        </td>
+        <td>
+          <button class="stat-btn" data-stat="${stat}" data-action="decrease-racial">-</button>
+          ${values.racial}
+          <button class="stat-btn" data-stat="${stat}" data-action="increase-racial">+</button>
+        </td>
+        <td>${values.base + values.racial}</td>
+        <td>${COST_TABLE[values.base] || 0}</td>
+      `;
+      table.appendChild(row);
+    });
+  }
+
+  // Initialize calculator
+  document.addEventListener('DOMContentLoaded', () => {
+    renderStats();
+    
+    document.getElementById('reset-btn')?.addEventListener('click', () => {
+      stats = JSON.parse(JSON.stringify(INITIAL_STATS));
+      points = 27;
+      renderStats();
+    });
+
+    document.getElementById('stats-table')?.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement) || !target.classList.contains('stat-btn')) return;
+
+      const stat = target.dataset.stat;
+      const action = target.dataset.action;
+      
+      if (!stat || !action || !(stat in stats)) return;
+      const statKey = stat as keyof Stats;
+
+      if (action === 'increase-base') {
+        updateStat(statKey, 1);
+      } else if (action === 'decrease-base') {
+        updateStat(statKey, -1);
+      } else if (action === 'increase-racial') {
+        updateRacialBonus(statKey, 1);
+      } else if (action === 'decrease-racial') {
+        updateRacialBonus(statKey, -1);
+      }
+    });
+  });
+
+  function calculateTotalPoints() {
+    return Object.values(stats).reduce(
+      (sum, stat) => sum + (COST_TABLE[stat.base] || 0),
+      0
+    );
+  }
+
+  function updateStat(stat: keyof Stats, change: number) {
+    const currentBase = stats[stat].base;
+    const newBase = currentBase + change;
+    const newPointCost = calculateTotalPoints() + (COST_TABLE[newBase] || 0) - (COST_TABLE[currentBase] || 0);
+
+    if (newBase >= 8 && newBase <= 15 && newPointCost <= 27) {
+      stats[stat].base = newBase;
+      points = 27 - newPointCost;
+      renderStats();
+    }
+  }
+
+  function updateRacialBonus(stat: keyof Stats, change: number) {
+    const newRacial = stats[stat].racial + change;
+    const usedBonuses = Object.values(stats).reduce(
+      (sum, item) => sum + item.racial,
+      0
+    );
+    if (
+      newRacial >= 0
+      && newRacial <= 2
+      && usedBonuses + change >= 0
+      && usedBonuses + change <= 3
+    ) {
+      stats[stat].racial = newRacial;
+      renderStats();
+    }
+  }
+</script>
+
+<style>
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .calculator-description {
+    max-width: 720px;
+    margin: 0.75rem auto 0;
+    color: var(--muted);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .calculator {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  .controls {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .reset-btn {
+    padding: 0.5rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .reset-btn:hover {
+    background: var(--primary-dark);
+  }
+
+  .stat-btn {
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.25rem;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  .stat-btn:hover {
+    background: var(--nav-hover-bg);
+  }
+</style>
