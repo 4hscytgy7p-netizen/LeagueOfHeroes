@@ -1,0 +1,113 @@
+<section class="quarter">
+  <div id="quarter-loading" class="state-panel"><div class="loader"></div><p>Открываем торговые ряды…</p></div>
+  <div id="quarter-error" class="state-panel" hidden><h1>Квартал недоступен</h1><p id="quarter-error-message"></p><a href="/test/cabinet/player/">Вернуться к героям</a></div>
+  <div id="quarter-content" hidden>
+    <nav class="breadcrumb"><a id="back-to-character" href="/test/cabinet/player/">← К персонажу</a><span id="save-indicator">Сохранено</span></nav>
+    <header class="quarter-hero">
+      <div><span>Рынок League of Heroes</span><h1>Торговый квартал</h1><p>Выберите лавку, осмотрите товары или отнесите лишнее скупщику.</p></div>
+      <div class="hero-wallet"><small>Кошель <b id="character-name"></b></small><strong id="character-money">0 зм</strong></div>
+    </header>
+
+    <div id="merchant-grid" class="merchant-grid" role="tablist" aria-label="Торговцы">
+      <button type="button" role="tab" data-merchant="smith"><img src="/images/classes/fighter.png" alt="Кузнец Бранн" /><span><small>Кузнец</small><strong>Бранн</strong></span></button>
+      <button type="button" role="tab" data-merchant="outfitter"><img src="/images/classes/bard.png" alt="Снабженец Мира" /><span><small>Снабженец</small><strong>Мира</strong></span></button>
+      <button type="button" role="tab" data-merchant="artisan"><img src="/images/classes/artificer.png" alt="Ремесленник Олло" /><span><small>Ремесленник</small><strong>Олло</strong></span></button>
+      <button type="button" role="tab" data-merchant="arcanist"><img src="/images/classes/wizard.png" alt="Арканист Иллария" /><span><small>Арканист</small><strong>Иллария</strong></span></button>
+      <button type="button" role="tab" data-merchant="alchemist"><img src="/images/classes/apothecary.png" alt="Алхимик Тихий Фиал" /><span><small>Алхимик</small><strong>Тихий Фиал</strong></span></button>
+      <button type="button" role="tab" data-merchant="stable"><img src="/images/classes/ranger.png" alt="Смотритель Ронн" /><span><small>Путевой двор</small><strong>Ронн</strong></span></button>
+      <button type="button" role="tab" data-merchant="buyer"><img src="/images/classes/rogue.png" alt="Скупщик Грош" /><span><small>Скупщик</small><strong>Грош</strong></span></button>
+    </div>
+
+    <section class="stall">
+      <div id="merchant-banner" class="merchant-banner"></div>
+      <div class="toolbar">
+        <label><span>Поиск в лавке</span><input id="shop-search" type="search" placeholder="Название предмета…" /></label>
+        <div id="buyer-actions" class="buyer-actions" hidden><span>Известное — 50% цены, неопознанное — 1 мм</span><button id="sell-all-items" type="button">Продать всё</button></div>
+      </div>
+      <div class="shop-table-wrap"><table><thead><tr><th>Предмет</th><th>Тип</th><th id="shop-price-heading">Цена</th><th>Вес</th><th></th></tr></thead><tbody id="shop-list"></tbody></table></div>
+    </section>
+  </div>
+</section>
+
+<script>
+  import { buildMarketUpdate, characterShopItems, formatCopper, getCharacterMarket, salePrice, type CharacterMarketState } from '../../utils/characterCabinet';
+  import { isTestAccountConfigured, testAccountSupabase } from '../../utils/testAccount';
+
+  const characterId = new URLSearchParams(window.location.search).get('id');
+  const loading = document.querySelector<HTMLElement>('#quarter-loading');
+  const content = document.querySelector<HTMLElement>('#quarter-content');
+  const errorPanel = document.querySelector<HTMLElement>('#quarter-error');
+  let character: Record<string, any> | null = null;
+  let market: CharacterMarketState = { inventory: [], currencyCopper: 0 };
+  let activeMerchant = 'smith';
+  const merchants: Record<string, { name: string; role: string; note: string; portrait: string }> = {
+    smith: { name: 'Бранн Железная Рука', role: 'Кузнец', note: 'Оружие, доспехи и щиты для тех, кто собирается вернуться из приключения.', portrait: '/images/classes/fighter.png' },
+    outfitter: { name: 'Мира Дальний Путь', role: 'Снабженец', note: 'Походное снаряжение, боеприпасы и полезные мелочи.', portrait: '/images/classes/bard.png' },
+    artisan: { name: 'Мастер Олло', role: 'Ремесленник', note: 'Инструменты для профессий, ремёсел, музыки и самых странных планов.', portrait: '/images/classes/artificer.png' },
+    arcanist: { name: 'Иллария Семисвечье', role: 'Арканист', note: 'Магические фокусировки, священные символы и проводники силы.', portrait: '/images/classes/wizard.png' },
+    alchemist: { name: 'Тихий Фиал', role: 'Алхимик', note: 'Яды, редкие составы и товары, которые не стоит пробовать на вкус.', portrait: '/images/classes/apothecary.png' },
+    stable: { name: 'Старый Ронн', role: 'Смотритель путевого двора', note: 'Животные, повозки, суда и другой транспорт для дальних дорог.', portrait: '/images/classes/ranger.png' },
+    buyer: { name: 'Грош Непривередливый', role: 'Скупщик', note: 'Берёт всё: известные вещи за половину цены, непонятные — по медяку.', portrait: '/images/classes/rogue.png' }
+  };
+  function escapeText(value: unknown) { return String(value ?? '').replace(/[&<>"']/g, (letter) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[letter] || letter); }
+  function showError(message: string) { if (loading) loading.hidden = true; if (content) content.hidden = true; const target = document.querySelector<HTMLElement>('#quarter-error-message'); if (target) target.textContent = message; if (errorPanel) errorPanel.hidden = false; }
+  function setSaveState(text: string, kind = 'saved') { const indicator = document.querySelector<HTMLElement>('#save-indicator'); if (!indicator) return; indicator.textContent = text; indicator.dataset.kind = kind; }
+  function merchantForItem(item: (typeof characterShopItems)[number]) {
+    const category = item.category.toLocaleLowerCase('ru');
+    if (item.categoryGroup === 'weapon' || item.categoryGroup === 'armor') return 'smith';
+    if (item.categoryGroup === 'gear' || item.categoryGroup === 'ammo') return 'outfitter';
+    if (item.categoryGroup === 'tools') return 'artisan';
+    if (item.categoryGroup === 'focus') return 'arcanist';
+    if (category.includes('яд')) return 'alchemist';
+    if (category.includes('транспорт') || category.includes('животн')) return 'stable';
+    return 'alchemist';
+  }
+  function renderHeader() {
+    const money = document.querySelector<HTMLElement>('#character-money'); if (money) money.textContent = formatCopper(market.currencyCopper);
+    const name = document.querySelector<HTMLElement>('#character-name'); if (name) name.textContent = character?.name || 'героя';
+  }
+  function renderShop() {
+    renderHeader(); const query = String(document.querySelector<HTMLInputElement>('#shop-search')?.value || '').trim().toLocaleLowerCase('ru'); const body = document.querySelector<HTMLElement>('#shop-list'); if (!body) return;
+    document.querySelectorAll<HTMLButtonElement>('[data-merchant]').forEach((button) => { const selected = button.dataset.merchant === activeMerchant; button.classList.toggle('is-active', selected); button.setAttribute('aria-selected', String(selected)); });
+    const merchant = merchants[activeMerchant]; const banner = document.querySelector<HTMLElement>('#merchant-banner');
+    if (banner) banner.innerHTML = `<img src="${merchant.portrait}" alt="${escapeText(merchant.name)}"><div><span>${escapeText(merchant.role)}</span><h2>${escapeText(merchant.name)}</h2><p>${escapeText(merchant.note)}</p></div>`;
+    const buyerActions = document.querySelector<HTMLElement>('#buyer-actions'); if (buyerActions) buyerActions.hidden = activeMerchant !== 'buyer';
+    const priceHeading = document.querySelector<HTMLElement>('#shop-price-heading'); if (priceHeading) priceHeading.textContent = activeMerchant === 'buyer' ? 'Скупка' : 'Цена';
+    if (activeMerchant === 'buyer') {
+      const entries = market.inventory.map((entry, index) => ({ entry, index, item: characterShopItems.find((candidate) => candidate.id === entry.id) })).filter(({ entry, item }) => !query || `${entry.name} ${item?.nameEn || ''}`.toLocaleLowerCase('ru').includes(query));
+      body.innerHTML = entries.length ? entries.map(({ entry, index, item }) => `<tr><td>${item ? `<a href="${item.href}" target="_blank" rel="noopener">${escapeText(entry.name || item.name)}</a>` : `<span class="unknown">${escapeText(entry.name)}</span>`}<small>${item?.nameEn ? escapeText(item.nameEn) : 'Не определён по каталогу'}</small></td><td>${escapeText(item?.category || 'Неизвестная вещь')}</td><td class="sale"><strong>${formatCopper(salePrice(entry.id))}</strong></td><td>${Number(item?.weight ?? entry.weight ?? 0)} фнт.</td><td><button type="button" data-sell-index="${index}">Продать 1</button></td></tr>`).join('') : '<tr><td colspan="5" class="shop-empty">Нечего продавать скупщику.</td></tr>';
+      document.querySelectorAll<HTMLButtonElement>('[data-sell-index]').forEach((button) => button.addEventListener('click', () => sellItem(Number(button.dataset.sellIndex)))); return;
+    }
+    const filtered = characterShopItems.filter((item) => merchantForItem(item) === activeMerchant).filter((item) => !query || `${item.name} ${item.nameEn}`.toLocaleLowerCase('ru').includes(query));
+    body.innerHTML = filtered.length ? filtered.map((item) => `<tr><td><a href="${item.href}" target="_blank" rel="noopener">${escapeText(item.name)}</a><small>${escapeText(item.nameEn)}</small></td><td>${escapeText(item.category)}</td><td><strong>${escapeText(item.cost)}</strong></td><td>${item.weight} фнт.</td><td><button type="button" data-buy-item="${escapeText(item.id)}" ${item.costCopper > 0 && market.currencyCopper >= item.costCopper ? '' : 'disabled'}>Купить</button></td></tr>`).join('') : '<tr><td colspan="5" class="shop-empty">У этого торговца ничего не найдено.</td></tr>';
+    document.querySelectorAll<HTMLButtonElement>('[data-buy-item]').forEach((button) => button.addEventListener('click', () => buyItem(button.dataset.buyItem || '')));
+  }
+  async function saveMarket(message: string) {
+    if (!character || !testAccountSupabase) return; setSaveState('Сохраняем…', 'saving'); const update = buildMarketUpdate(character, market);
+    const { data, error } = await testAccountSupabase.from('characters').update(update).eq('id', character.id).eq('revision', character.revision).select('draft_data,roll20_data,play_state,revision,updated_at').single();
+    if (error || !data) { setSaveState('Не сохранено — обновите страницу', 'error'); return; }
+    character = { ...character, ...data }; setSaveState(message); renderShop();
+  }
+  function buyItem(itemId: string) { const item = characterShopItems.find((candidate) => candidate.id === itemId); if (!item || item.costCopper <= 0 || market.currencyCopper < item.costCopper) return; market.currencyCopper -= item.costCopper; const entry = market.inventory.find((candidate) => candidate.id === item.id); if (entry) entry.quantity += 1; else market.inventory.push({ id: item.id, name: item.name, quantity: 1, source: 'purchased', weight: item.weight }); saveMarket(`Куплено: ${item.name}`); }
+  function sellItem(index: number) { const entry = market.inventory[index]; if (!entry) return; const proceeds = salePrice(entry.id); market.currencyCopper += proceeds; entry.quantity -= 1; if (entry.quantity <= 0) market.inventory.splice(index, 1); const identified = characterShopItems.some((item) => item.id === entry.id); saveMarket(identified ? `Продано за ${formatCopper(proceeds)} (50% стоимости)` : 'Неизвестная вещь продана за 1 мм'); }
+  function sellAllItems() { if (!market.inventory.length) return; const proceeds = market.inventory.reduce((sum, entry) => sum + salePrice(entry.id) * entry.quantity, 0); if (!window.confirm(`Продать всё снаряжение за ${formatCopper(proceeds)}?`)) return; market.inventory = []; market.currencyCopper += proceeds; saveMarket(`Весь инвентарь продан за ${formatCopper(proceeds)}`); }
+  async function initialize() {
+    if (!characterId) { showError('В адресе не указан персонаж.'); return; } if (!isTestAccountConfigured || !testAccountSupabase) { showError('Кабинет не подключён к Supabase.'); return; }
+    const { data: sessionData } = await testAccountSupabase.auth.getSession(); if (!sessionData.session) { window.location.replace(`/test/auth/?next=${encodeURIComponent(window.location.pathname + window.location.search)}`); return; }
+    const { data, error } = await testAccountSupabase.from('characters').select('id,name,draft_data,roll20_data,play_state,summary,revision,updated_at').eq('id', characterId).single(); if (error || !data) { showError('Персонаж не найден или принадлежит другому пользователю.'); return; }
+    character = data; market = getCharacterMarket(character); const back = document.querySelector<HTMLAnchorElement>('#back-to-character'); if (back) back.href = `/test/cabinet/character/?id=${encodeURIComponent(character.id)}`; if (loading) loading.hidden = true; if (content) content.hidden = false; renderShop();
+  }
+  document.querySelector('#shop-search')?.addEventListener('input', renderShop);
+  document.querySelectorAll<HTMLButtonElement>('[data-merchant]').forEach((button) => button.addEventListener('click', () => { activeMerchant = button.dataset.merchant || 'smith'; const search = document.querySelector<HTMLInputElement>('#shop-search'); if (search) search.value = ''; renderShop(); }));
+  document.querySelector('#sell-all-items')?.addEventListener('click', sellAllItems); initialize();
+</script>
+
+<style>
+  .state-panel{display:grid;justify-items:center;gap:1rem;padding:5rem 1rem;text-align:center}.loader{width:48px;height:48px;border:4px solid rgba(182,154,255,.2);border-top-color:#b69aff;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.state-panel h1{color:#b69aff;font:800 clamp(2rem,6vw,3.5rem) Georgia,serif}.state-panel a,.breadcrumb a{color:#c5b2ff;font-weight:900;text-decoration:none}.breadcrumb{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem}.breadcrumb span{color:#83d9aa;font-size:.8rem;font-weight:900}.breadcrumb span[data-kind="saving"]{color:#efcb6e}.breadcrumb span[data-kind="error"]{color:#ff9cac}
+  .quarter-hero{display:flex;align-items:end;justify-content:space-between;gap:2rem;padding:clamp(1.2rem,4vw,2.4rem);border:1px solid rgba(226,180,72,.35);border-radius:22px;background:linear-gradient(120deg,rgba(76,51,18,.55),rgba(13,25,45,.96))}.quarter-hero>div>span{color:#e2b448;font-size:.7rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.quarter-hero h1{margin:.35rem 0;color:#f3dfa1;font:800 clamp(2.4rem,7vw,4.5rem) Georgia,serif}.quarter-hero p{margin:0;color:#aab5c6}.hero-wallet{flex:0 0 auto;min-width:190px;padding:.8rem 1rem;border:1px solid rgba(226,180,72,.45);border-radius:12px;background:#091426}.hero-wallet small{display:block;color:#9da9bc}.hero-wallet b{color:#d7c9ff}.hero-wallet strong{display:block;margin-top:.3rem;color:#f3dfa1;font-size:1.15rem}
+  .merchant-grid{display:grid;grid-template-columns:repeat(7,minmax(120px,1fr));gap:.55rem;margin:1rem 0;overflow-x:auto;padding-bottom:.3rem}.merchant-grid button{position:relative;min-width:125px;height:180px;overflow:hidden;padding:0;border:1px solid #35435a;border-radius:14px;color:#fff;background:#091426;cursor:pointer}.merchant-grid img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.72) brightness(.72);transition:.2s}.merchant-grid button>span{position:absolute;right:0;bottom:0;left:0;padding:1.8rem .65rem .6rem;background:linear-gradient(transparent,rgba(5,11,22,.98));text-align:left}.merchant-grid small,.merchant-grid strong{display:block}.merchant-grid small{color:#e2b448;font-size:.58rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.merchant-grid strong{margin-top:.12rem;font-size:.8rem}.merchant-grid button:hover,.merchant-grid button.is-active{border-color:#e2b448;box-shadow:0 0 0 2px rgba(226,180,72,.2)}.merchant-grid button:hover img,.merchant-grid button.is-active img{filter:saturate(1) brightness(.95);transform:scale(1.035)}
+  .stall{overflow:hidden;border:1px solid rgba(163,177,204,.22);border-radius:20px;background:linear-gradient(145deg,rgba(22,38,65,.95),rgba(10,22,42,.94))}.merchant-banner{display:grid;grid-template-columns:150px 1fr;align-items:center;min-height:170px;border-bottom:1px solid #35435a;background:radial-gradient(circle at 15% 20%,rgba(182,154,255,.16),transparent 35%)}.merchant-banner img{width:150px;height:170px;object-fit:cover;object-position:top center}.merchant-banner>div{padding:1.2rem}.merchant-banner span{color:#e2b448;font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.merchant-banner h2{margin:.3rem 0;color:#f3dfa1;font:800 1.8rem Georgia,serif}.merchant-banner p{margin:0;color:#aab5c6;line-height:1.5}
+  .toolbar{display:flex;align-items:end;justify-content:space-between;gap:1rem;padding:.8rem 1rem}.toolbar label{display:grid;gap:.3rem;width:min(420px,100%)}.toolbar label span{color:#9facbf;font-size:.62rem;font-weight:900;text-transform:uppercase}.toolbar input{width:100%;padding:.6rem .7rem;border:1px solid #41506a;border-radius:8px;color:#edf1f8;background:#081426}.buyer-actions{display:flex;align-items:center;gap:.7rem;color:#aab5c6;font-size:.72rem}.buyer-actions button,.shop-table-wrap button{padding:.42rem .58rem;border:1px solid rgba(226,180,72,.5);border-radius:7px;color:#11192a;background:#e2b448;cursor:pointer;font-size:.72rem;font-weight:900;white-space:nowrap}.shop-table-wrap button:disabled{opacity:.35;cursor:not-allowed}
+  .shop-table-wrap{max-height:520px;overflow:auto;border-top:1px solid #334159}.shop-table-wrap table{width:100%;border-collapse:collapse}.shop-table-wrap th,.shop-table-wrap td{padding:.48rem .62rem;border-bottom:1px solid #27354a;text-align:left}.shop-table-wrap th{position:sticky;z-index:1;top:0;color:#d7c9ff;background:#101d32;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase}.shop-table-wrap td{color:#aeb9cb;font-size:.76rem}.shop-table-wrap td:first-child{max-width:280px}.shop-table-wrap a,.unknown{display:block;overflow:hidden;color:#d6c8ff;font-weight:900;text-decoration:none;text-overflow:ellipsis;white-space:nowrap}.shop-table-wrap small{display:block;overflow:hidden;color:#78869b;font-size:.65rem;text-overflow:ellipsis;white-space:nowrap}.shop-table-wrap td:nth-child(3) strong{color:#f3dfa1}.shop-table-wrap td.sale strong{color:#83d9aa}.shop-table-wrap td:last-child{text-align:right}.shop-empty{padding:1.6rem!important;color:#78869b!important;text-align:center!important}
+  @media(max-width:850px){.merchant-grid{grid-template-columns:repeat(7,135px)}.shop-table-wrap table{min-width:650px}}@media(max-width:620px){.quarter-hero{align-items:stretch;flex-direction:column}.hero-wallet{width:100%}.merchant-banner{grid-template-columns:100px 1fr}.merchant-banner img{width:100px;height:150px}.toolbar{align-items:stretch;flex-direction:column}.buyer-actions{align-items:stretch;flex-direction:column}.buyer-actions button{width:100%}}
+</style>

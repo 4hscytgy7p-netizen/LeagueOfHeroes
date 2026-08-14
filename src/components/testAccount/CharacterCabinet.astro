@@ -1,0 +1,159 @@
+<section id="character-cabinet" class="character-page">
+  <div id="character-loading" class="state-panel"><div class="loader"></div><p>Открываем героя…</p></div>
+  <div id="character-error" class="state-panel" hidden>
+    <h1>Персонаж недоступен</h1><p id="character-error-message"></p><a href="/test/cabinet/player/">Вернуться к героям</a>
+  </div>
+
+  <div id="character-content" hidden>
+    <nav class="character-breadcrumb"><a href="/test/cabinet/player/">← Мои герои</a><span id="save-indicator">Сохранено</span></nav>
+    <header class="character-hero">
+      <div class="portrait-wrap">
+        <img id="character-portrait" src="/images/classes/fighter.png" alt="Портрет персонажа" />
+        <label class="portrait-upload">Изменить портрет<input id="portrait-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden /></label>
+      </div>
+      <div class="hero-copy">
+        <span class="hero-kicker">Личный персонаж</span><h1 id="character-name">Безымянный герой</h1>
+        <p id="character-description">Загружаем сведения…</p><div id="character-vitals" class="vitals"></div>
+        <div class="hero-actions"><a id="edit-character" href="#">Открыть в конструкторе</a><button id="download-character" type="button">Скачать JSON</button></div>
+      </div>
+    </header>
+
+    <section class="character-section">
+      <div class="section-heading"><div><span>Лист героя</span><h2>Характеристики</h2></div></div>
+      <div id="ability-grid" class="ability-grid"></div>
+    </section>
+
+    <details class="character-section inventory-panel" open>
+      <summary>
+        <div class="inventory-title"><span>Кошель и вещи</span><h2>Инвентарь</h2><small>Нажмите, чтобы скрыть или показать</small></div>
+        <div class="inventory-totals">
+          <div><span>Предметов</span><strong id="inventory-count">0</strong></div>
+          <div><span>Вес</span><strong id="inventory-weight">0 фнт.</strong></div>
+          <div class="wallet"><span>Деньги</span><strong id="character-money">0 зм</strong></div>
+          <i aria-hidden="true"></i>
+        </div>
+      </summary>
+      <div class="inventory-actions"><a id="trading-quarter-link" href="/test/cabinet/trading/">Отправиться в Торговый квартал →</a></div>
+      <div class="inventory-table-wrap">
+        <table><thead><tr><th>Кол-во</th><th>Имя предмета</th><th>Вес</th></tr></thead><tbody id="inventory-list"></tbody></table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<script>
+  import { backgroundsData } from '../../data/backgrounds';
+  import { classes } from '../../data/classes';
+  import { speciesData } from '../../data/species';
+  import { characterShopItems, formatCopper, getCharacterMarket, type CharacterMarketState } from '../../utils/characterCabinet';
+  import { isTestAccountConfigured, testAccountSupabase } from '../../utils/testAccount';
+
+  const loading = document.querySelector<HTMLElement>('#character-loading');
+  const content = document.querySelector<HTMLElement>('#character-content');
+  const errorPanel = document.querySelector<HTMLElement>('#character-error');
+  const characterId = new URLSearchParams(window.location.search).get('id');
+  const creatorPath = '/internal/129321041204158/character-creator/';
+  let character: Record<string, any> | null = null;
+  let market: CharacterMarketState = { inventory: [], currencyCopper: 0 };
+  let currentUserId = '';
+
+  function escapeText(value: unknown) {
+    return String(value ?? '').replace(/[&<>"']/g, (letter) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[letter] || letter);
+  }
+  function showError(message: string) {
+    if (loading) loading.hidden = true; if (content) content.hidden = true;
+    const target = document.querySelector<HTMLElement>('#character-error-message'); if (target) target.textContent = message;
+    if (errorPanel) errorPanel.hidden = false;
+  }
+  function setSaveState(text: string, kind = 'saved') {
+    const indicator = document.querySelector<HTMLElement>('#save-indicator'); if (!indicator) return;
+    indicator.textContent = text; indicator.dataset.kind = kind;
+  }
+  function draftState() { const draft = character?.draft_data; return draft?.state && typeof draft.state === 'object' ? draft.state : draft || {}; }
+  function labelFor(kind: 'species' | 'class' | 'background', value: unknown) {
+    const source = kind === 'species' ? speciesData : kind === 'class' ? classes : backgroundsData;
+    const record = source.find((entry: any) => entry.id === value || entry.name === value || entry.nameEn === value) as any;
+    return record?.name || String(value || 'Не указано');
+  }
+  function abilityValue(key: string) {
+    const stateAbility = draftState()?.abilities?.[key];
+    if (stateAbility) return Number(stateAbility.total ?? Number(stateAbility.base || 0) + Number(stateAbility.bonus || 0)) || '—';
+    const attribute = character?.roll20_data?.character?.attribs?.find((entry: any) => entry.name === key);
+    return Number(attribute?.current) || '—';
+  }
+  async function portraitUrl(summary: Record<string, any>) {
+    if (summary.portraitPath && testAccountSupabase) {
+      const { data } = await testAccountSupabase.storage.from('character-portraits').createSignedUrl(String(summary.portraitPath), 3600);
+      if (data?.signedUrl) return data.signedUrl;
+    }
+    if (summary.portraitUrl) return String(summary.portraitUrl);
+    const characterClass = classes.find((entry: any) => entry.id === summary.class || entry.name === summary.class) as any;
+    const species = speciesData.find((entry: any) => entry.id === summary.species || entry.name === summary.species) as any;
+    return characterClass?.portrait || species?.portrait || '/images/classes/fighter.png';
+  }
+  function renderInventory() {
+    const money = document.querySelector<HTMLElement>('#character-money'); if (money) money.textContent = formatCopper(market.currencyCopper);
+    const totalCount = market.inventory.reduce((sum, entry) => sum + entry.quantity, 0);
+    const totalWeight = market.inventory.reduce((sum, entry) => { const item = characterShopItems.find((candidate) => candidate.id === entry.id); return sum + Number(item?.weight ?? entry.weight ?? 0) * entry.quantity; }, 0);
+    const count = document.querySelector<HTMLElement>('#inventory-count'); if (count) count.textContent = String(totalCount);
+    const weight = document.querySelector<HTMLElement>('#inventory-weight'); if (weight) weight.textContent = `${totalWeight.toFixed(1)} фнт.`;
+    const body = document.querySelector<HTMLElement>('#inventory-list'); if (!body) return;
+    body.innerHTML = market.inventory.length ? market.inventory.map((entry) => {
+      const item = characterShopItems.find((candidate) => candidate.id === entry.id);
+      const rowWeight = Number(item?.weight ?? entry.weight ?? 0) * entry.quantity;
+      const title = escapeText(entry.name || item?.name || 'Неизвестный предмет');
+      return `<tr><td><span class="quantity">${entry.quantity}</span></td><td>${item ? `<a href="${item.href}" target="_blank" rel="noopener">${title}</a>` : `<span>${title}</span>`}</td><td><span class="weight">${rowWeight ? `${Number(rowWeight.toFixed(2))} фнт.` : '—'}</span></td></tr>`;
+    }).join('') : '<tr><td colspan="3" class="empty-inventory">Инвентарь пуст. Загляните в Торговый квартал.</td></tr>';
+  }
+  async function renderCharacter() {
+    if (!character) return; const summary = character.summary || {}; market = getCharacterMarket(character);
+    const name = document.querySelector<HTMLElement>('#character-name'); if (name) name.textContent = character.name || 'Безымянный герой';
+    const description = document.querySelector<HTMLElement>('#character-description'); if (description) description.textContent = [labelFor('species', summary.species), labelFor('class', summary.class), labelFor('background', summary.background)].filter((part) => part !== 'Не указано').join(' · ') || 'Сведения о персонаже не заполнены';
+    const image = document.querySelector<HTMLImageElement>('#character-portrait'); if (image) { image.src = await portraitUrl(summary); image.alt = `Портрет ${character.name || 'персонажа'}`; image.onerror = () => { image.src = '/images/classes/fighter.png'; }; }
+    const edit = document.querySelector<HTMLAnchorElement>('#edit-character'); if (edit) { edit.href = `${creatorPath}?character=${encodeURIComponent(character.id)}`; edit.hidden = summary.source === 'roll20' && !Object.keys(character.draft_data || {}).length; }
+    const trade = document.querySelector<HTMLAnchorElement>('#trading-quarter-link'); if (trade) trade.href = `/test/cabinet/trading/?id=${encodeURIComponent(character.id)}`;
+    const identity = character.play_state?.identity || {}; const vitals = document.querySelector<HTMLElement>('#character-vitals');
+    if (vitals) vitals.innerHTML = [['Уровень', summary.level || 1], ['КД', identity.armorClass || '—'], ['Хиты', identity.hpMax ? `${identity.hp || identity.hpMax}/${identity.hpMax}` : identity.hp || '—']].map(([label, value]) => `<div><span>${label}</span><strong>${escapeText(value)}</strong></div>`).join('');
+    const abilityNames: Record<string, string> = { strength: 'Сила', dexterity: 'Ловкость', constitution: 'Телосложение', intelligence: 'Интеллект', wisdom: 'Мудрость', charisma: 'Харизма' };
+    const abilityGrid = document.querySelector<HTMLElement>('#ability-grid'); if (abilityGrid) abilityGrid.innerHTML = Object.entries(abilityNames).map(([key, label]) => { const score = abilityValue(key); const modifier = typeof score === 'number' ? Math.floor((score - 10) / 2) : null; return `<article><span>${label}</span><strong>${score}</strong><small>${modifier === null ? '—' : `${modifier >= 0 ? '+' : ''}${modifier}`}</small></article>`; }).join('');
+    renderInventory();
+  }
+  async function resizePortrait(file: File) {
+    const bitmap = await createImageBitmap(file); const scale = Math.min(1, 640 / Math.max(bitmap.width, bitmap.height)); const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(bitmap.width * scale)); canvas.height = Math.max(1, Math.round(bitmap.height * scale)); canvas.getContext('2d')?.drawImage(bitmap, 0, 0, canvas.width, canvas.height); bitmap.close();
+    return await new Promise<Blob>((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('Не удалось обработать изображение.')), 'image/webp', .84));
+  }
+  async function uploadPortrait(file: File) {
+    if (!character || !testAccountSupabase || !currentUserId) return; if (file.size > 8 * 1024 * 1024) { setSaveState('Портрет должен быть меньше 8 МБ', 'error'); return; }
+    try {
+      setSaveState('Загружаем портрет…', 'saving'); const blob = await resizePortrait(file); const path = `${currentUserId}/${character.id}/${Date.now()}.webp`;
+      const { error: uploadError } = await testAccountSupabase.storage.from('character-portraits').upload(path, blob, { contentType: 'image/webp', upsert: false }); if (uploadError) throw uploadError;
+      const previousPath = character.summary?.portraitPath; const summary = { ...(character.summary || {}), portraitPath: path, portraitUrl: '' };
+      const { data, error } = await testAccountSupabase.from('characters').update({ summary, revision: character.revision + 1 }).eq('id', character.id).eq('revision', character.revision).select('summary,revision,updated_at').single();
+      if (error || !data) { await testAccountSupabase.storage.from('character-portraits').remove([path]); throw error || new Error('Версия персонажа изменилась.'); }
+      if (previousPath) await testAccountSupabase.storage.from('character-portraits').remove([String(previousPath)]); character = { ...character, ...data }; await renderCharacter(); setSaveState('Портрет сохранён');
+    } catch (error) { setSaveState(error instanceof Error ? error.message : 'Не удалось загрузить портрет', 'error'); }
+  }
+  async function initialize() {
+    if (!characterId) { showError('В адресе не указан персонаж.'); return; }
+    if (!isTestAccountConfigured || !testAccountSupabase) { showError('Кабинет не подключён к Supabase.'); return; }
+    const { data: sessionData } = await testAccountSupabase.auth.getSession(); if (!sessionData.session) { window.location.replace(`/test/auth/?next=${encodeURIComponent(window.location.pathname + window.location.search)}`); return; }
+    currentUserId = sessionData.session.user.id; const { data, error } = await testAccountSupabase.from('characters').select('id,name,draft_data,roll20_data,play_state,summary,revision,created_at,updated_at').eq('id', characterId).single();
+    if (error || !data) { showError('Персонаж не найден или принадлежит другому пользователю.'); return; }
+    character = data; if (loading) loading.hidden = true; if (content) content.hidden = false; await renderCharacter();
+  }
+  document.querySelector<HTMLInputElement>('#portrait-file')?.addEventListener('change', (event) => { const file = (event.currentTarget as HTMLInputElement).files?.[0]; if (file) uploadPortrait(file); });
+  document.querySelector('#download-character')?.addEventListener('click', () => { if (!character) return; const payload = Object.keys(character.roll20_data || {}).length ? character.roll20_data : character.draft_data; const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `${character.name || 'character'}.json`; anchor.click(); URL.revokeObjectURL(url); });
+  initialize();
+</script>
+
+<style>
+  .state-panel{display:grid;justify-items:center;gap:1rem;padding:5rem 1rem;text-align:center}.loader{width:48px;height:48px;border:4px solid rgba(182,154,255,.2);border-top-color:#b69aff;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.state-panel h1{color:#b69aff;font:800 clamp(2rem,6vw,3.5rem) Georgia,serif}.state-panel a,.character-breadcrumb a{color:#c5b2ff;font-weight:900;text-decoration:none}
+  .character-breadcrumb{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem}.character-breadcrumb span{color:#83d9aa;font-size:.8rem;font-weight:800}.character-breadcrumb span[data-kind="saving"]{color:#efcb6e}.character-breadcrumb span[data-kind="error"]{color:#ff9cac}
+  .character-hero{display:grid;grid-template-columns:minmax(230px,340px) 1fr;overflow:hidden;border:1px solid rgba(226,180,72,.32);border-radius:24px;background:linear-gradient(145deg,rgba(51,39,20,.45),rgba(12,25,47,.96))}.portrait-wrap{position:relative;min-height:390px}.portrait-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;background:#081222}.portrait-upload{position:absolute;right:1rem;bottom:1rem;left:1rem;padding:.7rem;border:1px solid rgba(255,255,255,.32);border-radius:10px;color:white;background:rgba(7,16,31,.84);cursor:pointer;text-align:center;font-weight:900;backdrop-filter:blur(10px)}
+  .hero-copy{align-self:center;padding:clamp(1.4rem,5vw,3.5rem)}.hero-kicker,.section-heading>div>span,.inventory-title>span{color:#e2b448;font-size:.7rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.hero-copy h1{margin:.5rem 0 .7rem;color:#f3dfa1;font:800 clamp(2.2rem,6vw,4.4rem) Georgia,serif}.hero-copy>p{color:#b7c1d1;font-size:1.05rem;line-height:1.6}.vitals{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.25rem}.vitals div{min-width:100px;padding:.7rem .85rem;border:1px solid #3b4963;border-radius:12px;background:rgba(7,16,31,.5)}.vitals span{display:block;color:#9da9bc;font-size:.66rem;font-weight:900;text-transform:uppercase}.vitals strong{display:block;margin-top:.2rem;color:#f3dfa1;font-size:1.15rem}.hero-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}.hero-actions a,.hero-actions button{padding:.7rem .9rem;border:1px solid #4a5870;border-radius:10px;color:#e8edf5;background:#101d32;cursor:pointer;font:inherit;font-weight:900;text-decoration:none}
+  .character-section{margin-top:1rem;padding:1.25rem;border:1px solid rgba(163,177,204,.2);border-radius:20px;background:linear-gradient(145deg,rgba(22,38,65,.94),rgba(10,22,42,.92))}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1rem}.section-heading h2,.inventory-title h2{margin:.35rem 0 0;color:#f3dfa1;font:800 1.65rem Georgia,serif}.ability-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.65rem}.ability-grid article{display:grid;justify-items:center;gap:.2rem;padding:1rem;border:1px solid #35435b;border-radius:14px;background:#0a162a}.ability-grid span{color:#b9c3d3;font-size:.68rem;font-weight:900;text-transform:uppercase}.ability-grid strong{color:#f3dfa1;font:800 1.75rem Georgia,serif}.ability-grid small{color:#b69aff;font-weight:900}
+  details.inventory-panel{padding:0;overflow:hidden}details.inventory-panel>summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;cursor:pointer;list-style:none;user-select:none}details.inventory-panel>summary::-webkit-details-marker{display:none}.inventory-title small{display:block;margin-top:.25rem;color:#728096;font-size:.67rem}.inventory-totals{display:flex;align-items:center;justify-content:flex-end;gap:.4rem}.inventory-totals>div{min-width:82px;padding:.5rem .65rem;border:1px solid #34425a;border-radius:8px;background:#091426}.inventory-totals span{display:block;color:#8f9caf;font-size:.57rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.inventory-totals strong{display:block;margin-top:.12rem;color:#e7d9ff;font-size:.82rem}.inventory-totals .wallet{min-width:145px;border-color:rgba(226,180,72,.4)}.inventory-totals .wallet strong{color:#f3dfa1}.inventory-totals i{width:10px;height:10px;margin-left:.35rem;border-right:2px solid #b69aff;border-bottom:2px solid #b69aff;transform:rotate(45deg);transition:transform .2s}details[open] .inventory-totals i{transform:rotate(225deg)}
+  .inventory-actions{display:flex;justify-content:flex-end;padding:0 1.25rem .65rem}.inventory-actions a{padding:.55rem .75rem;border:1px solid rgba(226,180,72,.4);border-radius:8px;color:#f3dfa1;background:rgba(226,180,72,.08);font-size:.76rem;font-weight:900;text-decoration:none}.inventory-table-wrap{margin:0 1.25rem 1.25rem;overflow:auto;border:1px solid #354157;border-radius:9px;background:#080e18}.inventory-table-wrap table{width:100%;border-collapse:collapse}.inventory-table-wrap th,.inventory-table-wrap td{padding:.36rem .45rem;border-bottom:1px solid #2d3542;text-align:left}.inventory-table-wrap th{color:#cfd5de;background:#151d29;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}.inventory-table-wrap th:first-child,.inventory-table-wrap td:first-child{width:76px;text-align:center}.inventory-table-wrap th:last-child,.inventory-table-wrap td:last-child{width:105px;text-align:right}.inventory-table-wrap tbody tr:nth-child(even){background:#101721}.inventory-table-wrap tbody tr:hover{background:#172235}.inventory-table-wrap a,.inventory-table-wrap td:nth-child(2)>span{display:block;color:#ecedf0;font-size:.78rem;font-weight:800;text-decoration:none}.quantity,.weight{display:inline-grid;min-width:34px;place-items:center;padding:.22rem .36rem;border:1px solid #536071;border-radius:4px;color:#fff;background:#303b4b;font-size:.72rem;font-weight:900}.weight{min-width:62px;color:#d8dee8;background:#252e3b}.empty-inventory{padding:1.4rem!important;color:#8f9caf!important;text-align:center!important}
+  @media(max-width:850px){.character-hero{grid-template-columns:1fr}.portrait-wrap{min-height:420px}.ability-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:620px){.portrait-wrap{min-height:340px}.ability-grid{grid-template-columns:repeat(2,1fr)}details.inventory-panel>summary{align-items:stretch;flex-direction:column}.inventory-totals{justify-content:stretch}.inventory-totals>div{flex:1}.inventory-totals .wallet{flex:1}.inventory-totals i{position:absolute;right:1.3rem}.inventory-actions{justify-content:stretch}.inventory-actions a{width:100%;text-align:center}}
+</style>

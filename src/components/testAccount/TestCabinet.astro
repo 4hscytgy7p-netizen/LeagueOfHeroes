@@ -44,7 +44,8 @@ const { requestedMode = 'auto' } = Astro.props;
         <strong id="character-slot-summary" class="slot-summary">Слоты персонажей: —</strong>
         <div class="featured-actions">
           <button id="create-character" class="primary-button" type="button">Создать персонажа</button>
-              <button id="open-extension-settings" class="ghost-button" type="button">Подключить расширение Roll20</button>
+          <button id="import-character" class="ghost-button" type="button">Загрузить JSON</button>
+          <button id="open-extension-settings" class="ghost-button" type="button">Подключить расширение Roll20</button>
         </div>
       </article>
       <article class="dashboard-card">
@@ -71,6 +72,7 @@ const { requestedMode = 'auto' } = Astro.props;
         <div id="character-list" class="character-list">
           <div class="empty-value">Загрузка персонажей…</div>
         </div>
+        <input id="character-json-file" type="file" accept="application/json,.json" hidden />
         <div id="character-status" class="inline-status" hidden></div>
       </article>
       <article id="roll20-extension-card" class="dashboard-card extension-card" tabindex="-1">
@@ -143,6 +145,7 @@ const { requestedMode = 'auto' } = Astro.props;
     type AccountMode,
     type AccountRole
   } from '../../utils/testAccount';
+  import { parseCharacterJson } from '../../utils/characterCabinet';
 
   const root = document.querySelector<HTMLElement>('#test-cabinet');
   const loading = document.querySelector<HTMLElement>('#cabinet-loading');
@@ -238,12 +241,82 @@ const { requestedMode = 'auto' } = Astro.props;
   async function deleteCharacter(characterId: string, characterName: string) {
     if (!testAccountSupabase) return;
     if (!window.confirm(`Удалить персонажа «${characterName}»? Это действие нельзя отменить.`)) return;
+    const { data: character } = await testAccountSupabase
+      .from('characters')
+      .select('summary')
+      .eq('id', characterId)
+      .single();
+    const portraitPath = character?.summary?.portraitPath;
+    if (portraitPath) {
+      await testAccountSupabase.storage.from('character-portraits').remove([String(portraitPath)]);
+    }
     const { error } = await testAccountSupabase.from('characters').delete().eq('id', characterId);
     if (error) {
       showInlineStatus('#character-status', error.message, 'error');
       return;
     }
     await loadCharacters();
+  }
+
+  function openJsonPicker() {
+    const input = document.querySelector<HTMLInputElement>('#character-json-file');
+    if (!input) return;
+    input.value = '';
+    input.click();
+  }
+
+  async function importCharacterFile(file: File) {
+    if (!testAccountSupabase || !currentUserId) return;
+    if (file.size > 20 * 1024 * 1024) {
+      showInlineStatus('#character-status', 'JSON персонажа не должен превышать 20 МБ.', 'error');
+      return;
+    }
+    showInlineStatus('#character-status', 'Проверяем и загружаем персонажа…');
+    try {
+      const parsed = parseCharacterJson(JSON.parse(await file.text()));
+      const { data: characterId, error: createError } = await testAccountSupabase
+        .rpc('create_character', { character_name: parsed.name });
+      if (createError || !characterId) throw createError || new Error('Не удалось занять слот персонажа.');
+      const { error: updateError } = await testAccountSupabase
+        .from('characters')
+        .update({
+          name: parsed.name,
+          draft_data: parsed.draftData,
+          roll20_data: parsed.roll20Data,
+          play_state: parsed.playState,
+          summary: parsed.summary
+        })
+        .eq('id', characterId);
+      if (updateError) {
+        await testAccountSupabase.from('characters').delete().eq('id', characterId);
+        throw updateError;
+      }
+      window.location.assign(`/test/cabinet/character/?id=${encodeURIComponent(String(characterId))}`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      showInlineStatus(
+        '#character-status',
+        message.includes('Character slot limit reached')
+          ? 'Свободных слотов нет. Администратор может увеличить лимит.'
+          : `Не удалось импортировать JSON: ${message}`,
+        'error'
+      );
+    }
+  }
+
+  function fallbackPortrait(summary: Record<string, any>) {
+    const classId = String(summary.class || '').toLocaleLowerCase('ru').replace(/[^a-z0-9-]+/g, '-');
+    return classId ? `/images/classes/${classId}.png` : '/images/classes/fighter.png';
+  }
+
+  async function resolvePortrait(summary: Record<string, any>) {
+    if (summary.portraitPath && testAccountSupabase) {
+      const { data } = await testAccountSupabase.storage
+        .from('character-portraits')
+        .createSignedUrl(String(summary.portraitPath), 3600);
+      if (data?.signedUrl) return data.signedUrl;
+    }
+    return String(summary.portraitUrl || fallbackPortrait(summary));
   }
 
   async function loadCharacters() {
@@ -270,20 +343,50 @@ const { requestedMode = 'auto' } = Astro.props;
       createButton.title = hasFreeSlot ? '' : 'Администратор может увеличить количество слотов.';
     }
     if (list) {
-      list.innerHTML = characters.length ? characters.map((character) => {
+      const filledSlots = characters.map((character, index) => {
         const summary = character.summary && typeof character.summary === 'object' ? character.summary : {};
         const details = [summary.species, summary.class, summary.background].filter(Boolean).join(' · ') || 'Черновик персонажа';
-        return `<article class="character-row">
-          <div><strong>${escapeText(character.name || 'Безымянный герой')}</strong><small>${escapeText(details)} · версия ${escapeText(character.revision || 1)} · ${escapeText(formatDate(character.updated_at))}</small></div>
+        const canEdit = summary.source !== 'roll20';
+        return `<article class="character-slot is-filled">
+          <div class="character-slot-number">Слот ${index + 1}</div>
+          <img data-character-portrait="${escapeText(character.id)}" src="${escapeText(fallbackPortrait(summary))}" alt="Портрет ${escapeText(character.name || 'персонажа')}" onerror="this.src='/images/classes/fighter.png'" />
+          <div class="character-slot-copy">
+            <strong>${escapeText(character.name || 'Безымянный герой')}</strong>
+            <small>${escapeText(details)}</small>
+            <small>Версия ${escapeText(character.revision || 1)} · ${escapeText(formatDate(character.updated_at))}</small>
+          </div>
           <div class="character-row-actions">
-            <a href="${creatorPath}?character=${encodeURIComponent(character.id)}">Открыть</a>
+            <a href="/test/cabinet/character/?id=${encodeURIComponent(character.id)}">Открыть героя</a>
+            ${canEdit ? `<a href="${creatorPath}?character=${encodeURIComponent(character.id)}">Конструктор</a>` : ''}
             <button type="button" data-delete-character="${escapeText(character.id)}" data-character-name="${escapeText(character.name || 'Безымянный герой')}">Удалить</button>
           </div>
         </article>`;
-      }).join('') : '<div class="empty-value">Героев пока нет. Создайте первого персонажа.</div>';
+      });
+      const emptySlots = Array.from({ length: Math.max(0, currentCharacterSlots - characters.length) }, (_, offset) => `
+        <article class="character-slot is-empty">
+          <div class="character-slot-number">Слот ${characters.length + offset + 1}</div>
+          <div class="empty-slot-rune" aria-hidden="true">✦</div>
+          <strong>Свободный слот</strong>
+          <small>Создайте героя или загрузите JSON из конструктора / Roll20.</small>
+          <div class="empty-slot-actions">
+            <button type="button" data-create-in-slot>Создать</button>
+            <button type="button" data-import-in-slot>Загрузить JSON</button>
+          </div>
+        </article>`);
+      list.innerHTML = [...filledSlots, ...emptySlots].join('');
+      await Promise.all(characters.map(async (character) => {
+        const image = list.querySelector<HTMLImageElement>(`[data-character-portrait="${CSS.escape(String(character.id))}"]`);
+        if (image) image.src = await resolvePortrait(character.summary || {});
+      }));
     }
     document.querySelectorAll<HTMLButtonElement>('[data-delete-character]').forEach((button) => {
       button.addEventListener('click', () => deleteCharacter(button.dataset.deleteCharacter || '', button.dataset.characterName || 'Безымянный герой'));
+    });
+    document.querySelectorAll<HTMLButtonElement>('[data-create-in-slot]').forEach((button) => {
+      button.addEventListener('click', createCharacter);
+    });
+    document.querySelectorAll<HTMLButtonElement>('[data-import-in-slot]').forEach((button) => {
+      button.addEventListener('click', openJsonPicker);
     });
   }
 
@@ -541,6 +644,11 @@ const { requestedMode = 'auto' } = Astro.props;
 
   document.querySelector('#refresh-users')?.addEventListener('click', loadAdminUsers);
   document.querySelector('#create-character')?.addEventListener('click', createCharacter);
+  document.querySelector('#import-character')?.addEventListener('click', openJsonPicker);
+  document.querySelector<HTMLInputElement>('#character-json-file')?.addEventListener('change', (event) => {
+    const file = (event.currentTarget as HTMLInputElement).files?.[0];
+    if (file) importCharacterFile(file);
+  });
   document.querySelector('#refresh-characters')?.addEventListener('click', loadCharacters);
   document.querySelector('#connect-extension')?.addEventListener('click', connectExtension);
   document.querySelector('#open-extension-settings')?.addEventListener('click', () => {
@@ -584,12 +692,23 @@ const { requestedMode = 'auto' } = Astro.props;
   .featured-actions .primary-button { margin-top: 0; }
   .character-library-card, .extension-card { grid-column: 1 / -1; }
   .extension-card:focus { outline: 2px solid #b69aff; outline-offset: 4px; }
-  .character-list, .sync-token-list { display: grid; gap: .65rem; margin-top: 1rem; }
-  .character-row, .sync-token-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem; border: 1px solid #334159; border-radius: 12px; background: rgba(8,18,34,.58); }
-  .character-row > div:first-child, .sync-token-row > div:first-child { display: grid; gap: .22rem; min-width: 0; }
-  .character-row strong, .sync-token-row strong { color: #e7d9ff; }
-  .character-row small, .sync-token-row small { overflow: hidden; color: #8f9caf; text-overflow: ellipsis; white-space: nowrap; }
-  .character-row-actions { display: flex; align-items: center; gap: .45rem; flex: none; }
+  .character-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: .85rem; margin-top: 1rem; }
+  .sync-token-list { display: grid; gap: .65rem; margin-top: 1rem; }
+  .character-slot { position: relative; display: grid; align-content: start; gap: .65rem; min-height: 330px; overflow: hidden; padding: .85rem; border: 1px solid #334159; border-radius: 16px; background: rgba(8,18,34,.72); }
+  .character-slot.is-filled { grid-template-rows: 168px auto 1fr auto; }
+  .character-slot.is-filled > img { width: calc(100% + 1.7rem); height: 185px; margin: -.85rem -.85rem 0; object-fit: cover; object-position: top center; background: #081222; mask-image: linear-gradient(to bottom,#000 76%,transparent); }
+  .character-slot-number { position: absolute; z-index: 1; top: .65rem; left: .65rem; padding: .28rem .5rem; border: 1px solid rgba(226,180,72,.42); border-radius: 999px; color: #f3dfa1; background: rgba(7,16,31,.86); font-size: .67rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+  .character-slot-copy { display: grid; gap: .28rem; }
+  .character-slot strong, .sync-token-row strong { color: #e7d9ff; }
+  .character-slot-copy > strong { color: #f3dfa1; font: 800 1.25rem Georgia,serif; }
+  .character-slot small, .sync-token-row small { color: #8f9caf; line-height: 1.4; }
+  .character-slot.is-empty { place-items: center; align-content: center; border-style: dashed; text-align: center; }
+  .empty-slot-rune { display: grid; place-items: center; width: 82px; height: 82px; border: 1px solid rgba(182,154,255,.35); border-radius: 50%; color: #b69aff; background: rgba(155,116,255,.08); font-size: 2rem; }
+  .empty-slot-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; }
+  .empty-slot-actions button { padding: .55rem .7rem; border: 1px solid #41506a; border-radius: 8px; color: #dce3ee; background: #101d32; cursor: pointer; font-weight: 800; }
+  .sync-token-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem; border: 1px solid #334159; border-radius: 12px; background: rgba(8,18,34,.58); }
+  .sync-token-row > div:first-child { display: grid; gap: .22rem; min-width: 0; }
+  .character-row-actions { display: flex; align-items: stretch; gap: .38rem; flex-wrap: wrap; }
   .character-row-actions :global(a), .character-row-actions button, .sync-token-row button { margin: 0; padding: .5rem .65rem; border: 1px solid #41506a; border-radius: 8px; color: #dce3ee; background: transparent; cursor: pointer; font: inherit; font-weight: 800; text-decoration: none; }
   .character-row-actions button, .sync-token-row button { color: #ffabb7; }
   .extension-actions, .token-result > div { display: flex; gap: .55rem; margin-top: .8rem; }
@@ -625,7 +744,7 @@ const { requestedMode = 'auto' } = Astro.props;
   .slot-input { width: 86px; padding: .45rem; border: 1px solid #41506a; border-radius: 8px; color: #e4e9f2; background: #101b30; }
   code { color: #a9b5c9; }
   @media (max-width: 760px) {
-    .character-row, .sync-token-row, .extension-actions, .token-result > div { align-items: stretch; flex-direction: column; }
+    .sync-token-row, .extension-actions, .token-result > div { align-items: stretch; flex-direction: column; }
     .character-row-actions { align-items: stretch; }
     .character-row-actions :global(a), .character-row-actions button { flex: 1; text-align: center; }
   }
