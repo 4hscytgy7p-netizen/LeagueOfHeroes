@@ -3624,14 +3624,21 @@ const creatorOptions = {
     const container = $('#origin-feats-extra-choices');
     if (!container) return;
     const magicEntries = selectedOriginFeatEntries().filter((entry) => entry.id === 'magic-initiate');
+    const artificerInitiateEntries = selectedOriginFeatEntries().filter((entry) => entry.id === 'artificer-initiate');
     const scionEntries = selectedOriginFeatEntries().filter((entry) => entry.id === 'scion-of-the-outer-planes');
     const giantStrikeEntries = selectedOriginFeatEntries().filter((entry) => entry.id === 'strike-of-the-giants');
     const activeMagicSources = new Set(magicEntries.map((entry) => entry.source));
+    const activeSpellAbilitySources = new Set([
+      ...magicEntries.map((entry) => entry.source),
+      ...artificerInitiateEntries.map((entry) => entry.source)
+    ]);
     const activeScionSources = new Set(scionEntries.map((entry) => entry.source));
     const activeGiantStrikeSources = new Set(giantStrikeEntries.map((entry) => entry.source));
     ['background', 'species'].forEach((source) => {
       if (!activeMagicSources.has(source)) {
         delete state.choices[`feat:${source}:magic-list`];
+      }
+      if (!activeSpellAbilitySources.has(source)) {
         delete state.choices[`feat:${source}:spell-ability`];
       }
       if (!activeScionSources.has(source)) {
@@ -3642,7 +3649,7 @@ const creatorOptions = {
         delete state.choices[`feat:${source}:giant-strike`];
       }
     });
-    if (!magicEntries.length && !scionEntries.length && !giantStrikeEntries.length) {
+    if (!magicEntries.length && !artificerInitiateEntries.length && !scionEntries.length && !giantStrikeEntries.length) {
       container.innerHTML = '';
       return;
     }
@@ -3670,6 +3677,16 @@ const creatorOptions = {
         source:`Черта: ${entry.feat.name} (${sourceNames[entry.source]})`
       });
       choices.push({ id:`feat:${entry.source}:spell-ability`, title:'Заклинательная характеристика', description:'Выберите характеристику для заклинаний этой черты.', count:1, options:['Интеллект','Мудрость','Харизма'], source:`Черта: ${entry.feat.name} (${sourceNames[entry.source]})` });
+    }
+    for (const entry of artificerInitiateEntries) {
+      choices.push({
+        id: `feat:${entry.source}:spell-ability`,
+        title: 'Заклинательная характеристика',
+        description: 'Выберите характеристику для заговора и заклинания Артефактора, полученных от этой черты.',
+        count: 1,
+        options: ['Интеллект', 'Мудрость', 'Харизма'],
+        source: `Черта: ${entry.feat.name} (${sourceNames[entry.source]})`
+      });
     }
     for (const entry of scionEntries) {
       choices.push({
@@ -3723,6 +3740,10 @@ const creatorOptions = {
         (state.choices[`feat:${entry.source}:magic-list`] || []).length === 1
         && (state.choices[`feat:${entry.source}:spell-ability`] || []).length === 1
       );
+    const artificerInitiateEntries = selectedOriginFeatEntries().filter((entry) => entry.id === 'artificer-initiate');
+    const artificerInitiateComplete = artificerInitiateEntries.every((entry) =>
+      (state.choices[`feat:${entry.source}:spell-ability`] || []).length === 1
+    );
     const scionEntries = selectedOriginFeatEntries().filter((entry) => entry.id === 'scion-of-the-outer-planes');
     const scionComplete = scionEntries.every((entry) =>
       (state.choices[`feat:${entry.source}:scion-plane`] || []).length === 1
@@ -3732,7 +3753,7 @@ const creatorOptions = {
     const giantStrikeComplete = giantStrikeEntries.every((entry) =>
       (state.choices[`feat:${entry.source}:giant-strike`] || []).length === 1
     );
-    return magicComplete && scionComplete && giantStrikeComplete;
+    return magicComplete && artificerInitiateComplete && scionComplete && giantStrikeComplete;
   }
 
   function renderBackgroundChoiceCards(container, choices) {
@@ -4493,6 +4514,22 @@ const creatorOptions = {
 
     const feats = selectedOriginFeatEntries();
     const hasFeat = (id) => feats.some((entry)=>entry.id===id);
+    const artificerInitiateEntry = feats.find((entry) => entry.id === 'artificer-initiate');
+    if (artificerInitiateEntry) {
+      const spellAbility = (state.choices[`feat:${artificerInitiateEntry.source}:spell-ability`] || [])[0] || '';
+      const sourceLabel = `Черта: Посвящённый в артефакторство (${spellAbility || 'характеристика не выбрана'})`;
+      const options = (classSpellOptions.artificer || [])
+        .filter((spell) => spell.level === 'cantrip' || spell.level === '1');
+      sources.push({
+        id: `feat-artificer-initiate-${artificerInitiateEntry.source}`,
+        category: 'Черта',
+        title: 'Посвящённый в артефакторство',
+        spellLabel: sourceLabel,
+        description: `Выберите 1 заговор и 1 заклинание 1 уровня из списка Артефактора. Заклинательная характеристика: ${spellAbility || 'не выбрана'}.`,
+        limits: { cantrip: 1, level1: 1 },
+        options: uniqueSpells(withSpellAvailability(options, sourceLabel))
+      });
+    }
     const scionEntry = feats.find((entry) => entry.id === 'scion-of-the-outer-planes');
     if (scionEntry) {
       const planId = (state.choices[`feat:${scionEntry.source}:scion-plane`] || [])[0] || '';
@@ -5366,7 +5403,10 @@ const creatorOptions = {
         fixed = [...new Set(classFixed)];
       }
 
-      if (source === 'feat' && /ремесленник|crafter/i.test(text)) {
+      // Только черта «Ремесленник» даёт три инструмента. Слово
+      // «ремесленника» встречается и в других чертах (например,
+      // «Посвящённый в артефакторство»), но не меняет их лимит до трёх.
+      if (source === 'feat' && selectedOriginFeatEntries().some((entry) => entry.id === 'crafter')) {
         count = 3;
         allowed = [...creatorOptions.artisanTools];
       }
