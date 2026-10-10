@@ -1,16 +1,19 @@
 ---
+import MaterialMetadata from '../materials/MaterialMetadata.astro';
 interface Props {
+  id: string;
   name: string;
   nameEn: string;
   sourceBook: string;
 }
 
-const { name, nameEn, sourceBook } = Astro.props;
+const { id, name, nameEn } = Astro.props;
 ---
 
 <div class="species-header">
   <h1>{name} <span class="name-en">[{nameEn}]</span></h1>
-  <div class="source">Источник: {sourceBook}</div>
+  <div data-base-metadata><MaterialMetadata kind="species" id={id} /></div>
+  <p><a href="/races#race-attributes">Возраст, рост и вес: если значения не указаны →</a></p>
 </div>
 
 <style>

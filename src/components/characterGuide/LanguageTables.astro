@@ -1,0 +1,25 @@
+---
+import { standardLanguages, exoticLanguages } from '../../data/languages';
+---
+<h3>Стандартные языки</h3>
+<div class="reference-table" tabindex="0" role="region" aria-label="Стандартные языки">
+  <table>
+    <thead><tr><th>1д12</th><th>Язык</th><th>Происхождение</th><th>Письменность</th></tr></thead>
+    <tbody>{standardLanguages.map(language => <tr><td>{language.roll}</td><td>{language.name}</td><td>{language.origin}</td><td>{language.script}</td></tr>)}</tbody>
+  </table>
+</div>
+<h3>Экзотические языки</h3>
+<p>Это справочный список. Дополнительные языки предоставляют соответствующие способности; он не заменяет выбор двух стандартных языков при создании персонажа.</p>
+<div class="reference-table" tabindex="0" role="region" aria-label="Экзотические языки">
+  <table>
+    <thead><tr><th>Язык</th><th>Происхождение</th><th>Письменность</th></tr></thead>
+    <tbody>{exoticLanguages.map(language => <tr><td>{language.name}</td><td>{language.origin}</td><td>{language.script}</td></tr>)}</tbody>
+  </table>
+</div>
+<style>
+  .reference-table { width: 100%; min-width: 0; overflow-x: auto; margin: 1rem 0; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: .65rem; border: 1px solid var(--card-border); text-align: left; vertical-align: top; }
+  th { background: var(--card-bg); }
+  @media (max-width: 600px) { th, td { padding: .5rem; } }
+</style>

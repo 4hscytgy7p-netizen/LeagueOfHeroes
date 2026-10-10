@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "tracker-339",
+  "title": "Лист конфликтов",
+  "description": "",
+  "sourcePages": [
+    339
+  ],
+  "group": "Приложение В · Листы отслеживания",
+  "pages": [
+    {
+      "number": 339,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-339-1b32f96e65.webp",
+          "alt": "Лист отслеживания: Лист конфликтов",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-339-1b32f96e65-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Лист конфликтов\nПриключенцы против\nКонфликт 1\nПриключенцы против\nКонфликт 1\nПриключенцы против\nКонфликт 1\nJoy Ang\n, Calder Moore",
+          "textLabel": "Поля листа",
+          "id": "p339-1",
+          "sourcePage": 339
+        }
+      ]
+    }
+  ]
+}

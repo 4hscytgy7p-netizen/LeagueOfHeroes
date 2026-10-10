@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import mapImage from '../../../public/images/sigil-map.jpeg';
+
 interface Props {
   imageUrl: string;
   caption: string;
@@ -8,17 +11,37 @@ const { imageUrl, caption } = Astro.props;
 ---
 
 <figure class="map-container">
-  <img src={imageUrl} alt="Map of Sigil" class="sigil-map" />
-  <figcaption>{caption}</figcaption>
+  <a class="map-link" href={imageUrl} target="_blank" rel="noopener" aria-label="Открыть карту Сигила в полном размере в новой вкладке">
+    <Image
+      src={mapImage}
+      alt="Карта Сигила с районами города и отмеченными местами"
+      class="sigil-map"
+      width={1440}
+      widths={[640, 960, 1440]}
+      sizes="(max-width: 1000px) 96vw, (max-width: 1280px) 70vw, 970px"
+      format="webp"
+      quality={85}
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+  <figcaption>{caption}. <a href={imageUrl} target="_blank" rel="noopener">Открыть в полном размере ↗<span class="sr-only"> (в новой вкладке)</span></a></figcaption>
 </figure>
 
 <style>
   .map-container {
-    margin: 2rem 0;
-    text-align: center;
+    margin: 0;
+  }
+
+  .map-link {
+    display: block;
+    border-radius: 0.5rem;
+    cursor: zoom-in;
   }
 
   .sigil-map {
+    display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 0.5rem;
@@ -28,6 +51,16 @@ const { imageUrl, caption } = Astro.props;
   figcaption {
     margin-top: 1rem;
     color: var(--text);
-    font-style: italic;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 </style>

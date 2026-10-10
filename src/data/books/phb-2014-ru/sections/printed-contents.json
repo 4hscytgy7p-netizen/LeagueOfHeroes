@@ -1,0 +1,1303 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "printed-contents",
+  "title": "Содержание",
+  "description": "",
+  "sourcePages": [
+    4
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 4,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРЕДИСЛОВИЕ 4"
+            }
+          ],
+          "targetPage": 5,
+          "id": "p4-1",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/preface/#page-5"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ВВЕДЕНИЕ 5"
+            }
+          ],
+          "targetPage": 6,
+          "id": "p4-2",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/introduction/#page-6"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мир приключений................................................... 5"
+            }
+          ],
+          "targetPage": 6,
+          "style": "reference",
+          "id": "p4-3",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/introduction/#page-6"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Использование этой книги.................................... 6"
+            }
+          ],
+          "targetPage": 7,
+          "style": "reference",
+          "id": "p4-4",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/introduction/#page-7"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Как играть.................................................................... 6"
+            }
+          ],
+          "targetPage": 7,
+          "style": "reference",
+          "id": "p4-5",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/introduction/#page-7"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Приключения............................................................... 7"
+            }
+          ],
+          "targetPage": 8,
+          "style": "reference",
+          "id": "p4-6",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/introduction/#page-8"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 1 9"
+            }
+          ],
+          "targetPage": 10,
+          "id": "p4-7",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-10/#page-10"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 1: СОЗДАНИЕ ПЕРСОНАЖА.................... 11"
+            }
+          ],
+          "targetPage": 12,
+          "style": "reference",
+          "id": "p4-8",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/character-creation/#page-12"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "После 1 уровня........................................................ 15"
+            }
+          ],
+          "targetPage": 16,
+          "style": "reference",
+          "id": "p4-9",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/character-creation/#page-16"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 2: РАСЫ....................................................... 17"
+            }
+          ],
+          "targetPage": 18,
+          "style": "reference",
+          "id": "p4-10",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/races/#page-18"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Выбор расы............................................................. 17"
+            }
+          ],
+          "targetPage": 18,
+          "style": "reference",
+          "id": "p4-11",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/races/#page-18"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дварф....................................................................... 18"
+            }
+          ],
+          "targetPage": 19,
+          "style": "reference",
+          "id": "p4-12",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/dwarf/#page-19"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эльф......................................................................... 21"
+            }
+          ],
+          "targetPage": 22,
+          "style": "reference",
+          "id": "p4-13",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/elf/#page-22"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полурослик.............................................................. 26"
+            }
+          ],
+          "targetPage": 27,
+          "style": "reference",
+          "id": "p4-14",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/halfling/#page-27"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Человек.................................................................... 29"
+            }
+          ],
+          "targetPage": 30,
+          "style": "reference",
+          "id": "p4-15",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/human/#page-30"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Драконорожденный................................................. 32"
+            }
+          ],
+          "targetPage": 33,
+          "style": "reference",
+          "id": "p4-16",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/dragonborn/#page-33"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гном......................................................................... 35"
+            }
+          ],
+          "targetPage": 36,
+          "style": "reference",
+          "id": "p4-17",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/gnome/#page-36"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полуэльф................................................................. 38"
+            }
+          ],
+          "targetPage": 39,
+          "style": "reference",
+          "id": "p4-18",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/half-elf/#page-39"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полуорк.................................................................... 40"
+            }
+          ],
+          "targetPage": 41,
+          "style": "reference",
+          "id": "p4-19",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/half-orc/#page-41"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тифлинг................................................................... 42"
+            }
+          ],
+          "targetPage": 43,
+          "style": "reference",
+          "id": "p4-20",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/tiefling/#page-43"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 3: КЛАССЫ.................................................. 45"
+            }
+          ],
+          "targetPage": 46,
+          "style": "reference",
+          "id": "p4-21",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/classes/#page-46"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Варвар...................................................................... 46"
+            }
+          ],
+          "targetPage": 47,
+          "style": "reference",
+          "id": "p4-22",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/barbarian/#page-47"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бард.......................................................................... 51"
+            }
+          ],
+          "targetPage": 52,
+          "style": "reference",
+          "id": "p4-23",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/bard/#page-52"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жрец........................................................................ 56"
+            }
+          ],
+          "targetPage": 57,
+          "style": "reference",
+          "id": "p4-24",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/cleric-1/#page-57"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Друид........................................................................ 64"
+            }
+          ],
+          "targetPage": 65,
+          "style": "reference",
+          "id": "p4-25",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/druid/#page-65"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воин.......................................................................... 70"
+            }
+          ],
+          "targetPage": 71,
+          "style": "reference",
+          "id": "p4-26",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/fighter/#page-71"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Монах........................................................................ 76"
+            }
+          ],
+          "targetPage": 77,
+          "style": "reference",
+          "id": "p4-27",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/monk/#page-77"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паладин................................................................... 82"
+            }
+          ],
+          "targetPage": 83,
+          "style": "reference",
+          "id": "p4-28",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/paladin-1/#page-83"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Следопыт................................................................. 89"
+            }
+          ],
+          "targetPage": 90,
+          "style": "reference",
+          "id": "p4-29",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ranger/#page-90"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плут.......................................................................... 94"
+            }
+          ],
+          "targetPage": 95,
+          "style": "reference",
+          "id": "p4-30",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/rogue/#page-95"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чародей....................................................................... 99"
+            }
+          ],
+          "targetPage": 100,
+          "style": "reference",
+          "id": "p4-31",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/sorcerer/#page-100"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колдун.................................................................... 105"
+            }
+          ],
+          "targetPage": 106,
+          "style": "reference",
+          "id": "p4-32",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/warlock-1/#page-106"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебник............................................................. 112"
+            }
+          ],
+          "targetPage": 113,
+          "style": "reference",
+          "id": "p4-33",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/wizard-1/#page-113"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 4: ЛИЧНОСТЬ И ПРЕДЫСТОРИЯ......... 121"
+            }
+          ],
+          "targetPage": 122,
+          "style": "reference",
+          "id": "p4-34",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/personality/#page-122"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Описание персонажа........................................... 121"
+            }
+          ],
+          "targetPage": 122,
+          "style": "reference",
+          "id": "p4-35",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/personality/#page-122"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вдохновение.......................................................... 124"
+            }
+          ],
+          "targetPage": 125,
+          "style": "reference",
+          "id": "p4-36",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/personality/#page-125"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предыстории......................................................... 125"
+            }
+          ],
+          "targetPage": 126,
+          "style": "reference",
+          "id": "p4-37",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/personality/#page-126"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 5: СНАРЯЖЕНИЕ..................................... 143"
+            }
+          ],
+          "targetPage": 144,
+          "style": "reference",
+          "id": "p4-38",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/equipment/#page-144"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Начальное снаряжение......................................... 143"
+            }
+          ],
+          "targetPage": 144,
+          "style": "reference",
+          "id": "p4-39",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/equipment/#page-144"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Богатство............................................................... 143"
+            }
+          ],
+          "targetPage": 144,
+          "style": "reference",
+          "id": "p4-40",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/equipment/#page-144"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспехи и щиты.................................................. 144"
+            }
+          ],
+          "targetPage": 145,
+          "style": "reference",
+          "id": "p4-41",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/equipment/#page-145"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оружие................................................................... 146"
+            }
+          ],
+          "targetPage": 147,
+          "style": "reference",
+          "id": "p4-42",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/armor/#page-147"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Снаряжение............................................................. 148"
+            }
+          ],
+          "targetPage": 149,
+          "style": "reference",
+          "id": "p4-43",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/armor/#page-149"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инструменты........................................................ 154"
+            }
+          ],
+          "targetPage": 155,
+          "style": "reference",
+          "id": "p4-44",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/tools/#page-155"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скакуны и транспорт......................................... 155"
+            }
+          ],
+          "targetPage": 156,
+          "style": "reference",
+          "id": "p4-45",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/tools/#page-156"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Товары................................................................... 157"
+            }
+          ],
+          "targetPage": 158,
+          "style": "reference",
+          "id": "p4-46",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/mounts-and-trade/#page-158"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Расходы.................................................................. 157"
+            }
+          ],
+          "targetPage": 158,
+          "style": "reference",
+          "id": "p4-47",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/mounts-and-trade/#page-158"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Безделушки........................................................... 159"
+            }
+          ],
+          "targetPage": 160,
+          "style": "reference",
+          "id": "p4-48",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/expenses/#page-160"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 6: ИНДИВИДУАЛЬНЫЕ ОПЦИИ............ 163"
+            }
+          ],
+          "targetPage": 164,
+          "style": "reference",
+          "id": "p4-49",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/multiclassing/#page-164"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мультиклассирование.......................................... 163"
+            }
+          ],
+          "targetPage": 164,
+          "style": "reference",
+          "id": "p4-50",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/multiclassing/#page-164"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Черты...................................................................... 165"
+            }
+          ],
+          "targetPage": 166,
+          "style": "reference",
+          "id": "p4-51",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/feats/#page-166"
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "СОДЕРЖАНИЕ"
+            }
+          ],
+          "id": "p4-52",
+          "sourcePage": 4
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 2 171"
+            }
+          ],
+          "targetPage": 172,
+          "id": "p4-53",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-172/#page-172"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 7: ИСПОЛЬЗОВАНИЕ ХАРАКТЕРИСТИК.. 173"
+            }
+          ],
+          "targetPage": 174,
+          "style": "reference",
+          "id": "p4-54",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-1/#page-174"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Значения характеристик и модификаторы.... 173"
+            }
+          ],
+          "targetPage": 174,
+          "style": "reference",
+          "id": "p4-55",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-1/#page-174"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Преимущество и помеха..................................... 173"
+            }
+          ],
+          "targetPage": 174,
+          "style": "reference",
+          "id": "p4-56",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-1/#page-174"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бонус мастерства................................................. 173"
+            }
+          ],
+          "targetPage": 174,
+          "style": "reference",
+          "id": "p4-57",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-1/#page-174"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проверки характеристик.................................... 174"
+            }
+          ],
+          "targetPage": 175,
+          "style": "reference",
+          "id": "p4-58",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-1/#page-175"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Использование характеристик........................... 175"
+            }
+          ],
+          "targetPage": 176,
+          "style": "reference",
+          "id": "p4-59",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-1/#page-176"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спасброски............................................................ 179"
+            }
+          ],
+          "targetPage": 180,
+          "style": "reference",
+          "id": "p4-60",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/ability-checks-2/#page-180"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 8: ПРИКЛЮЧЕНИЯ.................................. 181"
+            }
+          ],
+          "targetPage": 182,
+          "style": "reference",
+          "id": "p4-61",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-182"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Время...................................................................... 181"
+            }
+          ],
+          "targetPage": 182,
+          "style": "reference",
+          "id": "p4-62",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-182"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перемещение........................................................ 181"
+            }
+          ],
+          "targetPage": 182,
+          "style": "reference",
+          "id": "p4-63",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-182"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Окружающая среда............................................. 183"
+            }
+          ],
+          "targetPage": 184,
+          "style": "reference",
+          "id": "p4-64",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-184"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Социальное взаимодействие............................. 185"
+            }
+          ],
+          "targetPage": 186,
+          "style": "reference",
+          "id": "p4-65",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-186"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отдых..................................................................... 186"
+            }
+          ],
+          "targetPage": 187,
+          "style": "reference",
+          "id": "p4-66",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-187"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Между приключениями...................................... 186"
+            }
+          ],
+          "targetPage": 187,
+          "style": "reference",
+          "id": "p4-67",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/adventuring-1/#page-187"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 9: СРАЖЕНИЕ.......................................... 189"
+            }
+          ],
+          "targetPage": 190,
+          "style": "reference",
+          "id": "p4-68",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/combat/#page-190"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порядок сражения.............................................. 189"
+            }
+          ],
+          "targetPage": 190,
+          "style": "reference",
+          "id": "p4-69",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/combat/#page-190"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перемещение и позиция.................................... 190"
+            }
+          ],
+          "targetPage": 191,
+          "style": "reference",
+          "id": "p4-70",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-191/#page-191"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Действия в бою................................................... 192"
+            }
+          ],
+          "targetPage": 193,
+          "style": "reference",
+          "id": "p4-71",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-193/#page-193"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Совершение атаки............................................... 193"
+            }
+          ],
+          "targetPage": 194,
+          "style": "reference",
+          "id": "p4-72",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-193/#page-194"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Укрытие................................................................. 196"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p4-73",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-197/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Урон и лечение..................................................... 196"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p4-74",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-197/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сражение верхом................................................. 198"
+            }
+          ],
+          "targetPage": 199,
+          "style": "reference",
+          "id": "p4-75",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-197/#page-199"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подводное сражение........................................... 198"
+            }
+          ],
+          "targetPage": 199,
+          "style": "reference",
+          "id": "p4-76",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-197/#page-199"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 3 199"
+            }
+          ],
+          "targetPage": 200,
+          "id": "p4-77",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/section-200/#page-200"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ГЛАВА 10: ИСПОЛЬЗОВАНИЕ"
+            }
+          ],
+          "id": "p4-78",
+          "sourcePage": 4
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗАКЛИНАНИЙ......................................................... 201"
+            }
+          ],
+          "targetPage": 202,
+          "style": "reference",
+          "id": "p4-79",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/spellcasting/#page-202"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Что такое заклинание........................................ 201"
+            }
+          ],
+          "targetPage": 202,
+          "style": "reference",
+          "id": "p4-80",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/spellcasting/#page-202"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Накладывание заклинания............................... 202"
+            }
+          ],
+          "targetPage": 203,
+          "style": "reference",
+          "id": "p4-81",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/spellcasting/#page-203"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 11: ЗАКЛИНАНИЯ..................................... 207"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p4-82",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/spell-lists/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Список заклинаний............................................ 207"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p4-83",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/spell-lists/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Описание заклинаний........................................ 211"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p4-84",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/spells-212/#page-212"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ А : СОСТОЯНИЯ 290"
+            }
+          ],
+          "targetPage": 291,
+          "id": "p4-85",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/conditions/#page-291"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ Б : "
+            }
+          ],
+          "id": "p4-86",
+          "sourcePage": 4
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "БОГИ МУЛЬТИВСЕЛЕННОЙ 293"
+            }
+          ],
+          "targetPage": 294,
+          "id": "p4-87",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/deities-1/#page-294"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ В : "
+            }
+          ],
+          "id": "p4-88",
+          "sourcePage": 4
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "300"
+            }
+          ],
+          "targetPage": 294,
+          "style": "reference",
+          "id": "p4-89",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/deities-1/#page-294"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПЛАНЫ СУЩЕСТВОВАНИЯ"
+            }
+          ],
+          "id": "p4-90",
+          "sourcePage": 4
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Материальный план............................................ 300"
+            }
+          ],
+          "targetPage": 301,
+          "style": "reference",
+          "id": "p4-91",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/planes/#page-301"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "За пределами материи....................................... 301"
+            }
+          ],
+          "targetPage": 302,
+          "style": "reference",
+          "id": "p4-92",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/planes/#page-302"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ Г : "
+            }
+          ],
+          "id": "p4-93",
+          "sourcePage": 4
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПАРАМЕТРЫ СУЩЕСТВ 304"
+            }
+          ],
+          "targetPage": 305,
+          "id": "p4-94",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/creatures-1/#page-305"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ Д : "
+            }
+          ],
+          "id": "p4-95",
+          "sourcePage": 4
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЛИТЕРАТУРА ДЛЯ ВДОХНОВЕНИЯ 312"
+            }
+          ],
+          "targetPage": 313,
+          "id": "p4-96",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/inspirational-reading/#page-313"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "АНГЛО-РУССКИЙ СЛОВАРЬ................................... 313"
+            }
+          ],
+          "targetPage": 314,
+          "style": "reference",
+          "id": "p4-97",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/dictionary-en-ru/#page-314"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "РУССКО-АНГЛИЙСКИЙ СЛОВАРЬ......................... 317"
+            }
+          ],
+          "targetPage": 318,
+          "style": "reference",
+          "id": "p4-98",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/dictionary-ru-en/#page-318"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "АЛФАВИТНЫЙ УКАЗАТЕЛЬ 321"
+            }
+          ],
+          "targetPage": 322,
+          "id": "p4-99",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/index/#page-322"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЛИСТЫ ПЕРСОНАЖА 327"
+            }
+          ],
+          "targetPage": 328,
+          "id": "p4-100",
+          "sourcePage": 4,
+          "link": "/books/phb-2014-ru/character-sheet/#page-328"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-332",
+  "title": "Вулканические пещеры",
+  "description": "",
+  "sourcePages": [
+    332
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 332,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-332-a303512276.webp",
+          "alt": "Карта: Вулканические пещеры",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-332-a303512276-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Вулканические пещеры\nВверх к\nкратеру\n1 квадрат = 5 футов\nВулканические пещеры\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков",
+          "textLabel": "Подписи на карте",
+          "id": "p332-1",
+          "sourcePage": 332
+        }
+      ]
+    }
+  ]
+}

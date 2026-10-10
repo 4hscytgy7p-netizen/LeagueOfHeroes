@@ -1,11 +1,16 @@
 ---
+import MaterialMetadata from '../materials/MaterialMetadata.astro';
 import type { Spell } from '../../types/spell';
+import CreatureDisclosure from '../creatures/CreatureDisclosure.astro';
+import { companions } from '../../data/creatures/companions';
+import { resolveFeatureCreatures } from '../../utils/creature';
 
 interface Props {
   spell: Spell;
 }
 
 const { spell } = Astro.props;
+const creatures = resolveFeatureCreatures(spell.statBlockIds || [], companions);
 
 function formatComponents(components: Spell['components']): string {
   const parts = [];
@@ -37,7 +42,7 @@ function formatSources(sources: Spell['sources']): string {
 <div class="spell-details">
   <div class="spell-header">
     <h2>{spell.name} <span class="name-en">[{spell.nameEn}]</span></h2>
-    <div class="source">{spell.source.book}, стр. {spell.source.page}</div>
+    <MaterialMetadata kind="spell" id={spell.id} />
   </div>
 
   <div class="spell-info">
@@ -66,6 +71,11 @@ function formatSources(sources: Spell['sources']): string {
   </div>
 
   <div class="spell-description" set:html={spell.description} />
+
+  {creatures.length > 0 && <section aria-label="Статблоки заклинания">
+    {spell.statBlockNote && <p class="creature-context-note">{spell.statBlockNote}</p>}
+    {creatures.map(creature => <CreatureDisclosure creature={creature} prefix={`spell-${spell.id}`} />)}
+  </section>}
 
   <div class="spell-sources">
     <h3>Источники</h3>

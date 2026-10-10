@@ -15,6 +15,10 @@ interface Props {}
         <span class="label">Базовая стоимость:</span>
         <span>Проживание</span>
       </div>
+      <div class="info-item">
+        <span class="label">Кооперативность:</span>
+        <span>Нет</span>
+      </div>
     </div>
   </div>
 
@@ -32,6 +36,7 @@ interface Props {}
         </ul> 
         </p>
         <p>По желанию персонаж может заменить одну из этих проверок броском атаки, используя одно из своих оружий.</p>
+        <p class="note">Различные бонусы (маг. бонус, боевые стили) применяются к такому броску атаки. Заклинания, по типу Меткий удар, заменяющие характистику для совершения атаки не применяются.</p>
         <div class="rules-section">
           <h4>Результаты турнира</h4>
           <div class="activity-search">
@@ -52,10 +57,10 @@ interface Props {}
         </div>
       </section>
       <div>
-      <p>После турнира есть 15% шанс на осложнение (бросок d100, 1-15)</p>
+      <p>После турнира есть 15% шанс на осложнение (бросок д100, 1-15)</p>
       </div>
       <details class="activity-details">
-        <summary class="dets">Осложнения (d6)</summary>
+        <summary class="dets">Осложнения (д6)</summary>
       <section class="complications">
         <div class="complications-table">
           <table>

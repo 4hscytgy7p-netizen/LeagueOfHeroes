@@ -1,0 +1,28 @@
+{
+  "bookId": "phb-2024-ru",
+  "id": "cover",
+  "title": "Обложка",
+  "description": "",
+  "sourcePages": [
+    1
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 1,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2024-ru/page-1-75818d4779.webp",
+          "alt": "Иллюстрация к разделу «Обложка».",
+          "width": 989,
+          "height": 1400,
+          "smallSrc": "/images/books/phb-2024-ru/page-1-75818d4779-640.webp",
+          "smallWidth": 640,
+          "id": "p1-1",
+          "sourcePage": 1
+        }
+      ]
+    }
+  ]
+}

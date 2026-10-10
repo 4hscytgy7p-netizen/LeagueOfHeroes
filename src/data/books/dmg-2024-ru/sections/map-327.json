@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-327",
+  "title": "Шахта",
+  "description": "",
+  "sourcePages": [
+    327
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 327,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-327-3430156e96.webp",
+          "alt": "Карта: Шахта",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-327-3430156e96-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Шахта\nУровень 1\nУровень 1\nСклон вниз\nВниз на\nуровень 3\n1 квадрат = 5 футов\nВверх на уровень 1\nУровень 2\nУровень 3\nВниз на\nуровень 3\nУровень 2\nВверх на уровень 2\nУровень 3\nШахта\nХудожник: Dyson Logos\nОригинал",
+          "textLabel": "Подписи на карте",
+          "id": "p327-1",
+          "sourcePage": 327
+        }
+      ]
+    }
+  ]
+}

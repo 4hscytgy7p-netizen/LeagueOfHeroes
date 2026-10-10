@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-322",
+  "title": "Логово дракона",
+  "description": "",
+  "sourcePages": [
+    322
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 322,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-322-5cdd5f5c5a.webp",
+          "alt": "Карта: Логово дракона",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-322-5cdd5f5c5a-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Логово дракона\nУровень 1\nУровень 2\nУровень 3\nЛогово дракона\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков\nВниз на\nуровень 2\nУровень 1\nВверх на\nуровень 1\nВниз на\nуровень 3\nУровень 2\nВверх на\nУровень 3\n1 квадрат = 5 футов\nуровень 2",
+          "textLabel": "Подписи на карте",
+          "id": "p322-1",
+          "sourcePage": 322
+        }
+      ]
+    }
+  ]
+}

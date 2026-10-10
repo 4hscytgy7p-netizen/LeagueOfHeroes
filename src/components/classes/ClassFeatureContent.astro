@@ -1,0 +1,22 @@
+---
+import type { ClassFeature } from '../../types/class';
+import CreatureDisclosure from '../creatures/CreatureDisclosure.astro';
+import { companions } from '../../data/creatures/companions';
+import { resolveFeatureCreatures } from '../../utils/creature';
+interface Props { feature: ClassFeature; prefix: string; }
+const { feature, prefix } = Astro.props;
+const paragraphs = (description: string | string[]) => Array.isArray(description) ? description : (description || '').split('\n').filter(Boolean);
+---
+<div class="feature-description">
+  {paragraphs(feature.description).map(text => <p set:html={text} />)}
+  {feature.statBlockNote && <p class="creature-context-note">{feature.statBlockNote}</p>}
+  {resolveFeatureCreatures(feature.statBlockIds || [], companions).map(creature => <CreatureDisclosure creature={creature} prefix={prefix} staticContent />)}
+  {feature.collapsible && <div class="collapsible-content">{feature.collapsible.map((item, index) => <details class="collapsible-item">
+    <summary>{item.title}</summary><div class="collapsible-description">
+      {paragraphs(item.description).map(text => <p set:html={text} />)}
+      {item.tableData && <div class="feature-table-scroll" tabindex="0" role="region" aria-label={item.title}><table><thead><tr>{item.tableData.headers.map(header => <th scope="col">{header}</th>)}</tr></thead><tbody>{item.tableData.rows.map(row => <tr>{row.map(cell => <td set:html={cell} />)}</tr>)}</tbody></table></div>}
+      {item.statBlockNote && <p class="creature-context-note">{item.statBlockNote}</p>}
+      {resolveFeatureCreatures(item.statBlockIds || [], companions).map(creature => <CreatureDisclosure creature={creature} prefix={`${prefix}-${index}`} staticContent />)}
+    </div>
+  </details>)}</div>}
+</div>

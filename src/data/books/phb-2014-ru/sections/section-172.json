@@ -1,0 +1,76 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "section-172",
+  "title": "Иллюстрация к части 2",
+  "description": "",
+  "sourcePages": [
+    172,
+    173
+  ],
+  "group": "Глава 6. Индивидуальные опции",
+  "pages": [
+    {
+      "number": 172,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "ЧАСТЬ2"
+            }
+          ],
+          "id": "p172-1",
+          "sourcePage": 172
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-172-f139d8cfbb.webp",
+          "alt": "Иллюстрация к разделу «Иллюстрация к части 2».",
+          "width": 1031,
+          "height": 1400,
+          "smallSrc": "/images/books/phb-2014-ru/page-172-f139d8cfbb-640.webp",
+          "smallWidth": 640,
+          "id": "p172-2",
+          "sourcePage": 172
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "И"
+            },
+            {
+              "text": "ГРАЯ В ИГРУ"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "id": "p172-3",
+          "sourcePage": 172
+        }
+      ]
+    },
+    {
+      "number": 173,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-173-5366cadaec.webp",
+          "alt": "Иллюстрация: Иллюстрация к части 2",
+          "width": 1698,
+          "height": 2400,
+          "smallSrc": "/images/books/phb-2014-ru/page-173-5366cadaec-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "",
+          "textLabel": "Текст иллюстрации",
+          "id": "p173-1",
+          "sourcePage": 173
+        }
+      ]
+    }
+  ]
+}

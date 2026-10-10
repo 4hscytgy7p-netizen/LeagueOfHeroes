@@ -1,0 +1,4841 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "magic-item-index",
+  "title": "Список магических предметов",
+  "description": "",
+  "sourcePages": [
+    196
+  ],
+  "group": "Глава 7 · Сокровища",
+  "pages": [
+    {
+      "number": 196,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Список магических предметов",
+              "bold": true
+            }
+          ],
+          "id": "p196-1",
+          "sourcePage": 196
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вариативные ",
+              "bold": true
+            },
+            {
+              "text": "197"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-2",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боеприпас +1, +2 или +3"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-3",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка боевого мага +1, +2 или +3"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-4",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех +1, +2 или +3"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-5",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл хранителя договора"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-6",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зачарованное оружие"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-7",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зачарованный доспех"
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p196-8",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зачарованный посох 198"
+            }
+          ],
+          "targetPage": 198,
+          "style": "reference",
+          "id": "p196-9",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-198"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье силы великана"
+            }
+          ],
+          "targetPage": 198,
+          "style": "reference",
+          "id": "p196-10",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-198"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелья лечения"
+            }
+          ],
+          "targetPage": 198,
+          "style": "reference",
+          "id": "p196-11",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-198"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инструмент бардов 199"
+            }
+          ],
+          "targetPage": 199,
+          "style": "reference",
+          "id": "p196-12",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-199"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камень Йоун 200"
+            }
+          ],
+          "targetPage": 200,
+          "style": "reference",
+          "id": "p196-13",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-200"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обмотки безоружной"
+            }
+          ],
+          "targetPage": 200,
+          "style": "reference",
+          "id": "p196-14",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-200"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "мощи 201"
+            }
+          ],
+          "targetPage": 201,
+          "style": "reference",
+          "id": "p196-15",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-201"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оружие +1, +2 или +3"
+            }
+          ],
+          "targetPage": 201,
+          "style": "reference",
+          "id": "p196-16",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-201"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перо Кваля"
+            }
+          ],
+          "targetPage": 201,
+          "style": "reference",
+          "id": "p196-17",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-201"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пояс силы великана 202"
+            }
+          ],
+          "targetPage": 202,
+          "style": "reference",
+          "id": "p196-18",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-2/#page-202"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рог Валгаллы"
+            }
+          ],
+          "targetPage": 202,
+          "style": "reference",
+          "id": "p196-19",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-2/#page-202"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свиток заклинания 203"
+            }
+          ],
+          "targetPage": 203,
+          "style": "reference",
+          "id": "p196-20",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-2/#page-203"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Статуэтка чудесной силы  204"
+            }
+          ],
+          "targetPage": 204,
+          "style": "reference",
+          "id": "p196-21",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-2/#page-204"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит +1, +2 или +3 205"
+            }
+          ],
+          "targetPage": 205,
+          "style": "reference",
+          "id": "p196-22",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-variable-2/#page-205"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обычные ",
+              "bold": true
+            },
+            {
+              "text": "206"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-23",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Амулет тёмного осколка"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-24",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бусина насыщения"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-25",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бусина освежения"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-26",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка пиротехники"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-27",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Говорящая кукла"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-28",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горшок пробуждения"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-29",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дирижёрская палочка"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-30",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех быстрого снятия"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-31",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дымящий доспех"
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p196-32",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Запасной глаз 207"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-33",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье лазания"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-34",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье понимания"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-35",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Износостойкая книга заклинаний"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-36",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инструмент иллюзий"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-37",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инструмент надписей"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-38",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Коготь Сильваны"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-39",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кость шарлатана"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-40",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кружка трезвости"
+            }
+          ],
+          "targetPage": 207,
+          "style": "reference",
+          "id": "p196-41",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-207"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Механистический амулет  208"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-42",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Монета соперников"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-43",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опрокидывающий боеприпас"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-44",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Осенённый луной меч"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-45",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парфюм очарования"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-46",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ множества стилей"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-47",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плутовской замок"
+            }
+          ],
+          "targetPage": 208,
+          "style": "reference",
+          "id": "p196-48",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-208"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох птичьего щебета 209"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-49",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох украшения"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-50",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох цветов"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-51",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Протез конечности"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-52",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Развевающийся плащ"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-53",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рог беззвучного сигнала"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-54",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рубин боевого мага"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-55",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Самочинящаяся одежда"
+            }
+          ],
+          "targetPage": 209,
+          "style": "reference",
+          "id": "p196-56",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-209"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сапоги ложных следов 210"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-57",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сверкающий доспех"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-58",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свеча глубин"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-59",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Серебряное оружие"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-60",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Складной шест"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-61",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слуховой рог"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-62",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Срастающаяся верёвка"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-63",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера времени"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-64",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера направления"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-65",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Таинственный ключ"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-66",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трость ветерана"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-67",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трубка дымных монстров"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-68",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удобный мешочек специй"
+            }
+          ],
+          "targetPage": 210,
+          "style": "reference",
+          "id": "p196-69",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-210"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хеварда 211"
+            }
+          ],
+          "targetPage": 211,
+          "style": "reference",
+          "id": "p196-70",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-2/#page-211"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шест рыболовства"
+            }
+          ],
+          "targetPage": 211,
+          "style": "reference",
+          "id": "p196-71",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-2/#page-211"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шлем ужаса"
+            }
+          ],
+          "targetPage": 211,
+          "style": "reference",
+          "id": "p196-72",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-2/#page-211"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шляпа волшебства"
+            }
+          ],
+          "targetPage": 211,
+          "style": "reference",
+          "id": "p196-73",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-2/#page-211"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шляпа вредителей"
+            }
+          ],
+          "targetPage": 211,
+          "style": "reference",
+          "id": "p196-74",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-2/#page-211"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит экспрессии"
+            }
+          ],
+          "targetPage": 211,
+          "style": "reference",
+          "id": "p196-75",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-common-2/#page-211"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Необычные ",
+              "bold": true
+            },
+            {
+              "text": "212"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-76",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Адамантиновое оружие"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-77",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Адамантиновый доспех"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-78",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Алхимический сосуд"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-79",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Амулет защиты от обнаружения и поиска"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-80",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Брошь защиты"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-81",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Веер ветра"
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p196-82",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верёвка лазания 213"
+            }
+          ],
+          "targetPage": 213,
+          "style": "reference",
+          "id": "p196-83",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-213"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вечнодымящаяся бутылка"
+            }
+          ],
+          "targetPage": 213,
+          "style": "reference",
+          "id": "p196-84",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-213"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка обнаружения магии"
+            }
+          ],
+          "targetPage": 213,
+          "style": "reference",
+          "id": "p196-85",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-213"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка паутины"
+            }
+          ],
+          "targetPage": 213,
+          "style": "reference",
+          "id": "p196-86",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-213"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка секретов"
+            }
+          ],
+          "targetPage": 213,
+          "style": "reference",
+          "id": "p196-87",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-213"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка снарядов"
+            }
+          ],
+          "targetPage": 213,
+          "style": "reference",
+          "id": "p196-88",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-213"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глаз карги 214"
+            }
+          ],
+          "targetPage": 214,
+          "style": "reference",
+          "id": "p196-89",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-214"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Графин бесконечной воды"
+            }
+          ],
+          "targetPage": 214,
+          "style": "reference",
+          "id": "p196-90",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-214"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех моряка"
+            }
+          ],
+          "targetPage": 214,
+          "style": "reference",
+          "id": "p196-91",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-214"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жемчужина силы"
+            }
+          ],
+          "targetPage": 214,
+          "style": "reference",
+          "id": "p196-92",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-214"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заполярные сапоги"
+            }
+          ],
+          "targetPage": 214,
+          "style": "reference",
+          "id": "p196-93",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-214"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье дружбы с животным"
+            }
+          ],
+          "targetPage": 214,
+          "style": "reference",
+          "id": "p196-94",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-214"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье кулачного боя 215"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-95",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье огненного дыхания"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-96",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье подводного дыхания"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-97",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье сопротивления"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-98",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье увеличения"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-99",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье яда"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-100",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камень сияния"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p196-101",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камень удачи 216"
+            }
+          ],
+          "targetPage": 216,
+          "style": "reference",
+          "id": "p196-102",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-216"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камень элементаля"
+            }
+          ],
+          "targetPage": 216,
+          "style": "reference",
+          "id": "p196-103",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-216"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камни послания"
+            }
+          ],
+          "targetPage": 216,
+          "style": "reference",
+          "id": "p196-104",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-216"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колода иллюзий"
+            }
+          ],
+          "targetPage": 216,
+          "style": "reference",
+          "id": "p196-105",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-216"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колчан Элонны 217"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-106",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо защиты разума"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-107",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо плавания"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-108",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо прыжков"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-109",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо тепла"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-110",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо хождения по воде"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-111",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крылатые сапоги"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-112",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Любовное зелье"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-113",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мазь Кеогтома"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-114",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия полезных предметов"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-115",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "218"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-116",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия природы"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-117",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Масло скольжения"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-118",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Медальон затягивающихся ран"
+            }
+          ],
+          "targetPage": 217,
+          "style": "reference",
+          "id": "p196-119",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-217"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Медальон здоровья 219"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-120",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Медальон мыслей"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-121",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метательное копьё молнии"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-122",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч мести"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-123",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мифрильный доспех"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-124",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наручи стрельбы из лука"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-125",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Неподвижный жезл"
+            }
+          ],
+          "targetPage": 219,
+          "style": "reference",
+          "id": "p196-126",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-219"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ночные очки 220"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-127",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обруч сжигания"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-128",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ожерелье адаптации"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-129",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оружие предупреждения"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-130",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очки детального зрения"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-131",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очки орлиного зрения"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-132",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очки очарования"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-133",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парящая сфера"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p196-134",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перчатки воровства 221"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-135",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перчатки ловли снарядов"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-136",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перчатки плавания и лазания"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-137",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ защиты"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-138",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ ската"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-139",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Повязка интеллекта"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-140",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Помело полёта"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-141",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порошок исчезновения"
+            }
+          ],
+          "targetPage": 221,
+          "style": "reference",
+          "id": "p196-142",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-2/#page-221"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порошок сухости 222"
+            }
+          ],
+          "targetPage": 222,
+          "style": "reference",
+          "id": "p196-143",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-222"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порошок чихания и удушья"
+            }
+          ],
+          "targetPage": 222,
+          "style": "reference",
+          "id": "p196-144",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-222"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох гадюки"
+            }
+          ],
+          "targetPage": 222,
+          "style": "reference",
+          "id": "p196-145",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-222"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох питона"
+            }
+          ],
+          "targetPage": 222,
+          "style": "reference",
+          "id": "p196-146",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-222"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рукавицы силы огра"
+            }
+          ],
+          "targetPage": 222,
+          "style": "reference",
+          "id": "p196-147",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-222"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сапоги ходьбы и прыжков 223"
+            }
+          ],
+          "targetPage": 223,
+          "style": "reference",
+          "id": "p196-148",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-223"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свирель канализации"
+            }
+          ],
+          "targetPage": 223,
+          "style": "reference",
+          "id": "p196-149",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-223"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свирель ужаса"
+            }
+          ],
+          "targetPage": 223,
+          "style": "reference",
+          "id": "p196-150",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-223"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Седло кавалериста"
+            }
+          ],
+          "targetPage": 223,
+          "style": "reference",
+          "id": "p196-151",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-223"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сумка фокусов"
+            }
+          ],
+          "targetPage": 223,
+          "style": "reference",
+          "id": "p196-152",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-223"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сумка хранения 224"
+            }
+          ],
+          "targetPage": 224,
+          "style": "reference",
+          "id": "p196-153",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-224"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Танцующая метла Бабы Яги"
+            }
+          ],
+          "targetPage": 224,
+          "style": "reference",
+          "id": "p196-154",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-224"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трезубец командования рыбами"
+            }
+          ],
+          "targetPage": 224,
+          "style": "reference",
+          "id": "p196-155",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-224"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Туфли паука"
+            }
+          ],
+          "targetPage": 224,
+          "style": "reference",
+          "id": "p196-156",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-224"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фонарь обнаружения 225"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-157",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шапка подводного дыхания"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-158",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шлем понимания языков"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-159",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шлем телепатии"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-160",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шляпа маскировки"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-161",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит часового"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-162",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эльфийские сапоги"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-163",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эльфийский плащ"
+            }
+          ],
+          "targetPage": 225,
+          "style": "reference",
+          "id": "p196-164",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-3/#page-225"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Редкие",
+              "bold": true
+            },
+            {
+              "text": " 226"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-165",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Амулет здоровья"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-166",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Булава кары"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-167",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Булава распада"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-168",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Булава ужаса"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-169",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бусина силы"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-170",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верёвка опутывания"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-171",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка молний"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-172",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "227"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-173",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка обнаружения врагов"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-174",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка огненных шаров"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-175",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка паралича"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-176",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка сковывания"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-177",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка страха"
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p196-178",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка чудес 228"
+            }
+          ],
+          "targetPage": 228,
+          "style": "reference",
+          "id": "p196-179",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-228"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех сопротивления 229"
+            }
+          ],
+          "targetPage": 229,
+          "style": "reference",
+          "id": "p196-180",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-229"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех уязвимости"
+            }
+          ],
+          "targetPage": 229,
+          "style": "reference",
+          "id": "p196-181",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-229"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жаровня командования огненными элементалями"
+            }
+          ],
+          "targetPage": 229,
+          "style": "reference",
+          "id": "p196-182",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-229"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл правления"
+            }
+          ],
+          "targetPage": 229,
+          "style": "reference",
+          "id": "p196-183",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-229"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл щупалец"
+            }
+          ],
+          "targetPage": 229,
+          "style": "reference",
+          "id": "p196-184",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-229"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Железные ленты Биларро"
+            }
+          ],
+          "targetPage": 229,
+          "style": "reference",
+          "id": "p196-185",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-229"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жестокое оружие 230"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-186",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье газообразной формы"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-187",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье героизма"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-188",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье невидимости"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-189",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье неуязвимости"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-190",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье уменьшения"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-191",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье чтения мыслей"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-192",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье ясновидения"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-193",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кадило контролирования воздушных элементалей"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-194",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камень зрения"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-195",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камень контролирования земляных элементалей"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-196",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кинжал яда"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p196-197",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колокольчик открывания  231"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-198",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо влияния на животных"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-199",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо защиты"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-200",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо падения пёрышком"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-201",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо проникающего зрения"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-202",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо свободных действий"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-203",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо сопротивления"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p196-204",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо тарана 232"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p196-205",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо уклонения"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p196-206",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо хранения заклинаний"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p196-207",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Красивый проклёпанный доспех"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p196-208",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крылья полёта"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p196-209",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куб призыва"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p196-210",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куб силового поля 233"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p196-211",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ловящий стрелы щит"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p196-212",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия глаз"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p196-213",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия сопротивления заклинаниям"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p196-214",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Масло эфирности"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p196-215",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мгновенная крепость Даэрна"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p196-216",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Медальон защиты от яда  234"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-217",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч кражи жизни"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-218",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч ранения"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-219",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наручи защиты"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-220",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ожерелье молитвенных чёток"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-221",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ожерелье огненных шаров"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-222",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оковы измерений"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p196-223",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Переносная дыра 235"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p196-224",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ летучей мыши"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p196-225",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ ускользания"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p196-226",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ шарлатана"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p196-227",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подковы скорости"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p196-228",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох иссушения"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p196-229",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-2/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох леса 236"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p196-230",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох лечения"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p196-231",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох очарования"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p196-232",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох роя насекомых 237"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p196-233",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пояс дварфов"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p196-234",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рог взрыва"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p196-235",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сапоги левитации"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p196-236",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сапоги скорости"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p196-237",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свиток защиты"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p196-238",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Складная лодка 238"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p196-239",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Солнечный клинок"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p196-240",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сумка с бобами"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p196-241",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Топор берсерка 239"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p196-242",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Убийца великанов"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p196-243",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Убийца драконов"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p196-244",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удобный рюкзак Хеварда"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p196-245",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чаша командования водяными"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p196-246",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "элементалями 240"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p196-247",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шлем телепортации"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p196-248",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит притягивания снарядов"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p196-249",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эликсир здоровья"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p196-250",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эльфийская кольчуга"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p196-251",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Язык пламени"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p196-252",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-rare-3/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очень редкие ",
+              "bold": true
+            },
+            {
+              "text": "241"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p196-253",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Амулет планов"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p196-254",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боеприпас убийства"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p196-255",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бутылка с ифритом"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p196-256",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная палочка полиморфа"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p196-257",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вор девяти жизней 242"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-258",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Громовая дубина"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-259",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дварфийский метатель"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-260",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Демонический доспех"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-261",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех из драконьей чешуи"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-262",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "243"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-263",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл бдительности"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-264",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл безопасности"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-265",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл поглощения"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-266",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье высшей невидимости"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-267",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "244"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-268",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье долголетия"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-269",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье живучести"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-270",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье полёта"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-271",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зелье скорости"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-272",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зеркало похищения жизни"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p196-273",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ковёр-самолёт 245"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p196-274",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо падающих звёзд"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p196-275",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо регенерации"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p196-276",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо телекинеза"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p196-277",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Котёл перерождения 246"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p196-278",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Латы дварфов"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p196-279",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лук клятвы"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p196-280",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лютня громового удара"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p196-281",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия звёзд 247"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-282",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия сияющих цветов"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-283",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Масло остроты"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-284",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч остроты"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-285",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Морозный клинок"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-286",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оживлённый щит"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-287",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ паука"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p196-288",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подковы Зефира 248"
+            }
+          ],
+          "targetPage": 248,
+          "style": "reference",
+          "id": "p196-289",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-248"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох акробата"
+            }
+          ],
+          "targetPage": 248,
+          "style": "reference",
+          "id": "p196-290",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-248"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох грома и молнии"
+            }
+          ],
+          "targetPage": 248,
+          "style": "reference",
+          "id": "p196-291",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-248"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох мороза 249"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p196-292",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох огня"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p196-293",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох силы"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p196-294",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох ударов 250"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p196-295",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свеча мольбы"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p196-296",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скимитар скорости"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p196-297",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спиритическая доска"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p196-298",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Справочник быстроты"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p196-299",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-2/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "действий 251"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p196-300",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Справочник по големам"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p196-301",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Справочник полезных упражнений"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p196-302",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Справочник телесного здоровья"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p196-303",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сумка пожирания 252"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p196-304",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Танцующий меч"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p196-305",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Том лидерства и влияния"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p196-306",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Том понимания"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p196-307",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Том чистых мыслей"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p196-308",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Топор палача 253"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p196-309",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хрустальный шар"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p196-310",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чудесные краски Нолзура"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p196-311",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шлем блеска"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p196-312",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шляпа многих заклинаний"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p196-313",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "254"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p196-314",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит кавалериста 255"
+            }
+          ],
+          "targetPage": 255,
+          "style": "reference",
+          "id": "p196-315",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-255"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит от заклинаний"
+            }
+          ],
+          "targetPage": 255,
+          "style": "reference",
+          "id": "p196-316",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-255"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Энергетический лук"
+            }
+          ],
+          "targetPage": 255,
+          "style": "reference",
+          "id": "p196-317",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-3/#page-255"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Легендарные ",
+              "bold": true
+            },
+            {
+              "text": "256"
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p196-318",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аппарат Квалиша"
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p196-319",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех неуязвимости 257"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p196-320",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл величественной мощи"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p196-321",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жезл воскрешения"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p196-322",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Железная фляга 258"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p196-323",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защитник"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p196-324",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Клинок удачи"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p196-325",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колода многих вещей 259"
+            }
+          ],
+          "targetPage": 259,
+          "style": "reference",
+          "id": "p196-326",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-259"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колодец многих миров 261"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p196-327",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо командования элементалями"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p196-328",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо невидимости"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p196-329",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо отражения заклинаний"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p196-330",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо призыва джинна  262"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p196-331",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольцо трёх желаний"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p196-332",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кольчуга ифритов"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p196-333",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куб врат"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p196-334",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Латы эфирности"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p196-335",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лунный клинок 263"
+            }
+          ],
+          "targetPage": 263,
+          "style": "reference",
+          "id": "p196-336",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-263"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия архимага 264"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p196-337",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч Головоруб"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p196-338",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч ответа"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p196-339",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молот грома"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p196-340",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плащ невидимости"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p196-341",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посох мага 265"
+            }
+          ],
+          "targetPage": 265,
+          "style": "reference",
+          "id": "p196-342",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-265"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Превосходный клей"
+            }
+          ],
+          "targetPage": 265,
+          "style": "reference",
+          "id": "p196-343",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-2/#page-265"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свиток призыва титана 266"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p196-344",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Святой мститель"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p196-345",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скарабей защиты"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p196-346",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера аннигиляции"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p196-347",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Талисман абсолютного зла 267"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-348",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Талисман сферы"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-349",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Талисман чистого добра"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-350",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Том молчаливого языка"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-351",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Универсальный растворитель"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-352",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "268"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-353",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хрустальный шар истинного зрения"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-354",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хрустальный шар телепатии"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-355",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хрустальный шар чтения"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p196-356",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-3/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Артефакты ",
+              "bold": true
+            },
+            {
+              "text": "270"
+            }
+          ],
+          "targetPage": 270,
+          "style": "reference",
+          "id": "p196-357",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-270"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волна"
+            }
+          ],
+          "targetPage": 270,
+          "style": "reference",
+          "id": "p196-358",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-270"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глаз и рука Векны"
+            }
+          ],
+          "targetPage": 270,
+          "style": "reference",
+          "id": "p196-359",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-270"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Демономикон Иггвилв 271"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p196-360",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Книга восторженных деяний"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p196-361",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "272"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p196-362",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Книга мерзкой тьмы 273"
+            }
+          ],
+          "targetPage": 273,
+          "style": "reference",
+          "id": "p196-363",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-273"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч Каса 274"
+            }
+          ],
+          "targetPage": 274,
+          "style": "reference",
+          "id": "p196-364",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-2/#page-274"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Палочка Оркуса 275"
+            }
+          ],
+          "targetPage": 275,
+          "style": "reference",
+          "id": "p196-365",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-2/#page-275"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сокрушитель 276"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p196-366",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера дракона"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p196-367",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Топор владык дварфов 278"
+            }
+          ],
+          "targetPage": 278,
+          "style": "reference",
+          "id": "p196-368",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-2/#page-278"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чёрный клинок 279"
+            }
+          ],
+          "targetPage": 279,
+          "style": "reference",
+          "id": "p196-369",
+          "sourcePage": 196,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-3/#page-279"
+        }
+      ]
+    }
+  ]
+}

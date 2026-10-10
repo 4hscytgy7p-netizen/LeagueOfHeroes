@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "part-two",
+  "title": "Часть 2: создатель приключений",
+  "description": "",
+  "sourcePages": [
+    70
+  ],
+  "group": "Часть 2 · Создатель приключений",
+  "pages": [
+    {
+      "number": 70,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-70-0ac922f192.webp",
+          "alt": "Иллюстрация: Часть 2: создатель приключений",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-70-0ac922f192-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "ЧАСТЬ 2\nС\nОЗДАТЕЛЬ ПРИКЛЮЧЕНИЙ",
+          "textLabel": "Текст иллюстрации",
+          "id": "p70-1",
+          "sourcePage": 70
+        }
+      ]
+    }
+  ]
+}

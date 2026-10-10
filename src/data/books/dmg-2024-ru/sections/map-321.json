@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-321",
+  "title": "Деревня-перекрёсток",
+  "description": "",
+  "sourcePages": [
+    321
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 321,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-321-cc53fc025b.webp",
+          "alt": "Карта: Деревня-перекрёсток",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-321-cc53fc025b-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Деревня-перекрёсток\nРазмер\nДеревня-перекрёсток\nХудожник: Dyson Logos\nОригинал",
+          "textLabel": "Подписи на карте",
+          "id": "p321-1",
+          "sourcePage": 321
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "inspirational-reading",
+  "title": "Приложение Г. Вдохновение для Мастера",
+  "description": "",
+  "sourcePages": [
+    317
+  ],
+  "group": "Приложение Г. Вдохновение для Мастера",
+  "pages": [
+    {
+      "number": 317,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "П"
+            },
+            {
+              "text": "РИЛОЖЕНИЕ "
+            },
+            {
+              "text": "Г:"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "В"
+            },
+            {
+              "text": "ДОХНОВЕНИЕ ДЛЯ "
+            },
+            {
+              "text": "М"
+            },
+            {
+              "text": "АСТЕРА"
+            }
+          ],
+          "id": "p317-1",
+          "sourcePage": 317
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-317-3c36df18c3.webp",
+          "alt": "Иллюстрация к разделу «Приложение Г. Вдохновение для Мастера».",
+          "width": 292,
+          "height": 278,
+          "id": "p317-2",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НИЖЕ ПРЕДСТАВЛЕНЫ КНИГИ, КОТОРЫЕ помогут вам стать хорошим рассказчиком, писателем, исполнителем и картографом. Разумеется, это не полный список, но именно эти книги отобрал творческий коллектив D&D и наши тестеры. Смотрите также приложение Д "
+            },
+            {
+              "text": "Книги игрока",
+              "italic": true
+            },
+            {
+              "text": "."
+            }
+          ],
+          "id": "p317-3",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "На русском языке эти книги найти сложно, поэтому имена авторов и названия книг приводятся на английском языке."
+            }
+          ],
+          "id": "p317-4",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Atlas Games. "
+            },
+            {
+              "text": "Once Upon a Time: The Storytelling Card",
+              "italic": true
+            }
+          ],
+          "id": "p317-5",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Game",
+              "italic": true
+            },
+            {
+              "text": ". Bernhardt, William. "
+            },
+            {
+              "text": "Creating Character: Bringing Your",
+              "italic": true
+            }
+          ],
+          "id": "p317-6",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Story to Life",
+              "italic": true
+            },
+            {
+              "text": ". ———."
+            },
+            {
+              "text": "Perfecting Plot: Charting the Hero's journey",
+              "italic": true
+            },
+            {
+              "text": ". ———. "
+            },
+            {
+              "text": "Story Structure: The Key to Successful Fiction",
+              "italic": true
+            },
+            {
+              "text": "."
+            }
+          ],
+          "id": "p317-7",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Bowers, Malcolm. "
+            },
+            {
+              "text": "Gary Gygax's Extraordinary Book of",
+              "italic": true
+            }
+          ],
+          "id": "p317-8",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Names",
+              "italic": true
+            },
+            {
+              "text": ". Browning, Joseph & Suzi Yee. "
+            },
+            {
+              "text": "A Magical Medieval Society:",
+              "italic": true
+            }
+          ],
+          "id": "p317-9",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Western Europe",
+              "italic": true
+            },
+            {
+              "text": ". Burroway, Janet. "
+            },
+            {
+              "text": "Writing Fiction",
+              "italic": true
+            },
+            {
+              "text": ". Cleaver, Jerry. "
+            },
+            {
+              "text": "Immediate Fiction",
+              "italic": true
+            },
+            {
+              "text": ". Cordingly, David. "
+            },
+            {
+              "text": "Under the Black Flag",
+              "italic": true
+            },
+            {
+              "text": ". Egri, Lajos. "
+            },
+            {
+              "text": "The Art of Dramatic Writing",
+              "italic": true
+            },
+            {
+              "text": ". Ewalt, David M. "
+            },
+            {
+              "text": "Of Dice and Men",
+              "italic": true
+            },
+            {
+              "text": ". Gygax, Gary. "
+            },
+            {
+              "text": "Gary Gygax's Living Fantasy",
+              "italic": true
+            },
+            {
+              "text": " and the rest of"
+            }
+          ],
+          "id": "p317-10",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "the Gygaxian Fantasy Worlds series. ———. "
+            },
+            {
+              "text": "Master of the Game",
+              "italic": true
+            },
+            {
+              "text": ". ———. "
+            },
+            {
+              "text": "Role-Playing Mastery",
+              "italic": true
+            },
+            {
+              "text": ". Hindmarch, Will. "
+            },
+            {
+              "text": "The Bones: Us and Our Dice",
+              "italic": true
+            },
+            {
+              "text": ". Hindmarch, Will & Jeff Tidball. "
+            },
+            {
+              "text": "Things We Think About",
+              "italic": true
+            }
+          ],
+          "id": "p317-11",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Games",
+              "italic": true
+            },
+            {
+              "text": ". Hirsh, Jr., E.D."
+            },
+            {
+              "text": "The New Dictionary of Cultural Literacy",
+              "italic": true
+            },
+            {
+              "text": ". Ingpen, Robert. "
+            },
+            {
+              "text": "The Encyclopedia of Things That Never",
+              "italic": true
+            }
+          ],
+          "id": "p317-12",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Were",
+              "italic": true
+            },
+            {
+              "text": "."
+            }
+          ],
+          "id": "p317-13",
+          "sourcePage": 317
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-317-45becc5b4c.webp",
+          "alt": "Иллюстрация к разделу «Приложение Г. Вдохновение для Мастера».",
+          "width": 1055,
+          "height": 1099,
+          "smallSrc": "/images/books/dmg-2014-ru/page-317-45becc5b4c-640.webp",
+          "smallWidth": 640,
+          "id": "p317-14",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Kaufmann, J.E. & H.W. Kaufmann. "
+            },
+            {
+              "text": "The Medieval Fortress",
+              "italic": true
+            },
+            {
+              "text": ". King, Stephen. "
+            },
+            {
+              "text": "On Writing: A Memoir of the Craft",
+              "italic": true
+            },
+            {
+              "text": ". Koster, Raph. "
+            },
+            {
+              "text": "A Theory of Fun for Game Design",
+              "italic": true
+            },
+            {
+              "text": ". Laws, Robin D. "
+            },
+            {
+              "text": "Hamlet's Hit Points",
+              "italic": true
+            },
+            {
+              "text": ". Lee, Alan & David Day. "
+            },
+            {
+              "text": "Castles",
+              "italic": true
+            },
+            {
+              "text": ". Macaulay, David. "
+            },
+            {
+              "text": "Castle",
+              "italic": true
+            },
+            {
+              "text": ". Malory, Sir Thomas. "
+            },
+            {
+              "text": "Le Morte d'Arthur",
+              "italic": true
+            },
+            {
+              "text": ". McKee, Robert. "
+            },
+            {
+              "text": "Story: Substance, Structure, Style, and the",
+              "italic": true
+            }
+          ],
+          "id": "p317-15",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Principles of Screenwriting",
+              "italic": true
+            },
+            {
+              "text": ". Mortimer, Ian. "
+            },
+            {
+              "text": "The Time Traveler's Guide to Medieval Eng-",
+              "italic": true
+            }
+          ],
+          "id": "p317-16",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "land",
+              "italic": true
+            },
+            {
+              "text": ". O'Connor, Paul Ryan, ed. "
+            },
+            {
+              "text": "Grimtooth's Traps",
+              "italic": true
+            },
+            {
+              "text": ". PennyPress. "
+            },
+            {
+              "text": "Variety Puzzles and Games",
+              "italic": true
+            },
+            {
+              "text": " series. Peterson, Jon. "
+            },
+            {
+              "text": "Playing at the World",
+              "italic": true
+            },
+            {
+              "text": ". Robbins, Ben. "
+            },
+            {
+              "text": "Microscope",
+              "italic": true
+            },
+            {
+              "text": ". Schell, Jesse. "
+            },
+            {
+              "text": "Game Design: A Book of Lenses",
+              "italic": true
+            },
+            {
+              "text": ". Snyder, Blake. "
+            },
+            {
+              "text": "Save the Cat",
+              "italic": true
+            },
+            {
+              "text": ". Swift, Michael and Angus Konstam. "
+            },
+            {
+              "text": "Cities of the Renais-",
+              "italic": true
+            }
+          ],
+          "id": "p317-17",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "sance World",
+              "italic": true
+            },
+            {
+              "text": ". Truby, John. "
+            },
+            {
+              "text": "The Anatomy of Story",
+              "italic": true
+            },
+            {
+              "text": ". TSR. "
+            },
+            {
+              "text": "Arms and Equipment Guide",
+              "italic": true
+            },
+            {
+              "text": ". ———. "
+            },
+            {
+              "text": "Campaign Sourcebook/Catacomb Guide",
+              "italic": true
+            },
+            {
+              "text": ". ——— . "
+            },
+            {
+              "text": "The Castle Guide",
+              "italic": true
+            },
+            {
+              "text": ". Walmsley, Graham. "
+            },
+            {
+              "text": "Play Unsafe: How Improvisation Can",
+              "italic": true
+            }
+          ],
+          "id": "p317-18",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Change the Way You Roleplay",
+              "italic": true
+            },
+            {
+              "text": ". Wilford, John Noble. "
+            },
+            {
+              "text": "The Mapmakers",
+              "italic": true
+            },
+            {
+              "text": ". Writers Digest. "
+            },
+            {
+              "text": "The Writer's Complete Fantasy Reference",
+              "italic": true
+            },
+            {
+              "text": "."
+            }
+          ],
+          "id": "p317-19",
+          "sourcePage": 317
+        }
+      ]
+    }
+  ]
+}

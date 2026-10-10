@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "part-three-art",
+  "title": "Иллюстрация к части 3",
+  "description": "",
+  "sourcePages": [
+    235
+  ],
+  "group": "Часть 3 · Хозяин правил",
+  "pages": [
+    {
+      "number": 235,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-235-ac48acb3d8.webp",
+          "alt": "Иллюстрация: Иллюстрация к части 3",
+          "width": 1696,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-235-ac48acb3d8-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "",
+          "textLabel": "Текст иллюстрации",
+          "id": "p235-1",
+          "sourcePage": 235
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-324",
+  "title": "Усадьба",
+  "description": "",
+  "sourcePages": [
+    324
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 324,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-324-7db3ff533b.webp",
+          "alt": "Карта: Усадьба",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-324-7db3ff533b-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Усадьба\n1 квадрат = 5 футов\nУсадьба\nХудожник: Dyson Logos\nОригинал",
+          "textLabel": "Подписи на карте",
+          "id": "p324-1",
+          "sourcePage": 324
+        }
+      ]
+    }
+  ]
+}

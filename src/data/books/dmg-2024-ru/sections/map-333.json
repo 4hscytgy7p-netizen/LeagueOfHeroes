@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-333",
+  "title": "Башня волшебника",
+  "description": "",
+  "sourcePages": [
+    333
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 333,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-333-9713c31b3e.webp",
+          "alt": "Карта: Башня волшебника",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-333-9713c31b3e-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Башня волшебника\nВниз\nУровень 5\nВверх\nВниз\nВверх\nВниз\nУровень 3\nВверх\nВниз\nВверх\nВниз\nУровень 1\nВверх\nПодземелье\nВулканические пещеры\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков\n1 квадрат = 5 футов\nУровень 4\nУровень 2",
+          "textLabel": "Подписи на карте",
+          "id": "p333-1",
+          "sourcePage": 333
+        }
+      ]
+    }
+  ]
+}

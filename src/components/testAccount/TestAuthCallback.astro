@@ -53,11 +53,11 @@
 </script>
 
 <style>
-  .callback-card { display: grid; justify-items: center; gap: .8rem; max-width: 620px; margin: 12vh auto 0; padding: 3rem 2rem; border: 1px solid rgba(163,177,204,.24); border-radius: 24px; text-align: center; background: rgba(14,28,51,.9); }
-  .callback-spinner { width: 54px; height: 54px; border: 4px solid rgba(182,154,255,.2); border-top-color: #b69aff; border-radius: 50%; animation: spin .8s linear infinite; }
-  .eyebrow { color: #e2b448; font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-  h1 { margin: .25rem 0 0; color: #b69aff; font: 800 clamp(2rem, 6vw, 3.4rem) Georgia, serif; }
-  p { color: #b9c3d4; line-height: 1.6; }
-  a { color: #f1cf76; font-weight: 800; }
+  .callback-card { display: grid; justify-items: center; gap: .8rem; max-width: 620px; margin: 12vh auto 0; padding: 3rem 2rem; border: 1px solid var(--account-border); border-radius: 24px; text-align: center; background: var(--account-panel); }
+  .callback-spinner { width: 54px; height: 54px; border: 4px solid rgba(182,154,255,.2); border-top-color: var(--primary); border-radius: 50%; animation: spin .8s linear infinite; }
+  .eyebrow { color: var(--account-gold); font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+  h1 { margin: .25rem 0 0; color: var(--primary); font: 800 clamp(2rem, 6vw, 3.4rem) Georgia, serif; }
+  p { color: var(--account-muted); line-height: 1.6; }
+  a { color: var(--account-gold); font-weight: 800; }
   @keyframes spin { to { transform: rotate(360deg); } }
 </style>

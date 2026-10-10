@@ -1,42 +1,50 @@
 ---
+import { COST_TABLE, STAT_NAMES, formatModifier } from '../../../utils/pointBuy';
+import type { Stats, StatValue } from '../../../utils/pointBuy';
+
 interface Props {
-  stat: string;
-  base: number;
-  racial: number;
-  cost: number;
+  stat: keyof Stats;
+  value: StatValue;
 }
 
-const { stat, base, racial, cost } = Astro.props;
+const { stat, value } = Astro.props;
+const { base, racial } = value;
 const total = base + racial;
+const name = STAT_NAMES[stat].replace(/ \([A-Z]+\)$/, '');
 ---
 
-<tr>
-  <td>{stat}</td>
-  <td>
-    <button class="stat-btn" data-stat={stat} data-action="decrease-base">-</button>
-    <span>{base}</span>
-    <button class="stat-btn" data-stat={stat} data-action="increase-base">+</button>
+<tr class="stat-row" data-stat-row={stat} role="row">
+  <th class="stat-name" scope="row" role="rowheader">
+    <span>{name}</span>
+    <span class="stat-abbreviation">{stat}</span>
+  </th>
+  <td class="base-cell" role="cell">
+    <span class="mobile-label" aria-hidden="true">База <span class="mobile-cost">· <span data-value="cost">{COST_TABLE[base]}</span> очк.</span></span>
+    <div class="stepper" role="group" aria-label={name + ': базовое значение'}>
+      <button type="button" class="stat-btn" data-stat={stat} data-action="decrease-base" aria-label={name + ': уменьшить базовое значение'} disabled>−</button>
+      <span class="stat-value" data-value="base">{base}</span>
+      <button type="button" class="stat-btn" data-stat={stat} data-action="increase-base" aria-label={name + ': увеличить базовое значение'} aria-describedby={stat + '-base-hint'} disabled>+</button>
+    </div>
+    <span class="stat-hint" id={stat + '-base-hint'} data-hint="base">{base} → {base + 1}: {COST_TABLE[base + 1] - COST_TABLE[base]} очк.</span>
   </td>
-  <td>
-    <button class="stat-btn" data-stat={stat} data-action="decrease-racial">-</button>
-    <span>{racial}</span>
-    <button class="stat-btn" data-stat={stat} data-action="increase-racial">+</button>
+  <td class="bonus-cell" role="cell">
+    <span class="mobile-label" aria-hidden="true">Бонус предыстории</span>
+    <div class="stepper" role="group" aria-label={name + ': бонус предыстории'}>
+      <button type="button" class="stat-btn" data-stat={stat} data-action="decrease-racial" aria-label={name + ': уменьшить бонус предыстории'} disabled>−</button>
+      <span class="stat-value" data-value="racial">+{racial}</span>
+      <button type="button" class="stat-btn" data-stat={stat} data-action="increase-racial" aria-label={name + ': увеличить бонус предыстории'} aria-describedby={stat + '-bonus-hint'} disabled>+</button>
+    </div>
+    <span class="stat-hint" id={stat + '-bonus-hint'} data-hint="racial">До +2 на характеристику</span>
   </td>
-  <td>{total}</td>
-  <td>{cost}</td>
+  <td class="total-cell" role="cell">
+    <span class="mobile-label" aria-hidden="true">Итого</span>
+    <span class="stat-total" data-value="total">{total}</span>
+    <span class="modifier" aria-label={'Модификатор ' + name}>
+      <span class="modifier-label">Мод.</span> <span data-value="modifier">{formatModifier(total)}</span>
+    </span>
+  </td>
+  <td class="cost-cell" role="cell">
+    <span class="mobile-label" aria-hidden="true">Стоимость</span>
+    <span><span data-value="cost">{COST_TABLE[base]}</span> <span class="cost-unit">очк.</span></span>
+  </td>
 </tr>
-
-<style>
-  .stat-btn {
-    padding: 0.25rem 0.5rem;
-    margin: 0 0.25rem;
-    border: 1px solid var(--card-border);
-    background: var(--card-bg);
-    border-radius: 0.25rem;
-    cursor: pointer;
-  }
-
-  .stat-btn:hover {
-    background: var(--nav-hover-bg);
-  }
-</style>

@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-331",
+  "title": "Подземный путь",
+  "description": "",
+  "sourcePages": [
+    331
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 331,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-331-5b85b91777.webp",
+          "alt": "Карта: Подземный путь",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-331-5b85b91777-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Подземный путь\nПодземный путь\nХудожник: Dyson Logos\nОригинал\n1 квадрат = 5 футов\nВерсия для игроков",
+          "textLabel": "Подписи на карте",
+          "id": "p331-1",
+          "sourcePage": 331
+        }
+      ]
+    }
+  ]
+}

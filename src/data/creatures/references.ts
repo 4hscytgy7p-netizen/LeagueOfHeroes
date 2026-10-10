@@ -1,0 +1,31 @@
+export const familiarIds = ['bat-xmm', 'cat-xmm', 'frog-xmm', 'hawk-xmm', 'lizard-xmm', 'octopus-xmm', 'owl-xmm', 'rat-xmm', 'raven-xmm', 'spider-xmm', 'weasel-xmm'];
+export const pactFamiliarIds = ['imp-xmm', 'pseudodragon-xmm', 'quasit-xmm', 'skeleton-xmm', 'slaad-tadpole-xmm', 'sphinx-of-wonder-xmm', 'sprite-xmm', 'venomous-snake-xmm'];
+export const familiarNote = 'Показаны базовые формы животных, перечисленные в заклинании. Фамильяр становится Небожителем, Феей или Исчадием вместо Зверя и не может атаковать без специальной способности. Другие звери с ПО 0 тоже допустимы по правилам заклинания.';
+export const spellStatBlocks: Record<string, { ids: string[]; note?: string }> = {
+  'summon-the-thing-with-the-writhing-tail': { ids: ['thing-with-the-writhing-tail-scgtd'] },
+  'find-familiar': { ids: familiarIds, note: familiarNote },
+  'flock-of-familiars': { ids: familiarIds, note: familiarNote },
+  'find-steed': { ids: ['otherworldly-steed-xphb'] },
+  'summon-beast': { ids: ['bestial-spirit-xphb'] },
+  'summon-fey': { ids: ['fey-spirit-xphb'] },
+  'summon-undead': { ids: ['undead-spirit-xphb'] },
+  'summon-aberration': { ids: ['aberrant-spirit-xphb'] },
+  'summon-construct': { ids: ['construct-spirit-xphb'] },
+  'summon-elemental': { ids: ['elemental-spirit-xphb'] },
+  'summon-celestial': { ids: ['celestial-spirit-xphb'] },
+  'summon-dragon': { ids: ['draconic-spirit-xphb'] },
+  'summon-fiend': { ids: ['fiendish-spirit-xphb'] },
+  'summon-shadowspawn': { ids: ['shadow-spirit-tce'] },
+  'spirit-of-death': { ids: ['reaper-spirit-bmt'] },
+  'giant-insect': { ids: ['giant-insect-xphb'] },
+  'animate-objects': { ids: ['animated-object-xphb'] },
+  'homunculus-servant': { ids: ['homunculus-servant-efa'] },
+  'create-homunculus': { ids: ['homunculus-xmm'] },
+  'animate-dead': { ids: ['skeleton-xmm', 'zombie-xmm'] },
+  'danse-macabre': { ids: ['skeleton-xmm', 'zombie-xmm'], note: 'Бонусы к атаке и урону от заклинания добавляются к приведённым базовым значениям.' },
+  'Create Undead': { ids: ['ghoul-xmm', 'ghast-xmm', 'wight-xmm', 'mummy-xmm'], note: 'Доступные существа и их количество зависят от уровня ячейки; смотрите текст заклинания.' },
+  'awaken': { ids: ['awakened-shrub-xmm', 'awakened-tree-xmm'], note: 'Примеры для обычных растений. Подходящий блок выбирает Мастер; изменения Интеллекта и языка применяются по заклинанию.' },
+  'druid-grove': { ids: ['awakened-tree-xmm'], note: 'Хранители рощи не говорят и не могут покинуть охраняемую область; остальные изменения описаны в заклинании.' },
+  'summon-greater-demon': { ids: ['shadow-demon-xmm', 'barlgura-xmm'], note: 'Примеры, названные в заклинании. Выбор не ограничен ими: допустимый ПО зависит от уровня ячейки.' },
+  'summon-lesser-demons': { ids: ['manes-xmm', 'dretch-xmm', 'quasit-xmm'], note: 'Примеры для диапазонов ПО 1/8, 1/4 и 1. Конкретных демонов выбирает Мастер; это не полный перечень допустимых существ.' },
+};

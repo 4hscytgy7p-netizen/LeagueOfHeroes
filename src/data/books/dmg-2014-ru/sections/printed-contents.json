@@ -1,0 +1,1402 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "printed-contents",
+  "title": "Содержание",
+  "description": "",
+  "sourcePages": [
+    4
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 4,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ВВЕДЕНИЕ 4"
+            }
+          ],
+          "targetPage": 5,
+          "id": "p4-1",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/introduction/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер....................................................................... 4"
+            }
+          ],
+          "targetPage": 5,
+          "style": "reference",
+          "id": "p4-2",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/introduction/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Как использовать эту книгу................................. 4"
+            }
+          ],
+          "targetPage": 5,
+          "style": "reference",
+          "id": "p4-3",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/introduction/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знай своих игроков................................................ 6"
+            }
+          ],
+          "targetPage": 7,
+          "style": "reference",
+          "id": "p4-4",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/know-your-players/#page-7"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 1 7"
+            }
+          ],
+          "targetPage": 8,
+          "id": "p4-5",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/part-one/#page-8"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 1: ВАШ СОБСТВЕННЫЙ МИР.................. 9"
+            }
+          ],
+          "targetPage": 10,
+          "style": "reference",
+          "id": "p4-6",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/your-world/#page-10"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глобальный взгляд................................................. 9"
+            }
+          ],
+          "targetPage": 10,
+          "style": "reference",
+          "id": "p4-7",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/your-world/#page-10"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боги в вашем мире.............................................. 10"
+            }
+          ],
+          "targetPage": 11,
+          "style": "reference",
+          "id": "p4-8",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-11/#page-11"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание карт для вашей кампании................ 13"
+            }
+          ],
+          "targetPage": 14,
+          "style": "reference",
+          "id": "p4-9",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-14/#page-14"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поселения............................................................... 15"
+            }
+          ],
+          "targetPage": 16,
+          "style": "reference",
+          "id": "p4-10",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-16/#page-16"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Языки и диалекты............................................... 20"
+            }
+          ],
+          "targetPage": 21,
+          "style": "reference",
+          "id": "p4-11",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-21/#page-21"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фракции и организации...................................... 21"
+            }
+          ],
+          "targetPage": 22,
+          "style": "reference",
+          "id": "p4-12",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-22/#page-22"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магия в вашем мире........................................... 23"
+            }
+          ],
+          "targetPage": 24,
+          "style": "reference",
+          "id": "p4-13",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-24/#page-24"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание кампании............................................. 25"
+            }
+          ],
+          "targetPage": 26,
+          "style": "reference",
+          "id": "p4-14",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-26/#page-26"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "События в кампании........................................... 26"
+            }
+          ],
+          "targetPage": 27,
+          "style": "reference",
+          "id": "p4-15",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-27-1/#page-27"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стиль игры............................................................. 34"
+            }
+          ],
+          "targetPage": 35,
+          "style": "reference",
+          "id": "p4-16",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-35/#page-35"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Этапы игры............................................................ 36"
+            }
+          ],
+          "targetPage": 37,
+          "style": "reference",
+          "id": "p4-17",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-37/#page-37"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Виды фэнтези....................................................... 38"
+            }
+          ],
+          "targetPage": 39,
+          "style": "reference",
+          "id": "p4-18",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-39/#page-39"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 2: СОЗДАНИЕ МУЛЬТИВСЕЛЕННОЙ...... 43"
+            }
+          ],
+          "targetPage": 44,
+          "style": "reference",
+          "id": "p4-19",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/multiverse/#page-44"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планы...................................................................... 43"
+            }
+          ],
+          "targetPage": 44,
+          "style": "reference",
+          "id": "p4-20",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/multiverse/#page-44"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Путешествие по планам...................................... 44"
+            }
+          ],
+          "targetPage": 45,
+          "style": "reference",
+          "id": "p4-21",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-45/#page-45"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Астральный План.................................................. 46"
+            }
+          ],
+          "targetPage": 47,
+          "style": "reference",
+          "id": "p4-22",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-47/#page-47"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эфирный План...................................................... 48"
+            }
+          ],
+          "targetPage": 49,
+          "style": "reference",
+          "id": "p4-23",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-49/#page-49"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Страна Фей............................................................ 49"
+            }
+          ],
+          "targetPage": 50,
+          "style": "reference",
+          "id": "p4-24",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-50/#page-50"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Царство Теней....................................................... 51"
+            }
+          ],
+          "targetPage": 52,
+          "style": "reference",
+          "id": "p4-25",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-52/#page-52"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внутренние Планы............................................... 52"
+            }
+          ],
+          "targetPage": 53,
+          "style": "reference",
+          "id": "p4-26",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-53/#page-53"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внешние Планы.................................................... 57"
+            }
+          ],
+          "targetPage": 58,
+          "style": "reference",
+          "id": "p4-27",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-58-1/#page-58"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прочие Планы....................................................... 67"
+            }
+          ],
+          "targetPage": 68,
+          "style": "reference",
+          "id": "p4-28",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-68/#page-68"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Известные миры Материального Плана........... 68"
+            }
+          ],
+          "targetPage": 69,
+          "style": "reference",
+          "id": "p4-29",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-69/#page-69"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 2 69"
+            }
+          ],
+          "targetPage": 70,
+          "id": "p4-30",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/part-two/#page-70"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 3: СОЗДАНИЕ ПРИКЛЮЧЕНИЙ............. 71"
+            }
+          ],
+          "targetPage": 72,
+          "style": "reference",
+          "id": "p4-31",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/adventures/#page-72"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Элементы отличного приключения................... 71"
+            }
+          ],
+          "targetPage": 72,
+          "style": "reference",
+          "id": "p4-32",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/adventures/#page-72"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Готовые приключения......................................... 72"
+            }
+          ],
+          "targetPage": 73,
+          "style": "reference",
+          "id": "p4-33",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-73-1/#page-73"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Структура приключения...................................... 72"
+            }
+          ],
+          "targetPage": 73,
+          "style": "reference",
+          "id": "p4-34",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-73-1/#page-73"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Типы приключений.............................................. 72"
+            }
+          ],
+          "targetPage": 73,
+          "style": "reference",
+          "id": "p4-35",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-73-1/#page-73"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Усложнения............................................................ 79"
+            }
+          ],
+          "targetPage": 80,
+          "style": "reference",
+          "id": "p4-36",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-80/#page-80"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание сцен....................................................... 81"
+            }
+          ],
+          "targetPage": 82,
+          "style": "reference",
+          "id": "p4-37",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/creating-encounters/#page-82"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Случайные встречи............................................... 85"
+            }
+          ],
+          "targetPage": 86,
+          "style": "reference",
+          "id": "p4-38",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-86/#page-86"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 4: СОЗДАНИЕ ПЕРСОНАЖЕЙ МАСТЕРА... 89"
+            }
+          ],
+          "targetPage": 90,
+          "style": "reference",
+          "id": "p4-39",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/nonplayer-characters/#page-90"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание персонажей Мастера.......................... 89"
+            }
+          ],
+          "targetPage": 90,
+          "style": "reference",
+          "id": "p4-40",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/nonplayer-characters/#page-90"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Персонажи Мастера члены отряда................... 92"
+            }
+          ],
+          "targetPage": 93,
+          "style": "reference",
+          "id": "p4-41",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-93/#page-93"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Информаторы....................................................... 93"
+            }
+          ],
+          "targetPage": 94,
+          "style": "reference",
+          "id": "p4-42",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-94/#page-94"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наемники............................................................... 94"
+            }
+          ],
+          "targetPage": 95,
+          "style": "reference",
+          "id": "p4-43",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-95/#page-95"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Статисты................................................................ 94"
+            }
+          ],
+          "targetPage": 95,
+          "style": "reference",
+          "id": "p4-44",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-95/#page-95"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Злодеи..................................................................... 94"
+            }
+          ],
+          "targetPage": 95,
+          "style": "reference",
+          "id": "p4-45",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-95/#page-95"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Классовые опции злодея..................................... 96"
+            }
+          ],
+          "targetPage": 97,
+          "style": "reference",
+          "id": "p4-46",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-97/#page-97"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 5: ОКРУЖАЮЩАЯ СРЕДА...................... 99"
+            }
+          ],
+          "targetPage": 100,
+          "style": "reference",
+          "id": "p4-47",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/environments/#page-100"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подземелья............................................................. 99"
+            }
+          ],
+          "targetPage": 100,
+          "style": "reference",
+          "id": "p4-48",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/environments/#page-100"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание карты подземелья............................. 102"
+            }
+          ],
+          "targetPage": 103,
+          "style": "reference",
+          "id": "p4-49",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-103/#page-103"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дикая местность................................................. 106"
+            }
+          ],
+          "targetPage": 107,
+          "style": "reference",
+          "id": "p4-50",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-107/#page-107"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Составление карты дикой местности............. 108"
+            }
+          ],
+          "targetPage": 109,
+          "style": "reference",
+          "id": "p4-51",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-109/#page-109"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Выживание в дикой местности....................... 109"
+            }
+          ],
+          "targetPage": 110,
+          "style": "reference",
+          "id": "p4-52",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-109/#page-110"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поселения............................................................. 112"
+            }
+          ],
+          "targetPage": 113,
+          "style": "reference",
+          "id": "p4-53",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-113/#page-113"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Составление карты поселения.......................... 114"
+            }
+          ],
+          "targetPage": 115,
+          "style": "reference",
+          "id": "p4-54",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-115/#page-115"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сцены в поселениях........................................... 114"
+            }
+          ],
+          "targetPage": 115,
+          "style": "reference",
+          "id": "p4-55",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-115/#page-115"
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "СОДЕРЖАНИЕ"
+            }
+          ],
+          "id": "p4-56",
+          "sourcePage": 4
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Необычное окружение....................................... 116"
+            }
+          ],
+          "targetPage": 117,
+          "style": "reference",
+          "id": "p4-57",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-117/#page-117"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ловушки................................................................ 120"
+            }
+          ],
+          "targetPage": 121,
+          "style": "reference",
+          "id": "p4-58",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-121/#page-121"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 6: МЕЖДУ ПРИКЛЮЧЕНИЯМИ........... 125"
+            }
+          ],
+          "targetPage": 126,
+          "style": "reference",
+          "id": "p4-59",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/between-adventures/#page-126"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Связывание приключения................................ 125"
+            }
+          ],
+          "targetPage": 126,
+          "style": "reference",
+          "id": "p4-60",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/between-adventures/#page-126"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ход кампании...................................................... 126"
+            }
+          ],
+          "targetPage": 127,
+          "style": "reference",
+          "id": "p4-61",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-127/#page-127"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Постоянные расходы.......................................... 126"
+            }
+          ],
+          "targetPage": 127,
+          "style": "reference",
+          "id": "p4-62",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-127/#page-127"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Деятельность во время простоя....................... 127"
+            }
+          ],
+          "targetPage": 128,
+          "style": "reference",
+          "id": "p4-63",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-128/#page-128"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 7: СОКРОВИЩА........................................ 133"
+            }
+          ],
+          "targetPage": 134,
+          "style": "reference",
+          "id": "p4-64",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/treasure/#page-134"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Виды сокровищ................................................... 133"
+            }
+          ],
+          "targetPage": 134,
+          "style": "reference",
+          "id": "p4-65",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/treasure/#page-134"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Случайные сокровища........................................ 133"
+            }
+          ],
+          "targetPage": 134,
+          "style": "reference",
+          "id": "p4-66",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/treasure/#page-134"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магические предметы........................................ 135"
+            }
+          ],
+          "targetPage": 136,
+          "style": "reference",
+          "id": "p4-67",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/magic-items-basics/#page-136"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разумные магические предметы..................... 214"
+            }
+          ],
+          "targetPage": 215,
+          "style": "reference",
+          "id": "p4-68",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/magic-items-215/#page-215"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Артефакты........................................................... 219"
+            }
+          ],
+          "targetPage": 220,
+          "style": "reference",
+          "id": "p4-69",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/artifacts-1/#page-220"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прочие награды.................................................. 227"
+            }
+          ],
+          "targetPage": 228,
+          "style": "reference",
+          "id": "p4-70",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/other-rewards/#page-228"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 3 233"
+            }
+          ],
+          "targetPage": 234,
+          "id": "p4-71",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/part-three/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 8: ПРОВЕДЕНИЕ ИГР............................ 235"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p4-72",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/running-the-game/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Правила проведения игры................................ 235"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p4-73",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/running-the-game/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Роль костей.......................................................... 236"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p4-74",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-237/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Использование характеристик......................... 237"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p4-75",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-238/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Исследование....................................................... 242"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p4-76",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-243/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Социальное взаимодействие............................ 244"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p4-77",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-245/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предметы............................................................. 246"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p4-78",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-247/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сражение............................................................. 247"
+            }
+          ],
+          "targetPage": 248,
+          "style": "reference",
+          "id": "p4-79",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-248/#page-248"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Погони.................................................................. 252"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p4-80",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/chases/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Осадное снаряжение.......................................... 255"
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p4-81",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-256/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Болезни................................................................. 256"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p4-82",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-257/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Яды....................................................................... 257"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p4-83",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-258/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Безумие................................................................. 258"
+            }
+          ],
+          "targetPage": 259,
+          "style": "reference",
+          "id": "p4-84",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-259/#page-259"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опыт...................................................................... 260"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p4-85",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-261/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ГЛАВА 9: МАСТЕРСКАЯ МАСТЕРА.................. 263"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p4-86",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/dungeon-masters-workshop/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дополнительные варианты правил................. 263"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p4-87",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/dungeon-masters-workshop/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опции поиска приключений............................ 266"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p4-88",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-267/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опции сражения................................................. 270"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p4-89",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-271/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание чудовища............................................ 273"
+            }
+          ],
+          "targetPage": 274,
+          "style": "reference",
+          "id": "p4-90",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/creating-monsters-1/#page-274"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание заклинаний......................................... 283"
+            }
+          ],
+          "targetPage": 284,
+          "style": "reference",
+          "id": "p4-91",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-284/#page-284"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание магического предмета...................... 284"
+            }
+          ],
+          "targetPage": 285,
+          "style": "reference",
+          "id": "p4-92",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-285/#page-285"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание опций персонажа.............................. 285"
+            }
+          ],
+          "targetPage": 286,
+          "style": "reference",
+          "id": "p4-93",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-286/#page-286"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ А: "
+            }
+          ],
+          "id": "p4-94",
+          "sourcePage": 4
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "СЛУЧАЙНЫЕ ПОДЗЕМЕЛЬЯ 290"
+            }
+          ],
+          "targetPage": 291,
+          "id": "p4-95",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/random-dungeons/#page-291"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Начальная область............................................... 290"
+            }
+          ],
+          "targetPage": 291,
+          "style": "reference",
+          "id": "p4-96",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/random-dungeons/#page-291"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Коридоры.............................................................. 290"
+            }
+          ],
+          "targetPage": 291,
+          "style": "reference",
+          "id": "p4-97",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/random-dungeons/#page-291"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Двери..................................................................... 291"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p4-98",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-292/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Комнаты................................................................ 291"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p4-99",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-292/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лестницы.............................................................. 291"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p4-100",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-292/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Объединение областей....................................... 292"
+            }
+          ],
+          "targetPage": 293,
+          "style": "reference",
+          "id": "p4-101",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-293/#page-293"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наполнение подземелья..................................... 292"
+            }
+          ],
+          "targetPage": 293,
+          "style": "reference",
+          "id": "p4-102",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/section-293/#page-293"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ Б: СПИСКИ ЧУДОВИЩ 302"
+            }
+          ],
+          "targetPage": 303,
+          "style": "reference",
+          "id": "p4-103",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/monster-lists/#page-303"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ В : КАРТЫ 310"
+            }
+          ],
+          "targetPage": 311,
+          "style": "reference",
+          "id": "p4-104",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/maps-1/#page-311"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ПРИЛОЖЕНИЕ Г: "
+            }
+          ],
+          "id": "p4-105",
+          "sourcePage": 4
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "ВДОХНОВЕНИЕ ДЛЯ МАСТЕРА 316"
+            }
+          ],
+          "targetPage": 317,
+          "id": "p4-106",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/inspirational-reading/#page-317"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "АЛФАВИТНЫЙ УКАЗАТЕЛЬ 317"
+            }
+          ],
+          "targetPage": 318,
+          "style": "reference",
+          "id": "p4-107",
+          "sourcePage": 4,
+          "link": "/books/dmg-2014-ru/index/#page-318"
+        }
+      ]
+    }
+  ]
+}

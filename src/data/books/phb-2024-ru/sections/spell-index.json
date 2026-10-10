@@ -1,0 +1,5441 @@
+{
+  "bookId": "phb-2024-ru",
+  "id": "spell-index",
+  "title": "Список заклинаний",
+  "description": "",
+  "sourcePages": [
+    229
+  ],
+  "group": "Глава 7 · Заклинания",
+  "pages": [
+    {
+      "number": 229,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Список заклинаний",
+              "bold": true
+            }
+          ],
+          "id": "p229-1",
+          "sourcePage": 229
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заклинания представлены по уровням, а после в алфавитном порядке. Цифра серым цветом это номер страницы."
+            }
+          ],
+          "id": "p229-2",
+          "sourcePage": 229
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заговоры ",
+              "bold": true
+            },
+            {
+              "text": "230"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-3",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Брызги кислоты"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-4",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная рука"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-5",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дружба"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-6",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дубинка"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-7",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от оружия"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-8",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Звёздный огонёк"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-9",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Злая насмешка"
+            }
+          ],
+          "targetPage": 230,
+          "style": "reference",
+          "id": "p229-10",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-230"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Искусство друидов 231"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p229-11",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Леденящее прикосновение"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p229-12",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Луч холода"
+            }
+          ],
+          "targetPage": 231,
+          "style": "reference",
+          "id": "p229-13",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-231"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Малая иллюзия 232"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p229-14",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меткий удар"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p229-15",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мистический заряд"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p229-16",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наставление"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p229-17",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный снаряд"
+            }
+          ],
+          "targetPage": 232,
+          "style": "reference",
+          "id": "p229-18",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-232"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пляшущие огоньки 233"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-19",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Погребальный звон"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-20",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Починка"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-21",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Раскат грома"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-22",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Расщепление разума"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-23",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свет"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-24",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Священное пламя"
+            }
+          ],
+          "targetPage": 233,
+          "style": "reference",
+          "id": "p229-25",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-233"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово сияния 234"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-26",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сообщение"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-27",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сопротивление"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-28",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение пламени"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-29",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Терновый кнут"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-30",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уход за умирающим"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-31",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фокусы"
+            }
+          ],
+          "targetPage": 234,
+          "style": "reference",
+          "id": "p229-32",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-234"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чародейская вспышка 235"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p229-33",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чудотворство"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p229-34",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Электрошок"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p229-35",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Элементализм"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p229-36",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ядовитые брызги"
+            }
+          ],
+          "targetPage": 235,
+          "style": "reference",
+          "id": "p229-37",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/cantrips/#page-235"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1 уровень ",
+              "bold": true
+            },
+            {
+              "text": "236"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p229-38",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Адское возмездие"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p229-39",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Безмолвный образ"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p229-40",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Благословение"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p229-41",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественная кара"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p229-42",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественное благоволение"
+            }
+          ],
+          "targetPage": 236,
+          "style": "reference",
+          "id": "p229-43",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-236"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ведьмин снаряд"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "237"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p229-44",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волна грома"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p229-45",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная стрела"
+            }
+          ],
+          "targetPage": 237,
+          "style": "reference",
+          "id": "p229-46",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-237"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов на дуэль 238"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p229-47",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Героизм"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p229-48",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гневная кара"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p229-49",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Град шипов"
+            }
+          ],
+          "targetPage": 238,
+          "style": "reference",
+          "id": "p229-50",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-238"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Громовая кара 239"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p229-51",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Диссонирующий шёпот"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p229-52",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех Агатиса"
+            }
+          ],
+          "targetPage": 239,
+          "style": "reference",
+          "id": "p229-53",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-239"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспехи мага 240"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p229-54",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дружба с животными"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p229-55",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жуткий смех Таши"
+            }
+          ],
+          "targetPage": 240,
+          "style": "reference",
+          "id": "p229-56",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-240"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от зла и добра 241"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p229-57",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Иллюзорные письмена"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p229-58",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ледяной кинжал"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p229-59",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лечащее слово"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p229-60",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лечение ран"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p229-61",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Луч болезни"
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p229-62",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Маскировка 242"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p229-63",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метка охотника"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p229-64",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нанесение ран"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p229-65",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Направляющий снаряд"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p229-66",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимый слуга"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p229-67",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение болезней и яда"
+            }
+          ],
+          "targetPage": 242,
+          "style": "reference",
+          "id": "p229-68",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-1/#page-242"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение добра и зла"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "243"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-69",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение магии"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-70",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненные ладони"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-71",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огонь фей"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-72",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опознание"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-73",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опутывание"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-74",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опутывающий удар"
+            }
+          ],
+          "targetPage": 243,
+          "style": "reference",
+          "id": "p229-75",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-243"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очарование личности 244"
+            }
+          ],
+          "targetPage": 244,
+          "style": "reference",
+          "id": "p229-76",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-244"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очищение пищи и питья"
+            }
+          ],
+          "targetPage": 244,
+          "style": "reference",
+          "id": "p229-77",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-244"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Падение пёрышком"
+            }
+          ],
+          "targetPage": 244,
+          "style": "reference",
+          "id": "p229-78",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-244"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Палящая кара"
+            }
+          ],
+          "targetPage": 244,
+          "style": "reference",
+          "id": "p229-79",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-244"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск фамильяра 245"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p229-80",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Понимание языков"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p229-81",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порча"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p229-82",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поспешное отступление"
+            }
+          ],
+          "targetPage": 245,
+          "style": "reference",
+          "id": "p229-83",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-245"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Приказ"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "246"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p229-84",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прыжок"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p229-85",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Псевдожизнь"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p229-86",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разговор с животными"
+            }
+          ],
+          "targetPage": 246,
+          "style": "reference",
+          "id": "p229-87",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-246"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Руки Хадара 247"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-88",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сверкающие брызги"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-89",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сглаз"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-90",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сигнал тревоги"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-91",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скольжение"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-92",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скороход"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-93",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение или уничтожение"
+            }
+          ],
+          "targetPage": 247,
+          "style": "reference",
+          "id": "p229-94",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-247"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "воды"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "248"
+            }
+          ],
+          "targetPage": 248,
+          "style": "reference",
+          "id": "p229-95",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-248"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тензеров парящий диск"
+            }
+          ],
+          "id": "p229-96",
+          "sourcePage": 229
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Туманное облако 249"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-97",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Убежище"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-98",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Усыпление"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-99",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цветной шарик"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-100",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чудо-ягоды"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-101",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-102",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит веры"
+            }
+          ],
+          "targetPage": 249,
+          "style": "reference",
+          "id": "p229-103",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-1-2/#page-249"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2 уровень ",
+              "bold": true
+            },
+            {
+              "text": "250"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p229-104",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арканная регенерация"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p229-105",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бесследное передвижение"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p229-106",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественное оружие"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p229-107",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вечный огонь"
+            }
+          ],
+          "targetPage": 250,
+          "style": "reference",
+          "id": "p229-108",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-250"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Видение невидимого 251"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p229-109",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внушение"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p229-110",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебные уста"
+            }
+          ],
+          "targetPage": 251,
+          "style": "reference",
+          "id": "p229-111",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-251"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебный замок 252"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p229-112",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воображаемая сила"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p229-113",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гадание"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p229-114",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глухота/слепота"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p229-115",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горящий клинок"
+            }
+          ],
+          "targetPage": 252,
+          "style": "reference",
+          "id": "p229-116",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-252"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дребезги 253"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-117",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дубовая кожа"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-118",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дыхание дракона"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-119",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Животные чувства"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-120",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Завеса стрел"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-121",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от яда"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-122",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Корона безумия"
+            }
+          ],
+          "targetPage": 253,
+          "style": "reference",
+          "id": "p229-123",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-253"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Левитация 254"
+            }
+          ],
+          "targetPage": 254,
+          "style": "reference",
+          "id": "p229-124",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-254"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лунный луч"
+            }
+          ],
+          "targetPage": 254,
+          "style": "reference",
+          "id": "p229-125",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-254"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Луч слабости"
+            }
+          ],
+          "targetPage": 254,
+          "style": "reference",
+          "id": "p229-126",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-254"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магическое оружие"
+            }
+          ],
+          "targetPage": 254,
+          "style": "reference",
+          "id": "p229-127",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-254"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Малое восстановление"
+            }
+          ],
+          "targetPage": 254,
+          "style": "reference",
+          "id": "p229-128",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-254"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мельфова кислотная стрела"
+            }
+          ],
+          "targetPage": 254,
+          "style": "reference",
+          "id": "p229-129",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-254"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молебен лечения 255"
+            }
+          ],
+          "targetPage": 255,
+          "style": "reference",
+          "id": "p229-130",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-255"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимость"
+            }
+          ],
+          "targetPage": 255,
+          "style": "reference",
+          "id": "p229-131",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-255"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нетленные останки"
+            }
+          ],
+          "targetPage": 255,
+          "style": "reference",
+          "id": "p229-132",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-255"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нистулова ложная магия"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": " 256"
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p229-133",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Облако кинжалов"
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p229-134",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Область истины"
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p229-135",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-1/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение мыслей 257"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p229-136",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отражения"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p229-137",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Охраняющая связь"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p229-138",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Палящий луч"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p229-139",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паук"
+            }
+          ],
+          "targetPage": 257,
+          "style": "reference",
+          "id": "p229-140",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-257"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паутина 258"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p229-141",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подмога"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p229-142",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск животных или растений"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p229-143",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск ловушек"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p229-144",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск объекта"
+            }
+          ],
+          "targetPage": 258,
+          "style": "reference",
+          "id": "p229-145",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-258"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск скакуна 259"
+            }
+          ],
+          "targetPage": 259,
+          "style": "reference",
+          "id": "p229-146",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-259"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порыв ветра"
+            }
+          ],
+          "targetPage": 259,
+          "style": "reference",
+          "id": "p229-147",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-259"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Почтовое животное 260"
+            }
+          ],
+          "targetPage": 260,
+          "style": "reference",
+          "id": "p229-148",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-260"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа зверя"
+            }
+          ],
+          "targetPage": 260,
+          "style": "reference",
+          "id": "p229-149",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-260"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пронзание разума"
+            }
+          ],
+          "targetPage": 260,
+          "style": "reference",
+          "id": "p229-150",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-260"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пылающий шар"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "261"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p229-151",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Размытый образ"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p229-152",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Раскалённый металл"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p229-153",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Речь златоуста"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p229-154",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сияющая кара"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p229-155",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смена обличья"
+            }
+          ],
+          "targetPage": 261,
+          "style": "reference",
+          "id": "p229-156",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-261"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стук 262"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p229-157",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тишина"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p229-158",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трюк с верёвкой"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p229-159",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Туманный шаг"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p229-160",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тьма"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p229-161",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тёмное зрение"
+            }
+          ],
+          "targetPage": 262,
+          "style": "reference",
+          "id": "p229-162",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-262"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Увеличение/уменьшение"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": " 263"
+            }
+          ],
+          "targetPage": 263,
+          "style": "reference",
+          "id": "p229-163",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-263"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удержание личности"
+            }
+          ],
+          "targetPage": 263,
+          "style": "reference",
+          "id": "p229-164",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-263"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Улучшение характеристики"
+            }
+          ],
+          "targetPage": 263,
+          "style": "reference",
+          "id": "p229-165",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-263"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Умиротворение"
+            }
+          ],
+          "targetPage": 263,
+          "style": "reference",
+          "id": "p229-166",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-263"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шипастая поросль"
+            }
+          ],
+          "targetPage": 263,
+          "style": "reference",
+          "id": "p229-167",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-2-2/#page-263"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3 уровень ",
+              "bold": true
+            },
+            {
+              "text": "264"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p229-168",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура живучести"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p229-169",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов животных"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p229-170",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов шквала снарядов"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p229-171",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Газообразная форма"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p229-172",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гипнотический узор"
+            }
+          ],
+          "targetPage": 264,
+          "style": "reference",
+          "id": "p229-173",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-264"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Голод Хадара 265"
+            }
+          ],
+          "targetPage": 265,
+          "style": "reference",
+          "id": "p229-174",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-265"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дневной свет"
+            }
+          ],
+          "targetPage": 265,
+          "style": "reference",
+          "id": "p229-175",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-265"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Духовные стражи 266"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p229-176",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замедление"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p229-177",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от энергии"
+            }
+          ],
+          "targetPage": 266,
+          "style": "reference",
+          "id": "p229-178",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-266"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зловонное облако 267"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p229-179",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Контрзаклинание"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p229-180",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Леомундова хижина"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p229-181",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магический круг"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p229-182",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия крестоносца"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p229-183",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Маяк надежды"
+            }
+          ],
+          "targetPage": 267,
+          "style": "reference",
+          "id": "p229-184",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-267"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мерцание 268"
+            }
+          ],
+          "targetPage": 268,
+          "style": "reference",
+          "id": "p229-185",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-268"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метель"
+            }
+          ],
+          "targetPage": 268,
+          "style": "reference",
+          "id": "p229-186",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-268"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное лечащее слово"
+            }
+          ],
+          "targetPage": 268,
+          "style": "reference",
+          "id": "p229-187",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-268"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молния"
+            }
+          ],
+          "targetPage": 268,
+          "style": "reference",
+          "id": "p229-188",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-268"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Необнаружимость"
+            }
+          ],
+          "targetPage": 268,
+          "style": "reference",
+          "id": "p229-189",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-268"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Низшее воскрешение"
+            }
+          ],
+          "targetPage": 268,
+          "style": "reference",
+          "id": "p229-190",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-268"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Образ 269"
+            }
+          ],
+          "targetPage": 269,
+          "style": "reference",
+          "id": "p229-191",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-269"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный шар"
+            }
+          ],
+          "targetPage": 269,
+          "style": "reference",
+          "id": "p229-192",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-269"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оживление мертвецов 270"
+            }
+          ],
+          "targetPage": 270,
+          "style": "reference",
+          "id": "p229-193",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-270"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ослепляющая кара"
+            }
+          ],
+          "targetPage": 270,
+          "style": "reference",
+          "id": "p229-194",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-270"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Охранные руны"
+            }
+          ],
+          "targetPage": 270,
+          "style": "reference",
+          "id": "p229-195",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-1/#page-270"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подводное дыхание 271"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p229-196",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подсматривание"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p229-197",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полёт"
+            }
+          ],
+          "targetPage": 271,
+          "style": "reference",
+          "id": "p229-198",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-271"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Послание 272"
+            }
+          ],
+          "targetPage": 272,
+          "style": "reference",
+          "id": "p229-199",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-272"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призрачный скакун"
+            }
+          ],
+          "id": "p229-200",
+          "sourcePage": 229
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа нежити 273"
+            }
+          ],
+          "targetPage": 273,
+          "style": "reference",
+          "id": "p229-201",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-273"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа феи 274"
+            }
+          ],
+          "targetPage": 274,
+          "style": "reference",
+          "id": "p229-202",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-274"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв молнии"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "275"
+            }
+          ],
+          "targetPage": 275,
+          "style": "reference",
+          "id": "p229-203",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-275"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прикосновение вампира"
+            }
+          ],
+          "targetPage": 275,
+          "style": "reference",
+          "id": "p229-204",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-275"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Притворная смерть"
+            }
+          ],
+          "targetPage": 275,
+          "style": "reference",
+          "id": "p229-205",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-275"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проклятие"
+            }
+          ],
+          "targetPage": 275,
+          "style": "reference",
+          "id": "p229-206",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-275"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разговор с мёртвыми"
+            }
+          ],
+          "targetPage": 275,
+          "style": "reference",
+          "id": "p229-207",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-275"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разговор с растениями 276"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p229-208",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рассеивание магии"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p229-209",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рост растений"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p229-210",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слияние с камнем"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p229-211",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Снятие проклятья"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p229-212",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение пищи и воды"
+            }
+          ],
+          "targetPage": 276,
+          "style": "reference",
+          "id": "p229-213",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-276"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена ветра 277"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-214",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийное оружие"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-215",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стрела-молния"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-216",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ужас"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-217",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ускорение"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-218",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хождение по воде"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-219",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Языки"
+            }
+          ],
+          "targetPage": 277,
+          "style": "reference",
+          "id": "p229-220",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-3-2/#page-277"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4 уровень ",
+              "bold": true
+            },
+            {
+              "text": "278"
+            }
+          ],
+          "targetPage": 278,
+          "style": "reference",
+          "id": "p229-221",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-278"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура жизни"
+            }
+          ],
+          "targetPage": 278,
+          "style": "reference",
+          "id": "p229-222",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-278"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура очищения"
+            }
+          ],
+          "targetPage": 278,
+          "style": "reference",
+          "id": "p229-223",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-278"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верный пёс Морденкайнена"
+            }
+          ],
+          "targetPage": 278,
+          "style": "reference",
+          "id": "p229-224",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-278"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Власть над водами"
+            }
+          ],
+          "targetPage": 278,
+          "style": "reference",
+          "id": "p229-225",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-278"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воображаемый убийца 279"
+            }
+          ],
+          "targetPage": 279,
+          "style": "reference",
+          "id": "p229-226",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-279"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов лесных обитателей"
+            }
+          ],
+          "targetPage": 279,
+          "style": "reference",
+          "id": "p229-227",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-279"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов малых элементалей"
+            }
+          ],
+          "targetPage": 279,
+          "style": "reference",
+          "id": "p229-228",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-279"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Высшая невидимость"
+            }
+          ],
+          "targetPage": 279,
+          "style": "reference",
+          "id": "p229-229",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-279"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантское насекомое"
+            }
+          ],
+          "targetPage": 279,
+          "style": "reference",
+          "id": "p229-230",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-279"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Град 280"
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p229-231",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Едкий шар"
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p229-232",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от смерти"
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p229-233",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изгнание"
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p229-234",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изготовление"
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p229-235",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изменение формы камня"
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p229-236",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Источник лунного света 281"
+            }
+          ],
+          "targetPage": 281,
+          "style": "reference",
+          "id": "p229-237",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-281"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кабинет Морденкайнена"
+            }
+          ],
+          "targetPage": 281,
+          "style": "reference",
+          "id": "p229-238",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-281"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменная кожа"
+            }
+          ],
+          "targetPage": 281,
+          "style": "reference",
+          "id": "p229-239",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-281"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Леомундов потайной сундук"
+            }
+          ],
+          "targetPage": 281,
+          "style": "reference",
+          "id": "p229-240",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-281"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магический глаз"
+            }
+          ],
+          "targetPage": 281,
+          "style": "reference",
+          "id": "p229-241",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-281"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мираж"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "282"
+            }
+          ],
+          "targetPage": 282,
+          "style": "reference",
+          "id": "p229-242",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-282"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оглушающая кара"
+            }
+          ],
+          "targetPage": 282,
+          "style": "reference",
+          "id": "p229-243",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-282"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный щит"
+            }
+          ],
+          "targetPage": 282,
+          "style": "reference",
+          "id": "p229-244",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-282"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отилюков упругий шар"
+            }
+          ],
+          "targetPage": 282,
+          "style": "reference",
+          "id": "p229-245",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-282"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очарование монстра"
+            }
+          ],
+          "targetPage": 282,
+          "style": "reference",
+          "id": "p229-246",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-282"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Переносящая дверь 283"
+            }
+          ],
+          "targetPage": 283,
+          "style": "reference",
+          "id": "p229-247",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-283"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подчинение зверя"
+            }
+          ],
+          "targetPage": 283,
+          "style": "reference",
+          "id": "p229-248",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-283"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск существа"
+            }
+          ],
+          "targetPage": 283,
+          "style": "reference",
+          "id": "p229-249",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-283"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полиморф"
+            }
+          ],
+          "targetPage": 283,
+          "style": "reference",
+          "id": "p229-250",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-283"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предсказание"
+            }
+          ],
+          "targetPage": 283,
+          "style": "reference",
+          "id": "p229-251",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-283"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа аберрации 284"
+            }
+          ],
+          "targetPage": 284,
+          "style": "reference",
+          "id": "p229-252",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-1/#page-284"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа конструкта"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": " 285"
+            }
+          ],
+          "targetPage": 285,
+          "style": "reference",
+          "id": "p229-253",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-285"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа элементаля"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": " 286"
+            }
+          ],
+          "targetPage": 286,
+          "style": "reference",
+          "id": "p229-254",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-286"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Принуждение"
+            }
+          ],
+          "targetPage": 286,
+          "style": "reference",
+          "id": "p229-255",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-286"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свобода перемещения"
+            }
+          ],
+          "targetPage": 286,
+          "style": "reference",
+          "id": "p229-256",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-286"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смятение 287"
+            }
+          ],
+          "targetPage": 287,
+          "style": "reference",
+          "id": "p229-257",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-287"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена огня"
+            }
+          ],
+          "targetPage": 287,
+          "style": "reference",
+          "id": "p229-258",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-287"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Страж веры 288"
+            }
+          ],
+          "targetPage": 288,
+          "style": "reference",
+          "id": "p229-259",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-288"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Усыхание"
+            }
+          ],
+          "targetPage": 288,
+          "style": "reference",
+          "id": "p229-260",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-288"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цепкая лоза 289"
+            }
+          ],
+          "targetPage": 289,
+          "style": "reference",
+          "id": "p229-261",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-289"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эвардовы чёрные щупальца"
+            }
+          ],
+          "targetPage": 289,
+          "style": "reference",
+          "id": "p229-262",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-289"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "5 уровень ",
+              "bold": true
+            },
+            {
+              "text": "290"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-263",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Быстрый колчан"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-264",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Величественное присутствие"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-265",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Йоланды"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-266",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воскрешение"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-267",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов залпа"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-268",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов элементаля"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-269",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Высшее восстановление"
+            }
+          ],
+          "targetPage": 290,
+          "style": "reference",
+          "id": "p229-270",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-4-2/#page-290"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длань Бигби 291"
+            }
+          ],
+          "targetPage": 291,
+          "style": "reference",
+          "id": "p229-271",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-291"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древесный путь"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "292"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p229-272",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заражение"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p229-273",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знание легенд"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p229-274",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изгоняющая кара"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p229-275",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изменение памяти"
+            }
+          ],
+          "targetPage": 292,
+          "style": "reference",
+          "id": "p229-276",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-292"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Конус холода 293"
+            }
+          ],
+          "targetPage": 293,
+          "style": "reference",
+          "id": "p229-277",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-293"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Круг силы"
+            }
+          ],
+          "targetPage": 293,
+          "style": "reference",
+          "id": "p229-278",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-293"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Круг телепортации"
+            }
+          ],
+          "targetPage": 293,
+          "style": "reference",
+          "id": "p229-279",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-293"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ментальная связь Рэри 294"
+            }
+          ],
+          "targetPage": 294,
+          "style": "reference",
+          "id": "p229-280",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-294"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное лечение ран"
+            }
+          ],
+          "targetPage": 294,
+          "style": "reference",
+          "id": "p229-281",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-294"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наблюдение"
+            }
+          ],
+          "targetPage": 294,
+          "style": "reference",
+          "id": "p229-282",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-294"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нашествие насекомых 295"
+            }
+          ],
+          "targetPage": 295,
+          "style": "reference",
+          "id": "p229-283",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-295"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Небесный огонь"
+            }
+          ],
+          "targetPage": 295,
+          "style": "reference",
+          "id": "p229-284",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-295"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обет"
+            }
+          ],
+          "targetPage": 295,
+          "style": "reference",
+          "id": "p229-285",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-295"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Облако смерти"
+            }
+          ],
+          "targetPage": 295,
+          "style": "reference",
+          "id": "p229-286",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-295"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Общение 296"
+            }
+          ],
+          "targetPage": 296,
+          "style": "reference",
+          "id": "p229-287",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-296"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Общение с природой"
+            }
+          ],
+          "targetPage": 296,
+          "style": "reference",
+          "id": "p229-288",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-296"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оживление вещей"
+            }
+          ],
+          "targetPage": 296,
+          "style": "reference",
+          "id": "p229-289",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-296"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планарные узы"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "297"
+            }
+          ],
+          "targetPage": 297,
+          "style": "reference",
+          "id": "p229-290",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-297"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подчинение личности"
+            }
+          ],
+          "targetPage": 297,
+          "style": "reference",
+          "id": "p229-291",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-297"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Преграда жизни"
+            }
+          ],
+          "targetPage": 297,
+          "style": "reference",
+          "id": "p229-292",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-297"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа дракона"
+            }
+          ],
+          "targetPage": 297,
+          "style": "reference",
+          "id": "p229-293",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-1/#page-297"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа небожителя"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": " 298"
+            }
+          ],
+          "targetPage": 298,
+          "style": "reference",
+          "id": "p229-294",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-298"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Притворство 299"
+            }
+          ],
+          "targetPage": 299,
+          "style": "reference",
+          "id": "p229-295",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-299"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пробуждение разума"
+            }
+          ],
+          "targetPage": 299,
+          "style": "reference",
+          "id": "p229-296",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-299"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разрушительная волна"
+            }
+          ],
+          "targetPage": 299,
+          "style": "reference",
+          "id": "p229-297",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-299"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рассеивание добра и зла"
+            }
+          ],
+          "targetPage": 299,
+          "style": "reference",
+          "id": "p229-298",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-299"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Реинкарнация 300"
+            }
+          ],
+          "targetPage": 300,
+          "style": "reference",
+          "id": "p229-299",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-300"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Связь с иным планом"
+            }
+          ],
+          "targetPage": 300,
+          "style": "reference",
+          "id": "p229-300",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-300"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Святилище"
+            }
+          ],
+          "targetPage": 300,
+          "style": "reference",
+          "id": "p229-301",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-300"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Синаптический разряд 301"
+            }
+          ],
+          "targetPage": 301,
+          "style": "reference",
+          "id": "p229-302",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-301"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сияющий шторм Джалларзи"
+            }
+          ],
+          "targetPage": 301,
+          "style": "reference",
+          "id": "p229-303",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-301"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сновидение"
+            }
+          ],
+          "id": "p229-304",
+          "sourcePage": 229
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание прохода 302"
+            }
+          ],
+          "targetPage": 302,
+          "style": "reference",
+          "id": "p229-305",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-302"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение"
+            }
+          ],
+          "targetPage": 302,
+          "style": "reference",
+          "id": "p229-306",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-302"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена камня"
+            }
+          ],
+          "targetPage": 302,
+          "style": "reference",
+          "id": "p229-307",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-302"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена силы"
+            }
+          ],
+          "targetPage": 302,
+          "style": "reference",
+          "id": "p229-308",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-302"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телекинез 303"
+            }
+          ],
+          "targetPage": 303,
+          "style": "reference",
+          "id": "p229-309",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-303"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удар стального ветра"
+            }
+          ],
+          "targetPage": 303,
+          "style": "reference",
+          "id": "p229-310",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-303"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удержание чудовища"
+            }
+          ],
+          "targetPage": 303,
+          "style": "reference",
+          "id": "p229-311",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-5-2/#page-303"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фальшивый двойник 304"
+            }
+          ],
+          "targetPage": 304,
+          "style": "reference",
+          "id": "p229-312",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-304"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "6 уровень",
+              "bold": true
+            }
+          ],
+          "targetPage": 304,
+          "style": "reference",
+          "id": "p229-313",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-304"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бурлящий котёл Таши"
+            }
+          ],
+          "targetPage": 304,
+          "style": "reference",
+          "id": "p229-314",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-304"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебный сосуд"
+            }
+          ],
+          "targetPage": 304,
+          "style": "reference",
+          "id": "p229-315",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-304"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов феи 305"
+            }
+          ],
+          "targetPage": 305,
+          "style": "reference",
+          "id": "p229-316",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-305"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Движение почвы"
+            }
+          ],
+          "targetPage": 305,
+          "style": "reference",
+          "id": "p229-317",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-305"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дромиджево появление"
+            }
+          ],
+          "targetPage": 305,
+          "style": "reference",
+          "id": "p229-318",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-305"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заданная иллюзия"
+            }
+          ],
+          "targetPage": 305,
+          "style": "reference",
+          "id": "p229-319",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-305"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Запрет"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "306"
+            }
+          ],
+          "targetPage": 306,
+          "style": "reference",
+          "id": "p229-320",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-306"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинное зрение"
+            }
+          ],
+          "targetPage": 306,
+          "style": "reference",
+          "id": "p229-321",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-306"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Исцеление"
+            }
+          ],
+          "targetPage": 306,
+          "style": "reference",
+          "id": "p229-322",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-306"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Круг смерти"
+            }
+          ],
+          "targetPage": 306,
+          "style": "reference",
+          "id": "p229-323",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-306"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магические врата"
+            }
+          ],
+          "targetPage": 306,
+          "style": "reference",
+          "id": "p229-324",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-306"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное внушение"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "307"
+            }
+          ],
+          "targetPage": 307,
+          "style": "reference",
+          "id": "p229-325",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-307"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Неудержимая пляска Отто"
+            }
+          ],
+          "targetPage": 307,
+          "style": "reference",
+          "id": "p229-326",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-307"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Окаменение 308"
+            }
+          ],
+          "targetPage": 308,
+          "style": "reference",
+          "id": "p229-327",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-308"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отилюков ледяной шар"
+            }
+          ],
+          "targetPage": 308,
+          "style": "reference",
+          "id": "p229-328",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-308"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пир героев"
+            }
+          ],
+          "targetPage": 308,
+          "style": "reference",
+          "id": "p229-329",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-308"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планарный союзник"
+            }
+          ],
+          "targetPage": 308,
+          "style": "reference",
+          "id": "p229-330",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-308"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск пути 309"
+            }
+          ],
+          "targetPage": 309,
+          "style": "reference",
+          "id": "p229-331",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-309"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поражение"
+            }
+          ],
+          "targetPage": 309,
+          "style": "reference",
+          "id": "p229-332",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-309"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предосторожность"
+            }
+          ],
+          "targetPage": 309,
+          "style": "reference",
+          "id": "p229-333",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-309"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв духа исчадия 310"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-334",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Путешествие через растения"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-335",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "311"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-336",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разящее око"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-337",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Распад"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-338",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово возврата"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-339",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Солнечный луч"
+            }
+          ],
+          "targetPage": 310,
+          "style": "reference",
+          "id": "p229-340",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-1/#page-310"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение нежити 312"
+            }
+          ],
+          "targetPage": 312,
+          "style": "reference",
+          "id": "p229-341",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-312"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена клинков"
+            }
+          ],
+          "targetPage": 312,
+          "style": "reference",
+          "id": "p229-342",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-312"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена льда"
+            }
+          ],
+          "targetPage": 312,
+          "style": "reference",
+          "id": "p229-343",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-312"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена шипов"
+            }
+          ],
+          "targetPage": 312,
+          "style": "reference",
+          "id": "p229-344",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-312"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стражи 313"
+            }
+          ],
+          "targetPage": 313,
+          "style": "reference",
+          "id": "p229-345",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-313"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера неуязвимости"
+            }
+          ],
+          "targetPage": 313,
+          "style": "reference",
+          "id": "p229-346",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-313"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хождение по ветру"
+            }
+          ],
+          "targetPage": 313,
+          "style": "reference",
+          "id": "p229-347",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-313"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цепная молния"
+            }
+          ],
+          "targetPage": 313,
+          "style": "reference",
+          "id": "p229-348",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-6-2/#page-313"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "7 уровень ",
+              "bold": true
+            },
+            {
+              "text": "314"
+            }
+          ],
+          "targetPage": 314,
+          "style": "reference",
+          "id": "p229-349",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-314"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов небожителя"
+            }
+          ],
+          "targetPage": 314,
+          "style": "reference",
+          "id": "p229-350",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-314"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово силы: укрепление"
+            }
+          ],
+          "targetPage": 314,
+          "style": "reference",
+          "id": "p229-351",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-314"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замедленный огненный шар"
+            }
+          ],
+          "targetPage": 314,
+          "style": "reference",
+          "id": "p229-352",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-314"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уход в иной план"
+            }
+          ],
+          "targetPage": 314,
+          "style": "reference",
+          "id": "p229-353",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-314"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненная буря 315"
+            }
+          ],
+          "targetPage": 315,
+          "style": "reference",
+          "id": "p229-354",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-315"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественное слово"
+            }
+          ],
+          "targetPage": 315,
+          "style": "reference",
+          "id": "p229-355",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-315"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эфирность"
+            }
+          ],
+          "targetPage": 315,
+          "style": "reference",
+          "id": "p229-356",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-315"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перст смерти"
+            }
+          ],
+          "targetPage": 315,
+          "style": "reference",
+          "id": "p229-357",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-315"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Силовая клетка"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "316"
+            }
+          ],
+          "targetPage": 316,
+          "style": "reference",
+          "id": "p229-358",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-316"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Великолепный особняк Морденкайнена"
+            }
+          ],
+          "targetPage": 316,
+          "style": "reference",
+          "id": "p229-359",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-316"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изменение тяготения 317"
+            }
+          ],
+          "targetPage": 317,
+          "style": "reference",
+          "id": "p229-360",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-317"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Радужные брызги"
+            }
+          ],
+          "targetPage": 317,
+          "style": "reference",
+          "id": "p229-361",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-317"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проекция 318"
+            }
+          ],
+          "targetPage": 318,
+          "style": "reference",
+          "id": "p229-362",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-318"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подобие"
+            }
+          ],
+          "targetPage": 318,
+          "style": "reference",
+          "id": "p229-363",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-318"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телепортация"
+            }
+          ],
+          "targetPage": 318,
+          "style": "reference",
+          "id": "p229-364",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-318"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Таинственный мираж 319"
+            }
+          ],
+          "targetPage": 319,
+          "style": "reference",
+          "id": "p229-365",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-319"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Высшее воскрешение"
+            }
+          ],
+          "targetPage": 319,
+          "style": "reference",
+          "id": "p229-366",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-319"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знак"
+            }
+          ],
+          "targetPage": 319,
+          "style": "reference",
+          "id": "p229-367",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-7/#page-319"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изоляция 320"
+            }
+          ],
+          "targetPage": 320,
+          "style": "reference",
+          "id": "p229-368",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-320"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Регенерация"
+            }
+          ],
+          "targetPage": 320,
+          "style": "reference",
+          "id": "p229-369",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-320"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч Морденкайнена"
+            }
+          ],
+          "targetPage": 320,
+          "style": "reference",
+          "id": "p229-370",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-320"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "8 уровень"
+            }
+          ],
+          "targetPage": 320,
+          "style": "reference",
+          "id": "p229-371",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-320"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Антипатия/симпатия"
+            }
+          ],
+          "targetPage": 320,
+          "style": "reference",
+          "id": "p229-372",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-320"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура святости"
+            }
+          ],
+          "targetPage": 320,
+          "style": "reference",
+          "id": "p229-373",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-320"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Власть над погодой 321"
+            }
+          ],
+          "targetPage": 321,
+          "style": "reference",
+          "id": "p229-374",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-321"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воспламеняющаяся туча"
+            }
+          ],
+          "targetPage": 321,
+          "style": "reference",
+          "id": "p229-375",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-321"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Двойник 322"
+            }
+          ],
+          "targetPage": 322,
+          "style": "reference",
+          "id": "p229-376",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-322"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Демиплан"
+            }
+          ],
+          "targetPage": 322,
+          "style": "reference",
+          "id": "p229-377",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-322"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замешательство"
+            }
+          ],
+          "targetPage": 322,
+          "style": "reference",
+          "id": "p229-378",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-322"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Землетрясение"
+            }
+          ],
+          "targetPage": 322,
+          "style": "reference",
+          "id": "p229-379",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-322"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лабиринт 323"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-380",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Находчивость"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-381",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подчинение чудовища"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-382",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поле антимагии"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-383",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Превращение в животных"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-384",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово силы: ошеломление"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-385",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сокрытие разума"
+            }
+          ],
+          "targetPage": 323,
+          "style": "reference",
+          "id": "p229-386",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-323"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Солнечный ожог 324"
+            }
+          ],
+          "targetPage": 324,
+          "style": "reference",
+          "id": "p229-387",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-324"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телепатия"
+            }
+          ],
+          "targetPage": 324,
+          "style": "reference",
+          "id": "p229-388",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-324"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цунами"
+            }
+          ],
+          "targetPage": 324,
+          "style": "reference",
+          "id": "p229-389",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-8/#page-324"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "9 уровень ",
+              "bold": true
+            },
+            {
+              "text": "325"
+            }
+          ],
+          "targetPage": 325,
+          "style": "reference",
+          "id": "p229-390",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-325"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Врата"
+            }
+          ],
+          "targetPage": 325,
+          "style": "reference",
+          "id": "p229-391",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-325"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гроза гнева"
+            }
+          ],
+          "targetPage": 325,
+          "style": "reference",
+          "id": "p229-392",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-325"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Желание 326"
+            }
+          ],
+          "targetPage": 326,
+          "style": "reference",
+          "id": "p229-393",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-326"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жуть"
+            }
+          ],
+          "targetPage": 326,
+          "style": "reference",
+          "id": "p229-394",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-326"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заточение"
+            }
+          ],
+          "targetPage": 326,
+          "style": "reference",
+          "id": "p229-395",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-326"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинное воскрешение 327"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-396",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинный полиморф"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-397",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метеоритный дождь"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-398",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное исцеление328"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-399",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Остановка времени"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-400",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полное превращение"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-401",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предвидение"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-402",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проекция в астрал"
+            }
+          ],
+          "targetPage": 327,
+          "style": "reference",
+          "id": "p229-403",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-327"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Радужная стена"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "329"
+            }
+          ],
+          "targetPage": 329,
+          "style": "reference",
+          "id": "p229-404",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-329"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово силы: исцеление"
+            }
+          ],
+          "targetPage": 329,
+          "style": "reference",
+          "id": "p229-405",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-329"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово силы: смерть"
+            }
+          ],
+          "targetPage": 329,
+          "style": "reference",
+          "id": "p229-406",
+          "sourcePage": 229,
+          "link": "/books/phb-2024-ru/spells-level-9/#page-329"
+        }
+      ]
+    }
+  ]
+}

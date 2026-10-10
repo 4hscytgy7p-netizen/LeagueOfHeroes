@@ -1,0 +1,31 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "spell-sheet",
+  "title": "Лист заклинаний",
+  "description": "",
+  "sourcePages": [
+    330
+  ],
+  "group": "Лист персонажа",
+  "pages": [
+    {
+      "number": 330,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-330-0e670489e7.webp",
+          "alt": "Иллюстрация: Лист заклинаний",
+          "width": 1855,
+          "height": 2400,
+          "smallSrc": "/images/books/phb-2014-ru/page-330-0e670489e7-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "БОНУС БРОСКА АТАКИ\nБАЗОВАЯ ХАРАКТЕРИСТИКА\nКЛАСС ЗАКЛИНАТЕЛЯ\nСЛОЖНОСТЬ\nЗАКЛИНАНИЙ\n0\n3\nЗАГОВОРЫ\nУРОВЕНЬ\nЗАКЛИНАНИЯ\nЯЧЕЕК ИЗРАСХОДОВАНО\nИТОГО ЯЧЕЕК\n1\nНАЗВАНИЕ ЗАКЛИНАНИЯ\n4\nИЗВЕСТНЫЕ ЗАКЛИНАНИЯ\n2\n5\nСПАСБРОСКА\nЗАКЛИНАНИЕМ\n6\n7\n8\n9\nTM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.",
+          "textLabel": "Поля листа",
+          "id": "p330-1",
+          "sourcePage": 330
+        }
+      ]
+    }
+  ]
+}

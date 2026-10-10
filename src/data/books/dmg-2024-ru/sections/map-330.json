@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-330",
+  "title": "Жуткий дом",
+  "description": "",
+  "sourcePages": [
+    330
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 330,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-330-2eceaf364c.webp",
+          "alt": "Карта: Жуткий дом",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-330-2eceaf364c-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Жуткий дом\nВниз\nВверх\nВниз\nПодвал\nВверх\n1 квадрат = 5 футов\nВниз\nЭтаж 2\nВверх\nВниз\nУровень земли\nВверх\nЖуткий дом\nХудожник: Dyson Logos\nОригинал",
+          "textLabel": "Подписи на карте",
+          "id": "p330-1",
+          "sourcePage": 330
+        }
+      ]
+    }
+  ]
+}

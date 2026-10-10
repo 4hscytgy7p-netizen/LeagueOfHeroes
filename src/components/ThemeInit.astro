@@ -1,0 +1,24 @@
+<!-- Keep this script synchronous and before stylesheets: theme and palette
+     must be restored before the browser can paint the page. -->
+     <script is:inline>
+        (() => {
+          const root = document.documentElement;
+          let theme = 'dark';
+          try {
+            theme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+          } catch { /* Use the default when storage is unavailable. */ }
+          root.classList.toggle('dark', theme === 'dark');
+      
+          try {
+            const palette = JSON.parse(localStorage.getItem('lh_user_palette_v1') || 'null');
+            if (palette && typeof palette === 'object' && !Array.isArray(palette)) {
+              Object.entries(palette).forEach(([key, value]) => {
+                if (key.startsWith('--') && typeof value === 'string') {
+                  root.style.setProperty(key, value);
+                }
+              });
+            }
+          } catch { /* A broken palette must not prevent theme initialization. */ }
+        })();
+      </script>
+      

@@ -1,0 +1,201 @@
+{
+  "verifiedAt": "2026-10-06",
+  "images": [
+    {
+      "nameEn": "Aberrant Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Aberrant Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Animated Object",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Animated Object.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Beast of the Land",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Beast of the Land.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Beast of the Sea",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Beast of the Sea.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Beast of the Sky",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Beast of the Sky.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Bestial Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Bestial Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Celestial Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Celestial Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Construct Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Construct Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Draconic Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Draconic Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Elemental Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Elemental Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Fey Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Fey Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Fiendish Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Fiendish Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Giant Insect",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Giant Insect.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Otherworldly Steed",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Otherworldly Steed.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Undead Spirit",
+      "sourceCode": "XPHB",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XPHB/Undead Spirit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xphb.json",
+      "sha256": "31d6125d10aaebb56872e6d877d6b4ccac7a7ed6d93897e3d0cc48b4d9aef938"
+    },
+    {
+      "nameEn": "Barlgura",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Barlgura.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Flumph",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Flumph.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Homunculus",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Homunculus.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Imp",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Imp.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Nightmare",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Nightmare.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Pseudodragon",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Pseudodragon.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Quasit",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Quasit.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Shadow Demon",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Shadow Demon.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Specter",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Specter.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Sprite",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Sprite.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Unicorn",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Unicorn.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Wight",
+      "sourceCode": "XMM",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/XMM/Wight.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-xmm.json",
+      "sha256": "56ddb5790a9d39db4dbb8d132138c599db6862423044946d3facb31b3523c368"
+    },
+    {
+      "nameEn": "Shadow Spirit",
+      "sourceCode": "TCE",
+      "url": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-img/main/bestiary/TCE/Summon Shadowspawn.webp",
+      "upstreamUrl": "https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/bestiary/fluff-bestiary-tce.json",
+      "sha256": "a865ae27b56deb75979e29fe529bd172a7b8acad4fe3bb795daf82c402cd02af"
+    }
+  ]
+}

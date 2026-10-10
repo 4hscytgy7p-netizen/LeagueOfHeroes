@@ -5,9 +5,10 @@ interface Props {
   requirements?: string[];
   duration?: string;
   cost?: string;
+  cooperative?: string;
 }
 
-const { title, description, requirements, duration, cost } = Astro.props;
+const { title, description, requirements, duration, cost, cooperative } = Astro.props;
 ---
 
 <div class="activity-card">
@@ -32,6 +33,12 @@ const { title, description, requirements, duration, cost } = Astro.props;
       <ul>
         {requirements.map(req => <li>{req}</li>)}
       </ul>
+    </div>
+  )}
+  
+  {cooperative && (
+    <div class="detail">
+      <strong>Стоимость:</strong> {cooperative}
     </div>
   )}
 </div>

@@ -1,0 +1,13 @@
+---
+import type { BookSpan } from '../../types/book';
+interface Props { spans: BookSpan[] }
+const { spans } = Astro.props;
+---
+{spans.map((span) => (
+  <span class:list={{ 'book-narrator': span.tone === 'narrator', 'book-player': span.tone === 'player' }}>
+    {span.bold && span.italic ? <strong><em>{span.text}</em></strong>
+      : span.bold ? <strong>{span.text}</strong>
+      : span.italic ? <em>{span.text}</em>
+      : span.text}
+  </span>
+))}

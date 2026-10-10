@@ -1,0 +1,1162 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "random-items-2",
+  "title": "Случайные магические предметы · продолжение",
+  "description": "",
+  "sourcePages": [
+    285,
+    286,
+    287,
+    288
+  ],
+  "group": "Глава 7 · Магические предметы",
+  "pages": [
+    {
+      "number": 285,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Реликвии - необычные",
+              "bold": true
+            }
+          ],
+          "id": "p285-1",
+          "sourcePage": 285
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–05",
+                  "Зачарованный посох [Enspelled Staff] (заговор или заклинание 1 уровня)"
+                ],
+                [
+                  "06–10",
+                  "Мазь Кеогтома [Keoghtom’s Ointment]"
+                ],
+                [
+                  "11–15",
+                  "Доспех моряка [Mariner’s Armor]"
+                ],
+                [
+                  "16–20",
+                  "Мантия природы [Nature’s Mantle]"
+                ],
+                [
+                  "21–25",
+                  "Жемчужина силы [Pearl of Power]"
+                ],
+                [
+                  "26–30",
+                  "Медальон здоровья [Periapt of Health]"
+                ],
+                [
+                  "31–35",
+                  "Медальон затягивающихся ран [Periapt of Wound Closure]"
+                ],
+                [
+                  "36–40",
+                  "Зелье дружбы с животными [Potion of Animal Friendship]"
+                ],
+                [
+                  "41–55",
+                  "Зелье лечения (большое) [Potion of Healing]"
+                ],
+                [
+                  "56–60",
+                  "Зелье сопротивления [Potion of Resistance]"
+                ],
+                [
+                  "61–65",
+                  "Кольцо хождения по воде [Ring of Water Walking]"
+                ],
+                [
+                  "66–70",
+                  "Камни послания [Sending Stones]"
+                ],
+                [
+                  "71–80",
+                  "Свиток заклинания [Spell Scroll] (заклинание 2 или 3 уровня)"
+                ],
+                [
+                  "81–85",
+                  "Посох гадюки [Staff of the Adder]"
+                ],
+                [
+                  "86–90",
+                  "Посох питона [Staff of the Python]"
+                ],
+                [
+                  "91–95",
+                  "Волшебная палочка обнаружения магии [Wand of Magic Detection]"
+                ],
+                [
+                  "96–00",
+                  "Волшебная палочка боевого мага +1 [Wand of the War Mage, +1]"
+                ]
+              ]
+            }
+          ],
+          "id": "p285-2",
+          "sourcePage": 285
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Реликвии - редкие",
+              "bold": true
+            }
+          ],
+          "id": "p285-3",
+          "sourcePage": 285
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–03",
+                  "Амулет здоровья [Amulet of Health]"
+                ],
+                [
+                  "04–07",
+                  "Доспех +1 [Armor, +1]"
+                ],
+                [
+                  "08–09",
+                  "Чаша командования водяными элементалями [Bowl of Commanding Water Elementals]"
+                ],
+                [
+                  "10–11",
+                  "Жаровня командования огненными элементалями [Brazier of Commanding Fire Elementals]"
+                ],
+                [
+                  "12–13",
+                  "Кадило контролирования воздушных элементалей [Censer of Controlling Air Elementals]"
+                ],
+                [
+                  "14–16",
+                  "Эликсир здоровья [Elixir of Health]"
+                ],
+                [
+                  "17–19",
+                  "Зачарованный посох [Enspelled Staff] (заклинание 2 или 3 уровня)"
+                ],
+                [
+                  "20–22",
+                  "Рог взрыва [Horn of Blasting]"
+                ],
+                [
+                  "23–25",
+                  "Рог Валгаллы (серебряный или латунный) [Horn of Valhalla]"
+                ],
+                [
+                  "26–28",
+                  "Камень Йоун (резерв или питание) [Ioun Stone]"
+                ],
+                [
+                  "29–31",
+                  "Булава распада [Mace of Disruption]"
+                ],
+                [
+                  "32–34",
+                  "Булава кары [Mace of Smiting]"
+                ],
+                [
+                  "35–37",
+                  "Булава ужаса [Mace of Terror]"
+                ],
+                [
+                  "38–40",
+                  "Ожерелье молитвенных чёток [Necklace of Prayer Beads]"
+                ],
+                [
+                  "41–43",
+                  "Медальон защиты от яда [Periapt of Proof against Poison]"
+                ],
+                [
+                  "44–51",
+                  "Зелье лечения (отличное) [Potion of Healing]"
+                ],
+                [
+                  "52–54",
+                  "Кольцо влияния на животных [Ring of Animal Influence]"
+                ],
+                [
+                  "55–58",
+                  "Кольцо сопротивления [Ring of Resistance]"
+                ],
+                [
+                  "59–61",
+                  "Кольцо хранения заклинаний [Ring of Spell Storing]"
+                ],
+                [
+                  "62–65",
+                  "Свиток защиты [Scroll of Protection]"
+                ],
+                [
+                  "66–73",
+                  "Свиток заклинания [Spell Scroll] (заклинание 4 или 5 уровня)"
+                ]
+              ]
+            }
+          ],
+          "id": "p285-4",
+          "sourcePage": 285
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "74–76",
+                  "Посох очарования [Staff of Charming]"
+                ],
+                [
+                  "77–79",
+                  "Посох лечения [Staff of Healing]"
+                ],
+                [
+                  "80–82",
+                  "Посох роя насекомых [Staff of Swarming Insects]"
+                ],
+                [
+                  "83–85",
+                  "Посох леса [Staff of the Woodlands]"
+                ],
+                [
+                  "86–88",
+                  "Посох иссушения [Staff of Withering]"
+                ],
+                [
+                  "89–90",
+                  "Камень контролирования земляных элементалей [Stone of Controlling Earth Elementals]"
+                ],
+                [
+                  "91–93",
+                  "Жезл щупалец [Tentacle Rod]"
+                ],
+                [
+                  "94–96",
+                  "Волшебная палочка паралича [Wand of Paralysis]"
+                ],
+                [
+                  "97–00",
+                  "Волшебная палочка боевого мага +2 [Wand of the War Mage, +2]"
+                ]
+              ]
+            }
+          ],
+          "id": "p285-5",
+          "sourcePage": 285
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Реликвии - очень редкие",
+              "bold": true
+            }
+          ],
+          "id": "p285-6",
+          "sourcePage": 285
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–05",
+                  "Доспех +2 [Armor, +2]"
+                ],
+                [
+                  "06–10",
+                  "Свеча мольбы [Candle of Invocation]"
+                ],
+                [
+                  "11–15",
+                  "Котёл перерождения [Cauldron of Rebirth]"
+                ],
+                [
+                  "16–20",
+                  "Зачарованный посох [Enspelled Staff] (заклинание 4 или 5 уровня)"
+                ],
+                [
+                  "21–25",
+                  "Рог Валгаллы (бронзовый) [Horn of Valhalla]"
+                ],
+                [
+                  "26–30",
+                  "Камень Йоун (проницательность) [Ioun Stone]"
+                ],
+                [
+                  "31–35",
+                  "Справочник телесного здоровья [Manual of Bodily Health]"
+                ],
+                [
+                  "36–43",
+                  "Зелье лечения (превосходное) [Potion of Healing]"
+                ],
+                [
+                  "44–50",
+                  "Зелье живучести [Potion of Vitality]"
+                ],
+                [
+                  "51–55",
+                  "Жезл бдительности [Rod of Alertness]"
+                ],
+                [
+                  "56–65",
+                  "Свиток заклинания [Spell Scroll] (заклинание 6, 7 или 8 уровня)"
+                ],
+                [
+                  "66–70",
+                  "Спиритическая доска [Spirit Board]"
+                ],
+                [
+                  "71–75",
+                  "Посох огня [Staff of Fire]"
+                ],
+                [
+                  "76–80",
+                  "Посох мороза [Staff of Frost]"
+                ],
+                [
+                  "81–85",
+                  "Посох ударов [Staff of Striking]"
+                ],
+                [
+                  "86–90",
+                  "Посох грома и молнии [Staff of Thunder and Lightning]"
+                ],
+                [
+                  "91–95",
+                  "Том понимания [Tome of Understanding]"
+                ],
+                [
+                  "96–00",
+                  "Волшебная палочка боевого мага +3 [Wand of the War Mage, +3]"
+                ]
+              ]
+            }
+          ],
+          "id": "p285-7",
+          "sourcePage": 285
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Реликвии - легендарные",
+              "bold": true
+            }
+          ],
+          "id": "p285-8",
+          "sourcePage": 285
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–08",
+                  "Доспех неуязвимости [Armor of Invulnerability]"
+                ],
+                [
+                  "09–18",
+                  "Доспех +3 [Armor, +3]"
+                ],
+                [
+                  "19–27",
+                  "Зачарованный посох [Enspelled Staff] (заклинание 6, 7 или 8 уровня)"
+                ],
+                [
+                  "28–36",
+                  "Святой мститель [Holy Avenger]"
+                ],
+                [
+                  "37–45",
+                  "Рог Валгаллы (железный) [Horn of Valhalla]"
+                ],
+                [
+                  "46–54",
+                  "Жезл воскрешения [Rod of Resurrection]"
+                ],
+                [
+                  "55–63",
+                  "Скарабей защиты [Scarab of Protection]"
+                ],
+                [
+                  "64–72",
+                  "Свиток призыва титана [Scroll of Titan Summoning]"
+                ],
+                [
+                  "73–80",
+                  "Свиток заклинания [Spell Scroll] (заклинание 9 уровня)"
+                ],
+                [
+                  "81–90",
+                  "Талисман чистого добра [Talisman of Pure Good]"
+                ],
+                [
+                  "91–00",
+                  "Талисман абсолютного зла [Talisman of Ultimate Evil]"
+                ]
+              ]
+            }
+          ],
+          "id": "p285-9",
+          "sourcePage": 285
+        }
+      ]
+    },
+    {
+      "number": 286,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Таблицы «инструменты»",
+              "bold": true
+            }
+          ],
+          "id": "p286-1",
+          "sourcePage": 286
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Инструменты - обычные",
+              "bold": true
+            }
+          ],
+          "id": "p286-2",
+          "sourcePage": 286
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–02",
+                  "Бусина насыщения [Bead of Nourishment]"
+                ],
+                [
+                  "03–04",
+                  "Бусина освежения [Bead of Refreshment]"
+                ],
+                [
+                  "05–06",
+                  "Сапоги ложных следов [Boots of False Tracks]"
+                ],
+                [
+                  "07–08",
+                  "Свеча глубин [Candle of the Deep]"
+                ],
+                [
+                  "09–10",
+                  "Кость шарлатана [Charlatan’s Die]"
+                ],
+                [
+                  "11–13",
+                  "Плащ множества стилей [Cloak of Many Fashions]"
+                ],
+                [
+                  "14–15",
+                  "Механистический амулет [Clockwork Amulet]"
+                ],
+                [
+                  "16–17",
+                  "Слуховой рог [Ear Horn of Hearing]"
+                ],
+                [
+                  "18–19",
+                  "Запасной глаз [Ersatz Eye]"
+                ],
+                [
+                  "20–21",
+                  "Удобный мешочек специй Хеварда [Heward’s Handy Spice Pouch]"
+                ],
+                [
+                  "22–23",
+                  "Рог беззвучного сигнала [Horn of Silent Alarm]"
+                ],
+                [
+                  "24–25",
+                  "Инструмент иллюзий [Instrument of Illusions]"
+                ],
+                [
+                  "26–27",
+                  "Инструмент надписей [Instrument of Scribing]"
+                ],
+                [
+                  "28–29",
+                  "Плутовской замок [Lock of Trickery]"
+                ],
+                [
+                  "30–32",
+                  "Осенённый луной меч [Moon-Touched Sword]"
+                ],
+                [
+                  "33–34",
+                  "Таинственный ключ [Mystery Key]"
+                ],
+                [
+                  "35–36",
+                  "Сфера направления [Orb of Direction]"
+                ],
+                [
+                  "37–38",
+                  "Сфера времени [Orb of Time]"
+                ],
+                [
+                  "39–40",
+                  "Парфюм очарования [Perfume of Bewitching]"
+                ],
+                [
+                  "41–42",
+                  "Трубка дымных монстров [Pipe of Smoke Monsters]"
+                ],
+                [
+                  "43–44",
+                  "Шест рыболовства [Pole of Angling]"
+                ],
+                [
+                  "45–46",
+                  "Складной шест [Pole of Collapsing]"
+                ],
+                [
+                  "47–52",
+                  "Зелье лазания [Potion of Climbing]"
+                ],
+                [
+                  "53–58",
+                  "Зелье понимания [Potion of Comprehension]"
+                ],
+                [
+                  "59–74",
+                  "Зелье лечения [Potion of Healing]"
+                ],
+                [
+                  "75–76",
+                  "Протез конечности [Prosthetic Limb]"
+                ],
+                [
+                  "77–78",
+                  "Срастающаяся верёвка [Rope of Mending]"
+                ],
+                [
+                  "79–80",
+                  "Посох птичьего щебета [Staff of Birdcalls]"
+                ],
+                [
+                  "81–82",
+                  "Коготь Сильваны [Sylvan Talon]"
+                ],
+                [
+                  "83–84",
+                  "Говорящая кукла [Talking Doll]"
+                ],
+                [
+                  "85–86",
+                  "Кружка трезвости [Tankard of Sobriety]"
+                ],
+                [
+                  "87–90",
+                  "Трость ветерана [Veteran’s Cane]"
+                ],
+                [
+                  "91–93",
+                  "Опрокидывающий боеприпас [Walloping Ammunition]"
+                ],
+                [
+                  "94–96",
+                  "Дирижёрская палочка [Wand of Conducting]"
+                ],
+                [
+                  "97–00",
+                  "Волшебная палочка пиротехники [Wand of Pyrotechnics]"
+                ]
+              ]
+            }
+          ],
+          "id": "p286-3",
+          "sourcePage": 286
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Инструменты - необычные",
+              "bold": true
+            }
+          ],
+          "id": "p286-4",
+          "sourcePage": 286
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–02",
+                  "Алхимический сосуд [Alchemy Jug]"
+                ],
+                [
+                  "03–06",
+                  "Боеприпас +1 [Ammunition, +1]"
+                ],
+                [
+                  "07–10",
+                  "Сумка хранения [Bag of Holding]"
+                ],
+                [
+                  "11–12",
+                  "Эльфийские сапоги [Boots of Elvenkind]"
+                ],
+                [
+                  "13–14",
+                  "Сапоги ходьбы и прыжков [Boots of Striding and Springing]"
+                ],
+                [
+                  "15–16",
+                  "Заполярные сапоги [Boots of the Winterlands]"
+                ],
+                [
+                  "17–18",
+                  "Помело полёта [Broom of Flying]"
+                ],
+                [
+                  "19–20",
+                  "Шапка подводного дыхания [Cap of Water Breathing]"
+                ],
+                [
+                  "21–22",
+                  "Эльфийский плащ [Cloak of Elvenkind]"
+                ],
+                [
+                  "23–24",
+                  "Плащ защиты [Cloak of Protection]"
+                ],
+                [
+                  "25–26",
+                  "Плащ ската [Cloak of the Manta Ray]"
+                ],
+                [
+                  "27",
+                  "Графин бесконечной воды [Decanter of Endless Water]"
+                ],
+                [
+                  "28–30",
+                  "Парящая сфера [Driftglobe]"
+                ],
+                [
+                  "31–32",
+                  "Порошок исчезновения [Dust of Disappearance]"
+                ],
+                [
+                  "33–34",
+                  "Порошок сухости [Dust of Dryness]"
+                ],
+                [
+                  "35–36",
+                  "Порошок чихания и удушья [Dust of Sneezing and Choking]"
+                ],
+                [
+                  "37–38",
+                  "Зачарованное оружие [Enspelled Weapon] (заговор или заклинание 1 уровня)"
+                ],
+                [
+                  "39–40",
+                  "Очки детального зрения [Eyes of Minute Seeing]"
+                ],
+                [
+                  "41–42",
+                  "Очки орлиного зрения [Eyes of the Eagle]"
+                ],
+                [
+                  "43–44",
+                  "Перчатки ловли снарядов [Gloves of Missile Snaring]"
+                ],
+                [
+                  "45–46",
+                  "Перчатки плавания и лазания [Gloves of Swimming and Climbing]"
+                ],
+                [
+                  "47–48",
+                  "Перчатки воровства [Gloves of Thievery]"
+                ],
+                [
+                  "49–50",
+                  "Ночные очки [Goggles of Night]"
+                ],
+                [
+                  "51",
+                  "Глаз карги [Hag Eye]"
+                ],
+                [
+                  "52–54",
+                  "Шлем понимания языков [Helm of Comprehending Languages]"
+                ],
+                [
+                  "55",
+                  "Неподвижный жезл [Immovable Rod]"
+                ],
+                [
+                  "56–57",
+                  "Инструмент бардов (лютня Досс, бандура Фоклучан, цитра Мак-Фуирмид) [Instrument of the Bards]"
+                ],
+                [
+                  "58–59",
+                  "Фонарь обнаружения [Lantern of Revealing]"
+                ],
+                [
+                  "60–61",
+                  "Мантия природы [Nature’s Mantle]"
+                ],
+                [
+                  "62–63",
+                  "Масло скольжения [Oil of Slipperiness]"
+                ],
+                [
+                  "64–65",
+                  "Свирель ужаса [Pipes of Haunting]"
+                ],
+                [
+                  "66–67",
+                  "Свирель канализации [Pipes of the Sewers]"
+                ],
+                [
+                  "68–71",
+                  "Зелье увеличения [Potion of Growth]"
+                ],
+                [
+                  "72–80",
+                  "Зелье лечения (большое) [Potion of Healing]"
+                ],
+                [
+                  "81–84",
+                  "Зелье подводного дыхания [Potion of Water Breathing]"
+                ],
+                [
+                  "85–86",
+                  "Перо Кваля (якорь, веер или дерево) [Quaal’s Feather Token]"
+                ],
+                [
+                  "87–88",
+                  "Кольцо прыжков [Ring of Jumping]"
+                ],
+                [
+                  "89–90",
+                  "Кольцо плавания [Ring of Swimming]"
+                ],
+                [
+                  "91–92",
+                  "Кольцо тепла [Ring of Warmth]"
+                ],
+                [
+                  "93–94",
+                  "Мантия полезных предметов [Robe of Useful Items]"
+                ],
+                [
+                  "95–96",
+                  "Верёвка лазания [Rope of Climbing]"
+                ],
+                [
+                  "97–98",
+                  "Камень удачи [Stone of Good Luck]"
+                ],
+                [
+                  "99–00",
+                  "Волшебная палочка секретов [Wand of Secrets]"
+                ]
+              ]
+            }
+          ],
+          "id": "p286-5",
+          "sourcePage": 286
+        }
+      ]
+    },
+    {
+      "number": 287,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Инструменты - редкие",
+              "bold": true
+            }
+          ],
+          "id": "p287-1",
+          "sourcePage": 287
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–04",
+                  "Боеприпас +2 [Ammunition, +2]"
+                ],
+                [
+                  "05–08",
+                  "Сумка с бобами [Bag of Beans]"
+                ],
+                [
+                  "09–12",
+                  "Пояс дварфов [Belt of Dwarvenkind]"
+                ],
+                [
+                  "13–16",
+                  "Сапоги левитации [Boots of Levitation]"
+                ],
+                [
+                  "17–20",
+                  "Сапоги скорости [Boots of Speed]"
+                ],
+                [
+                  "21–24",
+                  "Колокольчик открывания [Chime of Opening]"
+                ],
+                [
+                  "25–28",
+                  "Оковы измерений [Dimensional Shackles]"
+                ],
+                [
+                  "29–32",
+                  "Зачарованное оружие [Enspelled Weapon] (заклинание 2 или 3 уровня)"
+                ],
+                [
+                  "33–36",
+                  "Складная лодка [Folding Boat]"
+                ],
+                [
+                  "37–40",
+                  "Красивый проклёпанный доспех [Glamoured Studded Leather]"
+                ],
+                [
+                  "41–44",
+                  "Удобный рюкзак Хеварда [Heward’s Handy Haversack]"
+                ],
+                [
+                  "45–48",
+                  "Подковы скорости [Horseshoes of Speed]"
+                ],
+                [
+                  "49–52",
+                  "Инструмент бардов (мандалина Канаит, лира Кли) [Instrument of the Bards]"
+                ],
+                [
+                  "53–56",
+                  "Камень Йоун (восприятие) [Ioun Stone]"
+                ],
+                [
+                  "57–60",
+                  "Переносная дыра [Portable Hole]"
+                ],
+                [
+                  "61–64",
+                  "Зелье уменьшения [Potion of Diminution]"
+                ],
+                [
+                  "65–68",
+                  "Зелье газообразной формы [Potion of Gaseous Form]"
+                ],
+                [
+                  "69–76",
+                  "Зелье лечения (отличное) [Potion of Healing]"
+                ],
+                [
+                  "77–80",
+                  "Перо Кваля (птица, лодка-лебедь или кнут) [Quaal’s Feather Token]"
+                ],
+                [
+                  "81–84",
+                  "Кольцо уклонения [Ring of Evasion]"
+                ],
+                [
+                  "85–88",
+                  "Кольцо свободных действий [Ring of Free Action]"
+                ],
+                [
+                  "89–92",
+                  "Верёвка опутывания [Rope of Entanglement]"
+                ],
+                [
+                  "93–96",
+                  "Посох лечения [Staff of Healing]"
+                ],
+                [
+                  "97–00",
+                  "Волшебная палочка обнаружения врагов [Wand of Enemy Detection]"
+                ]
+              ]
+            }
+          ],
+          "id": "p287-2",
+          "sourcePage": 287
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Инструменты - очень редкие",
+              "bold": true
+            }
+          ],
+          "id": "p287-3",
+          "sourcePage": 287
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–07",
+                  "Боеприпас +3 [Ammunition, +3]"
+                ],
+                [
+                  "08–14",
+                  "Сумка пожирания [Bag of Devouring]"
+                ],
+                [
+                  "15–21",
+                  "Ковёр-самолёт [Carpet of Flying]"
+                ],
+                [
+                  "22–28",
+                  "Зачарованное оружие [Enspelled Weapon] (заклинание 4 или 5 уровня)"
+                ],
+                [
+                  "29–35",
+                  "Подковы Зефира [Horseshoes of a Zephyr]"
+                ],
+                [
+                  "36–42",
+                  "Инструмент бардов (арфа Анструт) [Instrument of the Bards]"
+                ],
+                [
+                  "43–49",
+                  "Камень Йоун (проворство) [Ioun Stone]"
+                ],
+                [
+                  "50–56",
+                  "Лютня громового удара [Lute of Thunderous Thumping]"
+                ],
+                [
+                  "57–63",
+                  "Справочник быстроты действий [Manual of Quickness of Action]"
+                ],
+                [
+                  "64–70",
+                  "Чудесные краски Нолзура [Nolzur’s Marvelous Pigments]"
+                ],
+                [
+                  "71–77",
+                  "Зелье полёта [Potion of Flying]"
+                ],
+                [
+                  "78–86",
+                  "Зелье лечения (превосходное) [Potion of Healing]"
+                ],
+                [
+                  "87–93",
+                  "Зелье скорости [Potion of Speed]"
+                ],
+                [
+                  "94–00",
+                  "Том лидерства и влияния [Tome of Leadership and Influence]"
+                ]
+              ]
+            }
+          ],
+          "id": "p287-4",
+          "sourcePage": 287
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Инструменты - легендарные",
+              "bold": true
+            }
+          ],
+          "id": "p287-5",
+          "sourcePage": 287
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "table",
+              "headers": [
+                "1к100",
+                "Предмет"
+              ],
+              "rows": [
+                [
+                  "01–17",
+                  "Зачарованное оружие [Enspelled Weapon] (заклинание 6, 7 или 8 уровня)"
+                ],
+                [
+                  "18–34",
+                  "Инструмент бардов (арфа Оллава) [Instrument of the Bards]"
+                ],
+                [
+                  "35–54",
+                  "Превосходный клей [Sovereign Glue]"
+                ],
+                [
+                  "55–70",
+                  "Сфера аннигиляции [Sphere of Annihilation]"
+                ],
+                [
+                  "71–83",
+                  "Талисман сферы [Talisman of the Sphere]"
+                ],
+                [
+                  "84–00",
+                  "Универсальный растворитель [Universal Solvent]"
+                ]
+              ]
+            }
+          ],
+          "id": "p287-6",
+          "sourcePage": 287
+        }
+      ]
+    },
+    {
+      "number": 288,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-288-b95e97d6fe.webp",
+          "alt": "Иллюстрация к разделу «Случайные магические предметы · продолжение».",
+          "width": 1042,
+          "height": 1400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-288-b95e97d6fe-640.webp",
+          "smallWidth": 640,
+          "id": "p288-1",
+          "sourcePage": 288
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бастион у моря — это больше, чем просто убежище для приключенцев.",
+              "bold": true
+            }
+          ],
+          "id": "p288-2",
+          "sourcePage": 288
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Здесь может произойти многое, что подстегнёт сюжеты кампании.",
+              "bold": true
+            }
+          ],
+          "id": "p288-3",
+          "sourcePage": 288
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художник: Noor Rahman",
+              "bold": true
+            }
+          ],
+          "id": "p288-4",
+          "sourcePage": 288
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оригинал",
+              "bold": true
+            }
+          ],
+          "id": "p288-5",
+          "sourcePage": 288
+        }
+      ]
+    }
+  ]
+}

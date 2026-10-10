@@ -1,8 +1,9 @@
 // Navigation link configurations
 export const rulesLinks = [
   { href: '/general-rules', label: 'Общие правила' },
-  { href: '/heroes-league-errata', label: 'Эррата Лиги Героев' },
-  //{ href: '/masters-rules', label: 'Мастерские правила' },
+  { href: '/allowed-materials', label: 'Разрешённые материалы' },
+  { href: '/rules/equipment', label: 'Снаряжение: таблицы и правила' },
+  { href: '/test/cabinet/master/', label: 'Кабинет мастера' },
   { href: '/rules/downtime-activities', label: 'Активности простоя' },
   { href: '/bastions', label: 'Бастионы' }
 ];
@@ -17,6 +18,7 @@ export const characterLinks = [
 
 export const toolsLinks = [
   { href: '/tools/character-creator', label: 'Создание персонажа', featured: true },
+  { href: '/test/cabinet/', label: 'Личный кабинет' },
   { href: '/tools/point-buy', label: 'Point Buy калькулятор' },
   //{ href: '/tools/dice-roller', label: 'Бросок костей' },
   //{ href: '/tools/name-generator', label: 'Генератор имён' },
@@ -32,6 +34,9 @@ export const guideLinks = [
   { href: '/ordinator', label: 'Проверка персонажа' }
 ];
 export const handbookLinks = [
+  { href: '/books', label: 'Библиотека книг' },
+  { href: '/exploration', label: 'Исследование и путешествия' },
+  { href: '/deities', label: 'Боги и покровители' },
   { href: '/sigil', label: 'Сигил - город дверей' },
   { href: '/glossary', label: 'Глоссарий' },
   { href: '/items', label: 'Предметы' },

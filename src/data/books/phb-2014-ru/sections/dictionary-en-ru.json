@@ -1,0 +1,4778 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "dictionary-en-ru",
+  "title": "Англо-Русский словарь",
+  "description": "",
+  "sourcePages": [
+    314,
+    315,
+    316,
+    317
+  ],
+  "group": "Англо-Русский словарь",
+  "pages": [
+    {
+      "number": 314,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "А"
+            },
+            {
+              "text": "НГЛО"
+            },
+            {
+              "text": "-"
+            },
+            {
+              "text": "РУССКИЙ СЛОВАРЬ"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "id": "p314-1",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "CONDITIONS / СОСТОЯНИЯ Blinded"
+            }
+          ],
+          "id": "p314-2",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ослеплённый Charmed"
+            }
+          ],
+          "id": "p314-3",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очарованный Deafened"
+            }
+          ],
+          "id": "p314-4",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оглохший Frightened"
+            }
+          ],
+          "id": "p314-5",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Испуганный Grappled"
+            }
+          ],
+          "id": "p314-6",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Схваченный Incapacitated"
+            }
+          ],
+          "id": "p314-7",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Недееспособный Invisible"
+            }
+          ],
+          "id": "p314-8",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимый Paralyzed"
+            }
+          ],
+          "id": "p314-9",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парализованный Petrified"
+            }
+          ],
+          "id": "p314-10",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Окаменевший Poisoned"
+            }
+          ],
+          "id": "p314-11",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отравленный Prone"
+            }
+          ],
+          "id": "p314-12",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сбитый с ног / Лежащий ничком Restrained"
+            }
+          ],
+          "id": "p314-13",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опутанный Stunned"
+            }
+          ],
+          "id": "p314-14",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ошеломлённый Unconscious"
+            }
+          ],
+          "id": "p314-15",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бессознательный"
+            }
+          ],
+          "id": "p314-16",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "FEATS / ЧЕРТЫ Actor"
+            }
+          ],
+          "id": "p314-17",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Артистичный Alert"
+            }
+          ],
+          "id": "p314-18",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бдительный Athlete"
+            }
+          ],
+          "id": "p314-19",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атлетичный Charger"
+            }
+          ],
+          "id": "p314-20",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Налётчик Crossbow Expert"
+            }
+          ],
+          "id": "p314-21",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эксперт в арбалетах Defensive Duelist"
+            }
+          ],
+          "id": "p314-22",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оборонительный дуэлянт Dual Wielder"
+            }
+          ],
+          "id": "p314-23",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Двойное оружие Dungeon Delver"
+            }
+          ],
+          "id": "p314-24",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Исследователь подземелий Durable"
+            }
+          ],
+          "id": "p314-25",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стойкий Elemental Adept"
+            }
+          ],
+          "id": "p314-26",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийный адепт Grappler"
+            }
+          ],
+          "id": "p314-27",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Борец Great Weapon Master"
+            }
+          ],
+          "id": "p314-28",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер большого оружия Healer"
+            }
+          ],
+          "id": "p314-29",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лекарь Heavily Armored"
+            }
+          ],
+          "id": "p314-30",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знаток тяжёлых доспехов Heavy Armor Master"
+            }
+          ],
+          "id": "p314-31",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер тяжёлых доспехов Inspiring Leader"
+            }
+          ],
+          "id": "p314-32",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воодушевляющий лидер Keen Mind"
+            }
+          ],
+          "id": "p314-33",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отличная память Lightly Armored"
+            }
+          ],
+          "id": "p314-34",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знаток лёгких доспехов Linguist"
+            }
+          ],
+          "id": "p314-35",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Языковед Lucky"
+            }
+          ],
+          "id": "p314-36",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Везунчик Mage Slayer"
+            }
+          ],
+          "id": "p314-37",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Убийца магов Magic Initiate"
+            }
+          ],
+          "id": "p314-38",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Посвящённый в магию Martial Adept"
+            }
+          ],
+          "id": "p314-39",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воинский адепт Medium Armor Master"
+            }
+          ],
+          "id": "p314-40",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер средних доспехов Mobile"
+            }
+          ],
+          "id": "p314-41",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подвижный Moderately Armored"
+            }
+          ],
+          "id": "p314-42",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знаток средних доспехов Mounted Combatant"
+            }
+          ],
+          "id": "p314-43",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верховой боец Observant"
+            }
+          ],
+          "id": "p314-44",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внимательный Polearm Master"
+            }
+          ],
+          "id": "p314-45",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер древкового оружия Resilient"
+            }
+          ],
+          "id": "p314-46",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Устойчивый Ritual Caster"
+            }
+          ],
+          "id": "p314-47",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ритуальный заклинатель Savage Attacker"
+            }
+          ],
+          "id": "p314-48",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дикий атакующий Sentinel"
+            }
+          ],
+          "id": "p314-49",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Страж Sharpshooter"
+            }
+          ],
+          "id": "p314-50",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меткий стрелок Shield Master"
+            }
+          ],
+          "id": "p314-51",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер щитов Skilled"
+            }
+          ],
+          "id": "p314-52",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Одарённый Skulker"
+            }
+          ],
+          "id": "p314-53",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проныра Spell Sniper"
+            }
+          ],
+          "id": "p314-54",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меткие заклинания Tavern Brawler"
+            }
+          ],
+          "id": "p314-55",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Драчун Tough"
+            }
+          ],
+          "id": "p314-56",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крепкий War Caster"
+            }
+          ],
+          "id": "p314-57",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой заклинатель Weapon Master"
+            }
+          ],
+          "id": "p314-58",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастер оружия"
+            }
+          ],
+          "id": "p314-59",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "SKILLS / НАВЫКИ Acrobatics"
+            }
+          ],
+          "id": "p314-60",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Акробатика Animal Handling"
+            }
+          ],
+          "id": "p314-61",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уход за животными Arcana"
+            }
+          ],
+          "id": "p314-62",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магия Athletics"
+            }
+          ],
+          "id": "p314-63",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атлетика Deception"
+            }
+          ],
+          "id": "p314-64",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обман History"
+            }
+          ],
+          "id": "p314-65",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "История Insight"
+            }
+          ],
+          "id": "p314-66",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проницательность Intimidation"
+            }
+          ],
+          "id": "p314-67",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Запугивание Investigation"
+            }
+          ],
+          "id": "p314-68",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Анализ Medicine"
+            }
+          ],
+          "id": "p314-69",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Медицина Nature"
+            }
+          ],
+          "id": "p314-70",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Природа Perception"
+            }
+          ],
+          "id": "p314-71",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внимательность Performance"
+            }
+          ],
+          "id": "p314-72",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Выступление Persuasion"
+            }
+          ],
+          "id": "p314-73",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Убеждение Religion"
+            }
+          ],
+          "id": "p314-74",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Религия Sleight of Hand"
+            }
+          ],
+          "id": "p314-75",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ловкость рук Stealth"
+            }
+          ],
+          "id": "p314-76",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скрытность Survival"
+            }
+          ],
+          "id": "p314-77",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Выживание"
+            }
+          ],
+          "id": "p314-78",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "WEAPON / ОРУЖИЕ Battleaxe"
+            }
+          ],
+          "id": "p314-79",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой топор Blowgun"
+            }
+          ],
+          "id": "p314-80",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Духовая трубка Club"
+            }
+          ],
+          "id": "p314-81",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дубинка Crossbow, hand"
+            }
+          ],
+          "id": "p314-82",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арбалет, ручной Crossbow, heavy"
+            }
+          ],
+          "id": "p314-83",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арбалет, тяжёлый Crossbow, light"
+            }
+          ],
+          "id": "p314-84",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арбалет, лёгкий Dagger"
+            }
+          ],
+          "id": "p314-85",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кинжал Dart"
+            }
+          ],
+          "id": "p314-86",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дротик Flail"
+            }
+          ],
+          "id": "p314-87",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цеп Glaive"
+            }
+          ],
+          "id": "p314-88",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глефа Greataxe"
+            }
+          ],
+          "id": "p314-89",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Секира Greatclub"
+            }
+          ],
+          "id": "p314-90",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Палица Greatsword"
+            }
+          ],
+          "id": "p314-91",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Двуручный меч Halberd"
+            }
+          ],
+          "id": "p314-92",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Алебарда Handaxe"
+            }
+          ],
+          "id": "p314-93",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ручной топор Javelin"
+            }
+          ],
+          "id": "p314-94",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метательное копьё Lance"
+            }
+          ],
+          "id": "p314-95",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длинное копьё Light hammer"
+            }
+          ],
+          "id": "p314-96",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лёгкий молот Longbow"
+            }
+          ],
+          "id": "p314-97",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длинный лук Longsword"
+            }
+          ],
+          "id": "p314-98",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длинный меч Mace"
+            }
+          ],
+          "id": "p314-99",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Булава Maul"
+            }
+          ],
+          "id": "p314-100",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молот Morningstar"
+            }
+          ],
+          "id": "p314-101",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Моргенштерн Net"
+            }
+          ],
+          "id": "p314-102",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сеть Pike"
+            }
+          ],
+          "id": "p314-103",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пика Quarterstaff"
+            }
+          ],
+          "id": "p314-104",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой посох Rapier"
+            }
+          ],
+          "id": "p314-105",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рапира Scimitar"
+            }
+          ],
+          "id": "p314-106",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скимитар Shortbow"
+            }
+          ],
+          "id": "p314-107",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Короткий лук Shortsword"
+            }
+          ],
+          "id": "p314-108",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Короткий меч Sickle"
+            }
+          ],
+          "id": "p314-109",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Серп Sling"
+            }
+          ],
+          "id": "p314-110",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Праща Spear"
+            }
+          ],
+          "id": "p314-111",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Копьё Trident"
+            }
+          ],
+          "id": "p314-112",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трезубец War pick"
+            }
+          ],
+          "id": "p314-113",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевая кирка Warhammer"
+            }
+          ],
+          "id": "p314-114",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой молот Whip"
+            }
+          ],
+          "id": "p314-115",
+          "sourcePage": 314
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кнут"
+            }
+          ],
+          "id": "p314-116",
+          "sourcePage": 314
+        }
+      ]
+    },
+    {
+      "number": 315,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "SPELLS / ЗАКЛИНАНИЯ Acid splash"
+            }
+          ],
+          "id": "p315-1",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Брызги кислоты Aid"
+            }
+          ],
+          "id": "p315-2",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подмога Alarm"
+            }
+          ],
+          "id": "p315-3",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сигнал тревоги Alter self"
+            }
+          ],
+          "id": "p315-4",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смена обличья Animal friendship"
+            }
+          ],
+          "id": "p315-5",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дружба с животными Animal messenger"
+            }
+          ],
+          "id": "p315-6",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Почтовое животное Animal shapes"
+            }
+          ],
+          "id": "p315-7",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Превращение в животных Animate dead"
+            }
+          ],
+          "id": "p315-8",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Восставший труп Animate objects"
+            }
+          ],
+          "id": "p315-9",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оживление вещей Antilife shell"
+            }
+          ],
+          "id": "p315-10",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Преграда жизни Antimagic field"
+            }
+          ],
+          "id": "p315-11",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Преграда магии Antipathy/sympathy"
+            }
+          ],
+          "id": "p315-12",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Антипатия/симпатия Arcane eye"
+            }
+          ],
+          "id": "p315-13",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магический глаз Arcane gate"
+            }
+          ],
+          "id": "p315-14",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магические врата Arcane lock"
+            }
+          ],
+          "id": "p315-15",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебный замок Armor of Agathys"
+            }
+          ],
+          "id": "p315-16",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспех Агатиса Arms of Hadar"
+            }
+          ],
+          "id": "p315-17",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Руки Хадара Astral projection"
+            }
+          ],
+          "id": "p315-18",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проекция в астрал Augury"
+            }
+          ],
+          "id": "p315-19",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гадание Aura of life"
+            }
+          ],
+          "id": "p315-20",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура жизни Aura of purity"
+            }
+          ],
+          "id": "p315-21",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура очищения Aura of vitality"
+            }
+          ],
+          "id": "p315-22",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура живучести Awaken"
+            }
+          ],
+          "id": "p315-23",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пробуждение разума Bane"
+            }
+          ],
+          "id": "p315-24",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порча Banishing smite"
+            }
+          ],
+          "id": "p315-25",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изгоняющая кара Banishment"
+            }
+          ],
+          "id": "p315-26",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изгнание Barkskin"
+            }
+          ],
+          "id": "p315-27",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дубовая кора Beacon of hope"
+            }
+          ],
+          "id": "p315-28",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Маяк надежды Beast sense"
+            }
+          ],
+          "id": "p315-29",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Животные чувства Bestow curse"
+            }
+          ],
+          "id": "p315-30",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проклятие Bigby’s hand"
+            }
+          ],
+          "id": "p315-31",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длань Бигби Blade barrier"
+            }
+          ],
+          "id": "p315-32",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена клинков Blade ward"
+            }
+          ],
+          "id": "p315-33",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от оружия Bless"
+            }
+          ],
+          "id": "p315-34",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Благословение Blight"
+            }
+          ],
+          "id": "p315-35",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Усыхание Blinding smite"
+            }
+          ],
+          "id": "p315-36",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ослепляющая кара Blindness/deafness"
+            }
+          ],
+          "id": "p315-37",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глухота/слепота Blink"
+            }
+          ],
+          "id": "p315-38",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мерцание Blur"
+            }
+          ],
+          "id": "p315-39",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Размытый образ Branding smite"
+            }
+          ],
+          "id": "p315-40",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Клеймящая кара Burning hands"
+            }
+          ],
+          "id": "p315-41",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненные ладони Call lightning"
+            }
+          ],
+          "id": "p315-42",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв молнии Calm emotions"
+            }
+          ],
+          "id": "p315-43",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Умиротворение Chain lightning"
+            }
+          ],
+          "id": "p315-44",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пляшущая молния Charm person"
+            }
+          ],
+          "id": "p315-45",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очарование личности Chill touch"
+            }
+          ],
+          "id": "p315-46",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Леденящее прикосновение Chromatic orb"
+            }
+          ],
+          "id": "p315-47",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цветной шарик Circle of death"
+            }
+          ],
+          "id": "p315-48",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Круг смерти Circle of power"
+            }
+          ],
+          "id": "p315-49",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Круг силы Clairvoyance"
+            }
+          ],
+          "id": "p315-50",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подсматривание Clone"
+            }
+          ],
+          "id": "p315-51",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Двойник Cloud of daggers"
+            }
+          ],
+          "id": "p315-52",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Облако кинжалов Cloudkill"
+            }
+          ],
+          "id": "p315-53",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Облако смерти Color spray"
+            }
+          ],
+          "id": "p315-54",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сверкающие брызги Command"
+            }
+          ],
+          "id": "p315-55",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Приказ Commune"
+            }
+          ],
+          "id": "p315-56",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Общение Commune with nature"
+            }
+          ],
+          "id": "p315-57",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Общение с природой Compelled duel"
+            }
+          ],
+          "id": "p315-58",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вызов на дуэль Comprehend languages"
+            }
+          ],
+          "id": "p315-59",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Понимание языков Compulsion"
+            }
+          ],
+          "id": "p315-60",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Принуждение Cone of cold"
+            }
+          ],
+          "id": "p315-61",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Конус холода Confusion"
+            }
+          ],
+          "id": "p315-62",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смятение"
+            }
+          ],
+          "id": "p315-63",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Conjure animals"
+            }
+          ],
+          "id": "p315-64",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв животных Conjure barrage"
+            }
+          ],
+          "id": "p315-65",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв заграждения Conjure celestial"
+            }
+          ],
+          "id": "p315-66",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв небожителя Conjure elemental"
+            }
+          ],
+          "id": "p315-67",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв элементаля Conjure fey"
+            }
+          ],
+          "id": "p315-68",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв феи Conjure minor elementals"
+            }
+          ],
+          "id": "p315-69",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв малых элементалей Conjure volley"
+            }
+          ],
+          "id": "p315-70",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв залпа Conjure woodland beings"
+            }
+          ],
+          "id": "p315-71",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призыв лесных обитателей Contact other plane"
+            }
+          ],
+          "id": "p315-72",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Связь с иным миром Contagion"
+            }
+          ],
+          "id": "p315-73",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заражение Contingency"
+            }
+          ],
+          "id": "p315-74",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предосторожность Continual flame"
+            }
+          ],
+          "id": "p315-75",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вечный огонь Control water"
+            }
+          ],
+          "id": "p315-76",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Власть над водами Control weather"
+            }
+          ],
+          "id": "p315-77",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Власть над погодой Cordon of arrows"
+            }
+          ],
+          "id": "p315-78",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Завеса стрел Counterspell"
+            }
+          ],
+          "id": "p315-79",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Контрзаклинание Create food and water"
+            }
+          ],
+          "id": "p315-80",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение пищи и воды Create or destroy water"
+            }
+          ],
+          "id": "p315-81",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение или уничтожение воды Create undead"
+            }
+          ],
+          "id": "p315-82",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение нежити Creation"
+            }
+          ],
+          "id": "p315-83",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение Crown of madness"
+            }
+          ],
+          "id": "p315-84",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Корона безумия Crusader's mantle"
+            }
+          ],
+          "id": "p315-85",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантия крестоносца Cure wounds"
+            }
+          ],
+          "id": "p315-86",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лечение ран Dancing lights"
+            }
+          ],
+          "id": "p315-87",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пляшущие огоньки Darkness"
+            }
+          ],
+          "id": "p315-88",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тьма Darkvision"
+            }
+          ],
+          "id": "p315-89",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тёмное зрение Daylight"
+            }
+          ],
+          "id": "p315-90",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дневной свет Death ward"
+            }
+          ],
+          "id": "p315-91",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от смерти Delayed blast fireball"
+            }
+          ],
+          "id": "p315-92",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замедленный огненный шар Demiplane"
+            }
+          ],
+          "id": "p315-93",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Демиплан Destructive wave"
+            }
+          ],
+          "id": "p315-94",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разрушительная волна Detect evil and good"
+            }
+          ],
+          "id": "p315-95",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение добра и зла Detect magic"
+            }
+          ],
+          "id": "p315-96",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение магии Обнаружение болезней и яда Detect poison and disease Detect thoughts"
+            }
+          ],
+          "id": "p315-97",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обнаружение мыслей Dimension door"
+            }
+          ],
+          "id": "p315-98",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Переносящая дверь Disguise self"
+            }
+          ],
+          "id": "p315-99",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Маскировка Disintegrate"
+            }
+          ],
+          "id": "p315-100",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Распад Dispel evil and good"
+            }
+          ],
+          "id": "p315-101",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рассеивание добра и зла Dispel magic"
+            }
+          ],
+          "id": "p315-102",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рассеивание магии Dissonant whisper"
+            }
+          ],
+          "id": "p315-103",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Диссонирующий шёпот Divination"
+            }
+          ],
+          "id": "p315-104",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предсказание Divine favor"
+            }
+          ],
+          "id": "p315-105",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественное благоволение Divine word"
+            }
+          ],
+          "id": "p315-106",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественное слово Dominate beast"
+            }
+          ],
+          "id": "p315-107",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подчинение зверя Dominate monster"
+            }
+          ],
+          "id": "p315-108",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подчинение чудовища Dominate person"
+            }
+          ],
+          "id": "p315-109",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подчинение личности Drawmij’s instant"
+            }
+          ],
+          "id": "p315-110",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дромиджево появление summons Dream"
+            }
+          ],
+          "id": "p315-111",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вещий сон Druidcraft"
+            }
+          ],
+          "id": "p315-112",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Искусство друидов Earthquake"
+            }
+          ],
+          "id": "p315-113",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Землетрясение Eldritch blast"
+            }
+          ],
+          "id": "p315-114",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мистический заряд Elemental weapon"
+            }
+          ],
+          "id": "p315-115",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийное оружие Enhance ability"
+            }
+          ],
+          "id": "p315-116",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Улучшение характеристики Enlarge/reduce"
+            }
+          ],
+          "id": "p315-117",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Увеличение/уменьшение Ensnaring strike"
+            }
+          ],
+          "id": "p315-118",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опутывающий удар Entangle"
+            }
+          ],
+          "id": "p315-119",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опутывание Enthrall"
+            }
+          ],
+          "id": "p315-120",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Речь златоуста Etherealness"
+            }
+          ],
+          "id": "p315-121",
+          "sourcePage": 315
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эфирность"
+            }
+          ],
+          "id": "p315-122",
+          "sourcePage": 315
+        }
+      ]
+    },
+    {
+      "number": 316,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Evard's black tentackles"
+            }
+          ],
+          "id": "p316-1",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эвардовы чёрные щупальца Expeditious retreat"
+            }
+          ],
+          "id": "p316-2",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поспешное отступление Eyebite"
+            }
+          ],
+          "id": "p316-3",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разящее око Fabricate"
+            }
+          ],
+          "id": "p316-4",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изготовление Faerie fire"
+            }
+          ],
+          "id": "p316-5",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огонь фей False life"
+            }
+          ],
+          "id": "p316-6",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Псевдожизнь Fear"
+            }
+          ],
+          "id": "p316-7",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ужас Feather fall"
+            }
+          ],
+          "id": "p316-8",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Падение пёрышком Feeblemind"
+            }
+          ],
+          "id": "p316-9",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слабоумие Feign death"
+            }
+          ],
+          "id": "p316-10",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Притворная смерть Find familiar"
+            }
+          ],
+          "id": "p316-11",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск фамильяра Find steed"
+            }
+          ],
+          "id": "p316-12",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск скакуна Find the path"
+            }
+          ],
+          "id": "p316-13",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск пути Find traps"
+            }
+          ],
+          "id": "p316-14",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск ловушек Finger of death"
+            }
+          ],
+          "id": "p316-15",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перст смерти Fire bolt"
+            }
+          ],
+          "id": "p316-16",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный снаряд Fire shield"
+            }
+          ],
+          "id": "p316-17",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный щит Fire storm"
+            }
+          ],
+          "id": "p316-18",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненная буря Fireball"
+            }
+          ],
+          "id": "p316-19",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный шар Flame blade"
+            }
+          ],
+          "id": "p316-20",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горящий клинок Flame strike"
+            }
+          ],
+          "id": "p316-21",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Небесный огонь Flaming sphere"
+            }
+          ],
+          "id": "p316-22",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пылающий шар Flesh to stone"
+            }
+          ],
+          "id": "p316-23",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Окаменение Fly"
+            }
+          ],
+          "id": "p316-24",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полёт Fog cloud"
+            }
+          ],
+          "id": "p316-25",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Туманное облако Forbiddance"
+            }
+          ],
+          "id": "p316-26",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Запрет Forcecage"
+            }
+          ],
+          "id": "p316-27",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Узилище Foresight"
+            }
+          ],
+          "id": "p316-28",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предвидение Freedom of movement"
+            }
+          ],
+          "id": "p316-29",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свобода перемещения Friends"
+            }
+          ],
+          "id": "p316-30",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дружба Gaseous form"
+            }
+          ],
+          "id": "p316-31",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Газообразная форма Gate"
+            }
+          ],
+          "id": "p316-32",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Врата Geas"
+            }
+          ],
+          "id": "p316-33",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обет Gentle repose"
+            }
+          ],
+          "id": "p316-34",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нетленные останки Giant insect"
+            }
+          ],
+          "id": "p316-35",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантское насекомое Glibness"
+            }
+          ],
+          "id": "p316-36",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Находчивость Globe of invulnerability"
+            }
+          ],
+          "id": "p316-37",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера неуязвимости Glyph of warding"
+            }
+          ],
+          "id": "p316-38",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Охранные руны Goodberry"
+            }
+          ],
+          "id": "p316-39",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чудо-ягоды Grasping vine"
+            }
+          ],
+          "id": "p316-40",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цепкая лоза Grease"
+            }
+          ],
+          "id": "p316-41",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скольжение Greater invisibility"
+            }
+          ],
+          "id": "p316-42",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Высшая невидимость Greater restoration"
+            }
+          ],
+          "id": "p316-43",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Высшее восстановление Guardian of faith"
+            }
+          ],
+          "id": "p316-44",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Страж веры Guards and wards"
+            }
+          ],
+          "id": "p316-45",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стражи Guidance"
+            }
+          ],
+          "id": "p316-46",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Указание Guiding bolt"
+            }
+          ],
+          "id": "p316-47",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Направленный снаряд Gust of wind"
+            }
+          ],
+          "id": "p316-48",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порыв ветра Hail of thorns"
+            }
+          ],
+          "id": "p316-49",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Град шипов Hallow"
+            }
+          ],
+          "id": "p316-50",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Святилище Hallucinatory terrain"
+            }
+          ],
+          "id": "p316-51",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мираж Harm"
+            }
+          ],
+          "id": "p316-52",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поражение Haste"
+            }
+          ],
+          "id": "p316-53",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ускорение Heal"
+            }
+          ],
+          "id": "p316-54",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полное исцеление Healing word"
+            }
+          ],
+          "id": "p316-55",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лечащее слово Heat metal"
+            }
+          ],
+          "id": "p316-56",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Раскалённый металл Hellish rebuke"
+            }
+          ],
+          "id": "p316-57",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Адское возмездие Heroes’ feast"
+            }
+          ],
+          "id": "p316-58",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пир героев Heroism"
+            }
+          ],
+          "id": "p316-59",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Героизм Hex"
+            }
+          ],
+          "id": "p316-60",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сглаз Hold monster"
+            }
+          ],
+          "id": "p316-61",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удержание чудовища Hold person"
+            }
+          ],
+          "id": "p316-62",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удержание личности Holy aura"
+            }
+          ],
+          "id": "p316-63",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аура святости"
+            }
+          ],
+          "id": "p316-64",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Hunger of Hadar"
+            }
+          ],
+          "id": "p316-65",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Голод Хадара Hunter's mark"
+            }
+          ],
+          "id": "p316-66",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метка охотника Hypnotic pattern"
+            }
+          ],
+          "id": "p316-67",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гипнотический узор Ice storm"
+            }
+          ],
+          "id": "p316-68",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Град Identify"
+            }
+          ],
+          "id": "p316-69",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опознание Illusory script"
+            }
+          ],
+          "id": "p316-70",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимое письмо Imprisonment"
+            }
+          ],
+          "id": "p316-71",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заточение Incendiary cloud"
+            }
+          ],
+          "id": "p316-72",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воспламеняющаяся туча Inflict wounds"
+            }
+          ],
+          "id": "p316-73",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нанесение ран Insect plague"
+            }
+          ],
+          "id": "p316-74",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нашествие насекомых Invisibility"
+            }
+          ],
+          "id": "p316-75",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимость Jump"
+            }
+          ],
+          "id": "p316-76",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прыжок Knock"
+            }
+          ],
+          "id": "p316-77",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Открывание Legend lore"
+            }
+          ],
+          "id": "p316-78",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знание легенд Leomund’s secret chest"
+            }
+          ],
+          "id": "p316-79",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Леомундов потайной сундук Leomund’s tiny hut"
+            }
+          ],
+          "id": "p316-80",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Леомундова хижина Lesser restoration"
+            }
+          ],
+          "id": "p316-81",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Малое восстановление Levitate"
+            }
+          ],
+          "id": "p316-82",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Левитация Light"
+            }
+          ],
+          "id": "p316-83",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свет Lightning arrow"
+            }
+          ],
+          "id": "p316-84",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молниевая стрела Lightning bolt"
+            }
+          ],
+          "id": "p316-85",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молния Locate animals or plants"
+            }
+          ],
+          "id": "p316-86",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск животных или растений Locate creature"
+            }
+          ],
+          "id": "p316-87",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск существа Locate object"
+            }
+          ],
+          "id": "p316-88",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск предмета Longstrider"
+            }
+          ],
+          "id": "p316-89",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скороход Mage armor"
+            }
+          ],
+          "id": "p316-90",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доспехи мага Mage hand"
+            }
+          ],
+          "id": "p316-91",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная рука Magic circle"
+            }
+          ],
+          "id": "p316-92",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магический круг Magic jar"
+            }
+          ],
+          "id": "p316-93",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебный сосуд Magic missile"
+            }
+          ],
+          "id": "p316-94",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебная стрела Magic mouth"
+            }
+          ],
+          "id": "p316-95",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебные уста Magic weapon"
+            }
+          ],
+          "id": "p316-96",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магическое оружие Major image"
+            }
+          ],
+          "id": "p316-97",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Образ Множественное лечение ран Mass cure wounds Mass heal"
+            }
+          ],
+          "id": "p316-98",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное полное исцеление Mass healing word"
+            }
+          ],
+          "id": "p316-99",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное лечащее слово Mass suggestion"
+            }
+          ],
+          "id": "p316-100",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Множественное внушение Maze"
+            }
+          ],
+          "id": "p316-101",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лабиринт Meld into stone"
+            }
+          ],
+          "id": "p316-102",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слияние с камнем Мельфова кислотная стрела Melf's acid arrow Mending"
+            }
+          ],
+          "id": "p316-103",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Починка Message"
+            }
+          ],
+          "id": "p316-104",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сообщение Meteor swarm"
+            }
+          ],
+          "id": "p316-105",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метеоритный дождь Mind blank"
+            }
+          ],
+          "id": "p316-106",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сокрытие разума Minor illusion"
+            }
+          ],
+          "id": "p316-107",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Малая иллюзия Таинственный мираж Mirage arcane Mirror image"
+            }
+          ],
+          "id": "p316-108",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отражения Фальшивый двойник Mislead Misty step"
+            }
+          ],
+          "id": "p316-109",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Туманный шаг Modify memory"
+            }
+          ],
+          "id": "p316-110",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изменение памяти Moonbeam"
+            }
+          ],
+          "id": "p316-111",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лунный луч Верный пёс Морденкайнена Mordenkainen’s faithful hound Mordenkainen’s"
+            }
+          ],
+          "id": "p316-112",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Великолепный особняк magnificent mansion"
+            }
+          ],
+          "id": "p316-113",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Морденкайнена Mordenkainen’s private"
+            }
+          ],
+          "id": "p316-114",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кабинет Морденкайнена sanctum Mordenkainen’s sword"
+            }
+          ],
+          "id": "p316-115",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч Морденкайнена Move earth"
+            }
+          ],
+          "id": "p316-116",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Движение почвы Nondetection"
+            }
+          ],
+          "id": "p316-117",
+          "sourcePage": 316
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Необнаружимость"
+            }
+          ],
+          "id": "p316-118",
+          "sourcePage": 316
+        }
+      ]
+    },
+    {
+      "number": 317,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Nystul’s magic aura"
+            }
+          ],
+          "id": "p317-1",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нистулова ложная аура Отилюков ледяной шар Otiluke’s freezing sphere Otiluke’s resilient sphere"
+            }
+          ],
+          "id": "p317-2",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отилюков упругий шар Otto’s irresistible dance"
+            }
+          ],
+          "id": "p317-3",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Неудержимая пляска Отто Pass without trace"
+            }
+          ],
+          "id": "p317-4",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бесследное передвижение Passwall"
+            }
+          ],
+          "id": "p317-5",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание прохода Phantasmal force"
+            }
+          ],
+          "id": "p317-6",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воображаемая сила Phantasmal killer"
+            }
+          ],
+          "id": "p317-7",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воображаемый убийца Phantom steed"
+            }
+          ],
+          "id": "p317-8",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прирачный скакун Планарный союзник Planar ally Planar binding"
+            }
+          ],
+          "id": "p317-9",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планарные узы Уход в иной мир Plane shift Plant growth"
+            }
+          ],
+          "id": "p317-10",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рост растений Poison spray"
+            }
+          ],
+          "id": "p317-11",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ядовитые брызги Polymorph"
+            }
+          ],
+          "id": "p317-12",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Превращение Power word heal"
+            }
+          ],
+          "id": "p317-13",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово Силы: исцеление Power word kill"
+            }
+          ],
+          "id": "p317-14",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово Силы: смерть Power word stun"
+            }
+          ],
+          "id": "p317-15",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово Силы: оглушение Prayer of healing"
+            }
+          ],
+          "id": "p317-16",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молебен лечения Prestidigitation"
+            }
+          ],
+          "id": "p317-17",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фокусы Prismatic spray"
+            }
+          ],
+          "id": "p317-18",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Радужные брызги Prismatic wall"
+            }
+          ],
+          "id": "p317-19",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Радужная стена Produce flame"
+            }
+          ],
+          "id": "p317-20",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сотворение пламени Programmed illusion"
+            }
+          ],
+          "id": "p317-21",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заданная иллюзия Project image"
+            }
+          ],
+          "id": "p317-22",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проекция Protection from energy"
+            }
+          ],
+          "id": "p317-23",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от энергии Защита от добра и зла Protection from evil and good Protection from poison"
+            }
+          ],
+          "id": "p317-24",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Защита от яда Purify food and drink"
+            }
+          ],
+          "id": "p317-25",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очищение пищи и питья Raise dead"
+            }
+          ],
+          "id": "p317-26",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оживление Rary’s telepathic bond"
+            }
+          ],
+          "id": "p317-27",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ментальная связь Рэри Ray of enfeeblement"
+            }
+          ],
+          "id": "p317-28",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Луч слабости Ray of frost"
+            }
+          ],
+          "id": "p317-29",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Луч холода Ray of sickness"
+            }
+          ],
+          "id": "p317-30",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Луч болезни Regenerate"
+            }
+          ],
+          "id": "p317-31",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Регенерация Reincarnate"
+            }
+          ],
+          "id": "p317-32",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Реинкарнация Remove curse"
+            }
+          ],
+          "id": "p317-33",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Снятие проклятья Resistance"
+            }
+          ],
+          "id": "p317-34",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сопротивление Resurrection"
+            }
+          ],
+          "id": "p317-35",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воскрешение Reverse gravity"
+            }
+          ],
+          "id": "p317-36",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изменение тяготения Revivify"
+            }
+          ],
+          "id": "p317-37",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Возрождение Rope trick"
+            }
+          ],
+          "id": "p317-38",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трюк с верёвкой Sacred flame"
+            }
+          ],
+          "id": "p317-39",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Священное пламя Sanctuary"
+            }
+          ],
+          "id": "p317-40",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Убежище Scorching ray"
+            }
+          ],
+          "id": "p317-41",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Палящий луч Scrying"
+            }
+          ],
+          "id": "p317-42",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наблюдение Searing smite"
+            }
+          ],
+          "id": "p317-43",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Палящая кара See invisibility"
+            }
+          ],
+          "id": "p317-44",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Видение невидимого Seeming"
+            }
+          ],
+          "id": "p317-45",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Притворство Sending"
+            }
+          ],
+          "id": "p317-46",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Послание Sequester"
+            }
+          ],
+          "id": "p317-47",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изоляция Shapechange"
+            }
+          ],
+          "id": "p317-48",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полное превращение Shatter"
+            }
+          ],
+          "id": "p317-49",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дребезги Shield"
+            }
+          ],
+          "id": "p317-50",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит Shield of faith"
+            }
+          ],
+          "id": "p317-51",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щит веры Shillelagh"
+            }
+          ],
+          "id": "p317-52",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дубинка Shocking grasp"
+            }
+          ],
+          "id": "p317-53",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Электрошок Silence"
+            }
+          ],
+          "id": "p317-54",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тишина Silent image"
+            }
+          ],
+          "id": "p317-55",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Безмолвный образ Simulacrum"
+            }
+          ],
+          "id": "p317-56",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подобие"
+            }
+          ],
+          "id": "p317-57",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Sleep"
+            }
+          ],
+          "id": "p317-58",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Усыпление Sleet storm"
+            }
+          ],
+          "id": "p317-59",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Метель Slow"
+            }
+          ],
+          "id": "p317-60",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замедление Spare the dying"
+            }
+          ],
+          "id": "p317-61",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уход за умирающим Speak with animals"
+            }
+          ],
+          "id": "p317-62",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разговор с животными Speak with dead"
+            }
+          ],
+          "id": "p317-63",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разговор с мёртвыми Speak with plants"
+            }
+          ],
+          "id": "p317-64",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разговор с растениями Spider climb"
+            }
+          ],
+          "id": "p317-65",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паук Spike growth"
+            }
+          ],
+          "id": "p317-66",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шипы Spirit guardians"
+            }
+          ],
+          "id": "p317-67",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Духовные стражи Spiritual weapon"
+            }
+          ],
+          "id": "p317-68",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божественное оружие Staggering smite"
+            }
+          ],
+          "id": "p317-69",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оглушающая кара Stinking cloud"
+            }
+          ],
+          "id": "p317-70",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зловонное облако Stone shape"
+            }
+          ],
+          "id": "p317-71",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изменение формы камня Stoneskin"
+            }
+          ],
+          "id": "p317-72",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменная кожа Storm of vengeance"
+            }
+          ],
+          "id": "p317-73",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гроза гнева Suggestion"
+            }
+          ],
+          "id": "p317-74",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внушение Sunbeam"
+            }
+          ],
+          "id": "p317-75",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Солнечный луч Sunburst"
+            }
+          ],
+          "id": "p317-76",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Солнечный ожог Swift quiver"
+            }
+          ],
+          "id": "p317-77",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Быстрый колчан Symbol"
+            }
+          ],
+          "id": "p317-78",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знак Tasha's hideous laughter"
+            }
+          ],
+          "id": "p317-79",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жуткий смех Таши Telekinesis"
+            }
+          ],
+          "id": "p317-80",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телекинез Telepathy"
+            }
+          ],
+          "id": "p317-81",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телепатия Teleport"
+            }
+          ],
+          "id": "p317-82",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телепортация Teleportation circle"
+            }
+          ],
+          "id": "p317-83",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Круг телепортации Tenser’s floating disk"
+            }
+          ],
+          "id": "p317-84",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тензеров парящий диск Thaumaturgy"
+            }
+          ],
+          "id": "p317-85",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чудотворство Thorn whip"
+            }
+          ],
+          "id": "p317-86",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Терновый кнут Thunderous smite"
+            }
+          ],
+          "id": "p317-87",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Громовая кара Thunderwave"
+            }
+          ],
+          "id": "p317-88",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волна грома Time stop"
+            }
+          ],
+          "id": "p317-89",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Остановка времени Tongues"
+            }
+          ],
+          "id": "p317-90",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Языки Transport via plants"
+            }
+          ],
+          "id": "p317-91",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Путешествие через растения Tree stride"
+            }
+          ],
+          "id": "p317-92",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древесный путь True polymorph"
+            }
+          ],
+          "id": "p317-93",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинное превращение True resurrection"
+            }
+          ],
+          "id": "p317-94",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинное воскрешение True seeing"
+            }
+          ],
+          "id": "p317-95",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинное зрение True strike"
+            }
+          ],
+          "id": "p317-96",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меткий удар Tsunami"
+            }
+          ],
+          "id": "p317-97",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цунами Unseen servant"
+            }
+          ],
+          "id": "p317-98",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимый слуга Прикосновение вампира Vampiric touch Vicious mockery"
+            }
+          ],
+          "id": "p317-99",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Злая насмешка Wall of fire"
+            }
+          ],
+          "id": "p317-100",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненная стена Wall of force"
+            }
+          ],
+          "id": "p317-101",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Силовая стена Wall of ice"
+            }
+          ],
+          "id": "p317-102",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ледяная стена Wall of stone"
+            }
+          ],
+          "id": "p317-103",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменная стена Wall of thorns"
+            }
+          ],
+          "id": "p317-104",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Терновая стена Warding bond"
+            }
+          ],
+          "id": "p317-105",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Охраняющая связь Water breathing"
+            }
+          ],
+          "id": "p317-106",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подводное дыхание Water walk"
+            }
+          ],
+          "id": "p317-107",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хождение по воде Web"
+            }
+          ],
+          "id": "p317-108",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паутина Weird"
+            }
+          ],
+          "id": "p317-109",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смертный ужас Wind walk"
+            }
+          ],
+          "id": "p317-110",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хождение по ветру Wind wall"
+            }
+          ],
+          "id": "p317-111",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стена ветров Wish"
+            }
+          ],
+          "id": "p317-112",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Исполнение желаний Witch bolt"
+            }
+          ],
+          "id": "p317-113",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ведьмин снаряд Word of recall"
+            }
+          ],
+          "id": "p317-114",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слово возврата Wrathful smite"
+            }
+          ],
+          "id": "p317-115",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гневная кара Zone of truth"
+            }
+          ],
+          "id": "p317-116",
+          "sourcePage": 317
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Область истины"
+            }
+          ],
+          "id": "p317-117",
+          "sourcePage": 317
+        }
+      ]
+    }
+  ]
+}

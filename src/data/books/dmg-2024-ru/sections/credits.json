@@ -1,0 +1,373 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "credits",
+  "title": "Титры",
+  "description": "",
+  "sourcePages": [
+    342
+  ],
+  "group": "Выходные данные",
+  "pages": [
+    {
+      "number": 342,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Титры системы",
+              "bold": true
+            }
+          ],
+          "id": "p342-1",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ведущие дизайнеры: ",
+              "bold": true
+            },
+            {
+              "text": "Christopher Perkins, James Wyatt"
+            }
+          ],
+          "id": "p342-2",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дизайнеры: ",
+              "bold": true
+            },
+            {
+              "text": "Jeremy Crawford, F. Wesley Schneider, Ray Winninger"
+            }
+          ],
+          "id": "p342-3",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разработчики правил:",
+              "bold": true
+            },
+            {
+              "text": " Jeremy Crawford (lead), Makenzie De Armas, Ben Petrisor"
+            }
+          ],
+          "id": "p342-4",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Редакторы: ",
+              "bold": true
+            },
+            {
+              "text": "Adrian Ng (lead), Judy Bauer, Janica Carter"
+            }
+          ],
+          "id": "p342-5",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аналитики плейтеста: ",
+              "bold": true
+            },
+            {
+              "text": "Ron Lundeen (lead), Dan Dillon, Patrick Renie"
+            }
+          ],
+          "id": "p342-6",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арт-директоры: ",
+              "bold": true
+            },
+            {
+              "text": "Kate Irwin (lead), Josh Herman"
+            }
+          ],
+          "id": "p342-7",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дизайнеры графики:",
+              "bold": true
+            },
+            {
+              "text": " Trish Yochum (lead), Matt Cole"
+            }
+          ],
+          "id": "p342-8",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художники обложек: ",
+              "bold": true
+            },
+            {
+              "text": "Tyler Jacobson, Simen Meyer, Olena Richards"
+            }
+          ],
+          "id": "p342-9",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художники изображений внутри:",
+              "bold": true
+            },
+            {
+              "text": " Helder Almeida, Joy Ang, David Astruga, Alfven Ato, Tom Babbey, Helge C. Balzer, Luca Bancone, Mark Behm, Eric Belisle, Olivier Bernard, Zoltan Boros, Bruce Brenneise, Aleksi Briclot, Ekaterina Burmak, Filip Burburan, Paul Scott Canavan, Dawn Carlos, Clint Cearley, Diana Cearley, Sidharth Chaturvedi, David René Christensen, Conceptopolis, Harry Conway, CoupleOfKooks, Daarken, Kent Davis, Nikki Dawes, Axel Defois, Alex Diaz, Simon Dominic, Olga Drebas, Wayne England, Aurore Folny, Jessica Fong, Vallez Gax, Justyna Gil, Ilse Gort, Alexandre Honoré, Ralph Horsley, Jason Juta, Sam Keiser, Julian Kok, Katerina Ladon, Abigail Larson, Olly Lawson, Linda Lithen, Titus Lunter, Andrew Mar, Raluca Marinescu, Viko Menezes, Brynn Metheney, Robson Michel, Calder Moore, Martin Mottet, Jodie Muir, Scott Murphy, David Auden Nash, Irina Nordsol, William O’Connor, Robin Olausson, Claudio Pozas, Livia Prima, April Prime, Noor Rahman, Chris Rallis, Chris Seaman, Andrea Sipl, Craig J Spearing, Chase Stone, Joel Thomas, Beth Trott, Brian Valeza, Randy Vargas, Richard Whitters, Kieran Yanner, Zuzanna Wuzyk"
+            }
+          ],
+          "id": "p342-10",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Картографы: ",
+              "bold": true
+            },
+            {
+              "text": "Francesca Baerald, Dyson Logos, Mike Schley"
+            }
+          ],
+          "id": "p342-11",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Директоры концепт арта: ",
+              "bold": true
+            },
+            {
+              "text": "Josh Herman"
+            }
+          ],
+          "id": "p342-12",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художники концептов:",
+              "bold": true
+            },
+            {
+              "text": " Even Amundsen, Carlo Arellano, Michael Broussard, John Grello, Tyler Jacobson, 9B Collective, Noor Rahman"
+            }
+          ],
+          "id": "p342-13",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Консультанты:",
+              "bold": true
+            },
+            {
+              "text": " Zac Clay, Jennifer Kretchmer, James Mendez, Matthew Mercer, Jonathan Tomhave, Alyssa Visscher, Deborah Ann Woll"
+            }
+          ],
+          "id": "p342-14",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дополнительная консультация:",
+              "bold": true
+            },
+            {
+              "text": " Justice Ramin Arman, Kyle Brink, Amanda Hamon, Jay Jani, Carl Sibley, Emi Tanji, Jason Tondro"
+            }
+          ],
+          "id": "p342-15",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Продюсеры:",
+              "bold": true
+            },
+            {
+              "text": " Dan Tovar (lead), Bill Benham, Siera Bruggeman, Robert Hawkey"
+            }
+          ],
+          "id": "p342-16",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инженеры по печати:",
+              "bold": true
+            },
+            {
+              "text": " Basil Hale, Scott West"
+            }
+          ],
+          "id": "p342-17",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Специалисты по визуализации: ",
+              "bold": true
+            },
+            {
+              "text": "Daniel Corona, Meagan Kenreck, Kevin Yee"
+            }
+          ],
+          "id": "p342-18",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Специалист по допечати:",
+              "bold": true
+            },
+            {
+              "text": " Jefferson Dunlap Основано на книге «Руководства Мастера» (2014), созданная Jeremy Crawford (co-lead), Christopher Perkins (co-lead), James Wyatt (co-lead), Peter Lee, Mike Mearls, Robert J. Schwalb, Rodney Thompson"
+            }
+          ],
+          "id": "p342-19",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создано на основе оригинальной игры, созданной Gary Gygax и Dave Arneson, которая затем дорабатывалась многими другими в последние 50 лет."
+            }
+          ],
+          "id": "p342-20",
+          "sourcePage": 342
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Титры перевода",
+              "bold": true
+            }
+          ],
+          "id": "p342-21",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "За указание на ошибки в вычитке на Google Диске и вне его спасибо этим замечательным",
+              "bold": true
+            }
+          ],
+          "id": "p342-22",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "людям:",
+              "bold": true
+            }
+          ],
+          "id": "p342-23",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Magistrus, Cooper, Максим Спирюхин, Серик Макжанов, Александр Фиглин, Arontir, Михаил Степанищев, Anon Danon, Алексей Непахарев, Erl Eltare, Людмила Пискунова, Leks Colman, Mallis, Лариса Грашенцова, Vercengetorix Sartorius, K Lirick, Mr Vorobey, Кот Кирилл, fierce cripple, Михаил Т (Загадочный Оракул), Василий, Ava_artem, Dmitriy Izotov, TheZeid Player, Тимур Зімак, Александр Андреевич, Ivan Kudelin, Kogal, Ivan Nikitin, Feo Pavloff, Валерий Валев, Denis Trubin."
+            }
+          ],
+          "id": "p342-24",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Титульная страница:",
+              "bold": true
+            },
+            {
+              "text": " zemkaz"
+            }
+          ],
+          "id": "p342-25",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перевод части книги и весомая помощь: ",
+              "bold": true
+            },
+            {
+              "text": "Анастасия Кузьмина, Voxivale Если я кого-то не уточнил, то это по невнимательности. Я с удовольствием исправлю это недоразумение, если вы напишите о нём мне (Koroz)."
+            }
+          ],
+          "id": "p342-26",
+          "sourcePage": 342
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Если вы видите своё упоминание в тексте и хотите, чтобы это упоминание вело куда-то (например, на вашу страницу), то пишите мне (Koroz) — добавлю."
+            }
+          ],
+          "id": "p342-27",
+          "sourcePage": 342
+        }
+      ]
+    }
+  ]
+}

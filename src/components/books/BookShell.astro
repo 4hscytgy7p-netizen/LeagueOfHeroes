@@ -1,0 +1,48 @@
+---
+import type { Book } from '../../types/book';
+import { bookPageRange, bookSectionUrl, bookSectionGroups } from '../../data/books';
+interface Props { book: Book; activeSection?: string }
+const { book, activeSection } = Astro.props;
+const groups = bookSectionGroups(book);
+---
+<div class="book-workspace" data-book-reader data-book-id={book.id} data-book-source={book.sourceSha256} data-section-id={activeSection || ''}>
+  <aside class="book-sidebar">
+    <a href="/books/" class="book-back">← Библиотека</a>
+    <a href={`/books/${book.id}/`} class="book-sidebar-title">{book.title}</a>
+    <p class="book-sidebar-edition">D&D {book.edition} · Русский язык</p>
+    <details class="book-navigation" open>
+      <summary>Оглавление и поиск</summary>
+      <div class="book-navigation-content">
+        <div class="book-search" hidden data-book-search>
+          <label for="book-search-input">Поиск в книге</label>
+          <input id="book-search-input" type="search" placeholder="Правило, термин или заклинание…" autocomplete="off" aria-controls="book-search-results" />
+          <p class="book-search-status" id="book-search-status" role="status" aria-live="polite"></p>
+          <ol class="book-search-results" id="book-search-results" hidden aria-label="Результаты поиска"></ol>
+        </div>
+        <nav aria-label="Разделы книги" class="book-toc">
+          {groups.map((group, index) => (
+            <details class="book-toc-group" open={group.sections.some((section) => section.id === activeSection) || (!activeSection && index === 0)}>
+              <summary>{group.title}</summary>
+              {group.sections.map((section) => (
+                <a href={bookSectionUrl(book.id, section.id)} data-book-pages={section.sourcePages.join(',')} aria-current={activeSection === section.id ? 'page' : undefined}>
+                  <span>{section.title}</span><small>стр. {bookPageRange(section.sourcePages, book.pageLabels)}</small>
+                </a>
+              ))}
+            </details>
+          ))}
+        </nav>
+        {book.status === 'partial' && <p class="book-availability">Пока доступны выбранные разделы: {book.importedPages.length} из {book.totalPages} страниц.</p>}
+        {book.sourceNote && <p class="book-availability">{book.sourceNote}</p>}
+      </div>
+    </details>
+    <a class="book-resume" data-book-resume hidden>Продолжить чтение</a>
+    <div class="book-reader-controls" data-reader-controls hidden>
+      <span>Размер текста</span>
+      <div><button type="button" data-font-change="-1" aria-label="Уменьшить размер текста">А−</button><output data-font-size aria-live="polite">18</output><button type="button" data-font-change="1" aria-label="Увеличить размер текста">А+</button></div>
+    </div>
+  </aside>
+  <div class="book-reading"><slot /></div>
+</div>
+<script>
+  import '../../scripts/bookReader';
+</script>

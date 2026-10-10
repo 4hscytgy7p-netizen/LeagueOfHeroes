@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "title",
+  "title": "Титульный лист",
+  "description": "",
+  "sourcePages": [
+    2
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 2,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-2-7ff5758ab9.webp",
+          "alt": "Иллюстрация: Титульный лист",
+          "width": 1698,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-2-7ff5758ab9-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "РУКОВОДСТВО МАСТЕРА",
+          "textLabel": "Текст иллюстрации",
+          "id": "p2-1",
+          "sourcePage": 2
+        }
+      ]
+    }
+  ]
+}

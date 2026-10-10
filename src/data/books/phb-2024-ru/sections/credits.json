@@ -1,0 +1,327 @@
+{
+  "bookId": "phb-2024-ru",
+  "id": "credits",
+  "title": "Титры системы и перевода",
+  "description": "Титры системы · Титры перевода",
+  "sourcePages": [
+    366
+  ],
+  "group": "Завершение книги",
+  "pages": [
+    {
+      "number": 366,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Титры системы",
+              "bold": true
+            }
+          ],
+          "id": "p366-1",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ведущий дизайнер:",
+              "bold": true
+            },
+            {
+              "text": " Jeremy Crawford"
+            }
+          ],
+          "id": "p366-2",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дизайнеры:",
+              "bold": true
+            },
+            {
+              "text": " Christopher Perkins, Ben Petrisor, F. Wesley Schneider, Ray Winninger, James Wyatt"
+            }
+          ],
+          "id": "p366-3",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разработчики правил:",
+              "bold": true
+            },
+            {
+              "text": " Jeremy Crawford (lead), Makenzie De Armas, Ben Petrisor"
+            }
+          ],
+          "id": "p366-4",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Редакторы:",
+              "bold": true
+            },
+            {
+              "text": " Janica Carter (lead), Judy Bauer, Adrian Ng, F. Wesley Schneider"
+            }
+          ],
+          "id": "p366-5",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аналитики плейтеста:",
+              "bold": true
+            },
+            {
+              "text": " Ron Lundeen (lead), Dan Dillon, Ben Petrisor, Patrick Renie"
+            }
+          ],
+          "id": "p366-6",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арт-директоры:",
+              "bold": true
+            },
+            {
+              "text": " Emi Tanji (lead), Josh Herman Graphic Designers: Matt Cole (lead), Trystan Falcone, Trish Yochum"
+            }
+          ],
+          "id": "p366-7",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художники обложек:",
+              "bold": true
+            },
+            {
+              "text": " Wylie Beckert, Tyler Jacobson"
+            }
+          ],
+          "id": "p366-8",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художники:",
+              "bold": true
+            },
+            {
+              "text": " Rob Alexander, David Astruga, Helge C. Balzer, Luca Bancone, Eric Belisle, Olivier Bernard, Zoltan Boros, Michael Broussard, Ignatius Budi, Dmitry Burmak, Ekaterina Burmak, Pedro Cardoso, Kai Carpenter, Clint Cearley, Javier Charro, Jedd Chevrier, Billy Christian, Tuan Duong Chu, Conceptopolis, CoupleOfKooks, Justine Cruz, Daarken, Nikki Dawes, Jonas De Ro, Yuhong Ding, Aldo Dominguez, Olga Drebas, Tomas Duchek, Jesper Ejsing, Wayne England, Martina Fackova, Aurore Folny, Evyn Fong, Jessica Fong, Gaboleps, Caroline Gariba, Michele Giorgi, Igor Grechanyi, John Grello, Leesha Hannigan, Patrik Hell, Nathaniel Himawan, Alexandre Honoré, Ralph Horsley, Jane Katsubo, Jonathan Kuo, Katerina Ladon, Néstor Ossandón Leal, Linda Lithen, Titus Lunter, Erel Maatita, Randall Mackey, Erion Makuo, Antonio José Manzanedo, Andrew Mar, Raluca Marinescu, Marcela Medeiros, Julia Metzger, Alexander Mokhov, Caio Monteiro, Calder Moore, Riccardo Moscatello, Martin Mottet, Jodie Muir, David Auden Nash, Irina Nordsol, Hinchel Or, Hector Ortiz, Alejandro Pacheco, Mike Pape, Borja Pindado, Andrea Piparo, Polar Engine, April Prime, Noor Rahman, Chris Rallis, Joshua Raphael, Aaron J. Riley, Denman Rooke, Hocheol Ryu, Fabià Sans, Chris Seaman, Alditha Siregar, Bryan Sola, Craig J Spearing, Justin Sweet, Kamila Szutenberg, Wisnu Tan, Brian Valeza, Randy Vargas, Adam Vehige, Magali Villeneuve, Kenny Vo, Lauren Walsh, Joseph Weston, Campbell White, Richard Whitters, Daneen Wilkerson, Zuzanna Wuzyk, Lixin Yin"
+            }
+          ],
+          "id": "p366-9",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Директор концепт арта:",
+              "bold": true
+            },
+            {
+              "text": " Josh Herman Concept Artists: Even Amundsen, Carlo Arellano, Michael Broussard, John Grello, Tyler Jacobson, Alexander Ostrowski, 9B Collective, Noor Rahman"
+            }
+          ],
+          "id": "p366-10",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Консультанты:",
+              "bold": true
+            },
+            {
+              "text": " Sarah Benjamin, Basheer Ghouse, Kayleigh Jones, James Mendez, Brian Powers, Pam Punzalan, Jason Schklar"
+            }
+          ],
+          "id": "p366-11",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дополнительная консультанция:",
+              "bold": true
+            },
+            {
+              "text": " Kyle Brink, Aaron Forsythe, Mark Heggen, Jay Jani, Chris Mooney, James Rose, Carl Sibley, Kale Stutzman"
+            }
+          ],
+          "id": "p366-12",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Продюсеры:",
+              "bold": true
+            },
+            {
+              "text": " Dan Tovar (lead), Bill Benham, Siera Bruggeman, Robert Hawkey"
+            }
+          ],
+          "id": "p366-13",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инженеры по печати:",
+              "bold": true
+            },
+            {
+              "text": " Basil Hale, Scott West"
+            }
+          ],
+          "id": "p366-14",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Специалисты по визуализации:",
+              "bold": true
+            },
+            {
+              "text": " Daniel Corona, Meagan Kenreck, Kevin Yee"
+            }
+          ],
+          "id": "p366-15",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Специалисты по допечати:",
+              "bold": true
+            },
+            {
+              "text": " Jefferson Dunlap Includes revised content from Xanathar’s Guide to Everything (2017) and Tasha’s Cauldron of Everything (2020)"
+            }
+          ],
+          "id": "p366-16",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Основано на Player’s Handbook (2014), разработанной: Jeremy Crawford (lead), Bruce R. Cordell, Tom LaPille, Peter Lee, Mike Mearls, Robert J. Schwalb, Rodney Thompson, James Wyatt"
+            }
+          ],
+          "id": "p366-17",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Созданная на основе оригинальной игры, созданной Gary Gygax и Dave Arneson и доработанной многими другими за последние 50 лет."
+            }
+          ],
+          "id": "p366-18",
+          "sourcePage": 366
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Титры перевода",
+              "bold": true
+            }
+          ],
+          "id": "p366-19",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Основной перевод и вёрстка:",
+              "bold": true
+            },
+            {
+              "text": " Koroz"
+            }
+          ],
+          "id": "p366-20",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перевод части контента и помощь:",
+              "bold": true
+            },
+            {
+              "text": " D&D Модно, Даниил Донда, Север, Игорь Филимоненко, fris, Alexander Yushchenko, Игорь Сазонов."
+            }
+          ],
+          "id": "p366-21",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доступ к раннему скану книги:",
+              "bold": true
+            },
+            {
+              "text": " Палец"
+            }
+          ],
+          "id": "p366-22",
+          "sourcePage": 366
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вычитка:",
+              "bold": true
+            },
+            {
+              "text": " Magistrus, Михаил Степанищев, Анчу, Игорь Филимоненко, Анна Крылова, Вас Заметили, Влад Бабич, Даниил Донда, Никита Орлов, Илья Микерин, Anna Krylova, Андрей Кокулов, Varvara Lavrova, Максим Жихоренко, Sever, Александр Положенко, Леонид Ширенин, Мурзяша Котовский, Dramar, RattusRex, Дмитрий Ермаков, Александр Кораблин, Aleksei “Freeloader” Vinokurov, Иисус Гитлер, Antuan Nemo, Денис Горбенко, Владислав Цветков, Ибрагимов Ислам, Кирилл Карасёв, Леонид Третьяков, Anton Second, Sneaky Dice, Жамсина Намжилов, Роберт Сидоров, Кирилл Иванов, Никита Шнюк, Даниил Мугинов, Lukarioll Denchik, Alex Yu, Роман Сугоняк, Maxim Yanygin, osoroshian, Александр Заварзин, Иван Кольцов (detrox), Fr0d016, Михаил Касаткин, Endernomicon, Дмитрий, Георгий Литвинов, BlackLoveLace, Furow Kick, Andrii Mishchenko, Филипп Говорухин, Сергей Давыдов, M0rGu1 Undead, Елизавета Белова, Никитоид, Ilya Karachev, Daria Blinova, Максим Спирюхин, Серик Макжанов, Deal Yxx, Николай Кияев, Alex Zara23, TarTar 1337, Дмитрий Фидосеев, Влад Фищук, Алексей Степанов, Дима Демченко, Alexander, Strannik, Blood King, Рома Свастопольский, Nick Kaysay, Егор Мясников, Alebro, Gopchic Fox, Козьма Ктулху, Юлия Половникова, Кирилл Кирилл, Дмитрий Харченко, Артем Авакянц, Валерий Валев, Николай Барышников, RustyXenum, De Scar, Maiji, Morovoi, Дмитрий Полумрак, Dan M, Oleg Chursanov, Sergey Shetko, Олег Гофтенюк, Матвей Автономов, Aleks Chevro, Irvitzer the Toy Soldier, Алексей Кочетков, Oliver Rozhnov, Павуканта, Natalia Iosifidis, Mallis, Михаил Хубеджев (Mykhailo K), Mykyta Baturin (Crio), Polimorfych, Ava_artem, UnknownFrom, o_0tshelnick, Vitalii Rogozin (WiiJoy), The Cratone, Андрей Зубов, Alexey Ershov, Svetlana K, In_a_ Traur, Галина Детинич, devil inc., Dmitry Severyanov, Sbryf."
+            }
+          ],
+          "id": "p366-23",
+          "sourcePage": 366
+        }
+      ]
+    }
+  ]
+}

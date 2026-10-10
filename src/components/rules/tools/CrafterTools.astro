@@ -1,5 +1,8 @@
 ---
+import { artisanToolRulesSource, formatArtisanToolRules } from '../../../data/items/artisanToolRules.ts';
+
 interface Tool {
+  id?: string;
   name: string;
   nameEn: string;
   cost: string;
@@ -12,6 +15,7 @@ interface Tool {
 const tools: Tool[] = [
   {
     name: "Инструменты алхимика",
+    id: 'alchemists-supplies',
     nameEn: "Alchemist's Supplies",
     cost: "50 зм",
     stat: "Интеллект",
@@ -21,6 +25,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты гончара",
+    id: 'potters-tools',
     nameEn: "Potter's Tools",
     cost: "10 зм",
     stat: "Интеллект",
@@ -30,6 +35,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты каллиграфа",
+    id: 'calligraphers-supplies',
     nameEn: "Calligrapher's Supplies",
     cost: "10 зм",
     stat: "Ловкость",
@@ -39,6 +45,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты каменщика",
+    id: 'masons-tools',
     nameEn: "Mason's Tools",
     cost: "10 зм",
     stat: "Сила",
@@ -48,6 +55,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты картографа",
+    id: 'cartographers-tools',
     nameEn: "Cartographer's Tools",
     cost: "15 зм",
     stat: "Мудрость",
@@ -57,6 +65,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты кожевника",
+    id: 'leatherworkers-tools',
     nameEn: "Leatherworker's Tools",
     cost: "5 зм",
     stat: "Ловкость",
@@ -70,6 +79,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты кузнеца",
+    id: 'smiths-tools',
     nameEn: "Smith's Tools",
     cost: "20 зм",
     stat: "Сила",
@@ -85,6 +95,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты пивовара",
+    id: 'brewers-supplies',
     nameEn: "Brewer's Supplies",
     cost: "20 зм",
     stat: "Интеллект",
@@ -94,6 +105,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты плотника",
+    id: 'carpenters-tools',
     nameEn: "Carpenter's Tools",
     cost: "8 зм",
     stat: "Сила",
@@ -106,6 +118,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты повара",
+    id: 'cooks-utensils',
     nameEn: "Cook's Utensils",
     cost: "1 зм",
     stat: "Мудрость",
@@ -115,6 +128,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты резчика по дереву",
+    id: 'woodcarvers-tools',
     nameEn: "Woodcarver's Tools",
     cost: "1 зм",
     stat: "Ловкость",
@@ -128,6 +142,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты ремонтника (жестянщика)",
+    id: 'tinkers-tools',
     nameEn: "Tinker's Tools",
     cost: "50 зм",
     stat: "Ловкость",
@@ -141,6 +156,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты сапожника",
+    id: 'cobblers-tools',
     nameEn: "Cobbler's Tools",
     cost: "5 зм",
     stat: "Ловкость",
@@ -150,6 +166,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты стеклодува",
+    id: 'glassblowers-tools',
     nameEn: "Glassblower's Tools",
     cost: "30 зм",
     stat: "Интеллект",
@@ -161,6 +178,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты ткача",
+    id: 'weavers-tools',
     nameEn: "Weaver's Tools",
     cost: "1 зм",
     stat: "Ловкость",
@@ -173,6 +191,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты художника",
+    id: 'painters-supplies',
     nameEn: "Painter's Supplies",
     cost: "10 зм",
     stat: "Мудрость",
@@ -182,6 +201,7 @@ const tools: Tool[] = [
   },
   {
     name: "Инструменты ювелира",
+    id: 'jewelers-tools',
     nameEn: "Jeweler's Tools",
     cost: "25 зм",
     stat: "Интеллект",
@@ -303,6 +323,12 @@ const tools: Tool[] = [
             <strong>Создание:</strong>
             <p>{tool.craftable.join(", ")}</p>
           </div>
+          {tool.id && (
+            <div class="additional-rules">
+              <p>{formatArtisanToolRules(tool.id)}</p>
+              <a href={artisanToolRulesSource} target="_blank" rel="noopener noreferrer">Источник: XGE, «Владение инструментами» ↗</a>
+            </div>
+          )}
         </div>
       </div>
     ))}
@@ -348,5 +374,17 @@ const tools: Tool[] = [
 
   .craftable {
     margin-top: 1rem;
+  }
+
+  .additional-rules {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+    overflow-wrap: anywhere;
+  }
+
+  .additional-rules p {
+    white-space: pre-wrap;
+    line-height: 1.6;
   }
 </style>

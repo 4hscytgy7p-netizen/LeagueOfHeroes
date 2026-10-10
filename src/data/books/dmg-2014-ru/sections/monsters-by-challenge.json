@@ -1,0 +1,2716 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "monsters-by-challenge",
+  "title": "Чудовища по показателю опасности",
+  "description": "",
+  "sourcePages": [
+    307,
+    308,
+    309,
+    310
+  ],
+  "group": "Приложение Б. Списки чудовищ",
+  "pages": [
+    {
+      "number": 307,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Ч"
+            },
+            {
+              "text": "УДОВИЩА"
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " УПОРЯДОЧЕННЫЕ ПО "
+            },
+            {
+              "text": ""
+            }
+          ],
+          "id": "p307-1",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ПОКАЗАТЕЛЮ ОПАСНОСТИ Ниже чудовища из Бестиария упорядочены по возрастанию показателя опасности."
+            }
+          ],
+          "id": "p307-2",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 0 (0–10 ОПЫТА)"
+            }
+          ],
+          "id": "p307-3",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Осьминог Паук Бабуин"
+            }
+          ],
+          "id": "p307-4",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ползающая рука Барсук"
+            }
+          ],
+          "id": "p307-5",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пробуждённый куст Визгун"
+            }
+          ],
+          "id": "p307-6",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Росток миконида Ворон"
+            }
+          ],
+          "id": "p307-7",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорпион Гигантский огненный жук"
+            }
+          ],
+          "id": "p307-8",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сова Гиена"
+            }
+          ],
+          "id": "p307-9",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шакал Гомункул"
+            }
+          ],
+          "id": "p307-10",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ястреб Гриф"
+            }
+          ],
+          "id": "p307-11",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ящерица Квиппер Козёл"
+            }
+          ],
+          "id": "p307-12",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 1/8 (25 ОПЫТА)"
+            }
+          ],
+          "id": "p307-13",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кошка Краб"
+            }
+          ],
+          "id": "p307-14",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верблюд Крыса"
+            }
+          ],
+          "id": "p307-15",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ветвистая зараза Куница"
+            }
+          ],
+          "id": "p307-16",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Воитель племени Лемур"
+            }
+          ],
+          "id": "p307-17",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский краб Летучая мышь"
+            }
+          ],
+          "id": "p307-18",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантская крыса Лягушка"
+            }
+          ],
+          "id": "p307-19",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантская куница Морской конёк"
+            }
+          ],
+          "id": "p307-20",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дворянин Обыватель"
+            }
+          ],
+          "id": "p307-21",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кобольд Олень"
+            }
+          ],
+          "id": "p307-22",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кровавый ястреб"
+            }
+          ],
+          "id": "p307-23",
+          "sourcePage": 307
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-307-b569aec0ae.webp",
+          "alt": "Иллюстрация к разделу «Чудовища по показателю опасности».",
+          "width": 621,
+          "height": 866,
+          "id": "p307-24",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Орёл"
+            }
+          ],
+          "id": "p307-25",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кровопийца"
+            }
+          ],
+          "id": "p307-26",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Троглодит"
+            }
+          ],
+          "id": "p307-27",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Культист"
+            }
+          ],
+          "id": "p307-28",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опасность ½ (100 опыта)"
+            }
+          ],
+          "id": "p307-29",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Летающая змея"
+            }
+          ],
+          "id": "p307-30",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой конь Мастиф"
+            }
+          ],
+          "id": "p307-31",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый миконид Мерфолк"
+            }
+          ],
+          "id": "p307-32",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ворг Монодрон"
+            }
+          ],
+          "id": "p307-33",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вьющаяся зараза Мул"
+            }
+          ],
+          "id": "p307-34",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Газовые споры Мэйн"
+            }
+          ],
+          "id": "p307-35",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантская оса Пони"
+            }
+          ],
+          "id": "p307-36",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский козёл Слаад головастик"
+            }
+          ],
+          "id": "p307-37",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский морской конёк Страж"
+            }
+          ],
+          "id": "p307-38",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глубинный гном Фламф"
+            }
+          ],
+          "id": "p307-39",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гнолл Ядовитая змея"
+            }
+          ],
+          "id": "p307-40",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Головорез Крокодил ОПАСНОСТЬ 1/4 (50 ОПЫТА)"
+            }
+          ],
+          "id": "p307-41",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куролиск Ледяной мефит Ааракокра"
+            }
+          ],
+          "id": "p307-42",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Людоящер Волк"
+            }
+          ],
+          "id": "p307-43",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магмин Гигантская летучая мышь"
+            }
+          ],
+          "id": "p307-44",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магмовый мефит Гигантская лягушка"
+            }
+          ],
+          "id": "p307-45",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Орк Гигантская многоножка"
+            }
+          ],
+          "id": "p307-46",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пронзатель Гигантская сова"
+            }
+          ],
+          "id": "p307-47",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пылевой мефит Гигантская ящерица"
+            }
+          ],
+          "id": "p307-48",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разведчик Гигантская ядовитая змея"
+            }
+          ],
+          "id": "p307-49",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ржавник Гигантский барсук"
+            }
+          ],
+          "id": "p307-50",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рифовая акула Гигантский паук-волк"
+            }
+          ],
+          "id": "p307-51",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рой насекомых Гоблин"
+            }
+          ],
+          "id": "p307-52",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сатир Гримлок"
+            }
+          ],
+          "id": "p307-53",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сахуагин Грязевой мефит"
+            }
+          ],
+          "id": "p307-54",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Серая слизь Дретч"
+            }
+          ],
+          "id": "p307-55",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скелет боевого коня Дроу"
+            }
+          ],
+          "id": "p307-56",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тень Дуодрон"
+            }
+          ],
+          "id": "p307-57",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тёмная мантия Дымовой мефит"
+            }
+          ],
+          "id": "p307-58",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тридрон Ездовая лошадь"
+            }
+          ],
+          "id": "p307-59",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хобгоблин Жаболюд"
+            }
+          ],
+          "id": "p307-60",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Человекообразная обезьяна Зомби"
+            }
+          ],
+          "id": "p307-61",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чёрный медведь Игольчатая зараза"
+            }
+          ],
+          "id": "p307-62",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шакальник Кабан Кенку Крылатый кобольд"
+            }
+          ],
+          "id": "p307-63",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 1 (200 ОПЫТА)"
+            }
+          ],
+          "id": "p307-64",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куо-тоа"
+            }
+          ],
+          "id": "p307-65",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бес Летающий меч"
+            }
+          ],
+          "id": "p307-66",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Босс гоблинов Лиловый гриб"
+            }
+          ],
+          "id": "p307-67",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бурый медведь Лось"
+            }
+          ],
+          "id": "p307-68",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вирмлинг латунного дракона Мерцающий пёс"
+            }
+          ],
+          "id": "p307-69",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вирмлинг медного дракона Пантера"
+            }
+          ],
+          "id": "p307-70",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волшебный дракончик (молодой)"
+            }
+          ],
+          "id": "p307-71",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паровой мефит"
+            }
+          ],
+          "id": "p307-72",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гарпия Пикси"
+            }
+          ],
+          "id": "p307-73",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантская гиена Прислужник"
+            }
+          ],
+          "id": "p307-74",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантская жаба Псевдодракон"
+            }
+          ],
+          "id": "p307-75",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский гриф Птеранодон"
+            }
+          ],
+          "id": "p307-76",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский орёл Рой воронов"
+            }
+          ],
+          "id": "p307-77",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский осьминог Рой крыс"
+            }
+          ],
+          "id": "p307-78",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский паук Рой летучих мышей"
+            }
+          ],
+          "id": "p307-79",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гиппогриф Скелет"
+            }
+          ],
+          "id": "p307-80",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дриада Спрайт"
+            }
+          ],
+          "id": "p307-81",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дуэргар Топороклюв"
+            }
+          ],
+          "id": "p307-82",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кваггот споровый слуга Троглодит"
+            }
+          ],
+          "id": "p307-83",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Квадрон Удав"
+            }
+          ],
+          "id": "p307-84",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Квазит Упряжная лошадь"
+            }
+          ],
+          "id": "p307-85",
+          "sourcePage": 307
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куо-тоа кнут"
+            }
+          ],
+          "id": "p307-86",
+          "sourcePage": 307
+        }
+      ]
+    },
+    {
+      "number": 308,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-308-b80c1cee25.webp",
+          "alt": "Иллюстрация к разделу «Чудовища по показателю опасности».",
+          "width": 591,
+          "height": 560,
+          "id": "p308-1",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вирмлинг зелёного дракона"
+            }
+          ],
+          "id": "p308-2",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лев"
+            }
+          ],
+          "id": "p308-3",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский удав Лютый волк"
+            }
+          ],
+          "id": "p308-4",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гитцерай монах Медвежатник"
+            }
+          ],
+          "id": "p308-5",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горгулья Огненная змея"
+            }
+          ],
+          "id": "p308-6",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Грик Оживлённый доспех"
+            }
+          ],
+          "id": "p308-7",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Грифон Пёс смерти"
+            }
+          ],
+          "id": "p308-8",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Друид Полуогр"
+            }
+          ],
+          "id": "p308-9",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жрица сахуагинов Пугало"
+            }
+          ],
+          "id": "p308-10",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Золотистый студень"
+            }
+          ],
+          "id": "p308-11",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мантикора ОПАСНОСТЬ 3 (700 ОПЫТА)"
+            }
+          ],
+          "id": "p308-12",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Минотавр Адская гончая"
+            }
+          ],
+          "id": "p308-13",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мумия Анкилозавр"
+            }
+          ],
+          "id": "p308-14",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наблюдатель Бородатый дьявол"
+            }
+          ],
+          "id": "p308-15",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полярный волк Василиск"
+            }
+          ],
+          "id": "p308-16",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рыцарь Вервольф"
+            }
+          ],
+          "id": "p308-17",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Совомед Ветеран"
+            }
+          ],
+          "id": "p308-18",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Умертвие Вирмлинг золотого дракона"
+            }
+          ],
+          "id": "p308-19",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ускользающий зверь Вирмлинг синего дракона"
+            }
+          ],
+          "id": "p308-20",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Юань-ти проклинатель Водная аномалия Вождь медвежатников"
+            }
+          ],
+          "id": "p308-21",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 4 (1100 ОПЫТА)"
+            }
+          ],
+          "id": "p308-22",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский скорпион Гитъянки воитель"
+            }
+          ],
+          "id": "p308-23",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Баньши Грелл"
+            }
+          ],
+          "id": "p308-24",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой вождь орков Доппельгангер"
+            }
+          ],
+          "id": "p308-25",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вервепрь Зелёная карга"
+            }
+          ],
+          "id": "p308-26",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вертигр Исчезающий паук"
+            }
+          ],
+          "id": "p308-27",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вирмлинг красного дракона Йети"
+            }
+          ],
+          "id": "p308-28",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гнолл клык Йеногу Капитан хобгоблинов"
+            }
+          ],
+          "id": "p308-29",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инкуб Кваггот тонот"
+            }
+          ],
+          "id": "p308-30",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Коатль Косатка"
+            }
+          ],
+          "id": "p308-31",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Король/королева ящеров Кошмар"
+            }
+          ],
+          "id": "p308-32",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Костяная нага Крюкастый ужас"
+            }
+          ],
+          "id": "p308-33",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ламия Куо-тоа надзиратель"
+            }
+          ],
+          "id": "p308-34",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Морская карга (в шабаше)"
+            }
+          ],
+          "id": "p308-35",
+          "sourcePage": 308
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-308-bd747043d3.webp",
+          "alt": "Иллюстрация к разделу «Чудовища по показателю опасности».",
+          "width": 740,
+          "height": 920,
+          "smallSrc": "/images/books/dmg-2014-ru/page-308-bd747043d3-640.webp",
+          "smallWidth": 640,
+          "id": "p308-36",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рой квипперов"
+            }
+          ],
+          "id": "p308-37",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Игольчатый дьявол Спектр"
+            }
+          ],
+          "id": "p308-38",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Капитан разбойников Тигр"
+            }
+          ],
+          "id": "p308-39",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кваггот Три-крин"
+            }
+          ],
+          "id": "p308-40",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кентавр Упырь"
+            }
+          ],
+          "id": "p308-41",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ковёр удушения Чистокровная юань-ти"
+            }
+          ],
+          "id": "p308-42",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Людоящер шаман Шпион"
+            }
+          ],
+          "id": "p308-43",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мимик Морская карга Носорог ОПАСНОСТЬ 2 (450 ОПЫТА)"
+            }
+          ],
+          "id": "p308-44",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нотик Аллозавр"
+            }
+          ],
+          "id": "p308-45",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огр Анхег"
+            }
+          ],
+          "id": "p308-46",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огр зомби Берсерк"
+            }
+          ],
+          "id": "p308-47",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Орк око Груумша Белый медведь"
+            }
+          ],
+          "id": "p308-48",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Орог Блуждающий огонёк"
+            }
+          ],
+          "id": "p308-49",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Охотничья акула Бормочущий ротовик"
+            }
+          ],
+          "id": "p308-50",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пегас Веркрыса"
+            }
+          ],
+          "id": "p308-51",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пентадрон Верховный миконид"
+            }
+          ],
+          "id": "p308-52",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Перитон Вирмлинг белого дракона"
+            }
+          ],
+          "id": "p308-53",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плезиозавр Вирмлинг бронзового дракона"
+            }
+          ],
+          "id": "p308-54",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пожиратель интеллекта Вирмлинг зелёного дракона"
+            }
+          ],
+          "id": "p308-55",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ползающий падальщик Вирмлинг серебряного дракона"
+            }
+          ],
+          "id": "p308-56",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пробуждённое дерево Вирмлинг чёрного дракона"
+            }
+          ],
+          "id": "p308-57",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рой ядовитых змей Водянник"
+            }
+          ],
+          "id": "p308-58",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Саблезубый тигр Вожак стаи гноллов"
+            }
+          ],
+          "id": "p308-59",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Священник Волшебный дракончик (старый)"
+            }
+          ],
+          "id": "p308-60",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скелет минотавра Вурдалак"
+            }
+          ],
+          "id": "p308-61",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Студенистый куб Гигантский кабан"
+            }
+          ],
+          "id": "p308-62",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фанатик культа Гигантский лось"
+            }
+          ],
+          "id": "p308-63",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эйзер Эттеркап"
+            }
+          ],
+          "id": "p308-64",
+          "sourcePage": 308
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Коатль"
+            }
+          ],
+          "id": "p308-65",
+          "sourcePage": 308
+        }
+      ]
+    },
+    {
+      "number": 309,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Привидение"
+            }
+          ],
+          "id": "p309-1",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Красный полудракон ветеран Пылающий череп"
+            }
+          ],
+          "id": "p309-2",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камбион Слон"
+            }
+          ],
+          "id": "p309-3",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Красный слаад Суккуб"
+            }
+          ],
+          "id": "p309-4",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меззолот Теневой демон"
+            }
+          ],
+          "id": "p309-5",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молодой ремораз Чёрная слизь"
+            }
+          ],
+          "id": "p309-6",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мясной голем Чууль"
+            }
+          ],
+          "id": "p309-7",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ночная карга Шлемоносный ужас"
+            }
+          ],
+          "id": "p309-8",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огненный элементаль Эттин"
+            }
+          ],
+          "id": "p309-9",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отидж Панцирница Ползающая насыпь ОПАСНОСТЬ 5 (1800 ОПЫТА)"
+            }
+          ],
+          "id": "p309-10",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порождение вампира Барлгура"
+            }
+          ],
+          "id": "p309-11",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Призрак Барон сахуагинов"
+            }
+          ],
+          "id": "p309-12",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ревенант Бурый увалень"
+            }
+          ],
+          "id": "p309-13",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Саламандра Верёвочник"
+            }
+          ],
+          "id": "p309-14",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трицератопс Вермедведь"
+            }
+          ],
+          "id": "p309-15",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тролль Водяной элементаль"
+            }
+          ],
+          "id": "p309-16",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Холмовой великан Воздушный элементаль"
+            }
+          ],
+          "id": "p309-17",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Шипастый дьявол Гигантская акула"
+            }
+          ],
+          "id": "p309-18",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Элитный воитель дроу Гигантский крокодил Гладиатор"
+            }
+          ],
+          "id": "p309-19",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 6 (2300 ОПЫТА)"
+            }
+          ],
+          "id": "p309-20",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горгона Единорог"
+            }
+          ],
+          "id": "p309-21",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верховный жрец куо-тоа Зелёная ведьма (в шабаше)"
+            }
+          ],
+          "id": "p309-22",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Виверна Земляной элементаль"
+            }
+          ],
+          "id": "p309-23",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Врок Злобоглаз зомби"
+            }
+          ],
+          "id": "p309-24",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Галеб дур Зорн"
+            }
+          ],
+          "id": "p309-25",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гитцерай зерт"
+            }
+          ],
+          "id": "p309-26",
+          "sourcePage": 309
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-309-f7295e3d65.webp",
+          "alt": "Иллюстрация к разделу «Чудовища по показателю опасности».",
+          "width": 599,
+          "height": 875,
+          "id": "p309-27",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Костяной дьявол"
+            }
+          ],
+          "id": "p309-28",
+          "sourcePage": 309
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-309-7fe53e49a3.webp",
+          "alt": "Иллюстрация к разделу «Чудовища по показателю опасности».",
+          "width": 534,
+          "height": 566,
+          "id": "p309-29",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ползающая"
+            }
+          ],
+          "id": "p309-30",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "насыпь"
+            }
+          ],
+          "id": "p309-31",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Драук"
+            }
+          ],
+          "id": "p309-32",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фомор Маг"
+            }
+          ],
+          "id": "p309-33",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хезроу Мамонт Медуза"
+            }
+          ],
+          "id": "p309-34",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 9 (5000 ОПЫТА)"
+            }
+          ],
+          "id": "p309-35",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молодой белый дракон"
+            }
+          ],
+          "id": "p309-36",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глабрезу Молодой латунный дракон"
+            }
+          ],
+          "id": "p309-37",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глиняный голем Невидимый охотник"
+            }
+          ],
+          "id": "p309-38",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Костяной дьявол Химера"
+            }
+          ],
+          "id": "p309-39",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молодой серебряный дракон Хобгоблин военачальник"
+            }
+          ],
+          "id": "p309-40",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молодой синий дракон Циклоп"
+            }
+          ],
+          "id": "p309-41",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Никалот Чазм"
+            }
+          ],
+          "id": "p309-42",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Облачный великан Огненный элементаль ОПАСНОСТЬ 7 (2900 ОПЫТА)"
+            }
+          ],
+          "id": "p309-43",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отвратительный йети Серый слаад Альфа грик"
+            }
+          ],
+          "id": "p309-44",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трент Гигантская человекообразная"
+            }
+          ],
+          "id": "p309-45",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "обезьяна"
+            }
+          ],
+          "id": "p309-46",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 10 (5900 ОПЫТА)"
+            }
+          ],
+          "id": "p309-47",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменный великан Маг дроу"
+            }
+          ],
+          "id": "p309-48",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аболет Молодой медный дракон"
+            }
+          ],
+          "id": "p309-49",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дэв Молодой чёрный дракон"
+            }
+          ],
+          "id": "p309-50",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Йоклол Ночная карга (в шабаше)"
+            }
+          ],
+          "id": "p309-51",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменный голем Молодой золотой дракон ОПАСНОСТЬ 8 (3900 ОПЫТА)"
+            }
+          ],
+          "id": "p309-52",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молодой красный дракон Охранная нага Гидра"
+            }
+          ],
+          "id": "p309-53",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смертельный слаад Гитъянки рыцарь Дроу жрица Лолт"
+            }
+          ],
+          "id": "p309-54",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 11 (7200 ОПЫТА)"
+            }
+          ],
+          "id": "p309-55",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Духовная нага Дьявол цепей"
+            }
+          ],
+          "id": "p309-56",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бехир Зелёный слаад"
+            }
+          ],
+          "id": "p309-57",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гиносфинкс Ледяной великан"
+            }
+          ],
+          "id": "p309-58",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дао Молодой бронзовый дракон"
+            }
+          ],
+          "id": "p309-59",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Джинн Молодой зелёный дракон"
+            }
+          ],
+          "id": "p309-60",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ифрит Наёмный убийца"
+            }
+          ],
+          "id": "p309-61",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Марид Плащевик"
+            }
+          ],
+          "id": "p309-62",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ремораз Свежеватель разума арканист"
+            }
+          ],
+          "id": "p309-63",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рогатый дьявол Тираннозавр рекс"
+            }
+          ],
+          "id": "p309-64",
+          "sourcePage": 309
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рух"
+            }
+          ],
+          "id": "p309-65",
+          "sourcePage": 309
+        }
+      ]
+    },
+    {
+      "number": 310,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 12 (8400 ОПЫТА)"
+            }
+          ],
+          "id": "p310-1",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 15 (13000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-2",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арканалот"
+            }
+          ],
+          "id": "p310-3",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вампир (воитель)"
+            }
+          ],
+          "id": "p310-4",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Архимаг"
+            }
+          ],
+          "id": "p310-5",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вампир (заклинатель)"
+            }
+          ],
+          "id": "p310-6",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эриния"
+            }
+          ],
+          "id": "p310-7",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый бронзовый дракон Взрослый зелёный дракон Лиловый червь ОПАСНОСТЬ 13 (10000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-8",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лорд-мумия (в логове)"
+            }
+          ],
+          "id": "p310-9",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вампир"
+            }
+          ],
+          "id": "p310-10",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тиран смерти (в логове)"
+            }
+          ],
+          "id": "p310-11",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый белый дракон Взрослый латунный дракон"
+            }
+          ],
+          "id": "p310-12",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 16 (15000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-13",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Злобоглаз (не в логове) Молодой красный теневой"
+            }
+          ],
+          "id": "p310-14",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый серебряный дракон дракон"
+            }
+          ],
+          "id": "p310-15",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый синий дракон Нальфешни"
+            }
+          ],
+          "id": "p310-16",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Железный голем Ракшас"
+            }
+          ],
+          "id": "p310-17",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лорд-мумия (в логове)"
+            }
+          ],
+          "id": "p310-18",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ультролот"
+            }
+          ],
+          "id": "p310-19",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Марилит Штормовой великан"
+            }
+          ],
+          "id": "p310-20",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планетар"
+            }
+          ],
+          "id": "p310-21",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 14 (11500 ОПЫТА)"
+            }
+          ],
+          "id": "p310-22",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 17 (18000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-23",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый медный дракон"
+            }
+          ],
+          "id": "p310-24",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Андросфинкс Взрослый чёрный дракон"
+            }
+          ],
+          "id": "p310-25",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый золотой дракон Злобоглаз (в логове)"
+            }
+          ],
+          "id": "p310-26",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый красный дракон Ледяной дьявол"
+            }
+          ],
+          "id": "p310-27",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый синий драколич Тиран смерти (не в логове)"
+            }
+          ],
+          "id": "p310-28",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гористро"
+            }
+          ],
+          "id": "p310-29",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дракочерепаха"
+            }
+          ],
+          "id": "p310-30",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 22 (41000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-31",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рыцарь смерти"
+            }
+          ],
+          "id": "p310-32",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний бронзовый дракон Древний зелёный дракон ОПАСНОСТЬ 18 (20000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-33",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лич (в логове)"
+            }
+          ],
+          "id": "p310-34",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Демилич (не в логове)"
+            }
+          ],
+          "id": "p310-35",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 23 (50000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-36",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 19 (22000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-37",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний серебряный дракон Балор"
+            }
+          ],
+          "id": "p310-38",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний синий дракон Империан ОПАСНОСТЬ 20 (25000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-39",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кракен Демил ич (в логове)"
+            }
+          ],
+          "id": "p310-40",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 24 (62000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-41",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний белый дракон Древний латунный дракон"
+            }
+          ],
+          "id": "p310-42",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний золотой дракон Исчадье преисподней"
+            }
+          ],
+          "id": "p310-43",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний красный дракон"
+            }
+          ],
+          "id": "p310-44",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 21 (33000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-45",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ОПАСНОСТЬ 30 Древний медный дракон"
+            }
+          ],
+          "id": "p310-46",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "(155000 ОПЫТА)"
+            }
+          ],
+          "id": "p310-47",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Древний чёрный дракон"
+            }
+          ],
+          "id": "p310-48",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тараск Лич (не в логове) Солар"
+            }
+          ],
+          "id": "p310-49",
+          "sourcePage": 310
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-310-e252d3bcb8.webp",
+          "alt": "Иллюстрация к разделу «Чудовища по показателю опасности».",
+          "width": 1170,
+          "height": 972,
+          "smallSrc": "/images/books/dmg-2014-ru/page-310-e252d3bcb8-640.webp",
+          "smallWidth": 640,
+          "id": "p310-50",
+          "sourcePage": 310
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Взрослый красный дракон"
+            }
+          ],
+          "id": "p310-51",
+          "sourcePage": 310
+        }
+      ]
+    }
+  ]
+}

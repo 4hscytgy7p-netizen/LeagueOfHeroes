@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-328",
+  "title": "Придорожный трактир",
+  "description": "",
+  "sourcePages": [
+    328
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 328,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-328-afc836db34.webp",
+          "alt": "Карта: Придорожный трактир",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-328-afc836db34-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Придорожный трактир\nВниз\nЭтаж 2\nВниз\nУровень земли\n1 квадрат = 5 футов\nВниз\nВниз\nВверх\nВниз\nПридорожный трактир\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков",
+          "textLabel": "Подписи на карте",
+          "id": "p328-1",
+          "sourcePage": 328
+        }
+      ]
+    }
+  ]
+}

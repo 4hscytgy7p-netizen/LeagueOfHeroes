@@ -1,0 +1,12 @@
+---
+import type { Creature } from '../../types/creature';
+import CreatureCard from './CreatureCard.astro';
+
+interface Props { creature: Creature; prefix: string; staticContent?: boolean; }
+const { creature, prefix, staticContent = false } = Astro.props;
+---
+
+<details class="creature-disclosure" data-creature-disclosure={creature.id}>
+  <summary><span class="creature-disclosure-name">{creature.name}</span><span class="creature-disclosure-label">Блок статистики · {creature.source.code}</span></summary>
+  <CreatureCard creature={creature} prefix={prefix} staticContent={staticContent} />
+</details>

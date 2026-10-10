@@ -56,6 +56,7 @@ export function buildFeatOptions(featsData: any[]) {
       id: item.id,
       name: item.name,
       nameEn: item.nameEn,
+      sourceBook: item.sourceBook,
       requirements: Array.isArray(item.requirements)
         ? item.requirements
         : [],
@@ -73,6 +74,7 @@ export function buildCustomLineageGeneralFeatOptions(
       id: item.id,
       name: item.name,
       nameEn: item.nameEn,
+      sourceBook: item.sourceBook,
       type: item.type,
       requirements: Array.isArray(item.requirements)
         ? item.requirements
@@ -90,6 +92,7 @@ export function buildFightingStyleOptions(featsData: any[]) {
     .map((item: any) => ({
       id: item.id,
       name: item.name,
+      sourceBook: item.sourceBook,
       href: `/feats/${item.id}`,
       requirements: Array.isArray(item.requirements) ? item.requirements : [],
       description: Array.isArray(item.effects)

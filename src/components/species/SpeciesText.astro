@@ -1,0 +1,21 @@
+---
+import { speciesContent } from '../../utils/speciesPage';
+interface Props { text: string; }
+const { text } = Astro.props;
+const blocks = speciesContent(text);
+---
+{blocks.map(block => block.kind === 'paragraph' ? <p>{block.text}</p>
+  : block.kind === 'list' ? <ul>{block.items.map(item => <li>{item}</li>)}</ul>
+  : <div class="table-container"><table>
+      <thead><tr>{block.headers.map(header => <th scope="col">{header}</th>)}</tr></thead>
+      <tbody>{block.rows.map(row => <tr>{row.map(cell => <td>{cell}</td>)}</tr>)}</tbody>
+    </table></div>)}
+<style>
+  p, ul { margin: 0 0 0.75rem; line-height: 1.6; }
+  ul { padding-left: 1.5rem; }
+  li + li { margin-top: 0.75rem; }
+  .table-container { max-width: 100%; overflow-x: auto; margin: 1rem 0; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 0.75rem; border: 1px solid var(--card-border); text-align: left; vertical-align: top; }
+  th, tr:nth-child(even) { background: var(--background); }
+</style>

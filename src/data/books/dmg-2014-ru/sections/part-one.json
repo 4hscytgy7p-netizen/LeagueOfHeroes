@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "part-one",
+  "title": "Часть 1: создатель миров",
+  "description": "",
+  "sourcePages": [
+    8
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 8,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-8-6b2af251b1.webp",
+          "alt": "Иллюстрация: Часть 1: создатель миров",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-8-6b2af251b1-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "ЧАСТЬ1\nСОЗДАТЕЛЬ МИРОВ",
+          "textLabel": "Текст иллюстрации",
+          "id": "p8-1",
+          "sourcePage": 8
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-325",
+  "title": "Крепость",
+  "description": "",
+  "sourcePages": [
+    325
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 325,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-325-1600574365.webp",
+          "alt": "Карта: Крепость",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-325-1600574365-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Крепость\nВниз\nВверх\nВниз\nВниз\nВверх\nВверх\nВверх\nКрепость\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков\nВниз\nВверх и\nвниз\nВниз\nВниз\nВниз\nВверх\nВниз\nВниз\nВверх\nВверх\nВверх\n1 квадрат = 5 футов",
+          "textLabel": "Подписи на карте",
+          "id": "p325-1",
+          "sourcePage": 325
+        }
+      ]
+    }
+  ]
+}

@@ -25,7 +25,8 @@ export const DEFAULT_CHARACTER_STATE = {
     hair: '',
     appearance: '',
     allies: '',
-    backstory: ''
+    backstory: '',
+    additionalFeatures: ''
   },
   species: null,
   speciesVariant: null,

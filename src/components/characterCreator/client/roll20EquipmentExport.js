@@ -177,10 +177,17 @@
     ].filter(Boolean).join('\n');
   }
 
-  function addWeapon(payload, item, quantity) {
+  function addWeapon(payload, item, quantity, hasSavageAttacks = false) {
     const inventoryRowId = createRoll20Id();
     const attackRowId = createRoll20Id();
     const weapon = parseWeapon(item);
+    const damage = weapon.damage || '1d4';
+    const damageDice = damage.match(/^(\d+)d(\d+)$/i);
+    const criticalDamage = hasSavageAttacks
+      && weapon.itemType === 'Melee Weapon'
+      && damageDice
+        ? `${Number(damageDice[1]) + 1}d${damageDice[2]}`
+        : damage;
     const itemModifiers = [
       `Item Type: ${weapon.itemType}`,
       weapon.damage ? `Damage: ${weapon.damage}` : '',
@@ -203,7 +210,6 @@
       equipped: '0'
     });
 
-    const damage = weapon.damage || '1d4';
     const damageType = weapon.damageType || '';
     const range = weapon.range || (weapon.itemType === 'Melee Weapon' ? '5' : '');
     const ability = weapon.attackAbility;
@@ -212,8 +218,13 @@
       'options-flag': '0',
       itemid: inventoryRowId,
       atkname: item.name,
+      atkflag: '{{attack=1}}',
       dmgbase: damage,
+      dmgcustcrit: criticalDamage,
+      dmgflag: '{{damage=1}} {{dmg1flag=1}}',
       dmgtype: damageType,
+      dmg2flag: '0',
+      saveflag: '0',
       atkrange: range,
       atkattr_base: ability,
       dmgattr: ability,
@@ -222,9 +233,10 @@
       atkbonus: '+2',
       atkcritrange: '20',
       rollbase_dmg: `@{wtype}&{template:dmg} {{rname=@{atkname}}} @{atkflag} {{range=@{atkrange}}} @{dmgflag} {{dmg1=[[${damage}+@{dmgattr}]]}} {{dmg1type=${damageType}}} @{dmg2flag} {{dmg2=[[0]]}} {{dmg2type=}} @{saveflag} @{hldmg} {{spelllevel=@{spelllevel}}} {{innate=@{spell_innate}}} {{globaldamage=@{global_damage_mod_roll}}} {{globaldamagetype=@{global_damage_mod_type}}} @{charname_output}`,
-      rollbase_crit: `@{wtype}&{template:dmg} {{crit=1}} {{rname=@{atkname}}} @{atkflag} {{range=@{atkrange}}} @{dmgflag} {{dmg1=[[${damage}+@{dmgattr}]]}} {{dmg1type=${damageType}}} @{dmg2flag} {{dmg2=[[0]]}} {{dmg2type=}} {{crit1=[[${damage}]]}} {{crit2=[[0]]}} @{saveflag} @{hldmg} {{spelllevel=@{spelllevel}}} {{innate=@{spell_innate}}} {{globaldamage=@{global_damage_mod_roll}}} {{globaldamagecrit=@{global_damage_mod_crit}}} {{globaldamagetype=@{global_damage_mod_type}}} @{charname_output}`,
+      rollbase_crit: `@{wtype}&{template:dmg} {{crit=1}} {{rname=@{atkname}}} @{atkflag} {{range=@{atkrange}}} @{dmgflag} {{dmg1=[[${damage}+@{dmgattr}]]}} {{dmg1type=${damageType}}} @{dmg2flag} {{dmg2=[[0]]}} {{dmg2type=}} {{crit1=[[${criticalDamage}]]}} {{crit2=[[0]]}} @{saveflag} @{hldmg} {{spelllevel=@{spelllevel}}} {{innate=@{spell_innate}}} {{globaldamage=@{global_damage_mod_roll}}} {{globaldamagecrit=@{global_damage_mod_crit}}} {{globaldamagetype=@{global_damage_mod_type}}} @{charname_output}`,
       rollbase: `@{wtype}&{template:atk} {{mod=@{atkbonus}}} {{rname=[@{atkname}](~repeating_attack_attack_dmg)}} {{rnamec=[@{atkname}](~repeating_attack_attack_crit)}} {{r1=[[@{d20}cs>@{atkcritrange}+@{atkattr_base}+2[PROF]]]}} @{rtype}cs>@{atkcritrange}+@{atkattr_base}+2[PROF]]]}} {{range=@{atkrange}}} {{spelllevel=@{spelllevel}}} {{innate=@{spell_innate}}} {{globalattack=@{global_attack_mod}}} @{charname_output}`
     });
+    return attackRowId;
   }
 
   function parseNaturalAttack(feature) {
@@ -265,8 +277,16 @@
       'options-flag': '0',
       itemid: '',
       atkname: name,
+      atkflag: '{{attack=1}}',
       dmgbase: damage,
+      dmgflag: '{{damage=1}} {{dmg1flag=1}}',
       dmgtype: damageType,
+      dmg2flag: '0',
+      saveflag: '0',
+      hldmg: '',
+      spelllevel: '',
+      spell_innate: '',
+      atk_desc: '',
       atkrange: range,
       atkattr_base: attackAbility,
       dmgattr: damageAbility,
@@ -278,6 +298,7 @@
       rollbase_crit: `@{wtype}&{template:dmg} {{crit=1}} {{rname=@{atkname}}} @{atkflag} {{range=@{atkrange}}} @{dmgflag} {{dmg1=[[${damage}+@{dmgattr}]]}} {{dmg1type=${damageType}}} @{dmg2flag} {{dmg2=[[0]]}} {{dmg2type=}} {{crit1=[[${damage}]]}} {{crit2=[[0]]}} @{saveflag} @{hldmg} {{spelllevel=@{spelllevel}}} {{innate=@{spell_innate}}} {{globaldamage=@{global_damage_mod_roll}}} {{globaldamagecrit=@{global_damage_mod_crit}}} {{globaldamagetype=@{global_damage_mod_type}}} @{charname_output}`,
       rollbase: `@{wtype}&{template:atk} {{mod=@{atkbonus}}} {{rname=[@{atkname}](~repeating_attack_attack_dmg)}} {{rnamec=[@{atkname}](~repeating_attack_attack_crit)}} {{r1=[[@{d20}cs>@{atkcritrange}+@{atkattr_base}+2[PROF]]]}} @{rtype}cs>@{atkcritrange}+@{atkattr_base}+2[PROF]]]}} {{range=@{atkrange}}} {{spelllevel=@{spelllevel}}} {{innate=@{spell_innate}}} {{globalattack=@{global_attack_mod}}} @{charname_output}`
     });
+    return attackRowId;
   }
 
   function addArmor(payload, item, quantity) {
@@ -297,6 +318,7 @@
       inventorysubflag: '0',
       equipped: '0'
     });
+    return rowId;
   }
 
   function addOrdinaryItem(payload, item, quantity) {
@@ -319,6 +341,7 @@
       inventorysubflag: '0',
       equipped: '0'
     });
+    return rowId;
   }
 
   function enhanceEquipment(payload, context) {
@@ -328,15 +351,24 @@
       EQUIPMENT_PACK_CONTENTS,
       findSpecies,
       findVariant,
-      getEffectiveAbilities
+      getEffectiveAbilities,
+      findClass,
+      totalScore
     } = context;
     if (!payload?.character || !Array.isArray(payload.character.attribs)) return payload;
 
-    // Основной экспорт создаёт упрощённые строки. Заменяем только инвентарь
-    // и связанные с ним атаки на полноценные карточки Roll20.
-    payload.character.attribs = payload.character.attribs.filter((attribute) =>
-      !/^repeating_inventory_/.test(String(attribute.name || ''))
-      && !/^repeating_attack_/.test(String(attribute.name || ''))
+    // Основной экспорт создаёт упрощённый инвентарь. Строки атак заклинаний
+    // сохраняем: они не относятся к инвентарю и уже полностью сформированы.
+    payload.character.attribs = payload.character.attribs.filter((attribute) => {
+      const attributeName = String(attribute.name || '');
+      return !/^repeating_inventory_/.test(attributeName)
+        && attributeName !== '_reporder_repeating_inventory';
+    });
+
+    const exportedAttackRowIds = new Set(
+      payload.character.attribs
+        .map((attribute) => String(attribute.name || '').match(/^repeating_attack_([^_]+)_/)?.[1] || '')
+        .filter(Boolean)
     );
 
     const items = equipmentShopItems || [];
@@ -401,8 +433,8 @@
       return key ? packs[key] : null;
     }
 
-    let totalWeight = 0;
-    function exportItem(item, quantity) {
+    const collectedItems = new Map();
+    function collectItem(item, quantity) {
       if (!item) return;
       const parts = packParts(item.name);
       if (Array.isArray(parts)) {
@@ -412,18 +444,16 @@
           const partQuantity = match ? Number(match[1]) : 1;
           const partName = match ? match[2] : text;
           const partItem = resolvePackItem(partName);
-          if (partItem) exportItem(partItem, partQuantity * quantity);
+          if (partItem) collectItem(partItem, partQuantity * quantity);
           else {
             const exportedQuantity = partQuantity * quantity;
             const fallback = packItemFallbacks.get(normalizeName(partName));
-            const fallbackWeight = Number(fallback?.weight || 0);
-            totalWeight += fallbackWeight * exportedQuantity;
-            addOrdinaryItem(payload, {
+            collectItem({
               name: fallback?.name || partName,
               nameEn: '',
               category: 'Снаряжение приключенца',
               categoryGroup: 'gear',
-              weight: fallbackWeight,
+              weight: Number(fallback?.weight || 0),
               description: '',
               sourceBook: ''
             }, exportedQuantity);
@@ -432,16 +462,25 @@
         return;
       }
 
-      totalWeight += Number(roll20ItemWeight(item)) * quantity;
-      if (item.categoryGroup === 'weapon') addWeapon(payload, item, quantity);
-      else if (item.categoryGroup === 'armor') addArmor(payload, item, quantity);
-      else addOrdinaryItem(payload, item, quantity);
+      const itemName = cleanText(item.name);
+      const itemQuantity = Math.max(1, Number(quantity || 1));
+      if (!itemName || !Number.isFinite(itemQuantity)) return;
+
+      // Одинаковые вещи могут прийти из нескольких наборов, стартового
+      // снаряжения и магазина. В Roll20 им нужна одна строка с общей численностью.
+      const key = normalizeName(itemName);
+      const collected = collectedItems.get(key);
+      if (collected) collected.quantity += itemQuantity;
+      else collectedItems.set(key, {
+        item: { ...item, name: itemName },
+        quantity: itemQuantity
+      });
     }
 
     for (const entry of state?.equipment?.inventory || []) {
       const item = itemById.get(String(entry.id));
       if (!item) continue;
-      exportItem(item, Math.max(1, Number(entry.quantity || 1)));
+      collectItem(item, Math.max(1, Number(entry.quantity || 1)));
     }
 
     const species = typeof findSpecies === 'function' ? findSpecies() : null;
@@ -449,11 +488,76 @@
     const speciesFeatures = typeof getEffectiveAbilities === 'function'
       ? getEffectiveAbilities(species, variant)
       : [];
+    const hasSavageAttacks = speciesFeatures.some((feature) =>
+      /(?:свирепые\s+атаки|savage\s+attacks)/i.test(
+        `${feature?.title || feature?.name || ''} ${feature?.description || ''}`
+      )
+    );
+
+    let totalWeight = 0;
+    const inventoryRowIds = [];
+    for (const { item, quantity } of collectedItems.values()) {
+      totalWeight += Number(roll20ItemWeight(item)) * quantity;
+      if (item.categoryGroup === 'weapon') {
+        const attackRowId = addWeapon(payload, item, quantity, hasSavageAttacks);
+        exportedAttackRowIds.add(attackRowId);
+        const inventoryRowAttribute = payload.character.attribs.find((attribute) =>
+          String(attribute.name || '').endsWith(`_itemattackid`)
+          && String(attribute.current || '') === attackRowId
+        );
+        const inventoryRowId = String(inventoryRowAttribute?.name || '')
+          .match(/^repeating_inventory_([^_]+)_/)?.[1];
+        if (inventoryRowId) inventoryRowIds.push(inventoryRowId);
+      } else if (item.categoryGroup === 'armor') {
+        inventoryRowIds.push(addArmor(payload, item, quantity));
+      } else {
+        inventoryRowIds.push(addOrdinaryItem(payload, item, quantity));
+      }
+    }
+
+    if (inventoryRowIds.length) {
+      addAttribute(payload, '_reporder_repeating_inventory', inventoryRowIds.join(','));
+    }
 
     speciesFeatures
       .map(parseNaturalAttack)
       .filter(Boolean)
-      .forEach((attack) => addNaturalAttack(payload, attack));
+      .forEach((attack) => exportedAttackRowIds.add(addNaturalAttack(payload, attack)));
+
+    const characterClass = typeof findClass === 'function' ? findClass() : null;
+    const classIdentity = `${characterClass?.id || state?.class || ''} ${characterClass?.name || ''} ${characterClass?.nameEn || ''}`
+      .toLocaleLowerCase('ru')
+      .replace(/ё/g, 'е');
+    const isMonk = /(?:^|\s|[-_])(?:monk|монах)(?:$|\s|[-_])/.test(classIdentity);
+
+    if (isMonk) {
+      const levelOne = Array.isArray(characterClass?.levels)
+        ? characterClass.levels.find((entry) => Number(entry?.level) === 1)
+        : null;
+      const martialArtsDie = normalizeDice(levelOne?.martialArts || '1d6').match(/\d+d\d+/i)?.[0] || '1d6';
+      const strengthScore = typeof totalScore === 'function' ? Number(totalScore('strength')) : 10;
+      const dexterityScore = typeof totalScore === 'function' ? Number(totalScore('dexterity')) : 10;
+      const attackAbility = dexterityScore >= strengthScore
+        ? '@{dexterity_mod}'
+        : '@{strength_mod}';
+
+      exportedAttackRowIds.add(addNaturalAttack(payload, {
+        name: 'Безоружный удар',
+        damage: martialArtsDie,
+        damageType: 'дробящий',
+        attackAbility,
+        damageAbility: attackAbility,
+        range: '5'
+      }));
+    }
+
+    const attackOrder = payload.character.attribs.find((attribute) =>
+      attribute.name === '_reporder_repeating_attack'
+    );
+    if (attackOrder) attackOrder.current = [...exportedAttackRowIds].join(',');
+    else if (exportedAttackRowIds.size) {
+      addAttribute(payload, '_reporder_repeating_attack', [...exportedAttackRowIds].join(','));
+    }
 
     const weightAttribute = payload.character.attribs.find((item) => item.name === 'weighttotal');
     if (weightAttribute) weightAttribute.current = totalWeight;

@@ -1,0 +1,2354 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "greyhawk-city-2",
+  "title": "Вольный город Серый ястреб · продолжение",
+  "description": "",
+  "sourcePages": [
+    132,
+    133,
+    134,
+    135
+  ],
+  "group": "Глава 5 · Серый ястреб",
+  "pages": [
+    {
+      "number": 132,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Город Серый ястреб и окрестности.",
+              "bold": true
+            }
+          ],
+          "id": "p132-1",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художник: Mike Schley",
+              "bold": true
+            },
+            {
+              "text": " ",
+              "italic": true
+            },
+            {
+              "text": "Оригинал",
+              "bold": true
+            },
+            {
+              "text": " ",
+              "italic": true
+            },
+            {
+              "text": "Версия для игроков",
+              "bold": true
+            },
+            {
+              "text": " ",
+              "italic": true
+            },
+            {
+              "text": "Русская версия",
+              "bold": true
+            }
+          ],
+          "id": "p132-2",
+          "sourcePage": 132
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-132-41161d7e30.webp",
+          "alt": "Иллюстрация к разделу «Вольный город Серый ястреб · продолжение».",
+          "width": 1082,
+          "height": 1400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-132-41161d7e30-640.webp",
+          "smallWidth": 640,
+          "id": "p132-3",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Большой южный полуостров",
+              "bold": true
+            }
+          ],
+          "id": "p132-4",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вольный город Посёлок Посёлок (подземный) Деревня"
+            }
+          ],
+          "id": "p132-5",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Река Высокие ",
+              "bold": true
+            },
+            {
+              "text": "Замок"
+            }
+          ],
+          "id": "p132-6",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "водопады",
+              "bold": true
+            }
+          ],
+          "id": "p132-7",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Камнефорт",
+              "bold": true
+            }
+          ],
+          "id": "p132-8",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Башня Руины Военный лагерь Мост Дорога Тропа"
+            }
+          ],
+          "id": "p132-9",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Город Серый ястреб",
+              "bold": true
+            }
+          ],
+          "id": "p132-10",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "и окрестности",
+              "bold": true
+            }
+          ],
+          "id": "p132-11",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ручей Хуральта",
+              "bold": true
+            }
+          ],
+          "id": "p132-12",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Нир Див",
+              "bold": true
+            }
+          ],
+          "id": "p132-13",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Срединный залив",
+              "bold": true
+            }
+          ],
+          "id": "p132-14",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Вязовщина Ущелье Селинтан Гроссетгроттел",
+              "bold": true
+            }
+          ],
+          "id": "p132-15",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменный",
+              "bold": true
+            }
+          ],
+          "id": "p132-16",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "мост",
+              "bold": true
+            }
+          ],
+          "id": "p132-17",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Замок Серый ястреб",
+              "bold": true
+            }
+          ],
+          "id": "p132-18",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Высокая дорога",
+              "bold": true
+            }
+          ],
+          "id": "p132-19",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Курганные холмы",
+              "bold": true
+            }
+          ],
+          "id": "p132-20",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Замок Токхел Чернокамень",
+              "bold": true
+            }
+          ],
+          "id": "p132-21",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парящие источники",
+              "bold": true
+            }
+          ],
+          "id": "p132-22",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Мост Загига",
+              "bold": true
+            }
+          ],
+          "id": "p132-23",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Город",
+              "bold": true
+            }
+          ],
+          "id": "p132-24",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Речная дорога",
+              "bold": true
+            }
+          ],
+          "id": "p132-25",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Серый ястреб",
+              "bold": true
+            }
+          ],
+          "id": "p132-26",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Крепость Брод",
+              "bold": true
+            }
+          ],
+          "id": "p132-27",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дорога Эри",
+              "bold": true
+            }
+          ],
+          "id": "p132-28",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Равнины Серого Река Селинтан ястреба",
+              "bold": true
+            }
+          ],
+          "id": "p132-29",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Река Эри",
+              "bold": true
+            }
+          ],
+          "id": "p132-30",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Поместье Чернояр Две переправы",
+              "bold": true
+            }
+          ],
+          "id": "p132-31",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Речная дорога",
+              "bold": true
+            }
+          ],
+          "id": "p132-32",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Особняк Пекулиар",
+              "bold": true
+            }
+          ],
+          "id": "p132-33",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Болотная тропа",
+              "bold": true
+            }
+          ],
+          "id": "p132-34",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Озеро Алмаз Пик Эри",
+              "bold": true
+            }
+          ],
+          "id": "p132-35",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Крепость Чёрная стена",
+              "bold": true
+            }
+          ],
+          "id": "p132-36",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Болотная река",
+              "bold": true
+            }
+          ],
+          "id": "p132-37",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Туманная топь",
+              "bold": true
+            }
+          ],
+          "id": "p132-38",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Река Нин",
+              "bold": true
+            }
+          ],
+          "id": "p132-39",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Крепость",
+              "bold": true
+            }
+          ],
+          "id": "p132-40",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длинный",
+              "bold": true
+            }
+          ],
+          "id": "p132-41",
+          "sourcePage": 132
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Болотная",
+              "bold": true
+            }
+          ],
+          "id": "p132-42",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дварфоход",
+              "bold": true
+            }
+          ],
+          "id": "p132-43",
+          "sourcePage": 132
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ручей",
+              "bold": true
+            }
+          ],
+          "id": "p132-44",
+          "sourcePage": 132
+        }
+      ]
+    },
+    {
+      "number": 133,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "За пределами городских стен",
+              "bold": true
+            }
+          ],
+          "id": "p133-1",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Карта «Город Серый ястреб и окрестности» отображает земли вокруг Вольного города Серый Ястреб. Ниже представлены места, в которых могут происходить приключения:"
+            }
+          ],
+          "id": "p133-2",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поместье Чернояр [Blackfair Manor].",
+              "bold": true
+            },
+            {
+              "text": " Одно из нескольких поместий и крепостей, разбросанных по равнине Серого ястреба, поместье Чернояр было основано выдающимся командиром кавалерии. Его конюшня славится как лучший источник быстрых и выносливых боевых коней во всей Фланессе, привлекая проницательных покупателей из Серого ястреба и дальних земель. Вокруг поместья расположены фермы, обширные пастбища и небольшая деревня с мельницей, тавернами, кузницей и мастерской по изготовлению сёдел."
+            }
+          ],
+          "id": "p133-3",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чернокамень [Blackstone].",
+              "bold": true
+            },
+            {
+              "text": " См. раздел «Поселения шахтёров» ниже."
+            }
+          ],
+          "id": "p133-4",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крепость Чёрная стена [Blackwall Keep]. ",
+              "bold": true
+            },
+            {
+              "text": "Одна из двух новых крепостей, построенных для наблюдения за Туманной топью, крепость Чёрная стена представляет собой мощную каменную башню с загоном для лошадей, окружённую деревянным частоколом. Солдаты из Серого ястреба несут гарнизонную службу в крепости и совершают вылазки для патрулирования северной окраины болота."
+            }
+          ],
+          "id": "p133-5",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Курганные холмы [Cairn Hills].",
+              "bold": true
+            },
+            {
+              "text": " Среди холмов к северу и востоку от города скрыты древние гробницы и полуразрушенные руины, привлекающие приключенцев, бандитов, культистов Стихийного зла и монстров."
+            }
+          ],
+          "id": "p133-6",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замок Серый ястреб [Castle Greyhawk].",
+              "bold": true
+            },
+            {
+              "text": " Путешественники, которые следуют по реке Селинтан на запад от города, приходят к каменному мосту. Оттуда им предстоит преодолеть несколько миль на северо-восток, чтобы достичь руин замка Серый ястреб. Построенный архимагом Загигом Ирагерне и заброшенный после его исчезновения, этот замок (и расположенные под ним многочисленные уровни подземелий) притягивает приключенцев, ищущих богатства, славу и магическое могущество. Говорят, что в этих руинах можно найти всевозможные чудеса, включая многочисленные порталы на другие планы."
+            }
+          ],
+          "id": "p133-7",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Озеро Алмаз [Diamond Lake].",
+              "bold": true
+            },
+            {
+              "text": " См. «Поселения шахтёров» ниже."
+            }
+          ],
+          "id": "p133-8",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вязовщина [Elmshire].",
+              "bold": true
+            },
+            {
+              "text": " Этот тихий городок с внушительным населением полуросликов расположен на берегу Нир Див. Рыбацкие лодки заполняют причалы. Жители приветствуют мирных гостей, особенно приключенцев, которые могут помочь защитить их от монстров, бандитов и культов Стихийного зла, скрывающихся в Курганных холмах."
+            }
+          ],
+          "id": "p133-9",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Деревни Эри [Ery Villages].",
+              "bold": true
+            },
+            {
+              "text": " Деревни Пик Эри и Эрибенд в основном заселены фермерами, которые отправляют большую часть своего урожая на продажу в Серый ястреб. Обе деревни находятся под влиянием двух выдающихся семей — Фэйрхайт и Визервинн. Их история сложна и включает многочисленные примеры вражды и браков между семьями, а также целый список мелких обид и благодеяний."
+            }
+          ],
+          "id": "p133-10",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крепость Брод [Ford Keep].",
+              "bold": true
+            },
+            {
+              "text": " Переправа через реку Селинтан позволяет путешественникам из Серого ястреба и южных регионов пересечь её в месте первого крупного изгиба. Лорд-мэр Серого ястреба построил здесь крепость Брод, чтобы защитить переправу от бандитов."
+            }
+          ],
+          "id": "p133-11",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ущелье Селинтан [Gorge of the Selintan].",
+              "bold": true
+            },
+            {
+              "text": " Возвышающиеся скалы окружают реку Селинтан на протяжении почти 10 миль. Через это ущелье, на высоте 800 футов над рекой, перекинут каменный арочный мост, искусно вырезанный в виде естественного продолжения скального основания. Этот мост значительно облегчает передвижение между Серым ястребом и Гроссетгроттелем. В качестве меры предосторожности гномы-архитекторы спрятали в конструкции железный штифт; если его извлечь, весь мост рухнет."
+            }
+          ],
+          "id": "p133-12",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гроссетгроттел [Grossettgrottell].",
+              "bold": true
+            },
+            {
+              "text": " Трудолюбивое сообщество гномов-шахтёров и собирателей живёт в этой сети высеченных тоннелей и естественных пещер. Гномы обменивают драгоценные камни и редкие грибы на помощь в отражении нападений монстров из Подземья."
+            }
+          ],
+          "id": "p133-13",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крепость Болотная [Marsh Keep].",
+              "bold": true
+            },
+            {
+              "text": " Подобно крепости Чёрная стена, крепость Болотная была недавно построена и охраняет Туманную топь. Дорога Дварфволк ведёт на восток от башни к Грейсмиру — добывающему городу с большим населением дварфов."
+            }
+          ],
+          "id": "p133-14",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поселения шахтёров [Mining Towns].",
+              "bold": true
+            },
+            {
+              "text": " Чернокамень, озеро Алмаз и Парящие источники — небольшие шахтёрские города, находящиеся под управлением и защитой Вольного города Серый ястреб. Город часто отправляет приключенцев, чтобы устранить угрозы шахтёрам и горнодобывающим предприятиям. В последнее время среди таких угроз — агенты Иуза, стремящиеся дестабилизировать экономику города."
+            }
+          ],
+          "id": "p133-15",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Туманная топь [Mistmarsh].",
+              "bold": true
+            },
+            {
+              "text": " Этот огромный топкий край скрывает наполовину затонувшие руины древнего города, окутанные туманом и охраняемые семейством чёрных драконов. Блуждающие огоньки заманивают добычу в руины, где её ждёт гибель."
+            }
+          ],
+          "id": "p133-16",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Особняк Пекулиар [Peculiar Manor].",
+              "bold": true
+            },
+            {
+              "text": " Как и другие особняки на равнине Серый ястреб, особняк Пекулиар был основан ныне забытым героем древней войны. Однако несколько лет назад его приобрели Санджара и Четна Мохсины, бывшие приключенцы из Экбира. Мохсины варят необычайное пиво, которое они называют «Старый Пекулиар», и именно оно дало особняку его название."
+            }
+          ],
+          "id": "p133-17",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парящие источники [Steaming Springs].",
+              "bold": true
+            },
+            {
+              "text": " См. раздел «Поселения шахтёров» выше."
+            }
+          ],
+          "id": "p133-18",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменный мост [Stone Bridge].",
+              "bold": true
+            },
+            {
+              "text": " Небольшой гарнизон в форте Каменный мост тщательно следит за речным трафиком, приближающимся к Серояму ястребу."
+            }
+          ],
+          "id": "p133-19",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Камнефорт [Stonefort].",
+              "bold": true
+            },
+            {
+              "text": " Гарнизон солдат из Серого ястреба охраняет южную часть Нир-Див с высоких бастионов Камнефорта. Этот форт также защищает гравийный карьер."
+            }
+          ],
+          "id": "p133-20",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Замок Токхел [Tokhel Castle].",
+              "bold": true
+            },
+            {
+              "text": " Эти разрушенные руины возвышаются на скалистом мысе над Нир Див. Большая часть руин находится в зоне мёртвой магии (см. Эффекты окружающей среды в главе 3), а монстры стерегут тайны, скрытые в древнем замке и его подземельях."
+            }
+          ],
+          "id": "p133-21",
+          "sourcePage": 133
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Две переправы [Two Ford].",
+              "bold": true
+            },
+            {
+              "text": " Небольшая деревня Две переправы зависит от речной торговли, снабжающей её таверны, кузницы и торговцев. Здесь также торгуют рудой из горнодобывающих городов, так как транспортировка по реке гораздо удобнее, чем по суше."
+            }
+          ],
+          "id": "p133-22",
+          "sourcePage": 133
+        }
+      ]
+    },
+    {
+      "number": 134,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-134-8f6336f8a7.webp",
+          "alt": "Иллюстрация к разделу «Вольный город Серый ястреб · продолжение».",
+          "width": 994,
+          "height": 1400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-134-8f6336f8a7-640.webp",
+          "smallWidth": 640,
+          "caption": "Руины Затерянные пещеры Соджкона Высокород (озеро неизвед Срединный залив Замок Серый ястреб Серый ястр Диверс Вербобонк Храм Стихийного зла Призрачная баш Инвернесса",
+          "id": "p134-1",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Океан Драмидж",
+              "bold": true
+            }
+          ],
+          "id": "p134-2",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чакьик",
+              "bold": true
+            }
+          ],
+          "id": "p134-3",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Земля Чёрного льда",
+              "bold": true
+            }
+          ],
+          "id": "p134-4",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Арн",
+              "bold": true
+            }
+          ],
+          "id": "p134-5",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тайогненный лес",
+              "bold": true
+            }
+          ],
+          "id": "p134-6",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Беспл пуст",
+              "bold": true
+            }
+          ],
+          "id": "p134-7",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Вегвиур Охо",
+              "bold": true
+            }
+          ],
+          "id": "p134-8",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Озеро Топк Иуз",
+              "bold": true
+            }
+          ],
+          "id": "p134-9",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хребет Клатсшпор",
+              "bold": true
+            }
+          ],
+          "id": "p134-10",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Горы Ятиль",
+              "bold": true
+            }
+          ],
+          "id": "p134-11",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Султанат Экбир",
+              "bold": true
+            }
+          ],
+          "id": "p134-12",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Пашалик Тусмит",
+              "bold": true
+            }
+          ],
+          "id": "p134-13",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Султанат Зейфа",
+              "bold": true
+            }
+          ],
+          "id": "p134-14",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Равнины Улаканда",
+              "bold": true
+            }
+          ],
+          "id": "p134-15",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Барьерные пики",
+              "bold": true
+            }
+          ],
+          "id": "p134-16",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Ульспру",
+              "bold": true
+            }
+          ],
+          "id": "p134-17",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Улл",
+              "bold": true
+            }
+          ],
+          "id": "p134-18",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Долина",
+              "bold": true
+            }
+          ],
+          "id": "p134-19",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "магов",
+              "bold": true
+            }
+          ],
+          "id": "p134-20",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Великое герцогство Джеофф",
+              "bold": true
+            }
+          ],
+          "id": "p134-21",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Западный",
+              "bold": true
+            }
+          ],
+          "id": "p134-22",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Перренланд",
+              "bold": true
+            }
+          ],
+          "id": "p134-23",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Озеро Уайстил",
+              "bold": true
+            }
+          ],
+          "id": "p134-24",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Лес Весве",
+              "bold": true
+            }
+          ],
+          "id": "p134-25",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ра Рогатое общество",
+              "bold": true
+            }
+          ],
+          "id": "p134-26",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Центральный",
+              "bold": true
+            }
+          ],
+          "id": "p134-27",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зе",
+              "bold": true
+            }
+          ],
+          "id": "p134-28",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Фланесс",
+              "bold": true
+            }
+          ],
+          "id": "p134-29",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Кет",
+              "bold": true
+            }
+          ],
+          "id": "p134-30",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Щ",
+              "bold": true
+            }
+          ],
+          "id": "p134-31",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Нир",
+              "bold": true
+            }
+          ],
+          "id": "p134-32",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Королевство",
+              "bold": true
+            }
+          ],
+          "id": "p134-33",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фурионди Велуна",
+              "bold": true
+            }
+          ],
+          "id": "p134-34",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Биссела",
+              "bold": true
+            }
+          ],
+          "id": "p134-35",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Горы Лортмил Серый ястреб",
+              "bold": true
+            }
+          ],
+          "id": "p134-36",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Старшая",
+              "bold": true
+            }
+          ],
+          "id": "p134-37",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "марка",
+              "bold": true
+            }
+          ],
+          "id": "p134-38",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дикий берег Селен Герцогство",
+              "bold": true
+            }
+          ],
+          "id": "p134-39",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Улек",
+              "bold": true
+            }
+          ],
+          "id": "p134-40",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Старый Кеоланд",
+              "bold": true
+            }
+          ],
+          "id": "p134-41",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Горы Кристального тумана",
+              "bold": true
+            }
+          ],
+          "id": "p134-42",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Фланесс",
+              "bold": true
+            }
+          ],
+          "id": "p134-43",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Графство",
+              "bold": true
+            }
+          ],
+          "id": "p134-44",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Стерич Сухие степи",
+              "bold": true
+            }
+          ],
+          "id": "p134-45",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Море Пыли",
+              "bold": true
+            }
+          ],
+          "id": "p134-46",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Город столица Город Вольный город Посёлок Подземелье или руины"
+            }
+          ],
+          "id": "p134-47",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1 гекс = 30 миль"
+            }
+          ],
+          "id": "p134-48",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Улек",
+              "bold": true
+            }
+          ],
+          "id": "p134-49",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Помарж Княжество",
+              "bold": true
+            }
+          ],
+          "id": "p134-50",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Королевство",
+              "bold": true
+            }
+          ],
+          "id": "p134-51",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Улек",
+              "bold": true
+            }
+          ],
+          "id": "p134-52",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Кеоланд",
+              "bold": true
+            }
+          ],
+          "id": "p134-53",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Йомения",
+              "bold": true
+            }
+          ],
+          "id": "p134-54",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Остров Грузоброса",
+              "bold": true
+            }
+          ],
+          "id": "p134-55",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Остров",
+              "bold": true
+            }
+          ],
+          "id": "p134-56",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Владения",
+              "bold": true
+            }
+          ],
+          "id": "p134-57",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Лазу",
+              "bold": true
+            }
+          ],
+          "id": "p134-58",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Путного",
+              "bold": true
+            }
+          ],
+          "id": "p134-59",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Форских",
+              "bold": true
+            }
+          ],
+          "id": "p134-60",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ветра Остров",
+              "bold": true
+            }
+          ],
+          "id": "p134-61",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "принцев",
+              "bold": true
+            }
+          ],
+          "id": "p134-62",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крушена",
+              "bold": true
+            }
+          ],
+          "id": "p134-63",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Залив Джеклеа",
+              "bold": true
+            }
+          ],
+          "id": "p134-64",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Адские горны",
+              "bold": true
+            }
+          ],
+          "id": "p134-65",
+          "sourcePage": 134
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Джунгли Амедио",
+              "bold": true
+            }
+          ],
+          "id": "p134-66",
+          "sourcePage": 134
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ос",
+              "bold": true
+            }
+          ],
+          "id": "p134-67",
+          "sourcePage": 134
+        }
+      ]
+    },
+    {
+      "number": 135,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-135-682a065e70.webp",
+          "alt": "Иллюстрация к разделу «Вольный город Серый ястреб · продолжение».",
+          "width": 994,
+          "height": 1400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-135-682a065e70-640.webp",
+          "smallWidth": 640,
+          "caption": "Гора Белый шлейф данных глубин) реб Замок Мор шня Железные врата Гробница Ужасов Рел Астра",
+          "id": "p135-1",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Ледяное море",
+              "bold": true
+            }
+          ],
+          "id": "p135-2",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Владения",
+              "bold": true
+            }
+          ],
+          "id": "p135-3",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Северное королевство Круски",
+              "bold": true
+            }
+          ],
+          "id": "p135-4",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Горы Коруск Гриффовы горы",
+              "bold": true
+            }
+          ],
+          "id": "p135-5",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каменного",
+              "bold": true
+            }
+          ],
+          "id": "p135-6",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "плодные",
+              "bold": true
+            }
+          ],
+          "id": "p135-7",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "кулака",
+              "bold": true
+            }
+          ],
+          "id": "p135-8",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "тоши",
+              "bold": true
+            }
+          ],
+          "id": "p135-9",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "королевство Шнай",
+              "bold": true
+            }
+          ],
+          "id": "p135-10",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Северное королевство Фрузти",
+              "bold": true
+            }
+          ],
+          "id": "p135-11",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "отничьи угодья",
+              "bold": true
+            }
+          ],
+          "id": "p135-12",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Северное",
+              "bold": true
+            }
+          ],
+          "id": "p135-13",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Северный Фланесс",
+              "bold": true
+            }
+          ],
+          "id": "p135-14",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Лес Феллрив",
+              "bold": true
+            }
+          ],
+          "id": "p135-15",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Герцогство",
+              "bold": true
+            }
+          ],
+          "id": "p135-16",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Острогорье",
+              "bold": true
+            }
+          ],
+          "id": "p135-17",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тенх",
+              "bold": true
+            }
+          ],
+          "id": "p135-18",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "азбойничьи королевства",
+              "bold": true
+            }
+          ],
+          "id": "p135-19",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Залив Грендеп",
+              "bold": true
+            }
+          ],
+          "id": "p135-20",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ратик",
+              "bold": true
+            }
+          ],
+          "id": "p135-21",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Теократия Пейла",
+              "bold": true
+            }
+          ],
+          "id": "p135-22",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "емли",
+              "bold": true
+            }
+          ],
+          "id": "p135-23",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Янтарный Щита",
+              "bold": true
+            }
+          ],
+          "id": "p135-24",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "лес",
+              "bold": true
+            }
+          ],
+          "id": "p135-25",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "р Див",
+              "bold": true
+            }
+          ],
+          "id": "p135-26",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Графство",
+              "bold": true
+            }
+          ],
+          "id": "p135-27",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Урнст",
+              "bold": true
+            }
+          ],
+          "id": "p135-28",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Королевство Найронд Герцогство Урнст",
+              "bold": true
+            }
+          ],
+          "id": "p135-29",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художник:",
+              "bold": true
+            }
+          ],
+          "id": "p135-30",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Океан Солнор",
+              "bold": true
+            }
+          ],
+          "id": "p135-31",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Костяная марка",
+              "bold": true
+            }
+          ],
+          "id": "p135-32",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Mike Schley",
+              "bold": true
+            }
+          ],
+          "id": "p135-33",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ардиак",
+              "bold": true
+            }
+          ],
+          "id": "p135-34",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оригинал",
+              "bold": true
+            }
+          ],
+          "id": "p135-35",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Восточный Фланесс",
+              "bold": true
+            }
+          ],
+          "id": "p135-36",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бирюзовый",
+              "bold": true
+            }
+          ],
+          "id": "p135-37",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "лес",
+              "bold": true
+            }
+          ],
+          "id": "p135-38",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прелатство",
+              "bold": true
+            }
+          ],
+          "id": "p135-39",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Алмор а",
+              "bold": true
+            }
+          ],
+          "id": "p135-40",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Залив Релмор",
+              "bold": true
+            }
+          ],
+          "id": "p135-41",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Версия для игроков",
+              "bold": true
+            }
+          ],
+          "id": "p135-42",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Морские бароны Великое королевство",
+              "bold": true
+            }
+          ],
+          "id": "p135-43",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Геарнатово море",
+              "bold": true
+            }
+          ],
+          "id": "p135-44",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ахлисса ж",
+              "bold": true
+            }
+          ],
+          "id": "p135-45",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оннвал",
+              "bold": true
+            }
+          ],
+          "id": "p135-46",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Русская версия",
+              "bold": true
+            }
+          ],
+          "id": "p135-47",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Медегия",
+              "bold": true
+            }
+          ],
+          "id": "p135-48",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нагорье Хестмарк",
+              "bold": true
+            }
+          ],
+          "id": "p135-49",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Иди",
+              "bold": true
+            }
+          ],
+          "id": "p135-50",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Суннди",
+              "bold": true
+            }
+          ],
+          "id": "p135-51",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "урное море",
+              "bold": true
+            }
+          ],
+          "id": "p135-52",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Острова Брызг",
+              "bold": true
+            }
+          ],
+          "id": "p135-53",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Море Аэрди",
+              "bold": true
+            }
+          ],
+          "id": "p135-54",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Необъятные болота",
+              "bold": true
+            }
+          ],
+          "id": "p135-55",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пролив Тилва",
+              "bold": true
+            }
+          ],
+          "id": "p135-56",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Шар",
+              "bold": true
+            }
+          ],
+          "id": "p135-57",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Острова Олман",
+              "bold": true
+            }
+          ],
+          "id": "p135-58",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Денсаков залив",
+              "bold": true
+            }
+          ],
+          "id": "p135-59",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Владычество",
+              "bold": true
+            }
+          ],
+          "id": "p135-60",
+          "sourcePage": 135
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "островов",
+              "bold": true
+            }
+          ],
+          "id": "p135-61",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Море Ольятт",
+              "bold": true
+            }
+          ],
+          "id": "p135-62",
+          "sourcePage": 135
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Хепмоналанд",
+              "bold": true
+            }
+          ],
+          "id": "p135-63",
+          "sourcePage": 135
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+---
+import '../../styles/search.css';
+---
+<dialog class="site-search-dialog" data-quick-search aria-labelledby="quick-search-title">
+  <div class="site-search-dialog-header">
+    <h2 id="quick-search-title">Поиск по справочнику</h2>
+    <button type="button" class="site-search-close" data-close-search aria-label="Закрыть поиск">×</button>
+  </div>
+  <label class="site-search-label" for="quick-search-input">Название на русском или английском</label>
+  <input id="quick-search-input" class="site-search-input" type="search" maxlength="160" autocomplete="off" placeholder="Заклинание, правило, особенность…" aria-controls="quick-search-results" />
+  <p class="site-search-status" data-search-status role="status" aria-live="polite">Введите хотя бы 2 символа.</p>
+  <ol id="quick-search-results" class="site-search-results" data-search-results aria-label="Результаты быстрого поиска"></ol>
+  <button type="button" class="site-search-button" data-search-retry hidden>Повторить поиск</button>
+  <div class="site-search-dialog-footer">
+    <a href="/search" data-all-results>Все результаты и поиск по текстам книг →</a>
+    <span>↑ ↓ — переход · Esc — закрыть</span>
+  </div>
+</dialog>
+<script>
+  import '../../scripts/siteSearch.ts';
+</script>

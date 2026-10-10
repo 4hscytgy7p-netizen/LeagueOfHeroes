@@ -1,0 +1,31 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "section-201",
+  "title": "Иллюстрация к части 3",
+  "description": "",
+  "sourcePages": [
+    201
+  ],
+  "group": "Глава 9. Сражение",
+  "pages": [
+    {
+      "number": 201,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-201-ce695afc93.webp",
+          "alt": "Иллюстрация: Иллюстрация к части 3",
+          "width": 1698,
+          "height": 2400,
+          "smallSrc": "/images/books/phb-2014-ru/page-201-ce695afc93-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "",
+          "textLabel": "Текст иллюстрации",
+          "id": "p201-1",
+          "sourcePage": 201
+        }
+      ]
+    }
+  ]
+}

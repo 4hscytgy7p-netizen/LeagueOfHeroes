@@ -1,0 +1,3769 @@
+{
+  "bookId": "phb-2024-ru",
+  "id": "creatures-1",
+  "title": "Статблоки существ · Часть 1",
+  "description": "Приложение Б: · Статблоки существ",
+  "sourcePages": [
+    332,
+    333,
+    334,
+    335
+  ],
+  "group": "Приложение Б · Существа",
+  "pages": [
+    {
+      "number": 332,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Приложение Б:",
+              "bold": true
+            }
+          ],
+          "id": "p332-1",
+          "sourcePage": 332
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Статблоки существ",
+              "bold": true
+            }
+          ],
+          "id": "p332-2",
+          "sourcePage": 332
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "В этом приложении приведены статблоки существ, упомянутых в других разделах книги, особенно в главах о классах, снаряжении и заклинаниях. См. глоссарий правил для получения информации о том, как читать статблок, а также Бестиарий для большего количества существ. Следующие статблоки представлены в алфавитном порядке. Когда Мастер использует статблок, он может изменять его детали."
+            }
+          ],
+          "id": "p332-3",
+          "sourcePage": 332
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Барсук 332"
+            }
+          ],
+          "targetPage": 332,
+          "style": "reference",
+          "id": "p332-4",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-332"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бес"
+            }
+          ],
+          "targetPage": 332,
+          "style": "reference",
+          "id": "p332-5",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-332"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боевой конь"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "333"
+            }
+          ],
+          "targetPage": 333,
+          "style": "reference",
+          "id": "p332-6",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-333"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бурый медведь"
+            }
+          ],
+          "targetPage": 333,
+          "style": "reference",
+          "id": "p332-7",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-333"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Верблюд"
+            }
+          ],
+          "targetPage": 333,
+          "style": "reference",
+          "id": "p332-8",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-333"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волк"
+            }
+          ],
+          "targetPage": 333,
+          "style": "reference",
+          "id": "p332-9",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-333"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ворон 334"
+            }
+          ],
+          "targetPage": 334,
+          "style": "reference",
+          "id": "p332-10",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-334"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский барсук"
+            }
+          ],
+          "targetPage": 334,
+          "style": "reference",
+          "id": "p332-11",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-334"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантская куница"
+            }
+          ],
+          "targetPage": 334,
+          "style": "reference",
+          "id": "p332-12",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-334"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский козёл"
+            }
+          ],
+          "targetPage": 334,
+          "style": "reference",
+          "id": "p332-13",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-334"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский краб 335"
+            }
+          ],
+          "targetPage": 335,
+          "style": "reference",
+          "id": "p332-14",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-335"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский морской конёк"
+            }
+          ],
+          "targetPage": 335,
+          "style": "reference",
+          "id": "p332-15",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-335"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский паук"
+            }
+          ],
+          "targetPage": 335,
+          "style": "reference",
+          "id": "p332-16",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-1/#page-335"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ездовая лошадь 336"
+            }
+          ],
+          "targetPage": 336,
+          "style": "reference",
+          "id": "p332-17",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-336"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Зомби"
+            }
+          ],
+          "targetPage": 336,
+          "style": "reference",
+          "id": "p332-18",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-336"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кабан"
+            }
+          ],
+          "targetPage": 336,
+          "style": "reference",
+          "id": "p332-19",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-336"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Квазит 337"
+            }
+          ],
+          "targetPage": 337,
+          "style": "reference",
+          "id": "p332-20",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-337"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Козёл"
+            }
+          ],
+          "targetPage": 337,
+          "style": "reference",
+          "id": "p332-21",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-337"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кошка 338"
+            }
+          ],
+          "targetPage": 338,
+          "style": "reference",
+          "id": "p332-22",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-338"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Краб"
+            }
+          ],
+          "targetPage": 338,
+          "style": "reference",
+          "id": "p332-23",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-338"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крокодил"
+            }
+          ],
+          "targetPage": 338,
+          "style": "reference",
+          "id": "p332-24",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-338"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крыса 339"
+            }
+          ],
+          "targetPage": 339,
+          "style": "reference",
+          "id": "p332-25",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-339"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куница"
+            }
+          ],
+          "targetPage": 339,
+          "style": "reference",
+          "id": "p332-26",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-339"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лев"
+            }
+          ],
+          "targetPage": 339,
+          "style": "reference",
+          "id": "p332-27",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-339"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Летучая мышь"
+            }
+          ],
+          "targetPage": 339,
+          "style": "reference",
+          "id": "p332-28",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-2/#page-339"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лютый волк"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "340"
+            }
+          ],
+          "targetPage": 340,
+          "style": "reference",
+          "id": "p332-29",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-340"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лягушка"
+            }
+          ],
+          "targetPage": 340,
+          "style": "reference",
+          "id": "p332-30",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-340"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мастиф"
+            }
+          ],
+          "targetPage": 340,
+          "style": "reference",
+          "id": "p332-31",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-340"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мул 341"
+            }
+          ],
+          "targetPage": 341,
+          "style": "reference",
+          "id": "p332-32",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-341"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обезьяна"
+            }
+          ],
+          "targetPage": 341,
+          "style": "reference",
+          "id": "p332-33",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-341"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лось"
+            }
+          ],
+          "targetPage": 341,
+          "style": "reference",
+          "id": "p332-34",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-341"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Осьминог"
+            }
+          ],
+          "targetPage": 341,
+          "style": "reference",
+          "id": "p332-35",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-341"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пантера 342"
+            }
+          ],
+          "targetPage": 342,
+          "style": "reference",
+          "id": "p332-36",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-342"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Паук"
+            }
+          ],
+          "targetPage": 342,
+          "style": "reference",
+          "id": "p332-37",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-342"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Псевдодракон"
+            }
+          ],
+          "targetPage": 342,
+          "style": "reference",
+          "id": "p332-38",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-342"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пони"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "343"
+            }
+          ],
+          "targetPage": 343,
+          "style": "reference",
+          "id": "p332-39",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-343"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рифовая акула"
+            }
+          ],
+          "targetPage": 343,
+          "style": "reference",
+          "id": "p332-40",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-343"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скелет"
+            }
+          ],
+          "targetPage": 343,
+          "style": "reference",
+          "id": "p332-41",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-343"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорпион"
+            }
+          ],
+          "targetPage": 343,
+          "style": "reference",
+          "id": "p332-42",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-3/#page-343"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слаад головастик 344"
+            }
+          ],
+          "targetPage": 344,
+          "style": "reference",
+          "id": "p332-43",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-344"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слон"
+            }
+          ],
+          "targetPage": 344,
+          "style": "reference",
+          "id": "p332-44",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-344"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сова"
+            },
+            {
+              "text": " ",
+              "bold": true
+            },
+            {
+              "text": "345"
+            }
+          ],
+          "targetPage": 345,
+          "style": "reference",
+          "id": "p332-45",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-345"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спрайт"
+            }
+          ],
+          "targetPage": 345,
+          "style": "reference",
+          "id": "p332-46",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-345"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфинкс чудес 346"
+            }
+          ],
+          "targetPage": 346,
+          "style": "reference",
+          "id": "p332-47",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-346"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тигр"
+            }
+          ],
+          "targetPage": 346,
+          "style": "reference",
+          "id": "p332-48",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-346"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удав"
+            }
+          ],
+          "targetPage": 346,
+          "style": "reference",
+          "id": "p332-49",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-346"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Упряжная лошадь 347"
+            }
+          ],
+          "targetPage": 347,
+          "style": "reference",
+          "id": "p332-50",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-347"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чёрный медведь"
+            }
+          ],
+          "targetPage": 347,
+          "style": "reference",
+          "id": "p332-51",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-347"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ядовитая змея"
+            }
+          ],
+          "targetPage": 347,
+          "style": "reference",
+          "id": "p332-52",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-347"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ястреб"
+            }
+          ],
+          "targetPage": 347,
+          "style": "reference",
+          "id": "p332-53",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-347"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ящерица"
+            }
+          ],
+          "targetPage": 347,
+          "style": "reference",
+          "id": "p332-54",
+          "sourcePage": 332,
+          "link": "/books/phb-2024-ru/creatures-4/#page-347"
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Барсук",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Badger",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Крошечный зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 11  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +0 (10) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 5 (1к4 + 3)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 20 фт., копая 5 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "10",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Лов",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Вын",
+                  "16",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "5",
+                  "-3",
+                  "-3"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки ",
+                  "bold": true
+                },
+                {
+                  "text": "Внимательность +3 "
+                },
+                {
+                  "text": "Сопротивления",
+                  "bold": true
+                },
+                {
+                  "text": " ядовитый"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 30 фт., ПВ 13 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 0 (Опыт 10; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Укус. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +2 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 1 колющего урона."
+                }
+              ]
+            }
+          ],
+          "id": "p332-55",
+          "sourcePage": 332
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Бес",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Imp",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Крошечное исчадие (дьявол), законопослушное злое ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 13  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +3 (13) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 21 (6к4 + 6)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 20 фт., летая 40 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "6",
+                  "-2",
+                  "-2"
+                ],
+                [
+                  "Лов",
+                  "17",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Вын",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Инт",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "14",
+                  "+2",
+                  "+2"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки",
+                  "bold": true
+                },
+                {
+                  "text": " Обман +4, Проницательность +3, Скрытность +5 "
+                },
+                {
+                  "text": "Сопротивление",
+                  "bold": true
+                },
+                {
+                  "text": " холодный "
+                },
+                {
+                  "text": "Иммунитет",
+                  "bold": true
+                },
+                {
+                  "text": " огненный, ядовитый; отравленный"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 120 фт., ПВ 11 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " общий, инфернальный "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1 (Опыт 200; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Особенности",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Дьявольское зрение. ",
+                  "bold": true
+                },
+                {
+                  "text": "Магическая тьма не мешает тёмному зрению беса."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Магическое сопротивление. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бес совершает с преимуществом спасброски от заклинаний и прочих магических эффектов."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Жало.",
+                  "bold": true
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +5, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 6 (1к6 + 3) колющего урона и 7 (2к6) урона ядом."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Невидимость. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бес накладывает заклинание Невидимость на себя, не требуя никаких компонентов для заклинания и используя Харизму в качестве заклинательной характеристики."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Перевёртыш.",
+                  "bold": true
+                },
+                {
+                  "text": " Бес превращается в крысу (скорость 20 фт.), ворона (20 фт., полёт 60 фт.), паука (20 фт., лазание 20 фт.) или возвращается к своей истинной форме. Статисика одинаковая в каждой форме, за иключением скорости. Любое снаряжение, которое бес носит или несёт не превращается."
+                }
+              ]
+            }
+          ],
+          "id": "p332-56",
+          "sourcePage": 332
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2024-ru/page-332-3e60e15dd3.webp",
+          "alt": "Иллюстрация к разделу «Статблоки существ · Часть 1».",
+          "width": 738,
+          "height": 696,
+          "smallSrc": "/images/books/phb-2024-ru/page-332-3e60e15dd3-640.webp",
+          "smallWidth": 640,
+          "id": "p332-57",
+          "sourcePage": 332
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бес. Художник:"
+            }
+          ],
+          "id": "p332-58",
+          "sourcePage": 332
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Patrik Hell Оригинал"
+            }
+          ],
+          "id": "p332-59",
+          "sourcePage": 332
+        }
+      ]
+    },
+    {
+      "number": 333,
+      "blocks": [
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Боевой конь",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Warhorse",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Большой зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 11  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +1 (11) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 19 (3к10 + 3)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 60 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "18",
+                  "+4",
+                  "+4"
+                ],
+                [
+                  "Лов",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Вын",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+3"
+                ],
+                [
+                  "Хар",
+                  "7",
+                  "-2",
+                  "-2"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " ПВ 11 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/2 (Опыт 100; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Копыта. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +6 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 9 (2к4 + 4) дробящего урона. Если конь переместился по прямой перед попаданием к цели не менее, чем на 20 фт., то цель получает дополнительно 5 (2к4) дробящего урона и если цель имеет размер огромный или меньше, то получает состояние лежащий ничком."
+                }
+              ]
+            }
+          ],
+          "id": "p333-1",
+          "sourcePage": 333
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Бурый медведь",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Brown Bear",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Большой зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 11  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +1 (11) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 22 (3к10 + 6)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 40 фт., лазая 30 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "17",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Лов",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Вын",
+                  "15",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "7",
+                  "-2",
+                  "-2"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки ",
+                  "bold": true
+                },
+                {
+                  "text": "Внимательность +3"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 13 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1 (Опыт 200; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Мультиатака. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бурый медведь совершает 1 атаку Укус и 1 атаку Когти."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Укус. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +5 к попаданию, досягаемость 5 фт., одна цель. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 7 (1к8 + 3) колющего урона."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Когти. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +5 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 5 (1к4 + 3) режущего урона и цель получает состояние лежащий ничком, если её размер большой или меньше."
+                }
+              ]
+            }
+          ],
+          "id": "p333-2",
+          "sourcePage": 333
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Верблюд",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Camel",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Большой зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 10  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " -1 (9) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 17 (2к10 + 6)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 50 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "15",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Лов",
+                  "8",
+                  "-1",
+                  "-1"
+                ],
+                [
+                  "Вын",
+                  "17",
+                  "+3",
+                  "+5"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Хар",
+                  "5",
+                  "-3",
+                  "-3"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 10 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/8 (Опыт 25; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Удар. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +4 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 4 (1к4 + 2) дробящего урона."
+                }
+              ]
+            }
+          ],
+          "id": "p333-3",
+          "sourcePage": 333
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Волк",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Wolf",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Средний зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 12  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +2 (12) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 11 (2к8 + 2)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 40 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "14",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Лов",
+                  "15",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Вын",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Инт",
+                  "3",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "6",
+                  "-2",
+                  "-2"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки",
+                  "bold": true
+                },
+                {
+                  "text": " Внимательность +5, Скрытность +4"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 15 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/4 (Опыт 50; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Особенности",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Тактика стаи. ",
+                  "bold": true
+                },
+                {
+                  "text": "Волк получает преимущество при броске атаки по существу, если в пределах 5 футов от этого существа находится как минимум 1 союзник волка и союзник не имеет состояние недееспособный."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Укус.",
+                  "bold": true
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +4, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 5 (1к6 + 2) колющего урона и цель получает состояние лежащий ничком, если её размер средний или меньше."
+                }
+              ]
+            }
+          ],
+          "id": "p333-4",
+          "sourcePage": 333
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2024-ru/page-333-d5bc6dbdc3.webp",
+          "alt": "Иллюстрация к разделу «Статблоки существ · Часть 1».",
+          "width": 850,
+          "height": 343,
+          "smallSrc": "/images/books/phb-2024-ru/page-333-d5bc6dbdc3-640.webp",
+          "smallWidth": 640,
+          "id": "p333-5",
+          "sourcePage": 333
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Волк. Художник: Borja Pindado"
+            }
+          ],
+          "id": "p333-6",
+          "sourcePage": 333
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оригинал"
+            }
+          ],
+          "id": "p333-7",
+          "sourcePage": 333
+        }
+      ]
+    },
+    {
+      "number": 334,
+      "blocks": [
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Ворон",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Raven",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Крошечный зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 12  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +2 (12) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 2 (1к4)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 10 фт., летая 50 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Лов",
+                  "14",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Вын",
+                  "10",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Инт",
+                  "5",
+                  "-3",
+                  "-3"
+                ],
+                [
+                  "Мдр",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "6",
+                  "-2",
+                  "-2"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки",
+                  "bold": true
+                },
+                {
+                  "text": " Внимательность +3 "
+                },
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " ПВ 13 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 0 (Опыт 10; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Особенности",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Мимикрия. ",
+                  "bold": true
+                },
+                {
+                  "text": "Ворон может имитировать простые звуки, которые он слышал (например, шепот или звуки животных). Слушатель может определить, что звук является имитацией, после успешной проверки Мудрость (Проницательность) Сл. 10."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Когти.",
+                  "bold": true
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +4, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 1 дробящего урона."
+                }
+              ]
+            }
+          ],
+          "id": "p334-1",
+          "sourcePage": 334
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Гигантский барсук",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Giant Badger",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Средний зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 13  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +0 (10) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 15 (2к8 + 9)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 30 фт., копая 10 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Лов",
+                  "10",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Вын",
+                  "17",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "5",
+                  "-3",
+                  "-3"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки ",
+                  "bold": true
+                },
+                {
+                  "text": "Внимательность +3 "
+                },
+                {
+                  "text": "Сопротивления",
+                  "bold": true
+                },
+                {
+                  "text": " ядовитый"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 13 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/4 (Опыт 50; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Укус. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +3 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 6 (2к4 + 1) колющего урона."
+                }
+              ]
+            }
+          ],
+          "id": "p334-2",
+          "sourcePage": 334
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Гигантская куница",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Giant Weasel",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Средний зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 13  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +3 (13) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 9 (2к8)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 40 фт., лазая 30 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Лов",
+                  "17",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Вын",
+                  "10",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Инт",
+                  "4",
+                  "-3",
+                  "-3"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "5",
+                  "-3",
+                  "-3"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки ",
+                  "bold": true
+                },
+                {
+                  "text": "Акробатика + 5, Внимательность +3, Скрытность +5"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 13 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/8 (Опыт 25; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Укус. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +5 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 5 (1к4 + 3) колющего урона."
+                }
+              ]
+            }
+          ],
+          "id": "p334-3",
+          "sourcePage": 334
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2024-ru/page-334-a9877daa58.webp",
+          "alt": "Иллюстрация к разделу «Статблоки существ · Часть 1».",
+          "width": 689,
+          "height": 907,
+          "smallSrc": "/images/books/phb-2024-ru/page-334-a9877daa58-640.webp",
+          "smallWidth": 640,
+          "id": "p334-4",
+          "sourcePage": 334
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантский барсук."
+            }
+          ],
+          "id": "p334-5",
+          "sourcePage": 334
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художник: Wayne England"
+            }
+          ],
+          "id": "p334-6",
+          "sourcePage": 334
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оригинал"
+            }
+          ],
+          "id": "p334-7",
+          "sourcePage": 334
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Гигантский козёл",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Giant Goat",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Большой зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 11  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +1 (11) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 19 (3к10 + 3)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 40 фт., лазая 30 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "17",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Лов",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Вын",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Инт",
+                  "3",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "6",
+                  "-2",
+                  "-2"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки ",
+                  "bold": true
+                },
+                {
+                  "text": "Внимательность +3"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 13 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/2 (Опыт 100; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Таран. ",
+                  "bold": true
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +5 к попаданию, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 6 (1к6 + 3) дробящего урона. Если козёл переместился по прямой перед попаданием к цели на не менее, чем на 20 фт., то цель получает дополнительно 5 (2к4) дробящего урона и если цель имеет размер огромный или меньше, то получает состояние лежащий ничком."
+                }
+              ]
+            }
+          ],
+          "id": "p334-8",
+          "sourcePage": 334
+        }
+      ]
+    },
+    {
+      "number": 335,
+      "blocks": [
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Гигантский краб",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Giant Crab",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Средний зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 15  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +1 (11) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 13 (3к8)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 30 фт., плавая 30 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Лов",
+                  "13",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Вын",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Инт",
+                  "1",
+                  "-5",
+                  "-5"
+                ],
+                [
+                  "Мдр",
+                  "9",
+                  "-1",
+                  "-1"
+                ],
+                [
+                  "Хар",
+                  "3",
+                  "-4",
+                  "-4"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки",
+                  "bold": true
+                },
+                {
+                  "text": " Скрытность +3"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " слепое зрение 30 фт., ПВ 9 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/8 (Опыт 25; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Особенности",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Амфибия. ",
+                  "bold": true
+                },
+                {
+                  "text": "Краб может дышать и на суше, и под водой."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Клешня.",
+                  "bold": true
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +3, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 4 (1к6 + 1) дробящего урона. Если цель среднего или меньшего размера, то она получает состояние схваченный (Сл. высвобождения 11). У краба 2 клешни, каждой из которых он может схватить одну цель."
+                }
+              ]
+            }
+          ],
+          "id": "p335-1",
+          "sourcePage": 335
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Гигантский морской конёк",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Giant Sea Horse",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Большой зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 14  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +1 (11) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 16 (3к10)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 5 фт., плавая 40 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "15",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Лов",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Вын",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Хар",
+                  "5",
+                  "-3",
+                  "-3"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " ПВ 11 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1/2 (Опыт 100; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Особенности",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Подводное дыхание. ",
+                  "bold": true
+                },
+                {
+                  "text": "Конёк может дышать только под водой."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Таран.",
+                  "bold": true
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +4, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 9 (2к6 + 2) дробящего урона или 11 (2к8 + 2) дробящего урона, если конёк переместился по прямой к цели перед попаданием на не менее, чем 20 футов."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Бонусные действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Пузыристый рывок. ",
+                  "bold": true
+                },
+                {
+                  "text": "Под водой морской конёк перемещается на половину своей скорости плавания, не вызывая провоцированные атаки."
+                }
+              ]
+            }
+          ],
+          "id": "p335-2",
+          "sourcePage": 335
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "spans": [
+                {
+                  "text": "Гигантский паук",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "[",
+                  "bold": true
+                },
+                {
+                  "text": "Giant Spider",
+                  "bold": true
+                },
+                {
+                  "text": "]",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Большой зверь, без мировоззрения ",
+                  "italic": true
+                },
+                {
+                  "text": "КД",
+                  "bold": true
+                },
+                {
+                  "text": " 14  "
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Инициатива:",
+                  "bold": true
+                },
+                {
+                  "text": " +3 (13) "
+                },
+                {
+                  "text": "Хиты",
+                  "bold": true
+                },
+                {
+                  "text": " 26 (4к10 + 4)"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Скорость",
+                  "bold": true
+                },
+                {
+                  "text": " 30 фт., лазая 30 фт."
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Хар.",
+                "Значение",
+                "Мод.",
+                "Спас."
+              ],
+              "rows": [
+                [
+                  "Сил",
+                  "14",
+                  "+2",
+                  "+2"
+                ],
+                [
+                  "Лов",
+                  "16",
+                  "+3",
+                  "+3"
+                ],
+                [
+                  "Вын",
+                  "12",
+                  "+1",
+                  "+1"
+                ],
+                [
+                  "Инт",
+                  "2",
+                  "-4",
+                  "-4"
+                ],
+                [
+                  "Мдр",
+                  "11",
+                  "+0",
+                  "+0"
+                ],
+                [
+                  "Хар",
+                  "4",
+                  "-3",
+                  "-3"
+                ]
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Навыки",
+                  "bold": true
+                },
+                {
+                  "text": " Внимательность +4, Скрытность +7"
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Чувства",
+                  "bold": true
+                },
+                {
+                  "text": " тёмное зрение 60 фт., ПВ 9 "
+                },
+                {
+                  "text": "Языки",
+                  "bold": true
+                },
+                {
+                  "text": " — "
+                },
+                {
+                  "text": "ПО",
+                  "bold": true
+                },
+                {
+                  "text": " 1 (Опыт 200; БМ +2)"
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Особенности",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Паучье лазание. ",
+                  "bold": true
+                },
+                {
+                  "text": "Паук может лазать по сложным поверхностям, включая потолки, без совершения проверок характеристик."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Хождение по паутине. ",
+                  "bold": true
+                },
+                {
+                  "text": "Паук игнорирует ограничения перемещения, вызванные паутиной, и знает точное местоположение всех других существ, находящихся в контакте с той же паутиной."
+                }
+              ]
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "spans": [
+                {
+                  "text": "Действия",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Укус.",
+                  "bold": true
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "text": "Бросок рукопашной атаки:",
+                  "italic": true
+                },
+                {
+                  "text": " +5, досягаемость 5 фт. "
+                },
+                {
+                  "text": "Попадание:",
+                  "italic": true
+                },
+                {
+                  "text": " 7 (1к8 + 3) колющего урона и 7 (2к6) урона ядом."
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Паутина (перезарядка 5-6). ",
+                  "bold": true
+                },
+                {
+                  "text": "Спасбросок Ловкости: ",
+                  "italic": true
+                },
+                {
+                  "text": "Сл. 13, одна видимая пауком цель в досягаемости 60 фт. "
+                },
+                {
+                  "text": "Провал:",
+                  "italic": true
+                },
+                {
+                  "text": " цель получает состояние опутанный, пока паутина не будет уничтожена (КД 10; 5 хитов; уязвимость к урону огнём; иммунитет к урону ядом и психической энергией)."
+                }
+              ]
+            }
+          ],
+          "id": "p335-3",
+          "sourcePage": 335
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2024-ru/page-335-b45f795b15.webp",
+          "alt": "Иллюстрация к разделу «Статблоки существ · Часть 1».",
+          "width": 745,
+          "height": 741,
+          "smallSrc": "/images/books/phb-2024-ru/page-335-b45f795b15-640.webp",
+          "smallWidth": 640,
+          "id": "p335-4",
+          "sourcePage": 335
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гигантские пауки."
+            }
+          ],
+          "id": "p335-5",
+          "sourcePage": 335
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Художник: Michele Giorgi"
+            }
+          ],
+          "id": "p335-6",
+          "sourcePage": 335
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оригинал"
+            }
+          ],
+          "id": "p335-7",
+          "sourcePage": 335
+        }
+      ]
+    }
+  ]
+}

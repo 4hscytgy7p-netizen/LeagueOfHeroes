@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-319",
+  "title": "Могильный холм",
+  "description": "",
+  "sourcePages": [
+    319
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 319,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-319-df1f8ac0dd.webp",
+          "alt": "Карта: Могильный холм",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-319-df1f8ac0dd-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Могильный холм\nМогильный холм\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков\nУровень 1\nУровень 2\nУровень 1\nВверх к\nS\nстоячим\nкамням\nВниз на\nуровень 2\nУровень 2\nВниз на\nуровень 2\n1 квадрат = 5 футов\nВверх на\nуровень 1\nВверх на\nуровень 1",
+          "textLabel": "Подписи на карте",
+          "id": "p319-1",
+          "sourcePage": 319
+        }
+      ]
+    }
+  ]
+}

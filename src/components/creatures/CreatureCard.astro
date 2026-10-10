@@ -1,0 +1,68 @@
+---
+import type { Creature } from '../../types/creature';
+import { abilityModifier, creatureAbilityLabels, signedModifier } from '../../utils/creature';
+import '../../styles/creatures.css';
+
+interface Props { creature: Creature; prefix: string; staticContent?: boolean; }
+const { creature, prefix, staticContent = false } = Astro.props;
+const cardId = `${prefix}-${creature.id}`;
+const fullImage = creature.image || creature.token;
+const sections = [
+  { title: 'Особенности', entries: creature.traits }, { title: 'Действия', entries: creature.actions },
+  { title: 'Бонусные действия', entries: creature.bonusActions || [] }, { title: 'Реакции', entries: creature.reactions },
+  { title: 'Легендарные действия', entries: creature.legendaryActions || [] },
+];
+const tabs = [{ id: 'stats', name: 'Блок статистики' }, { id: 'info', name: 'Информация' }, { id: 'image', name: 'Полное изображение' }];
+---
+
+<article class="creature-card" id={cardId} data-creature-card={creature.id} data-creature-kind={creature.kind || 'creature'} aria-labelledby={`${cardId}-name`}>
+  <header class="creature-card-header">
+    <div><p class="creature-eyebrow">{creature.source.code} · {creature.source.edition}{creature.contextLabel && ` · ${creature.contextLabel}`}</p><h4 id={`${cardId}-name`}>{creature.name}</h4><p class="creature-original-name" lang="en">{creature.nameEn}</p></div>
+    <a class="creature-source" href={creature.source.href} title={creature.source.name}>{creature.source.code}{creature.source.page !== undefined && `, с. ${creature.source.page}`} ↗</a>
+  </header>
+  <div class="creature-tabs" data-creature-tabs hidden aria-label={`Сведения: ${creature.name}`}>
+    {tabs.map(tab => <button type="button" id={`${cardId}-tab-${tab.id}`} data-creature-tab={tab.id} aria-controls={`${cardId}-panel-${tab.id}`}>{tab.name}</button>)}
+  </div>
+
+  <section class="creature-panel" id={`${cardId}-panel-stats`} data-creature-panel="stats" aria-label="Блок статистики">
+    <div class="creature-stat-overview">
+      <div>
+        <p class="creature-type">{creature.size} {creature.type.toLocaleLowerCase('ru')}{creature.alignment && `, ${creature.alignment.toLocaleLowerCase('ru')}`}</p>
+        <dl class="creature-vitals"><div><dt>Класс Защиты</dt><dd>{creature.armorClass}</dd></div><div><dt>Хиты</dt><dd>{creature.hitPoints}{creature.hitDice && <small>{creature.hitDice}</small>}</dd></div>{creature.speed && <div><dt>Скорость</dt><dd>{creature.speed}</dd></div>}</dl>
+      </div>
+      {creature.token && <figure class="creature-token" data-creature-image-wrapper><a href={creature.token.url} target="_blank" rel="noopener noreferrer" title="Открыть токен в исходном размере"><img src={creature.token.url} alt={creature.token.alt} width="128" height="128" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-creature-image /></a><figcaption>Токен ↗</figcaption><p class="creature-image-error" data-creature-image-error hidden>Токен недоступен на внешнем сайте.</p></figure>}
+    </div>
+
+    {creature.abilities && <div class="creature-abilities" aria-label="Характеристики">
+      {creatureAbilityLabels.map(ability => <div class="creature-ability"><strong title={ability.full}>{ability.label}</strong><span>{creature.abilities[ability.key]} <span class="creature-modifier">({signedModifier(abilityModifier(creature.abilities[ability.key]))})</span></span>{creature.savingThrows?.[ability.key] ? <small>Спас: {creature.savingThrows[ability.key]}</small> : creature.savingThrowBonus && <small title={creature.savingThrowBonus}>Спас: {signedModifier(abilityModifier(creature.abilities[ability.key]))} + {creature.savingThrowBonus === 'Ваш БМ' ? 'БМ' : 'ур. ячейки'}</small>}</div>)}
+    </div>}
+    <dl class="creature-properties">
+      {creature.skills && <div><dt>Навыки</dt><dd>{creature.skills}</dd></div>}
+      {creature.damageVulnerabilities?.length > 0 && <div><dt>Уязвимости к урону</dt><dd>{creature.damageVulnerabilities.join(', ')}</dd></div>}
+      {creature.damageResistances?.length > 0 && <div><dt>Сопротивления урону</dt><dd>{creature.damageResistances.join(', ')}</dd></div>}
+      {creature.damageImmunities.length > 0 && <div><dt>Иммунитеты к урону</dt><dd>{creature.damageImmunities.join(', ')}</dd></div>}
+      {creature.conditionImmunities.length > 0 && <div><dt>Иммунитеты к состояниям</dt><dd>{creature.conditionImmunities.map((condition, index) => <>{index > 0 && ', '}<a class="state-link" data-rule-id={condition.glossaryId} href={`/glossary#${condition.glossaryId}`}>{condition.name}</a></>)}</dd></div>}
+      {creature.senses && <div><dt>Чувства</dt><dd>{creature.senses}</dd></div>}{creature.languages && <div><dt>Языки</dt><dd>{creature.languages}</dd></div>}
+      {creature.proficiencyBonus && <div><dt>Бонус мастерства</dt><dd>{creature.proficiencyBonus}</dd></div>}
+      {creature.kind !== 'object' && <div><dt>Показатель опасности</dt><dd>{creature.challenge || 'Не указан в источнике'}</dd></div>}
+    </dl>
+    {sections.filter(section => section.entries.length > 0).map(section => <section class="creature-entry-section"><h5>{section.title}</h5>{section.title === 'Легендарные действия' && creature.legendaryNote && <p class="creature-info-note">{creature.legendaryNote}</p>}{section.entries.map(entry => <div class="creature-entry"><h6>{entry.name}</h6>{entry.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>)}</section>)}
+    <footer class="creature-stat-footer"><a href={creature.source.href}>{creature.source.name}{creature.source.page !== undefined && ` · с. ${creature.source.page}`} →</a></footer>
+  </section>
+
+  <section class="creature-panel" id={`${cardId}-panel-info`} data-creature-panel="info" aria-label="Информация">
+    <h5>Описание</h5>
+    {creature.information.length > 0 ? creature.information.map(paragraph => <p>{paragraph}</p>) : <p>Дополнительное описание в источнике отсутствует.</p>}
+    {creature.calculationNote && <p class="creature-info-note">{creature.calculationNote}</p>}
+  </section>
+
+  <section class="creature-panel" id={`${cardId}-panel-image`} data-creature-panel="image" aria-label="Полное изображение">
+    <h5>Полное изображение</h5>
+    {!creature.image && creature.token && <p class="creature-info-note">Отдельная полная иллюстрация в источнике отсутствует. Ниже показан токен в исходном размере.</p>}
+    {fullImage ? <figure class="creature-full-image" data-creature-image-wrapper><a href={fullImage.url} target="_blank" rel="noopener noreferrer"><img src={staticContent ? fullImage.url : undefined} data-src={staticContent ? undefined : fullImage.url} alt={fullImage.alt} loading="lazy" decoding="async" referrerpolicy="no-referrer" data-creature-image />{!staticContent && <noscript><img src={fullImage.url} alt={fullImage.alt} loading="lazy" referrerpolicy="no-referrer" /></noscript>}</a><p class="creature-image-error" data-creature-image-error hidden>Изображение недоступно на внешнем сайте. <a href={fullImage.url} target="_blank" rel="noopener noreferrer">Открыть ссылку на изображение ↗</a></p><figcaption>{fullImage.caption} <a href={fullImage.sourceHref}>Источник ↗</a></figcaption></figure> : <p>Изображение в источнике отсутствует.</p>}
+  </section>
+</article>
+
+<script>
+  import '../../scripts/creatureCards';
+</script>

@@ -1,10 +1,14 @@
 import type { Feat } from '../../types/feat';
 
+// Sources verified against https://5e.tools/data/feats.json.
+// Source suffixes identify the rules edition (14/24), not the publication year.
+// Local adaptations retain the source of the underlying feat.
 export const featsData: Feat[] = [
   {
     id: 'war-caster',
     name: 'Боевой заклинатель',
     nameEn: 'War Caster',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'умение Использование заклинаний или Магия договора'],
     effects: [
@@ -19,6 +23,7 @@ export const featsData: Feat[] = [
     id: 'alert',
     name: 'Бдительный',
     nameEn: 'Alert',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Владение инициативой. Когда вы совершаете бросок инициативы, то вы можете добавить к броску свой бонус мастерства.',
@@ -29,6 +34,7 @@ export const featsData: Feat[] = [
     id: 'combat-prowess',
     name: 'Дар боевой доблести',
     nameEn: 'Boon of Combat Prowess',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -41,6 +47,7 @@ export const featsData: Feat[] = [
     id: 'archery',
     name: 'Стрельба из лука',
     nameEn: 'Archery',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -51,6 +58,7 @@ export const featsData: Feat[] = [
     id: 'dueling',
     name: 'Дуэлянт',
     nameEn: 'Dueling',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -61,6 +69,7 @@ export const featsData: Feat[] = [
     id: 'protection',
     name: 'Защита',
     nameEn: 'Protection',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -71,6 +80,7 @@ export const featsData: Feat[] = [
     id: 'defense',
     name: 'Оборона',
     nameEn: 'Defense',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -81,6 +91,7 @@ export const featsData: Feat[] = [
     id: 'interception',
     name: 'Перехват',
     nameEn: 'Interception',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -91,6 +102,7 @@ export const featsData: Feat[] = [
     id: 'blind-fighting',
     name: 'Сражение вслепую',
     nameEn: 'Blind Fighting',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -101,6 +113,7 @@ export const featsData: Feat[] = [
     id: 'great-weapon-fighting',
     name: 'Сражение большим оружием',
     nameEn: 'Great Weapon Fighting',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -111,6 +124,7 @@ export const featsData: Feat[] = [
     id: 'unarmed-fighting',
     name: 'Сражение голыми руками',
     nameEn: 'Unarmed Fighting',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -121,6 +135,7 @@ export const featsData: Feat[] = [
     id: 'two-weapon-fighting',
     name: 'Сражение двумя оружиями',
     nameEn: 'Two-Weapon Fighting',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -131,6 +146,7 @@ export const featsData: Feat[] = [
     id: 'thrown-weapon-fighting',
     name: 'Сражение метательным оружием',
     nameEn: 'Thrown Weapon Fighting',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -141,6 +157,7 @@ export const featsData: Feat[] = [
     id: 'druidic-warrior',
     name: 'Воин-друид',
     nameEn: 'Druidic warrior',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль, Следопыт 2 уровень'],
     effects: [
@@ -151,6 +168,8 @@ export const featsData: Feat[] = [
     id: 'superior-technique',
     name: 'Превосходная техника',
     nameEn: 'Superior Technique',
+    // Fighting style: https://5e.tools/data/optionalfeatures.json (TCE, p. 41).
+    sourceBook: 'TCE14',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль'],
     effects: [
@@ -162,6 +181,7 @@ export const featsData: Feat[] = [
     id: 'blessed-warrior',
     name: 'Благословлённый воин',
     nameEn: 'Blessed Warrior',
+    sourceBook: 'PHB24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль, Паладин 2 уровень'],
     effects: [
@@ -172,6 +192,7 @@ export const featsData: Feat[] = [
     id: 'lucky',
     name: 'Везунчик',
     nameEn: 'Lucky',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Очки удачи. У вас есть количество очков удачи, равное вашему Бонусу мастерства и вы можете тратить их на нижеперечисленные эффекты. Вы восполняете потраченные очки удачи, когда заканчиваете продолжительный отдых.',
@@ -183,6 +204,7 @@ export const featsData: Feat[] = [
     id: 'savage-attacker',
     name: 'Дикий атакующий',
     nameEn: 'Savage Attacker',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Вы тренировались наносить особенно разрушительные удары. 1 раз в ход, когда вы попадаете по цели оружием, вы можете дважды бросить кости урона этого оружия и использовать любой из бросков.'
@@ -192,6 +214,7 @@ export const featsData: Feat[] = [
     id: 'tavern-brawler',
     name: 'Драчун',
     nameEn: 'Tavern Brawler',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Усиленный безоружный удар. Когда вы попадаете безоружным ударом и наносите урон, вы можете нанести дробящий урон, равный 1д4 + ваш модификатор Силы, вместо обычного урона от безоружных ударов.',
@@ -204,6 +227,7 @@ export const featsData: Feat[] = [
     id: 'tough',
     name: 'Крепкий',
     nameEn: 'Tough',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Максимум ваших хитов увеличивается на количество, равное удвоенному уровню вашего персонажа, на котором вы взяли эту черту. Каждый раз, когда вы впоследствии будете получать уровень, максимум ваших хитов будет дополнительно увеличиваться на 2.'
@@ -213,6 +237,7 @@ export const featsData: Feat[] = [
     id: 'healer',
     name: 'Лекарь',
     nameEn: 'Healer',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Боевой медик. Вы можете действием потратить одно использование комплекта целителя, чтобы позаботиться о существе в пределах 5 футов от вас. Это существо может потратить 1 из своих костей хитов и затем вы бросаете эту кость. Существо восстанавливает количество хитов, равное броску + ваш бонус мастерства.',
@@ -223,6 +248,7 @@ export const featsData: Feat[] = [
     id: 'musician',
     name: 'Музыкант',
     nameEn: 'Musician',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Владение инструментами. Вы получаете владение 3 музыкальными инструментами на ваш выбор.',
@@ -233,6 +259,7 @@ export const featsData: Feat[] = [
     id: 'skilled',
     name: 'Одарённый',
     nameEn: 'Skilled',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Вы получаете владение 3 любыми навыками или инструментами на ваш выбор.',
@@ -243,6 +270,7 @@ export const featsData: Feat[] = [
     id: 'magic-initiate',
     name: 'Посвящённый в магию',
     nameEn: 'Magic Initiate',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Два заговора. Вы изучаете 2 заговора по вашему выбору из списка заклинаний жреца, друида или волшебника. Интеллект, Мудрость или Харизма — это ваша заклинательная характеристика для этих заклинаний (выбирайте, когда берете эту черту).',
@@ -255,6 +283,7 @@ export const featsData: Feat[] = [
     id: 'crafter',
     name: 'Ремесленник',
     nameEn: 'Crafter',
+    sourceBook: 'PHB24',
     type: 'origin',
     effects: [
       'Скидка. Каждый раз, когда вы покупаете немагический предмет, вы получаете на него скидку 20%.',
@@ -310,6 +339,7 @@ export const featsData: Feat[] = [
     id: 'recovery',
     name: 'Дар восстановления',
     nameEn: 'Boon of Recovery',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -323,6 +353,7 @@ export const featsData: Feat[] = [
     id: 'spell-recall',
     name: 'Дар восстановления чар',
     nameEn: 'Boon of Spell Recall',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень, умение Использование заклинаний или Магия договора'],
     effects: [
@@ -335,6 +366,7 @@ export const featsData: Feat[] = [
     id: 'night-spirit',
     name: 'Дар духа ночи',
     nameEn: 'Boon of the Night Spirit',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -348,6 +380,7 @@ export const featsData: Feat[] = [
     id: 'truesight',
     name: 'Дар истинного зрения',
     nameEn: 'Boon of Truesight',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -360,6 +393,7 @@ export const featsData: Feat[] = [
     id: 'irresistible-offense',
     name: 'Дар непреодолимого нападения',
     nameEn: 'Boon of Irresistible Offense',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -373,6 +407,7 @@ export const featsData: Feat[] = [
     id: 'skill',
     name: 'Дар умения',
     nameEn: 'Boon of Skill',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -386,6 +421,7 @@ export const featsData: Feat[] = [
     id: 'dimensional-travel',
     name: 'Дар пространственного путешествия',
     nameEn: 'Boon of Dimensional Travel',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -398,6 +434,7 @@ export const featsData: Feat[] = [
     id: 'speed',
     name: 'Дар скорости',
     nameEn: 'Boon of Speed',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -411,6 +448,7 @@ export const featsData: Feat[] = [
     id: 'fortitude',
     name: 'Дар стойкости',
     nameEn: 'Boon of Fortitude',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -423,6 +461,7 @@ export const featsData: Feat[] = [
     id: 'fate',
     name: 'Дар судьбы',
     nameEn: 'Boon of Fate',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -435,6 +474,7 @@ export const featsData: Feat[] = [
     id: 'energy-resistance',
     name: 'Дар устойчивости к энергиям',
     nameEn: 'Boon of Energy Resistance',
+    sourceBook: 'PHB24',
     type: 'epic',
     requirements: ['19+ уровень'],
     effects: [
@@ -448,6 +488,7 @@ export const featsData: Feat[] = [
     id: 'elemental-adept',
     name: 'Адепт стихий',
     nameEn: 'Elemental Adept',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'умение Использование заклинаний или Магия договора'],
     effects: [
@@ -461,6 +502,7 @@ export const featsData: Feat[] = [
     id: 'actor',
     name: 'Актёр',
     nameEn: 'Actor',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Харизма 13+'],
     effects: [
@@ -474,6 +516,7 @@ export const featsData: Feat[] = [
     id: 'athlete',
     name: 'Атлет',
     nameEn: 'Athlete',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила или Ловкость 13+'],
     effects: [
@@ -488,6 +531,7 @@ export const featsData: Feat[] = [
     id: 'grappler',
     name: 'Борец',
     nameEn: 'Grappler',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила или Ловкость 13+'],
     effects: [
@@ -502,6 +546,7 @@ export const featsData: Feat[] = [
     id: 'mounted-combatant',
     name: 'Верховой боец',
     nameEn: 'Mounted Combatant',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -516,6 +561,7 @@ export const featsData: Feat[] = [
     id: 'martial-weapon-training',
     name: 'Владение воинским оружием',
     nameEn: 'Martial Weapon Training',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -528,6 +574,7 @@ export const featsData: Feat[] = [
     id: 'inspiring-leader',
     name: 'Воодушевляющий лидер',
     nameEn: 'Inspiring Leader',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Мудрость или Харизма 13+'],
     effects: [
@@ -540,6 +587,7 @@ export const featsData: Feat[] = [
     id: 'shadow-touched',
     name: 'Затронутый тенью',
     nameEn: 'Shadow-Touched',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -552,6 +600,7 @@ export const featsData: Feat[] = [
     id: 'fey-touched',
     name: 'Затронутый феями',
     nameEn: 'Fey-Touched',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -564,6 +613,7 @@ export const featsData: Feat[] = [
     id: 'lightly-armored',
     name: 'Знаток лёгких доспехов',
     nameEn: 'Lightly Armored',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -576,6 +626,7 @@ export const featsData: Feat[] = [
     id: 'moderately-armored',
     name: 'Знаток средних доспехов',
     nameEn: 'Moderately Armored',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -588,6 +639,7 @@ export const featsData: Feat[] = [
     id: 'heavily-armored',
     name: 'Знаток тяжёлых доспехов',
     nameEn: 'Heavily Armored',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -600,6 +652,7 @@ export const featsData: Feat[] = [
     id: 'dual-wielder',
     name: 'Использование двух оружий',
     nameEn: 'Dual Wielder',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила или Ловкость 13+'],
     effects: [
@@ -613,6 +666,7 @@ export const featsData: Feat[] = [
     id: 'сrusher',
     name: 'Крушитель',
     nameEn: 'Сrusher',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -626,6 +680,7 @@ export const featsData: Feat[] = [
     id: 'great-weapon-master',
     name: 'Мастер большого оружия',
     nameEn: 'Great Weapon Master',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила 13+'],
     effects: [
@@ -639,6 +694,7 @@ export const featsData: Feat[] = [
     id: 'polearm-master',
     name: 'Мастер древкового оружия',
     nameEn: 'Polearm Master',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила или Ловкость 13+'],
     effects: [
@@ -652,6 +708,7 @@ export const featsData: Feat[] = [
     id: 'weapon-master',
     name: 'Мастер оружия',
     nameEn: 'Weapon Master',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -664,6 +721,7 @@ export const featsData: Feat[] = [
     id: 'medium-armor-master',
     name: 'Мастер средних доспехов',
     nameEn: 'Medium Armor Master',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'владение средними доспехами'],
     effects: [
@@ -676,6 +734,7 @@ export const featsData: Feat[] = [
     id: 'heavy-armor-master',
     name: 'Мастер тяжёлых доспехов',
     nameEn: 'Heavy Armor Master',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'владение тяжелыми доспехами'],
     effects: [
@@ -688,6 +747,7 @@ export const featsData: Feat[] = [
     id: 'shield-master',
     name: 'Мастер щитов',
     nameEn: 'Shield Master',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'владение щитами'],
     effects: [
@@ -701,6 +761,7 @@ export const featsData: Feat[] = [
     id: 'spell-sniper',
     name: 'Меткий заклинатель',
     nameEn: 'Spell Sniper',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'способность Использование заклинаний или Магия договора'],
     effects: [
@@ -715,6 +776,7 @@ export const featsData: Feat[] = [
     id: 'sharpshooter',
     name: 'Меткий стрелок',
     nameEn: 'Sharpshooter',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Ловкость 13+'],
     effects: [
@@ -729,6 +791,7 @@ export const featsData: Feat[] = [
     id: 'observant',
     name: 'Наблюдательный',
     nameEn: 'Observant',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Интеллект или Мудрость 13+'],
     effects: [
@@ -742,6 +805,7 @@ export const featsData: Feat[] = [
     id: 'charger',
     name: 'Налётчик',
     nameEn: 'Charger',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила или Ловкость 13+'],
     effects: [
@@ -755,6 +819,7 @@ export const featsData: Feat[] = [
     id: 'defensive-duelist',
     name: 'Оборонительный дуэлянт',
     nameEn: 'Defensive Duelist',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Ловкость 13+'],
     effects: [
@@ -767,6 +832,7 @@ export const featsData: Feat[] = [
     id: 'keen-mind',
     name: 'Острый ум',
     nameEn: 'Keen Mind',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Интеллект 13+'],
     effects: [
@@ -780,6 +846,7 @@ export const featsData: Feat[] = [
     id: 'poisoner',
     name: 'Отравитель',
     nameEn: 'Poisoner',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -793,6 +860,7 @@ export const featsData: Feat[] = [
     id: 'speedy',
     name: 'Подвижный',
     nameEn: 'Speedy',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Телосложение 13+'],
     effects: [
@@ -807,6 +875,7 @@ export const featsData: Feat[] = [
     id: 'piercer',
     name: 'Пронзатель',
     nameEn: 'Piercer',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -820,6 +889,7 @@ export const featsData: Feat[] = [
     id: 'skulker',
     name: 'Проныра',
     nameEn: 'Skulker',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Ловкость 13+'],
     effects: [
@@ -834,6 +904,7 @@ export const featsData: Feat[] = [
     id: 'ritual Caster',
     name: 'Ритуальный заклинатель',
     nameEn: 'Ritual Caster',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Интеллект, Мудрость или Харизма 13+'],
     effects: [
@@ -847,6 +918,7 @@ export const featsData: Feat[] = [
     id: 'slasher',
     name: 'Рубака',
     nameEn: 'Slasher',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -860,6 +932,7 @@ export const featsData: Feat[] = [
     id: 'durable',
     name: 'Стойкий',
     nameEn: 'Durable',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -873,6 +946,7 @@ export const featsData: Feat[] = [
     id: 'sentinel',
     name: 'Страж',
     nameEn: 'Sentinel',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Сила или Ловкость 13+'],
     effects: [
@@ -886,6 +960,7 @@ export const featsData: Feat[] = [
     id: 'telekinetic',
     name: 'Телекинетик',
     nameEn: 'Telekinetic',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -899,6 +974,7 @@ export const featsData: Feat[] = [
     id: 'telepathic',
     name: 'Телепат',
     nameEn: 'Telepathic',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -912,6 +988,7 @@ export const featsData: Feat[] = [
     id: 'mage-slayer',
     name: 'Убийца магов',
     nameEn: 'Mage Slayer',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -925,6 +1002,7 @@ export const featsData: Feat[] = [
     id: 'ability-score-improvement',
     name: 'Улучшение характеристик',
     nameEn: 'Ability Score Improvement',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -937,6 +1015,7 @@ export const featsData: Feat[] = [
     id: 'resilient',
     name: 'Устойчивый',
     nameEn: 'Resilient',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -949,6 +1028,7 @@ export const featsData: Feat[] = [
     id: 'chef',
     name: 'Шеф-повар',
     nameEn: 'Chef',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -963,6 +1043,7 @@ export const featsData: Feat[] = [
     id: 'crossbow-expert',
     name: 'Эксперт в арбалетах',
     nameEn: 'Crossbow Expert',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+', 'Ловкость 13+'],
     effects: [
@@ -977,6 +1058,7 @@ export const featsData: Feat[] = [
     id: 'skill-expert',
     name: 'Эксперт в навыке',
     nameEn: 'Skill Expert',
+    sourceBook: 'PHB24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -990,6 +1072,7 @@ export const featsData: Feat[] = [
     id: 'martial-adept',
     name: 'Воинский адепт',
     nameEn: 'Martial Adept',
+    sourceBook: 'PHB14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1003,6 +1086,7 @@ export const featsData: Feat[] = [
     id: 'linguist',
     name: 'Языковед',
     nameEn: 'Linguist',
+    sourceBook: 'PHB14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1016,6 +1100,7 @@ export const featsData: Feat[] = [
     id: 'dungeon-delver',
     name: 'Исследователь подземелий',
     nameEn: 'Dungeon Delver',
+    sourceBook: 'PHB14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1030,6 +1115,7 @@ export const featsData: Feat[] = [
     id: 'сartomancer',
     name: 'Картомант',
     nameEn: 'Сartomancer',
+    sourceBook: 'BMT14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1043,6 +1129,7 @@ export const featsData: Feat[] = [
     id: 'revenant-blade',
     name: 'Призрачный клинок',
     nameEn: 'Revenant blade',
+    sourceBook: 'ERLW14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1056,6 +1143,7 @@ export const featsData: Feat[] = [
     id: 'gift-of-metallic-dragon',
     name: 'Дар металлического дракона',
     nameEn: 'Gift of metallic dragon',
+    sourceBook: 'FTD14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1069,6 +1157,7 @@ export const featsData: Feat[] = [
     id: 'gift-of-gem-dragon',
     name: 'Дар самоцветного дракона',
     nameEn: 'Gift of gem dragon',
+    sourceBook: 'FTD14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1081,6 +1170,7 @@ export const featsData: Feat[] = [
     id: 'gift-of-chromatic-dragon',
     name: 'Дар цветного дракона',
     nameEn: 'Gift of chromatic dragon',
+    sourceBook: 'FTD14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1094,6 +1184,7 @@ export const featsData: Feat[] = [
     id: 'svirfneblin-magic',
     name: 'Магия свирфнеблинов',
     nameEn: 'Svirfneblin magic',
+    sourceBook: 'MTF14',
     type: 'general',
     requirements: ['Уровень 4+', 'Глубинный гном'],
     effects: [
@@ -1106,6 +1197,7 @@ export const featsData: Feat[] = [
     id: 'metamagic-adept',
     name: 'Адепт метамагии',
     nameEn: 'Metamagic adept',
+    sourceBook: 'TCE14',
     type: 'general',
     requirements: ['Уровень 4+', 'способность Использование заклинаний или Магия договора'],
     effects: [
@@ -1119,6 +1211,7 @@ export const featsData: Feat[] = [
     id: 'eldritch-adept',
     name: 'Адепт таинств',
     nameEn: 'Eldritch adept',
+    sourceBook: 'TCE14',
     type: 'general',
     requirements: ['Уровень 4+', 'способность Использование заклинаний или Магия договора'],
     effects: [
@@ -1131,6 +1224,7 @@ export const featsData: Feat[] = [
     id: 'gunner',
     name: 'Знаток огнестрельного оружия',
     nameEn: 'Gunner',
+    sourceBook: 'TCE14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1145,6 +1239,7 @@ export const featsData: Feat[] = [
     id: 'fighting-initiate',
     name: 'Посвящённый в боевое искусство',
     nameEn: 'Fighting initiate',
+    sourceBook: 'TCE14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1157,6 +1252,7 @@ export const featsData: Feat[] = [
     id: 'knight-of-the-sword',
     name: 'Рыцарь Меча',
     nameEn: 'Knight of the Sword',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+', 'предыстория Соламнийский Рыцарь'],
     effects: [
@@ -1169,6 +1265,7 @@ export const featsData: Feat[] = [
     id: 'knight-of-the-crown',
     name: 'Рыцарь Короны',
     nameEn: 'Knight of the Crown',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+', 'предыстория Соламнийский Рыцарь'],
     effects: [
@@ -1181,6 +1278,7 @@ export const featsData: Feat[] = [
     id: 'knight-of-the-rose',
     name: 'Рыцарь Розы',
     nameEn: 'Knight of the Rose',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+', 'предыстория Соламнийский Рыцарь'],
     effects: [
@@ -1193,6 +1291,7 @@ export const featsData: Feat[] = [
     id: 'squire-of-solamnia',
     name: 'Оруженосец рыцаря Соламнии',
     nameEn: 'Squire of Solamnia',
+    sourceBook: 'DSOTDQ14',
     type: 'origin',
     requirements: ['Воин или Паладин или предыстория Соламнийский Рыцарь'],
     effects: [
@@ -1204,6 +1303,7 @@ export const featsData: Feat[] = [
     id: 'adept-of-the-white-robes',
     name: 'Адепт Белых одежд',
     nameEn: 'Adept of the White Robes',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Посвящённый в Высшее волшебство (Солинари)'],
     effects: [
@@ -1217,6 +1317,7 @@ export const featsData: Feat[] = [
     id: 'adept-of-the-red-robes',
     name: 'Адепт Красных одежд',
     nameEn: 'Adept of the Red Robes',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Посвящённый в Высшее волшебство (Лунитари)'],
     effects: [
@@ -1230,6 +1331,7 @@ export const featsData: Feat[] = [
     id: 'adept-of-the-black-robes',
     name: 'Адепт Чёрных одежд',
     nameEn: 'Adept of the Black Robes',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Посвящённый в Высшее волшебство (Нуитари)'],
     effects: [
@@ -1243,6 +1345,7 @@ export const featsData: Feat[] = [
     id: 'agent-of-order',
     name: 'Агент Порядка',
     nameEn: 'Agent of order',
+    sourceBook: 'SATO14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Наследник внешних планов (законный внешний план)'],
     effects: [
@@ -1255,6 +1358,7 @@ export const featsData: Feat[] = [
     id: 'baleful-scion',
     name: 'Зловещий наследник',
     nameEn: 'Baleful scion',
+    sourceBook: 'SATO14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Наследник внешних планов (злой внешний план)'],
     effects: [
@@ -1267,6 +1371,7 @@ export const featsData: Feat[] = [
     id: 'planar-wanderer',
     name: 'Планарный странник',
     nameEn: 'Planar wanderer',
+    sourceBook: 'SATO14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Наследник внешних планов (злой внешний план)'],
     effects: [
@@ -1281,6 +1386,7 @@ export const featsData: Feat[] = [
     id: 'outlands-envoy',
     name: 'Посол Внешних земель',
     nameEn: 'Outlands envoy',
+    sourceBook: 'SATO14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Наследник внешних планов (внешние земли)'],
     effects: [
@@ -1293,6 +1399,7 @@ export const featsData: Feat[] = [
     id: 'righteous-heritor',
     name: 'Праведный наследник',
     nameEn: 'Righteous heritor',
+    sourceBook: 'SATO14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Наследник внешних планов (добрый внешний план)'],
     effects: [
@@ -1305,6 +1412,7 @@ export const featsData: Feat[] = [
     id: 'strixhaven-mascot',
     name: 'Талисман Стриксхейвена',
     nameEn: 'Strixhaven Mascot',
+    sourceBook: 'SCC14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Поступивший в Стриксхейвен'],
     effects: [
@@ -1319,6 +1427,7 @@ export const featsData: Feat[] = [
     id: 'soul-of-the-storm-giant',
     name: 'Душа штормового великана',
     nameEn: 'Soul of the storm giant',
+    sourceBook: 'BGG14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Удар Великанов (Штормовой удар)'],
     effects: [
@@ -1331,6 +1440,7 @@ export const featsData: Feat[] = [
     id: 'guile-of-the-cloud-giant',
     name: 'Коварство облачного великана',
     nameEn: 'Guile of the cloud giant',
+    sourceBook: 'BGG14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Удар Великанов (Облачный удар)'],
     effects: [
@@ -1343,6 +1453,7 @@ export const featsData: Feat[] = [
     id: 'fury-of-the-frost-giant',
     name: 'Неистовство ледяного великана',
     nameEn: 'Fury of the frost giant',
+    sourceBook: 'BGG14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Удар Великанов (Ледяной удар)'],
     effects: [
@@ -1356,6 +1467,7 @@ export const featsData: Feat[] = [
     id: 'vigor-of-the-fire-giant',
     name: 'Стойкость холмового великана',
     nameEn: 'Vigor of the hill giant',
+    sourceBook: 'BGG14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Удар Великанов (Холмовой удар)'],
     effects: [
@@ -1369,6 +1481,7 @@ export const featsData: Feat[] = [
     id: 'keenness-of-the-stone-giant',
     name: 'Чуткость каменного великана',
     nameEn: 'Keenness of the stone giant',
+    sourceBook: 'BGG14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Удар Великанов (Каменный удар)'],
     effects: [
@@ -1382,6 +1495,7 @@ export const featsData: Feat[] = [
     id: 'embar-of-the-fire-giant',
     name: 'Пылкость огненного великана',
     nameEn: 'Embar of the fire giant',
+    sourceBook: 'BGG14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Удар Великанов (Огненный удар)'],
     effects: [
@@ -1395,6 +1509,7 @@ export const featsData: Feat[] = [
     id: 'strike-of-the-giants',
     name: 'Удар великанов',
     nameEn: 'Strike of the giants',
+    sourceBook: 'BGG14',
     type: 'origin',
     requirements: ['владение воинским оружием или предыстория Великаний подкидыш'],
     effects: [
@@ -1412,6 +1527,7 @@ export const featsData: Feat[] = [
     id: 'wood-elf-magic',
     name: 'Магия лесных эльфов',
     nameEn: 'Wood elf magic',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Лесной эльф'],
     effects: [
@@ -1424,6 +1540,7 @@ export const featsData: Feat[] = [
     id: 'squat-nimbleness',
     name: 'Низкорослое проворство',
     nameEn: 'Squat nimbleness',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Дварф или Маленькая раса'],
     effects: [
@@ -1438,6 +1555,7 @@ export const featsData: Feat[] = [
     id: 'second-chance',
     name: 'Второй шанс',
     nameEn: 'Second chance',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Полурослик'],
     effects: [
@@ -1450,6 +1568,7 @@ export const featsData: Feat[] = [
     id: 'prodigy',
     name: 'Вундеркинд',
     nameEn: 'Prodigy',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Полуэльф, Полуорк или Человек'],
     effects: [
@@ -1463,6 +1582,7 @@ export const featsData: Feat[] = [
     id: 'orcish-fury',
     name: 'Орочье буйство',
     nameEn: 'Orcish fury',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Полуорк'],
     effects: [
@@ -1476,6 +1596,7 @@ export const featsData: Feat[] = [
     id: 'infernal-constitution',
     name: 'Инфернальное телосложение',
     nameEn: 'Infernal constitution',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Тифлинг'],
     effects: [
@@ -1489,6 +1610,7 @@ export const featsData: Feat[] = [
     id: 'flames-of-phlegethos',
     name: 'Пламя Флегетоса',
     nameEn: 'Flames of Phlegethos',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Тифлинг'],
     effects: [
@@ -1502,6 +1624,7 @@ export const featsData: Feat[] = [
     id: 'fey-teleportation',
     name: 'Телепортация фей',
     nameEn: 'Fey teleportation',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Высший эльф'],
     effects: [
@@ -1515,6 +1638,7 @@ export const featsData: Feat[] = [
     id: 'fade-away',
     name: 'Исчезновение',
     nameEn: 'Fade away',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Гном'],
     effects: [
@@ -1527,6 +1651,7 @@ export const featsData: Feat[] = [
     id: 'elven-accuracy',
     name: 'Эльфийская точность',
     nameEn: 'elven accuracy',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Эльф или Полуэльф'],
     effects: [
@@ -1539,6 +1664,7 @@ export const featsData: Feat[] = [
     id: 'dwarven-fortitude',
     name: 'Дварфийская стойкость',
     nameEn: 'Dwarven Fortitude',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Дварф'],
     effects: [
@@ -1551,6 +1677,7 @@ export const featsData: Feat[] = [
     id: 'drow-high-magic',
     name: 'Высшая магия дроу',
     nameEn: 'Drow High Magic',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Дроу'],
     effects: [
@@ -1563,6 +1690,7 @@ export const featsData: Feat[] = [
     id: 'dragon-hide',
     name: 'Драконья шкура',
     nameEn: 'Dragon hide',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Драконорождённый'],
     effects: [
@@ -1576,6 +1704,7 @@ export const featsData: Feat[] = [
     id: 'dragon-fear',
     name: 'Драконий страх',
     nameEn: 'Dragon fear',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Драконорождённый'],
     effects: [
@@ -1588,6 +1717,7 @@ export const featsData: Feat[] = [
     id: 'bountiful-luck',
     name: 'Бездонная удача',
     nameEn: 'Bountiful luck',
+    sourceBook: 'XGE14',
     type: 'general',
     requirements: ['Уровень 4+', 'Полурослик'],
     effects: [
@@ -1600,6 +1730,7 @@ export const featsData: Feat[] = [
     id: 'initiate-of-high-sorcery',
     name: 'Посвящённый в Высшее волшебство',
     nameEn: 'Initiate of High Sorcery',
+    sourceBook: 'DSOTDQ14',
     type: 'origin',
     requirements: ['предыстория Маг Высшего Волшебства'],
     effects: [
@@ -1635,6 +1766,7 @@ export const featsData: Feat[] = [
     id: 'divinely-favored',
     name: 'Любимец богов',
     nameEn: 'Divinely Favored',
+    sourceBook: 'DSOTDQ14',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1672,6 +1804,7 @@ export const featsData: Feat[] = [
     id: 'scion-of-the-outer-planes',
     name: 'Наследник внешних планов',
     nameEn: 'Scion of the outer planes',
+    sourceBook: 'SATO14',
     type: 'origin',
     requirements: ['предыстория Хранитель врат'],
     effects: [
@@ -1720,6 +1853,7 @@ export const featsData: Feat[] = [
     id: 'rune-shaper',
     name: 'Ваятель рун',
     nameEn: 'Rune shaper',
+    sourceBook: 'BGG14',
     type: 'origin',
     requirements: ['предыстория Резчик рун'],
     effects: [
@@ -1795,6 +1929,7 @@ export const featsData: Feat[] = [
     id: 'cohort-of-chaos',
     name: 'Когорта Хаоса',
     nameEn: 'Cohort of chaos',
+    sourceBook: 'SATO14',
     type: 'general',
     requirements: ['Уровень 4+', 'черта Наследник внешних планов (хаотичный внешний план)'],
     effects: [
@@ -1835,6 +1970,7 @@ export const featsData: Feat[] = [
     id: 'aberrant-dragonmark',
     name: 'Искажённая метка дракона',
     nameEn: 'Aberrant dragonmark',
+    sourceBook: 'ERLW14',
     type: 'general',
     requirements: ['Уровень 4+', 'отсутствие другой Метки Дракона'],
     effects: [
@@ -1896,6 +2032,7 @@ export const featsData: Feat[] = [
     id: 'strixhaven-initiate',
     name: 'Поступивший в Стриксхейвен',
     nameEn: 'Strixhaven initiate',
+    sourceBook: 'SCC14',
     type: 'origin',
     requirements: ['предыстория Студент Визерблума/Квандрикса/Лорхолда/Призмари/Сильверквилла'],
     effects: [
@@ -1946,6 +2083,7 @@ export const featsData: Feat[] = [
     id: 'vampire-hunter',
     name: 'Охотник на вампиров',
     nameEn: 'Vampire Hunter',
+    sourceBook: 'ABH24',
     type: 'origin',
     requirements: ['предыстория Уцелевший от вампира'],
     effects: [
@@ -1957,6 +2095,7 @@ export const featsData: Feat[] = [
     id: 'vampires-plaything',
     name: 'Игрушка вампира',
     nameEn: 'Vampire’s Plaything',
+    sourceBook: 'ABH24',
     type: 'origin',
     requirements: ['предыстория Вампирский посвящённый'],
     effects: [
@@ -1968,6 +2107,7 @@ export const featsData: Feat[] = [
     id: 'bomber',
     name: 'Бомбометатель',
     nameEn: 'Bomber',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1981,6 +2121,7 @@ export const featsData: Feat[] = [
     id: 'putrefy',
     name: 'Гниение',
     nameEn: 'Putrefy',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -1993,6 +2134,7 @@ export const featsData: Feat[] = [
     id: 'bloodlust',
     name: 'Жажда крови',
     nameEn: 'Bloodlust',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2006,6 +2148,7 @@ export const featsData: Feat[] = [
     id: 'vampire-touched',
     name: 'Затронутый вампирами',
     nameEn: 'Vampire-Touched',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2018,6 +2161,7 @@ export const featsData: Feat[] = [
     id: 'light-bringer',
     name: 'Несущий свет',
     nameEn: 'Light Bringer',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2032,6 +2176,7 @@ export const featsData: Feat[] = [
     id: 'treacherous-allure',
     name: 'Обманчивая привлекательность',
     nameEn: 'Treacherous Allure',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2045,6 +2190,7 @@ export const featsData: Feat[] = [
     id: 'rebuke',
     name: 'Осуждение',
     nameEn: 'Rebuke',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2057,6 +2203,7 @@ export const featsData: Feat[] = [
     id: 'cloying-mists',
     name: 'Ползучий туман',
     nameEn: 'Cloying Mists',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2070,6 +2217,7 @@ export const featsData: Feat[] = [
     id: 'delicious-pain',
     name: 'Сладкая боль',
     nameEn: 'Delicious Pain',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2082,6 +2230,7 @@ export const featsData: Feat[] = [
     id: 'love-bites',
     name: 'Любовный укус',
     nameEn: 'Love Bites',
+    sourceBook: 'ABH24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2094,6 +2243,7 @@ export const featsData: Feat[] = [
     id: 'street-justice',
     name: 'Уличная справедливость',
     nameEn: 'Street Justice',
+    sourceBook: 'FRHoF24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2108,6 +2258,7 @@ export const featsData: Feat[] = [
     id: 'mythal-touched',
     name: 'Затронутый мифалом',
     nameEn: 'Mythal Touched',
+    sourceBook: 'FRHoF24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2160,6 +2311,7 @@ export const featsData: Feat[] = [
     id: 'cold-caster',
     name: 'Холодный заклинатель',
     nameEn: 'Cold Caster',
+    sourceBook: 'FRHoF24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2173,6 +2325,7 @@ export const featsData: Feat[] = [
     id: 'genie-magic',
     name: 'Магия гениев',
     nameEn: 'Genie Magic',
+    sourceBook: 'FRHoF24',
     type: 'general',
     requirements: ['Уровень 4+'],
     effects: [
@@ -2187,6 +2340,7 @@ export const featsData: Feat[] = [
     id: 'artificer-initiate',
     name: 'Посвящённый в артефакторство',
     nameEn: 'Artificer initiate',
+    sourceBook: 'TCE14',
     type: 'origin',
     effects: [
       'Вы узнаёте один заговор по вашему выбору из списка заклинаний артефактора, и вы узнаёте одно заклинание 1-го уровня по вашему выбору из этого же списка. Интеллект, Мудрость или Харизма — это ваша заклинательная характеристика для этих заклинаний (выбирайте, когда берете эту черту).',
@@ -2198,6 +2352,7 @@ export const featsData: Feat[] = [
     id: 'eldrith-warrior',
     name: 'Мистический боец',
     nameEn: 'Eldrith Warrior',
+    sourceBook: 'BHDMsG24',
     type: 'fighting-style',
     requirements: ['Умение Боевой стиль, Кровавый охотник 2 уровень'],
     effects: [
@@ -2208,6 +2363,7 @@ export const featsData: Feat[] = [
     id: 'survivor',
     name: 'Выживший',
     nameEn: 'Survivor',
+    sourceBook: 'RHW24',
     type: 'origin',
     effects: [
       'Сверхбдительность. Всякий раз, когда вы совершаете бросок инициативы, вы можете перебросить д20, если выпавшее число равно 9 или меньше, и вы должны использовать новый результат. ',
@@ -2218,6 +2374,7 @@ export const featsData: Feat[] = [
     id: 'sharp-eye',
     name: 'Острый глаз',
     nameEn: 'Sharp Eye',
+    sourceBook: 'RHW24',
     type: 'origin',
     effects: [
       'Когда вы совершаете действие Поиск или Изучение вы можете дать себе Преимущество на любую проверку характеристики совершаемую как часть этого действия. Вы можете использовать это преимущество количество раз, равное вашему Бонусу мастерства, и вы восстанавливаете все потраченные использования по окончанию продолжительного отдыха. Если проверка проваливается, то использование этой особенности не тратится.'
@@ -2227,6 +2384,7 @@ export const featsData: Feat[] = [
     id: 'spellfire-spark',
     name: 'Искра чаропламени',
     nameEn: 'Spellfire Spark',
+    sourceBook: 'FRHoF24',
     type: 'origin',
     requirements: ['Предыстория Посвящённый чаропламени'],
     effects: [
@@ -2239,6 +2397,7 @@ export const featsData: Feat[] = [
     id: 'spellfire-adept',
     name: 'Адепт чаропламени',
     nameEn: 'Spellfire Adept',
+    sourceBook: 'FRHoF24',
     type: 'general',
     requirements: ['Уровень 4+', 'Черта Искра чаропламени или умение Магия договора или умение Использование заклинаний'],
     effects: [

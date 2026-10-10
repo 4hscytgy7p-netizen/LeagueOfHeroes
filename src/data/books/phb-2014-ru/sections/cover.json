@@ -1,0 +1,31 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "cover",
+  "title": "Передняя обложка",
+  "description": "",
+  "sourcePages": [
+    1
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 1,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-1-b69d90b75a.webp",
+          "alt": "Иллюстрация: Передняя обложка",
+          "width": 1698,
+          "height": 2400,
+          "smallSrc": "/images/books/phb-2014-ru/page-1-b69d90b75a-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Все, что необходимо для создания персонажа\nв одной из лучших в мире настольных ролевых игр",
+          "textLabel": "Текст иллюстрации",
+          "id": "p1-1",
+          "sourcePage": 1
+        }
+      ]
+    }
+  ]
+}

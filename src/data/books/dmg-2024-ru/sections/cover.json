@@ -1,0 +1,28 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "cover",
+  "title": "Обложка",
+  "description": "",
+  "sourcePages": [
+    1
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 1,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-1-960533bc52.webp",
+          "alt": "Иллюстрация к разделу «Обложка».",
+          "width": 990,
+          "height": 1400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-1-960533bc52-640.webp",
+          "smallWidth": 640,
+          "id": "p1-1",
+          "sourcePage": 1
+        }
+      ]
+    }
+  ]
+}

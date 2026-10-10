@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "part-three",
+  "title": "Часть 3: хозяин правил",
+  "description": "",
+  "sourcePages": [
+    234
+  ],
+  "group": "Часть 3 · Хозяин правил",
+  "pages": [
+    {
+      "number": 234,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-234-3ed458c098.webp",
+          "alt": "Иллюстрация: Часть 3: хозяин правил",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-234-3ed458c098-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "ЧАСТЬ3\nЧАСТЬ 3\nХОЗЯИН ПРАВИЛ\nХОЗЯИН ПРАВИЛ",
+          "textLabel": "Текст иллюстрации",
+          "id": "p234-1",
+          "sourcePage": 234
+        }
+      ]
+    }
+  ]
+}

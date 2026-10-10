@@ -67,7 +67,7 @@ export const BLOOD_CURSE_OPTIONS = [
   { id: 'blood-curse-of-exposure', name: 'Проклятие уязвимости', description: 'Вы знаете это Проклятие крови и можете применять его с помощью способности «Проклятая кровь». Усиление проклятия расходует кость магии крови согласно правилам класса.', href: '/classes/bloodhunter#feature-проклятая-кровь-1' }
 ] as const;
 
-export function buildClassFeatureOptions(fightingStyleOptions: any[]) {
+export function buildClassFeatureOptions(fightingStyleOptions: any[], classes: { id: string }[] = []) {
   const fighterStyleOptions = fightingStyleOptions.filter((option) => {
     const requirements = Array.isArray(option.requirements) ? option.requirements : [];
     return requirements.every((requirement) =>
@@ -84,16 +84,17 @@ export function buildClassFeatureOptions(fightingStyleOptions: any[]) {
       detail: 'Создайте собственного покровителя или опишите божество из другого сеттинга.'
     }
   ];
-  const faithGroup = (description: string, extraOptions: any[] = []) => ({
+  const faithGroup = (description: string, optional = false) => ({
     id: 'faith',
-    name: 'Божество или духовный путь',
+    name: 'Божество',
     count: 1,
+    optional,
     description,
     href: FAITH_SOURCE_URL,
-    options: [...extraOptions, ...faithOptions]
+    options: faithOptions
   });
 
-  return {
+  const groups = {
   fighter: [{ id: 'fighting-style', name: 'Боевой стиль', count: 1, options: fighterStyleOptions }],
   cleric: [{
     id: 'divine-order', name: 'Божественный порядок', count: 1, href: '/classes/cleric#feature-божественный-порядок-1', options: [
@@ -103,28 +104,23 @@ export function buildClassFeatureOptions(fightingStyleOptions: any[]) {
   }, faithGroup('Выберите божество, которому служит жрец. Домены указаны как подсказка для будущего выбора подкласса.')],
   druid: [{
     id: 'primal-order', name: 'Первобытный порядок', count: 1, href: '/classes/druid#feature-первобытный-порядок-1', options: [
-      { id: 'magician', name: 'Маг', detail: 'Дополнительный заговор друида; бонус Мудрости к Магии или Природе', href: '/classes/druid#feature-первобытный-порядок-1', effects: [{ type: 'extraCantrip', spellList: 'druid', count: 1 }, { type: 'skillCheckBonus', skills: ['Магия', 'Природа'], ability: 'wisdom' }] },
+      { id: 'magician', name: 'Маг', detail: 'Дополнительный заговор друида; бонус Мудрости к Магии или Природе', exportDescription: 'Маг. Вы знаете один дополнительный заговор из списка заклинаний друида. Кроме того, ваша мистическая связь с природой даёт вам бонус к проверкам Интеллекта (Магия или Природа). Бонус равен вашему модификатору Мудрости (минимум +1).', href: '/classes/druid#feature-первобытный-порядок-1', effects: [{ type: 'extraCantrip', spellList: 'druid', count: 1 }, { type: 'skillCheckBonus', skills: ['Магия', 'Природа'], ability: 'wisdom' }] },
       { id: 'warden', name: 'Страж', detail: 'Владение воинским оружием и средней бронёй', href: '/classes/druid#feature-первобытный-порядок-1', effects: [{ type: 'weaponProficiency', categories: ['Воинское оружие'] }, { type: 'armorTraining', categories: ['Средняя броня'] }] }
     ]
-  }, faithGroup(
-    'Друид может почитать божество природы либо саму природу и её духов.',
-    [{ id: 'faith-nature-itself', name: 'Сама природа и её духи', detail: 'Духовный путь без служения одному божеству.' }]
-  )],
+  }, faithGroup('Выберите божество, которому служит друид. По правилам Лиги этот выбор обязателен.')],
   paladin: [faithGroup(
-    'Божество не является источником силы паладина: силу даёт его клятва. Здесь можно выбрать связанного с клятвой покровителя или оставить путь светским.',
-    [{ id: 'faith-sacred-oath', name: 'Только клятва — без божества', detail: 'Паладин следует идеалам выбранной клятвы и не служит одному божеству.' }]
+    'Силу паладину даёт клятва, но по правилам Лиги также необходимо выбрать божество, которому служит персонаж.'
   )],
   monk: [faithGroup(
-    'Монастырь может быть связан с божеством либо с самостоятельной философской традицией.',
-    [{ id: 'faith-philosophy', name: 'Философская или монастырская традиция', detail: 'Духовная дисциплина без служения одному божеству.' }]
+    'Выберите божество, которому служит монах. По правилам Лиги этот выбор обязателен.'
   )],
-  warlock: [{
+  warlock: [faithGroup('Выберите божество из общего справочника Лиги. Покровитель договора выбирается отдельно и не заменяет божество, которому служит персонаж.'), {
     id: 'eldritch-invocation', name: 'Таинственное воззвание', count: 1, href: '/classes/warlock#feature-таинственные-воззвания-1', options: [
-      { id: 'pact-of-the-tome', name: 'Договор гримуара', detail: 'Открывает отдельный выбор заговоров и ритуалов', effects: [{ type: 'spellSource', source: 'pact-tome' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
-      { id: 'pact-of-the-blade', name: 'Договор клинка', detail: 'Создаёт или связывает оружие договора', effects: [{ type: 'pactWeapon' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
-      { id: 'pact-of-the-chain', name: 'Договор цепи', detail: 'Даёт Поиск фамильяра и особые формы фамильяра', effects: [{ type: 'fixedSpell', spell: 'Поиск фамильяра' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
-      { id: 'armor-of-shadows', name: 'Доспехи теней', detail: 'Доспех мага без траты ячейки', effects: [{ type: 'fixedSpell', spell: 'Доспех мага' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
-      { id: 'eldritch-mind', name: 'Мистический разум', detail: 'Преимущество на спасброски Телосложения для концентрации', effects: [{ type: 'trait' }], href: '/classes/warlock#feature-таинственные-воззвания-1' }
+      { id: 'pact-of-the-tome', name: 'Договор гримуара', detail: 'Открывает отдельный выбор заговоров и ритуалов', exportDescription: 'Переплетая теневые нити между собой, в конце Короткого или Продолжительного отдыха вы создаёте в своей руке книгу. Эта книга теней (её внешний вид определяете вы) содержит тайную магию, доступную только вам, и позволяет вам получить перечисленные ниже эффекты. Книга исчезает, если вы создаёте новую книгу при помощи этого умения или если вы умираете.\n\nЗаговоры и ритуалы. Когда книга появится, выберите 3 заговора и 2 заклинания 1 уровня с меткой «ритуал». Заклинания могут быть из списка заклинаний любого класса и должны быть заклинаниями, которые у вас ещё не подготовлены. Пока книга находится рядом с вами, выбранные заклинания считаются подготовленными и действуют как заклинания колдуна.\n\nЗаклинательная фокусировка. Вы можете использовать книгу в качестве заклинательной фокусировки.', effects: [{ type: 'spellSource', source: 'pact-tome' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
+      { id: 'pact-of-the-blade', name: 'Договор клинка', detail: 'Создаёт или связывает оружие договора', exportDescription: 'Вы можете Бонусным действием создать оружие договора в своей руке (простое или воинское рукопашное оружие по своему выбору) или создать связь с магическим оружием, которое держите; вы не можете создать связь с магическим оружием, если кто-то другой настроен на него или другой колдун связан с ним.\n\nПока связь не закончится, вы владеете этим оружием и можете использовать его в качестве магической фокусировки.\n\nПри атаке этим оружием вы можете использовать свой модификатор Харизмы для бросков атаки и урона, а не Силу или Ловкость; также вы можете изменить тип наносимого оружием урона на Некротику, Психику или Излучение вместо обычного.\n\nВаша связь с оружием прерывается, если вы снова используете Бонусное действие, применяя это умение, если оружие находится на расстоянии более 5 футов от вас в течение 1 минуты или более либо если вы умираете. Созданное оружие исчезает, когда связь прекращается.', effects: [{ type: 'pactWeapon' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
+      { id: 'pact-of-the-chain', name: 'Договор цепи', detail: 'Даёт Поиск фамильяра и особые формы фамильяра', exportDescription: 'Вы знаете заклинание «Поиск фамильяра» и можете накладывать его действием Магия, не расходуя ячейку заклинания.\n\nКогда вы накладываете заклинание, вы можете выбрать одну из обычных форм для вашего фамильяра либо одну из особых форм: Бес, Псевдодракон, Квазит, Скелет, Слаад-головастик, Сфинкс чудес, Спрайт или Ядовитая змея.\n\nКроме того, когда вы совершаете действие Атака, вы можете вместо одной своей атаки позволить своему фамильяру совершить одну атаку за счёт его Реакции.', effects: [{ type: 'fixedSpell', spell: 'Поиск фамильяра' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
+      { id: 'armor-of-shadows', name: 'Доспехи теней', detail: 'Доспех мага без траты ячейки', exportDescription: 'Вы можете накладывать на себя «Доспехи мага», не тратя ячейку заклинания.', effects: [{ type: 'fixedSpell', spell: 'Доспех мага' }], href: '/classes/warlock#feature-таинственные-воззвания-1' },
+      { id: 'eldritch-mind', name: 'Мистический разум', detail: 'Преимущество на спасброски Телосложения для концентрации', exportDescription: 'Вы совершаете с Преимуществом спасброски Телосложения для поддержания концентрации.', effects: [{ type: 'trait' }], href: '/classes/warlock#feature-таинственные-воззвания-1' }
     ]
   }, {
     id: 'warlock-patron',
@@ -136,6 +132,13 @@ export function buildClassFeatureOptions(fightingStyleOptions: any[]) {
     options: WARLOCK_PATRONS
   }]
   } as Record<string, any[]>;
+  for (const characterClass of classes) {
+    const classGroups = groups[characterClass.id] ||= [];
+    if (!classGroups.some(group => group.id === 'faith')) {
+      classGroups.push(faithGroup('Вы можете выбрать божество для истории персонажа. Для этого класса выбор необязателен и может оставаться пустым.', true));
+    }
+  }
+  return groups;
 }
-import { DEITY_OPTIONS, FAITH_SOURCE_URL } from './deities.ts';
+import { DEITY_OPTIONS, FAITH_SOURCE_URL } from '../../../data/deities/index.ts';
 import { WARLOCK_PATRONS, WARLOCK_PATRON_SOURCE_URL, WARLOCK_PATRON_DNDSU_URL } from './patrons.ts';

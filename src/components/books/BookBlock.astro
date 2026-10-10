@@ -1,0 +1,37 @@
+---
+import type { BookBlock as Block } from '../../types/book';
+import BookText from './BookText.astro';
+interface Props { block: Block }
+const { block } = Astro.props;
+const Heading = block.kind === 'heading' ? `h${block.level}` as 'h2' | 'h3' | 'h4' : 'h2';
+---
+<div id={block.id} class={`book-block book-block-${block.kind}`} data-reading-anchor={block.id}>
+  {block.kind === 'heading' && <Heading>{block.link ? <a href={block.link}><BookText spans={block.spans} /></a> : <BookText spans={block.spans} />}</Heading>}
+  {block.kind === 'paragraph' && <p class:list={{ 'book-attribute': block.style === 'attribute', 'book-reference': block.style === 'reference' }}>
+    {block.link ? <a href={block.link}><BookText spans={block.spans} /></a> : <BookText spans={block.spans} />}
+  </p>}
+  {block.kind === 'list' && (block.ordered
+    ? <ol start={block.start}>{block.items.map((item) => <li><BookText spans={item} /></li>)}</ol>
+    : <ul>{block.items.map((item) => <li><BookText spans={item} /></li>)}</ul>)}
+  {block.kind === 'callout' && <aside class="book-callout">{block.blocks.map((child) => <Astro.self block={child} />)}</aside>}
+  {block.kind === 'table' && (
+    <div class="book-table-scroll" tabindex="0" role="region" aria-label={block.caption || 'Таблица из книги'}>
+      <table>
+        {block.caption && <caption>{block.caption}</caption>}
+        <thead><tr>{block.headers.map((cell) => <th scope="col">{cell}</th>)}</tr></thead>
+        <tbody>{block.rows.map((row) => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+  )}
+  {block.kind === 'image' && (
+    <figure>
+      <img src={block.src}
+        srcset={block.smallSrc ? `${block.smallSrc} ${block.smallWidth}w, ${block.src} ${block.width}w` : undefined}
+        sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1100px) 65vw, 760px"
+        alt={block.alt} width={block.width} height={block.height} loading="lazy" decoding="async" />
+      {block.caption && <figcaption>{block.caption}</figcaption>}
+      {block.zoom && <p><a href={block.src} target="_blank" rel="noopener">Открыть в полном размере ↗</a></p>}
+      {block.text && <details class="book-image-text"><summary>{block.textLabel || 'Текст изображения'}</summary><p>{block.text}</p></details>}
+    </figure>
+  )}
+</div>

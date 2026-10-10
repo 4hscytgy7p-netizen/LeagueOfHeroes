@@ -1,0 +1,40 @@
+---
+import type { Species } from '../../types/species';
+import { speciesPageAbilities, type SpeciesPageVariant } from '../../utils/speciesPage';
+import { speciesVariantMaterialId } from '../../utils/materialCatalog';
+import MaterialMetadata from '../materials/MaterialMetadata.astro';
+import SpeciesStats from './SpeciesStats.astro';
+import SpeciesAbility from './SpeciesAbility.astro';
+import SpeciesText from './SpeciesText.astro';
+interface Props { species: Species; variant?: SpeciesPageVariant; }
+const { species, variant } = Astro.props;
+const abilities = speciesPageAbilities(species, variant);
+const hasLore = variant?.lore?.trim() && variant.lore.trim() !== '-';
+---
+<header class="view-header">
+  <h2>{variant ? `${species.name} → ${variant.name}` : species.variantMode === 'required' ? 'Общие свойства' : species.variants?.length ? 'Базовый вариант' : 'Характеристики и способности'}</h2>
+  {variant && (variant.materialIndex !== undefined
+    ? <MaterialMetadata kind="species-variant" id={speciesVariantMaterialId(species.id, variant, variant.materialIndex)} />
+    : <MaterialMetadata kind="species" id={species.id} />)}
+  {species.variantMode === 'required' && !variant && <p class="selection-notice">Для этого вида нужно выбрать подрасу. Пока показаны только общие свойства; способности подрасы появятся после выбора.</p>}
+</header>
+<SpeciesStats type={species.type} size={species.size} speed={species.speed} variantSpeed={variant?.speed} speedNote={variant?.speedNote} />
+<div class="lore-content">
+  {hasLore ? <>
+    <SpeciesText text={variant!.lore!} />
+    <details class="base-lore"><summary>Полное базовое описание {species.name}</summary><SpeciesText text={species.lore} /></details>
+  </> : <SpeciesText text={species.lore} />}
+</div>
+<div class="abilities">
+  {abilities.map((entry, index) => <SpeciesAbility title={entry.ability.title} description={entry.ability.description}
+    id={`species-${variant?.pageId || 'base'}-ability-${index}`}
+    origin={variant ? entry.variant ? `Происхождение: ${variant.name}` : `Общие свойства: ${species.name}` : undefined} />)}
+</div>
+<style>
+  .view-header { margin: 1rem 0; }
+  h2 { font-size: 1.4rem; overflow-wrap: anywhere; }
+  .selection-notice { padding: 0.75rem; background: var(--background); border-left: 3px solid var(--primary); }
+  .lore-content { margin-bottom: 1.5rem; }
+  .base-lore { padding: 0.75rem; background: var(--background); border-radius: 0.5rem; margin-top: 1rem; }
+  summary { cursor: pointer; }
+</style>

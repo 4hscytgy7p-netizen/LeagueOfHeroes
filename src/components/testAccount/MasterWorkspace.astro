@@ -1,0 +1,188 @@
+---
+import { ruleCategories, ruleAudienceOptions, settlements, magicItemPoolPrices, dragonStages, validateRuleCatalog, serializeCatalogForPage } from '../../utils/masterRules';
+import sourceRules from '../../data/masterRules.json';
+import '../../styles/masterWorkspace.css';
+
+const catalog = validateRuleCatalog(sourceRules);
+---
+
+<div id="master-workspace" class="master-workspace" aria-busy="true">
+  <header class="mw-heading">
+    <div>
+      <span class="mw-eyebrow">Открытый стол · Лига Героев</span>
+      <h2 id="mw-heading-title">Справочник мастера</h2>
+      <p id="mw-heading-description">Правила под рукой. Больше времени на историю.</p>
+    </div>
+    <div class="mw-heading-actions">
+      <button id="mw-export-rules" class="mw-button" type="button">Скачать правила</button>
+      <label class="mw-button mw-import-label" for="mw-import-rules" data-mw-editor-only>Импортировать файл<input id="mw-import-rules" class="mw-sr-only" type="file" accept=".json,application/json" /></label>
+      <button id="mw-add-rule" class="mw-button mw-primary" type="button" data-mw-editor-only disabled>＋ Добавить правило</button>
+    </div>
+  </header>
+
+  <p class="mw-storage-note" id="mw-storage-note">Правила включены в страницу сайта. Правки редактора сохраняются для вашего аккаунта в этом браузере. Чтобы обновить общий справочник, скачайте файл правил и опубликуйте его вместе с сайтом.</p>
+  <script id="mw-source-rules" type="application/json" is:inline set:html={serializeCatalogForPage(catalog)}></script>
+
+  <div id="mw-status" class="mw-notice" role="status" aria-live="polite" hidden></div>
+  <div id="mw-local-conflicts" class="mw-draft-notice" hidden><span id="mw-local-conflict-count"></span><button id="mw-export-local-copies" class="mw-button" type="button">Скачать мои копии</button></div>
+  <div id="mw-local-draft" class="mw-draft-notice" hidden>
+    <span>Есть незавершённый текст из предыдущего посещения.</span>
+    <div><button id="mw-restore-draft" class="mw-button" type="button">Восстановить</button><button id="mw-discard-draft" class="mw-button mw-quiet" type="button">Убрать</button></div>
+  </div>
+
+  <div class="mw-layout">
+    <aside class="mw-sidebar" aria-label="Навигация по справочнику">
+      <span class="mw-sidebar-label">Библиотека правил</span>
+      <nav id="mw-categories" class="mw-category-nav" aria-label="Темы правил">
+        <button type="button" data-category="all" class="is-active" aria-current="page"><span class="mw-nav-icon" aria-hidden="true">▤</span><span>Все правила</span><small data-count="all">—</small></button>
+        {ruleCategories.map(category => <button type="button" data-category={category.id}><span class="mw-nav-icon" aria-hidden="true">{category.icon}</span><span>{category.title}</span><small data-count={category.id}>—</small></button>)}
+        <button type="button" data-category="bookmarks"><span class="mw-nav-icon" aria-hidden="true">☆</span><span>Избранное</span><small data-count="bookmarks">0</small></button>
+      </nav>
+      <div class="mw-sidebar-tools">
+        <span class="mw-sidebar-label">Подготовка игры</span>
+        <button id="mw-open-tools" class="mw-tools-link" type="button"><span aria-hidden="true">⚒</span> Калькуляторы и генераторы <span aria-hidden="true">↗</span></button>
+        <a href="/tools/encounter-builder/" target="_blank" rel="noopener">Конструктор столкновений ↗</a>
+        <a href="/tools/game-stats/" target="_blank" rel="noopener">Статистика игр ↗</a>
+      </div>
+      <p class="mw-sidebar-note" id="mw-sidebar-note">Статьи сайта и ваши локальные правки. Черновики отмечены отдельно.</p>
+    </aside>
+
+    <div class="mw-main">
+      <section id="mw-library" aria-labelledby="mw-list-title">
+        <div class="mw-library-toolbar">
+          <label class="mw-search"><span aria-hidden="true">⌕</span><input id="mw-search" type="search" placeholder="Найти правило, термин или фразу…" aria-label="Поиск по заголовкам и полному тексту правил" /></label>
+          <label class="mw-filter" id="mw-status-filter-label"><span class="mw-sr-only">Статус статьи</span><select id="mw-status-filter"><option value="all">Все статусы</option><option value="published">Готовые статьи</option><option value="draft">Черновики</option></select></label>
+        </div>
+        <div class="mw-list-heading"><div><h3 id="mw-list-title">Все правила</h3><p id="mw-list-description">От награды за сессию до возвращения в Сигил.</p></div><span id="mw-result-count" aria-live="polite"></span></div>
+        <div id="mw-rule-list" class="mw-rule-list"><p class="mw-empty">Открываем справочник…</p></div>
+        <button id="mw-refresh" class="mw-button mw-quiet" type="button">Перечитать локальные правки</button>
+      </section>
+
+      <section id="mw-reader" class="mw-reader" aria-labelledby="mw-rule-title" hidden>
+        <div class="mw-reader-toolbar">
+          <button class="mw-button mw-quiet" type="button" data-mw-back>← К списку</button>
+          <div><button id="mw-bookmark" class="mw-button" type="button" aria-pressed="false">☆ В избранное</button><button id="mw-copy-link" class="mw-button" type="button">Ссылка</button><button id="mw-reset-rule" class="mw-button" type="button" hidden>Вернуть версию сайта</button><button id="mw-edit-rule" class="mw-button mw-primary" type="button" data-mw-editor-only>Редактировать</button></div>
+        </div>
+        <div id="mw-source-conflict" class="mw-draft-notice" hidden><span>Версия сайта обновилась. В браузере сохранена ваша копия прежней редакции.</span><button id="mw-recover-local" class="mw-button" type="button">Открыть мою копию в редакторе</button></div>
+        <div class="mw-reading-layout">
+          <article class="mw-article">
+            <div id="mw-rule-meta" class="mw-rule-meta"></div>
+            <h3 id="mw-rule-title" tabindex="-1"></h3>
+            <p id="mw-rule-summary" class="mw-rule-lead"></p>
+            <div id="mw-rule-body" class="mw-prose"></div>
+            <footer id="mw-rule-updated" class="mw-article-footer"></footer>
+            <div class="mw-original-actions"><a id="mw-original-link" class="mw-text-link" target="_blank" rel="noopener">Оригинал на сайте ↗</a><button id="mw-download-rule" class="mw-button" type="button">Скачать оригинал статьи</button></div>
+            <section id="mw-personal-notes" class="mw-personal-notes" aria-labelledby="mw-note-title" hidden>
+              <h4 id="mw-note-title">Личная заметка</h4>
+              <p>Ваши пояснения и идеи для игры. Заметка не является правилом Лиги и не входит в скачиваемые правила. Она сохраняется только для вашего аккаунта в этом браузере.</p>
+              <label for="mw-note-text">Заметка к этой статье</label>
+              <textarea id="mw-note-text" rows="6" maxlength="20000" placeholder="Например, что проверить при подготовке игры…"></textarea>
+              <span id="mw-note-status" role="status" aria-live="polite"></span>
+            </section>
+          </article>
+          <aside class="mw-toc"><span class="mw-sidebar-label">В этой статье</span><nav id="mw-toc" aria-label="Содержание статьи"></nav></aside>
+        </div>
+      </section>
+
+      <section id="mw-editor" aria-labelledby="mw-editor-title" hidden>
+        <div class="mw-editor-heading"><div><span class="mw-eyebrow">Редактор справочника</span><h3 id="mw-editor-title">Новое правило</h3></div><button id="mw-cancel-edit" class="mw-button" type="button">Отмена</button></div>
+        <form id="mw-rule-form">
+          <fieldset id="mw-editor-fields">
+            <div class="mw-form-grid">
+              <label class="mw-full">Заголовок<input id="mw-edit-title" required maxlength="180" placeholder="Например, награды за фракционные задания" /></label>
+              <label>Раздел<select id="mw-edit-category">{ruleCategories.map(category => <option value={category.id}>{category.title}</option>)}</select></label>
+              <label>Статус<select id="mw-edit-status"><option value="draft">Черновик</option><option value="published">Готово к публикации</option></select></label>
+              <fieldset class="mw-full mw-audiences" id="mw-edit-audiences"><legend>Кто видит правило</legend>{ruleAudienceOptions.map(option => <label><input type="checkbox" value={option.id} checked={option.id === 'master'} />{option.title}</label>)}<small>Выберите хотя бы одну роль. Администратор видит все статьи. Тестовикам показываются только готовые статьи.</small></fieldset>
+              <label class="mw-full">Краткое описание<textarea id="mw-edit-summary" rows="2" maxlength="500" placeholder="О чём правило — одна или две фразы для списка и поиска"></textarea></label>
+              <label>Порядок в разделе<input id="mw-edit-order" type="number" min="0" max="100000" value="100" required /><small>Меньшее число — выше в списке.</small></label>
+            </div>
+            <div class="mw-write-heading"><label for="mw-edit-body">Текст правила</label><span id="mw-draft-state" role="status"></span></div>
+            <div id="mw-format-toolbar" class="mw-format-toolbar" aria-label="Форматирование Markdown">
+              <button type="button" data-format="heading">Заголовок</button><button type="button" data-format="bold"><strong>Жирный</strong></button><button type="button" data-format="list">Список</button><button type="button" data-format="table">Таблица</button><button type="button" data-format="link">Ссылка</button>
+            </div>
+            <div class="mw-editing-layout">
+              <textarea id="mw-edit-body" required maxlength="100000" rows="20" spellcheck="true" aria-label="Текст правила в Markdown" placeholder="## Основное правило&#10;&#10;Опишите условия, ограничения и примеры."></textarea>
+              <div class="mw-preview"><span class="mw-sidebar-label">Предпросмотр</span><div id="mw-preview-body" class="mw-prose"></div></div>
+            </div>
+            <details class="mw-markdown-help"><summary>Как оформить текст</summary><p><code>## Заголовок</code>, <code>**важный текст**</code>, <code>- пункт</code>, <code>1. шаг</code>, <code>&gt; примечание</code>, <code>[название](/bastions/)</code>. Таблица: строка <code>| Столбец | Столбец |</code>, затем <code>| --- | --- |</code> и строки данных. HTML отображается как текст.</p></details>
+          </fieldset>
+          <div id="mw-save-error" class="mw-notice" data-kind="error" role="alert" hidden></div>
+          <details id="mw-conflict" class="mw-markdown-help" hidden><summary>Показать актуальную сохранённую версию</summary><pre id="mw-conflict-body"></pre><button id="mw-load-latest" class="mw-button" type="button">Загрузить эту версию в редактор</button></details>
+          <div class="mw-save-bar"><p>Правки сохраняются локально. Для публикации общих правил скачайте файл справочника и обновите сайт.</p><button id="mw-save-rule" class="mw-button mw-primary" type="submit">Сохранить в браузере</button></div>
+        </form>
+      </section>
+
+      <section id="mw-tools" aria-labelledby="mw-tools-title" hidden>
+        <button class="mw-button mw-quiet" type="button" data-mw-back>← К правилам</button>
+        <div class="mw-list-heading"><div><span class="mw-eyebrow">Перед игрой и за столом</span><h3 id="mw-tools-title">Инструменты мастера</h3><p>Карты для игры, бюджет наград, сделки и развитие предметов.</p></div></div>
+        <article class="mw-tool-card mw-map-card">
+          <span class="mw-tool-number">Карты / Генератор</span>
+          <h4>Изометрические карты</h4>
+          <p>Склепы и крепости, современные комплексы и космические станции. Выберите тематику и планировку, осмотрите помещения и скачайте карту для Roll20 Jumpgate: UVTT со стенами и светом или PNG.</p>
+          <div class="mw-generator-actions">
+            <button id="mw-open-map-generator" class="mw-button mw-primary" type="button" aria-controls="mw-map-generator-panel" aria-expanded="false">Открыть генератор карт</button>
+            <a class="mw-button" href="/tools/dungeon-generator.html" target="_blank" rel="noopener">В отдельной вкладке ↗</a>
+          </div>
+          <div id="mw-map-generator-panel" class="mw-map-generator-panel" hidden>
+            <iframe id="mw-map-generator" title="Генератор изометрических карт" data-src="/tools/dungeon-generator.html" allow="clipboard-write" loading="lazy"></iframe>
+          </div>
+        </article>
+        <p class="mw-tools-note">Тарифы взяты из исходных правил. При изменении статей проверьте их перед расчётом: цены и лимиты можно указать вручную.</p>
+        <div class="mw-tool-grid">
+          <article class="mw-tool-card">
+            <span class="mw-tool-number">01 / Награды</span><h4>Бюджет наград</h4><p>Использует готовый денежный пул. Перевод опыта в золото не задан в наброске.</p>
+            <form id="mw-reward-form" class="mw-tool-form">
+              <label>Рассчитанный пул, зм<input name="pool" type="number" min="0" max="1000000000000" step="any" value="1500" required /></label>
+              <label>Уже распределено, зм<input name="allocated" type="number" min="0" max="1000000000000" step="any" value="0" required /></label>
+              <label>Поселение<select id="mw-settlement">{settlements.map(([name, cap], index) => <option value={index} selected={index === 3}>{name} · {cap.toLocaleString('ru-RU')} зм</option>)}</select></label>
+              <label>Потенциал поселения, зм<input id="mw-settlement-cap" name="cap" type="number" min="0" max="1000000000000" step="any" value="800" required /></label>
+              <button class="mw-button" type="submit">Рассчитать бюджет</button>
+            </form>
+            <output id="mw-reward-result" class="mw-tool-result" aria-live="polite"></output>
+          </article>
+          <article class="mw-tool-card">
+            <span class="mw-tool-number">02 / Предметы</span><h4>Стоимость добычи в пуле</h4><p>Магический предмет — по таблице учёта. Обычный предмет — половина базовой цены.</p>
+            <form id="mw-item-form" class="mw-tool-form">
+              <label>Тип предмета<select id="mw-item-kind" name="kind"><option value="magic">Магический предмет</option><option value="mundane">Обычный предмет / материал</option><option value="bought">Куплен за деньги персонажей</option></select></label>
+              <label>Редкость<select id="mw-item-rarity">{magicItemPoolPrices.map(([name], index) => <option value={index}>{name}</option>)}</select></label>
+              <label id="mw-item-price-label">Цена учёта за штуку, зм<input id="mw-item-price" name="price" type="number" min="0" max="1000000000000" step="any" value="50" required /></label>
+              <label>Количество<input name="quantity" type="number" min="1" max="1000000" value="1" required /></label>
+              <button class="mw-button" type="submit">Рассчитать стоимость</button>
+            </form>
+            <output id="mw-item-result" class="mw-tool-result" aria-live="polite"></output>
+          </article>
+          <article class="mw-tool-card">
+            <span class="mw-tool-number">03 / Торговля</span><h4>Продажа обычной добычи</h4><p>Одна сделка для группы одинаковых товаров. Прибыль сверх 50% цены не увеличивает пул.</p>
+            <form id="mw-trade-form" class="mw-tool-form">
+              <label>Базовая цена за штуку, зм<input name="price" type="number" min="0" max="1000000000000" step="any" value="1500" required /></label>
+              <label>Количество<input name="quantity" type="number" min="1" max="1000000" value="2" required /></label>
+              <label>Результат Расследования<input name="investigation" type="number" min="0" max="1000" value="15" required /></label>
+              <label>Результат Убеждения<input name="persuasion" type="number" min="0" max="1000" value="21" required /></label>
+              <button class="mw-button" type="submit">Рассчитать сделку</button>
+            </form>
+            <output id="mw-trade-result" class="mw-tool-result" aria-live="polite"></output>
+          </article>
+          <article class="mw-tool-card mw-encounter-card">
+            <span class="mw-tool-number">04 / Столкновения</span><h4>Подготовьте встречу</h4><p>Состав группы, опыт противников и бюджеты сложности по уровням — в существующем конструкторе столкновений.</p>
+            <a class="mw-button" href="/tools/encounter-builder/" target="_blank" rel="noopener">Открыть конструктор ↗</a>
+            <button class="mw-text-link" type="button" data-rule-id="trap-experience">Правила опыта и сложности ловушек →</button>
+          </article>
+          <article class="mw-tool-card mw-generator-card">
+            <span class="mw-tool-number">05 / Генератор</span><h4>Предмет драконьей сокровищницы</h4><p>Паспорт прогрессирующего предмета: стадия, условия развития и необязательная причуда d8. Боевые свойства берутся из описания выбранного предмета.</p>
+            <form id="mw-dragon-form" class="mw-tool-form">
+              <label>Название предмета<input name="name" maxlength="120" value="Клинок угасающего пламени" required /></label>
+              <label>Исходная стадия<select name="stage">{dragonStages.map((name, index) => <option value={index}>{name}</option>)}</select></label>
+              <label>Возраст дракона<select name="age"><option value="1">Молодой</option><option value="2">Взрослый</option><option value="3">Древний</option></select></label>
+              <label>Событие<select id="mw-dragon-mode" name="mode"><option value="none">Без изменения стадии</option><option value="year">Год в сокровищнице</option><option value="slain">Напитывание в первый час после убийства</option><option value="decay">Вне сокровищницы, без настройки</option></select></label>
+              <label id="mw-dragon-days-label" hidden>Дней без настройки вне сокровищницы<input name="days" type="number" min="0" max="1000000" value="30" required /></label>
+              <label>Причуда<select name="quirk"><option value="random">Случайная, бросок d8</option><option value="none">Без причуды</option></select></label>
+              <button class="mw-button mw-primary" type="submit">Сгенерировать паспорт</button>
+            </form>
+            <div id="mw-dragon-result" class="mw-prose mw-generator-result" aria-live="polite" hidden></div>
+            <div id="mw-generator-actions" class="mw-generator-actions" hidden><button id="mw-copy-generated" class="mw-button" type="button">Скопировать текст</button><button id="mw-generated-draft" class="mw-button" type="button" data-mw-editor-only>Открыть как новую статью</button></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

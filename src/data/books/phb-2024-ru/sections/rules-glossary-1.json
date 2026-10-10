@@ -1,0 +1,3581 @@
+{
+  "bookId": "phb-2024-ru",
+  "id": "rules-glossary-1",
+  "title": "Глоссарий правил · Часть 1",
+  "description": "Приложение В: Глоссарий правил · Правила глоссария · Определения правил · Атака [Действие]",
+  "sourcePages": [
+    348,
+    349,
+    350
+  ],
+  "group": "Приложение В · Глоссарий",
+  "pages": [
+    {
+      "number": 348,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Приложение В: Глоссарий правил",
+              "bold": true
+            }
+          ],
+          "id": "p348-1",
+          "sourcePage": 348
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Правила глоссария",
+              "bold": true
+            }
+          ],
+          "id": "p348-2",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Глоссарий использует следующие правила:"
+            }
+          ],
+          "id": "p348-3",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Теги в скобках.",
+              "bold": true
+            },
+            {
+              "text": " Некоторые записи содержат тег в скобках после названия записи, как, например, «Атака [Действие]»."
+            }
+          ],
+          "id": "p348-4",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тег (действие, область эффекта, настройка, состояние или опасность) указывает, что правило является частью семейства правил. Эти теги также имеют записи в глоссарии."
+            }
+          ],
+          "id": "p348-5",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "«Вы.»",
+              "bold": true
+            },
+            {
+              "text": " Правила игры (в этом глоссарии и в других местах) часто говорят о чем-то, что происходит с вами в игровом мире. Это «вы» относится к существу или объекту, к которому в данный момент игрового процесса применяется определённое правило. Например, «вы» в состоянии лежащий ничком — это существо, которое в данный момент находится в этом состоянии."
+            }
+          ],
+          "id": "p348-6",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "«См. также».",
+              "bold": true
+            },
+            {
+              "text": " Некоторые записи в глоссарии включают примечание «см. также», который указывает на другие записи в глоссарии, на главы этой книги или на оба варианта."
+            }
+          ],
+          "id": "p348-7",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нет устаревших терминов. ",
+              "bold": true
+            },
+            {
+              "text": "Глоссарий содержит определения только текущих правил. Если вы ищете термин из более ранней версии правил 5 редакции, то обратитесь к указателю."
+            }
+          ],
+          "id": "p348-8",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сокращения.",
+              "bold": true
+            },
+            {
+              "text": " Сокращения, указанные ниже, появляются в этом глоссарии и в других местах в правилах."
+            }
+          ],
+          "id": "p348-9",
+          "sourcePage": 348
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Сил.",
+            "Сила",
+            "Тел.",
+            "Телосложение"
+          ],
+          "rows": [
+            [
+              "Лов.",
+              "Ловкость",
+              "Инт.",
+              "Интеллект"
+            ],
+            [
+              "Мдр.",
+              "Мудрость",
+              "Хар.",
+              "Харизма"
+            ],
+            [
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "ЗД",
+              "Законный добрый",
+              "НД",
+              "Нейтральный добрый"
+            ],
+            [
+              "ХД",
+              "Хаотичный добрый",
+              "ЗН",
+              "Законный нейтральный"
+            ],
+            [
+              "Н",
+              "Нейтральный",
+              "ХН",
+              "Хаотичный нейтральный"
+            ],
+            [
+              "ЗЗ",
+              "Законный злой",
+              "НЗ",
+              "Нейтральный злой"
+            ],
+            [
+              "ХЗ",
+              "Хаотичный злой",
+              "",
+              ""
+            ]
+          ],
+          "id": "p348-10",
+          "sourcePage": 348
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "пп",
+            "Платиновая монета",
+            "зм",
+            "Золотая монета"
+          ],
+          "rows": [
+            [
+              "эм",
+              "Электрумовая монета",
+              "см",
+              "Серебряная монета"
+            ],
+            [
+              "мм",
+              "Медная монета",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "В",
+              "Вербальный компонент",
+              "С",
+              "Соматический компонент"
+            ],
+            [
+              "М",
+              "Материальный компонент",
+              "К",
+              "Концентрация"
+            ],
+            [
+              "Р",
+              "Ритуал",
+              "",
+              ""
+            ]
+          ],
+          "id": "p348-11",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "КД"
+            }
+          ],
+          "id": "p348-12",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Класс доспеха"
+            }
+          ],
+          "id": "p348-13",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "БМ"
+            }
+          ],
+          "id": "p348-14",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бонус мастерства Сл."
+            }
+          ],
+          "id": "p348-15",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сложность"
+            }
+          ],
+          "id": "p348-16",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ПМ"
+            }
+          ],
+          "id": "p348-17",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Персонаж Мастера"
+            }
+          ],
+          "id": "p348-18",
+          "sourcePage": 348
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Определения правил",
+              "bold": true
+            }
+          ],
+          "id": "p348-19",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "нии в алфавитном порядке:"
+            }
+          ],
+          "id": "p348-20",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атака 349"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-21",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атака заклинанием"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-22",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атака оружием"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-23",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Безоружный удар"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-24",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бессознательный"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-25",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бонусное действие"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-26",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бросок атаки"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-27",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бросок урона"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-28",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "В день"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-29",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Владение"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-30",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Владение доспехами"
+            }
+          ],
+          "targetPage": 349,
+          "style": "reference",
+          "id": "p348-31",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-349"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Влияние 350"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-32",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Враг"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-33",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Враждебное"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-34",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Временные хиты"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-35",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Героическое вдохновение"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-36",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горение"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-37",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Грузоподъёмность"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-38",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Действие"
+            }
+          ],
+          "targetPage": 350,
+          "style": "reference",
+          "id": "p348-39",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-1/#page-350"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дружественное 351"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-40",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заговор"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-41",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заклинание"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-42",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Заклинательная фокусировка"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-43",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Занятое пространство"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-44",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Засада"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-45",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Захвачен врасплох"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-46",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Захват"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-47",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изучение"
+            }
+          ],
+          "targetPage": 351,
+          "style": "reference",
+          "id": "p348-48",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-351"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Иллюзии 352"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-49",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Иммунитет"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-50",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Импровизированное оружие"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-51",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Инициатива"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-52",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Использование"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-53",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Испуганный"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-54",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истинное зрение"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-55",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Истощённый"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-56",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кампания"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-57",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Класс доспеха"
+            }
+          ],
+          "targetPage": 352,
+          "style": "reference",
+          "id": "p348-58",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-352"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Компетентность 353"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-59",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Конус"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-60",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Концентрация"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-61",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Короткий отдых"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-62",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кость хитов"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-63",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Критическое попадание"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-64",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Куб"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-65",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лазание"
+            }
+          ],
+          "targetPage": 353,
+          "style": "reference",
+          "id": "p348-66",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-2/#page-353"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лежащий ничком 354"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-67",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лечение"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-68",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Линия"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-69",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лист персонажа"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-70",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магический эффект"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-71",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магия"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-72",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мировоззрение"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-73",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Монстр"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-74",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Навык"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-75",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Настройка"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-76",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Невидимый"
+            }
+          ],
+          "targetPage": 354,
+          "style": "reference",
+          "id": "p348-77",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-354"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Недееспособный 355"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-78",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Недоедание"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-79",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нокаутирование существа"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-80",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обезвоживание"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-81",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Область действия"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-82",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Объект"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-83",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оглохший"
+            }
+          ],
+          "targetPage": 355,
+          "style": "reference",
+          "id": "p348-84",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-355"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Одержимость 356"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-85",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Одновременные эффекты"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-86",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Окаменевший"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-87",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Окровавленный"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-88",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Округление вниз"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-89",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опасность"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-90",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опутанный"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-91",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опыт"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-92",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Оружие"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-93",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ослеплённый"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-94",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отношение"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-95",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отравленный"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-96",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Отход"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-97",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очарованный"
+            }
+          ],
+          "targetPage": 356,
+          "style": "reference",
+          "id": "p348-98",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-3/#page-356"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Следующие термины описаны далее в этом приложе-"
+            }
+          ],
+          "id": "p348-99",
+          "sourcePage": 348
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Падение 357"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-100",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парализованный"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-101",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парение"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-102",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пассивная внимательность"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-103",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Персонаж игрока"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-104",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Персонаж Мастера"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-105",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Плавание"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-106",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подготовка"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-107",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск"
+            }
+          ],
+          "targetPage": 357,
+          "style": "reference",
+          "id": "p348-108",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-357"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Показатель опасности 358"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-109",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ползание"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-110",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Полёт"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-111",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Помеха"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-112",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Помощь"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-113",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Порог урона"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-114",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Превращение"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-115",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Преимущество"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-116",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Приключение"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-117",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проверка характеристики"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-118",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Провоцированная атака"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-119",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "333 страница"
+            }
+          ],
+          "targetPage": 358,
+          "style": "reference",
+          "id": "p348-120",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-358"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Продолжительный отдых  359"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-121",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проклятье"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-122",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прыжки"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-123",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прыжок в высоту"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-124",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Прыжок в длину"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-125",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Равнодушный"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-126",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Размер"
+            }
+          ],
+          "targetPage": 359,
+          "style": "reference",
+          "id": "p348-127",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-4/#page-359"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разрушение объектов 360"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-128",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Реакция"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-129",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ритуал"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-130",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рывок"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-131",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свободное пространство"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-132",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сильно заслонённое"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-133",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорость"
+            }
+          ],
+          "targetPage": 360,
+          "style": "reference",
+          "id": "p348-134",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-360"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорость копания 361"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-135",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорость лазания"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-136",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорость плавания"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-137",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорость полёта"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-138",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слабо заслонённое"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-139",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слепое зрение"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-140",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сложность"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-141",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смерть"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-142",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сопротивление"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-143",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Состояние"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-144",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Союзник"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-145",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спасбросок"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-146",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спасбросок от смерти"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-147",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стабилизированный"
+            }
+          ],
+          "targetPage": 361,
+          "style": "reference",
+          "id": "p348-148",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-361"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Статблок 362"
+            }
+          ],
+          "targetPage": 362,
+          "style": "reference",
+          "id": "p348-149",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-5/#page-362"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Существо 363"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-150",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сфера"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-151",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Схваченный"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-152",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сцена"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-153",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телепатия"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-154",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Телепортация"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-155",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тест к20"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-156",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тип существа"
+            }
+          ],
+          "targetPage": 363,
+          "style": "reference",
+          "id": "p348-157",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-363"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Типы урона 364"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-158",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Труднопроходимая местность"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-159",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тусклый свет"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-160",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тьма"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-161",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тёмное зрение"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-162",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Удушье"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-163",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уклонение"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-164",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Укрытие"
+            }
+          ],
+          "targetPage": 364,
+          "style": "reference",
+          "id": "p348-165",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-364"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Урон 365"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-166",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уязвимость"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-167",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Характеристика и модификатор"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-168",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хиты"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-169",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цель"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-170",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Цилиндр"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-171",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Чувство вибрации"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-172",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эманация"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-173",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Яркий свет"
+            }
+          ],
+          "targetPage": 365,
+          "style": "reference",
+          "id": "p348-174",
+          "sourcePage": 348,
+          "link": "/books/phb-2024-ru/rules-glossary-6/#page-365"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ошеломлённый"
+            }
+          ],
+          "id": "p348-175",
+          "sourcePage": 348
+        }
+      ]
+    },
+    {
+      "number": 349,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Атака [Действие]",
+              "bold": true
+            }
+          ],
+          "id": "p349-1",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Attack",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-2",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Когда вы совершаете действие атака, вы можете совершить 1 бросок атаки оружием или безоружным ударом."
+            }
+          ],
+          "id": "p349-3",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Экипировка и снятие оружия.",
+              "bold": true
+            },
+            {
+              "text": " Вы можете экипировать или убрать 1 оружие, когда совершаете атаку действием атака. Вы совершаете это либо до, либо после атаки. Если вы экипируете оружие до атаки, то вы не обязаны использовать его для этой атаки. Экипировка оружия включает в себя извлечение его из ножен или поднятие с земли. Снятие оружия включает в себя его укладывание в ножны, упаковку или выбрасывание."
+            }
+          ],
+          "id": "p349-4",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Движение между атаками.",
+              "bold": true
+            },
+            {
+              "text": " Если вы перемещаетесь в свой ход и обладаете особенностью, такой как Дополнительная атака, которая позволяет вам совершать более 1 атаки частью действия атака, то вы можете использовать часть или всё перемещение, чтобы переместиться между этими атаками."
+            }
+          ],
+          "id": "p349-5",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Атака заклинанием",
+              "bold": true
+            }
+          ],
+          "id": "p349-6",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Spell Attack",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-7",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атака заклинанием — это бросок атаки, выполняемый частью заклинания или другого магического эффекта. См. также главу 7 (Наложение заклинаний)."
+            }
+          ],
+          "id": "p349-8",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Атака оружием",
+              "bold": true
+            }
+          ],
+          "id": "p349-9",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Weapon Attack",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-10",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атака оружием — это бросок атаки, совершённый с использованием оружия. См. также оружие."
+            }
+          ],
+          "id": "p349-11",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Безоружный удар",
+              "bold": true
+            }
+          ],
+          "id": "p349-12",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Unarmed Strike",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-13",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вместо использования оружия для совершения рукопашной атаки, вы можете использовать удар кулаком, ногой, головой или другой подобный силовой удар. В игровых терминах это называется безоружный удар — рукопашная атака, при которой вы используете свое тело, чтобы нанести урон, захватить или толкнуть цель, находящуюся в пределах 5 футов от вас."
+            }
+          ],
+          "id": "p349-14",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Когда вы используете ваш безоружный удар, то выберите один из следующих эффектов:"
+            }
+          ],
+          "id": "p349-15",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Урон.",
+              "bold": true
+            },
+            {
+              "text": " Вы совершаете бросок атаки против цели. Ваш бонус к броску равен вашему модификатору Силы + ваш бонус мастерства. При попадании цель получает дробящий урон, равный 1 + ваш модификатор Силы."
+            }
+          ],
+          "id": "p349-16",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Захват.",
+              "bold": true
+            },
+            {
+              "text": " Цель должна совершить спасбросок Силы или Ловкости (по её выбору), иначе она получает состояние схваченный. Сл. спасброска и любых попыток высвобождения равна 8 + ваш модификатор Силы + ваш бонус мастерства. Захват возможен только если цель не больше вас на более чем 1 размер и если у вас есть свободная рука, чтобы схватить её. См. также раздел Захват."
+            }
+          ],
+          "id": "p349-17",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Толчок.",
+              "bold": true
+            },
+            {
+              "text": " Цель должна совершить спасбросок Силы или Ловкости (по её выбору), иначе вы либо отталкиваете её на 5 футов, либо вызываете у неё состояние лежащий ничком. Сл. спасброска равена 8 + ваш модификатор Силы + ваш бонус мастерства. Этот толчок возможен только если цель не больше вас на более чем 1 размер."
+            }
+          ],
+          "id": "p349-18",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Бессознательный [Состояние]",
+              "bold": true
+            }
+          ],
+          "id": "p349-19",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Unconscious",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-20",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Когда вы находитесь в состоянии бессознательный, то вы подвергаетесь следующим эффектам:"
+            }
+          ],
+          "id": "p349-21",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Неактивный.",
+              "bold": true
+            },
+            {
+              "text": " У вас есть состояния недееспособный и лежащий ничком, и вы роняете всё, что держите. Когда это состояние заканчивается, то вы остаётесь лежащим ничком."
+            }
+          ],
+          "id": "p349-22",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скорость 0.",
+              "bold": true
+            },
+            {
+              "text": " Ваша скорость равна 0 и не может увеличиваться."
+            }
+          ],
+          "id": "p349-23",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атаки.",
+              "bold": true
+            },
+            {
+              "text": " Броски атаки против вас совершаются с преимуществом."
+            }
+          ],
+          "id": "p349-24",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спасброски.",
+              "bold": true
+            },
+            {
+              "text": " Вы автоматически проваливаете спасброски Силы и Ловкости."
+            }
+          ],
+          "id": "p349-25",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Критические удары.",
+              "bold": true
+            },
+            {
+              "text": " Любая атака, которая попадает по вам, является критическим попаданием, если нападающий находится в пределах 5 футов от вас."
+            }
+          ],
+          "id": "p349-26",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Неосведомленность.",
+              "bold": true
+            },
+            {
+              "text": " Вы не осознаёте своё окружение."
+            }
+          ],
+          "id": "p349-27",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Бонусное действие",
+              "bold": true
+            }
+          ],
+          "id": "p349-28",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Bonus Action",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-29",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бонусное действие — это особое действие, которое вы можете совершить в тот же ход, что и обычное действие. Вы не можете совершить более 1 бонусного действия за ход, и у вас есть возможность совершить донусное действие, только если какое-либо правило прямо указывает на это. См. также главу 1 (Действия)."
+            }
+          ],
+          "id": "p349-30",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Бросок атаки",
+              "bold": true
+            }
+          ],
+          "id": "p349-31",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Attack Roll",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-32",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бросок атаки — это Тест к20, представляющий собой атаку оружием, безоружным ударом или атаку заклинанием. См. также главу 1 (Тесты к20)."
+            }
+          ],
+          "id": "p349-33",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Бросок урона",
+              "bold": true
+            }
+          ],
+          "id": "p349-34",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Damage Roll",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-35",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бросок урона — это бросок кости, скорректированный любыми применимыми модификаторами, который наносит урон цели. См. также главу 1 (Урон и лечение)."
+            }
+          ],
+          "id": "p349-36",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "В день",
+              "bold": true
+            }
+          ],
+          "id": "p349-37",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Per Day",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-38",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Если правило указывает, что вы можете использовать что-то определённое количество раз в день, то это значит, что вам нужно завершить продолжительный отдых, чтобы использовать это снова после исчерпания всех использований."
+            }
+          ],
+          "id": "p349-39",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Владение",
+              "bold": true
+            }
+          ],
+          "id": "p349-40",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Proficiency",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-41",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Если у вас есть владение в чем-то, то вы можете добавить ваш бонус мастерства к любому Тесту к20, который вы совершаете, используя это. Существо может владеть навыком, спасброском, оружием или инструментом. См. также главу 1 (Владение)."
+            }
+          ],
+          "id": "p349-42",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Владение доспехами",
+              "bold": true
+            }
+          ],
+          "id": "p349-43",
+          "sourcePage": 349
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Armor Training",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p349-44",
+          "sourcePage": 349
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Владение доспехами позволяет вам использовать доспехи определённой категории без следующих недостатков. Если вы носите Лёгкие, Средние или Тяжёлые доспехи и не владеете ими, то вы получаете Помеху на любой Тест к20, связанный с Силой или Ловкостью, и не можете использовать заклинания. Если вы используете Щит и не владеете им, то вы не получаете его бонус к КД. См. также помеха и главу 6 (Доспехи)."
+            }
+          ],
+          "id": "p349-45",
+          "sourcePage": 349
+        }
+      ]
+    },
+    {
+      "number": 350,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Влияние [Действие]",
+              "bold": true
+            }
+          ],
+          "id": "p350-1",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Influence",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-2",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "С помощью действия влияние вы убеждаете монстра сделать что-то. Опишите или отыграйте, как вы общаетесь с монстром. Вы пытаетесь обмануть, запугать, развлечь или осторожно убедить его? Затем Мастер определяет, готово ли существо помочь, не готово или колеблется в результате вашего взаимодействия; это определение устанавливает, нужна ли проверка характеристики, как объяснено ниже."
+            }
+          ],
+          "id": "p350-3",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Готовность.",
+              "bold": true
+            },
+            {
+              "text": " Если ваша просьба совпадает с желаниями монстра, то проверка характеристики не требуется; монстр выполняет вашу просьбу так, как ему удобно."
+            }
+          ],
+          "id": "p350-4",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Нежелание.",
+              "bold": true
+            },
+            {
+              "text": " Если ваша просьба не приемлема для монстра или противоречит его мировоззрению, то проверка Характеристики не требуется; он не подчиняется."
+            }
+          ],
+          "id": "p350-5",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Колебание.",
+              "bold": true
+            },
+            {
+              "text": " Если вы убеждаете монстра сделать что-то, в чем он колеблется, то вам необходимо провести проверку характеристики, которая зависит от отношения монстра: равнодушного, дружественного или враждебного, каждое из которых определено в этом глоссарии. Таблица «Проверки влияния» предлагает, какую проверку характеристики использовать в зависимости от того, как вы взаимодействуете с монстром. Мастер выбирает проверку, у которой стандартное Сл. равна 15 или значению Интеллекта монстра, в зависимости от того, что выше. В случае успешной проверки монстр выполняет просьбу. В случае провала проверки вы должны подождать 24 часа (или время, установленное Мастером), прежде чем снова попытаться убедить его таким же образом."
+            }
+          ],
+          "id": "p350-6",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Проверки влияния",
+              "bold": true
+            }
+          ],
+          "id": "p350-7",
+          "sourcePage": 350
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Проверка характеристики",
+            "Взаимодействие"
+          ],
+          "rows": [
+            [
+              "Харизма (Обман)",
+              "Обман монстра, который понимает вас"
+            ],
+            [
+              "Харизма (Запугивание)",
+              "Запугивание монстра"
+            ],
+            [
+              "Харизма (Выступление)",
+              "Развлечение монстра"
+            ],
+            [
+              "Харизма (Убеждение)",
+              "Убеждение монстра, который понимает вас"
+            ],
+            [
+              "Мудрость (Уход за животными)",
+              "Мягкое уговаривание зверя или монстра"
+            ]
+          ],
+          "id": "p350-8",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Враг",
+              "bold": true
+            }
+          ],
+          "id": "p350-9",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Enemy",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-10",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Существо является вашим врагом, если оно сражается против вас в бою, активно пытается навредить вам или назначено вашим врагом по правилам или Мастером."
+            }
+          ],
+          "id": "p350-11",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Враждебное [Отношение]",
+              "bold": true
+            }
+          ],
+          "id": "p350-12",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Hostile",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-13",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Враждебное существо относится к вам неблагосклонно. Вы получаете помеху при проверке характеристики для влияния на враждебное существо. См. также влияние."
+            }
+          ],
+          "id": "p350-14",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Временные хиты",
+              "bold": true
+            }
+          ],
+          "id": "p350-15",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Temporary Hit Points",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-16",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Временные хиты предоставляются определенными эффектами и действуют как буфер, защищающий от потери реальных Хитов. См. также главу 1 (Урон и лечение)."
+            }
+          ],
+          "id": "p350-17",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Героическое вдохновение",
+              "bold": true
+            }
+          ],
+          "id": "p350-18",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Heroic Inspiration",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-19",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Если вы (персонаж игрока) имеете героическое вдохновение, то вы можете потратить его, чтобы перебросить любую кость сразу после броска, и вы обязаны использовать новый результат."
+            }
+          ],
+          "id": "p350-20",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Если вы получаете героическое вдохновение, но у вас оно уже есть, то оно теряется, если вы не передадите его персонажу игрока, который не имеет его."
+            }
+          ],
+          "id": "p350-21",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Горение [Опасность]",
+              "bold": true
+            }
+          ],
+          "id": "p350-22",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Burning",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-23",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горящее существо или объект получает 1к4 урона огнём в начале каждого своего хода. Действием вы можете потушить огонь на себе, приняв состояние лежащий ничком и перекатываясь по земле. Огонь также гаснет, если его потушить, затопить или убрать весь воздух."
+            }
+          ],
+          "id": "p350-24",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Грузоподъёмность",
+              "bold": true
+            }
+          ],
+          "id": "p350-25",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Carrying Capacity",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-26",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ваш размер и показатель Силы определяют максимальный вес в фунтах, который вы можете нести, как указано в таблице «Грузоподъёмность». В таблице также указан максимальный вес, который вы можете перетащить, поднять или толкнуть."
+            }
+          ],
+          "id": "p350-27",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "При перетаскивании, поднятии или толкании веса, превышающего максимальный вес, который вы можете нести, ваша скорость не может превышать 5 футов."
+            }
+          ],
+          "id": "p350-28",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Грузоподъёмность",
+              "bold": true
+            }
+          ],
+          "id": "p350-29",
+          "sourcePage": 350
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Размер существа",
+            "Переносимый вес",
+            "Тащить Поднимать Толкать"
+          ],
+          "rows": [
+            [
+              "Крошечный",
+              "Сила x 7.5 фунт.",
+              "Сила x 15 фунт."
+            ],
+            [
+              "Маленький Средний",
+              "Сила x 15 фунт.",
+              "Сила x 30 фунт."
+            ],
+            [
+              "Большой",
+              "Сила x 30 фунт.",
+              "Сила x 60 фунт."
+            ],
+            [
+              "Огромный",
+              "Сила x 60 фунт.",
+              "Сила x 120 фунт."
+            ],
+            [
+              "Колоссальный",
+              "Сила x 120 фунт.",
+              "Сила x 240 фунт."
+            ]
+          ],
+          "id": "p350-30",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "spans": [
+            {
+              "text": "Действие",
+              "bold": true
+            }
+          ],
+          "id": "p350-31",
+          "sourcePage": 350
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "[",
+              "bold": true
+            },
+            {
+              "text": "Action",
+              "bold": true
+            },
+            {
+              "text": "]",
+              "bold": true
+            }
+          ],
+          "id": "p350-32",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "В свой ход вы можете совершить 1 действие. Выберите, какое действие выполнить, из приведенных ниже или из специальных действий, предоставленных вашими уменями. См. также главу 1 («Действия»). Эти действия определены в другом месте этого глоссария:"
+            }
+          ],
+          "id": "p350-33",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Атака"
+            }
+          ],
+          "id": "p350-34",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Уклонение"
+            }
+          ],
+          "id": "p350-35",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Влияние"
+            }
+          ],
+          "id": "p350-36",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поиск Рывок"
+            }
+          ],
+          "id": "p350-37",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Помощь"
+            }
+          ],
+          "id": "p350-38",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магия"
+            }
+          ],
+          "id": "p350-39",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Изучение Отход"
+            }
+          ],
+          "id": "p350-40",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Засада"
+            }
+          ],
+          "id": "p350-41",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подготовка"
+            }
+          ],
+          "id": "p350-42",
+          "sourcePage": 350
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Использование"
+            }
+          ],
+          "id": "p350-43",
+          "sourcePage": 350
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2024-ru/page-350-74e9717af3.webp",
+          "alt": "Иллюстрация к разделу «Глоссарий правил · Часть 1».",
+          "width": 852,
+          "height": 175,
+          "smallSrc": "/images/books/phb-2024-ru/page-350-74e9717af3-640.webp",
+          "smallWidth": 640,
+          "id": "p350-44",
+          "sourcePage": 350
+        }
+      ]
+    }
+  ]
+}

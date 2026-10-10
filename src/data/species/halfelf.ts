@@ -47,6 +47,7 @@ export const halfelf: Species = {
         name: 'Лесной',
         nameEn: 'Wood',
         sourceBook: 'SCAG14',
+        speed: 35,
         lore: '-',
         abilities: [
         {

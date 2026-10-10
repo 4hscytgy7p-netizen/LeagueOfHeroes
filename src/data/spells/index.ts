@@ -1,4 +1,5 @@
 import type { Spell } from '../../types/spell';
+import { spellStatBlocks } from '../creatures/references.ts';
 
 export const spells: Spell[] = [
   {
@@ -237,6 +238,7 @@ export const spells: Spell[] = [
       { type: 'subclass', name: '<a href="/classes/bard?subclass=lore">Коллегия Знания</a>' },
       { type: 'subclass', name: '<a href="/classes/fighter?subclass=eldritch-knight">Мистический рыцарь</a>' },
       { type: 'subclass', name: '<a href="/classes/wizard?subclass=abjurer">Оградитель</a>' },
+      { type: 'subclass', name: '<a href="/classes/rogue?subclass=scion">Наследник троицы</a>' },
       { type: 'species', name: '<a href="/races/elf/">Эльф Высший</a>' },
       { type: 'species', name: '<a href="/races/genasi/">Дженази Земли</a>' },
       { type: 'species', name: '<a href="/races/halfelf/">Лунный/Солнечный полуэльф</a>' },
@@ -316,6 +318,7 @@ export const spells: Spell[] = [
       { type: 'subclass', name: '<a href="/classes/cleric?subclass=magic">Домен Магии</a>' },
       { type: 'subclass', name: '<a href="/classes/cleric?subclass=death">Домен Смерти</a>' },
       { type: 'subclass', name: '<a href="/classes/rogue?subclass=arcane-trickster">Мистический ловкач</a>' },
+      { type: 'subclass', name: '<a href="/classes/rogue?subclass=scion">Наследник троицы</a>' },
       { type: 'subclass', name: '<a href="/classes/bard?subclass=lore">Коллегия Знания</a>' },
       { type: 'subclass', name: '<a href="/classes/druid?subclass=spore">Круг Спор</a>' },
       { type: 'subclass', name: '<a href="/classes/fighter?subclass=eldritch-knight">Мистический рыцарь</a>' },
@@ -1507,6 +1510,7 @@ export const spells: Spell[] = [
     { type: 'class', name: '<a href="/classes/warlock">Колдун</a>' },
     { type: 'subclass', name: '<a href="/classes/cleric?subclass=magic">Домен Магии</a>' },
     { type: 'subclass', name: '<a href="/classes/rogue?subclass=arcane-trickster">Мистический ловкач</a>' },
+    { type: 'subclass', name: '<a href="/classes/rogue?subclass=scion">Наследник троицы</a>' },
     { type: 'subclass', name: '<a href="/classes/bard?subclass=lore">Коллегия Знания</a>' },
     { type: 'subclass', name: '<a href="/classes/fighter?subclass=eldritch-knight">Мистический рыцарь</a>' },
     { type: 'subclass', name: '<a href="/classes/wizard?subclass=illusionist">Иллюзионист</a>' },
@@ -1711,7 +1715,7 @@ export const spells: Spell[] = [
 <p>До окончания действия заклинания вы можете совершить действие магия, чтобы метнуть огонь в существо или предмет на расстоянии до 60 футов от вас. Совершите дальнобойную атаку заклинанием. При попадании цель получает 1д8 урона огнём.</p>
 <p><strong>Улучшение заговора.</strong> Урон увеличивается на 1д8, когда вы достигаете 5 уровня (2д8), 11 уровня (3д8) и 17 уровня (4д8).</p>`,
   source: {
-    book: 'PHP\'24',
+    book: 'PHB\'24',
     page: 308
   },
   sources: [
@@ -1743,7 +1747,7 @@ export const spells: Spell[] = [
   duration: 'Концентрация, до 1 минуты',
   description: `<p>Вы касаетесь согласного существа и выбираете тип урона: кислотный, дробящий, холодный, огненный, электрический, некротический, колющий, ядовитый, излучение, рубящий или звуковой. Когда существо получает урон выбранного типа до окончания действия заклинания, то оно уменьшает полученный урон на 1д4. Существо может получить эффект от этого заклинания только один раз за ход.</p>`,
   source: {
-    book: 'PHP\'24',
+    book: 'PHB\'24',
     page: 312
   },
   sources: [
@@ -1780,7 +1784,7 @@ export const spells: Spell[] = [
   description: `<p>Луч света, подобный пламени, нисходит на существо, которое вы можете видеть в пределах дистанции. Цель должна преуспеть в спасброске Ловкости или получить 1д8 урона излучением. Цель не получает эффекты от укрытия на половину или на три четверти для этого спасброска.</p>
 <p><strong>Улучшение заговора.</strong> Урон увеличивается на 1д8, когда вы достигаете 5 уровня (2д8), 11 уровня (3д8) и 17 уровня (4д8).</p>`,
   source: {
-    book: 'PHP\'24',
+    book: 'PHB\'24',
     page: 312
   },
   sources: [
@@ -2270,7 +2274,7 @@ export const spells: Spell[] = [
     { type: 'class', name: '<a href="/classes/sorcerer">Чародей</a>' },
     { type: 'class', name: '<a href="/classes/wizard">Волшебник</a>' },
     { type: 'class', name: '<a href="/classes/druid">Друид</a>' },
-    { type: 'subclass', name: '<a href="/classes/wizard?subclass=cojurer">Вызыватель</a>' },
+    { type: 'subclass', name: '<a href="/classes/wizard?subclass=conjurer">Вызыватель</a>' },
     { type: 'subclass', name: '<a href="/classes/rogue?subclass=arcane-trickster">Мистический ловкач</a>' },
     { type: 'subclass', name: '<a href="/classes/bard?subclass=lore">Коллегия Знания</a>' },
     { type: 'subclass', name: '<a href="/classes/fighter?subclass=eldritch-knight">Мистический рыцарь</a>' },
@@ -2334,7 +2338,7 @@ export const spells: Spell[] = [
     { type: 'class', name: '<a href="/classes/ranger">Следопыт</a>' },
     { type: 'class', name: '<a href="/classes/sorcerer">Чародей</a>' },
     { type: 'subclass', name: '<a href="/classes/apothecary?subclass=pathogenist">Патогенист</a>' },
-    { type: 'subclass', name: '<a href="/classes/wizard?subclass=cojurer">Вызыватель</a>' },
+    { type: 'subclass', name: '<a href="/classes/wizard?subclass=conjurer">Вызыватель</a>' },
     { type: 'subclass', name: '<a href="/classes/rogue?subclass=arcane-trickster">Мистический ловкач</a>' },
     { type: 'subclass', name: '<a href="/classes/bard?subclass=lore">Коллегия Знания</a>' },
     { type: 'subclass', name: '<a href="/classes/fighter?subclass=eldritch-knight">Мистический рыцарь</a>' },
@@ -3201,7 +3205,7 @@ export const spells: Spell[] = [
     { type: 'class', name: '<a href="/classes/warlock">Колдун</a>' },
     { type: 'subclass', name: '<a href="/classes/bard?subclass=lore">Коллегия Знания</a>' },
     { type: 'subclass', name: '<a href="/classes/sorcerer?subclass=divine-soul">Божественная душа</a>' },
-    { type: 'subclass', name: '<a href="/classes/cleric?subclass=vengeance">Клятва Мести</a>' },
+    { type: 'subclass', name: '<a href="/classes/paladin?subclass=vengeance">Клятва Мести</a>' },
     { type: 'subclass', name: '<a href="/classes/warlock?subclass=undead">Покровитель Нежить</a>' },
     { type: 'subclass', name: '<a href="/classes/sorcerer?subclass=shadow">Теневая Магия</a>' },
     { type: 'feat', name: '<a href="/feats/divinely-favored/">Любимец богов</a>' },
@@ -4140,7 +4144,7 @@ export const spells: Spell[] = [
     { type: 'subclass', name: '<a href="/classes/ranger?subclass=horizon-walker">Странник Горизонта</a>' },
     { type: 'subclass', name: '<a href="/classes/ranger?subclass=monster-slayer">Убийца Чудовищ</a>' },
     { type: 'subclass', name: '<a href="/classes/cleric?subclass=knowledge">Домен Знаний</a>' },
-    { type: 'subclass', name: '<a href="/classes/cleric?subclass=vengeance">Клятва Мести</a>' },
+    { type: 'subclass', name: '<a href="/classes/paladin?subclass=vengeance">Клятва Мести</a>' },
     { type: 'subclass', name: '<a href="/classes/paladin?subclass=crown">Клятва Короны</a>' },
     { type: 'subclass', name: '<a href="/classes/paladin?subclass=watchers">Клятва Смотрителей</a>' }
   ]
@@ -4538,7 +4542,7 @@ export const spells: Spell[] = [
     { type: 'subclass', name: '<a href="/classes/rogue?subclass=arcane-trickster">Мистический ловкач</a>' },
     { type: 'subclass', name: '<a href="/classes/fighter?subclass=eldritch-knight">Мистический рыцарь</a>' },
     { type: 'subclass', name: '<a href="/classes/ranger?subclass=fey-wanderer">Фейский странник</a>' },
-    { type: 'subclass', name: '<a href="/classes/cleric?subclass=vengeance">Клятва Мести</a>' },
+    { type: 'subclass', name: '<a href="/classes/paladin?subclass=vengeance">Клятва Мести</a>' },
     { type: 'subclass', name: '<a href="/classes/cleric?subclass=trickery">Домен Обмана</a>' },
     { type: 'subclass', name: '<a href="/classes/wizard?subclass=conjurer">Вызыватель</a>' }
   ]
@@ -17539,7 +17543,7 @@ export const spells: Spell[] = [
       { type: 'class', name: '<a href="/classes/bard">Бард</a>' },
       { type: 'class', name: '<a href="/classes/wizard">Волшебник</a>' },
       { type: 'subclass', name: '<a href="/classes/cleric?subclass=magic">Домен Магии</a>' },
-      { type: 'subclass', name: '<a href="/classes/bard?subclass=glamour">Очарователь</a>' }
+      { type: 'subclass', name: '<a href="/classes/bard?subclass=glamour">Коллегия Очарования</a>' }
     ]
   },
   {
@@ -17567,7 +17571,7 @@ export const spells: Spell[] = [
       { type: 'class', name: '<a href="/classes/wizard">Волшебник</a>' },
       { type: 'class', name: '<a href="/classes/bard">Бард</a>' },
       { type: 'subclass', name: '<a href="/classes/cleric?subclass=magic">Домен Магии</a>' },
-      { type: 'subclass', name: '<a href="/classes/bard?subclass=glamour">Очарователь</a>' }
+      { type: 'subclass', name: '<a href="/classes/bard?subclass=glamour">Коллегия Очарования</a>' }
     ]
   },
   {
@@ -18523,7 +18527,7 @@ export const spells: Spell[] = [
     <p><strong>Накладывание более высокой ячейкой.</strong>Там, где блок статистики ссылается на уровень заклинания, используйте уровень ячейки заклинаний.</p>
     `,
     source: {
-      book: 'EFA',
+      book: 'EFA\'24',
       page: 21
     },
     sources: [
@@ -18888,3 +18892,11 @@ export const spells: Spell[] = [
     ]
   }
 ];
+
+// Keep the public catalog declaration above; enrich the same records after loading.
+for (const spell of spells) {
+  const blocks = spellStatBlocks[spell.id];
+  if (!blocks) continue;
+  spell.statBlockIds = blocks.ids;
+  spell.statBlockNote = blocks.note;
+}

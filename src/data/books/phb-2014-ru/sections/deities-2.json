@@ -1,0 +1,988 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "deities-2",
+  "title": "Приложение Б. Боги Мультивселенной · часть 2",
+  "description": "",
+  "sourcePages": [
+    300
+  ],
+  "group": "Приложение Б. Боги Мультивселенной",
+  "pages": [
+    {
+      "number": 300,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЕГИПЕТСКИЕ БОГИ"
+            }
+          ],
+          "id": "p300-1",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "МировозРекомендуемые"
+            }
+          ],
+          "id": "p300-2",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божество"
+            }
+          ],
+          "id": "p300-3",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "зрение"
+            }
+          ],
+          "id": "p300-4",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "домены"
+            }
+          ],
+          "id": "p300-5",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Символ Жизнь, Свет"
+            }
+          ],
+          "id": "p300-6",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ра-Хорахти, бог солнца, правитель богов"
+            }
+          ],
+          "id": "p300-7",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗД Анубис, бог суда и смерти"
+            }
+          ],
+          "id": "p300-8",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗН"
+            }
+          ],
+          "id": "p300-9",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смерть Апеп, бог зла, огня и змей"
+            }
+          ],
+          "id": "p300-10",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НЗ"
+            }
+          ],
+          "id": "p300-11",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обман Баст, богиня кошек и возмездия"
+            }
+          ],
+          "id": "p300-12",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХД"
+            }
+          ],
+          "id": "p300-13",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Война Бес, бог удачи и музыки"
+            }
+          ],
+          "id": "p300-14",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХН"
+            }
+          ],
+          "id": "p300-15",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обман Имхотеп, бог ремёсел и медицины"
+            }
+          ],
+          "id": "p300-16",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД"
+            }
+          ],
+          "id": "p300-17",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знание"
+            }
+          ],
+          "id": "p300-18",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Солнечный диск, окружённый змеёй Чёрный шакал Змея в пламени Кошка Изображение уродливого бога Ступенчатая пирамида Жизнь, Знание"
+            }
+          ],
+          "id": "p300-19",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Исида, богиня плодородия и магии"
+            }
+          ],
+          "id": "p300-20",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД Небетхет, богиня смерти и горя"
+            }
+          ],
+          "id": "p300-21",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХД"
+            }
+          ],
+          "id": "p300-22",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смерть"
+            }
+          ],
+          "id": "p300-23",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Анкх и звезда Рога вокруг лунного диска Жизнь, Природа"
+            }
+          ],
+          "id": "p300-24",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Осирис, бог природы и подземного мира"
+            }
+          ],
+          "id": "p300-25",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗД Пта, бог ремёсел, знаний и тайн"
+            }
+          ],
+          "id": "p300-26",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗН"
+            }
+          ],
+          "id": "p300-27",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знание"
+            }
+          ],
+          "id": "p300-28",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крюк и цеп Бык Буря, Природа"
+            }
+          ],
+          "id": "p300-29",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Себе́к, бог воды и крокодилов"
+            }
+          ],
+          "id": "p300-30",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗЗ"
+            }
+          ],
+          "id": "p300-31",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Голова крокодила с рогами и перьями Буря, Обман, Смерть"
+            }
+          ],
+          "id": "p300-32",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сет, бог тьмы и пустынных бурь"
+            }
+          ],
+          "id": "p300-33",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХЗ Тот, бог знаний и мудрости"
+            }
+          ],
+          "id": "p300-34",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Н"
+            }
+          ],
+          "id": "p300-35",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знание"
+            }
+          ],
+          "id": "p300-36",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Извивающаяся кобра Ибис Жизнь, Свет"
+            }
+          ],
+          "id": "p300-37",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хатор, богиня любви, музыки и материнства"
+            }
+          ],
+          "id": "p300-38",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД"
+            }
+          ],
+          "id": "p300-39",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "СКАНДИНАВСКИЕ БОГИ"
+            }
+          ],
+          "id": "p300-40",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "МировозГолова коровы и лунный диск"
+            }
+          ],
+          "id": "p300-41",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рекомендуемые"
+            }
+          ],
+          "id": "p300-42",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Божество"
+            }
+          ],
+          "id": "p300-43",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "зрение"
+            }
+          ],
+          "id": "p300-44",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "домены"
+            }
+          ],
+          "id": "p300-45",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Символ Война, Знание"
+            }
+          ],
+          "id": "p300-46",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Один, бог знаний и войны"
+            }
+          ],
+          "id": "p300-47",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД Эгир, бог морей и бурь"
+            }
+          ],
+          "id": "p300-48",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НЗ"
+            }
+          ],
+          "id": "p300-49",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Буря"
+            }
+          ],
+          "id": "p300-50",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наблюдающий голубой глаз Волны океана Жизнь, Свет"
+            }
+          ],
+          "id": "p300-51",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бальдр, бог красоты и поэзии"
+            }
+          ],
+          "id": "p300-52",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД Форсети, бог закона и правосудия"
+            }
+          ],
+          "id": "p300-53",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Н"
+            }
+          ],
+          "id": "p300-54",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свет"
+            }
+          ],
+          "id": "p300-55",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Украшенная самоцветами серебряная чаша Голова бородатого мужчины Жизнь, Свет"
+            }
+          ],
+          "id": "p300-56",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фрей, бог плодородия и солнца"
+            }
+          ],
+          "id": "p300-57",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД Фрейя, богиня плодородия и любви"
+            }
+          ],
+          "id": "p300-58",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД"
+            }
+          ],
+          "id": "p300-59",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Жизнь"
+            }
+          ],
+          "id": "p300-60",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Светло-голубой двуручный меч Сокол Жизнь, Свет"
+            }
+          ],
+          "id": "p300-61",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Фригг, богиня рождения и плодородия"
+            }
+          ],
+          "id": "p300-62",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Н"
+            }
+          ],
+          "id": "p300-63",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Кошка Война, Свет"
+            }
+          ],
+          "id": "p300-64",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Хеймдалль, бог бдительности и верности"
+            }
+          ],
+          "id": "p300-65",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗД Хель, богиня подземного мира"
+            }
+          ],
+          "id": "p300-66",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НЗ"
+            }
+          ],
+          "id": "p300-67",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смерть Хермод, бог удачи"
+            }
+          ],
+          "id": "p300-68",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХН"
+            }
+          ],
+          "id": "p300-69",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обман Локи, бог воров и обмана"
+            }
+          ],
+          "id": "p300-70",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХЗ"
+            }
+          ],
+          "id": "p300-71",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обман"
+            }
+          ],
+          "id": "p300-72",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Скручивающийся музыкальный рог Женское лицо, гниющее с одной стороны Крылатый свиток Пламя Буря, Природа"
+            }
+          ],
+          "id": "p300-73",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ньорд, бог морей и ветров"
+            }
+          ],
+          "id": "p300-74",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "НД Од, бог света и солнца"
+            }
+          ],
+          "id": "p300-75",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХД"
+            }
+          ],
+          "id": "p300-76",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Свет Сиф, богиня войны"
+            }
+          ],
+          "id": "p300-77",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХД"
+            }
+          ],
+          "id": "p300-78",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Война"
+            }
+          ],
+          "id": "p300-79",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Золотая монета Солнечный диск Поднятый меч"
+            }
+          ],
+          "id": "p300-80",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Природа Скади, бог земли и гор"
+            }
+          ],
+          "id": "p300-81",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Н Сурт, бог огненных великанов и войны"
+            }
+          ],
+          "id": "p300-82",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗЗ"
+            }
+          ],
+          "id": "p300-83",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Война"
+            }
+          ],
+          "id": "p300-84",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Горный пик Пламенеющий меч Буря, Война"
+            }
+          ],
+          "id": "p300-85",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тор, бог бурь и грома"
+            }
+          ],
+          "id": "p300-86",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХД Трим, бог огненных великанов и холода"
+            }
+          ],
+          "id": "p300-87",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХЗ"
+            }
+          ],
+          "id": "p300-88",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Война"
+            }
+          ],
+          "id": "p300-89",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Молот Белый двусторонний топор Война, Знание"
+            }
+          ],
+          "id": "p300-90",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Тюр, бог отваги и стратегии"
+            }
+          ],
+          "id": "p300-91",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ЗН"
+            }
+          ],
+          "id": "p300-92",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Меч"
+            }
+          ],
+          "id": "p300-93",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Природа Улль, бог охоты и зимы"
+            }
+          ],
+          "id": "p300-94",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ХН"
+            }
+          ],
+          "id": "p300-95",
+          "sourcePage": 300
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Длинный лук"
+            }
+          ],
+          "id": "p300-96",
+          "sourcePage": 300
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-300-ac9fc161e1.webp",
+          "alt": "Иллюстрация к разделу «Приложение Б. Боги Мультивселенной · часть 2».",
+          "width": 1203,
+          "height": 566,
+          "smallSrc": "/images/books/phb-2014-ru/page-300-ac9fc161e1-640.webp",
+          "smallWidth": 640,
+          "id": "p300-97",
+          "sourcePage": 300
+        }
+      ]
+    }
+  ]
+}

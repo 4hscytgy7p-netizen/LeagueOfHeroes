@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "map-316",
+  "title": "Карты · лист 6",
+  "description": "",
+  "sourcePages": [
+    316
+  ],
+  "group": "Приложение В. Карты",
+  "pages": [
+    {
+      "number": 316,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-316-1da9ffe3e6.webp",
+          "alt": "Иллюстрация: Карты · лист 6",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-316-1da9ffe3e6-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "С\nВ\nЗ\nЮ\n1 клетка = 5 футов",
+          "textLabel": "Подписи карты",
+          "id": "p316-1",
+          "sourcePage": 316
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-323",
+  "title": "Подземное убежище",
+  "description": "",
+  "sourcePages": [
+    323
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 323,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-323-27593615bf.webp",
+          "alt": "Карта: Подземное убежище",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-323-27593615bf-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Подземное убежище\nВверх\nВверх\nУровень земли\nВверх\nУровень 1\nВверх\nВниз Вверх\nСекретный\nвыход\nВверх\n1 квадрат = 5 футов\nПодземное убежище\nХудожник: Dyson Logos\nОригинал\nУровень 2\nВверх",
+          "textLabel": "Подписи на карте",
+          "id": "p323-1",
+          "sourcePage": 323
+        }
+      ]
+    }
+  ]
+}

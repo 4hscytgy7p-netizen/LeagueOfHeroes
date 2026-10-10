@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "map-314",
+  "title": "Карты · лист 4",
+  "description": "",
+  "sourcePages": [
+    314
+  ],
+  "group": "Приложение В. Карты",
+  "pages": [
+    {
+      "number": 314,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-314-7c840d04d7.webp",
+          "alt": "Иллюстрация: Карты · лист 4",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-314-7c840d04d7-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "С\nЗ\nВ\nЮ\n1000\n500\n200\n100\n0\nфуты\nЗ\nС\nЮ\nВ\n1000\n500\n200\n100\n50\nфуты",
+          "textLabel": "Подписи карты",
+          "id": "p314-1",
+          "sourcePage": 314
+        }
+      ]
+    }
+  ]
+}

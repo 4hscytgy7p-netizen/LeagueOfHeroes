@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-329",
+  "title": "Корабль",
+  "description": "",
+  "sourcePages": [
+    329
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 329,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-329-848355eeb3.webp",
+          "alt": "Карта: Корабль",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-329-848355eeb3-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Корабль\nВниз\nВверх\nВниз\n1 квадрат = 5 футов\nВверх\nКорабль\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков",
+          "textLabel": "Подписи на карте",
+          "id": "p329-1",
+          "sourcePage": 329
+        }
+      ]
+    }
+  ]
+}

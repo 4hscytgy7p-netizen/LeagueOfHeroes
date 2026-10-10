@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "map-313",
+  "title": "Карты · лист 3",
+  "description": "",
+  "sourcePages": [
+    313
+  ],
+  "group": "Приложение В. Карты",
+  "pages": [
+    {
+      "number": 313,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-313-55a75a0b36.webp",
+          "alt": "Иллюстрация: Карты · лист 3",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-313-55a75a0b36-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "С\nВ\nЗ\nЮ",
+          "textLabel": "Подписи карты",
+          "id": "p313-1",
+          "sourcePage": 313
+        }
+      ]
+    }
+  ]
+}

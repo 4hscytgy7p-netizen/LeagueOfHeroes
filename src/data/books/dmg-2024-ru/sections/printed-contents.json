@@ -1,0 +1,1915 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "printed-contents",
+  "title": "Содержание книги",
+  "description": "",
+  "sourcePages": [
+    2
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 2,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Использование этой книги........................................ 3"
+            }
+          ],
+          "targetPage": 3,
+          "style": "reference",
+          "id": "p2-1",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/translation/#page-3"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Примечание переводчика........................................... 3"
+            }
+          ],
+          "targetPage": 3,
+          "style": "reference",
+          "id": "p2-2",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/translation/#page-3"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вычитка текста. ......................................................... 3"
+            }
+          ],
+          "targetPage": 3,
+          "style": "reference",
+          "id": "p2-3",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/translation/#page-3"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 1: Основы. .................................................. 5",
+              "bold": true
+            }
+          ],
+          "targetPage": 5,
+          "id": "p2-4",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/basics/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Что делает Мастер?.................................................... 5",
+              "bold": true
+            }
+          ],
+          "targetPage": 5,
+          "style": "reference",
+          "id": "p2-5",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/basics/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Советы Мастеру......................................................... 5",
+              "bold": true
+            }
+          ],
+          "targetPage": 5,
+          "style": "reference",
+          "id": "p2-6",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/basics/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вам понадобятся.... .................................................. 5",
+              "bold": true
+            }
+          ],
+          "targetPage": 5,
+          "style": "reference",
+          "id": "p2-7",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/basics/#page-5"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подготовка к сессии. ............................................... 7",
+              "bold": true
+            }
+          ],
+          "targetPage": 7,
+          "style": "reference",
+          "id": "p2-8",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/session-preparation/#page-7"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Как проводить сессию. ............................................ 8",
+              "bold": true
+            }
+          ],
+          "targetPage": 8,
+          "style": "reference",
+          "id": "p2-9",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/running-session/#page-8"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пример игры.............................................................. 10",
+              "bold": true
+            }
+          ],
+          "targetPage": 10,
+          "style": "reference",
+          "id": "p2-10",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-of-play/#page-10"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Каждый мастер уникален........................................ 12",
+              "bold": true
+            }
+          ],
+          "targetPage": 12,
+          "style": "reference",
+          "id": "p2-11",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/unique-dms/#page-12"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Веселье для всех....................................................... 13",
+              "bold": true
+            }
+          ],
+          "targetPage": 13,
+          "style": "reference",
+          "id": "p2-12",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/fun-for-everyone/#page-13"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знайте своих игроков ............................................. 19",
+              "bold": true
+            }
+          ],
+          "targetPage": 19,
+          "style": "reference",
+          "id": "p2-13",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/know-your-players/#page-19"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 2: Проведение игры. .................................19",
+              "bold": true
+            }
+          ],
+          "targetPage": 19,
+          "id": "p2-14",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/know-your-players/#page-19"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Размер группы........................................................... 20",
+              "bold": true
+            }
+          ],
+          "targetPage": 20,
+          "style": "reference",
+          "id": "p2-15",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/group-size/#page-20"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Несколько Мастеров................................................. 22",
+              "bold": true
+            }
+          ],
+          "targetPage": 22,
+          "style": "reference",
+          "id": "p2-16",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiple-dms/#page-22"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Повествование. ........................................................ 23",
+              "bold": true
+            }
+          ],
+          "targetPage": 23,
+          "style": "reference",
+          "id": "p2-17",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/narration/#page-23"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Разрешение исходов................................................ 24",
+              "bold": true
+            }
+          ],
+          "targetPage": 24,
+          "style": "reference",
+          "id": "p2-18",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/resolving-outcomes/#page-24"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проведение социального взаимодействия........... 29",
+              "bold": true
+            }
+          ],
+          "targetPage": 29,
+          "style": "reference",
+          "id": "p2-19",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/social-interaction/#page-29"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проведение исследования...................................... 30",
+              "bold": true
+            }
+          ],
+          "targetPage": 30,
+          "style": "reference",
+          "id": "p2-20",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/exploration/#page-30"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проведение сражения . ........................................... 37",
+              "bold": true
+            }
+          ],
+          "targetPage": 37,
+          "style": "reference",
+          "id": "p2-21",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/combat/#page-37"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Развитие персонажа................................................. 43",
+              "bold": true
+            }
+          ],
+          "targetPage": 43,
+          "style": "reference",
+          "id": "p2-22",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/advancement/#page-43"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 3: Инструментарий Мастера.....................45",
+              "bold": true
+            }
+          ],
+          "targetPage": 45,
+          "id": "p2-23",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/gods/#page-45"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Боги и другие силы................................................... 45",
+              "bold": true
+            }
+          ],
+          "targetPage": 45,
+          "style": "reference",
+          "id": "p2-24",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/gods/#page-45"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Двери.......................................................................... 46",
+              "bold": true
+            }
+          ],
+          "targetPage": 46,
+          "style": "reference",
+          "id": "p2-25",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/doors/#page-46"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Знаки престижа........................................................ 47",
+              "bold": true
+            }
+          ],
+          "targetPage": 47,
+          "style": "reference",
+          "id": "p2-26",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/prestige/#page-47"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ловушки.................................................................... 49",
+              "bold": true
+            }
+          ],
+          "targetPage": 49,
+          "style": "reference",
+          "id": "p2-27",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/traps/#page-49"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Мировоззрение......................................................... 52",
+              "bold": true
+            }
+          ],
+          "targetPage": 52,
+          "style": "reference",
+          "id": "p2-28",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/alignment/#page-52"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Огнестрельное оружие и взрывчатые вещества. .. 53",
+              "bold": true
+            }
+          ],
+          "targetPage": 53,
+          "style": "reference",
+          "id": "p2-29",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/firearms/#page-53"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Опасности................................................................. 55",
+              "bold": true
+            }
+          ],
+          "targetPage": 55,
+          "style": "reference",
+          "id": "p2-30",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/hazards/#page-55"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Осадное снаряжение. .............................................. 58",
+              "bold": true
+            }
+          ],
+          "targetPage": 58,
+          "style": "reference",
+          "id": "p2-31",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/siege-equipment/#page-58"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Персонажи мастера.................................................. 60",
+              "bold": true
+            }
+          ],
+          "targetPage": 60,
+          "style": "reference",
+          "id": "p2-32",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/npcs/#page-60"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Погони....................................................................... 64",
+              "bold": true
+            }
+          ],
+          "targetPage": 64,
+          "style": "reference",
+          "id": "p2-33",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/chases/#page-64"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Подземелья. .............................................................. 67",
+              "bold": true
+            }
+          ],
+          "targetPage": 67,
+          "style": "reference",
+          "id": "p2-34",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/dungeons/#page-67"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Поселения................................................................. 70",
+              "bold": true
+            }
+          ],
+          "targetPage": 70,
+          "style": "reference",
+          "id": "p2-35",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/settlements/#page-70"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Проклятья и магические заражения...................... 73",
+              "bold": true
+            }
+          ],
+          "targetPage": 73,
+          "style": "reference",
+          "id": "p2-36",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/curses/#page-73"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Репутация.................................................................. 74",
+              "bold": true
+            }
+          ],
+          "targetPage": 74,
+          "style": "reference",
+          "id": "p2-37",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/renown/#page-74"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сверхъестественные дары. ..................................... 75",
+              "bold": true
+            }
+          ],
+          "targetPage": 75,
+          "style": "reference",
+          "id": "p2-38",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/supernatural-gifts/#page-75"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Смерть........................................................................ 76",
+              "bold": true
+            }
+          ],
+          "targetPage": 76,
+          "style": "reference",
+          "id": "p2-39",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/death/#page-76"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание заклинания.............................................. 78",
+              "bold": true
+            }
+          ],
+          "targetPage": 78,
+          "style": "reference",
+          "id": "p2-40",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-spells-and-items/#page-78"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание магического предмета............................ 78",
+              "bold": true
+            }
+          ],
+          "targetPage": 78,
+          "style": "reference",
+          "id": "p2-41",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-spells-and-items/#page-78"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание предыстории............................................ 80",
+              "bold": true
+            }
+          ],
+          "targetPage": 80,
+          "style": "reference",
+          "id": "p2-42",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-backgrounds-and-creatures/#page-80"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Создание существа. ................................................. 80",
+              "bold": true
+            }
+          ],
+          "targetPage": 80,
+          "style": "reference",
+          "id": "p2-43",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-backgrounds-and-creatures/#page-80"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Страх и психический стресс.................................... 82",
+              "bold": true
+            }
+          ],
+          "targetPage": 82,
+          "style": "reference",
+          "id": "p2-44",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/fear-and-stress/#page-82"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Толпы......................................................................... 84",
+              "bold": true
+            }
+          ],
+          "targetPage": 84,
+          "style": "reference",
+          "id": "p2-45",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/mobs/#page-84"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эффекты окружающей среды. ................................ 85",
+              "bold": true
+            }
+          ],
+          "targetPage": 85,
+          "style": "reference",
+          "id": "p2-46",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/environment/#page-85"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Яды............................................................................. 86",
+              "bold": true
+            }
+          ],
+          "targetPage": 86,
+          "style": "reference",
+          "id": "p2-47",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/poisons/#page-86"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 4: Создание приключения.......................89",
+              "bold": true
+            }
+          ],
+          "targetPage": 89,
+          "id": "p2-48",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-adventures/#page-89"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пошаговое создание приключений....................... 89",
+              "bold": true
+            }
+          ],
+          "targetPage": 89,
+          "style": "reference",
+          "id": "p2-49",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-adventures/#page-89"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сформируйте суть..................................................... 89",
+              "bold": true
+            }
+          ],
+          "targetPage": 89,
+          "style": "reference",
+          "id": "p2-50",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-adventures/#page-89"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Наберите игроков. .................................................... 93",
+              "bold": true
+            }
+          ],
+          "targetPage": 93,
+          "style": "reference",
+          "id": "p2-51",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/recruiting-players/#page-93"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Спланируйте сцены.................................................. 94",
+              "bold": true
+            }
+          ],
+          "targetPage": 94,
+          "style": "reference",
+          "id": "p2-52",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/planning-scenes/#page-94"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Доведите до конца.................................................... 101",
+              "bold": true
+            }
+          ],
+          "targetPage": 101,
+          "style": "reference",
+          "id": "p2-53",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/adventure-rewards/#page-101"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Награды за приключение........................................ 101",
+              "bold": true
+            }
+          ],
+          "targetPage": 101,
+          "style": "reference",
+          "id": "p2-54",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/adventure-rewards/#page-101"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Примеры приключений........................................... 102",
+              "bold": true
+            }
+          ],
+          "targetPage": 102,
+          "style": "reference",
+          "id": "p2-55",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-adventures/#page-102"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Загрязнённый ручей................................................... 103"
+            }
+          ],
+          "targetPage": 103,
+          "style": "reference",
+          "id": "p2-56",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-adventures/#page-103"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Трудности шахтёров................................................... 103"
+            }
+          ],
+          "targetPage": 103,
+          "style": "reference",
+          "id": "p2-57",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-adventures/#page-103"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Крылатый бог............................................................. 104"
+            }
+          ],
+          "targetPage": 104,
+          "style": "reference",
+          "id": "p2-58",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-adventures/#page-104"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Рога зверя................................................................... 104"
+            }
+          ],
+          "targetPage": 104,
+          "style": "reference",
+          "id": "p2-59",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-adventures/#page-104"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Снежный бал............................................................. 105"
+            }
+          ],
+          "targetPage": 105,
+          "style": "reference",
+          "id": "p2-60",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/example-adventures/#page-105"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 5: Создание кампании.............................107",
+              "bold": true
+            }
+          ],
+          "targetPage": 107,
+          "id": "p2-61",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-campaigns/#page-107"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пошаговое создание кампании. ............................ 107",
+              "bold": true
+            }
+          ],
+          "targetPage": 107,
+          "style": "reference",
+          "id": "p2-62",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-campaigns/#page-107"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ваш лист кампании. ................................................ 107",
+              "bold": true
+            }
+          ],
+          "targetPage": 107,
+          "style": "reference",
+          "id": "p2-63",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/creating-campaigns/#page-107"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предыстория кампании........................................... 109",
+              "bold": true
+            }
+          ],
+          "targetPage": 109,
+          "style": "reference",
+          "id": "p2-64",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/campaign-background/#page-109"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Начало кампании..................................................... 115",
+              "bold": true
+            }
+          ],
+          "targetPage": 115,
+          "style": "reference",
+          "id": "p2-65",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/starting-campaign/#page-115"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планирование приключения.................................. 116",
+              "bold": true
+            }
+          ],
+          "targetPage": 116,
+          "style": "reference",
+          "id": "p2-66",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/planning-adventures/#page-116"
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "Содержание",
+              "bold": true
+            }
+          ],
+          "id": "p2-67",
+          "sourcePage": 2
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Серый ястреб...................................................... 119",
+              "bold": true
+            }
+          ],
+          "targetPage": 119,
+          "id": "p2-68",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk/#page-119"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Важные названия..................................................... 119",
+              "bold": true
+            }
+          ],
+          "targetPage": 119,
+          "style": "reference",
+          "id": "p2-69",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk/#page-119"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Суть Серого ястреба.................................................. 119",
+              "bold": true
+            }
+          ],
+          "targetPage": 119,
+          "style": "reference",
+          "id": "p2-70",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk/#page-119"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вольный город Серый ястреб................................... 125",
+              "bold": true
+            }
+          ],
+          "targetPage": 125,
+          "style": "reference",
+          "id": "p2-71",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-city/#page-125"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "География Серого ястреба........................................ 136",
+              "bold": true
+            }
+          ],
+          "targetPage": 136,
+          "style": "reference",
+          "id": "p2-72",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-central/#page-136"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Общая картина........................................................... 136"
+            }
+          ],
+          "targetPage": 136,
+          "style": "reference",
+          "id": "p2-73",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-central/#page-136"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Центральный Фланесс................................................ 136"
+            }
+          ],
+          "targetPage": 136,
+          "style": "reference",
+          "id": "p2-74",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-central/#page-136"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Восточный Фланесс................................................... 139"
+            }
+          ],
+          "targetPage": 139,
+          "style": "reference",
+          "id": "p2-75",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-east/#page-139"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Северный Фланесс..................................................... 141"
+            }
+          ],
+          "targetPage": 141,
+          "style": "reference",
+          "id": "p2-76",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-north/#page-141"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Старый Кеоланд......................................................... 143"
+            }
+          ],
+          "targetPage": 143,
+          "style": "reference",
+          "id": "p2-77",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-keoland/#page-143"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Западный Фланесс..................................................... 144"
+            }
+          ],
+          "targetPage": 144,
+          "style": "reference",
+          "id": "p2-78",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/greyhawk-west/#page-144"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 6: Космология...........................................147",
+              "bold": true
+            }
+          ],
+          "targetPage": 147,
+          "id": "p2-79",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/planes/#page-147"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планы........................................................................ 147",
+              "bold": true
+            }
+          ],
+          "targetPage": 147,
+          "style": "reference",
+          "id": "p2-80",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/planes/#page-147"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Путешествия по планам. ......................................... 150",
+              "bold": true
+            }
+          ],
+          "targetPage": 150,
+          "style": "reference",
+          "id": "p2-81",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/planar-travel/#page-150"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Планарные приключения........................................ 152",
+              "bold": true
+            }
+          ],
+          "targetPage": 152,
+          "style": "reference",
+          "id": "p2-82",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/planar-adventures/#page-152"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Экскурсия по мультивселенной.............................. 153",
+              "bold": true
+            }
+          ],
+          "targetPage": 153,
+          "style": "reference",
+          "id": "p2-83",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-a/#page-153"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ахерон....................................................................... 153"
+            }
+          ],
+          "targetPage": 153,
+          "style": "reference",
+          "id": "p2-84",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-a/#page-153"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Арборея...................................................................... 153"
+            }
+          ],
+          "targetPage": 153,
+          "style": "reference",
+          "id": "p2-85",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-a/#page-153"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Бездна. ...................................................................... 154"
+            }
+          ],
+          "targetPage": 154,
+          "style": "reference",
+          "id": "p2-86",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-a/#page-154"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Аркадия. .................................................................... 156"
+            }
+          ],
+          "targetPage": 156,
+          "style": "reference",
+          "id": "p2-87",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-a/#page-156"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Звериные земли......................................................... 156"
+            }
+          ],
+          "targetPage": 156,
+          "style": "reference",
+          "id": "p2-88",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-a/#page-156"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Битопия..................................................................... 157"
+            }
+          ],
+          "targetPage": 157,
+          "style": "reference",
+          "id": "p2-89",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-157"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Демипланы................................................................ 157"
+            }
+          ],
+          "targetPage": 157,
+          "style": "reference",
+          "id": "p2-90",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-157"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Элизиум..................................................................... 157"
+            }
+          ],
+          "targetPage": 157,
+          "style": "reference",
+          "id": "p2-91",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-157"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Астральный план. ...................................................... 158"
+            }
+          ],
+          "targetPage": 158,
+          "style": "reference",
+          "id": "p2-92",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-158"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийный план Воздуха........................................... 160"
+            }
+          ],
+          "targetPage": 160,
+          "style": "reference",
+          "id": "p2-93",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-160"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийный план Земли............................................. 161"
+            }
+          ],
+          "targetPage": 161,
+          "style": "reference",
+          "id": "p2-94",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-161"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийный план Воды............................................... 161"
+            }
+          ],
+          "targetPage": 161,
+          "style": "reference",
+          "id": "p2-95",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-b/#page-161"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Стихийный план Огня............................................... 162"
+            }
+          ],
+          "targetPage": 162,
+          "style": "reference",
+          "id": "p2-96",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-c/#page-162"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Парастихийные планы............................................... 163"
+            }
+          ],
+          "targetPage": 163,
+          "style": "reference",
+          "id": "p2-97",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-c/#page-163"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Геенна....................................................................... 163"
+            }
+          ],
+          "targetPage": 163,
+          "style": "reference",
+          "id": "p2-98",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-c/#page-163"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Эфирный план............................................................ 164"
+            }
+          ],
+          "targetPage": 164,
+          "style": "reference",
+          "id": "p2-99",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-c/#page-164"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Страна фей................................................................. 166"
+            }
+          ],
+          "targetPage": 166,
+          "style": "reference",
+          "id": "p2-100",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-c/#page-166"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Дальний предел. ........................................................ 168"
+            }
+          ],
+          "targetPage": 168,
+          "style": "reference",
+          "id": "p2-101",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-168"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Лимбо........................................................................ 169"
+            }
+          ],
+          "targetPage": 169,
+          "style": "reference",
+          "id": "p2-102",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-169"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Механус..................................................................... 169"
+            }
+          ],
+          "targetPage": 169,
+          "style": "reference",
+          "id": "p2-103",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-169"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Материальный план................................................... 170"
+            }
+          ],
+          "targetPage": 170,
+          "style": "reference",
+          "id": "p2-104",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-170"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гора Целестия............................................................ 171"
+            }
+          ],
+          "targetPage": 171,
+          "style": "reference",
+          "id": "p2-105",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-171"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Негативный план....................................................... 172"
+            }
+          ],
+          "targetPage": 172,
+          "style": "reference",
+          "id": "p2-106",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-172"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Позитивный план...................................................... 172"
+            }
+          ],
+          "targetPage": 172,
+          "style": "reference",
+          "id": "p2-107",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-172"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Внешние земли. ........................................................ 172"
+            }
+          ],
+          "targetPage": 172,
+          "style": "reference",
+          "id": "p2-108",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-d/#page-172"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Пандемониум............................................................ 173"
+            }
+          ],
+          "targetPage": 173,
+          "style": "reference",
+          "id": "p2-109",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-e/#page-173"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Девять преисподних. ................................................. 174"
+            }
+          ],
+          "targetPage": 174,
+          "style": "reference",
+          "id": "p2-110",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-e/#page-174"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Гадес.......................................................................... 177"
+            }
+          ],
+          "targetPage": 177,
+          "style": "reference",
+          "id": "p2-111",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-f/#page-177"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Сигил, Город дверей. .................................................. 178"
+            }
+          ],
+          "targetPage": 178,
+          "style": "reference",
+          "id": "p2-112",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-f/#page-178"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Карцери. .................................................................... 178"
+            }
+          ],
+          "targetPage": 178,
+          "style": "reference",
+          "id": "p2-113",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-f/#page-178"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Царство теней............................................................ 180"
+            }
+          ],
+          "targetPage": 180,
+          "style": "reference",
+          "id": "p2-114",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-f/#page-180"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Асгард........................................................................ 181"
+            }
+          ],
+          "targetPage": 181,
+          "style": "reference",
+          "id": "p2-115",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/multiverse-f/#page-181"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 7: Сокровища............................................183",
+              "bold": true
+            }
+          ],
+          "targetPage": 183,
+          "id": "p2-116",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/coins-and-trade/#page-183"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Темы сокровищ......................................................... 183",
+              "bold": true
+            }
+          ],
+          "targetPage": 183,
+          "style": "reference",
+          "id": "p2-117",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/coins-and-trade/#page-183"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Монеты...................................................................... 183",
+              "bold": true
+            }
+          ],
+          "targetPage": 183,
+          "style": "reference",
+          "id": "p2-118",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/coins-and-trade/#page-183"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Слитки....................................................................... 183",
+              "bold": true
+            }
+          ],
+          "targetPage": 183,
+          "style": "reference",
+          "id": "p2-119",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/coins-and-trade/#page-183"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Товары для торговли................................................ 183",
+              "bold": true
+            }
+          ],
+          "targetPage": 183,
+          "style": "reference",
+          "id": "p2-120",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/coins-and-trade/#page-183"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Драгоценные камни................................................. 184",
+              "bold": true
+            }
+          ],
+          "targetPage": 184,
+          "style": "reference",
+          "id": "p2-121",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/gemstones/#page-184"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Предметы искусства. ............................................... 185",
+              "bold": true
+            }
+          ],
+          "targetPage": 185,
+          "style": "reference",
+          "id": "p2-122",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/art-objects/#page-185"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Магические предметы. ............................................ 186",
+              "bold": true
+            }
+          ],
+          "targetPage": 186,
+          "style": "reference",
+          "id": "p2-123",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-item-rules/#page-186"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Список магических предметов............................... 196",
+              "bold": true
+            }
+          ],
+          "targetPage": 196,
+          "style": "reference",
+          "id": "p2-124",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-item-index/#page-196"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Магические предметы. .....................................197",
+              "bold": true
+            }
+          ],
+          "targetPage": 197,
+          "id": "p2-125",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Вариативные............................................................. 197",
+              "bold": true
+            }
+          ],
+          "targetPage": 197,
+          "style": "reference",
+          "id": "p2-126",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-variable-1/#page-197"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Обычные.................................................................... 206",
+              "bold": true
+            }
+          ],
+          "targetPage": 206,
+          "style": "reference",
+          "id": "p2-127",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-common-1/#page-206"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Необычные................................................................ 212",
+              "bold": true
+            }
+          ],
+          "targetPage": 212,
+          "style": "reference",
+          "id": "p2-128",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-uncommon-1/#page-212"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Редкие........................................................................ 226",
+              "bold": true
+            }
+          ],
+          "targetPage": 226,
+          "style": "reference",
+          "id": "p2-129",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-rare-1/#page-226"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Очень редкие............................................................. 241",
+              "bold": true
+            }
+          ],
+          "targetPage": 241,
+          "style": "reference",
+          "id": "p2-130",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-very-rare-1/#page-241"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Легендарные............................................................. 256",
+              "bold": true
+            }
+          ],
+          "targetPage": 256,
+          "style": "reference",
+          "id": "p2-131",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-legendary-1/#page-256"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Артефакты.................................................................. 269",
+              "bold": true
+            }
+          ],
+          "targetPage": 269,
+          "style": "reference",
+          "id": "p2-132",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/magic-items-artifacts-1/#page-269"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Случайные магические предметы.......................... 280",
+              "bold": true
+            }
+          ],
+          "targetPage": 280,
+          "style": "reference",
+          "id": "p2-133",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/random-items/#page-280"
+        },
+        {
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Получение бастиона. ............................................... 289",
+              "bold": true
+            }
+          ],
+          "targetPage": 289,
+          "style": "reference",
+          "id": "p2-134",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/bastions/#page-289"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Глава 8: Бастионы..............................................289",
+              "bold": true
+            }
+          ],
+          "targetPage": 289,
+          "id": "p2-135",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/bastions/#page-289"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Приложение А: Глоссарий лора........................307",
+              "bold": true
+            }
+          ],
+          "targetPage": 307,
+          "id": "p2-136",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/lore-glossary-a/#page-307"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Приложение Б: Карты........................................316",
+              "bold": true
+            }
+          ],
+          "targetPage": 316,
+          "id": "p2-137",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/map-316/#page-316"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Приложение В: Листы отслеживания.............334",
+              "bold": true
+            }
+          ],
+          "targetPage": 334,
+          "id": "p2-138",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/tracker-334/#page-334"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "Титры. .................................................................342",
+              "bold": true
+            }
+          ],
+          "targetPage": 342,
+          "id": "p2-139",
+          "sourcePage": 2,
+          "link": "/books/dmg-2024-ru/credits/#page-342"
+        }
+      ]
+    }
+  ]
+}

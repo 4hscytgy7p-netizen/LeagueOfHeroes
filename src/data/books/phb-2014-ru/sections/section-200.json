@@ -1,0 +1,56 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "section-200",
+  "title": "Часть 3: магия",
+  "description": "",
+  "sourcePages": [
+    200
+  ],
+  "group": "Глава 9. Сражение",
+  "pages": [
+    {
+      "number": 200,
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "ЧАСТЬ3"
+            }
+          ],
+          "id": "p200-1",
+          "sourcePage": 200
+        },
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-200-1497eb91e6.webp",
+          "alt": "Иллюстрация к разделу «Часть 3: магия».",
+          "width": 1032,
+          "height": 1400,
+          "smallSrc": "/images/books/phb-2014-ru/page-200-1497eb91e6-640.webp",
+          "smallWidth": 640,
+          "id": "p200-2",
+          "sourcePage": 200
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "П"
+            },
+            {
+              "text": "РАВИЛА МАГИИ"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "id": "p200-3",
+          "sourcePage": 200
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "section-10",
+  "title": "Часть 1: создание персонажа",
+  "description": "",
+  "sourcePages": [
+    10
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 10,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-10-480fff8866.webp",
+          "alt": "Иллюстрация к разделу «Часть 1: создание персонажа».",
+          "width": 993,
+          "height": 1400,
+          "smallSrc": "/images/books/phb-2014-ru/page-10-480fff8866-640.webp",
+          "smallWidth": 640,
+          "id": "p10-1",
+          "sourcePage": 10
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "spans": [
+            {
+              "text": "ЧАСТЬ 1"
+            }
+          ],
+          "id": "p10-2",
+          "sourcePage": 10
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "spans": [
+            {
+              "text": "С"
+            },
+            {
+              "text": "ОЗДАНИЕ ПЕРСОНАЖА"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "id": "p10-3",
+          "sourcePage": 10
+        }
+      ]
+    }
+  ]
+}

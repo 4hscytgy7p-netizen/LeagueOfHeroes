@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-326",
+  "title": "Поместье",
+  "description": "",
+  "sourcePages": [
+    326
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 326,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-326-e5b6f4b044.webp",
+          "alt": "Карта: Поместье",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-326-e5b6f4b044-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Поместье\nВверх\n1 квадрат = 5 футов\nВниз\nВниз\nВверх\nВверх\nВниз\nВниз\nВниз\nВверх\nВверх\nВверх\nПоместье\nХудожник: Dyson Logos\nОригинал\nВерсия для игроков\nВниз\nВниз\nВверх\nВниз\nВниз\nВниз\nВверх\nВверх\nВверх",
+          "textLabel": "Подписи на карте",
+          "id": "p326-1",
+          "sourcePage": 326
+        }
+      ]
+    }
+  ]
+}

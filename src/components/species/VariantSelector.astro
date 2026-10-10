@@ -1,223 +1,83 @@
 ---
-import type { SpeciesVariant } from '../../types/species';
-
-interface Props {
-  variants: SpeciesVariant[];
-  currentVariant?: string;
-}
-
-const { variants, currentVariant } = Astro.props;
+import type { SpeciesPageVariant } from '../../utils/speciesPage';
+interface Props { variants: SpeciesPageVariant[]; required?: boolean; }
+const { variants, required = false } = Astro.props;
 ---
-
-<div class="variant-selector">
-  <label for="variant-select">Вариант:</label>
-  <select id="variant-select" class="variant-select">
-    <option value="">Базовый вариант</option>
-    {variants.map(variant => (
-      <option value={variant.name} selected={currentVariant === variant.name}>
-        {variant.name} [{variant.sourceBook}]
-      </option>
-    ))}
+<div class="variant-selector" id="variant-controls" hidden>
+  <label for="variant-select">{required ? 'Подраса (обязательно)' : 'Вариант вида'}</label>
+  <select id="variant-select" aria-describedby="variant-status" required={required}>
+    <option value="">{required ? 'Выберите подрасу' : 'Базовый вариант'}</option>
+    {variants.map(variant => <option value={variant.pageId} data-legacy-name={variant.name}>{variant.name} [{variant.sourceBook}]</option>)}
   </select>
+  <a id="variant-permalink" href="?">Ссылка на выбранный вариант</a>
+  <p id="variant-status" role="status" aria-live="polite" aria-atomic="true"></p>
 </div>
-
+<noscript><p>Подвиды и происхождения доступны ниже: раскройте нужный вариант, чтобы прочитать его полные правила.</p></noscript>
 <style>
-  .variant-selector {
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .variant-select {
-    padding: 0.5rem;
-    border: 1px solid var(--card-border);
-    border-radius: 0.5rem;
-    background: var(--card-bg);
-    color: var(--text);
-    font-size: 1rem;
-  }
-
-  .variant-select:focus {
-    outline: none;
-    border-color: var(--primary);
-  }
-  
-  :global(.base-lore) {
-    margin-bottom: 1rem;
-  }
-
-  :global(.base-lore details) {
-    padding: 0.5rem;
-    background: var(--background);
-    border-radius: 0.5rem;
-  }
-
-  :global(.base-lore summary) {
-    cursor: pointer;
-    padding: 0.5rem;
-    color: var(--text);
-    opacity: 0.8;
-  }
-
-  :global(.variant-lore) {
-    margin-top: 1rem;
-  }
-
-  :global(.variant-lore h4) {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.variant-ability) {
-    padding: 1rem;
-    border-top: 1px solid var(--card-border);
-  }
-
-  :global(.variant-ability .ability-title) {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary);
-  }
-
-  :global(.variant-ability .ability-description) {
-    line-height: 1.6;
-  }
+  .variant-selector { margin: 1rem 0; display: grid; gap: 0.6rem; }
+  .variant-selector[hidden] { display: none; }
+  label { font-weight: 600; }
+  select { min-width: 0; width: 100%; padding: 0.75rem; border: 1px solid var(--card-border); border-radius: 0.5rem; background: var(--card-bg); color: var(--text); font: inherit; }
+  select:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+  a, p { font-size: 0.9rem; margin: 0; overflow-wrap: anywhere; }
 </style>
-
 <script>
-  interface TableData {
-    headers: string[];
-    rows: string[][];
-  }
-
-  interface Ability {
-    title: string;
-    description: string;
-    tableData?: TableData;
-  }
-
-  interface VariantData {
-    name: string;
-    lore?: string;
-    abilities?: Ability[];
-    replacesAbilities?: string[];
-  }
-
-  function formatTableData(text: string): TableData {
-    const lines = text.split('\n').filter(line => line.trim());
-    const [headerLine, ...dataLines] = lines;
-    
-    return {
-      headers: headerLine.split('\t').map(h => h.trim()),
-      rows: dataLines.map(line => line.split('\t').map(cell => cell.trim()))
-    };
-  }
+  import { resolveSpeciesVariant, speciesViewUrl } from '../../utils/speciesPage';
 
   function initVariantSelector() {
-    const select = document.getElementById('variant-select') as HTMLSelectElement;
-    const loreContainer = document.querySelector('.lore p');
-    const originalLore = loreContainer?.innerHTML || '';
-    const originalAbilities = document.querySelector('.abilities')?.innerHTML || '';
-    
-    select?.addEventListener('change', (e) => {
-      const variant = (e.target as HTMLSelectElement).value;
-      const variantData = (window as any).speciesVariants?.[variant] as VariantData | undefined;
-      const abilitiesContainer = document.querySelector('.abilities');
+    const select = document.querySelector<HTMLSelectElement>('#variant-select');
+    const root = select?.closest<HTMLElement>('.species-page');
+    if (!select || !root) return;
+    const views = [...root.querySelectorAll<HTMLElement>('[data-species-view]')];
+    const variants = [...select.options].filter(option => option.value).map(option => ({ pageId: option.value, name: option.dataset.legacyName || '' }));
+    const permalink = root.querySelector<HTMLAnchorElement>('#variant-permalink')!;
+    const status = root.querySelector<HTMLElement>('#variant-status')!;
+    root.classList.add('species-enhanced');
+    root.querySelector<HTMLElement>('#variant-controls')!.hidden = false;
 
-      // Handle lore updates
-      if (loreContainer) {
-        if (!variant || !variantData?.lore) {
-          loreContainer.innerHTML = originalLore;
-        } else {
-          loreContainer.innerHTML = `
-            <div class="base-lore">
-              <details>
-                <summary>Базовое описание</summary>
-                <p>${originalLore}</p>
-              </details>
-            </div>
-            <div class="variant-lore">
-              <h4>${variantData.name}</h4>
-              <p>${variantData.lore}</p>
-            </div>
-          `;
-        }
-      }
+    function hashTarget() {
+      try { return document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch { return null; }
+    }
 
-      // Handle ability updates
-      if (abilitiesContainer) {
-        if (!variant || !variantData?.abilities) {
-          // Restore original abilities
-          abilitiesContainer.innerHTML = originalAbilities;
-          // Notify listeners that abilities content changed
-          document.dispatchEvent(new CustomEvent('abilities-updated', { detail: { container: abilitiesContainer } }));
-        } else {
-          // Start with original abilities
-          abilitiesContainer.innerHTML = originalAbilities;
-          
-          // Remove abilities that should be replaced
-          if (variantData.replacesAbilities) {
-            Array.from(abilitiesContainer.children).forEach(ability => {
-              const title = ability.querySelector('.ability-title')?.textContent;
-              if (title && variantData.replacesAbilities?.includes(title)) {
-                ability.remove();
-              }
-            });
-          }
+    function render(id: string, announce: boolean) {
+      select!.value = id;
+      views.forEach(view => {
+        view.hidden = view.dataset.speciesView !== id;
+        if (view instanceof HTMLDetailsElement) view.open = !view.hidden;
+      });
+      const metadata = root!.querySelector<HTMLElement>('[data-base-metadata]');
+      if (metadata) metadata.hidden = !!id;
+      permalink.href = speciesViewUrl(location.href, id);
+      const active = views.find(view => !view.hidden)!;
+      if (announce) status.textContent = active.querySelector('h2')?.textContent || '';
+      document.dispatchEvent(new CustomEvent('abilities-updated', { detail: { container: active.querySelector('.abilities') } }));
+    }
 
-          // Add new variant abilities
-          variantData.abilities.forEach(ability => {
-            let abilityContent = '';
-            
-            if (ability.title.includes('таблица') && ability.description) {
-              // Parse table data from description if it's a string
-              const tableData = typeof ability.description === 'string' 
-                ? formatTableData(ability.description)
-                : ability.tableData;
+    function readLocation(scroll = false) {
+      const target = hashTarget();
+      const owner = target?.closest<HTMLElement>('[data-species-view]');
+      const id = owner?.dataset.speciesView ?? resolveSpeciesVariant(location.search, variants);
+      render(id, false);
+      const canonical = speciesViewUrl(location.href, id);
+      if (canonical !== location.pathname + location.search + location.hash) history.replaceState(history.state, '', canonical);
+      // Direct links can target a descendant of the collapsed base description.
+      for (let details = target?.closest('details'); details; details = details.parentElement?.closest('details') || null) details.open = true;
+      if (target && scroll) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+    }
 
-              abilityContent = `
-                <div class="species-ability variant-ability">
-                  <h3 class="ability-title">${ability.title}</h3>
-                  <div class="table-container" data-ability-title="${ability.title}">
-                    <table>
-                      <thead>
-                        <tr>
-                          ${tableData.headers.map(h => `<th>${h}</th>`).join('')}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        ${tableData.rows.map(row => `
-                          <tr>
-                            ${row.map(cell => `<td>${cell}</td>`).join('')}
-                          </tr>
-                        `).join('')}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              `;
-            } else {
-              // Regular ability without table
-              abilityContent = `
-                <div class="species-ability variant-ability">
-                  <h3 class="ability-title">${ability.title}</h3>
-                  <div class="ability-description">${ability.description}</div>
-                </div>
-              `;
-            }
-
-            const tempContainer = document.createElement('div');
-            tempContainer.innerHTML = abilityContent;
-            abilitiesContainer.appendChild(tempContainer.firstElementChild);
-          });
-          // Notify listeners that abilities content changed
-          document.dispatchEvent(new CustomEvent('abilities-updated', { detail: { container: abilitiesContainer } }));
-        }
-      }
+    select.addEventListener('change', () => {
+      const target = hashTarget();
+      const owner = target?.closest<HTMLElement>('[data-species-view]');
+      const hash = owner && owner.dataset.speciesView !== select.value ? '' : location.hash;
+      const next = speciesViewUrl(location.href, select.value, hash);
+      if (next !== location.pathname + location.search + location.hash) history.pushState(history.state, '', next);
+      render(select.value, true);
     });
+    window.addEventListener('popstate', () => readLocation(true));
+    window.addEventListener('hashchange', () => readLocation(true));
+    readLocation(true);
   }
 
-  // Initialize the selector when the document is loaded
-  document.addEventListener('DOMContentLoaded', initVariantSelector);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initVariantSelector, { once: true });
+  else initVariantSelector();
 </script>

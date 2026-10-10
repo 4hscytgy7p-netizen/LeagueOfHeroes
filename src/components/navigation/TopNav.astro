@@ -10,6 +10,10 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
       <a class="donate-btn boosty" href="https://boosty.to/league_of_hero" target="_blank" rel="noopener noreferrer" aria-label="Поддержать на Boosty">Boosty</a>
       <a class="donate-btn patreon" href="https://www.patreon.com/c/LeagueOfHeroes_official" target="_blank" rel="noopener noreferrer" aria-label="Поддержать на Patreon">Patreon</a>
     </div>
+    <a href="/search" class="site-search-trigger" data-open-search aria-label="Поиск по сайту" aria-keyshortcuts="Control+k Meta+k">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg>
+      <span>Поиск</span><kbd data-search-shortcut>Ctrl K</kbd>
+    </a>
     <button class="menu-toggle" aria-label="Toggle menu">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -21,12 +25,6 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
       <NavDropdown label="Инструменты" links={toolsLinks} />
       <NavDropdown label="Руководства" links={guideLinks} />
       <NavDropdown label="Справочник" links={handbookLinks} />
-      <a class="account-login" href="/test/cabinet/" aria-label="Открыть личный кабинет">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7 8a7 7 0 0 0-14 0" />
-        </svg>
-        <span>Войти</span>
-      </a>
     </div>
   </div>
 </nav>
@@ -58,7 +56,7 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
     dropdowns.forEach(dropdown => {
       const trigger = dropdown.querySelector('.dropdown-trigger');
       trigger?.addEventListener('click', (e) => {
-        if (window.innerWidth <= 1100) {
+        if (window.innerWidth <= 1400) {
           e.preventDefault();
           if (activeDropdown && activeDropdown !== dropdown) {
             activeDropdown.classList.remove('active');
@@ -76,7 +74,7 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 1100) {
+      if (window.innerWidth <= 1400) {
         const target = e.target as HTMLElement;
         if (!target.closest('.dropdown')) {
           dropdowns.forEach(dropdown => {
@@ -90,7 +88,7 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
     // Close mobile menu when clicking a link
     navItems?.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
-      if (window.innerWidth <= 1100 && target.closest('a')) {
+      if (window.innerWidth <= 1400 && target.classList.contains('dropdown-item')) {
         dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
         activeDropdown = null;
         navItems.classList.remove('active');
@@ -122,6 +120,7 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    gap: .6rem;
     align-items: center;
     height: 4rem;
   }
@@ -138,48 +137,6 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
   .nav-items {
     display: flex;
     gap: 1rem;
-    align-items: center;
-  }
-
-  .account-login {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: .45rem;
-    min-height: 2.35rem;
-    padding: .45rem .8rem;
-    border: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
-    border-radius: 8px;
-    color: var(--primary);
-    background: color-mix(in srgb, var(--primary) 9%, transparent);
-    font-size: .92rem;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
-  }
-
-  .account-login svg {
-    width: 1.1rem;
-    height: 1.1rem;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.8;
-  }
-
-  .account-login:hover {
-    color: var(--card-bg);
-    background: var(--primary);
-    border-color: var(--primary);
-    transform: translateY(-1px);
-  }
-
-  .account-login:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 3px;
   }
 
   .donate-buttons {
@@ -238,7 +195,7 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
     transition: all 0.3s ease;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1400px) {
     .nav-content {
       padding: 0 1rem;
     }
@@ -263,15 +220,9 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
     .nav-items.active {
       display: flex;
     }
-
-    .account-login {
-      width: 100%;
-      margin-top: .25rem;
-      padding: .7rem 1rem;
-    }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 760px) {
     .top-nav {
       padding: 0 .75rem;
     }
@@ -293,5 +244,8 @@ import { rulesLinks, characterLinks, toolsLinks, guideLinks, handbookLinks } fro
       width: 28px;
       height: 20px;
     }
+  }
+  @media (max-width: 380px) {
+    .site-title { font-size: .9rem; }
   }
 </style>

@@ -1,0 +1,71 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "basics-illustration",
+  "title": "За игровым столом",
+  "description": "",
+  "sourcePages": [
+    4
+  ],
+  "group": "Глава 1 · Основы",
+  "pages": [
+    {
+      "number": 4,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-4-eab8aedd26.webp",
+          "alt": "Иллюстрация к разделу «За игровым столом».",
+          "width": 1039,
+          "height": 1400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-4-eab8aedd26-640.webp",
+          "smallWidth": 640,
+          "id": "p4-1",
+          "sourcePage": 4
+        },
+        {
+          "kind": "callout",
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Для D&D вам не нужен магический",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "стол, но разве это не весело?",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Художник: Luca Bancone",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "kind": "paragraph",
+              "spans": [
+                {
+                  "text": "Оригинал",
+                  "bold": true
+                }
+              ]
+            }
+          ],
+          "id": "p4-2",
+          "sourcePage": 4
+        }
+      ]
+    }
+  ]
+}

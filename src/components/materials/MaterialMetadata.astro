@@ -1,0 +1,9 @@
+---
+import { getPublishedMaterial } from '../../data/materials';
+import { renderMaterialMetadata } from '../../utils/materialPresentation';
+import type { MaterialKind } from '../../types/material';
+interface Props { kind: MaterialKind; id: string; }
+const { kind, id } = Astro.props;
+const html = renderMaterialMetadata(getPublishedMaterial(kind, id));
+---
+<Fragment set:html={html} />

@@ -1,0 +1,31 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "character-details",
+  "title": "Детализация персонажа",
+  "description": "",
+  "sourcePages": [
+    329
+  ],
+  "group": "Лист персонажа",
+  "pages": [
+    {
+      "number": 329,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-329-3c9e49aed0.webp",
+          "alt": "Иллюстрация: Детализация персонажа",
+          "width": 1855,
+          "height": 2400,
+          "smallSrc": "/images/books/phb-2014-ru/page-329-3c9e49aed0-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "ВОЗРАСТ\nГЛАЗА\nИМЯ ПЕРСОНАЖА\nВНЕШНИЙ ВИД ПЕРСОНАЖА\nПЕРЕДЫСТОРИЯ ПЕРСОНАЖА\nРОСТ\nВЕС\nВОЛОСЫ\nКОЖА\nНАЗВАНИЕ\nСИМВОЛ\nСОЮЗНИКИ И ОРГАНИЗАЦИИ\nДОПОЛНИТЕЛЬНЫЕ ОСОБЕННОСТИ И УМЕНИЯ\nСОКРОВИЩА\nTM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.",
+          "textLabel": "Поля листа",
+          "id": "p329-1",
+          "sourcePage": 329
+        }
+      ]
+    }
+  ]
+}

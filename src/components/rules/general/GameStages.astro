@@ -2,7 +2,7 @@
 interface Props {}
 ---
 
-<section class="rules-section">
+<section class="rules-section" id="game-stages">
   <h2>Этапы игры</h2>
   <div class="content">
     <div class="stages">
@@ -31,6 +31,24 @@ interface Props {}
     <div class="stage-rules">
       <p>Каждое приключение допускает к игре персонажей определённого диапазона уровней. Отклонения возможны только в случае, если разница между всеми персонажами одного этапа и всеми персонажами другого этапа не превышает 1 уровень.</p>
       <p>Например: при наборе на партию второго этапа, записалось 4 из 5 возможных персонажей 5-го уровня. В такую группу имеет возможность записаться персонаж 4-го уровня, т.к. разница между всеми персонажами второго этапа и одним персонажем первого этапа составляет 1 уровень.</p>
+    </div>
+    <h3>Магические предметы</h3>
+    <p>Персонаж получает возможность взаемодействовать с магическими предметами в зависимости от своего этапа:</p>
+    <div class="progress-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Этап</th>
+            <th>Тип предмета</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Обычные и Необычные</td></tr>
+          <tr><td>2</td><td>Редкие</td></tr>
+          <tr><td>3</td><td>Очень Редкие</td></tr>
+          <tr><td>4</td><td>Легендарные</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -70,5 +88,31 @@ interface Props {}
   .stage-rules {
     padding-top: 1.5rem;
     border-top: 1px solid var(--card-border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid var(--card-border);
+    text-align: center;
+  }
+
+  th {
+    background: var(--background);
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: var(--background);
+  }
+
+  .progress-table {
+    margin-top: 1rem;
+    overflow-x: auto;
+    margin-left: auto;
   }
 </style>

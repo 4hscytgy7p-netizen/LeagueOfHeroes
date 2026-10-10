@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "cover",
+  "title": "Передняя обложка",
+  "description": "",
+  "sourcePages": [
+    1
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 1,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-1-5c9f56410a.webp",
+          "alt": "Иллюстрация: Передняя обложка",
+          "width": 1698,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-1-5c9f56410a-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "РУКОВОДСТВО МАСТЕРА\nВсе, что необходимо Мастеру, чтобы создавать свои истории в\nодной из лучших в мире настольных ролевых игр",
+          "textLabel": "Текст иллюстрации",
+          "id": "p1-1",
+          "sourcePage": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "tracker-336",
+  "title": "Лист персонажа Мастера",
+  "description": "",
+  "sourcePages": [
+    336
+  ],
+  "group": "Приложение В · Листы отслеживания",
+  "pages": [
+    {
+      "number": 336,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-336-e0ac0b64bd.webp",
+          "alt": "Лист отслеживания: Лист персонажа Мастера",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-336-e0ac0b64bd-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Лист персонажа Мастера\nИмя ПМа:\nСтатблок:\nСтр.:\nИзменения статблока\nМировоззрение\nЛичность\nВнешний вид\nСекрет\n, Joy Ang\nCraig Spearing",
+          "textLabel": "Поля листа",
+          "id": "p336-1",
+          "sourcePage": 336
+        }
+      ]
+    }
+  ]
+}

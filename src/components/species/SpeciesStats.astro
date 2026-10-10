@@ -1,11 +1,16 @@
 ---
+import { speciesSpeed } from '../../utils/speciesPage';
+import type { SpeciesVariant } from '../../types/species';
 interface Props {
   type: string;
   size: string;
   speed: number;
+  variantSpeed?: SpeciesVariant['speed'];
+  speedNote?: string;
 }
 
-const { type, size, speed } = Astro.props;
+const { type, size, speed, variantSpeed, speedNote } = Astro.props;
+const speeds = speciesSpeed(speed, variantSpeed);
 ---
 
 <div class="species-stats">
@@ -19,7 +24,8 @@ const { type, size, speed } = Astro.props;
   </div>
   <div class="stat-block">
     <div class="stat-label">Скорость</div>
-    <div class="stat-value">{speed} фт.</div>
+    <div class="stat-value">{speeds.map(entry => <div>{entry.label}: {entry.value} фт.</div>)}</div>
+    {speedNote && <p class="speed-note">{speedNote}</p>}
   </div>
 </div>
 
@@ -47,5 +53,10 @@ const { type, size, speed } = Astro.props;
 
   .stat-value {
     line-height: 1.4;
+  }
+  .speed-note { font-size: 0.85rem; margin: 0.5rem 0 0; }
+  @media (max-width: 380px) {
+    .species-stats { grid-template-columns: 1fr; }
+    .stat-block { text-align: left; }
   }
 </style>

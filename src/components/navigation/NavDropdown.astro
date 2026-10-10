@@ -8,7 +8,7 @@ const { label, links } = Astro.props;
 ---
 
 <div class="dropdown">
-  <button class="dropdown-trigger">{label}</button>
+  <button class="dropdown-trigger" type="button">{label}</button>
   <div class="dropdown-content">
     {links.map(link => (
       <a href={link.href} class:list={['dropdown-item', { 'dropdown-item-featured': link.featured }]}> 
@@ -66,8 +66,11 @@ const { label, links } = Astro.props;
     z-index: 1000;
   }
 
-  .dropdown:hover .dropdown-content {
-    display: block;
+  @media (min-width: 1101px) {
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
   }
 
   @media (max-width: 1100px) {

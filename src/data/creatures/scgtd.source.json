@@ -1,0 +1,23 @@
+{
+  "verifiedAt": "2026-10-06",
+  "bookHref": "https://www.scribd.com/document/712070823/Sebastian-s-Crow-Guide-to-Drakkenheim",
+  "crossCheckHref": "https://www.worldanvil.com/block/1488630",
+  "notes": "Manually transcribed numeric facts from printed pages 147 and 191. No English book prose is copied. The printed stat block gives no save DC for Eldritch Hiss or Thought Tendril. No verified media URLs.",
+  "creatures": [
+    {
+      "name": "Corpsewrought Creature", "source": "SCGtD", "page": 147,
+      "str": 18, "dex": 10, "con": 16, "int": 8, "wis": 12, "cha": 8,
+      "ac": "14 + PB", "hp": "5 + 5 * Apothecary level", "hitDice": "d12 * Apothecary level", "speed": { "walk": 30 },
+      "save": { "con": "+3 + PB", "wis": "+1 + PB" }, "skill": { "athletics": "+4 + PB" },
+      "immune": ["poison", "lightning"], "conditionImmune": ["poisoned"], "passive": 11,
+      "trait": [{ "name": "Lightning Absorption" }], "action": [{ "name": "Slam" }]
+    },
+    {
+      "name": "The Thing with the Writhing Tail", "source": "SCGtD", "page": 191,
+      "str": 13, "dex": 19, "con": 12, "int": 19, "wis": 15, "cha": 19,
+      "ac": "12 + spell level", "hp": "50 + 10 * (spell level - 4)", "speed": { "walk": 40, "climb": 30 },
+      "immune": ["psychic"], "conditionImmune": ["charmed", "frightened"], "passive": 12,
+      "trait": [{ "name": "Ethereal Sight" }], "action": [{ "name": "Multiattack" }, { "name": "Claw" }, { "name": "Eldritch Hiss" }, { "name": "Thought Tendril" }]
+    }
+  ]
+}

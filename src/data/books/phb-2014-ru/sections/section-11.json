@@ -1,0 +1,31 @@
+{
+  "bookId": "phb-2014-ru",
+  "id": "section-11",
+  "title": "Иллюстрация к части 1",
+  "description": "",
+  "sourcePages": [
+    11
+  ],
+  "group": "Начало книги",
+  "pages": [
+    {
+      "number": 11,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/phb-2014-ru/page-11-743e012fcf.webp",
+          "alt": "Иллюстрация: Иллюстрация к части 1",
+          "width": 1698,
+          "height": 2400,
+          "smallSrc": "/images/books/phb-2014-ru/page-11-743e012fcf-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "",
+          "textLabel": "Текст иллюстрации",
+          "id": "p11-1",
+          "sourcePage": 11
+        }
+      ]
+    }
+  ]
+}

@@ -18,8 +18,12 @@ import AlignmentStep from './steps/AlignmentStep.astro';
 import SummaryStep from './steps/SummaryStep.astro';
 import { backgroundsData } from '../../data/backgrounds';
 import { featsData } from '../../data/feats';
-import { spells } from '../../data/spells';
+import { spells } from '../../data/spells/index.ts';
 import { items } from '../../data/items';
+import { publishedMaterials } from '../../data/materials';
+import { materialKey } from '../../utils/materialCatalog';
+import { renderMaterialMetadata } from '../../utils/materialPresentation';
+const materialMetadataHtml = Object.fromEntries(publishedMaterials.filter(material => material.kind !== 'magic-item').map(material => [materialKey(material.kind, material.id), renderMaterialMetadata(material)]));
 import roll20TemplateRaw from '../../data/roll20/blank-2014.json?raw';
 import roll20ExportClientRaw from './client/roll20Export.js?raw';
 import roll20EquipmentExportClientRaw from './client/roll20EquipmentExport.js?raw';
@@ -147,6 +151,7 @@ const backgroundSpecialFeatOptions = featsData
     id: item.id,
     name: item.name,
     nameEn: item.nameEn,
+    sourceBook: item.sourceBook,
     type: item.type,
     requirements: Array.isArray(item.requirements) ? item.requirements : [],
     effects: Array.isArray(item.effects) ? item.effects : [],
@@ -173,7 +178,7 @@ const rogueWeaponMasteryIds = [...ROGUE_WEAPON_MASTERY_IDS];
 const bloodCurseOptions = [...BLOOD_CURSE_OPTIONS];
 
 
-const classFeatureOptions = buildClassFeatureOptions(fightingStyleOptions);
+const classFeatureOptions = buildClassFeatureOptions(fightingStyleOptions, classOptions);
 
 const apothecaryClass = classOptions.find((item: any) => item.id === 'apothecary');
 const esotericTheories = apothecaryClass?.features?.find((feature: any) =>
@@ -196,14 +201,14 @@ const firstLevelTheories = (esotericTheories?.collapsible || [])
   }));
 
 if (firstLevelTheories.length) {
-  classFeatureOptions.apothecary = [{
+  classFeatureOptions.apothecary.unshift({
     id: 'esoteric-theory',
     name: 'Эзотерическая теория',
     count: 1,
     description: 'Выберите одну эзотерическую теорию, доступную Апотекарию на 1 уровне.',
     href: '/classes/apothecary#feature-эзотерические-теории-1',
     options: firstLevelTheories
-  }];
+  });
 }
 
 const roll20RowsByName = buildRoll20RowsByName(
@@ -317,7 +322,8 @@ const creatorOptions = {
 <script is:inline set:html={roll20EquipmentExportClientRaw}></script>
 <script is:inline set:html={characterStateClientRaw}></script>
 
-<script define:vars={{ speciesOptions, classOptions, backgroundOptions, featOptions, customLineageGeneralFeatOptions, allSelectableFeatOptions, backgroundSpecialFeatOptions, allResolvedFeatOptions, magicInitiateSpellOptions, creatorOptions, roll20Template, classSpellOptions, classSpellLimits, classFeatureOptions, weaponMasteryOptions, rogueWeaponMasteryIds, bloodCurseOptions, WEAPON_MASTERY_COUNTS, WEAPON_MASTERY_DESCRIPTIONS, equipmentShopItems, EQUIPMENT_PACK_CONTENTS, SKILL_ALIASES, CLASS_SKILL_OPTIONS, GENERIC_BACKGROUND_CHARACTERISTICS, EQUIPMENT_NAME_ALIASES, PACKAGED_EQUIPMENT_NAMES, ROLL20_SKILLS, ROLL20_SKILL_ABILITIES, ALIGNMENTS, CHARACTER_STORAGE_KEY, CREATOR_STEPS, ABILITY_KEYS, POINT_BUY_COSTS, DEFAULT_CHARACTER_STATE }}>
+<script define:vars={{ materialMetadataHtml, speciesOptions, classOptions, backgroundOptions, featOptions, customLineageGeneralFeatOptions, allSelectableFeatOptions, backgroundSpecialFeatOptions, allResolvedFeatOptions, magicInitiateSpellOptions, creatorOptions, roll20Template, classSpellOptions, classSpellLimits, classFeatureOptions, weaponMasteryOptions, rogueWeaponMasteryIds, bloodCurseOptions, WEAPON_MASTERY_COUNTS, WEAPON_MASTERY_DESCRIPTIONS, equipmentShopItems, EQUIPMENT_PACK_CONTENTS, SKILL_ALIASES, CLASS_SKILL_OPTIONS, GENERIC_BACKGROUND_CHARACTERISTICS, EQUIPMENT_NAME_ALIASES, PACKAGED_EQUIPMENT_NAMES, ROLL20_SKILLS, ROLL20_SKILL_ABILITIES, ALIGNMENTS, CHARACTER_STORAGE_KEY, CREATOR_STEPS, ABILITY_KEYS, POINT_BUY_COSTS, DEFAULT_CHARACTER_STATE }}>
+  const materialInfo = (kind, id) => materialMetadataHtml[`${kind}:${id}`] || '';
   const STORAGE_KEY = CHARACTER_STORAGE_KEY;
   const steps = [...CREATOR_STEPS];
   const abilityKeys = [...ABILITY_KEYS];
@@ -825,9 +831,10 @@ const creatorOptions = {
       name: 'Лесной гном',
       nameEn: 'Forest Gnome',
       lore: 'Лесные гномы связаны с иллюзиями и магией животных.',
+      replacesAbilities: ['Гномье происхождение'],
       abilities: [
         {
-          title: 'Гномье происхождение — Лесной гном',
+          title: 'Гномье происхождение (Лесной гном)',
           description: 'Вы знаете заговор Малая иллюзия. Вы также всегда имеете подготовленное заклинание Разговор с животными. Вы можете накладывать его без траты ячейки заклинаний количество раз, равное вашему бонусу мастерства, и восстанавливаете все использования после продолжительного отдыха. Вы также можете накладывать это заклинание, используя имеющиеся ячейки заклинаний.'
         }
       ]
@@ -838,9 +845,10 @@ const creatorOptions = {
       name: 'Скальный гном',
       nameEn: 'Rock Gnome',
       lore: 'Скальные гномы сочетают магию с изобретательностью и создают крошечные механические устройства.',
+      replacesAbilities: ['Гномье происхождение'],
       abilities: [
         {
-          title: 'Гномье происхождение — Скальный гном',
+          title: 'Гномье происхождение (Скальный гном)',
           description: 'Вы знаете заговоры Починка и Фокусы. Кроме того, вы можете потратить 10 минут на наложение заклинания Фокусы, чтобы создать крошечное механическое устройство. Одновременно у вас может быть до трёх таких устройств.'
         }
       ]
@@ -981,7 +989,15 @@ const creatorOptions = {
     });
 
     species.variants = [
-      ...coreVariants.map((variant) => structuredClone(variant)),
+      ...coreVariants.map((coreVariant) => {
+        // Keep full shared rules; the local definitions are legacy fallbacks.
+        const normalize = (value) => String(value || '').toLocaleLowerCase('ru').replace(/ё/g, 'е').trim();
+        const source = existingVariants.find((variant) =>
+          (variant.id && normalize(variant.id) === normalize(coreVariant.id)) ||
+          [variant.name, variant.nameEn].some((name) => name &&
+            [coreVariant.name, coreVariant.nameEn].some((coreName) => normalize(name) === normalize(coreName))));
+        return structuredClone(source ? { ...source, id: coreVariant.id } : coreVariant);
+      }),
       ...preservedVariants
     ];
   }
@@ -1577,9 +1593,8 @@ const creatorOptions = {
           <div class="species-hero-copy">
             <div class="species-title-row">
               <div>
-                <span class="source-label">${escapeHtml(
-                  variant?.sourceBook || species.sourceBook || 'Источник не указан'
-                )}</span>
+                ${materialInfo('species', species.id)}
+                ${variant ? materialInfo('species-variant', variant.materialId) : ''}
                 <h2>
                   ${escapeHtml(species.name)}
                   <small>[${escapeHtml(species.nameEn || '')}]</small>
@@ -2285,7 +2300,7 @@ const creatorOptions = {
           <div class="class-hero-copy">
             <div class="class-title-row">
               <div>
-                <span class="source-label">${escapeHtml(characterClass.sourceBook || 'Источник не указан')}</span>
+                ${materialInfo('class', characterClass.id)}
                 <h2>${escapeHtml(characterClass.name)} <small>[${escapeHtml(characterClass.nameEn || '')}]</small></h2>
               </div>
               <button class="button button-secondary button-small" type="button" id="change-class">Изменить</button>
@@ -2660,28 +2675,6 @@ const creatorOptions = {
     });
   }
 
-  function getSelectedClassFeatureEffects() {
-    const effects = [];
-    for (const group of getClassFeatureGroups()) {
-      const selected = state.choices[`classFeature:${group.id}`] || [];
-      for (const optionId of selected) {
-        const option = group.options.find((item) => item.id === optionId);
-        if (Array.isArray(option?.effects)) effects.push(...option.effects);
-      }
-    }
-    return effects;
-  }
-
-  function getClassFeatureEffects(type) {
-    return getSelectedClassFeatureEffects().filter((effect) => effect.type === type);
-  }
-
-  function classFeatureExtraCantrips(spellList) {
-    return getClassFeatureEffects('extraCantrip')
-      .filter((effect) => !effect.spellList || effect.spellList === spellList)
-      .reduce((sum, effect) => sum + Number(effect.count || 0), 0);
-  }
-
   function selectedClassFeatureOption(groupId) {
     return state.choices[`classFeature:${groupId}`]?.[0] || null;
   }
@@ -2741,7 +2734,7 @@ const creatorOptions = {
     const groups = getClassFeatureGroups();
     const configs = [
       { groupId: 'paladin-oath', label: 'Священная клятва', fallback: 'class:subclass' },
-      { groupId: 'faith', label: 'Божество или духовный путь' },
+      { groupId: 'faith', label: 'Божество' },
       { groupId: 'warlock-patron', label: 'Потусторонний покровитель' }
     ];
 
@@ -2803,7 +2796,8 @@ const creatorOptions = {
       const selected = group.id === 'paladin-oath' || group.id === 'warlock-patron-path'
         ? (state.choices[`classFeature:${group.id}`] || state.choices['class:subclass'] || [])
         : (state.choices[`classFeature:${group.id}`] || []);
-      if (selected.length !== group.count) return false;
+      if (group.optional && selected.length === 0) return true;
+      if (selected.length !== group.count || selected.some(id => !group.options.some(option => option.id === id))) return false;
       if (group.id === 'faith' && selected.includes('faith-other-deity')) {
         const custom = getCustomDeity();
         return ['name', 'alignment', 'domains', 'portfolio', 'symbol', 'description']
@@ -2823,6 +2817,7 @@ const creatorOptions = {
   let weaponMasteryRange = 'all';
   let faithSearch = '';
   let faithAlignment = 'all';
+  let faithPantheon = 'all';
   let faithDomain = 'all';
   let faithSort = 'name';
   let patronSearch = '';
@@ -3024,14 +3019,19 @@ const creatorOptions = {
           .filter((option) => {
             const searchText = [
               option.name,
+              option.originalName,
+              ...(option.aliases || []),
+              option.pantheon,
+              option.source,
               option.portfolio,
               option.description,
               ...(option.domains || [])
-            ].filter(Boolean).join(' ').toLocaleLowerCase('ru');
+            ].filter(Boolean).join(' ').toLocaleLowerCase('ru').replace(/ё/g, 'е');
 
             return (
               (!faithSearch || searchText.includes(faithSearch))
               && (faithAlignment === 'all' || option.alignment === faithAlignment)
+              && (faithPantheon === 'all' || option.pantheon === faithPantheon)
               && (faithDomain === 'all' || option.domains?.includes(faithDomain))
             );
           })
@@ -3086,14 +3086,15 @@ const creatorOptions = {
           });
       }
 
-      return `<section class="class-feature-group">
+      return `<section class="class-feature-group" data-class-feature-group="${escapeHtml(group.id)}" data-required="${!group.optional}">
         <div class="class-feature-summary">
           <div>
-            <span>Умение класса</span>
+            <span>${group.id === 'faith' ? (group.optional ? 'Выбор для истории персонажа · необязательно' : 'Требование Лиги · обязательно') : 'Умение класса'}</span>
             <h3>${group.href ? `<a class="class-feature-group-link" href="${escapeHtml(group.href)}" target="_blank" rel="noopener">${escapeHtml(group.name)} ↗</a>` : escapeHtml(group.name)}</h3>
             ${group.description ? `<p>${escapeHtml(group.description)}</p>` : ''}
           </div>
           <strong>${state.choices[key].length}/${group.count}</strong>
+          ${group.optional ? `<button type="button" class="button button-secondary" data-clear-class-feature="${escapeHtml(group.id)}" ${state.choices[key].length ? '' : 'disabled'}>Убрать выбор</button>` : ''}
         </div>
 
         <div class="class-feature-table-wrap">
@@ -3122,6 +3123,7 @@ const creatorOptions = {
             </div>
           ` : ''}
           ${group.id === 'faith' ? `
+            <p class="feature-hint">Божества из <a href="/deities" target="_blank" rel="noopener">общего справочника Лиги</a>: ${group.options.filter((option) => option.kind === 'deity').length}. Для выбора доступны все пантеоны.</p>
             ${state.class === 'paladin' ? (
               selectedPaladinOath()
                 ? `<div class="faith-oath-recommendation">
@@ -3130,7 +3132,7 @@ const creatorOptions = {
                       .filter((option) => recommendedDeityIds().has(option.id))
                       .map((option) => option.name)
                       .join(' · ') || 'Для этой клятвы нет прямых рекомендаций — выберите покровителя по истории персонажа.'}</span>
-                    <small>Это подсказка, а не ограничение: можно выбрать любое божество или служить только клятве.</small>
+                    <small>Это подсказка, а не ограничение: можно выбрать любое божество. По правилам Лиги выбор божества обязателен.</small>
                   </div>`
                 : `<div class="faith-oath-recommendation is-pending">
                     <strong>Сначала выберите священную клятву</strong>
@@ -3140,7 +3142,17 @@ const creatorOptions = {
             <div class="faith-toolbar">
               <label>
                 <span>Поиск</span>
-                <input id="faith-search" type="search" placeholder="Имя, сфера или описание…" value="${escapeHtml(faithSearch)}">
+                <input id="faith-search" type="search" placeholder="Имя на русском или английском, сфера…" value="${escapeHtml(faithSearch)}">
+              </label>
+              <label>
+                <span>Пантеон</span>
+                <select id="faith-pantheon">
+                  <option value="all">Все пантеоны</option>
+                  ${[...new Set(group.options.filter((option) => option.kind === 'deity').map((option) => option.pantheon))]
+                    .sort((left, right) => left.localeCompare(right, 'ru'))
+                    .map((pantheon) => `<option value="${escapeHtml(pantheon)}" ${faithPantheon === pantheon ? 'selected' : ''}>${escapeHtml(pantheon)}</option>`)
+                    .join('')}
+                </select>
               </label>
               <label>
                 <span>Мировоззрение</span>
@@ -3220,6 +3232,7 @@ const creatorOptions = {
                         <span>${escapeHtml(option.name)}</span>
                         <span class="faith-badges">
                           ${recommendedDeityIds().has(option.id) ? '<em class="faith-recommended">Подходит к клятве</em>' : ''}
+                          <em>${escapeHtml(option.pantheon)}</em>
                           <em>${escapeHtml(option.alignment)}</em>
                           ${(option.domains || []).map((domain) => `<em>${escapeHtml(domain)}</em>`).join('')}
                         </span>
@@ -3227,9 +3240,11 @@ const creatorOptions = {
                       <div class="faith-description">
                         <p>${escapeHtml(option.description)}</p>
                         <dl>
+                          <div><dt>Пантеон</dt><dd>${escapeHtml(option.pantheon)}</dd></div>
                           <div><dt>Сфера</dt><dd>${escapeHtml(option.portfolio)}</dd></div>
                           <div><dt>Домены</dt><dd>${escapeHtml((option.domains || []).join(', '))}</dd></div>
                         </dl>
+                        <p><a href="${escapeHtml(option.href)}" target="_blank" rel="noopener">${escapeHtml(option.originalName)} · публикации и источники (${escapeHtml(option.source)}) →</a></p>
                       </div>
                     </details>`
                     : group.id === 'warlock-patron' && option.kind === 'patron'
@@ -3255,7 +3270,7 @@ const creatorOptions = {
                     : `${optionTitle}${detailLabel}`;
 
                 return `<tr class="class-feature-choice-row">
-                  <td class="class-feature-name">${label}</td>
+                  <td class="class-feature-name">${label}${group.id === 'paladin-oath' || group.id === 'warlock-patron-path' ? materialInfo('subclass', `${state.class}:${option.id}`) : group.id === 'fighting-style' ? materialInfo('feat', option.id) : ''}</td>
                   <td>
                     <input
                       class="class-feature-check"
@@ -3299,7 +3314,7 @@ const creatorOptions = {
       renderClassFeatures();
     });
     $('#faith-search')?.addEventListener('input', (event) => {
-      faithSearch = event.target.value.trim().toLocaleLowerCase('ru');
+      faithSearch = event.target.value.trim().toLocaleLowerCase('ru').replace(/ё/g, 'е');
       renderClassFeatures();
       const search = $('#faith-search');
       if (search) {
@@ -3309,6 +3324,10 @@ const creatorOptions = {
     });
     $('#faith-alignment')?.addEventListener('change', (event) => {
       faithAlignment = event.target.value;
+      renderClassFeatures();
+    });
+    $('#faith-pantheon')?.addEventListener('change', (event) => {
+      faithPantheon = event.target.value;
       renderClassFeatures();
     });
     $('#faith-domain')?.addEventListener('change', (event) => {
@@ -3383,6 +3402,15 @@ const creatorOptions = {
         renderProfileClassRelationships();
       });
     });
+
+    $$('[data-clear-class-feature]').forEach((button) => button.addEventListener('click', () => {
+      const group = groups.find(item => item.id === button.dataset.clearClassFeature);
+      if (!group?.optional) return;
+      state.choices[`classFeature:${group.id}`] = [];
+      saveState();
+      renderClassFeatures();
+      renderProfileClassRelationships();
+    }));
 
     $$('[data-class-feature]').forEach((input) => input.addEventListener('change', () => {
       const group = groups.find((item) => item.id === input.dataset.classFeature);
@@ -3507,7 +3535,7 @@ const creatorOptions = {
         ? `<small class="origin-feat-already-selected">${escapeHtml(speciesSelectionLabel)}</small>`
         : '';
       return `<tr class="${backgroundDisabled ? 'is-disabled' : ''} ${speciesDisabled ? 'is-cross-source-blocked' : ''}">
-        <td class="origin-feat-name"><a href="/feats/${encodeURIComponent(feat.id)}" target="_blank" rel="noopener">${escapeHtml(feat.name)}</a><small>${escapeHtml(feat.nameEn || '')}</small>${backgroundAlreadySelectedLabel}</td>
+        <td class="origin-feat-name"><a href="/feats/${encodeURIComponent(feat.id)}" target="_blank" rel="noopener">${escapeHtml(feat.name)}</a><small>${escapeHtml(feat.nameEn || '')}</small>${materialInfo('feat', feat.id)}${backgroundAlreadySelectedLabel}</td>
         ${backgroundFeatGrant ? `<td><input class="origin-feat-check" type="checkbox" autocomplete="off" data-origin-feat-source="background" value="${escapeHtml(feat.id)}" ${fromBackground ? 'checked' : ''} ${backgroundDisabled ? `disabled title="${escapeHtml(speciesSelectionLabel)}"` : ''} aria-label="${escapeHtml(feat.name)}: от предыстории"></td>` : ''}
         ${speciesBonusFeat && !customLineage ? `<td><input class="origin-feat-check" type="checkbox" autocomplete="off" data-origin-feat-source="species" value="${escapeHtml(feat.id)}" ${fromSpecies ? 'checked' : ''} ${speciesDisabled ? 'disabled title="Уже выбрана в другой таблице"' : ''} aria-label="${escapeHtml(feat.name)}: от вида"></td>` : ''}
       </tr>`;
@@ -3547,7 +3575,7 @@ const creatorOptions = {
           ? '<small class="origin-feat-already-selected">Уже выбрана от предыстории</small>'
           : '';
         return `<tr class="${selected ? 'is-selected' : ''} ${disabled ? 'is-disabled' : ''}">
-          <td class="origin-feat-name"><a href="/feats/${encodeURIComponent(feat.id)}" target="_blank" rel="noopener">${escapeHtml(feat.name)}</a><small>${escapeHtml(feat.nameEn || '')}</small>${typeBadge}${requirementsLabel}${alreadySelectedLabel}</td>
+          <td class="origin-feat-name"><a href="/feats/${encodeURIComponent(feat.id)}" target="_blank" rel="noopener">${escapeHtml(feat.name)}</a><small>${escapeHtml(feat.nameEn || '')}</small>${materialInfo('feat', feat.id)}${typeBadge}${requirementsLabel}${alreadySelectedLabel}</td>
           <td><input class="origin-feat-check" type="checkbox" autocomplete="off" data-origin-feat-source="species" value="${escapeHtml(feat.id)}" ${selected ? 'checked' : ''} ${disabled ? 'disabled title="Уже выбрана в другой таблице"' : ''} aria-label="${escapeHtml(feat.name)}: от Своего происхождения"></td>
         </tr>`;
       }).join('') || '<tr><td colspan="2" class="origin-feat-empty">По вашему запросу ничего не найдено.</td></tr>';
@@ -4068,7 +4096,7 @@ const creatorOptions = {
 
     container.innerHTML = `
       <article class="background-profile">
-        <header class="background-hero"><div><span class="source-label">${escapeHtml(background.sourceBook || 'Предыстория')}</span><div class="background-title-row"><h2>${escapeHtml(background.name)} <small>[${escapeHtml(background.nameEn || '')}]</small></h2><button class="button button-secondary button-small" type="button" id="change-background">Изменить</button></div><p>${escapeHtml(String(background.lore || '').split('\n').filter(Boolean)[0] || '')}</p></div><span class="background-rune">✧</span></header>
+        <header class="background-hero"><div>${background.isCustom ? '<span class="source-label">Пользовательская предыстория</span>' : materialInfo('background', background.id)}<div class="background-title-row"><h2>${escapeHtml(background.name)} <small>[${escapeHtml(background.nameEn || '')}]</small></h2><button class="button button-secondary button-small" type="button" id="change-background">Изменить</button></div><p>${escapeHtml(String(background.lore || '').split('\n').filter(Boolean)[0] || '')}</p></div><span class="background-rune">✧</span></header>
         <section class="content-section lore-section"><div class="content-section-heading"><span class="section-icon">◈</span><div><span class="section-kicker">Прошлая жизнь</span><h3>История персонажа</h3></div></div><div class="lore-preview">${loreToHtml(background.lore, 2)}</div><details class="full-lore"><summary>Показать полное описание</summary><div class="full-lore-content">${loreToHtml(background.lore)}</div></details></section>
         <section class="background-stats"><div><span>Навыки</span><strong>${escapeHtml(skillListDisplay(background.skills))}</strong></div><div><span>Инструменты</span><strong>${escapeHtml(background.tools || '—')}</strong></div><div><span>Черта</span><strong>Выбирается на следующем этапе</strong></div></section>
         <section class="content-section background-rewards"><div class="content-section-heading"><span class="section-icon">✦</span><div><span class="section-kicker">Наследие прошлого</span><h3>Снаряжение и особенности</h3></div></div><div class="background-reward-grid"><article><span>Снаряжение</span><strong>${escapeHtml(background.equipment || '—')}</strong></article><article><span>Выбранные варианты</span><strong>${escapeHtml((state.choices['background:variant'] || []).join(', ') || '—')}</strong></article></div></section>
@@ -4307,6 +4335,25 @@ const creatorOptions = {
 
     const speciesName = `${species.id || ''} ${species.name || ''} ${species.nameEn || ''}`;
     const isTiefling = /tiefling|тифлинг/i.test(speciesName);
+    const isHexblood = /hexblood|ведьмовская\s+кровь/i.test(speciesName);
+
+    if (isHexblood) {
+      const fixed = uniqueSpells([
+        spellByName('Маскировка', '1'),
+        spellByName('Сглаз', '1')
+      ]);
+      if (fixed.length) {
+        return {
+          id: 'species-hexblood-magic',
+          category: 'Вид',
+          title: 'Ведьмовская кровь — Ведьмовская магия',
+          description: `«Маскировка» и «Сглаз» всегда подготовлены. Каждое можно один раз наложить без траты ячейки. Заклинательная характеристика: ${(state.choices['species:spellAbility'] || [])[0] || 'не выбрана'}.`,
+          limits: { cantrip: 0, level1: 0 },
+          fixed,
+          options: []
+        };
+      }
+    }
 
     if (isCoreElfSpecies(species) && isCoreElfVariant(variant)) {
       const lineageCantripName = {
@@ -4422,7 +4469,7 @@ const creatorOptions = {
     ensureSpellSourceState();
     const sources = [];
     const rawBase = classSpellLimits[state.class] || { cantrips:0, level1:0 };
-    const base = { ...rawBase, cantrips: Number(rawBase.cantrips || 0) + classFeatureExtraCantrips(state.class) };
+    const base = { ...rawBase };
     const background = findBackground();
     const className = findClass()?.name || 'Класс';
     let classOptions = withSpellAvailability(classSpellOptions[state.class] || [], `Класс: ${className}`);
@@ -4440,10 +4487,20 @@ const creatorOptions = {
         .map((name) => spellByName(name, name === 'Уход за умирающим' ? 'cantrip' : '1')?.id)
         .filter(Boolean)
     );
+    const rangerHuntersMark = state.class === 'ranger'
+      ? spellByName('Метка охотника', '1')
+      : null;
+    const druidSpeakWithAnimals = state.class === 'druid'
+      ? spellByName('Разговор с животными', '1')
+      : null;
     // Автоматически полученные теорией заклинания не занимают обычные выборы
     // Апотекария. Убираем их из выбираемого списка класса и показываем ниже
     // отдельным фиксированным источником.
-    classOptions = classOptions.filter((spell) => !theorySpellIds.has(spell.id));
+    classOptions = classOptions.filter((spell) =>
+      !theorySpellIds.has(spell.id)
+      && spell.id !== rangerHuntersMark?.id
+      && spell.id !== druidSpeakWithAnimals?.id
+    );
     const backgroundSpellPrerequisite = String(background?.spellTable?.prerequisite || '')
       .toLocaleLowerCase('ru')
       .replace(/ё/g, 'е');
@@ -4471,6 +4528,61 @@ const creatorOptions = {
           : 'Заклинания, доступные выбранному классу на 1 уровне.',
       limits:{cantrip:Number(base.cantrips||0), level1:Number(base.level1||0)}, options:classOptions
     });
+
+    if (rangerHuntersMark) {
+      const sourceLabel = 'Умение класса: Избранный враг';
+      sources.push({
+        id: 'class-feature-ranger-favored-enemy',
+        category: 'Умение класса',
+        title: 'Избранный враг',
+        spellLabel: sourceLabel,
+        description: '«Метка охотника» всегда подготовлена и не учитывается в количестве подготовленных заклинаний следопыта. На 1 уровне её можно наложить дважды без траты ячейки.',
+        limits: { cantrip: 0, level1: 0 },
+        fixed: uniqueSpells(withSpellAvailability([rangerHuntersMark], sourceLabel)),
+        options: []
+      });
+    }
+
+    if (druidSpeakWithAnimals) {
+      const sourceLabel = 'Умение класса: Друидический язык';
+      sources.push({
+        id: 'class-feature-druidic-language',
+        category: 'Умение класса',
+        title: 'Друидический язык',
+        spellLabel: sourceLabel,
+        description: '«Разговор с животными» всегда подготовлен и не учитывается в четырёх подготовленных заклинаниях друида 1 уровня.',
+        limits: { cantrip: 0, level1: 0 },
+        fixed: uniqueSpells(withSpellAvailability([druidSpeakWithAnimals], sourceLabel)),
+        options: []
+      });
+    }
+
+    const extraCantripSources = getClassFeatureGroups().flatMap((group) => {
+      const selectedIds = state.choices[`classFeature:${group.id}`] || [];
+      return group.options
+        .filter((option) => selectedIds.includes(option.id))
+        .flatMap((option) => (option.effects || [])
+          .filter((effect) => effect.type === 'extraCantrip' && (!effect.spellList || effect.spellList === state.class))
+          .map((effect, effectIndex) => ({ group, option, effect, effectIndex }))
+        );
+    });
+    for (const { group, option, effect, effectIndex } of extraCantripSources) {
+      const spellList = effect.spellList || state.class;
+      const sourceLabel = `Умение класса: ${group.name} — ${option.name}`;
+      sources.push({
+        id: `class-feature-extra-cantrip-${group.id}-${option.id}-${effectIndex}`,
+        category: 'Умение класса',
+        title: `${group.name} — ${option.name}`,
+        spellLabel: sourceLabel,
+        description: option.exportDescription || option.description || option.detail || 'Выберите дополнительный заговор, полученный от умения класса.',
+        limits: { cantrip: Number(effect.count || 0), level1: 0 },
+        fixed: [],
+        options: uniqueSpells(withSpellAvailability(
+          (classSpellOptions[spellList] || []).filter((spell) => spell.level === 'cantrip'),
+          sourceLabel
+        ))
+      });
+    }
 
     const speciesSource = getSpeciesSpellSource();
     if (speciesSource) {
@@ -4555,8 +4667,26 @@ const creatorOptions = {
       sources.push({id:'feat-high-sorcery',category:'Черта',title:'Посвящённый в Высшее волшебство',spellLabel:'Черта: Посвящённый в Высшее волшебство',description:'Выберите 1 заговор волшебника и 2 заклинания выбранной луны.',limits:{cantrip:1,level1:2},options:uniqueSpells([...(classSpellOptions.wizard||[]).filter((s)=>s.level==='cantrip'),...lunar.map((n)=>spellByName(n,'1'))])});
     }
     if (hasFeat('rune-shaper')) {
-      const runeNames=['Маскировка','Опутывание','Цветной шарик','Псевдожизнь','Приказ','Усыпление','Сглаз','Лечение ран'];
-      sources.push({id:'feat-rune-shaper',category:'Черта',title:'Ваятель рун',spellLabel:'Черта: Ваятель рун',description:'Понимание языков известно автоматически; выберите 1 руническое заклинание.',limits:{cantrip:0,level1:1},fixed:uniqueSpells([spellByName('Понимание языков','1')]),options:uniqueSpells(runeNames.map((n)=>spellByName(n,'1')))});
+      const runeSpells = [
+        ['Враг', 'Маскировка'],
+        ['Гора', 'Опутывание'],
+        ['Дракон', 'Цветной шарик'],
+        ['Друг', 'Разговор с животными'],
+        ['Огонь', 'Огненные ладони'],
+        ['Облако', 'Туманное облако'],
+        ['Камень', 'Убежище'],
+        ['Король', 'Приказ'],
+        ['Путешествие', 'Скороход'],
+        ['Смерть', 'Нанесение ран'],
+        ['Холм', 'Чудо-ягоды'],
+        ['Холод', 'Доспех Агатиса'],
+        ['Шторм', 'Волна грома']
+      ];
+      const runeSpellOptions = runeSpells.map(([rune, spellName]) => {
+        const spell = spellByName(spellName, '1');
+        return spell ? { ...spell, choiceLabel: `Руна «${rune}»` } : null;
+      });
+      sources.push({id:'feat-rune-shaper',category:'Черта',title:'Ваятель рун',spellLabel:'Черта: Ваятель рун',description:'Понимание языков известно автоматически; выберите 1 руну и связанное с ней заклинание.',limits:{cantrip:0,level1:1},fixed:uniqueSpells([spellByName('Понимание языков','1')]),options:uniqueSpells(runeSpellOptions)});
     }
     if (hasFeat('strixhaven-initiate')) {
       const bgName=String(background?.name||'');
@@ -4572,7 +4702,7 @@ const creatorOptions = {
       sources.push({id:'feat-strixhaven',category:'Черта',title:`Поступивший в Стриксхейвен${college?` (${college})`:''}`,spellLabel:`Предыстория: ${background?.name || (college ? `Студент ${college}` : 'Стриксхейвен')}`,description:'Выберите 2 заговора факультета и 1 заклинание 1 уровня из разрешённых списков.',limits:{cantrip:2,level1:1},options:uniqueSpells(opts)});
     }
     const invocation = selectedClassFeatureOption('eldritch-invocation');
-    if (invocation === 'pact-of-the-tome') {
+    if (invocation?.id === 'pact-of-the-tome') {
       const allSpellOptions = uniqueSpells(Object.values(classSpellOptions).flat());
       const pactTomeOptions = allSpellOptions
         .filter((spell) =>
@@ -5271,6 +5401,9 @@ const creatorOptions = {
         // могут быть открыты лишь другим источником: видом, предысторией или чертой.
         parsed.unlockedRare = [];
       }
+      if (source === 'class' && /^(druid|друид)$/i.test(String(characterClass?.id || characterClass?.name || ''))) {
+        if (!parsed.fixed.includes('Друидический')) parsed.fixed.push('Друидический');
+      }
       if (source === 'species') {
         const identity = `${findSpecies()?.id || ''} ${findSpecies()?.name || ''} ${findSpecies()?.nameEn || ''}`
           .toLocaleLowerCase('ru')
@@ -5411,6 +5544,25 @@ const creatorOptions = {
         allowed = [...creatorOptions.artisanTools];
       }
 
+      // «Посвящённый в артефакторство» даёт ровно один инструмент
+      // ремесленника. Общий текстовый парсер может принять встречающиеся в
+      // описании числительные (заговор, заклинание и инструмент) за несколько
+      // отдельных выборов, поэтому для этой черты задаём лимит явно.
+      if (source === 'feat') {
+        const selectedFeatEntries = selectedOriginFeatEntries();
+        const hasArtificerInitiate = selectedFeatEntries.some((entry) => entry.id === 'artificer-initiate');
+        const hasOtherToolFeat = selectedFeatEntries.some((entry) => {
+          if (entry.id === 'artificer-initiate') return false;
+          const featText = `${entry?.feat?.name || ''} ${(entry?.feat?.effects || []).join(' ')}`;
+          return /инструмент|набор для|игров(?:ой|ого) набор|транспорт/i.test(featText);
+        });
+        if (hasArtificerInitiate && !hasOtherToolFeat) {
+          count = 1;
+          allowed = [...creatorOptions.artisanTools];
+          fixed = [];
+        }
+      }
+
       if (source === 'feat' && skilledSharedChoiceLimit() > 0) {
         count = Math.max(count, skilledSharedChoiceLimit());
         allowed = [...new Set([...allowed, ...creatorOptions.allTools])];
@@ -5464,7 +5616,8 @@ const creatorOptions = {
     const bonusChoices = ['class','background','species','feat']
       .reduce((sum, source) => sum + Math.max(0, Number(config[source].bonusChoices || 0)), 0);
     const thievesCantIsExtra = (config.class?.fixed || []).includes('Воровской жаргон') ? 1 : 0;
-    return Math.max(3 + bonusChoices + thievesCantIsExtra, fixedLanguages.length);
+    const druidicIsExtra = (config.class?.fixed || []).includes('Друидический') ? 1 : 0;
+    return Math.max(3 + bonusChoices + thievesCantIsExtra + druidicIsExtra, fixedLanguages.length);
   }
 
   function renderLanguagesTable(message = '') {
@@ -6298,7 +6451,7 @@ const creatorOptions = {
       const affordable = item.costCopper > 0 && state.equipment.goldCopper >= item.costCopper;
       const owned = Number(state.equipment.inventory.find((entry) => entry.id === item.id)?.quantity || 0);
       return `<tr>
-        <td><a href="${item.href}" target="_blank" rel="noopener">${escapeHtml(item.name)} ↗</a><small>${escapeHtml(item.category)}</small></td>
+        <td><a href="${item.href}" target="_blank" rel="noopener">${escapeHtml(item.name)} ↗</a><small>${escapeHtml(item.category)}</small>${materialInfo('item', item.id)}</td>
         <td>${owned > 0 ? `<span class="equipment-owned-count">${owned}</span>` : '—'}</td>
         <td>${escapeHtml(item.cost)}</td>
         <td>${item.weight} фнт.</td>
@@ -6406,6 +6559,23 @@ const creatorOptions = {
     nonCaster.hidden = !!sources.length;
     if (!sources.length) return;
 
+    // В старых сохранениях дополнительный заговор «Мага»/«Чудотворца»
+    // лежал в общем источнике класса. Переносим выбор в новый отдельный
+    // источник, чтобы сохранить персонажа и правильно подписать экспорт.
+    const classSource = sources.find((source) => source.id === 'class');
+    const savedClassSpells = state.spells.sources.class;
+    if (classSource && savedClassSpells) {
+      for (const source of sources.filter((item) => item.id.startsWith('class-feature-extra-cantrip-'))) {
+        const target = state.spells.sources[source.id] || { cantrip: [], level1: [] };
+        const overflow = (savedClassSpells.cantrip || []).slice(Number(classSource.limits.cantrip || 0));
+        if (!(target.cantrip || []).length && overflow.length) {
+          target.cantrip = overflow.slice(0, Number(source.limits.cantrip || 0));
+          savedClassSpells.cantrip = (savedClassSpells.cantrip || []).slice(0, Number(classSource.limits.cantrip || 0));
+          state.spells.sources[source.id] = target;
+        }
+      }
+    }
+
     for (const source of sources) {
       const existing = state.spells.sources[source.id] || { cantrip: [], level1: [] };
       existing.cantrip = (existing.cantrip || []).filter((id) =>
@@ -6479,6 +6649,7 @@ const creatorOptions = {
           <div class="spell-name-copy">
             ${spell.choiceLabel ? `<span class="spell-choice-label">${escapeHtml(spell.choiceLabel)}</span>` : ''}
             <a class="spell-name-link" href="/spells/${encodeURIComponent(spell.id)}" target="_blank" rel="noopener noreferrer">${escapeHtml(spell.name)}</a>
+            ${materialInfo('spell', spell.id)}
             <small class="spell-availability-source">${escapeHtml(spell.availabilityLabel || source.spellLabel || `${source.category}: ${source.title}`)}</small>
             ${spell.choiceDescription ? `<small class="spell-choice-description">${escapeHtml(spell.choiceDescription)}</small>` : ''}
           </div>
@@ -6843,7 +7014,11 @@ const creatorOptions = {
   function renderSummary() {
     const species = findSpecies(), variant = findVariant(species), characterClass = findClass(), background = findBackground();
     const labels = {strength:'СИЛ',dexterity:'ЛОВ',constitution:'ТЕЛ',intelligence:'ИНТ',wisdom:'МДР',charisma:'ХАР'};
-    const languages = [...new Set([...(state.choices['languages:fixed'] || ['Общий']), ...(state.choices['languages:selected'] || [])])];
+    const languages = [...new Set([
+      ...(state.choices['languages:fixed'] || ['Общий']),
+      ...(state.choices['languages:selected'] || []),
+      state.class === 'druid' ? 'Друидический' : ''
+    ].filter(Boolean))];
     const skills = [...new Set([...(state.choices['class:skills'] || []), ...(state.choices['background:skills'] || []), ...(state.choices['species:skill'] || []), ...(state.choices['species:adaptiveSkill'] || []), ...(state.choices['feat:skills'] || []), ...bedsideMannersSkills()])];
     const root = $('#final-sheet'); if (!root) return;
     const resources = ensureSpeciesResourceState();
@@ -6966,6 +7141,7 @@ const creatorOptions = {
       state.class = card.dataset.classId;
       faithSearch = '';
       faithAlignment = 'all';
+      faithPantheon = 'all';
       faithDomain = 'all';
       faithSort = 'name';
       patronSearch = '';
@@ -6978,7 +7154,7 @@ const creatorOptions = {
       state.choices['class:expertise'] = [];
       delete state.choices['class:subclass'];
       state.subclass = null;
-      Object.keys(state.choices).filter((key) => key.startsWith('classFeature:')).forEach((key) => delete state.choices[key]);
+      Object.keys(state.choices).filter((key) => key.startsWith('classFeature:') && key !== 'classFeature:faith').forEach((key) => delete state.choices[key]);
       state.spells = { cantrips: [], level1: [], sources: {} };
       state.equipment.initializedFor = '';
       renderClassDetails();
@@ -7473,6 +7649,7 @@ const creatorOptions = {
     weaponMasteryCategory = 'all';
     weaponMasteryRange = 'all';
     faithSearch = '';
+    faithPantheon = 'all';
 
     Object.keys(spellSearchQueries).forEach((sourceId) => delete spellSearchQueries[sourceId]);
     Object.keys(spellScrollPositions).forEach((sourceId) => delete spellScrollPositions[sourceId]);
@@ -8637,8 +8814,8 @@ const creatorOptions = {
   .class-title-row h2 small { color: var(--text); font-size: .55em; font-weight: 500; opacity: .65; }
   .class-hero-copy > p { margin: 0; opacity: .76; line-height: 1.6; }
   .class-hero-image { position: relative; min-height: 230px; background: #151519; }
-  .class-hero-image img { width: 100%; height: 100%; object-fit: cover; }
-  .class-hero-image span { position: absolute; inset: 0; background: linear-gradient(90deg, var(--card-bg), transparent 36%); }
+  .class-hero-image img { width: 100%; height: 100%; object-fit: contain; padding: .5rem; }
+  .class-hero-image span { display: none; }
   .class-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
   .class-stats > div { display: grid; justify-items: center; gap: .35rem; padding: .95rem; border: 1px solid var(--card-border); border-radius: .72rem; background: var(--background); text-align: center; }
   .class-stats span, .proficiency-grid span { color: var(--wizard-gold); font-size: .68rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }

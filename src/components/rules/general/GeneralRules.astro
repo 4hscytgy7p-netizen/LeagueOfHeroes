@@ -5,12 +5,13 @@ import TradeRules from './mechanics/TradeRules.astro';
 import CharDeath from './mechanics/CharDeath.astro';
 import LegacyRoles from './legacy/LegacyRoles.astro';
 import EpicProgression from './epic/EpicProgression.astro';
-import Fame from './Fame.astro';
+import Fame from './fame/Fame.astro';
 import Introduction from './Introduction.astro';
 import CharacterSlots from './CharacterSlots.astro';
 import GameStages from './GameStages.astro';
-import Progress from './Progress.astro';
-import CharacterRebuild from './CharacterRebuild.astro';
+import Progress from './progress/Progress.astro';
+import CharacterRebuild from './mechanics/CharacterRebuild.astro';
+import Abuse from './core/Abuse.astro';
 
 interface Props {}
 ---
@@ -20,14 +21,15 @@ interface Props {}
   <CoreRules />
   <CharacterSlots />
   <LegacyRoles />
-  <GameStages />
   <Progress />
+  <GameStages />
   <CharDeath />
   <CharacterRebuild />
   <Fame />
   <MagicRules />
   <TradeRules />
   <EpicProgression />
+  <Abuse />
 </div>
 
 <style>

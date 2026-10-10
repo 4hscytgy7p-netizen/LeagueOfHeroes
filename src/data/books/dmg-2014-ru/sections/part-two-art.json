@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "part-two-art",
+  "title": "Иллюстрация к части 2",
+  "description": "",
+  "sourcePages": [
+    71
+  ],
+  "group": "Часть 2 · Создатель приключений",
+  "pages": [
+    {
+      "number": 71,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-71-d4c4050eec.webp",
+          "alt": "Иллюстрация: Иллюстрация к части 2",
+          "width": 1696,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-71-d4c4050eec-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "",
+          "textLabel": "Текст иллюстрации",
+          "id": "p71-1",
+          "sourcePage": 71
+        }
+      ]
+    }
+  ]
+}

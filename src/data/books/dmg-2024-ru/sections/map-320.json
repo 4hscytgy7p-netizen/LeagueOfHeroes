@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2024-ru",
+  "id": "map-320",
+  "title": "Лагерь каравана",
+  "description": "",
+  "sourcePages": [
+    320
+  ],
+  "group": "Приложение Б · Карты",
+  "pages": [
+    {
+      "number": 320,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2024-ru/page-320-eec7982a38.webp",
+          "alt": "Карта: Лагерь каравана",
+          "width": 1775,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2024-ru/page-320-eec7982a38-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "Лагерь каравана\n1 квадрат = 5 футов\nЛагерь каравана\nХудожник: Dyson Logos\nОригинал",
+          "textLabel": "Подписи на карте",
+          "id": "p320-1",
+          "sourcePage": 320
+        }
+      ]
+    }
+  ]
+}

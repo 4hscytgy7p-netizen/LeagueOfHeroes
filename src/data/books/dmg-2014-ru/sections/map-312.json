@@ -1,0 +1,31 @@
+{
+  "bookId": "dmg-2014-ru",
+  "id": "map-312",
+  "title": "Карты · лист 2",
+  "description": "",
+  "sourcePages": [
+    312
+  ],
+  "group": "Приложение В. Карты",
+  "pages": [
+    {
+      "number": 312,
+      "blocks": [
+        {
+          "kind": "image",
+          "src": "/images/books/dmg-2014-ru/page-312-47ec5301d7.webp",
+          "alt": "Иллюстрация: Карты · лист 2",
+          "width": 1808,
+          "height": 2400,
+          "smallSrc": "/images/books/dmg-2014-ru/page-312-47ec5301d7-640.webp",
+          "smallWidth": 640,
+          "zoom": true,
+          "text": "1 клетка = 5 футов\nП\nП\nП\nП\nП\nП\nПотайная дверь\nДверь\nСкрытая дверь\nС\nС\nС\nВ\nЗ\nВ\nЗ\nЮ\nЮ\nС\nС\nС\nС С\nП\nЛестница\nЯма-ловушка\nПотайной туннель\nП",
+          "textLabel": "Подписи карты",
+          "id": "p312-1",
+          "sourcePage": 312
+        }
+      ]
+    }
+  ]
+}
