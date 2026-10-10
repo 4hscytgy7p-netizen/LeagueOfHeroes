@@ -1,0 +1,10 @@
+/* Keep direct rule links clear of the fixed navigation on every host page. */
+#weapon-restrictions,
+#starting-weapons,
+#race-attributes,
+#containers,
+#oversized-weapons,
+#injuries,
+#consumable-components {
+  scroll-margin-top: 6rem;
+}

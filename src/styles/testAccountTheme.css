@@ -1,0 +1,28 @@
+/* Shared surfaces and status colors for all account pages. */
+:root {
+    --account-background: #f8fafc;
+    --account-topbar: rgba(248, 250, 252, .92);
+    --account-text: #1e293b;
+    --account-muted: #475569;
+    --account-border: #cbd5e1;
+    --account-panel: #ffffff;
+    --account-field: #f1f5f9;
+    --account-gold: #79520b;
+    --account-gold-bg: #e2b448;
+    --account-success: #166534;
+    --account-error: #b91c1c;
+  }
+  
+  :root.dark {
+    --account-background: #07101f;
+    --account-topbar: rgba(7, 16, 31, .82);
+    --account-text: #edf1f8;
+    --account-muted: #aeb9cb;
+    --account-border: #41506a;
+    --account-panel: #101e34;
+    --account-field: #0d1a2e;
+    --account-gold: #edc774;
+    --account-success: #7fd5a5;
+    --account-error: #ffabb4;
+  }
+  

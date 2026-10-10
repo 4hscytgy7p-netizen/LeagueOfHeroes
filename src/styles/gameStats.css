@@ -1,0 +1,158 @@
+/* Page-scoped selectors also style chart and table content created in the browser. */
+.game-stats-page {
+    --stats-muted: color-mix(in srgb, var(--text) 72%, var(--card-bg));
+    --stats-accent: color-mix(in srgb, var(--primary) 10%, var(--card-bg));
+    max-width: 1200px;
+    margin: 0 auto;
+    min-width: 0;
+  }
+  .game-stats-page [hidden] { display: none !important; }
+  .game-stats-page :is(button, input, select) { font: inherit; color: var(--text); }
+  .game-stats-page button { cursor: pointer; }
+  .game-stats-page button:disabled { opacity: .5; cursor: default; }
+  .game-stats-page :is(button, input, select, a, summary, [tabindex]):focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+  .game-stats-page :is(h1, h2, h3, p) { overflow-wrap: anywhere; }
+  .game-stats-page h1 { font-size: clamp(1.8rem, 4vw, 2.65rem); letter-spacing: -.025em; margin-bottom: .5rem; }
+  .game-stats-page h2 { font-size: clamp(1.15rem, 2vw, 1.4rem); margin-bottom: .45rem; }
+  .game-stats-page h3 { font-size: 1rem; margin: 0; }
+  .game-stats-page p { margin-bottom: .6rem; }
+  .game-stats-page a { color: var(--link); text-underline-offset: 3px; }
+  .game-stats-page .stats-muted, .game-stats-page .stats-field-hint { color: var(--stats-muted); }
+  .game-stats-page .stats-field-hint { display: block; font-size: .8rem; line-height: 1.55; margin: .4rem 0 0; }
+  .game-stats-page .stats-heading { display: flex; justify-content: space-between; align-items: start; gap: 1.5rem; margin: .5rem 0 1.5rem; }
+  .game-stats-page .stats-eyebrow { color: var(--primary); font-size: .8rem; font-weight: 700; letter-spacing: .05em; }
+  .game-stats-page .stats-source { flex-shrink: 0; text-align: right; font-size: .85rem; }
+  .game-stats-page .stats-source p { margin: .4rem 0 .65rem; }
+  .game-stats-page .stats-button { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; min-height: 44px; padding: .6rem .85rem; border: 1px solid var(--card-border); border-radius: 9px; background: var(--card-bg); font-size: .875rem; font-weight: 600; text-decoration: none; }
+  .game-stats-page .stats-button:hover:not(:disabled) { background: var(--stats-accent); border-color: var(--primary); }
+  .game-stats-page .stats-panel { padding: clamp(1rem, 2.5vw, 1.5rem); margin-bottom: 1.25rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); box-shadow: var(--card-shadow); min-width: 0; }
+  .game-stats-page .stats-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+  .game-stats-page .stats-section-heading p { margin: 0; font-size: .875rem; }
+  .game-stats-page .stats-filter-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .game-stats-page .stats-field { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+  .game-stats-page .stats-field label { font-size: .85rem; font-weight: 650; }
+  .game-stats-page :is(input, select) { width: 100%; min-width: 0; min-height: 44px; padding: .65rem .75rem; border: 1px solid var(--card-border); border-radius: 9px; background: var(--background); }
+  .game-stats-page input::placeholder { color: var(--stats-muted); }
+  .game-stats-page input[aria-invalid="true"] { border-color: #b91c1c; }
+  .game-stats-page .stats-selection-bar { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; border-top: 1px solid var(--card-border); padding-top: .9rem; margin-top: 1rem; }
+  .game-stats-page .stats-selection-bar p { margin: 0; font-size: .85rem; font-weight: 600; }
+  .game-stats-page .stats-chips { display: flex; flex-wrap: wrap; gap: .45rem; min-width: 0; }
+  .game-stats-page .stats-chip { min-height: 44px; padding: .45rem .65rem; border: 1px solid var(--card-border); border-radius: 8px; background: var(--stats-accent); font-size: .8rem; text-align: left; overflow-wrap: anywhere; }
+  .game-stats-page .stats-share { margin-left: auto; }
+  .game-stats-page .stats-summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+  .game-stats-page .stats-summary-card { display: flex; flex-direction: column; gap: .35rem; padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); box-shadow: var(--card-shadow); font-size: .85rem; color: var(--stats-muted); }
+  .game-stats-page .stats-summary-value { font-size: clamp(1.8rem, 3vw, 2.3rem); font-weight: 750; color: var(--primary); line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .game-stats-page .stats-personal { border-left: 4px solid var(--primary); }
+  .game-stats-page .stats-personal-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
+  .game-stats-page .stats-personal-grid dt { font-size: .8rem; color: var(--stats-muted); margin-bottom: .25rem; }
+  .game-stats-page .stats-personal-grid dd { font-weight: 700; font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+  .game-stats-page .stats-segmented { display: flex; flex-wrap: wrap; gap: .2rem; background: var(--background); padding: .25rem; border: 1px solid var(--card-border); border-radius: 10px; }
+  .game-stats-page .stats-segmented button { flex: 1; min-height: 44px; padding: .5rem .8rem; border: 1px solid transparent; border-radius: 7px; background: transparent; font-weight: 600; font-size: .875rem; white-space: nowrap; }
+  .game-stats-page .stats-segmented button[aria-pressed="true"] { color: var(--primary); background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow); }
+  .game-stats-page .stats-chart-metric { max-width: 300px; margin-bottom: 1.5rem; }
+  .game-stats-page .stats-chart { min-height: 200px; }
+  .game-stats-page .stats-bars { list-style: none; display: grid; gap: 1rem; padding: 0; }
+  .game-stats-page .stats-bar-heading { display: flex; justify-content: space-between; gap: 1rem; font-size: .875rem; margin-bottom: .35rem; }
+  .game-stats-page .stats-bar-heading span { min-width: 0; overflow-wrap: anywhere; }
+  .game-stats-page .stats-bar-heading strong { flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .game-stats-page .stats-bar-track { height: 12px; overflow: hidden; background: var(--stats-accent); border-radius: 6px; }
+  .game-stats-page .stats-bar-fill { height: 100%; border-radius: inherit; background: var(--primary); }
+  .game-stats-page .stats-pie-layout { display: grid; grid-template-columns: minmax(180px, 300px) minmax(0, 1fr); align-items: center; gap: 2rem; }
+  .game-stats-page .stats-pie-layout svg { width: 100%; max-width: 300px; height: auto; }
+  .game-stats-page .stats-pie-total { fill: var(--text); font-size: 24px; font-weight: 750; }
+  .game-stats-page .stats-pie-unit { fill: var(--stats-muted); font-size: 12px; }
+  .game-stats-page .stats-pie-legend { display: grid; gap: .8rem; list-style: none; }
+  .game-stats-page .stats-pie-legend li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; align-items: center; gap: .7rem; font-size: .875rem; }
+  .game-stats-page .stats-legend-swatch { width: 12px; height: 12px; border-radius: 3px; }
+  .game-stats-page .stats-legend-name { overflow-wrap: anywhere; }
+  .game-stats-page .stats-legend-value { text-align: right; font-variant-numeric: tabular-nums; }
+  .game-stats-page .stats-legend-value strong { display: block; color: var(--stats-muted); font-size: .8rem; margin-top: .15rem; }
+  .game-stats-page .stats-chart-empty { padding: 3rem 1rem; text-align: center; color: var(--stats-muted); }
+  .game-stats-page .stats-chart-data { border-top: 1px solid var(--card-border); margin-top: 1rem; padding-top: .5rem; }
+  .game-stats-page summary { cursor: pointer; min-height: 44px; padding: .65rem 0; font-size: .875rem; }
+  .game-stats-page .stats-ranking-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .8rem; }
+  .game-stats-page .stats-ranking-list { list-style: none; }
+  .game-stats-page .stats-ranking-list li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: .8rem; padding: .85rem .2rem; border-bottom: 1px solid var(--card-border); }
+  .game-stats-page .stats-ranking-list li:last-child { border-bottom: 0; }
+  .game-stats-page .stats-rank-number { color: var(--stats-muted); text-align: center; font-variant-numeric: tabular-nums; }
+  .game-stats-page .stats-ranking-list li:nth-child(-n+3) .stats-rank-number { color: var(--primary); background: var(--stats-accent); border-radius: 8px; padding: .4rem 0; font-weight: 700; }
+  .game-stats-page .stats-rank-name { overflow-wrap: anywhere; font-size: .95rem; }
+  .game-stats-page .stats-rank-values { text-align: right; font-variant-numeric: tabular-nums; font-size: .875rem; }
+  .game-stats-page .stats-rank-values small { display: block; margin-top: .25rem; color: var(--stats-muted); }
+  .game-stats-page .stats-ranking-expanded { max-height: 520px; overflow-y: auto; padding: 0 .5rem 0 0; scrollbar-gutter: stable; }
+  .game-stats-page .stats-party-controls { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .game-stats-page .stats-table-scroll { overflow: auto; max-height: 600px; scrollbar-gutter: stable; }
+  .game-stats-page table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .875rem; }
+  .game-stats-page caption { text-align: left; padding: .6rem 0; color: var(--stats-muted); font-size: .8rem; }
+  .game-stats-page :is(th, td) { padding: .8rem .65rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--card-border); }
+  .game-stats-page thead th { position: sticky; top: 0; background: var(--card-bg); z-index: 1; font-size: .8rem; }
+  .game-stats-page tbody th { font-weight: 500; }
+  .game-stats-page .stats-parties-table { min-width: 720px; }
+  .game-stats-page .stats-parties-table th button { display: flex; gap: .4rem; align-items: center; min-height: 44px; margin: -.5rem 0; padding: .35rem 0; border: 0; background: transparent; font: inherit; font-weight: 650; text-align: left; }
+  .game-stats-page .stats-numeric { font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .game-stats-page .stats-party-details { min-width: 180px; }
+  .game-stats-page .stats-party-details summary { padding-top: 0; }
+  .game-stats-page .stats-party-details ul { list-style: none; }
+  .game-stats-page .stats-party-details li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .35rem 0; }
+  .game-stats-page .stats-party-details li span { overflow-wrap: anywhere; }
+  .game-stats-page .stats-party-details li strong { font-size: .8rem; font-weight: 600; flex-shrink: 0; }
+  .game-stats-page .stats-party-cards { display: none; }
+  .game-stats-page .stats-party-card { padding: 1rem; border: 1px solid var(--card-border); border-radius: 10px; background: var(--background); }
+  .game-stats-page .stats-party-card-heading { display: flex; justify-content: space-between; align-items: baseline; gap: .8rem; margin-bottom: .8rem; font-size: .8rem; }
+  .game-stats-page .stats-party-card-heading h3 { min-width: 0; color: var(--text); }
+  .game-stats-page .stats-party-card-heading > span { flex-shrink: 0; }
+  .game-stats-page .stats-party-card dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; margin-bottom: .7rem; }
+  .game-stats-page .stats-party-card dt { color: var(--stats-muted); font-size: .75rem; margin-bottom: .2rem; }
+  .game-stats-page .stats-party-card dd { font-weight: 650; }
+  .game-stats-page .stats-pagination { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; margin-top: 1rem; }
+  .game-stats-page .stats-pagination > p { margin: 0 auto 0 0; align-self: center; font-size: .85rem; }
+  .game-stats-page .stats-page-navigation { display: flex; gap: .4rem; align-items: end; }
+  .game-stats-page .stats-pagination .stats-field label { font-size: .75rem; }
+  .game-stats-page .stats-methodology { padding: .75rem .2rem; color: var(--stats-muted); font-size: .85rem; }
+  .game-stats-page .stats-methodology h2 { font-size: 1rem; color: var(--text); }
+  .game-stats-page .stats-empty { text-align: center; padding: 2rem 1rem; }
+  .game-stats-page #stats-parties-title { scroll-margin-top: 5rem; }
+  .game-stats-page .stats-load-message { padding: .8rem 1rem; border: 1px solid var(--card-border); border-radius: 10px; background: var(--card-bg); margin-bottom: 1rem; }
+  .game-stats-page .stats-load-error { border-color: #c2410c; }
+  .game-stats-page .stats-skeleton-controls, .game-stats-page .stats-skeleton-card, .game-stats-page .stats-skeleton-chart { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; animation: stats-pulse 1.6s ease-in-out infinite alternate; }
+  .game-stats-page .stats-skeleton-controls { height: 180px; margin-bottom: 1.25rem; }
+  .game-stats-page .stats-skeleton-card { height: 115px; }
+  .game-stats-page .stats-skeleton-chart { height: 350px; }
+  .game-stats-page .stats-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  @keyframes stats-pulse { from { opacity: .5; } to { opacity: 1; } }
+  @media (max-width: 900px) {
+    .game-stats-page .stats-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .game-stats-page .stats-heading { flex-direction: column; gap: .6rem; }
+    .game-stats-page .stats-source { text-align: left; }
+    .game-stats-page .stats-section-heading { flex-wrap: wrap; }
+    .game-stats-page .stats-personal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .game-stats-page .stats-filter-grid { grid-template-columns: minmax(0, 1fr); }
+    .game-stats-page .stats-summary-grid { gap: .6rem; }
+    .game-stats-page .stats-summary-card { padding: 1rem .8rem; font-size: .8rem; }
+    .game-stats-page .stats-summary-value { font-size: 1.8rem; }
+    .game-stats-page .stats-section-heading { align-items: stretch; }
+    .game-stats-page .stats-section-heading > .stats-segmented { width: 100%; }
+    .game-stats-page .stats-selection-bar { align-items: stretch; }
+    .game-stats-page .stats-share { margin-left: 0; }
+    .game-stats-page .stats-chart-metric { max-width: none; }
+    .game-stats-page .stats-pie-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+    .game-stats-page .stats-pie-layout svg { max-width: 260px; justify-self: center; }
+    .game-stats-page .stats-ranking-toolbar { flex-wrap: wrap; gap: .6rem; }
+    .game-stats-page .stats-ranking-toolbar .stats-segmented { flex: 1; }
+    .game-stats-page .stats-ranking-list li { gap: .5rem; grid-template-columns: 26px minmax(0, 1fr) auto; }
+    .game-stats-page .stats-rank-name { font-size: .85rem; }
+    .game-stats-page .stats-personal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .game-stats-page .stats-party-controls { width: 100%; }
+    .game-stats-page .stats-party-controls .stats-field { flex: 1 1 120px; }
+    .game-stats-page .stats-desktop-parties { display: none; }
+    .game-stats-page .stats-party-cards { display: grid; gap: .75rem; }
+    .game-stats-page .stats-pagination { gap: .75rem; }
+    .game-stats-page .stats-pagination > p { flex-basis: 100%; }
+    .game-stats-page .stats-page-navigation { margin-left: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .game-stats-page .stats-skeleton-controls, .game-stats-page .stats-skeleton-card, .game-stats-page .stats-skeleton-chart { animation: none; }
+  }
+  

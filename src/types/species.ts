@@ -14,6 +14,7 @@ export interface SpeciesVariant {
     rows: string[][];
   };
   lore?: string;
+  speedNote?: string;
   speed?: number | {
     walk?: number;
     swimming?: number;

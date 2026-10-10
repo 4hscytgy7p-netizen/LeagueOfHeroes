@@ -1,6 +1,3 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-
 export interface Participant {
   name: string;
   progress: number;
@@ -31,6 +28,11 @@ export interface PairStat {
 
 export interface GameStatsResult {
   parties: Party[];
+  rankings: {
+    players: StatEntry[];
+    gms: StatEntry[];
+    pairs: PairStat[];
+  };
   stats: {
     totalParties: number;
     uniqueGMs: string[];
@@ -47,7 +49,7 @@ export interface GameStatsResult {
   };
 }
 
-const CSV_PATH = join(process.cwd(), 'stats.csv');
+export const GAME_STATS_CSV_URL = 'https://raw.githubusercontent.com/zzzRobottzzz/dnd-stats/main/stats.csv';
 
 function parseCsv(csv: string): Party[] {
   const rows = csv
@@ -102,9 +104,11 @@ function sortEntriesByGames(entries: StatEntry[], descending = true) {
   });
 }
 
-export function analyzeGameStats(): GameStatsResult {
-  const raw = readFileSync(CSV_PATH, 'utf-8');
-  const parties = parseCsv(raw);
+export function analyzeGameStats(raw: string): GameStatsResult {
+  return summarizeGameStats(parseCsv(raw));
+}
+
+export function summarizeGameStats(parties: Party[]): GameStatsResult {
 
   const gmMap = new Map<string, StatEntry>();
   const playerMap = new Map<string, StatEntry>();
@@ -122,7 +126,7 @@ export function analyzeGameStats(): GameStatsResult {
       playerEntry.totalProgress += player.progress;
       playerMap.set(player.name, playerEntry);
 
-      const key = `${party.gm}|||${player.name}`;
+      const key = JSON.stringify([party.gm, player.name]);
       const pairEntry = pairMap.get(key) ?? { gm: party.gm, player: player.name, games: 0, totalProgress: 0 };
       pairEntry.games += 1;
       pairEntry.totalProgress += player.progress;
@@ -141,6 +145,11 @@ export function analyzeGameStats(): GameStatsResult {
 
   return {
     parties,
+    rankings: {
+      players: Array.from(playerMap.values()),
+      gms: Array.from(gmMap.values()),
+      pairs: Array.from(pairMap.values())
+    },
     stats: {
       totalParties,
       uniqueGMs,

@@ -5,6 +5,8 @@ export interface Feat {
   id: string;
   name: string;
   nameEn: string;
+  /** Book code and rules edition, e.g. PHB`24. Omit when unknown. */
+  sourceBook?: string;
   type: FeatType;
   requirements?: string[];
   description?: string;

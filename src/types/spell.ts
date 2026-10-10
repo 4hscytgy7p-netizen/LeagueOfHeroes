@@ -21,6 +21,8 @@ export interface Spell {
   };
   duration: string;
   description: string;
+  statBlockIds?: string[];
+  statBlockNote?: string;
   source: {
     book: string;
     page: number;

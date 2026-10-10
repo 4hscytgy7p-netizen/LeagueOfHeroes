@@ -1,0 +1,128 @@
+.point-buy-page { --pb-muted: #526175; --pb-success: #15803d; max-width: 1040px; margin: 0 auto; }
+.dark .point-buy-page { --pb-muted: #a7b6c9; --pb-success: #4ade80; }
+.point-buy-page .page-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .2rem 1rem; margin-bottom: .65rem; }
+.point-buy-page .page-heading h1 { margin: 0; font-size: 1.5rem; line-height: 1.25; }
+.point-buy-page .page-heading p { margin: 0; font-size: .8rem; color: var(--pb-muted); }
+.point-buy-page .calculator { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: .85rem; box-shadow: var(--card-shadow); }
+.point-buy-page .budget-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; padding: .65rem .85rem; border-bottom: 1px solid var(--card-border); background: var(--card-bg); border-radius: .85rem .85rem 0 0; }
+.point-buy-page .budget-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .2rem .5rem; }
+.point-buy-page .budget-label { font-size: .8rem; font-weight: 600; color: var(--pb-muted); }
+.point-buy-page .budget-number { white-space: nowrap; font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--pb-muted); }
+.point-buy-page .budget-number strong { color: var(--primary); font-size: 1.35rem; line-height: 1; }
+.point-buy-page progress { grid-column: 1 / -1; width: 100%; height: .2rem; border: 0; border-radius: 1rem; overflow: hidden; appearance: none; accent-color: var(--primary); background: var(--card-border); }
+.point-buy-page progress::-webkit-progress-bar { background: var(--card-border); border-radius: 1rem; }
+.point-buy-page progress::-webkit-progress-value { background: var(--primary); border-radius: 1rem; }
+.point-buy-page progress::-moz-progress-bar { background: var(--primary); border-radius: 1rem; }
+.point-buy-page .calculator-body { padding: .5rem .85rem .65rem; }
+.point-buy-page .stats-table { width: 100%; border-collapse: collapse; }
+.point-buy-page thead { background: var(--background); }
+.point-buy-page thead th { padding: .4rem .5rem; font-size: .75rem; font-weight: 600; color: var(--pb-muted); text-align: center; }
+.point-buy-page thead th:first-child { text-align: left; }
+.point-buy-page .stat-row { border-bottom: 1px solid var(--card-border); }
+.point-buy-page .stat-row:last-child { border-bottom: 0; }
+.point-buy-page tbody th, .point-buy-page td { padding: .3rem .5rem; text-align: center; vertical-align: middle; }
+.point-buy-page tbody .stat-name { text-align: left; font-size: .9rem; font-weight: 650; }
+.point-buy-page .stat-abbreviation { display: inline-block; margin-left: .35rem; color: var(--pb-muted); font-size: .65rem; font-weight: 500; letter-spacing: .04em; }
+.point-buy-page .stepper { display: flex; align-items: center; justify-content: center; gap: .2rem; }
+.point-buy-page .stat-value { min-width: 1.65rem; font-size: .9rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.point-buy-page .stat-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; flex-shrink: 0; border: 1px solid var(--card-border); border-radius: .4rem; background: var(--background); color: var(--text); font: inherit; font-size: 1.1rem; cursor: pointer; }
+.point-buy-page .stat-btn:hover:not(:disabled) { border-color: var(--primary); background: var(--nav-hover-bg); }
+.point-buy-page .stat-btn:disabled { opacity: .4; cursor: default; }
+.point-buy-page .stat-hint { display: block; margin-top: .1rem; font-size: .65rem; line-height: 1.3; color: var(--pb-muted); }
+.point-buy-page .stat-total { display: inline-block; color: var(--primary); font-size: 1.35rem; line-height: 1.15; font-weight: 750; font-variant-numeric: tabular-nums; }
+.point-buy-page .modifier { display: inline-block; padding: .1rem .3rem; margin-left: .35rem; border-radius: .3rem; background: var(--background); font-weight: 650; font-size: .8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.point-buy-page .modifier-label { font-size: .6rem; font-weight: 400; color: var(--pb-muted); }
+.point-buy-page .cost-cell { color: var(--pb-muted); font-size: .8rem; font-variant-numeric: tabular-nums; }
+.point-buy-page .cost-unit, .point-buy-page .mobile-label, .point-buy-page .mobile-action-label { display: none; }
+.point-buy-page .calculator-footer { margin-top: .5rem; padding-top: .5rem; border-top: 1px solid var(--card-border); }
+.point-buy-page .footer-main { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+.point-buy-page .distribution-status { margin: 0; font-size: .8rem; line-height: 1.4; }
+.point-buy-page .distribution-status.is-complete { color: var(--pb-success); }
+.point-buy-page .actions { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; }
+.point-buy-page .action-btn { min-height: 36px; padding: .4rem .65rem; border: 1px solid var(--card-border); border-radius: .4rem; background: var(--card-bg); color: var(--text); font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer; }
+.point-buy-page .action-btn:hover:not(:disabled) { border-color: var(--primary); background: var(--nav-hover-bg); }
+.point-buy-page .primary-btn { background: var(--primary); border-color: var(--primary); color: var(--background); }
+.point-buy-page .primary-btn:hover:not(:disabled) { background: var(--primary); box-shadow: inset 0 0 0 1px var(--background); }
+.point-buy-page .reset-btn { background: transparent; color: var(--pb-muted); }
+.point-buy-page .action-btn:disabled { opacity: .45; cursor: default; }
+.point-buy-page :is(.stat-btn, .action-btn, summary, textarea):focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.point-buy-page .calculator-support { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 .75rem; margin-top: .25rem; }
+.point-buy-page .rules-help { color: var(--pb-muted); font-size: .8rem; }
+.point-buy-page .rules-help[open] { width: 100%; }
+.point-buy-page summary { width: fit-content; min-height: 32px; padding: .4rem .1rem; color: var(--primary); cursor: pointer; font-weight: 600; }
+.point-buy-page .rules-content { padding: .65rem .75rem; background: var(--background); border: 1px solid var(--card-border); border-radius: .5rem; }
+.point-buy-page .rules-content p { margin-bottom: .5rem; }
+.point-buy-page .cost-guide { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: .35rem; text-align: center; }
+.point-buy-page .cost-guide div { padding: .35rem .1rem; background: var(--card-bg); border-radius: .3rem; }
+.point-buy-page dt { font-weight: 700; color: var(--text); }
+.point-buy-page dd { margin-top: .15rem; font-size: .7rem; }
+.point-buy-page .storage-status { margin: 0; color: var(--pb-muted); font-size: .7rem; }
+.point-buy-page .action-status { margin: .25rem 0 0; color: var(--primary); font-size: .75rem; }
+.point-buy-page .action-status:empty { display: none; }
+.point-buy-page .manual-copy { margin-top: .5rem; }
+.point-buy-page .manual-copy label { display: block; margin-bottom: .4rem; font-size: .8rem; }
+.point-buy-page textarea { width: 100%; padding: .65rem; border: 1px solid var(--card-border); border-radius: .5rem; background: var(--background); color: var(--text); font: inherit; font-size: .8rem; resize: vertical; }
+.point-buy-page .notice { color: var(--text); padding: .65rem; border: 1px solid var(--card-border); border-radius: .5rem; }
+
+/* Short desktop viewports retain all six characteristics and visible price hints. */
+@media (min-width: 761px) and (max-height: 680px) {
+  .point-buy-page .page-heading { margin-bottom: .4rem; }
+  .point-buy-page .page-heading h1 { font-size: 1.3rem; }
+  .point-buy-page .budget-bar { padding-block: .45rem; }
+  .point-buy-page .calculator-body { padding-block: .35rem; }
+  .point-buy-page tbody th, .point-buy-page td { padding-block: .15rem; }
+  .point-buy-page .stat-btn { width: 28px; height: 28px; }
+  .point-buy-page .stat-hint { font-size: .625rem; line-height: 1.2; }
+  .point-buy-page .calculator-footer { margin-top: .35rem; padding-top: .35rem; }
+}
+
+@media (max-width: 760px) {
+  .point-buy-page .page-heading { display: block; text-align: center; margin-bottom: .5rem; }
+  .point-buy-page .page-heading h1 { font-size: 1.3rem; }
+  .point-buy-page .page-heading p { margin-top: .2rem; font-size: .75rem; }
+  .point-buy-page .calculator { background: transparent; border: 0; box-shadow: none; }
+  .point-buy-page .budget-bar { position: sticky; top: 4rem; z-index: 10; gap: .65rem; padding: .4rem .1rem; border-radius: 0; border-bottom: 0; background: var(--background); }
+  .point-buy-page .budget-label { font-size: .7rem; }
+  .point-buy-page .budget-number { font-size: .7rem; }
+  .point-buy-page .budget-number strong { font-size: 1.15rem; }
+  .point-buy-page .calculator-body { padding: .35rem 0 .5rem; }
+  .point-buy-page .stats-table { display: block; }
+  .point-buy-page thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .point-buy-page tbody { display: grid; gap: .35rem; }
+  .point-buy-page .stat-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .15rem .45rem; padding: .3rem .55rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: .6rem; }
+  .point-buy-page .stat-row:last-child { border-bottom: 1px solid var(--card-border); }
+  .point-buy-page tbody th, .point-buy-page td { display: block; padding: 0; min-width: 0; }
+  .point-buy-page tbody .stat-name { grid-column: 1; grid-row: 1; display: flex; align-items: center; flex-wrap: wrap; gap: .1rem .3rem; font-size: .8125rem; overflow-wrap: anywhere; }
+  .point-buy-page .stat-abbreviation { margin-left: 0; font-size: .6rem; }
+  .point-buy-page .total-cell { grid-column: 2; grid-row: 1; display: flex; align-items: center; justify-content: flex-end; gap: .3rem; }
+  .point-buy-page .total-cell .mobile-label { display: none; }
+  .point-buy-page .modifier { margin: 0; font-size: .75rem; }
+  .point-buy-page .base-cell { grid-column: 1; grid-row: 2; }
+  .point-buy-page .bonus-cell { grid-column: 2; grid-row: 2; }
+  .point-buy-page .mobile-label { display: block; margin-bottom: .15rem; color: var(--pb-muted); font-size: .7rem; line-height: 1.25; }
+  .point-buy-page .mobile-cost { font-size: .65rem; }
+  .point-buy-page .stat-btn { width: 44px; height: 44px; }
+  .point-buy-page .stat-value { min-width: 1.5rem; }
+  .point-buy-page .stat-hint { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0; }
+  .point-buy-page .stat-row:focus-within .stat-hint { position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; margin-top: .15rem; line-height: 1.25; }
+  .point-buy-page .cost-cell { display: none; }
+  .point-buy-page .calculator-footer { margin-top: .5rem; padding: 0; border-top: 0; }
+  .point-buy-page .footer-main { display: block; }
+  .point-buy-page .distribution-status { margin-bottom: .35rem; font-size: .75rem; }
+  .point-buy-page .actions { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: .35rem; }
+  .point-buy-page .action-btn { min-height: 44px; padding: .35rem .5rem; font-size: .75rem; }
+  .point-buy-page .desktop-action-label { display: none; }
+  .point-buy-page .mobile-action-label { display: inline; }
+  .point-buy-page summary { min-height: 44px; padding-block: .75rem; font-size: .75rem; }
+  .point-buy-page .cost-guide { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .point-buy-page .budget-bar { top: 3.75rem; }
+}
+
+/* Touch targets stay comfortable on tablets using the desktop table layout. */
+@media (min-width: 761px) and (pointer: coarse) {
+  .point-buy-page .stat-btn { width: 44px; height: 44px; }
+  .point-buy-page .action-btn { min-height: 44px; }
+}

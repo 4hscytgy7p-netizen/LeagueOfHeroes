@@ -1,5 +1,7 @@
 /* Light theme variables */
 :root {
+  color-scheme: light;
+  background: var(--background);
   --primary: #7c3aed;
   --primary-dark: #5b21b6;
   --background: #f8fafc;
@@ -38,6 +40,7 @@
 
 /* Dark theme variables */
 :root.dark {
+  color-scheme: dark;
   --primary: #a78bfa;
   --primary-dark: #8b5cf6;
   --background: #0f172a;

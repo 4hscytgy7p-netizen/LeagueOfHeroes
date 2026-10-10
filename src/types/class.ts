@@ -2,9 +2,13 @@ export interface ClassFeature {
   name: string;
   level: number;
   description: string;
+  statBlockIds?: string[];
+  statBlockNote?: string;
   collapsible?: {
     title: string;
     description: string;
+    statBlockIds?: string[];
+    statBlockNote?: string;
     tableData?: {
       headers: string[];
       rows: string[][];
@@ -13,11 +17,19 @@ export interface ClassFeature {
 }
 
 export interface Subclass {
+  sourceBook?: string;
   id: string;
   name: string;
   nameEn: string;
   description: string;
   features: ClassFeature[];
+  spellcasting?: SubclassSpellcastingLevel[];
+}
+
+export interface SubclassSpellcastingLevel {
+  level: number;
+  knownSpells: number;
+  spellSlots: NonNullable<ClassLevel['spellSlots']>;
 }
 
 export interface ClassLevel {

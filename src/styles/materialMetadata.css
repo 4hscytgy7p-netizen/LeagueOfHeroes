@@ -1,0 +1,7 @@
+.material-metadata { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .75rem; margin: .65rem 0; font-size: .85rem; line-height: 1.5; overflow-wrap: anywhere; }
+.material-metadata .material-source, .material-metadata .material-edition { opacity: .85; }
+.material-metadata .material-flag { display: inline-block; border: 1px solid currentColor; border-radius: .4rem; padding: .15rem .45rem; color: var(--primary, #8b5cf6); text-decoration: none; }
+.material-metadata .material-flag:hover { text-decoration: underline; }
+.material-metadata .material-flag:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.material-metadata .material-rule { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .5rem; flex-basis: 100%; }
+.material-rule-note { color: var(--text); }
