@@ -1,8 +1,12 @@
 ---
 import '../styles/theme.css';
+import '../styles/materialMetadata.css';
+import '../styles/leagueRules.css';
 import TopNav from '../components/navigation/TopNav.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import ThemeInit from '../components/ThemeInit.astro';
 import DiceRoller from '../components/DiceRoller.astro';
+import QuickSearch from '../components/search/QuickSearch.astro';
 
 interface Props {
   title: string;
@@ -14,29 +18,26 @@ const publicSupabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || proces
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ru" class="dark">
   <head>
+    <meta charset="UTF-8" />
+    <ThemeInit />
     <script is:inline define:vars={{ publicSupabaseUrl, publicSupabaseAnonKey }}>
       window.__LOH_TEST_ACCOUNT_CONFIG__ = {
         supabaseUrl: publicSupabaseUrl,
         supabaseAnonKey: publicSupabaseAnonKey
       };
     </script>
-    <script>
-      (function() {
-        const theme = localStorage.getItem('theme') ?? 'dark';
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-      })();
-    </script>
-    <meta charset="UTF-8" />
     <meta name="description" content="League of Heroes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body>
     <TopNav />
+    <QuickSearch />
     <main>
       <slot />
     </main>
@@ -189,7 +190,6 @@ const publicSupabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || proces
     font-family: system-ui, sans-serif;
     background: var(--background);
     color: var(--text);
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
