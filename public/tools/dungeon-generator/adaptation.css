@@ -1,0 +1,45 @@
+.brand strong { font-size: 20px; letter-spacing: 3px; }
+.brand span { font-size: 9px; letter-spacing: 1px; }
+.layout { grid-template-columns: 310px minmax(0, 1fr); }
+.hint { font: 12px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #a2afa0; }
+.range-limits { color: #9baa96; }
+.toggle { font-size: 12px; gap: 10px; }
+.toggle input { flex-shrink: 0; }
+.smallbutton, .header-right button { font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; }
+.primary { margin-top: 10px; }
+select { font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button:disabled { cursor: wait; opacity: .55; }
+.legend { grid-template-columns: 1fr; }
+.legend button { font-size: 12px; }
+.scene-head h1 { font-size: clamp(21px, 2.5vw, 32px); max-width: 80%; }
+.scene-toolbar { position: static; margin-top: 14px; }
+.subtitle { line-height: 1.8; }
+.room-card { top: 178px; width: min(285px, calc(100% - 50px)); }
+.room-detail { white-space: pre-line; }
+.scene-foot { font-size: 11px; padding: 0 18px; }
+.metric span { font-size: 9px; letter-spacing: .3px; color: #a1b199; }
+.metrics { gap: 14px; bottom: 235px; }
+.metric strong { font-size: 20px; }
+.webgl-note { position: absolute; top: 190px; left: 20px; right: 20px; color: #e3d5b7; background: #18241de8; padding: 20px; border-radius: 5px; }
+.error { inset: 15px; max-height: calc(100% - 30px); overflow: auto; }
+.about p { font-size: 14px; color: #c0caba; }
+.about article { padding-top: 65px; }
+.check small { font-size: 11px; }
+@media (max-width: 1000px) {
+  .scene-head h1 { max-width: 100%; }
+  .metrics { flex-wrap: wrap; max-width: calc(100% - 44px); gap: 12px; }
+  .scene-foot > #render-budget { display: none; }
+}
+@media (max-width: 700px) {
+  header { height: auto; min-height: 100px; flex-wrap: wrap; gap: 12px; padding: 14px 18px; }
+  .brand strong { font-size: 19px; }
+  .header-right { gap: 8px; }
+  .layout { display: flex; }
+  .layout main { height: 610px; min-height: 610px; }
+  aside { display: block; padding: 22px; }
+  .scene-toolbar { position: static; }
+  .scene-toolbar .fit { display: inline-block; }
+  .scene-head h1 { max-width: 100%; }
+  .metrics { bottom: 215px; }
+  .room-card { left: 18px; top: 180px; }
+}

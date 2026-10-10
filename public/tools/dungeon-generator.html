@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Генератор карт — Лига Героев</title>
+  <link rel="stylesheet" href="/tools/dungeon-generator/generator.css">
+  <link rel="stylesheet" href="/tools/dungeon-generator/adaptation.css">
+  <script defer src="/tools/dungeon-generator/presets.js"></script>
+  <script defer src="/tools/dungeon-generator/three.min.js"></script>
+  <script defer src="/tools/dungeon-generator/engine.js"></script>
+  <script defer src="/tools/dungeon-generator/view.js"></script>
+  <script defer src="/tools/dungeon-generator/export.js"></script>
+  <script defer src="/tools/dungeon-generator/app.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand"><div><strong>КАРТОГРАФ</strong><span>ЛИГА ГЕРОЕВ · ГЕНЕРАТОР КАРТ</span></div></div>
+  <div class="header-right"><button id="copy-link">Ссылка на карту</button><button id="about-open">Как пользоваться</button></div>
+</header>
+<div class="layout">
+  <aside aria-label="Настройки карты">
+    <div class="aside-title"><span class="eyebrow">Параметры карты</span></div>
+    <div class="section">
+      <label class="fieldlabel" for="seed">Код генерации <span class="num">#</span></label>
+      <div class="seedrow"><input id="seed" type="number" value="1977" min="-2147483648" max="2147483647" step="1" aria-label="Целочисленный код генерации"><button id="dice" title="Случайный код" aria-label="Выбрать случайный код">⚄</button></div>
+      <button class="primary" id="generate">Создать карту <span>↗</span></button>
+      <p class="hint">Одинаковые код и настройки дают одинаковую карту.</p>
+    </div>
+    <div class="section">
+      <div class="slider-field"><label class="fieldlabel" for="theme">Тематика и оформление</label><select id="theme"></select></div>
+      <div class="slider-field"><label class="fieldlabel" for="layoutStyle">Стиль планировки</label><select id="layoutStyle"><option value="mixed">Смешанные формы</option><option value="rectangular">Прямоугольные помещения</option><option value="rounded">Округлые помещения</option></select></div>
+      <p class="hint">Тематика меняет материалы, декор, свет и названия. Стиль меняет форму помещений. После смены тематики можно выбрать другой стиль.</p>
+      <div class="slider-field"><label class="fieldlabel" for="roomCount">Помещения <output class="num" id="roomCount-out">42</output></label><input id="roomCount" type="range" min="12" max="80" step="1" value="42"><div class="range-limits"><span>12 · КОМПАКТНО</span><span>80 · ПРОСТОРНО</span></div></div>
+      <div class="slider-field"><label class="fieldlabel" for="loopChance">Дополнительные связи <output class="num" id="loopChance-out">15%</output></label><input id="loopChance" type="range" min="0" max="100" step="1" value="15"><div class="range-limits"><span>ЛИНЕЙНО</span><span>РАЗВЕТВЛЁННО</span></div></div>
+      <p class="hint">Даже при 0% сохраняется один обходной маршрут.</p>
+      <div class="slider-field"><label class="fieldlabel" for="decorDensity">Плотность декора <output class="num" id="decorDensity-out">60%</output></label><input id="decorDensity" type="range" min="0" max="100" step="1" value="60"><div class="range-limits"><span>МИНИМУМ</span><span>МНОГО</span></div></div>
+      <label class="toggle" for="animateBuild"><span>Анимация построения</span><input type="checkbox" id="animateBuild"></label>
+    </div>
+    <div class="section">
+      <div class="sectiontitle">СЛОИ МАСТЕРА</div>
+      <label class="toggle"><span>Связи триангуляции</span><input type="checkbox" data-overlay="delaunay"></label>
+      <label class="toggle"><span>Основные маршруты</span><input type="checkbox" data-overlay="mst"></label>
+      <label class="toggle"><span>Обходные маршруты</span><input type="checkbox" data-overlay="loops"></label>
+      <label class="toggle"><span>Путь к главному противнику</span><input type="checkbox" data-overlay="critical"></label>
+      <label class="toggle"><span>Карта сложности</span><input type="checkbox" data-overlay="heat"></label>
+      <label class="toggle"><span>Места противников</span><input type="checkbox" data-overlay="spawns"></label>
+      <button class="smallbutton" id="replay">↻ Повторить построение</button>
+    </div>
+    <div class="section"><div class="sectiontitle">ТИПЫ ПОМЕЩЕНИЙ</div><div class="legend" id="legend"></div><p class="hint">Нажмите на тип, чтобы перейти к помещению. Назначения и места противников — подсказки мастеру, без готовых статблоков.</p></div>
+    <div class="section">
+      <div class="sectiontitle">ЭКСПОРТ ДЛЯ ROLL20 / JUMPGATE</div>
+      <label class="fieldlabel" for="export-format">Формат</label>
+      <select id="export-format"><option value="uvtt">UVTT · карта, стены и свет</option><option value="topdown">PNG · вид сверху (ZIP)</option><option value="isometric">PNG · изометрия (ZIP)</option></select>
+      <p class="hint" id="export-help">UVTT: меню страниц → Create Page → Upload Background. Стены и свет импортируются вместе с картой; работа Dynamic Lighting требует подписки Roll20. Проходы остаются открытыми, двери расставьте в Roll20.</p>
+      <button id="export-map" class="primary">Скачать для Roll20 ↓</button>
+      <p class="hint" id="export-status" role="status" aria-live="polite"></p>
+      <button id="export" class="smallbutton">Скачать данные JSON</button>
+    </div>
+    <details id="diagnostics"><summary><span>Проверка карты</span><span class="check-total" id="check-total">—</span></summary><div class="checks" id="checks"></div><button class="smallbutton" id="test-again">Повторить проверку</button></details>
+  </aside>
+  <main>
+    <div id="viewport" role="img" aria-label="Изометрическая карта. Перетаскивание — перемещение, колесо — масштаб, Q и E — поворот."></div>
+    <div class="scene-head"><div class="eyebrow">КАРТА <span>/</span> <span id="theme-title">Мшистый склеп</span></div><h1 id="dungeon-name">Создаём карту…</h1><div class="subtitle" id="subtitle"></div><div class="scene-toolbar"><button class="fit" id="fit" title="Показать всю карту">Вся карта</button><button id="rotate" title="Поворот на 90° (Q / E)" aria-label="Повернуть карту">⤾</button><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button></div></div>
+    <div class="build-progress" id="build-progress"><div id="build-bar"></div></div>
+    <div class="metrics"><div class="metric"><strong id="stat-rooms">—</strong><span>ПОМЕЩЕНИЙ</span></div><div class="metric"><strong id="stat-loops">—</strong><span>ОБХОДОВ</span></div><div class="metric"><strong id="stat-floor">—</strong><span>КЛЕТОК ПОЛА</span></div><div class="metric"><strong id="stat-time">—</strong><span>СОЗДАНИЕ, МС</span></div></div>
+    <div class="minimap"><div class="eyebrow"><span>Мини-карта</span><span>↗</span></div><canvas id="minimap" width="274" height="218" aria-label="Нажмите на мини-карту для перехода"></canvas></div>
+    <div class="scene-foot"><span class="status"><i class="dot"></i><span id="stage-label" role="status">Подготовка</span></span><span id="render-budget"></span><span><kbd>Q E</kbd> ПОВОРОТ · КОЛЕСО: МАСШТАБ</span></div>
+    <div class="room-card" id="room-card"><button class="close" id="room-close" aria-label="Закрыть описание">×</button><div class="eyebrow" id="room-number"></div><div class="room-title" id="room-title"></div><div class="room-detail" id="room-detail"></div></div>
+    <div class="tooltip" id="tooltip"></div>
+    <div class="error" id="error" role="alert"><h2 id="error-title">Не удалось создать карту</h2><p id="error-message"></p><button id="error-close">Вернуться к настройкам</button></div>
+  </main>
+</div>
+<div class="about" id="about" role="dialog" aria-modal="true" aria-labelledby="about-title"><article>
+  <button class="close" id="about-close" aria-label="Закрыть справку">×</button><div class="eyebrow">Памятка мастера</div><h2 id="about-title">От кода генерации до игрового стола</h2>
+  <p>Выберите тематику, форму и число помещений. Сохраните ссылку: она содержит код и все настройки карты. Смена тематики предлагает подходящий стиль планировки; его можно изменить вручную.</p>
+  <p>Перетаскивайте карту для перемещения, используйте колесо или +/− для масштаба, Q/E для поворота и Home для общего вида. Нажмите на пол, мини-карту или тип помещения для осмотра.</p>
+  <p><b>UVTT — рекомендуемый экспорт для Jumpgate.</b> Он содержит плоскую карту без сетки, контуры стен и свет. В меню страниц Roll20 выберите Create Page → Upload Background и загрузите файл .uvtt. Масштаб задаётся файлом. Поддержка Dynamic Lighting зависит от подписки Roll20. Проверьте свет и стены после импорта; проходы открыты, двери добавляются вручную.</p>
+  <p><b>PNG сверху.</b> В ZIP находятся изображения по 70 пикселей на клетку, размеры и координаты каждого фрагмента. Большие карты разбиты на части не более 56 × 56 клеток. Разместите их на слое Map &amp; Background, задайте указанные размеры, квадратную сетку с клеткой 70 px и размер страницы из инструкции.</p>
+  <p><b>Изометрический PNG.</b> В ZIP находится вся карта без интерфейса и слоёв мастера. Это изображение для игры без привязки к сетке: отключите сетку в Roll20. Вид сверху удобнее для точных расстояний и Dynamic Lighting. Вращение камеры в просмотре не меняет направление экспорта.</p>
+  <p>Экспорт для игроков не отмечает тайники и секретные помещения, не показывает маркеры противников и карту сложности. Полный JSON сохраняет данные для мастера и не предназначен для импорта в Roll20. Карта не содержит готового приключения, баланса столкновений или статблоков.</p>
+  <p>Изометрический просмотр требует WebGL2; генерация, мини-карта и экспорт сверху работают и без него. Алгоритм сохраняет связность помещений и хотя бы один обходной маршрут даже при 0% дополнительных связей.</p>
+  <p><a href="https://help.roll20.net/hc/en-us/articles/41643201127831-Universal-Virtual-Tabletop-UVTT-Support" target="_blank" rel="noopener">Импорт UVTT в Roll20 ↗</a> · <a href="https://help.roll20.net/hc/en-us/articles/4416143791767-Map-Grid-Types" target="_blank" rel="noopener">Сетки Roll20 ↗</a></p>
+  <p>Адаптация исходного Vault. Three.js r160 © авторы Three.js, <a href="/tools/dungeon-generator/THREE-LICENSE.txt" target="_blank" rel="noopener">лицензия MIT</a>. Все ресурсы загружаются с сайта.</p>
+</article></div>
+<noscript><p>Для генерации и экспорта карт включите JavaScript в браузере.</p></noscript>
+</body>
+</html>

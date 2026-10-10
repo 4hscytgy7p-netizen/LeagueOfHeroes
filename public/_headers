@@ -1,0 +1,7 @@
+# Astro-generated assets include content hashes: new content gets a new URL.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Original portraits have stable filenames and must be revalidated after updates.
+/images/classes/*
+  Cache-Control: public, max-age=0, must-revalidate
