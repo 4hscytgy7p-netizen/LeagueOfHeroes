@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { publishedMaterials, materialSources, materialPolicy } from '../data/materials';
+import { materialKindLabels, materialStatusLabels } from '../utils/materialCatalog';
+import { materialRuleLabel } from '../utils/materialPresentation';
+import '../styles/materials.css';
+
+const kinds = Object.entries(materialKindLabels);
+const groups = materialSources.map(source => ({ source, entries: publishedMaterials.filter(item => item.sourceInfo.id === source.id) }));
+const unassigned = publishedMaterials.filter(item => item.sourceInfo.edition === 'unspecified').length;
+const exceptions = [
+  { id: 'unpublished', status: 'approval', label: 'Требует согласования', title: 'Материал вне опубликованного справочника', text: 'Другие материалы, в том числе неофициальные, вводятся по итогам совещаний мастеров Лиги. Наличие в каталоге отдельных вариантов из книги не разрешает всё её содержимое.', href: '/general-rules#core-mechanics', link: 'Общие правила' },
+  { id: 'firearms', status: 'modified', label: 'С изменениями', title: 'Пистоль и мушкет', text: 'Разрешённые варианты огнестрельного оружия — Пистоль и Мушкет. Взять огнестрел как стартовое снаряжение нельзя.', href: '/rules/equipment#weapon-restrictions', link: 'Ограничения оружия', materials: [{ name: 'Пистоль', href: '/items/pistol' }, { name: 'Мушкет', href: '/items/musket' }] },
+  { id: 'other-firearms', status: 'prohibited', label: 'Запрещено', title: 'Другие варианты огнестрельного оружия', text: 'Правила Лиги допускают только Пистоль и Мушкет.', href: '/rules/equipment#weapon-restrictions', link: 'Ограничения оружия' },
+  { id: 'starting-weapons', status: 'prohibited', label: 'Запрещено на старте', title: 'Большой длинный лук и увеличенное оружие на старте', text: 'Эти варианты нельзя брать как стартовое снаряжение. Получение увеличенного оружия в приключении регулируется правилами снаряжения Лиги.', href: '/character-guide#starting-weapons', link: 'Оружие на старте' },
+  { id: 'optional', status: 'approval', label: 'Не входят в базовые правила', title: 'Опциональные правила', text: 'Общие правила исключают опциональные механики из базового набора. Отдельные опубликованные правила Лиги применяются на указанных в них условиях.', href: '/general-rules#core-mechanics', link: 'Базовые механики' },
+  { id: 'injuries', status: 'modified', label: 'С изменениями', title: 'Травмы', text: 'Применяются условия Лиги, включая запрет для персонажей первого этапа и особые условия критических попаданий.', href: '/rules/injuries#injuries', link: 'Правила травм' },
+  { id: 'containers', status: 'modified', label: 'С изменениями', title: 'Контейнеры на персонаже', text: 'Количество одновременно надетых контейнеров быстрого доступа ограничено правилами Лиги.', href: '/rules/equipment#containers', link: 'Контейнеры и содержимое' },
+  { id: 'components', status: 'modified', label: 'С изменениями', title: 'Расходуемые компоненты магических предметов', text: 'Предмет не предоставляет расходуемый материальный компонент заклинания, если в его описании не сказано иного.', href: '/general-rules#consumable-components', link: 'Расходуемые компоненты' },
+];
+---
+
+<Layout title="Разрешённые материалы — Лига Героев">
+  <div class="materials-page" id="materials-page">
+    <header class="materials-heading">
+      <p class="materials-eyebrow">Правила открытого стола</p>
+      <h1>Разрешённые материалы</h1>
+      <p class="materials-lead">Проверьте источник выбранного варианта, редакцию и ограничения Лиги перед созданием героя или подготовкой игры.</p>
+      <nav class="materials-jump-links" aria-label="Разделы страницы">
+        <a href="#admission">Что разрешено</a><a href="#compatibility">Редакции 2014 и 2024</a><a href="#catalog">Каталог</a><a href="#exceptions">Исключения</a>
+      </nav>
+    </header>
+
+    <section id="admission" class="materials-policy" aria-labelledby="admission-title">
+      <div><span class="material-badge" data-status="allowed">Разрешено</span><h2 id="admission-title">Опубликованные варианты сайта</h2><p>{materialPolicy.published}</p><p>В каталоге перечислены конкретные классы, подклассы, виды, предыстории, черты, заклинания и предметы. Условия получения, требования персонажа и общие ограничения Лиги продолжают действовать.</p></div>
+      <div class="materials-policy-aside"><h3>Если нужного материала нет</h3><p>Материалы из других книг и неофициальных источников вводятся по итогам совещаний мастеров. Обсудите допуск до использования.</p><a href="/general-rules#core-mechanics">Общие правила →</a><a href="/rules/equipment">Снаряжение: правила Лиги →</a></div>
+    </section>
+
+    <section id="compatibility" aria-labelledby="compatibility-title">
+      <h2 id="compatibility-title">Как выбирать редакцию</h2>
+      <div class="materials-steps">
+        <article><span class="materials-step-number">01</span><h3>Сначала версия 2024</h3><p>{materialPolicy.editions}</p><p>При совпадении материала сверяйте источник и редакцию. В каталоге старая версия отмечается, если для неё есть опубликованная замена 2024.</p></article>
+        <article><span class="materials-step-number">02</span><h3>Проверяйте выбранный вариант</h3><p>У класса и его подкласса, а также у вида и его варианта могут быть разные источники. Редакция родительской карточки не определяет редакцию всех её вариантов.</p></article>
+        <article><span class="materials-step-number">03</span><h3>Учитывайте изменения Лиги</h3><p>Используйте опубликованное описание в редакции Лиги вместе с применимыми общими правилами. Адаптации уже включены в описание; отдельные ограничения действуют дополнительно. Отсутствие отметки не подтверждает дословное совпадение с книгой.</p><a href="/character-guide">Руководство создания героя →</a></article>
+      </div>
+      <p class="materials-source-note">Метки 2014 и 2024 обозначают редакцию правил в источнике, а не год выпуска книги. Для {unassigned} карточек редакция не указана: сверяйте описание и уточняйте источник при выборе между версиями. Это не отменяет допуск опубликованного варианта.</p>
+    </section>
+
+    <section id="catalog" aria-labelledby="catalog-title">
+      <div class="materials-section-heading"><div><p class="materials-eyebrow">Выбранный вариант, а не вся книга</p><h2 id="catalog-title">Источники и материалы</h2></div><span class="materials-total">{materialSources.length} групп источников · {publishedMaterials.length} материалов</span></div>
+      <form id="material-filters" class="material-filters" role="search" aria-label="Поиск разрешённых материалов" hidden>
+        <label class="material-search-label">Найти материал или источник<input id="material-search" type="search" placeholder="Название на русском, английском или код книги…" autocomplete="off" aria-controls="material-source-list" /></label>
+        <label>Редакция<select id="material-edition"><option value="">Все редакции</option><option value="2024">2024</option><option value="2014">2014</option><option value="unspecified">Не указана</option></select></label>
+        <label>Тип материала<select id="material-kind"><option value="">Все типы</option>{kinds.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
+        <label>Допуск<select id="material-status"><option value="">Все опубликованные</option>{Object.entries(materialStatusLabels).map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
+        <button type="reset" id="material-reset" disabled>Сбросить</button>
+      </form>
+      <p id="material-result-count" class="material-result-count" role="status" aria-live="polite" aria-atomic="true">Материалов: {publishedMaterials.length}</p>
+      <div id="material-empty" class="material-empty" hidden><h3>Материал не найден</h3><p>Попробуйте другое название или сбросьте фильтры. Если варианта нет в справочнике, его допуск нужно согласовать.</p><button type="button" id="material-empty-reset">Сбросить фильтры</button></div>
+      <div id="material-source-list" class="material-source-list">
+        {groups.map(({ source, entries }) => (
+          <details class="material-source" data-source-id={source.id}>
+            <summary><span><strong>{source.label}</strong><span class="material-source-code">{source.code || 'Без источника'}{source.edition === 'unspecified' && ' · редакция не указана'}</span></span><span class="material-source-count" data-source-count>{entries.length}</span></summary>
+            <div class="material-source-body">
+              <p class="material-source-scope">Здесь перечислены опубликованные варианты. Другие материалы из этого источника требуют согласования.</p>
+              <ul class="material-entries">
+                {entries.map(item => (
+                  <li class="material-entry" data-kind={item.kind} data-status={item.status} data-has-errata={String(item.errata.length > 0)} data-edition={item.sourceInfo.edition} data-search={item.searchText}>
+                    <div class="material-entry-name"><a href={item.href}>{item.name}</a><span lang="en">{item.nameEn}</span><small>{materialKindLabels[item.kind]}{item.parent && ` · ${item.parent}`}{item.kind === 'species-variant' && ' · выберите вариант в карточке вида'}</small></div>
+                    <div class="material-entry-admission"><span class="material-badge" data-status={item.status}>{materialStatusLabels[item.status]}</span>{item.errata.map(rule => <a href={rule.href} title={rule.note}>{materialRuleLabel(rule)} →</a>)}{item.preferredHref && <a href={item.preferredHref}>Открыть актуальную версию →</a>}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
+        ))}
+      </div>
+      <noscript><p>Поиск доступен с JavaScript. Без него раскрывайте источники и переходите к карточкам материалов.</p></noscript>
+    </section>
+
+    <section id="exceptions" aria-labelledby="exceptions-title">
+      <h2 id="exceptions-title">Исключения и ограничения</h2>
+      <p>Допуск материала не означает, что он доступен на старте или может применяться без условий. Полные правила находятся по ссылкам в карточках.</p>
+      <div class="material-exceptions">
+        {exceptions.map(rule => <article id={`admission-${rule.id}`} class="material-exception"><span class="material-badge" data-status={rule.status}>{rule.label}</span><h3>{rule.title}</h3><p>{rule.text}</p><a href={rule.href}>{rule.link} →</a>{rule.materials && <div class="material-related">{rule.materials.map(item => <a href={item.href}>{item.name}</a>)}</div>}</article>)}
+      </div>
+    </section>
+    <footer class="materials-footer">Порядок допуска и приоритет редакции подтверждены {materialPolicy.confirmedAt}. Каталог формируется из опубликованных материалов текущей версии сайта.</footer>
+  </div>
+</Layout>
+
+<script>
+  import '../scripts/materials';
+</script>

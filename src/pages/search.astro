@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { searchKindLabels } from '../utils/siteSearch.ts';
+---
+<Layout title="Поиск по справочнику — Лига Героев">
+  <div class="site-search-page" data-full-search>
+    <h1>Поиск по справочнику</h1>
+    <p class="site-search-intro">Классы и особенности, заклинания, предметы, глоссарий, публичные правила и тексты книг. Названия можно вводить на русском или английском.</p>
+    <form class="site-search-form" action="/search" method="get" role="search">
+      <label class="site-search-label" for="site-search-query">Что найти</label>
+      <div class="site-search-query-row">
+        <input id="site-search-query" class="site-search-input" type="search" name="q" maxlength="160" autocomplete="off" placeholder="Например: концентрация, Fireball, дни простоя" aria-controls="site-search-results" />
+        <button class="site-search-button" type="submit">Найти</button>
+      </div>
+      <div class="site-search-filters">
+        <label>Тип результата<select name="kind" data-search-kind><option value="">Все разделы</option>{Object.entries(searchKindLabels).map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
+        <label>Редакция<select name="edition" data-search-edition><option value="">Все редакции</option><option value="2024">2024</option><option value="2014">2014</option></select></label>
+        <label>Источник<select name="source" data-search-source><option value="">Все источники</option></select></label>
+      </div>
+    </form>
+    <p class="site-search-hint">Точное название показывается первым; при одинаковой релевантности версия 2024 выше. Поиск по текстам книг загружается при первом запросе. Запрос и фильтры сохраняются в адресе страницы.</p>
+    <p class="site-search-status" data-search-status role="status" aria-live="polite">Введите хотя бы 2 символа.</p>
+    <ol id="site-search-results" class="site-search-results" data-search-results aria-label="Результаты поиска"></ol>
+    <div class="site-search-page-actions">
+      <button type="button" class="site-search-button" data-search-more hidden>Показать ещё</button>
+      <button type="button" class="site-search-button" data-search-retry hidden>Повторить поиск</button>
+    </div>
+    <noscript><p>Для общего поиска включите JavaScript. Можно открыть <a href="/spells">заклинания</a>, <a href="/classes">классы</a>, <a href="/glossary">глоссарий</a> или <a href="/books">книги</a> напрямую.</p></noscript>
+  </div>
+</Layout>

@@ -1,8 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SpellCard from '../components/spells/SpellCard.astro';
-import SpellDetails from '../components/spells/SpellDetails.astro';
-import { spells } from '../data/spells';
+import { spells } from '../data/spells/index.ts';
+import { getPublishedMaterial } from '../data/materials';
+import { renderMaterialMetadata } from '../utils/materialPresentation';
+const spellsWithMetadata = spells.map(spell => ({ ...spell, materialMetadataHtml: renderMaterialMetadata(getPublishedMaterial('spell', spell.id)) }));
+import { classes } from '../data/classes';
+import CreatureDisclosure from '../components/creatures/CreatureDisclosure.astro';
+import { companions } from '../data/creatures/companions';
+import { resolveFeatureCreatures } from '../utils/creature';
+
+const spellCreatures = resolveFeatureCreatures([...new Set(spells.flatMap(spell => spell.statBlockIds || []))], companions);
+
+// Render filter options in Astro so the scoped styles apply to every group.
+const classNames = new Map(classes.map(cls => [cls.id, cls.name]));
+const subclassMap = new Map<string, Map<string, string>>();
+for (const spell of spells) {
+  for (const source of spell.sources || []) {
+    if (source.type !== 'subclass') continue;
+    const link = source.name.match(/<a\s+href="([^"]+)"[^>]*>(.*?)<\/a>/);
+    if (!link) continue;
+    const url = new URL(link[1], 'https://leagueofheroes.local');
+    const classId = url.pathname.split('/')[2];
+    const subclassId = url.searchParams.get('subclass');
+    if (!classId || !subclassId) continue;
+    if (!subclassMap.has(classId)) subclassMap.set(classId, new Map());
+    subclassMap.get(classId)!.set(subclassId, link[2].replace(/<[^>]+>/g, ''));
+  }
+}
+const subclassGroups = Array.from(subclassMap, ([classId, options]) => ({
+  classId,
+  name: classNames.get(classId) || 'Другие подклассы',
+  options: Array.from(options, ([id, name]) => ({ id, name }))
+    .sort((a, b) => a.name.localeCompare(b.name, 'ru')),
+})).sort((a, b) => a.name.localeCompare(b.name, 'ru'));
 
 // Sort spells alphabetically by Russian name
 const sortedSpells = [...spells].sort((a, b) => 
@@ -30,31 +60,56 @@ const spellSchools = [
 ---
 
 <Layout title="Заклинания">
+  <button type="button" class="spell-history-fab" aria-label="Открыть историю заклинаний" aria-controls="random-spell-widget" aria-expanded="false">
+    <span aria-hidden="true">☰</span>
+  </button>
+  <div class="spell-history-overlay" hidden></div>
+  <aside id="random-spell-widget" class="spell-history is-collapsed" role="dialog" aria-labelledby="spell-history-title" aria-hidden="true" inert>
+    <div class="spell-history-head">
+      <h2 id="spell-history-title">История заклинаний</h2>
+      <button type="button" class="spell-history-close" aria-label="Закрыть историю заклинаний">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+    </div>
+    <button id="random-btn" type="button">
+      <span class="filter-icon" aria-hidden="true">🎲</span>Случайное заклинание
+    </button>
+    <p id="random-history-empty">Выберите случайное заклинание — здесь появятся последние пять результатов.</p>
+    <ul id="random-history" role="list" aria-label="Последние случайные заклинания"></ul>
+  </aside>
   <div class="content">
     <h1>Заклинания</h1>
-    <div id="spells-data" data-spells={JSON.stringify(spells)} style="display: none;"></div>
+    {spellCreatures.map(creature => <template data-creature-template={creature.id}><CreatureDisclosure creature={creature} prefix="spell-catalog" /></template>)}
+    <div id="spells-data" data-spells={JSON.stringify(spellsWithMetadata)} style="display: none;"></div>
 
     <div class="spells-container">
       <div class="spells-list">
         <div class="search-controls">
           <input 
-            type="text" 
+            type="search"
             id="spell-search" 
             placeholder="Поиск заклинаний..."
+            aria-label="Поиск заклинаний по русскому или английскому названию"
             class="search-input"
           />
-          <button id="filter-button" class="filter-button">
-            <span class="filter-icon">⚙</span>
+          <button id="filter-button" class="filter-button" type="button" aria-haspopup="dialog" aria-controls="filter-popup" aria-expanded="false">
+            <span class="filter-icon" aria-hidden="true">⚙</span>
             Фильтры
+            <span id="filter-count" class="filter-count" hidden>0</span>
           </button>
-              <div id="spell-count" class="filter-count" style="display:none">0</div>
+        </div>
+        <div class="results-summary">
+          <p id="spell-count" role="status" aria-live="polite" aria-atomic="true">Найдено: {spells.length} из {spells.length}</p>
+          <button class="reset-button" data-reset-filters type="button" disabled>Сбросить всё</button>
         </div>
 
-        <div id="filter-popup" class="filter-popup">
+        <dialog id="filter-popup" class="filter-popup" aria-labelledby="filter-title">
           <div class="filter-content">
             <div class="filter-header">
-              <h3>Фильтры</h3>
-              <button class="close-button">×</button>
+              <h3 id="filter-title">Фильтры</h3>
+              <button class="close-button" type="button" aria-label="Закрыть фильтры" data-close-filters autofocus>×</button>
             </div>
 
             <div class="filter-section">
@@ -107,8 +162,25 @@ const spellSchools = [
 
             <div class="filter-section">
               <h4>Подклассы</h4>
-              <div id="subclass-filters" class="checkbox-group">
-                <!-- populated client-side -->
+              <p class="filter-hint">Раскройте класс и выберите подклассы. Можно выбрать несколько.</p>
+              <div id="subclass-filters" class="subclass-filters">
+                {subclassGroups.map(group => (
+                  <details class="subclass-class" data-class={group.classId}>
+                    <summary class="subclass-toggle">
+                      <span class="subclass-name">{group.name}</span>
+                      <span class="subclass-count" aria-label={`${group.options.length} подклассов`}>{group.options.length}</span>
+                      <span class="subclass-selected" hidden></span>
+                    </summary>
+                    <div class="subclass-list">
+                      {group.options.map(subclass => (
+                        <label class="checkbox-label">
+                          <input type="checkbox" name="spell-subclass" value={`${group.classId}|${subclass.id}`} />
+                          <span>{subclass.name}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
 
@@ -131,20 +203,29 @@ const spellSchools = [
                 <label class="checkbox-label"><input type="checkbox" name="casting-type" value="reaction"> Реакция</label>
               </div>
             </div>
+            <div class="filter-footer">
+              <button class="reset-button" data-reset-filters type="button" disabled>Сбросить всё</button>
+              <button class="filter-button" data-close-filters type="button">Показать заклинания</button>
+            </div>
           </div>
-        </div>
+        </dialog>
 
-        <div class="spells-grid">
+        <div id="spells-empty" class="empty-state" hidden>
+          <p>Заклинания не найдены.</p>
+          <p>Измените запрос или сбросьте фильтры.</p>
+        </div>
+        <p id="spells-scroll-hint" class="table-scroll-hint" hidden>↔ Прокрутите таблицу по горизонтали, чтобы увидеть все колонки.</p>
+        <div class="spells-grid" tabindex="0" role="region" aria-label="Список заклинаний" aria-describedby="spells-scroll-hint">
           <table class="spells-table">
             <thead>
               <tr>
-                <th class="sortable" data-sort="name">Название <span class="sort-icon">↕</span></th>
-                <th class="sortable" data-sort="level">Ур.<span class="sort-icon">↕</span></th>
-                <th class="sortable" data-sort="school">Школа <span class="sort-icon">↕</span></th>
-                <th class="sortable" data-sort="castingTime">Время <span class="sort-icon">↕</span></th>
-                <th class="sortable" data-sort="range">Дальн.<span class="sort-icon">↕</span></th>
-                <th class="sortable" data-sort="concentration">Конц. <span class="sort-icon">↕</span></th>
-                <th class="sortable" data-sort="source">Источник <span class="sort-icon">↕</span></th>
+                <th scope="col" class="sortable" data-sort="name">Название <span class="sort-icon" aria-hidden="true">↕</span></th>
+                <th scope="col" class="sortable" data-sort="level">Ур. <span class="sort-icon" aria-hidden="true">↕</span></th>
+                <th scope="col" class="sortable" data-sort="school">Школа <span class="sort-icon" aria-hidden="true">↕</span></th>
+                <th scope="col" class="sortable" data-sort="castingTime">Время <span class="sort-icon" aria-hidden="true">↕</span></th>
+                <th scope="col" class="sortable" data-sort="range">Дальн. <span class="sort-icon" aria-hidden="true">↕</span></th>
+                <th scope="col" class="sortable" data-sort="concentration">Конц. <span class="sort-icon" aria-hidden="true">↕</span></th>
+                <th scope="col" class="sortable" data-sort="source">Источник <span class="sort-icon" aria-hidden="true">↕</span></th>
               </tr>
             </thead>
             <tbody>
@@ -154,28 +235,12 @@ const spellSchools = [
                 const page = spell.source && spell.source.page ? String(spell.source.page) : '';
                 const schoolTitle = spell.school ? (spell.school.charAt(0).toUpperCase() + spell.school.slice(1)) : '';
                 const schoolClass = 'school-' + (spell.school || '').toLowerCase().replace(/[^a-z0-9а-яё]+/gi, '-');
-                const ct = String(spell.castingTime || '').toLowerCase();
-                let castingShort = '';
-                if (!ct) {
-                  castingShort = '';
-                } else if (ct.includes('реакц')) {
-                  castingShort = 'Реакция';
-                } else if (ct.includes('бонус')) {
-                  castingShort = 'Бонусное действие';
-                } else if (ct.includes('ритуал') || ct.includes('или')) {
-                  // preserve full text for cases like "1 действие или ритуал"
-                  castingShort = spell.castingTime || '';
-                } else if (ct.includes('действ')) {
-                  castingShort = 'Действие';
-                } else {
-                  castingShort = spell.castingTime || '';
-                }
                 return (
                   <tr class="spell-row" data-spell-id={spell.id} data-level={spell.level} data-school={schoolTitle} data-casting-time={spell.castingTime} data-range={spell.range} data-classes={classes} data-concentration={concentration} data-source-book={spell.source?.book || ''} data-source-page={page}>
                     <td class="col-name">{spell.name}<div class="name-en">[{spell.nameEn}]</div></td>
                     <td class="col-level">{spell.level === 'cantrip' ? 'Заговор' : spell.level}</td>
                     <td class="col-school"><span class={`school-label ${schoolClass}`}>{schoolTitle}</span></td>
-                    <td class="col-casting">{castingShort}</td>
+                    <td class="col-casting">{spell.castingTime}</td>
                     <td class="col-range">{spell.range}</td>
                     <td class="col-conc">{concentration}</td>
                     <td class="col-source">{spell.source?.book}</td>
@@ -205,37 +270,47 @@ const spellSchools = [
 
 <script>
   function initializeSpells() {
-    // filterButton уже объявлен выше
     const filterCount = document.getElementById('filter-count');
-      const spellCountEl = document.getElementById('spell-count');
+    const spellCountEl = document.getElementById('spell-count');
+    const resetButtons = document.querySelectorAll<HTMLButtonElement>('[data-reset-filters]');
+    const emptyState = document.getElementById('spells-empty');
     /** @type {HTMLInputElement|null} */
     /** @type {HTMLInputElement|null} */
     const searchInput = document.getElementById('spell-search');
     const filterButton = document.getElementById('filter-button');
-    const filterPopup = document.getElementById('filter-popup');
-    const closeButton = document.querySelector('.close-button');
+    const filterPopup = document.querySelector<HTMLDialogElement>('#filter-popup');
+    const closeButtons = filterPopup?.querySelectorAll('[data-close-filters]');
     const spellRows = document.querySelectorAll('.spell-row');
+    const tableScroll = document.querySelector<HTMLElement>('.spells-grid');
+    const scrollHint = document.getElementById('spells-scroll-hint');
+    if (tableScroll && scrollHint) {
+      const updateScrollHint = () => {
+        scrollHint.hidden = tableScroll.scrollWidth <= tableScroll.clientWidth + 1;
+      };
+      const resizeObserver = new ResizeObserver(updateScrollHint);
+      resizeObserver.observe(tableScroll);
+      const table = tableScroll.querySelector('table');
+      if (table) resizeObserver.observe(table);
+      updateScrollHint();
+    }
     /** @type {NodeListOf<HTMLInputElement>} */
     const levelCheckboxes = document.querySelectorAll('input[name="spell-level"]');
     /** @type {NodeListOf<HTMLInputElement>} */
     const schoolCheckboxes = document.querySelectorAll('input[name="spell-school"]');
     /** @type {NodeListOf<HTMLInputElement>} */
     const classCheckboxes = document.querySelectorAll('input[name="spell-class"]');
-    /** @type {NodeListOf<HTMLInputElement>} */
-    const componentCheckboxes = document.querySelectorAll('input[name="spell-component"]');
-    const concentrationCheckbox = document.querySelector('input[name="spell-concentration"]');
-    /** @type {NodeListOf<HTMLInputElement>} */
-    const castingTypeCheckboxes = document.querySelectorAll('input[name="casting-type"]');
-    const hasTableCheckbox = document.querySelector('input[name="spell-has-table"]');
     const spellDetails = document.getElementById('spell-details');
     const spells = JSON.parse(document.getElementById('spells-data')?.getAttribute('data-spells') || '[]')
       .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
 
-    function togglePopup() {
-      if (filterPopup) {
-        filterPopup.classList.toggle('show');
-        filterButton.classList.toggle('active', filterPopup.classList.contains('show'));
-      }
+    let previousBodyOverflow = '';
+    function openPopup() {
+      if (!filterPopup || filterPopup.open) return;
+      previousBodyOverflow = document.body.style.overflow;
+      filterPopup.showModal();
+      document.body.style.overflow = 'hidden';
+      filterButton?.classList.add('active');
+      filterButton?.setAttribute('aria-expanded', 'true');
     }
 
     // helper: parse anchor HTML like <a href="/classes/cleric?subclass=knowledge">Домен Знаний</a>
@@ -256,51 +331,12 @@ const spellSchools = [
       }
     }
 
-    // Build subclass map from spells.sources[type==='subclass']
-    const subclassMap = {};
-    spells.forEach(sp => {
-      (Array.isArray(sp.sources) ? sp.sources : []).forEach(src => {
-        if (!src || src.type !== 'subclass') return;
-        const parsed = parseAnchorLink(src.name);
-        if (!parsed || !parsed.classId || !parsed.subclassId) return;
-        if (!subclassMap[parsed.classId]) subclassMap[parsed.classId] = [];
-        if (!subclassMap[parsed.classId].some(x => x.subclassId === parsed.subclassId)) subclassMap[parsed.classId].push(parsed);
-      });
-    });
-
-    function renderSubclassFilters() {
-      const container = document.getElementById('subclass-filters');
-      if (!container) return;
-      container.innerHTML = '';
-      Object.keys(subclassMap).sort((a,b) => a.localeCompare(b,'ru')).forEach(classId => {
-        const list = subclassMap[classId];
-        const wrapper = document.createElement('div');
-        wrapper.className = 'subclass-class';
-        const toggle = document.createElement('button');
-        toggle.type = 'button';
-        toggle.className = 'subclass-toggle';
-        toggle.textContent = classId;
-        toggle.dataset.class = classId;
-        const inner = document.createElement('div');
-        inner.className = 'subclass-list';
-        inner.style.display = 'none';
-        inner.innerHTML = list.map(it => `<label class="checkbox-label"><input type="checkbox" name="spell-subclass" value="${classId}|${it.subclassId}">${it.name}</label>`).join('');
-        wrapper.appendChild(toggle);
-        wrapper.appendChild(inner);
-        container.appendChild(wrapper);
-      });
-    }
-
-
     function closePopup(e: MouseEvent) {
-      if (filterPopup && e.target === filterPopup) {
-        filterPopup.classList.remove('show');
-        filterButton.classList.remove('active');
-      }
+      if (e.target === filterPopup) filterPopup?.close();
     }
 
     function filterSpells() {
-      const searchTerm = searchInput instanceof HTMLInputElement ? searchInput.value.toLowerCase() : '';
+      const searchTerm = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : '';
       const selectedLevels = Array.from(levelCheckboxes)
         .filter(cb => cb instanceof HTMLInputElement && cb.checked)
         .map(cb => cb instanceof HTMLInputElement ? cb.value : '');
@@ -320,15 +356,27 @@ const spellSchools = [
       if (selectedLevels.length > 0) activeFilters += selectedLevels.length;
       if (selectedSchools.length > 0) activeFilters += selectedSchools.length;
       if (selectedClasses.length > 0) activeFilters += selectedClasses.length;
+      activeFilters += selectedSubclasses.length;
       if (selectedComponents.length > 0) activeFilters += selectedComponents.length;
       if (concentrationChecked) activeFilters += 1;
       if (selectedCastingTypes.length > 0) activeFilters += selectedCastingTypes.length;
       if (hasTableChecked) activeFilters += 1;
       if (filterCount) {
         filterCount.textContent = String(activeFilters);
-        filterCount.style.display = activeFilters > 0 ? 'flex' : 'none';
+        filterCount.hidden = activeFilters === 0;
+        filterCount.setAttribute('aria-label', `Активных фильтров: ${activeFilters}`);
       }
       if (filterButton) filterButton.classList.toggle('has-filters', activeFilters > 0);
+      resetButtons.forEach(button => { button.disabled = activeFilters === 0 && !searchTerm; });
+      document.querySelectorAll<HTMLElement>('.subclass-class').forEach(group => {
+        const selected = group.querySelectorAll('input:checked').length;
+        group.classList.toggle('has-selection', selected > 0);
+        const badge = group.querySelector<HTMLElement>('.subclass-selected');
+        if (badge) {
+          badge.hidden = selected === 0;
+          badge.textContent = `Выбрано: ${selected}`;
+        }
+      });
 
       let visibleCount = 0;
       spellRows.forEach(card => {
@@ -385,9 +433,9 @@ const spellSchools = [
       });
 
       if (spellCountEl) {
-        spellCountEl.textContent = String(visibleCount);
-        spellCountEl.style.display = visibleCount > 0 ? 'flex' : 'none';
+        spellCountEl.textContent = `Найдено: ${visibleCount} из ${spells.length}`;
       }
+      if (emptyState) emptyState.hidden = visibleCount > 0;
     }
 
     function getIdFromUrl() {
@@ -423,15 +471,13 @@ const spellSchools = [
       if (!spell) return;
 
       const formattedSources = formatSources(spell.sources);
-      const sourceBook = spell.source?.book || '';
-      const sourcePage = spell.source?.page || '';
 
       // Create spell details HTML
       spellDetails.innerHTML = `
-        <div class="spell-details">
+        <div class="details-content">
           <div class="spell-header">
             <h2>${spell.name} <span class="name-en">[${spell.nameEn}]</span></h2>
-            <div class="source">${sourceBook}${sourcePage ? ', стр. ' + sourcePage : ''}</div>
+            ${spell.materialMetadataHtml}
           </div>
 
           <div class="spell-info">
@@ -470,6 +516,19 @@ const spellSchools = [
         </div>
       `;
 
+      if (spell.statBlockIds?.length) {
+        const container = spellDetails.querySelector('.spell-description-container');
+        if (spell.statBlockNote) {
+          const note = document.createElement('p');
+          note.className = 'creature-context-note';
+          note.textContent = spell.statBlockNote;
+          container.appendChild(note);
+        }
+        const slot = document.createElement('div');
+        slot.dataset.creatureIds = JSON.stringify(spell.statBlockIds);
+        container.appendChild(slot);
+      }
+
       // Add active class to selected card
       spellRows.forEach(card => card.classList.remove('active'));
       document.querySelector(`[data-spell-id="${spellId}"]`)?.classList.add('active');
@@ -504,17 +563,23 @@ const spellSchools = [
     }
 
     // Open/close filters, search and filter bindings
-    filterButton?.addEventListener('click', togglePopup);
-    closeButton?.addEventListener('click', togglePopup);
+    filterButton?.addEventListener('click', openPopup);
+    closeButtons?.forEach(button => button.addEventListener('click', () => filterPopup?.close()));
     filterPopup?.addEventListener('click', closePopup);
+    filterPopup?.addEventListener('close', () => {
+      document.body.style.overflow = previousBodyOverflow;
+      filterButton?.classList.remove('active');
+      filterButton?.setAttribute('aria-expanded', 'false');
+    });
     searchInput?.addEventListener('input', filterSpells);
-    levelCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
-    schoolCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
-    classCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
-    componentCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
-    castingTypeCheckboxes?.forEach(cb => cb.addEventListener('change', filterSpells));
-    if (concentrationCheckbox instanceof HTMLInputElement) concentrationCheckbox.addEventListener('change', filterSpells);
-    if (hasTableCheckbox instanceof HTMLInputElement) hasTableCheckbox.addEventListener('change', filterSpells);
+    resetButtons.forEach(button => button.addEventListener('click', () => {
+      if (searchInput instanceof HTMLInputElement) searchInput.value = '';
+      filterPopup?.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+        cb.closest('label')?.classList.remove('checked');
+      });
+      filterSpells();
+    }));
     
     // Ensure label fills when checkbox is checked (tile fill)
     filterPopup?.addEventListener('change', (e) => {
@@ -535,21 +600,6 @@ const spellSchools = [
       }
     });
 
-    // render subclass filters and attach toggles
-    renderSubclassFilters();
-    document.getElementById('subclass-filters')?.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t instanceof HTMLElement && t.classList.contains('subclass-toggle')) {
-        const parent = t.parentElement;
-        const list = parent?.querySelector<HTMLElement>('.subclass-list');
-        if (list) {
-          const open = list.style.display !== 'block';
-          list.style.display = open ? 'block' : 'none';
-          t.classList.toggle('open', open);
-        }
-      }
-    });
-
     // Row click -> show details
     spellRows.forEach(row => {
       row.addEventListener('click', () => {
@@ -561,39 +611,57 @@ const spellSchools = [
       });
     });
 
-    // Random spell widget (append to body)
+    // Random spell history drawer. Keep its markup in Astro for scoped styles.
     (function createRandomWidget(){
-      const widget = document.createElement('div');
-      widget.id = 'random-spell-widget';
-      widget.style.position = 'fixed';
-      widget.style.right = '1rem';
-      widget.style.bottom = '1rem';
-      widget.style.zIndex = '10010';
+      const widget = document.querySelector<HTMLElement>('#random-spell-widget');
+      const openButton = document.querySelector<HTMLButtonElement>('.spell-history-fab');
+      const closeButton = document.querySelector<HTMLButtonElement>('.spell-history-close');
+      const overlay = document.querySelector<HTMLElement>('.spell-history-overlay');
+      const btn = document.querySelector<HTMLButtonElement>('#random-btn');
+      const ul = document.querySelector<HTMLUListElement>('#random-history');
+      const emptyHistory = document.getElementById('random-history-empty');
+      if (!widget || !openButton || !closeButton || !overlay || !btn || !ul) return;
 
-      // Container with vertical flow: button on top, history list below
-      const container = document.createElement('div');
-      container.className = 'spell-history';
+      const randomHistory: { id: string; name: string }[] = [];
+      let previousOverflow = '';
 
-      const btn = document.createElement('button');
-      btn.id = 'random-btn';
-      btn.type = 'button';
-      btn.className = 'filter-button';
-      btn.innerHTML = '<span class="filter-icon">🎲</span>Случайное заклинание';
-
-      const ul = document.createElement('ul');
-      ul.id = 'random-history';
-      ul.setAttribute('role', 'list');
-
-      container.appendChild(btn);
-      container.appendChild(ul);
-      widget.appendChild(container);
-      document.body.appendChild(widget);
-
-      const randomHistory = [];
-
-      function escapeHtml(str) {
-        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      function setSidebarOpen(isOpen: boolean) {
+        if (isOpen) previousOverflow = document.body.style.overflow;
+        widget.classList.toggle('is-collapsed', !isOpen);
+        widget.inert = !isOpen;
+        widget.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen) widget.setAttribute('aria-modal', 'true');
+        else widget.removeAttribute('aria-modal');
+        openButton.hidden = isOpen;
+        openButton.setAttribute('aria-expanded', String(isOpen));
+        overlay.hidden = !isOpen;
+        document.body.style.overflow = isOpen ? 'hidden' : previousOverflow;
+        if (isOpen) closeButton.focus();
+        else openButton.focus();
       }
+
+      openButton.addEventListener('click', () => setSidebarOpen(true));
+      closeButton.addEventListener('click', () => setSidebarOpen(false));
+      overlay.addEventListener('click', () => setSidebarOpen(false));
+      document.addEventListener('keydown', (event) => {
+        if (widget.inert || filterPopup?.open) return;
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setSidebarOpen(false);
+        }
+        if (event.key === 'Tab') {
+          const focusable = widget.querySelectorAll<HTMLElement>('button, a[href]');
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
 
       function makeListItem(item) {
         const li = document.createElement('li');
@@ -609,6 +677,7 @@ const spellSchools = [
           e.preventDefault();
           const id = a.dataset.spellId;
           if (!id) return;
+          setSidebarOpen(false);
           const row = document.querySelector(`[data-spell-id="${id}"]`);
           if (row instanceof HTMLElement) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
           showSpellDetails(id);
@@ -627,6 +696,7 @@ const spellSchools = [
       function renderHistory() {
         // keep DOM in sync with array (we only prepend/limit so a minimal approach)
         ul.innerHTML = '';
+        if (emptyHistory) emptyHistory.hidden = randomHistory.length > 0;
         randomHistory.forEach(item => {
           const li = makeListItem(item);
           ul.appendChild(li);
@@ -826,48 +896,179 @@ const spellSchools = [
 </script>
 
 <style>
+  [hidden] {
+    display: none !important;
+  }
+
   .filter-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
     background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: none;
+    color: var(--background);
+    border-radius: 999px;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0;
+    padding: 0 0.3rem;
   }
 
-  .checkbox-label.checked {
-    background: var(--primary);
-    color: white;
+  .checkbox-label.checked,
+  .checkbox-label:has(input:checked) {
+    background: var(--subclass-feature-bg);
+    color: var(--text);
     border-color: var(--primary);
   }
 
-  /* Random spell widget */
-  #random-spell-widget {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    width: 260px;
-    z-index: 10010;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+  .results-summary,
+  .filter-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
-  #random-spell-widget .spell-history {
+  .results-summary {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .results-summary p { margin: 0; }
+
+  .filter-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .reset-button {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    background: var(--card-bg);
+    color: var(--primary);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .reset-button:disabled { opacity: 0.5; cursor: default; }
+  .reset-button:not(:disabled):hover { background: var(--nav-hover-bg); }
+
+  .empty-state {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  .filter-button:focus-visible,
+  .close-button:focus-visible,
+  .reset-button:focus-visible,
+  .subclass-toggle:focus-visible,
+  .checkbox-label:has(input:focus-visible),
+  .search-input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+
+  .spell-history-fab {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1rem;
+    z-index: 1001;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text);
+    box-shadow: var(--card-shadow);
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .spell-history-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  #random-spell-widget {
+    position: fixed;
+    bottom: 1rem;
+    right: 0;
+    width: min(320px, calc(100vw - 1rem));
+    max-height: calc(100vh - 6.5rem);
+    max-height: calc(100dvh - 6.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-right: none;
+    padding: 1rem;
+    border-radius: 0.75rem 0 0 0.75rem;
+    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.85rem;
     align-items: stretch;
-    max-height: 260px;
+    transform: translateX(0);
+    transition: transform 220ms ease, visibility 220ms;
+  }
+
+  #random-spell-widget.is-collapsed {
+    transform: translateX(105%);
+    visibility: hidden;
+  }
+
+  .spell-history-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  #spell-history-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .spell-history-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: var(--background);
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  #random-history-empty {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .spell-history-fab:focus-visible,
+  .spell-history-close:focus-visible,
+  #random-btn:focus-visible,
+  #random-history :global(a:focus-visible) {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
   }
 
   /* Специфичный стиль для кнопки случайного заклинания */
@@ -928,11 +1129,11 @@ const spellSchools = [
     width: 100%;
   }
 
-  #random-spell-widget #random-history li {
+  #random-spell-widget #random-history :global(li) {
     width: 100%;
   }
 
-  #random-spell-widget #random-history a {
+  #random-spell-widget #random-history :global(a) {
     display: block;
     padding: 0.4rem 0.6rem;
     background: var(--card-bg);
@@ -946,23 +1147,21 @@ const spellSchools = [
     transition: background 0.2s ease;
   }
 
-  #random-spell-widget #random-history a:hover {
+  #random-spell-widget #random-history :global(a:hover) {
     background: var(--nav-hover-bg);
     border-color: var(--primary);
   }
 
   /* history item animations */
-  .history-item {
-    opacity: 0;
-    transform: translateY(-8px);
+  #random-history :global(.history-item) {
     will-change: transform, opacity;
   }
 
-  .history-item.enter {
+  #random-history :global(.history-item.enter) {
     animation: fadeIn 0.28s ease-out forwards;
   }
 
-  .history-item.exit {
+  #random-history :global(.history-item.exit) {
     animation: fadeOut 0.28s ease-out forwards;
   }
 
@@ -975,18 +1174,28 @@ const spellSchools = [
     from { opacity: 1; transform: translateY(0); }
     to   { opacity: 0; transform: translateY(-10px); }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    #random-spell-widget { transition: none; }
+    #random-history :global(.history-item) { animation: none; }
+  }
+
   .content {
     max-width: 1400px;
+    width: 100%;
+    min-width: 0;
     margin: 0 auto;
   }
 
   .spells-container {
     display: grid;
-    grid-template-columns: 2.5fr 3fr;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
     gap: 2rem;
     margin-top: 2rem;
     align-items: start;
   }
+
+  .spells-list { min-width: 0; }
 
   .search-controls {
     display: flex;
@@ -996,6 +1205,7 @@ const spellSchools = [
 
   .search-input {
     flex: 1;
+    min-width: 0;
     padding: 0.75rem;
     border: 1px solid var(--card-border);
     border-radius: 0.5rem;
@@ -1013,25 +1223,32 @@ const spellSchools = [
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font: inherit;
+    min-height: 44px;
   }
+
+  .filter-button.has-filters { border-color: var(--primary); }
 
   .filter-icon {
     font-size: 1.2rem;
   }
 
   .filter-popup {
-    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--text);
   }
 
-  .filter-popup.show {
-    display: block;
+  .filter-popup::backdrop {
+    background: rgba(0, 0, 0, 0.6);
   }
 
   .filter-content {
@@ -1042,10 +1259,12 @@ const spellSchools = [
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 0.5rem;
-    min-width: 520px;
-    max-width: 98%;
+    box-sizing: border-box;
+    width: min(640px, calc(100% - 2rem));
     max-height: 90vh;
+    max-height: 90dvh;
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .filter-header {
@@ -1079,60 +1298,97 @@ const spellSchools = [
     margin-top: 0.5rem;
   }
 
-  /* Subclass specific styles */
-  .subclass-class {
-    display: block;
-    border: 1px solid var(--card-border);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background: var(--card-bg);
-    width: 100%;
-    margin-bottom: 0.5rem;
+  .filter-hint {
+    margin: 0.5rem 0 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
+
+  .subclass-filters {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .subclass-class {
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    background: var(--card-bg);
+  }
+
+  .subclass-class[open],
+  .subclass-class.has-selection { border-color: var(--primary); }
 
   .subclass-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    background: transparent;
-    border: none;
+    gap: 0.75rem;
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: var(--background);
     cursor: pointer;
-    font-weight: 700;
     color: var(--text);
-    border-bottom: 1px solid var(--card-border);
+    list-style: none;
+    font: inherit;
+    font-weight: 600;
+  }
+
+  .subclass-toggle::-webkit-details-marker { display: none; }
+  .subclass-toggle:hover { background: var(--nav-hover-bg); }
+  .subclass-name { flex: 1; }
+
+  .subclass-count,
+  .subclass-selected {
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: var(--card-bg);
+    white-space: nowrap;
+  }
+
+  .subclass-selected {
+    color: var(--subclass-feature-title);
+    background: var(--subclass-feature-bg);
   }
 
   .subclass-toggle::after {
-    content: '▾';
+    content: '';
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
     transition: transform .15s ease;
-    opacity: 0.8;
-    margin-left: 0.5rem;
+    flex-shrink: 0;
   }
 
-  .subclass-toggle.open::after {
-    transform: rotate(180deg);
+  .subclass-class[open] > .subclass-toggle::after {
+    transform: rotate(225deg);
   }
 
   .subclass-list {
-    display: none;
-    padding: 0.5rem;
-    gap: 0.5rem;
-    box-shadow: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.75rem;
+    gap: 0.625rem;
+    border-top: 1px solid var(--card-border);
   }
 
   .subclass-list .checkbox-label {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
     min-width: 0;
-    padding: 0.45rem 0.6rem;
-    border-radius: 0.35rem;
-    background: transparent;
-    border: 1px solid var(--card-border);
+    min-height: 44px;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.5rem;
+    overflow-wrap: anywhere;
   }
+
+  .checkbox-label:hover { border-color: var(--primary); }
+  .checkbox-label input { flex-shrink: 0; }
 
   .checkbox-label {
     display: flex;
@@ -1147,22 +1403,34 @@ const spellSchools = [
     justify-content: center;
     transition: border-color 0.2s, background 0.2s;
     accent-color: var(--primary);
-    margin-right: 0.5rem;
-    border-color: var(--primary);
   }
 
   .spells-grid {
     display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+  }
+
+  .spells-grid:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+
+  .table-scroll-hint {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .spells-table {
     width: 100%;
+    min-width: 56rem;
     border-collapse: collapse;
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 0.5rem;
-    overflow: hidden;
   }
 
   .spells-table thead {
@@ -1181,7 +1449,24 @@ const spellSchools = [
   .spells-table th.sortable {
     cursor: pointer;
     user-select: none;
+    white-space: nowrap;
   }
+
+  .sort-icon { display: inline-block; }
+
+  .spells-table td.col-name {
+    width: 12rem;
+    min-width: 10rem;
+    overflow-wrap: anywhere;
+  }
+
+  .spells-table td.col-casting {
+    min-width: 12rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .spells-table td.col-range { min-width: 8rem; }
 
   .spells-table tbody tr:hover {
     background: var(--nav-hover-bg);
@@ -1242,13 +1527,16 @@ const spellSchools = [
     position: sticky;
     top: 5rem;
     align-self: start;
-    z-index: 20;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
     max-height: calc(100vh - 7rem);
     overflow-y: auto;
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 0.5rem;
     border: 1px solid var(--card-border);
+    overflow-wrap: anywhere;
   }
 
   .spell-description-container {
@@ -1324,7 +1612,7 @@ const spellSchools = [
   .scroll-to-top {
     position: fixed;
     right: 1rem;
-    bottom: 1.25rem;
+    bottom: 5rem;
     width: 44px;
     height: 44px;
     display: inline-flex;
@@ -1339,7 +1627,7 @@ const spellSchools = [
     opacity: 0;
     transform: translateY(8px);
     transition: opacity .18s ease, transform .18s ease;
-    z-index: 10002;
+    z-index: 998;
   }
 
   .scroll-to-top.visible {
@@ -1349,8 +1637,20 @@ const spellSchools = [
 
   /* Mobile / responsive tweaks */
   @media (max-width: 1024px) {
+    .spell-history-fab {
+      top: 5.25rem;
+      right: 0.75rem;
+      bottom: auto;
+    }
+    #random-spell-widget {
+      top: 5rem;
+      bottom: auto;
+      max-height: calc(100vh - 6rem);
+      max-height: calc(100dvh - 6rem);
+    }
+    .scroll-to-top { bottom: 1.25rem; }
     .spells-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
     .spell-details {
       position: static;
@@ -1360,24 +1660,28 @@ const spellSchools = [
       margin-top: 1rem;
     }
     .spells-container { gap: 1rem; }
+
+    /* Keep row context visible while the remaining columns scroll. */
+    .spells-table th:first-child,
+    .spells-table td.col-name {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--card-bg);
+      box-shadow: 2px 0 0 var(--card-border);
+    }
+
+    .spells-table th:first-child { background: var(--background); }
+    .spells-table tbody tr:hover td.col-name { background: var(--nav-hover-bg); }
   }
 
   @media (max-width: 768px) {
     .search-controls { flex-direction: column; align-items: stretch; }
     .filter-button { width: 100%; justify-content: center; }
-    .filter-content { min-width: 92%; max-width: 96%; padding: 1rem; }
+    .filter-content { padding: 1rem; }
 
     .spells-table th,
     .spells-table td { padding: 0.45rem 0.5rem; font-size: 0.92rem; }
-    .spells-table .name-en { display: none; }
-
-    /* Hide less-critical columns on small screens to reduce horizontal width */
-    .spells-table th[data-sort="source"], .spells-table td.col-source,
-    .spells-table th[data-sort="range"], .spells-table td.col-range {
-      display: none;
-    }
-
-    .spells-grid { overflow-x: auto; }
 
     .checkbox-group { gap: 0.5rem; }
     .checkbox-label { min-width: 0; padding: 0.4rem 0.6rem; font-size: 0.9rem; }
@@ -1389,5 +1693,8 @@ const spellSchools = [
     .filter-content { padding: 0.75rem; }
     .filter-header h3 { font-size: 1rem; }
     .spell-details { padding: 1rem; }
+    .subclass-list { grid-template-columns: 1fr; }
+    .subclass-toggle { padding: 0.75rem; gap: 0.5rem; }
+    .subclass-toggle:has(.subclass-selected:not([hidden])) .subclass-count { display: none; }
   }
 </style>

@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { books } from '../../data/books';
+import '../../styles/books.css';
+---
+<Layout title="Библиотека книг — Лига Героев">
+  <div class="books-library">
+    <header class="books-library-header">
+      <p class="books-eyebrow">Читать и изучать</p>
+      <h1>Библиотека книг</h1>
+      <p>Правила игры, создание персонажа и миры приключений — в одном месте.</p>
+    </header>
+    <div class="books-catalog-search" hidden>
+      <label for="books-filter">Найти книгу</label>
+      <input id="books-filter" type="search" placeholder="Название, редакция или описание…" />
+      <p role="status" aria-live="polite" id="books-filter-status"></p>
+    </div>
+    <div class="books-grid">
+      {books.map((book) => (
+        <article class="books-card" data-book-card data-search={`${book.title} ${book.subtitle} ${book.description}`.toLocaleLowerCase('ru')}>
+          <a class="books-card-cover" href={`/books/${book.id}/`} tabindex="-1" aria-hidden="true">
+            {book.cover && <img src={book.cover.src} alt="" width={book.cover.width} height={book.cover.height} loading="lazy" decoding="async" />}
+            <span>D&D {book.edition}</span>
+          </a>
+          <div class="books-card-body">
+            <p class="books-eyebrow">Русский язык · {book.coverageLabel || (book.status === 'partial' ? 'Первые разделы' : 'Полная книга')}</p>
+            <h2><a href={`/books/${book.id}/`}>{book.title}</a></h2>
+            <p>{book.description}</p>
+            <a class="book-primary-link" href={`/books/${book.id}/`}>Открыть книгу →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+<script>
+  const controls = document.querySelector<HTMLElement>('.books-catalog-search');
+  const input = document.querySelector<HTMLInputElement>('#books-filter');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-book-card]'));
+  const status = document.querySelector<HTMLElement>('#books-filter-status');
+  if (controls && input && status) {
+    controls.hidden = false;
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLocaleLowerCase('ru');
+      let count = 0;
+      for (const card of cards) {
+        card.hidden = !(card.dataset.search || '').includes(query);
+        if (!card.hidden) count++;
+      }
+      status.textContent = count ? `Книг найдено: ${count}` : 'Книги не найдены. Попробуйте другой запрос.';
+    });
+  }
+</script>

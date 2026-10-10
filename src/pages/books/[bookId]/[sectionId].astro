@@ -1,0 +1,49 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BookShell from '../../../components/books/BookShell.astro';
+import BookBlock from '../../../components/books/BookBlock.astro';
+import { books, bookPageRange, bookSectionUrl, getBookSection } from '../../../data/books';
+import type { Book, BookSection } from '../../../types/book';
+import '../../../styles/books.css';
+export function getStaticPaths() {
+  return books.flatMap((book) => book.sections.map((summary) => ({
+    params: { bookId: book.id, sectionId: summary.id },
+    props: { book, section: getBookSection(book.id, summary.id) },
+  })));
+}
+interface Props { book: Book; section: BookSection }
+const { book, section } = Astro.props;
+const position = book.sections.findIndex((entry) => entry.id === section.id);
+const previous = book.sections[position - 1];
+const next = book.sections[position + 1];
+const contents = section.pages.flatMap((page) => page.blocks.flatMap((block) => {
+  const heading = block.kind === 'heading' ? block
+    : block.kind === 'callout' ? block.blocks.find((child) => child.kind === 'heading') : undefined;
+  return heading?.kind === 'heading' ? [{ title: heading.spans.map((span) => span.text).join(''), anchor: block.id }] : [];
+}));
+---
+<Layout title={`${section.title} — ${book.title}`}>
+  <BookShell book={book} activeSection={section.id}>
+    <header class="book-reading-header">
+      <p class="books-eyebrow"><a href={`/books/${book.id}/`}>{book.title}</a> · D&D {book.edition}</p>
+      <h1>{section.title}</h1>
+      <p class="book-source-range">Страницы {bookPageRange(section.sourcePages, book.pageLabels)} русского издания</p>
+      {contents.length > 1 && <details class="book-section-contents">
+        <summary>В этом разделе</summary>
+        <ul>{contents.map((entry) => <li><a href={`#${entry.anchor}`}>{entry.title}</a></li>)}</ul>
+      </details>}
+    </header>
+    <article class="book-content" aria-label={section.title}>
+      {section.pages.map((page) => (
+        <section class="book-source-page" id={`page-${page.number}`} data-book-page={page.number} aria-label={`Страница ${book.pageLabels?.[page.number] || page.number}`}>
+          <p class="book-page-label">Страница {book.pageLabels?.[page.number] || page.number}</p>
+          {page.blocks.map((block) => <BookBlock block={block} />)}
+        </section>
+      ))}
+    </article>
+    <nav class="book-pagination" aria-label="Переход между разделами">
+      {previous ? <a href={bookSectionUrl(book.id, previous.id)}><small>← Предыдущий раздел</small><span>{previous.title}</span></a> : <span />}
+      {next ? <a href={bookSectionUrl(book.id, next.id)}><small>Следующий раздел →</small><span>{next.title}</span></a> : <a href={`/books/${book.id}/`}><small>К оглавлению →</small><span>Все разделы книги</span></a>}
+    </nav>
+  </BookShell>
+</Layout>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import MaterialMetadata from '../../components/materials/MaterialMetadata.astro';
 import { items } from '../../data/items';
 
 export function getStaticPaths() {
@@ -19,7 +20,7 @@ const { item } = Astro.props;
     <div class="item-details">
       <div class="item-header">
         <h1>{item.name} <span class="name-en">[{item.nameEn}]</span></h1>
-        <div class="source">{item.sourceBook}</div>
+        <MaterialMetadata kind="item" id={item.id} />
       </div>
 
       <div class="item-meta">
@@ -29,8 +30,11 @@ const { item } = Astro.props;
       </div>
 
       <div class="item-description">
-        {item.description}
+        {item.description.trim()}
       </div>
+      {item.additionalRulesSource && (
+        <p><a href={item.additionalRulesSource} target="_blank" rel="noopener noreferrer">Источник дополнительных механик: XGE, «Владение инструментами» ↗</a></p>
+      )}
     </div>
   </div>
 </Layout>
@@ -65,6 +69,7 @@ const { item } = Astro.props;
   }
 
   .name-en {
+    display: block;
     color: var(--text);
     opacity: 0.7;
     font-size: 0.8em;
@@ -83,5 +88,15 @@ const { item } = Astro.props;
 
   .item-description {
     line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 768px) {
+    .item-details { padding: 1rem; }
+    .item-header { margin-bottom: 1.25rem; }
+    .item-header h1 { font-size: 1.6rem; overflow-wrap: anywhere; }
+    .back-link { min-height: 44px; padding: .5rem 0; margin-bottom: 1rem; }
+    .item-meta { margin-bottom: 1.25rem; }
   }
 </style>

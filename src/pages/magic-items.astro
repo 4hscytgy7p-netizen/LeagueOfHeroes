@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { magicItems } from '../data/magicItems';
+import { getPublishedMaterial } from '../data/materials';
+import { renderMaterialMetadata } from '../utils/materialPresentation';
+const itemsWithMetadata = magicItems.map(item => ({ ...item, materialMetadataHtml: renderMaterialMetadata(getPublishedMaterial('magic-item', item.id)) }));
 
 const sortedItems = [...magicItems].sort((a, b) => 
   a.name.localeCompare(b.name, 'ru')
@@ -18,11 +21,31 @@ const rarityLabels = {
 ---
 
 <Layout title="Магические предметы">
+  <button id="random-item-toggle" type="button" class="item-history-fab" aria-label="Открыть историю магических предметов" aria-controls="random-item-slider" aria-expanded="false">
+    <span aria-hidden="true">☰</span>
+  </button>
+  <div class="item-history-overlay" hidden></div>
+  <aside id="random-item-slider" class="item-history is-collapsed" role="dialog" aria-labelledby="item-history-title" aria-hidden="true" inert>
+    <div class="item-history-head">
+      <h2 id="item-history-title">История предметов</h2>
+      <button type="button" class="item-history-close" aria-label="Закрыть историю магических предметов">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+    </div>
+    <button id="random-item-btn" type="button">
+      <span class="filter-icon" aria-hidden="true">🎲</span>Случайный предмет
+    </button>
+    <p id="random-item-history-empty">Выберите случайный предмет — здесь появятся последние пять результатов.</p>
+    <ul id="random-item-history" role="list" aria-label="Последние случайные магические предметы"></ul>
+  </aside>
   <div class="content">
     <h1>Магические предметы</h1>
+    <p><a href="/general-rules#consumable-components">Расходуемые компоненты при наложении заклинаний из предметов →</a> · <a href="/rules/equipment#containers">Контейнеры на персонаже →</a></p>
     
     <div class="magic-items-container">
-      <div id="items-data" data-items={JSON.stringify(magicItems)} style="display: none;"></div>
+      <div id="items-data" data-items={JSON.stringify(itemsWithMetadata)} style="display: none;"></div>
       
       <div class="items-list">
         <div class="search-container">
@@ -607,7 +630,7 @@ const rarityLabels = {
         <div class="details-content">
           <div class="item-header">
             <h2>${item.name}</h2>
-            <div class="source">${item.source.book}, ${item.source.page}</div>
+            ${item.materialMetadataHtml}
           </div>
           
           <div class="item-meta">
@@ -933,50 +956,57 @@ const rarityLabels = {
       }).catch(err=>{ try { initTooltips(); } catch (err2) { console.warn('tooltips init failed', err2); } });
     })();
     
-    // Random item slider widget (append to body). Collapsed by default; handle sticks out from the right.
+    // Keep the drawer markup in Astro so its scoped styles apply.
     (function createRandomItemWidget(){
-      const slider = document.createElement('div');
-      slider.id = 'random-item-slider';
-      slider.className = 'random-slider';
+      const slider = document.querySelector<HTMLElement>('#random-item-slider');
+      const openButton = document.querySelector<HTMLButtonElement>('#random-item-toggle');
+      const closeButton = document.querySelector<HTMLButtonElement>('.item-history-close');
+      const overlay = document.querySelector<HTMLElement>('.item-history-overlay');
+      const btn = document.querySelector<HTMLButtonElement>('#random-item-btn');
+      const list = document.querySelector<HTMLUListElement>('#random-item-history');
+      const emptyHistory = document.getElementById('random-item-history-empty');
+      if (!slider || !openButton || !closeButton || !overlay || !btn || !list) return;
 
-      // panel (hidden when collapsed)
-      const panel = document.createElement('div');
-      panel.className = 'random-panel';
+      const randomHistory: { id: string; name: string }[] = [];
+      let previousOverflow = '';
 
-      const ul = document.createElement('ul');
-      ul.id = 'random-item-history';
-      ul.setAttribute('role', 'list');
+      function setSidebarOpen(isOpen: boolean) {
+        if (isOpen) previousOverflow = document.body.style.overflow;
+        slider.classList.toggle('is-collapsed', !isOpen);
+        slider.inert = !isOpen;
+        slider.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen) slider.setAttribute('aria-modal', 'true');
+        else slider.removeAttribute('aria-modal');
+        openButton.hidden = isOpen;
+        openButton.setAttribute('aria-expanded', String(isOpen));
+        overlay.hidden = !isOpen;
+        document.body.style.overflow = isOpen ? 'hidden' : previousOverflow;
+        if (isOpen) closeButton.focus();
+        else openButton.focus();
+      }
 
-      const btn = document.createElement('button');
-      btn.id = 'random-item-btn';
-      btn.type = 'button';
-      btn.className = 'filter-button';
-      btn.innerHTML = '<span class="filter-icon">🎲</span>Случайный предмет';
-
-      // place list above the button so button stays fixed at bottom
-      panel.appendChild(ul);
-      panel.appendChild(btn);
-
-      // handle that sticks out when collapsed
-      const handle = document.createElement('button');
-      handle.id = 'random-item-toggle';
-      handle.className = 'random-toggle';
-      handle.type = 'button';
-      handle.setAttribute('aria-expanded', 'false');
-      handle.innerHTML = '<span class="toggle-arrow">◀</span>';
-
-      slider.appendChild(panel);
-      slider.appendChild(handle);
-      document.body.appendChild(slider);
-
-      // гарантируем фиксированное положение внизу справа и приоритет по z-index
-      slider.style.position = 'fixed';
-      slider.style.right = '2rem';
-      slider.style.bottom = '2rem';
-      slider.style.top = 'auto';
-      slider.style.zIndex = '2147483647';
-
-      const randomHistory: any[] = [];
+      openButton.addEventListener('click', () => setSidebarOpen(true));
+      closeButton.addEventListener('click', () => setSidebarOpen(false));
+      overlay.addEventListener('click', () => setSidebarOpen(false));
+      document.addEventListener('keydown', (event) => {
+        if (slider.inert || filterPopup?.classList.contains('show')) return;
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setSidebarOpen(false);
+        }
+        if (event.key === 'Tab') {
+          const focusable = slider.querySelectorAll<HTMLElement>('button, a[href]');
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
 
       function makeListItem(item: any) {
         const li = document.createElement('li');
@@ -991,8 +1021,8 @@ const rarityLabels = {
           e.preventDefault();
           const id = a.dataset.itemId;
           if (!id) return;
-          history.pushState({ itemId: id }, '', `/magic-items/${encodeURIComponent(id)}`);
-          try { showItemDetails(id); } catch (err) { console.warn(err); }
+          setSidebarOpen(false);
+          showItemDetails(id);
         });
 
         li.addEventListener('animationend', () => {
@@ -1004,9 +1034,8 @@ const rarityLabels = {
       }
 
       function renderHistory() {
-        const list = document.getElementById('random-item-history');
-        if (!list) return;
         list.innerHTML = '';
+        if (emptyHistory) emptyHistory.hidden = randomHistory.length > 0;
         randomHistory.forEach(it => list.appendChild(makeListItem(it)));
         // show newest items at top and ensure list scrolls to top to reveal the latest
         list.scrollTop = 0;
@@ -1040,30 +1069,8 @@ const rarityLabels = {
         if (randomHistory.length > 5) randomHistory.pop();
         renderHistory();
 
-        history.pushState({ itemId: item.id }, '', `/magic-items/${encodeURIComponent(item.id)}`);
-        try { showItemDetails(item.id); } catch (err) { console.warn(err); }
+        showItemDetails(item.id);
       });
-
-      // Toggle open/close
-      function setOpen(open) {
-        slider.classList.toggle('open', open);
-        handle.setAttribute('aria-expanded', String(!!open));
-        const arrow = handle.querySelector('.toggle-arrow');
-        if (arrow) arrow.textContent = open ? '▶' : '◀';
-        // accessibility: mark panel hidden when collapsed
-        panel.setAttribute('aria-hidden', String(!open));
-        if (open) {
-          // move keyboard focus into the panel's button for immediate action
-          btn.focus();
-        } else {
-          handle.focus();
-        }
-      }
-
-      handle.addEventListener('click', () => setOpen(!slider.classList.contains('open')));
-
-      // Start collapsed
-      setOpen(false);
     })();
     
     // Initialize filter system
@@ -1113,180 +1120,216 @@ const rarityLabels = {
     margin-top: 2rem;
   }
 
-  /* Random item slider — модифицированный для закрепления внизу справа */
-  .random-slider {
-    position: fixed !important;
-    right: 2rem !important;
-    bottom: 2rem !important;
-    top: auto !important;
-    z-index: 2147483647 !important;
-    display: flex;
-    align-items: flex-end;
-    pointer-events: auto;
-    user-select: none;
-    --handle-width: 44px;
-    gap: 0;
-    transform: none !important;
+  .item-history-fab[hidden],
+  .item-history-overlay[hidden],
+  #random-item-history-empty[hidden] {
+    display: none;
   }
 
-  /* панель выезжает влево относительно ручки (скрыта по-умолчанию) */
-  .random-slider .random-panel {
-    position: absolute;
-    right: calc(var(--handle-width) + 0px);
-    bottom: 0;
-    width: 320px;
-    max-height: 420px;
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--card-border, #e6e6e6);
-    border-radius: 8px;
-    padding: 0;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    transform: translateX(calc(100% + var(--handle-width)));
-    transition: transform 220ms ease, opacity 180ms ease;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    pointer-events: auto;
-    overflow: hidden;
-  }
-
-  /* открытое состояние */
-  .random-slider.open .random-panel {
-    transform: translateX(0);
-  }
-
-  /* ручка (toggle) */
-  .random-toggle {
-    width: var(--handle-width);
-    height: 56px;
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--card-border, #e6e6e6);
-    border-radius: 8px;
+  .item-history-fab {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1rem;
+    z-index: 1001;
+    width: 2.75rem;
+    height: 2.75rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    pointer-events: auto;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    margin-left: 8px;
-    flex-shrink: 0;
-  }
-
-  /* состояние при ховере */
-  .random-toggle:hover { 
-    background: var(--nav-hover-bg, #f5f5f7); 
-  }
-
-  .random-toggle .toggle-arrow {
-    font-size: 1.05rem;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: var(--card-bg);
     color: var(--text);
+    box-shadow: var(--card-shadow);
+    font-size: 1.25rem;
+    cursor: pointer;
   }
 
-  .random-slider.open .random-toggle {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  .item-history-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.45);
   }
 
-  .random-slider.open .random-toggle .toggle-arrow {
-    color: white;
+  #random-item-slider {
+    position: fixed;
+    bottom: 1rem;
+    right: 0;
+    width: min(320px, calc(100vw - 1rem));
+    max-height: calc(100vh - 6.5rem);
+    max-height: calc(100dvh - 6.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-right: none;
+    padding: 1rem;
+    border-radius: 0.75rem 0 0 0.75rem;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: stretch;
+    transform: translateX(0);
+    transition: transform 220ms ease, visibility 220ms;
   }
 
-  /* стиль списка и кнопки — явно привязаны к слайдеру (приоритет) */
-  #random-item-history { 
-    list-style: none; 
-    margin: 0; 
-    padding: 0.6rem; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 0.5rem; 
-    overflow-y: auto; 
-    max-height: 340px;
-    flex: 1;
-    border-bottom: 1px solid var(--card-border, #e6e6e6);
-  }
-  #random-item-history li { 
-    width: 100%; 
-    list-style: none;
-  }
-  #random-item-history a { 
-    display: block; 
-    padding: 0.5rem 0.7rem; 
-    background: var(--background, #fafafa);
-    border: 1px solid var(--card-border, #e6e6e6); 
-    border-radius: 0.375rem; 
-    color: var(--text, #111); 
-    text-decoration: none; 
-    font-size: 0.9rem; 
-    width: 100%; 
-    text-align: left; 
-    transition: all 0.15s ease;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  #random-item-history a:hover { 
-    background: var(--nav-hover-bg, #f3f4f6); 
-    border-color: var(--primary, #3b82f6);
-    color: var(--primary, #3b82f6);
+  #random-item-slider.is-collapsed {
+    transform: translateX(105%);
+    visibility: hidden;
   }
 
-  /* кнопка — конкретный селектор, чтобы гарантировать применение */
-  #random-item-slider #random-item-btn,
-  #random-item-slider #random-item-btn.filter-button {
-    -webkit-appearance: none;
-    appearance: none;
-    display: flex !important;
+  .item-history-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  #item-history-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .item-history-close {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.7rem 0.8rem;
-    background: var(--primary, #2563eb) !important;
-    color: #fff !important;
-    border: none;
-    border-radius: 0.375rem;
-    font-weight: 600;
-    font-size: 0.95rem;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: var(--background);
+    color: var(--text);
     cursor: pointer;
-    margin: 0.6rem;
-    margin-top: auto;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  }
-  #random-item-slider #random-item-btn:hover {
-    filter: brightness(0.95);
   }
 
-  /* анимации списка оставляем те же */
-  .history-item { 
-    opacity: 0; 
-    transform: translateY(-8px); 
+  #random-item-history-empty {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .item-history-fab:focus-visible,
+  .item-history-close:focus-visible,
+  #random-item-btn:focus-visible,
+  #random-item-history :global(a:focus-visible) {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+
+  /* Кнопка случайного магического предмета */
+  #random-item-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
+  #random-item-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.16);
+    filter: brightness(1.1);
+  }
+
+  #random-item-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  }
+
+  #random-item-btn .filter-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 0.35rem;
+  }
+
+  #random-item-slider #random-item-history {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    overflow-y: auto;
+    max-height: 220px;
+    width: 100%;
+  }
+
+  #random-item-slider #random-item-history :global(li) {
+    width: 100%;
+  }
+
+  #random-item-slider #random-item-history :global(a) {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s ease;
+  }
+
+  #random-item-slider #random-item-history :global(a:hover) {
+    background: var(--nav-hover-bg);
+    border-color: var(--primary);
+  }
+
+  /* history item animations */
+  #random-item-history :global(.history-item) {
     will-change: transform, opacity;
-    list-style: none; 
   }
-  .history-item.enter { animation: slideInUp 0.3s ease-out forwards; }
-  .history-item.exit { animation: slideOutUp 0.3s ease-out forwards; }
-  
-  @keyframes slideInUp { 
-    from { 
-      opacity: 0; 
-      transform: translateY(-12px); 
-    } 
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
-    } 
+
+  #random-item-history :global(.history-item.enter) {
+    animation: fadeIn 0.28s ease-out forwards;
   }
-  
-  @keyframes slideOutUp { 
-    from { 
-      opacity: 1; 
-      transform: translateY(0); 
-    } 
-    to { 
-      opacity: 0; 
-      transform: translateY(-12px); 
-    } 
+
+  #random-item-history :global(.history-item.exit) {
+    animation: fadeOut 0.28s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-10px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #random-item-slider { transition: none; }
+    #random-item-history :global(.history-item) { animation: none; }
   }
 
   .search-container {
@@ -1886,6 +1929,20 @@ const rarityLabels = {
 
   :global(.item-tooltip::-webkit-scrollbar-thumb:hover) {
     background: var(--primary);
+  }
+
+  @media (max-width: 1024px) {
+    .item-history-fab {
+      top: 5.25rem;
+      right: 0.75rem;
+      bottom: auto;
+    }
+    #random-item-slider {
+      top: 5rem;
+      bottom: auto;
+      max-height: calc(100vh - 6rem);
+      max-height: calc(100dvh - 6rem);
+    }
   }
 
   @media (max-width: 768px) {

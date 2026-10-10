@@ -4,112 +4,54 @@ import ClassCard from '../components/classes/ClassCard.astro';
 import { classes, premiumClasses } from '../data/classes';
 import type { Class } from '../types/class';
 
-// Sort classes by Russian name
-const classList = Array.isArray(classes) ? (classes as Class[]) : [];
-const premiumList = Array.isArray(premiumClasses) ? (premiumClasses as Class[]) : [];
-
-const sortedClasses = [...classList].sort((a: Class, b: Class) => 
-  a.name.localeCompare(b.name, 'ru')
-);
-const sortedPremium = [...premiumList].sort((a: Class, b: Class) => 
-  a.name.localeCompare(b.name, 'ru'));
-
+const sortedClasses = [...classes].sort((a: Class, b: Class) => a.name.localeCompare(b.name, 'ru'));
+const sortedPremium = [...premiumClasses].sort((a: Class, b: Class) => a.name.localeCompare(b.name, 'ru'));
+const total = sortedClasses.length + sortedPremium.length;
+const allClasses = [...sortedClasses, ...sortedPremium];
+const subclassTotal = allClasses.reduce((sum, item) => sum + item.subclasses.length, 0);
 ---
 
 <Layout title="Классы">
-  <div class="content">
-    <div class="page-shell">
-      <div class="main-column">
-        <h1>Классы</h1>
+  <div class="classes-page">
+    <header class="catalog-header">
+      <div><h1>Классы</h1><p class="page-description">Найдите свой стиль игры. Сравните характеристики и откройте умения, подклассы и развитие героя.</p></div>
+      <p class="catalog-total"><strong>{total}</strong> классов <span>· {subclassTotal} подкласса</span></p>
+    </header>
 
-        <div class="classes-grid">
-          {sortedClasses.map(classData => (
-            <ClassCard
-              name={classData.name}
-              nameEn={classData.nameEn}
-              portrait={classData.portrait}
-              sourceBook={classData.sourceBook}
-              id={classData.id}
-            />
-          ))}
-        </div>
-
-        <!--
-          <div class="premium-separator">
-            <div class="rule"></div>
-            <div class="label">Эти классы доступны игрокам с ролью @Герой лиги или выше</div>
-            <div class="rule"></div>
-          </div>
-        -->
-
-        <div class="classes-grid premium-grid">
-          {sortedPremium && sortedPremium.map(classData => (
-            <ClassCard
-              name={classData.name}
-              nameEn={classData.nameEn}
-              portrait={classData.portrait}
-              sourceBook={classData.sourceBook}
-              id={classData.id}
-            />
-          ))}
-        </div>
-      </div>
+    <div class="classes-grid" id="classes-list">
+      {sortedClasses.map((classData, index) => (
+        <ClassCard classData={classData} eager={index < 4} />
+      ))}
     </div>
+
+    {sortedPremium.length > 0 && (
+      <section class="additional-classes" aria-labelledby="additional-classes-title">
+        <h2 id="additional-classes-title">Дополнительные классы</h2>
+        <div class="classes-grid" id="additional-classes-list">
+          {sortedPremium.map(classData => <ClassCard classData={classData} />)}
+        </div>
+      </section>
+    )}
   </div>
 </Layout>
 
 <style>
-  .content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .page-shell {
-    display: block;
-  }
-
-  .main-column {
-    min-width: 0;
-  }
-
-  .classes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .premium-separator {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 2.5rem 0 1rem;
-  }
-
-  .premium-separator .rule {
-    height: 1px;
-    background: var(--card-border);
-    flex: 1 1 auto;
-  }
-
-  .premium-separator .label {
-    white-space: nowrap;
-    font-weight: 700;
-    color: var(--text);
-    padding: 0 0.75rem;
-  }
-
-  .premium-grid { margin-top: 1rem; }
-
-  @media (max-width: 1024px) {
-    .classes-grid {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-  }
-
-  @media (max-width: 768px) {
-    .classes-grid {
-      grid-template-columns: 1fr;
-    }
+  .classes-page { max-width: 1200px; margin: 0 auto; }
+  h1 { margin-bottom: 0.5rem; }
+  .page-description { color: var(--text); margin-bottom: 1.5rem; }
+  .catalog-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .catalog-header > div { max-width: 760px; }
+  .catalog-total { flex: 0 0 auto; font-size: 0.875rem; }
+  .catalog-total strong { font-size: 1.5rem; color: var(--primary); }
+  .catalog-total span { display: block; }
+  .classes-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+  .additional-classes { margin-top: 2rem; }
+  .additional-classes h2 { font-size: 1.5rem; }
+  @media (max-width: 1100px) { .classes-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 800px) { .classes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) {
+    .classes-grid { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+    .catalog-header { display: block; }
+    .catalog-total span { display: inline; }
   }
 </style>

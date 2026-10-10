@@ -1,0 +1,38 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BookShell from '../../../components/books/BookShell.astro';
+import { books, bookPageRange, bookSectionUrl, bookSectionGroups } from '../../../data/books';
+import type { Book } from '../../../types/book';
+import '../../../styles/books.css';
+export function getStaticPaths() { return books.map((book) => ({ params: { bookId: book.id }, props: { book } })); }
+interface Props { book: Book }
+const { book } = Astro.props;
+const groups = bookSectionGroups(book);
+---
+<Layout title={`${book.title} — Библиотека Лиги Героев`}>
+  <BookShell book={book}>
+    <header class="book-reading-header">
+      <p class="books-eyebrow">Dungeons & Dragons · {book.edition}</p>
+      <h1>{book.title}</h1>
+      <p>{book.description}</p>
+      <a href={bookSectionUrl(book.id, book.sections[0].id)} class="book-primary-link">Начать чтение →</a>
+    </header>
+    <section class="book-overview" aria-labelledby="book-sections-heading">
+      <h2 id="book-sections-heading">Разделы книги</h2>
+      {groups.map((group) => (
+        <section class="book-overview-group" aria-label={group.title}>
+          <h3>{group.title}</h3>
+          <div class="book-section-list">
+            {group.sections.map((section) => (
+              <a href={bookSectionUrl(book.id, section.id)}>
+                <div><h4>{section.title}</h4>{section.description && <p>{section.description}</p>}</div>
+                <span>стр. {bookPageRange(section.sourcePages, book.pageLabels)} →</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+      {book.status === 'partial' && <p class="book-overview-note">Книга добавляется постепенно. Сейчас можно прочитать выбранные разделы; их страницы указаны по этому русскому изданию.</p>}
+    </section>
+  </BookShell>
+</Layout>

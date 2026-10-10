@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import MaterialMetadata from '../../components/materials/MaterialMetadata.astro';
 import { featsData } from '../../data/feats';
 
 export function getStaticPaths() {
@@ -100,6 +101,7 @@ const featTypes = {
     <div class="feat-header">
       <h1>{feat.name} <span class="name-en">[{feat.nameEn}]</span></h1>
       <div class="feat-type">{featTypes[feat.type]}</div>
+      <MaterialMetadata kind="feat" id={feat.id} />
     </div>
 
     <div class="feat-content">

@@ -4,6 +4,7 @@ import CharacterWizard from '../../components/characterCreator/CharacterWizard.a
 import { speciesData } from '../../data/species/index';
 import { raceData, getRaceData } from '../../data/raceSizeData.js';
 import { classes } from '../../data/classes';
+import { speciesVariantMaterialId } from '../../utils/materialCatalog';
 
 const variantSizeCalculators: Record<string, Record<string, any>> = {
   elf: {
@@ -39,7 +40,8 @@ const speciesOptions = speciesData.map((item: any) => ({
       ? item.traits.abilities.map((description: string) => ({ title: 'Особенность', description }))
       : [],
   variants: Array.isArray(item.variants)
-    ? item.variants.map((variant: any) => ({
+    ? item.variants.map((variant: any, index: number) => ({
+        materialId: speciesVariantMaterialId(item.id, variant, index),
         id: `${item.id}-${String(variant.nameEn || variant.name).toLowerCase().replace(/[^a-zа-я0-9]+/gi, '-')}`,
         name: variant.name,
         nameEn: variant.nameEn,
@@ -96,12 +98,23 @@ const classOptions = classes
 </Layout>
 
 <script>
-  import { isTestAccountConfigured, testAccountSupabase } from '../../utils/testAccount';
+  import {
+    isLocalAuthBypassEnabled,
+    isTestAccountConfigured,
+    testAccountSupabase
+  } from '../../utils/testAccount';
 
   const protectedContent = document.querySelector<HTMLElement>('#protected-character-creator');
   const status = document.querySelector<HTMLElement>('#creator-auth-status');
 
   async function requireRegistration() {
+    if (isLocalAuthBypassEnabled) {
+      if (status) status.remove();
+      if (protectedContent) protectedContent.hidden = false;
+      document.documentElement.dataset.authMode = 'local-test-bypass';
+      return;
+    }
+
     if (!isTestAccountConfigured || !testAccountSupabase) {
       if (status) status.textContent = 'Авторизация пока не настроена.';
       return;

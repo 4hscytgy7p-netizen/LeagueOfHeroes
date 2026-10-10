@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import MaterialMetadata from '../../components/materials/MaterialMetadata.astro';
 import { magicItems } from '../../data/magicItems';
 
 export function getStaticPaths() {
@@ -103,7 +104,7 @@ function formatCraftingTools(toolIndices: number[]): string {
     <div class="item-details">
       <div class="item-header">
         <h1>{item.name}</h1>
-        <div class="source">{item.source.book}, {item.source.page}</div>
+        <MaterialMetadata kind="magic-item" id={item.id} />
       </div>
       
       <div class="item-meta">

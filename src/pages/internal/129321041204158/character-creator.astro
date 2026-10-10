@@ -5,6 +5,7 @@ import CharacterCloudSync from '../../../components/characterCreator/CharacterCl
 import { speciesData } from '../../../data/species/index';
 import { raceData, getRaceData } from '../../../data/raceSizeData.js';
 import { classes } from '../../../data/classes';
+import { speciesVariantMaterialId } from '../../../utils/materialCatalog';
 
 const variantSizeCalculators: Record<string, Record<string, any>> = {
   elf: {
@@ -52,7 +53,8 @@ const speciesOptions = speciesData.map((item: any) => ({
         }))
       : [],
   variants: Array.isArray(item.variants)
-    ? item.variants.map((variant: any) => ({
+    ? item.variants.map((variant: any, index: number) => ({
+        materialId: speciesVariantMaterialId(item.id, variant, index),
         id: `${item.id}-${String(variant.nameEn || variant.name)
           .toLowerCase()
           .replace(/[^a-zа-я0-9]+/gi, '-')}`,

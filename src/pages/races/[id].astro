@@ -1,11 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { speciesPageVariants } from '../../utils/speciesPage';
 import { speciesData } from '../../data/species/index';
-import { spells as allSpells } from '../../data/spells';
+import { spells as allSpells } from '../../data/spells/index.ts';
 import { getRaceData, raceData } from '../../data/raceSizeData.js';
 import SpeciesHeader from '../../components/species/SpeciesHeader.astro';
-import SpeciesStats from '../../components/species/SpeciesStats.astro';
-import SpeciesAbility from '../../components/species/SpeciesAbility.astro';
+import SpeciesView from '../../components/species/SpeciesView.astro';
 import VariantSelector from '../../components/species/VariantSelector.astro';
 
 export function getStaticPaths() {
@@ -16,6 +16,7 @@ export function getStaticPaths() {
 }
 
 const { species } = Astro.props;
+const pageVariants = speciesPageVariants(species);
 const raceSizeDataEntry = raceData[species.id] || null;
 const raceSizeEntry = getRaceData(species.id) || null;
 const showCalculator = !!raceSizeEntry;
@@ -26,34 +27,19 @@ const showCalculator = !!raceSizeEntry;
     <a href="/races" class="back-link">← Назад к списку видов</a>
     
     <SpeciesHeader 
+      id={species.id}
       name={species.name}
       nameEn={species.nameEn}
       sourceBook={species.sourceBook}
     />
     
     <div class="content">
-      {species.variants && species.variants.length > 0 && (
-        <VariantSelector variants={species.variants} />
-      )}
-
-      <div class="lore">
-        <div class="lore-content">
-          {species.lore.split('\n').map(line => {
-            if (line.startsWith('- ')) {
-              return <li>{line.substring(2)}</li>
-            } else if (line.trim()) {
-              return <p>{line}</p>
-            }
-            return null;
-          })}
-        </div>
-      </div>
-
-      <SpeciesStats
-        type={species.type}
-        size={species.size}
-        speed={species.speed}
-      />
+      {pageVariants.length > 0 && <VariantSelector variants={pageVariants} required={species.variantMode === 'required'} />}
+      <section data-species-view="" id="species-base"><SpeciesView species={species} /></section>
+      {pageVariants.map(variant => <details class="species-variant-view" data-species-view={variant.pageId} id={`species-variant-${variant.pageId}`}>
+        <summary>{variant.name} [{variant.sourceBook}]</summary>
+        <SpeciesView species={species} variant={variant} />
+      </details>)}
 
       { showCalculator && (
         <div class="size-calculator" aria-label="Калькулятор роста и веса">
@@ -62,7 +48,7 @@ const showCalculator = !!raceSizeEntry;
           {raceSizeDataEntry && raceSizeDataEntry.sizeOptions && (
             <label class="calc-row">Размер: 
               <select id="size-select">
-                {raceSizeDataEntry.sizeOptions.map(opt => (
+                {raceSizeDataEntry.sizeOptions.map((opt: string) => (
                   <option value={opt} selected={raceSizeEntry && raceSizeEntry.size === opt}>{opt}</option>
                 ))}
               </select>
@@ -93,35 +79,18 @@ const showCalculator = !!raceSizeEntry;
         </div>
       ) }
 
-      <div class="abilities">
-        {species.abilities.map(ability => (
-          <SpeciesAbility
-            title={ability.title}
-            description={ability.description}
-          />
-        ))}
-      </div>
     </div>
   </div>
 
-  <script type="module" define:vars={{ variants: species.variants, allSpells }}>
-    // Make variants data available to client-side JavaScript
-    window.speciesVariants = variants?.reduce((acc, variant) => {
-      acc[variant.name] = variant;
-      return acc;
-    }, {});
-
+  <script type="module" define:vars={{ allSpells }}>
     document.addEventListener('DOMContentLoaded', () => {
-      const loreContainer = document.querySelector('.lore-content');
-      const abilitiesContainer = document.querySelector('.abilities');
-
       // Create tooltip element
-      const tooltipEl = document.createElement('div');
+      const tooltipEl = document.getElementById('spell-tooltip') || document.createElement('div');
       tooltipEl.id = 'spell-tooltip';
       tooltipEl.style.display = 'none';
       tooltipEl.style.position = 'fixed';
       tooltipEl.style.zIndex = '10000';
-      document.body.appendChild(tooltipEl);
+      if (!tooltipEl.isConnected) document.body.appendChild(tooltipEl);
 
       const tooltipConfig = { offsetX: 12, offsetY: 12, fadeInDelay: 220, fadeOutDelay: 120 };
       let tooltipShowTimeout = null;
@@ -463,7 +432,7 @@ const showCalculator = !!raceSizeEntry;
 
       // Apply linkify to abilities and table containers only (not main lore)
       try {
-        if (abilitiesContainer) linkifySpellsInNode(abilitiesContainer, allSpells);
+        document.querySelectorAll('.abilities').forEach(container => linkifySpellsInNode(container, allSpells));
         // also linkify any tables inside abilities
         document.querySelectorAll('.table-container').forEach(tc => linkifySpellsInNode(tc, allSpells));
       } catch (e) {
@@ -594,7 +563,12 @@ const showCalculator = !!raceSizeEntry;
 
   .content {
     padding: 1rem;
+    min-width: 0;
   }
+  .species-variant-view { margin: 1rem 0; scroll-margin-top: 5rem; }
+  .species-variant-view > summary { cursor: pointer; padding: 0.75rem; border: 1px solid var(--card-border); border-radius: 0.5rem; }
+  :global(.species-enhanced .species-variant-view > summary) { display: none; }
+  :global([data-species-view][hidden]) { display: none; }
 
   .lore {
     margin-bottom: 2rem;
@@ -650,4 +624,3 @@ const showCalculator = !!raceSizeEntry;
   #randomize-size:hover { opacity:0.95; }
   .calc-dice { margin-top:0.5rem; font-size:0.95rem; color:var(--muted); }
 </style>
- 

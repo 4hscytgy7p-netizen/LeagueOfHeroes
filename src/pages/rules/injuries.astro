@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Injuries from '../../components/rules/combat/Injuries.astro';
+---
+<Layout title="Травмы: правила Лиги">
+  <div class="injury-rules">
+    <h1>Травмы: правила Лиги</h1>
+    <p>Травмы — отдельное опциональное правило DMG 2014. Для его использования в Лиге действуют приведённые ниже ограничения.</p>
+    <Injuries />
+    <p>Описание последствий и таблица длительных травм: <a href="/books/dmg-2014-ru/section-273/#p273-18">Книга мастера 2014, «Длительные травмы»</a>. Условия получения травм берите из правила Лиги выше.</p>
+    <p><a href="/general-rules#core-mechanics">Базовые механики Лиги →</a> · <a href="/exploration#league-notes">Исследование и путешествия →</a></p>
+  </div>
+</Layout>
+<style>
+  .injury-rules { max-width: 900px; margin: 0 auto; overflow-wrap: anywhere; }
+</style>

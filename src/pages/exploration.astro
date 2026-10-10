@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BookBlock from '../components/books/BookBlock.astro';
+import { explorationTopics } from '../data/exploration';
+import '../styles/exploration.css';
+
+const ruleCount = explorationTopics.reduce((total, topic) => total + topic.rules.length, 0);
+---
+
+<Layout title="Исследование и путешествия">
+  <div class="exploration-page" id="exploration-page">
+    <header class="exploration-heading">
+      <p class="exploration-eyebrow">Справочник за игровым столом · D&D 2024</p>
+      <h1>Исследование и путешествия</h1>
+      <p>Выберите, что происходит сейчас: дорога, поиск, опасный переход или погоня. Таблицы и правила собраны по темам со ссылками на полный текст.</p>
+      <div class="exploration-source-links">
+        <a href="/books/phb-2024-ru/exploration/">Книга игрока 2024</a>
+        <a href="/books/dmg-2024-ru/exploration/">Руководство мастера 2024</a>
+        <a href="/allowed-materials">Совместимость редакций</a>
+      </div>
+    </header>
+
+    <div class="exploration-workspace">
+      <aside class="exploration-sidebar" aria-label="Навигация по темам">
+        <div class="exploration-controls" id="exploration-controls" hidden>
+          <label for="exploration-search">Поиск по PHB и DMG</label>
+          <input id="exploration-search" type="search" placeholder="Плавание, истощение, погоня…" autocomplete="off" aria-controls="exploration-topics" />
+          <p id="exploration-count" role="status" aria-live="polite" aria-atomic="true">Правил: {ruleCount}</p>
+          <button type="button" id="exploration-reset" hidden>Сбросить поиск</button>
+        </div>
+        <nav class="exploration-topic-nav" aria-label="Темы исследования">
+          {explorationTopics.map((topic, index) => (
+            <a href={`#${topic.id}`} data-topic-link={topic.id}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{topic.title}</a>
+          ))}
+          <a href="#league-notes"><span aria-hidden="true">ЛГ</span>Уточнения Лиги</a>
+        </nav>
+      </aside>
+
+      <div class="exploration-reading">
+        <aside class="exploration-edition-note" aria-label="Редакция и применение правил">
+          <strong>Основа — редакция 2024.</strong> Здесь приведены правила PHB и инструменты DMG для мастера. Применение инструментов DMG к конкретной сцене определяет мастер. Ссылки на применимые правила Лиги находятся <a href="#league-notes">в конце страницы</a>; они действуют вместе с <a href="/general-rules#core-mechanics">общими правилами</a>.
+        </aside>
+        <div class="exploration-toolbar" id="exploration-toolbar" hidden>
+          <button type="button" id="exploration-expand">Раскрыть найденные правила</button>
+          <button type="button" id="exploration-collapse">Свернуть правила</button>
+        </div>
+        <div id="exploration-empty" class="exploration-empty" hidden>
+          <h2>Ничего не найдено</h2>
+          <p>Попробуйте название темы или другое слово из правила.</p>
+          <button type="button" id="exploration-empty-reset">Сбросить поиск</button>
+        </div>
+
+        <div id="exploration-topics">
+          {explorationTopics.map((topic) => (
+            <section class="exploration-topic" id={topic.id} aria-labelledby={`${topic.id}-title`}>
+              <header class="exploration-topic-heading">
+                <h2 id={`${topic.id}-title`}><a href={`#${topic.id}`}>{topic.title}</a></h2>
+                <p>{topic.description}</p>
+              </header>
+              {topic.rules.map((rule) => (
+                <details class="exploration-rule" id={rule.id} open={rule.open} data-search={`${topic.searchText} ${rule.searchText}`}>
+                  <summary>
+                    <span class="exploration-rule-title">{rule.title}</span>
+                    <span class="exploration-source-label">{rule.sourceLabel}</span>
+                    <span class="exploration-chevron" aria-hidden="true">⌄</span>
+                  </summary>
+                  <div class="exploration-rule-body">
+                    <div class="exploration-rule-text">{rule.blocks.map(block => <BookBlock block={block} />)}</div>
+                    <footer class="exploration-rule-links">
+                      <a href={rule.sourceHref} class="exploration-full-source" title={rule.sourceTitle}>Полный текст · {rule.sourceLabel} →</a>
+                      {rule.glossaryLinks.length > 0 && <div class="exploration-glossary-links"><span>Глоссарий:</span>{rule.glossaryLinks.map(link => <a href={link.href}>{link.label}</a>)}</div>}
+                      <a class="exploration-permalink" href={`#${rule.id}`}>Ссылка на правило</a>
+                    </footer>
+                  </div>
+                </details>
+              ))}
+              {topic.leagueLinks && <p class="exploration-related">Уточнения Лиги: {topic.leagueLinks.map(link => <a href={link.href}>{link.label} →</a>)}</p>}
+            </section>
+          ))}
+        </div>
+
+        <section class="exploration-league" id="league-notes" aria-labelledby="league-notes-title">
+          <h2 id="league-notes-title">Уточнения Лиги</h2>
+          <p>Правила контейнеров и травм находятся в тематических разделах. Травмы — отдельное опциональное правило DMG 2014 с условиями Лиги; оно не добавляется к базовым правилам исследования 2024.</p>
+          <ul>
+            <li id="containers"><a href="/rules/equipment#containers">Контейнеры и их содержимое на персонаже →</a></li>
+            <li id="injuries"><a href="/rules/injuries#injuries">Травмы: условия Лиги · DMG 2014 →</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import '../scripts/exploration';
+</script>

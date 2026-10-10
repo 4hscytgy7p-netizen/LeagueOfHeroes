@@ -1,38 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ErrataCategory from '../components/rules/errata/ErrataCategory.astro';
-import WeaponRestrictions from '../components/rules/errata/WeaponRestrictions.astro';
-import RaceAttributes from '../components/rules/errata/RaceAttributes.astro';
-import RaceLineages from '../components/rules/errata/RaceLineages.astro';
-import IllegalGoods from '../components/rules/errata/IllegalGoods.astro';
-import IllegalGoodsPrices from '../components/rules/errata/IllegalGoodsPrices.astro';
-import Tattoos from '../components/rules/errata/Tattoos.astro';
-import Containers from '../components/rules/errata/Containers.astro';
-import OversizedWeapons from '../components/rules/errata/OversizedWeapons.astro';
-import LegendaryItems from '../components/rules/errata/LegendaryItems.astro';
-import Injuries from '../components/rules/errata/Injuries.astro';
-import ConsumableComponent from '../components/rules/errata/ConsumableComponent.astro';
+import { leagueRules } from '../data/leagueRules';
 ---
 
-<Layout title="Эррата Лиги Героев">
+<Layout title="Правила прежней эрраты перенесены">
+  <meta slot="head" name="robots" content="noindex, follow" />
   <div class="content">
-    <h1>Эррата Лиги Героев</h1>
-    
-    <div class="errata-container">
-      <WeaponRestrictions />
-      <RaceAttributes />
-      <!--<RaceLineages />
-      <IllegalGoods />
-      <IllegalGoodsPrices />
-      <LegendaryItems />
-      <Tattoos />-->
-      <Containers />
-      <OversizedWeapons />
-      <Injuries />
-      <ConsumableComponent />
-    </div>
+    <h1>Правила прежней эрраты перенесены</h1>
+    <p>Действующие правила Лиги теперь находятся в тематических разделах. Описания карточек уже могут включать адаптации для Лиги; используйте их вместе с применимыми общими правилами.</p>
+    <ul>{Object.entries(leagueRules).map(([id, rule]) => <li id={id}><a href={rule.href}>{rule.title} →</a></li>)}</ul>
+    <p><a href="/general-rules#core-mechanics">Общие правила →</a> · <a href="/allowed-materials">Разрешённые материалы →</a></p>
   </div>
 </Layout>
+
+<script>
+  import { leagueRules, type LeagueRuleId } from '../data/leagueRules';
+  function followLegacyRule() {
+    const id = window.location.hash.slice(1);
+    if (Object.hasOwn(leagueRules, id)) window.location.replace(leagueRules[id as LeagueRuleId].href);
+  }
+  followLegacyRule();
+  window.addEventListener('hashchange', followLegacyRule);
+</script>
 
 <style>
   .content {

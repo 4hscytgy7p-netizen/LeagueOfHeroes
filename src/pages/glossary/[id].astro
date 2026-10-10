@@ -1,5 +1,7 @@
 ---
 import { glossary } from '../../data/glossary';
+import '../../styles/theme.css';
+import ThemeInit from '../../components/ThemeInit.astro';
 
 export async function getStaticPaths() {
   return glossary.map((item) => ({ params: { id: String(item.id) } }));
@@ -9,9 +11,10 @@ const { id } = Astro.params;
 const encodedId = encodeURIComponent(id);
 ---
 <!doctype html>
-<html>
+<html lang="ru" class="dark">
   <head>
     <meta charset="utf-8" />
+    <ThemeInit />
     <meta http-equiv="refresh" content={`0;url=/glossary#${encodedId}`} />
     <meta name="robots" content="noindex" />
     <title>Redirecting…</title>

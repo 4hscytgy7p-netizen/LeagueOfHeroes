@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WeaponRestrictions from '../../components/rules/equipment/WeaponRestrictions.astro';
+import Containers from '../../components/rules/equipment/Containers.astro';
+import OversizedWeapons from '../../components/rules/equipment/OversizedWeapons.astro';
+import WeaponsTable from '../../components/rules/equipment/WeaponsTable.astro';
+import ArmorTable from '../../components/rules/equipment/ArmorTable.astro';
+import CrafterTools from '../../components/rules/tools/CrafterTools.astro';
+import WeaponMastery from '../../components/rules/equipment/WeaponMastery.astro';
+---
+<Layout title="Снаряжение: таблицы и правила Лиги">
+  <div class="equipment-rules">
+    <h1>Снаряжение: таблицы и правила Лиги</h1>
+    <p>Таблицы оружия, брони и инструментов, описания оружейных приёмов и действующие ограничения Лиги. Полные карточки предметов — в <a href="/items">каталоге снаряжения</a>.</p>
+    <nav aria-label="Разделы правил снаряжения">
+      <a href="#weapon-restrictions">Огнестрел и стартовое оружие</a>
+      <a href="#containers">Контейнеры на персонаже</a>
+      <a href="#oversized-weapons">Увеличенное оружие</a>
+      <a href="#weapons">Оружие</a>
+      <a href="#armor">Броня</a>
+      <a href="#weapon-mastery">Оружейные приёмы</a>
+      <a href="#tools">Инструменты и наборы</a>
+    </nav>
+    <WeaponRestrictions />
+    <Containers />
+    <OversizedWeapons />
+    <section id="weapons">
+      <h2>Оружие</h2>
+      <p>При выборе огнестрела и стартового оружия учитывайте <a href="#weapon-restrictions">ограничения Лиги</a>. Описания приёмов находятся <a href="#weapon-mastery">ниже таблиц</a>.</p>
+      <WeaponsTable />
+    </section>
+    <section id="armor">
+      <h2>Броня и щиты</h2>
+      <ArmorTable />
+    </section>
+    <section id="weapon-mastery">
+      <h2>Оружейные приёмы</h2>
+      <p>Описание приёма не предоставляет владение им: возможность его применения определяется способностями персонажа.</p>
+      <WeaponMastery />
+    </section>
+    <section id="tools">
+      <h2>Инструменты и наборы</h2>
+      <p>Использование инструментов при изготовлении предметов описано в <a href="/rules/downtime-activities">правилах простоя</a>. Полные описания наборов доступны в <a href="/items">каталоге предметов</a>.</p>
+      <CrafterTools />
+    </section>
+    <p><a href="/items">Каталог предметов →</a> · <a href="/magic-items">Магические предметы →</a> · <a href="/allowed-materials">Разрешённые материалы →</a></p>
+    <p><a href="/character-guide#languages">Языки →</a> · <a href="/character-guide#trinkets">Безделушки →</a> · <a href="/faq">Частые вопросы →</a></p>
+  </div>
+</Layout>
+<style>
+  .equipment-rules { max-width: 1100px; min-width: 0; margin: 0 auto; overflow-wrap: anywhere; }
+  nav { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin: 1.5rem 0; }
+  section { margin-top: 2rem; min-width: 0; }
+  section[id] { scroll-margin-top: 6rem; }
+  section:target { outline: 2px solid var(--primary); outline-offset: .5rem; }
+</style>

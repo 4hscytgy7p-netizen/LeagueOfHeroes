@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { deities, deitySnapshot } from '../data/deities';
+import { deitySearchEntry } from '../utils/deities';
+import type { FaithSearchEntry } from '../utils/deitySearch';
+import { WARLOCK_PATRONS } from '../components/characterCreator/config/patrons';
+import { LEAGUE_FAITH_REQUIREMENT } from '../data/faithRules';
+import { sourceLabels } from '../data/deities/localization';
+import '../styles/deities.css';
+
+const patrons = WARLOCK_PATRONS.filter(patron => patron.id !== 'patron-custom');
+const pantheons = [...new Set(deities.map(deity => deity.pantheon))].sort((a, b) => a.localeCompare(b, 'ru'));
+const domains = [...new Set(deities.flatMap(deity => deity.versions.flatMap(version => version.domains)))].filter(domain => domain !== 'Не указан').sort((a, b) => a.localeCompare(b, 'ru'));
+const alignments = [...new Set([...deities.flatMap(deity => deity.versions.map(version => version.alignment)), ...patrons.map(patron => patron.alignment)])].sort((a, b) => a.localeCompare(b, 'ru'));
+const alignmentNames: Record<string, string> = { ЗД: 'Законно-доброе', НД: 'Нейтрально-доброе', ХД: 'Хаотично-доброе', ЗН: 'Законно-нейтральное', Н: 'Нейтральное', ХН: 'Хаотично-нейтральное', ЗЗ: 'Законно-злое', НЗ: 'Нейтрально-злое', ХЗ: 'Хаотично-злое' };
+const patronSearch = (patron: typeof patrons[number]): FaithSearchEntry => ({
+  kind: 'patron', pantheon: '', text: `${patron.name} ${patron.type} ${patron.description} ${patron.realm} ${patron.pactIdeas}`,
+  versions: patron.source.split(/\s*\/\s*/).map(source => ({ source: ({ PHB14: 'PHB', PHB24: 'XPHB', MToF: 'MTF' } as Record<string, string>)[source] || source, alignment: patron.alignment, domains: [], portfolio: `${patron.type} ${patron.description} ${patron.pactIdeas}`, text: `${patron.source} ${patron.subclassIds.join(' ')}` })),
+});
+---
+
+<Layout title="Боги и покровители">
+  <div class="deities-page" id="deities-page">
+    <header class="deities-heading">
+      <p class="deities-eyebrow">Вера, служение и договор</p>
+      <h1>Боги и покровители</h1>
+      <p>Найдите божество для персонажа или покровителя для колдуна. Имена и справочные сведения переведены на русский; английские имена сохранены для поиска в оригинале.</p>
+      <p class="deities-total">{deities.length} божеств · {deitySnapshot.records.length} публикация в {deitySnapshot.sources.length} источниках · {patrons.length} покровителя</p>
+      <nav class="deities-links" aria-label="Связанные разделы">
+        <a href="#league-requirements">Требования Лиги</a><a href="#custom-faith">Свой вариант</a><a href="/tools/character-creator/">Конструктор персонажа →</a>
+      </nav>
+    </header>
+
+    <section class="deities-guidance" id="league-requirements" aria-labelledby="faith-rules-title">
+      <h2 id="faith-rules-title">Выбор для персонажа Лиги</h2>
+      <blockquote>{LEAGUE_FAITH_REQUIREMENT}</blockquote>
+      <p><a href="/general-rules#character-creation">Опубликованное правило Лиги →</a> Божество и покровитель договора — разные связи персонажа. Выбор покровителя колдуна сам по себе не заменяет требование о божестве.</p>
+      <p>Пантеон, сфера влияния и мировоззрение помогают составить историю персонажа. Домены в источнике — справочные рекомендации; доступные подклассы проверяйте в описании класса и <a href="/allowed-materials">разрешённых материалах</a>.</p>
+      <nav class="deities-links" aria-label="Классы, связанные с верой">
+        <a href="/classes/cleric">Жрец</a><a href="/classes/paladin">Паладин</a><a href="/classes/warlock">Колдун</a><a href="/classes/druid">Друид</a><a href="/classes/monk">Монах</a>
+      </nav>
+    </section>
+
+    <section class="deities-guidance" id="custom-faith" aria-labelledby="custom-faith-title">
+      <h2 id="custom-faith-title">Собственное божество или покровитель</h2>
+      <p>В конструкторе есть варианты «Другое божество или пантеон» и «Собственный покровитель». Для обсуждения с мастером подготовьте имя, сферы влияния, мировоззрение, символ и короткую историю; для покровителя — условия договора, обязательства и связь с подклассом.</p>
+      <p>Это памятка для обсуждения. В опубликованных правилах Лиги отдельная процедура утверждения собственного варианта пока не описана. Сохранение в конструкторе не означает согласование: обсудите применение варианта с мастером до игры.</p>
+    </section>
+
+    <div class="deities-catalog-heading">
+      <h2 id="faith-catalog-title">Справочник</h2>
+      <p>Одноимённые божества разных пантеонов показаны отдельно. Внутри карточки сохранены сведения из каждой книги. Для краткой карточки и конструктора выбрана самая новая публикация с указанными доменами; её источник подписан.</p>
+    </div>
+    <form class="deities-filters" id="deities-filters" aria-labelledby="faith-catalog-title" hidden>
+      <label class="deities-search">Поиск<input type="search" name="q" placeholder="Мистра, Mystra, архифея, символ…" autocomplete="off" aria-controls="deities-results" /></label>
+      <label>Кого искать<select name="kind"><option value="">Всех</option><option value="deity">Божества</option><option value="patron">Покровители</option></select></label>
+      <label>Пантеон<select name="pantheon"><option value="">Все пантеоны</option>{pantheons.map(pantheon => <option value={pantheon}>{pantheon}</option>)}</select></label>
+      <label>Домен<select name="domain"><option value="">Все домены</option>{domains.map(domain => <option value={domain}>{domain}</option>)}</select></label>
+      <label>Мировоззрение<select name="alignment"><option value="">Любое</option>{alignments.map(alignment => <option value={alignment}>{alignmentNames[alignment] ? `${alignment} · ${alignmentNames[alignment]}` : alignment}</option>)}</select></label>
+      <label>Книга<select name="source"><option value="">Все источники</option>{deitySnapshot.sources.map(source => <option value={source.code}>{source.code} · {sourceLabels[source.code]}</option>)}</select></label>
+      <label>Сфера влияния<input name="portfolio" type="search" placeholder="Магия, море, война…" autocomplete="off" /></label>
+      <div class="deities-filter-footer"><p id="deities-count" role="status" aria-live="polite" aria-atomic="true"></p><button type="reset">Сбросить фильтры</button></div>
+    </form>
+    <noscript><p class="deities-guidance">Все карточки доступны ниже. Для поиска используйте поиск браузера; фильтры работают при включённом JavaScript.</p></noscript>
+    <p class="deities-empty" id="deities-empty" hidden>Ничего не найдено. Измените запрос или сбросьте фильтры.</p>
+
+    <section id="deities-results" class="deities-results" aria-labelledby="faith-catalog-title">
+      {deities.map(deity => (
+        <details class="faith-card" id={deity.id} data-faith-entry={JSON.stringify(deitySearchEntry(deity))}>
+          <summary><span class="faith-card-heading"><strong>{deity.name}</strong><span lang="en">{deity.originalName}</span></span><span class="faith-card-kind">{deity.pantheon}</span><span class="faith-card-preview">{deity.reference.portfolio || deity.reference.title || 'Сфера не указана'}</span><span class="faith-card-source">{deity.reference.source} · {deity.versions.length} публ.</span></summary>
+          <div class="faith-card-body">
+            <p>{deity.description}</p>
+            {deity.versions.find(version => version.summary) && <p class="faith-card-note">Краткая справка по <a href={deity.versions.find(version => version.summary)!.href}>{deity.versions.find(version => version.summary)!.source}</a>.</p>}
+            <p class="faith-card-note">Краткая карточка и конструктор: <a href={deity.reference.href}>{deity.reference.source}</a>. Незаполненные сведения в книге обозначены явно.</p>
+            {deity.aliases.some(alias => alias !== deity.originalName) && <p>Другие имена в оригинале: <span lang="en">{deity.aliases.filter(alias => alias !== deity.originalName).join(', ')}</span>.</p>}
+            <div class="faith-publications">
+              {deity.versions.map(version => (
+                <section class="faith-publication" data-source={version.source}>
+                  <h3><a href={version.href}>{version.sourceName} · {version.source}{version.page ? `, с. ${version.page}` : ''} ↗</a></h3>
+                  {version.title && <p class="faith-title">{version.title}</p>}
+                  {version.category && version.category !== 'Не указана' && <p class="faith-card-note">Традиция: {version.category}</p>}
+                  <dl><div><dt>Мировоззрение</dt><dd>{alignmentNames[version.alignment] ? `${alignmentNames[version.alignment]} (${version.alignment})` : version.alignment}</dd></div><div><dt>Сферы влияния</dt><dd>{version.portfolio || 'Не указаны в источнике'}</dd></div><div><dt>Домены</dt><dd>{version.domains.filter(domain => domain !== 'Не указан').join(', ') || 'Не указаны в источнике'}</dd></div><div><dt>Символ</dt><dd>{version.symbol || 'Не указан в источнике'}</dd></div></dl>
+                  {version.hasLore && <p class="faith-card-note"><a href={version.href}>История и подробности в оригинале на английском →</a></p>}
+                </section>
+              ))}
+            </div>
+            <footer class="faith-card-links"><a href={`#${deity.id}`}>Ссылка на божество</a><a href="/tools/character-creator/">Выбрать в конструкторе →</a></footer>
+          </div>
+        </details>
+      ))}
+      {patrons.map(patron => (
+        <details class="faith-card" id={patron.id} data-faith-entry={JSON.stringify(patronSearch(patron))}>
+          <summary><span class="faith-card-heading"><strong>{patron.name}</strong><span>Покровитель колдуна</span></span><span class="faith-card-kind">{patron.type}</span><span class="faith-card-preview">{patron.realm}</span><span class="faith-card-source">{patron.source}</span></summary>
+          <div class="faith-card-body">
+            <p>{patron.description}</p>
+            <dl><div><dt>Мировоззрение</dt><dd>{patron.alignment}</dd></div><div><dt>Обитель</dt><dd>{patron.realm}</dd></div><div><dt>Источники</dt><dd>{patron.source}</dd></div><div><dt>Идея договора</dt><dd>{patron.pactIdeas}</dd></div></dl>
+            <p class="faith-card-note">Пример для истории персонажа. Конкретные условия договора обсуждаются с мастером; доступные виды покровителя указаны в <a href="/classes/warlock">классе колдуна</a>.</p>
+            <footer class="faith-card-links"><a href={`#${patron.id}`}>Ссылка на покровителя</a>{patron.href && <a href={patron.href}>Подробнее →</a>}<a href="/tools/character-creator/">Выбрать в конструкторе →</a></footer>
+          </div>
+        </details>
+      ))}
+    </section>
+
+    <footer class="deities-provenance" id="deity-sources">
+      <h2>Источники и перевод</h2>
+      <p>Каталог божеств основан на <a href={deitySnapshot.catalogUrl}>5etools</a> и его <a href="https://github.com/5etools-mirror-3/5etools-src/blob/main/data/deities.json">публичных данных</a>. Включены все {deitySnapshot.sources.length} источников каталога, кроме «Путеводителя исследователя по Вайлдмаунту» (EGtW / EGW). Сведения сверены 5 октября 2026 года.</p>
+      <p>Переведены имена, титулы, пантеоны, сферы влияния, домены и описания символов. Для записей с историческими описаниями подготовлены короткие русские пересказы со ссылкой на книгу; полные тексты доступны в английском оригинале. Транслитерация отдельных имён может отличаться в других переводах.</p>
+      <p>Покровители используют существующие русские описания конструктора. Наличие существа в справочнике не предоставляет подкласс, способность или отдельную механику.</p>
+      <details><summary>Книги каталога</summary><ul>{deitySnapshot.sources.map(source => <li>{sourceLabels[source.code]} · {source.code} · {source.published.slice(0, 4)}</li>)}</ul></details>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  import '../scripts/deities';
+</script>
