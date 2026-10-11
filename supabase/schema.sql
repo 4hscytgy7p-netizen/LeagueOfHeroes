@@ -30,10 +30,10 @@ alter table public.user_profiles add column if not exists character_slots intege
 alter table public.user_profiles alter column role set default 'player';
 update public.user_profiles set role = 'player' where role = 'user';
 update public.user_profiles set role = 'master' where role = 'gm';
-update public.user_profiles set role = 'player' where role not in ('player', 'master', 'admin');
+update public.user_profiles set role = 'player' where role not in ('player', 'test_master', 'master', 'admin');
 alter table public.user_profiles drop constraint if exists user_profiles_role_check;
 alter table public.user_profiles
-  add constraint user_profiles_role_check check (role in ('player', 'master', 'admin'));
+  add constraint user_profiles_role_check check (role in ('player', 'test_master', 'master', 'admin'));
 alter table public.user_profiles drop constraint if exists user_profiles_character_slots_check;
 alter table public.user_profiles
   add constraint user_profiles_character_slots_check check (character_slots between 1 and 100);
@@ -686,41 +686,6 @@ grant execute on function public.extension_save_roll20_character(text, uuid, int
 grant execute on function public.extension_list_journal(text, uuid) to anon, authenticated;
 grant execute on function public.extension_save_journal(text, uuid, uuid, text, text, text, text, text) to anon, authenticated;
 grant execute on function public.extension_delete_journal(text, uuid) to anon, authenticated;
-
--- Приватные портреты персонажей. Первый сегмент пути всегда равен auth.uid().
-insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-values (
-  'character-portraits',
-  'character-portraits',
-  false,
-  8388608,
-  array['image/png', 'image/jpeg', 'image/webp', 'image/gif']
-)
-on conflict (id) do update set
-  public = excluded.public,
-  file_size_limit = excluded.file_size_limit,
-  allowed_mime_types = excluded.allowed_mime_types;
-
-drop policy if exists "users_read_own_character_portraits" on storage.objects;
-create policy "users_read_own_character_portraits" on storage.objects
-for select to authenticated
-using (bucket_id = 'character-portraits' and (storage.foldername(name))[1] = auth.uid()::text);
-
-drop policy if exists "users_upload_own_character_portraits" on storage.objects;
-create policy "users_upload_own_character_portraits" on storage.objects
-for insert to authenticated
-with check (bucket_id = 'character-portraits' and (storage.foldername(name))[1] = auth.uid()::text);
-
-drop policy if exists "users_update_own_character_portraits" on storage.objects;
-create policy "users_update_own_character_portraits" on storage.objects
-for update to authenticated
-using (bucket_id = 'character-portraits' and (storage.foldername(name))[1] = auth.uid()::text)
-with check (bucket_id = 'character-portraits' and (storage.foldername(name))[1] = auth.uid()::text);
-
-drop policy if exists "users_delete_own_character_portraits" on storage.objects;
-create policy "users_delete_own_character_portraits" on storage.objects
-for delete to authenticated
-using (bucket_id = 'character-portraits' and (storage.foldername(name))[1] = auth.uid()::text);
 
 -- Примечания:
 -- 1) После применения миграции войдите через Discord, затем назначьте первого

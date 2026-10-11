@@ -3,6 +3,12 @@
 
 select
   to_regclass('public.user_profiles') is not null as has_user_profiles,
+  exists (
+    select 1 from pg_constraint
+    where conrelid = to_regclass('public.user_profiles')
+      and conname = 'user_profiles_role_check'
+      and pg_get_constraintdef(oid) like '%test_master%'
+  ) as supports_test_master_role,
   to_regclass('public.characters') is not null as has_characters,
   to_regclass('public.character_sync_tokens') is not null as has_sync_tokens,
   to_regclass('public.journal_entries') is not null as has_journal_entries,

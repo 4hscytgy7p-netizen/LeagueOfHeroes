@@ -20,7 +20,8 @@ SQL-файлы остаются в репозитории как исходны�
 1. `migrations/20260803_full_roll20_sync.sql`
 2. `migrations/20260803_02_fix_pgcrypto_search_path.sql`
 3. `migrations/20260803_03_roll20_tools_and_journal.sql`
-4. `verify-installation.sql`
+4. `migrations/20261008_test_master_role.sql` — разрешает роль `test_master` («Тестовый мастер»), не меняя существующие назначения.
+5. `verify-installation.sql`
 
 Миграции от 2026-08-03 безопасно выполнять повторно. Вторая исправляет поиск
 `pgcrypto.digest()` в схеме `extensions`.
