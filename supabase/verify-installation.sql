@@ -2,6 +2,11 @@
 -- Все значения в единственной строке результата должны быть true.
 
 select
+  to_regclass('public.team_workspaces') is not null as has_team_workspaces,
+  to_regclass('public.team_cards') is not null as has_team_cards,
+  to_regclass('public.team_notifications') is not null as has_team_notifications,
+  to_regprocedure('public.team_create_workspace(text,text)') is not null as has_team_create_workspace,
+  coalesce(not has_function_privilege('authenticated',to_regprocedure('public.team_claim_notifications()'),'EXECUTE'),false) as team_worker_is_private,
   to_regclass('public.user_profiles') is not null as has_user_profiles,
   exists (
     select 1 from pg_constraint

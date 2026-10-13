@@ -21,12 +21,15 @@ SQL-файлы остаются в репозитории как исходны�
 2. `migrations/20260803_02_fix_pgcrypto_search_path.sql`
 3. `migrations/20260803_03_roll20_tools_and_journal.sql`
 4. `migrations/20261008_test_master_role.sql` — разрешает роль `test_master` («Тестовый мастер»), не меняя существующие назначения.
-5. `verify-installation.sql`
+5. `migrations/20261012_team_workspaces.sql` — закрытые рабочие пространства, роли участников, доска, планировщик и очередь уведомлений.
+6. `verify-installation.sql`
 
 Миграции от 2026-08-03 безопасно выполнять повторно. Вторая исправляет поиск
 `pgcrypto.digest()` в схеме `extensions`.
 
 ## Что сейчас обязательно для сайта и расширения
+
+Рабочие пространства и подключение Discord/email описаны в [инструкции](../docs/team-workspaces.md). Сам SQL не включает отправку: нужны Edge Function и расписание worker.
 
 - `public.user_profiles` — аккаунты, роли и число слотов персонажей;
 - `public.characters` — черновик, JSON Roll20 и игровое состояние;

@@ -1,5 +1,6 @@
 ---
 import MasterWorkspace from './MasterWorkspace.astro';
+import TeamWorkspace from './TeamWorkspace.astro';
 import type { AccountMode } from '../../utils/testAccount';
 
 interface Props {
@@ -41,6 +42,8 @@ const { requestedMode = 'auto' } = Astro.props;
     </header>
 
     <div id="mode-description" class="mode-description"></div>
+
+    <TeamWorkspace />
 
     <section id="player-dashboard" class="dashboard-grid" hidden>
       <article class="dashboard-card dashboard-card-featured">
@@ -140,6 +143,7 @@ const { requestedMode = 'auto' } = Astro.props;
     type AccountRole
   } from '../../utils/testAccount';
   import { initializeMasterWorkspace } from './masterWorkspace';
+  import { initializeTeamWorkspace } from './teamWorkspace';
 
   const root = document.querySelector<HTMLElement>('#test-cabinet');
   const loading = document.querySelector<HTMLElement>('#cabinet-loading');
@@ -517,6 +521,7 @@ const { requestedMode = 'auto' } = Astro.props;
       showMode(mode);
       if (loading) loading.hidden = true;
       if (content) content.hidden = false;
+      await initializeTeamWorkspace(currentUserId, currentRole);
       if (mode === 'admin') await loadAdminUsers();
       if (mode === 'player') initializeLocalPlayer();
       if (mode === 'master' || mode === 'test_master') await initializeMasterWorkspace(currentUserId, mode === 'test_master' ? 'test_master' : currentRole);
@@ -588,6 +593,7 @@ const { requestedMode = 'auto' } = Astro.props;
     showMode(mode);
     if (loading) loading.hidden = true;
     if (content) content.hidden = false;
+    await initializeTeamWorkspace(user.id, currentRole);
     if (mode === 'player') {
       await Promise.all([loadCharacters(), loadSyncTokens()]);
     }

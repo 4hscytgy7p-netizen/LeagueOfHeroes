@@ -85,7 +85,10 @@ const abilities = {
     <div class="feats-grid">
       {sortedFeats.map(feat => {
         const reqs = feat.requirements || [];
-        const hasExtraReq = feat.type === 'general' && reqs.length > 0 && !reqs.every(r => /Уровень\s*4\+/i.test(String(r)) || /13\+/i.test(String(r)));
+        const hasExtraReq = reqs.length > 0 && (
+          feat.type === 'origin' ||
+          (feat.type === 'general' && !reqs.every(r => /Уровень\s*4\+/i.test(String(r)) || /13\+/i.test(String(r))))
+        );
         return (
           <a href={`/feats/${feat.id}`} class="feat-card" data-feat-type={feat.type} data-abilities={feat.abilityScoreIncrease?.join(',')} data-has-extra-req={hasExtraReq ? 'true' : 'false'}>
             <h3>{feat.name}</h3>

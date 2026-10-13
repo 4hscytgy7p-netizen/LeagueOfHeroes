@@ -1,0 +1,58 @@
+.tw { margin: 1.5rem 0; padding: clamp(1rem, 3vw, 1.8rem); border: 1px solid var(--account-border); border-radius: 20px; background: var(--account-panel); color: var(--account-text); }
+.tw * { box-sizing: border-box; }
+.tw-heading, .tw-toolbar, .tw-actions { display: flex; align-items: center; justify-content: space-between; gap: .7rem; flex-wrap: wrap; }
+.tw-heading { align-items: flex-start; }
+.tw-heading h2, .tw-heading h3 { margin: .35rem 0; color: var(--primary); }
+.tw-heading p { margin: .5rem 0; }
+.tw-eyebrow { color: var(--account-gold); font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; }
+.tw-muted { color: var(--account-muted); font-size: .85rem; line-height: 1.6; }
+.tw-toolbar { justify-content: flex-start; margin: 1rem 0; align-items: flex-end; }
+.tw-actions { justify-content: flex-start; }
+.tw label { display: grid; gap: .4rem; font-size: .85rem; }
+.tw button, .tw input, .tw select, .tw textarea { font: inherit; color: inherit; border: 1px solid var(--account-border); border-radius: 8px; padding: .6rem .75rem; background: var(--account-background); max-width: 100%; }
+.tw button { cursor: pointer; }
+.tw button:hover, .tw button[aria-pressed=true] { border-color: var(--account-gold); color: var(--account-gold); }
+.tw button:disabled { cursor: default; opacity: .5; }
+.tw :focus-visible { outline: 2px solid var(--account-gold); outline-offset: 3px; }
+.tw input[type=checkbox] { accent-color: var(--account-gold); width: 1rem; height: 1rem; }
+.tw textarea { resize: vertical; }
+.tw-grow { flex: 1; min-width: 150px; }
+.tw-board { display: flex; gap: .85rem; overflow-x: auto; padding: .4rem 0 1rem; align-items: flex-start; min-height: 220px; }
+.tw-column { flex: 0 0 255px; background: var(--account-background); border: 1px solid var(--account-border); border-radius: 12px; padding: .75rem; min-height: 170px; }
+.tw-column h3 { font-size: .95rem; margin: 0 0 .8rem; display: flex; gap: .5rem; align-items: center; justify-content: space-between; }
+.tw-column h3 button { font-size: .7rem; padding: .2rem; }
+.tw-column small { color: var(--account-muted); }
+.tw-card { display: block; width: 100%; margin: .6rem 0; text-align: left; background: var(--account-panel) !important; white-space: normal; overflow-wrap: anywhere; }
+.tw-card strong { display: block; line-height: 1.45; }
+.tw-card small { display: block; margin-top: .5rem; font-size: .75rem; color: var(--account-muted); line-height: 1.45; }
+.tw-card.is-completed strong { text-decoration: line-through; opacity: .65; }
+.tw-card .tw-overdue { color: #ee8181; }
+.tw-tag { display: inline-block; font-size: .67rem; padding: .15rem .4rem; margin: 0 .2rem .35rem 0; border-radius: 4px; color: var(--account-gold); background: rgba(170,140,50,.12); }
+.tw-empty { padding: 2rem 1rem; text-align: center; color: var(--account-muted); line-height: 1.7; }
+.tw-calendar-scroll { overflow-x: auto; }
+.tw-calendar-grid { display: grid; grid-template-columns: repeat(7,minmax(100px,1fr)); min-width: 700px; gap: 1px; background: var(--account-border); border: 1px solid var(--account-border); }
+.tw-day, .tw-weekday { background: var(--account-background); padding: .5rem; min-width: 0; }
+.tw-day { min-height: 120px; }
+.tw-day.is-outside { opacity: .5; }
+.tw-day.is-today { box-shadow: inset 0 0 0 2px var(--account-gold); }
+.tw-day .tw-card { padding: .35rem; font-size: .75rem; }
+.tw-day .tw-card small { font-size: .65rem; }
+.tw-unscheduled { display: flex; flex-wrap: wrap; gap: .6rem; }
+.tw-unscheduled .tw-card { max-width: 250px; }
+.tw dialog { width: min(720px,calc(100vw - 1.5rem)); max-height: 90vh; overflow-y: auto; border: 1px solid var(--account-border); border-radius: 16px; padding: 1.3rem; color: var(--account-text); background: var(--account-panel); }
+.tw dialog::backdrop { background: rgba(0,0,0,.7); }
+.tw fieldset { border: 0; padding: 0; margin: .8rem 0; min-width: 0; }
+.tw-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.tw-full { grid-column: 1 / -1; }
+.tw .tw-check { display: flex; align-items: center; gap: .6rem; margin: .6rem 0; }
+.tw-assignees { display: flex; flex-wrap: wrap; gap: .6rem; }
+.tw-stack { display: grid; gap: .7rem; margin: 1rem 0; }
+.tw-member, .tw-log, .tw-comment { border-bottom: 1px solid var(--account-border); padding: .8rem 0; overflow-wrap: anywhere; }
+.tw-member { display: flex; gap: .7rem; justify-content: space-between; flex-wrap: wrap; align-items: center; }
+.tw-comment p { white-space: pre-wrap; }
+.tw-log time, .tw-comment small { color: var(--account-muted); font-size: .75rem; }
+.tw [role=status], .tw [role=alert] { padding: .75rem; border-radius: 8px; background: var(--account-background); overflow-wrap: anywhere; }
+.tw [data-error=true], .tw [role=alert] { color: #ee8181; }
+.tw-check-row { display: flex; gap: .5rem; align-items: center; }
+.tw-check-row label { flex: 1; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .tw-form-grid { grid-template-columns: 1fr; } .tw-toolbar > label { width: 100%; } .tw-heading > .tw-actions { width: 100%; } }

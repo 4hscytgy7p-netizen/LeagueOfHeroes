@@ -1,0 +1,3 @@
+[functions.team-notifications]
+# The worker verifies x-team-cron-secret itself; it accepts no browser calls.
+verify_jwt = false
